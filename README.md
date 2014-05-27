@@ -1,6 +1,13 @@
 # CustomErrorPages
 
-TODO: Write a gem description
+Rails gem to create **custom error pages** (adapted from [this tutorial](https://gist.github.com/wojtha/8433843))
+
+Works with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook in Rails' middleware stack:
+
+```config.exceptions_app sets the exceptions application invoked by the ShowException middleware when an exception happens. Defaults to ActionDispatch::PublicExceptions.new(Rails.public_path).```
+
+
+---------
 
 ## Installation
 
@@ -16,9 +23,25 @@ Or install it yourself as:
 
     $ gem install custom_error_pages
 
+---------
+
 ## Usage
 
-TODO: Write usage instructions here
+###Dev
+
+	#config/environments/development.rb
+	config.consider_all_requests_local = false # true
+
+`config.exceptions_app` is used in Rails' production environment. Therefore, if you wish to test the gem in dev,
+you'll need to make your app process requests as `production` for now. This is a temporary step, and will be
+resolved in a new version
+
+###Production
+
+    No action required
+
+
+--------
 
 ## Contributing
 
