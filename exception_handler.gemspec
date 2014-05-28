@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'custom_error_pages/version'
+require 'exception_handler/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "custom_error_pages"
-  spec.version       = CustomErrorPages::VERSION
+  spec.name          = "exception_handler"
+  spec.version       = ExceptionHandler::VERSION
   spec.authors       = ["Richard Peck"]
   spec.email         = ["rpeck@frontlineutilities.co.uk"]
   spec.summary       = %q{Rails gem to show custom error pages in production. Also logs errors in "errors" db if required}

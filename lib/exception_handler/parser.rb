@@ -1,4 +1,4 @@
-module CustomErrorPages
+module ExceptionHandler
 
 	#Message
 	class Message
@@ -16,7 +16,7 @@ module CustomErrorPages
 			request = ActionDispatch::Request.new(env)
 			controller = env['action_controller.instance']
 
-			CustomErrorPages::Parser.new(exception, request, controller).save unless self.ignore?(exception, request)
+			ExceptionHandler::Parser.new(exception, request, controller).save unless self.ignore?(exception, request)
 			raise exception
 		end
 

@@ -1,6 +1,8 @@
-# CustomErrorPages
+# ExceptionHandler
 
-Rails gem to create **custom error pages** (adapted from [this tutorial](https://gist.github.com/wojtha/8433843))
+[![Code Climate](https://codeclimate.com/github/richpeck/exception_handler.png)](https://codeclimate.com/github/richpeck/exception_handler)
+
+Rails gem to create **ExceptionHandler** (adapted from [this tutorial](https://gist.github.com/wojtha/8433843))
 
 Works with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook in Rails' middleware stack:
 
@@ -13,7 +15,7 @@ Works with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuri
 
 Add this line to your application's Gemfile:
 
-    gem 'custom_error_pages'
+    gem 'exception_handler'
 
 And then execute:
 
@@ -21,7 +23,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install custom_error_pages
+    $ gem install exception_handler
 
 ---------
 
@@ -45,7 +47,7 @@ resolved in a new version
 
 ## Contributing
 
-1. Fork it ( https://github.com/richpeck/custom_error_pages/fork )
+1. Fork it ( https://github.com/richpeck/exception_handler/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

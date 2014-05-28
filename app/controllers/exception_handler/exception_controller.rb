@@ -1,4 +1,4 @@
-module CustomErrorPages
+module ExceptionHandler
   class ExceptionController < ApplicationController
 
     #Response
