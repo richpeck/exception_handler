@@ -1,8 +1,9 @@
 # ExceptionHandler
 
 [![Code Climate](https://codeclimate.com/github/richpeck/exception_handler.png)](https://codeclimate.com/github/richpeck/exception_handler)
+[![Gem Version](https://badge.fury.io/rb/exception_handler.svg)](http://badge.fury.io/rb/exception_handler)
 
-Rails gem to create **ExceptionHandler** (adapted from [this tutorial](https://gist.github.com/wojtha/8433843))
+**ExceptionHandler** Rails Gem (adapted from [this tutorial](https://gist.github.com/wojtha/8433843))
 
 Works with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook in Rails' middleware stack:
 
