@@ -8,13 +8,24 @@
 
 **ExceptionHandler** Rails Gem (adapted from [this tutorial](https://gist.github.com/wojtha/8433843))
 
-> - **[Custom Error Pages](#custom_error_pages)**
-> - **[Save Errors To DB](#save_errors_to_db)**
+> - **[Custom Error Pages](#custom-error-pages)**
+> - **[Save Errors To DB](#save-errors-to-db)**
 
 Works with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook in Rails' middleware stack:
 
 ```config.exceptions_app sets the exceptions application invoked by the ShowException middleware when an exception happens. Defaults to ActionDispatch::PublicExceptions.new(Rails.public_path).```
 
+-----------
+
+####Custom Error Pages
+
+You can create *custom error pages*. These allow you to serve your own design error pages in production; showing both the error, and the problem. This is a big step forward from the standard Rails error reporting facility
+
+
+
+####Save Errors To DB
+
+Sometimes, you want to save your errors to your database (admin areas, multi-tenant apps, etc). We've included some middleware which captures the routes 
 
 ---------
 
@@ -48,20 +59,6 @@ resolved in a new version
 ###Production
 
     No action required
-
-----
-
-####Custom Error Pages
-
-You can create *custom error pages*. These allow you to serve your own design error pages in production; showing both the error, and the problem. This is a big step forward from the standard Rails error reporting facility
-
-
-
-####Save Errors To DB
-
-Sometimes, you want to save your errors to your database (admin areas, multi-tenant apps, etc). We've included some middleware which captures the routes 
-
-
 
 --------
 
