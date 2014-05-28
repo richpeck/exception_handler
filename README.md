@@ -60,7 +60,24 @@ resolved in a new version
 
     No action required
 
+###Demo
+
+Demo to be put onto Heroku etc
+
 --------
+
+## Support
+
+If you need help, you may consider:
+
+1. Watching this [**video tutorial**](http://www.youtube.com/watch?v=Zo2vav3dYnY):
+
+   [![ExceptionHandler Update](http://img.youtube.com/vi/Zo2vav3dYnY/0.jpg)](http://www.youtube.com/watch?v=Zo2vav3dYnY)
+2. Read [**our tutorial**](http://google.com)
+3. Ask on [**StackOverflow**](http://stackoverflow.com)
+4. Go on the [**gem support page**](http://frontlineutilities.co.uk)
+
+---------
 
 ## Contributing
 
