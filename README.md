@@ -8,6 +8,9 @@
 
 **ExceptionHandler** Rails Gem (adapted from [this tutorial](https://gist.github.com/wojtha/8433843))
 
+> - **Custom Error Pages**
+> - **Save Errors To DB**
+
 Works with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook in Rails' middleware stack:
 
 ```config.exceptions_app sets the exceptions application invoked by the ShowException middleware when an exception happens. Defaults to ActionDispatch::PublicExceptions.new(Rails.public_path).```
