@@ -1,10 +1,10 @@
-require 'spec_helper'
-
-############################################
-
 #Coveralls
 require 'coveralls'
 Coveralls.wear!
+
+###########################################
+
+require 'spec_helper'
 
 ###########################################
 
