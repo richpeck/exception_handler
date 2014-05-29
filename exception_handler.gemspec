@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "exception_handler"
   spec.version       = ExceptionHandler::VERSION
   spec.authors       = ["Richard Peck", "Joe Hilton"]
-  spec.email         = ["rpeck@frontlineutilities.co.uk"]
+  spec.email         = ["rpeck@frontlineutilities.co.uk", "jhilton@frontlineutilities.co.uk"]
   spec.summary       = %q{Rails gem to show custom error pages in production. Also logs errors in "errors" db if required}
   spec.description   = %q{Rails gem to create custom error pages. Captures exceptions using "exception_app" callback, routing to "Exception" controller, rendering the view as required.}
   spec.homepage      = "http://frontlineutilities.co.uk/ror/custom_error_pages"

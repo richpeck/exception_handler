@@ -43,6 +43,24 @@ Or install it yourself as:
 
     $ gem install exception_handler
 
+###Generators
+
+	# General
+	$ rails generate exception_handler:install
+
+	#Config (for db)
+	$ rails generate exception_handler:config
+
+	#Assets
+	$ rails generate exception_handler:assets:all
+	-
+	$ rails generate exception_handler:assets:views
+	$ rails generate exception_handler:assets:controllers
+	$ rails generate exception_handler:assets:models
+	$ rails generate exception_handler:assets:assets
+
+
+
 ---------
 
 ## Usage
