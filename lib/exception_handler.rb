@@ -21,15 +21,19 @@ module ExceptionHandler
 		end
 	end
 
-	#Config
-	#Ref http://robots.thoughtbot.com/mygem-configure-block
-	mattr_accessor :config
+	####################
+	#      Config      #
+	####################
 
-	#Init Config
+	#Ref http://robots.thoughtbot.com/mygem-configure-block
+	mattr_accessor :config, :table
+
+	#Vars
 	@@config ||= Config.new
 
 	#Block (for initializer)
 	def self.setup
 		yield(config) if block_given?
 	end
+
 end
