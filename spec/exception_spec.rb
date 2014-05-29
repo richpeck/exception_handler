@@ -1,5 +1,11 @@
 require 'spec_helper'
 
+############################################
+
+#Coveralls
+require 'coveralls'
+Coveralls.wear!
+
 ###########################################
 
 describe "test" do
