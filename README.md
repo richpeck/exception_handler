@@ -7,7 +7,7 @@
 [![Build Status](https://travis-ci.org/richpeck/exception_handler.svg?branch=master)](https://travis-ci.org/richpeck/exception_handler)
 
 
-**ExceptionHandler** Rails Gem (adapted from [this tutorial](https://gist.github.com/wojtha/8433843) & our own middleware)
+[**ExceptionHandler** Rails Gem](https://rubygems.org/gems/exception_handler) (adapted from [this tutorial](https://gist.github.com/wojtha/8433843) & our own middleware)
 
 Works with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook in Rails' middleware stack:
 
