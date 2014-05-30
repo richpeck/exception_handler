@@ -6,9 +6,9 @@ module ExceptionHandler
 
 		#Option
 		class_option :config, type: :boolean, desc: 'Add initializer to /config/initializers, to help define config options'
-		class_option :files, desc: 'Add views, controllers, models & assets to app (for customization)'
+		class_option :assets, desc: 'Add views, controllers, models & assets to app (for customization)'
 		class_option :migration, type: :boolean, desc: 'Create migration'
-
+				
 		#Config
 		def create_config_file
 			return unless options.config? || options.empty?
@@ -16,10 +16,10 @@ module ExceptionHandler
 		end
 
 		#Assets
-		def create_customization
+		def create_customization assets = options.assets
  			#(views / controllers / models / assets)
- 			return unless options.files? || options.empty?
- 			file_generator options.files
+ 			return unless assets || options.empty?
+	 		file_generator assets
 		end
 
 		#Migration
@@ -31,14 +31,22 @@ module ExceptionHandler
 		protected
 
 		#File Generator
-		def file_generator args = %w(views controllers models assets)
+		def file_generator args = options, options = %w(views controllers models assets)
+
+			#Valid?
+			return raise "Invalid Argument" unless options.include? args
+
+			#Types
 			if args.is_a? String
 				create_file "config/initializers/#{args}.rb", "# Add initialization content here"
-			else
+			elsif args.is_a? Array
 				for arg in args do
-					create_file "config/initializers/#{arg}.rb", "# Add initialization content here"
+					create_file "config/initializers/#{arg}.rb", "# Add initialization content here" #Need to use template
 				end
+			else
+				raise "Sorry, you either need to use 'views', 'controllers', 'models', 'assets' as the --files options"
 			end
+
 		end
 	end
 end
