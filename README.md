@@ -1,5 +1,7 @@
 # ExceptionHandler
 
+![Exception Handler](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/exception_handler.png "Exception Handler Logo")
+
 [![Gem Version](https://badge.fury.io/rb/exception_handler.svg)](http://badge.fury.io/rb/exception_handler)
 [![Code Climate](https://codeclimate.com/github/richpeck/exception_handler.png)](https://codeclimate.com/github/richpeck/exception_handler)
 [![Dependency Status](https://gemnasium.com/richpeck/exception_handler.svg)](https://gemnasium.com/richpeck/exception_handler)
