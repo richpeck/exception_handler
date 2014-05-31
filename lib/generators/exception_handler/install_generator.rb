@@ -10,14 +10,14 @@ module ExceptionHandler
 				
 		#Config
 		def create_config_file
-			return unless options.empty?
+			return unless options
 			template "exception_handler.rb", "config/initializers/exception_handler.rb" # https://github.com/plataformatec/devise/blob/master/lib/generators/devise/install_generator.rb#L13
 		end
 
 		#Assets
 		def create_customization assets = options.assets
  			#(views / controllers / models / assets)
- 			return unless assets
+ 			return if assets.empty?
 	 		file_generator assets
 		end
 

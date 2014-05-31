@@ -89,13 +89,18 @@ And then execute:
 Or install it yourself as:
 
     $ gem install exception_handler
-    
 
-###Step2 (IMPORTANT)
+
+###Step2
 
 Run:
 
 	rails generate exception_handler:install
+
+![Installation](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/install.png "Installation")
+
+This will create `config/initializers/exception_handler.rb`. Whilst not vital, it will give you 
+access to the configuration options which can change the gem's behavior. Very important
 
 --
 
