@@ -56,6 +56,13 @@ appreciate any issues on our client apps.
 
 ![500 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/db.png "500 Server Error Page")
 
+This functionality is disabled by default.
+
+To enable, you need to do the following:
+
+	- rails generate exception_handler:install #-> will install config initializer
+	- rails generate exception_handler:migration #-> will create migration (for `errors` table)
+
 ---------
 
 ## Installation
