@@ -18,7 +18,7 @@ Works with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuri
 
 ####Custom Error Pages
 
-You can deploy *custom error pages*. These allow you to serve your own design error pages in production; showing both the error, and the problem. This is a big step forward from the standard Rails error reporting facility
+`ExceptionHandler` deploys *custom error pages*. These allow you to serve your own design error pages in production; showing both the error, and the problem. This is a big step forward from the standard Rails error reporting facility
 
 There are two types of error page: 
 
@@ -78,7 +78,7 @@ To enable, you need to do the following:
 
 ###Step1 
 
-You need to reference the [`exception_handler` gem](http://rubygems.org/gems/exception_handler). Once you have downloaded the gem, you'll be able to deploy it in your application.
+You need to reference the [`exception_handler`](http://rubygems.org/gems/exception_handler) gem. Once you have downloaded the gem, you'll be able to deploy it in your application.
 
 Add this line to your application's Gemfile:
 
@@ -108,6 +108,21 @@ This will create `config/initializers/exception_handler.rb`. Whilst not vital, i
 access to the configuration options which can change the gem's behavior:
 
 ![Config File](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/config.png "Configuration")
+
+--
+
+###Database
+
+If you want to set up the database, you will need to use the `migration installer`:
+
+	$ rails generate exception_handler:migration
+
+This creates:
+
+	$ rake db:migrate
+
+This will install the database for you. Now you need to change `config.db = true`
+
 
 ---------
 
