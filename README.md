@@ -25,9 +25,7 @@ There are two types of error page:
 	- 404 errors
 	- 500 errors (+ other)
 
-The **`404`** error is standard (missing page) - we use your own `layout` for this.
-
-The **`500 & other errors`** are `server` issues, and so we have included an `errors` layout (`/views/layouts/errors.html.haml`).
+The **`404`** error is standard (missing page) - we use your own `layout` for this. The **`500 & other errors`** are `server` issues, and so we have included an `errors` layout (`/views/layouts/errors.html.haml`).
 
 The `errors` layout in important. If you try and load your "standard" layout with an internal server error, all your
 "supporting" functionality is called too. Problem? You're likely going to cause even more errors.
@@ -55,7 +53,7 @@ Sometimes, you want to save your errors to your database (admin areas, multi-ten
 	- Params
 	- User Agent (Browser Details)
 
-This db allows you to track, read & repair your application on the fly. We deploy this in our admin areas, to help us
+This db allows you to track, read & repair errors in your application on the fly. We deploy this in our admin areas, to help us
 appreciate any issues on our client apps.
 
 ![500 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/db.png "500 Server Error Page")
