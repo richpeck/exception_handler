@@ -82,6 +82,8 @@ You need to reference the [`exception_handler` gem](http://rubygems.org/gems/exc
 
 Add this line to your application's Gemfile:
 
+   gem exception_handler
+
 ![gem `exception_handler`](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/Gemfile.png "Gemfile")
 
 And then execute:
@@ -92,6 +94,7 @@ Or install it yourself as:
 
     $ gem install exception_handler
 
+![gem install](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/gem_install.png "gem install")
 
 ###Step2
 
