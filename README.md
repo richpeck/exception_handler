@@ -43,11 +43,16 @@ Adapted & refactored from [this tutorial](http://www.sharagoz.com/posts/1-rollin
 
 Sometimes, you want to save your errors to your database (admin areas, multi-tenant apps, etc). We've included some middleware which captures the exceptions & saves them to the db:
 
+	- Model (class) Name
+	- Error Message
 	- Stack trace
 	- Target URL
 	- Referrer URL
 	- Params
 	- User Agent (Browser Details)
+
+This db allows you to track, read & repair your application on the fly. We deploy this in our admin areas, to help us
+appreciate any issues on our client apps.
 
 ![500 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/db.png "500 Server Error Page")
 
