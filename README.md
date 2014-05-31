@@ -104,7 +104,7 @@ access to the configuration options which can change the gem's behavior:
 
 ![Config File](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/config.png "Configuration")
 
---
+---------
 
 ###Configuration
 
