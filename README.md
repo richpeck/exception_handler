@@ -26,10 +26,14 @@ There are two types of error page:
 	- 500 errors (+ other)
 
 The **`404`** error is standard (missing page) - we use your own `layout` for this.
+
 The **`500 & other errors`** are `server` issues, and so we have included an `errors` layout (`/views/layouts/errors.html.haml`).
 
 The `errors` layout in important. If you try and load your "standard" layout with an internal server error, all your
 "supporting" functionality is called too. Problem? You're likely going to cause even more errors.
+
+**Custom error pages** are included by default.
+You can change them by using the **`rails generate exception_handler:assets --views`**:
 
  **500 Errors** | **404 Errors**
 --- | ---
@@ -56,12 +60,15 @@ appreciate any issues on our client apps.
 
 ![500 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/db.png "500 Server Error Page")
 
-This functionality is disabled by default.
+This functionality is **`disabled`** by default
 
 To enable, you need to do the following:
 
 	- rails generate exception_handler:install #-> will install config initializer
 	- rails generate exception_handler:migration #-> will create migration (for `errors` table)
+	- rake db:migrate #-> creates `errors` table
+
+	- config/initializers/exception_handler.rb
 
 ---------
 
@@ -79,7 +86,7 @@ Or install it yourself as:
 
     $ gem install exception_handler
 
-###3 Step Install
+###Configuration
 
 	# General
 	$ rails generate exception_handler:install
