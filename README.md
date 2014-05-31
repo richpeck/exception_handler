@@ -32,7 +32,7 @@ The `errors` layout in important. If you try and load your "standard" layout wit
 "supporting" functionality is called too. Problem? You're likely going to cause even more errors.
 
 **500**
-![500 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/500_error.png "500 Server Error Page")
+![500 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/500.png "500 Server Error Page")
 
 **404**
 
