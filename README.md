@@ -18,7 +18,7 @@ Works with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuri
 
 ####Custom Error Pages
 
-You can create *custom error pages*. These allow you to serve your own design error pages in production; showing both the error, and the problem. This is a big step forward from the standard Rails error reporting facility
+You can deploy *custom error pages*. These allow you to serve your own design error pages in production; showing both the error, and the problem. This is a big step forward from the standard Rails error reporting facility
 
 There are two types of error page: 
 
@@ -31,6 +31,10 @@ The 500 & other errors are server issues, and so we have included an `errors` la
 The `errors` layout in important. If you try and load your "standard" layout with an internal server error, all your
 "supporting" functionality is called too. Problem? You're likely going to cause even more errors.
 
+**500**
+![500 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/500_error.png "500 Server Error Page")
+
+**404**
 
 
 ####Save Errors To DB
