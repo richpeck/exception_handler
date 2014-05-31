@@ -56,7 +56,7 @@ module ExceptionHandler
 
     #App
     def app_name
-      @app_name   = Rails.application.class.parent_name
+      @app_name = Rails.application.class.parent_name
     end
 
   end

@@ -35,7 +35,7 @@ You can change them by using the **`rails generate exception_handler:assets --vi
 
  **500 Errors** | **404 Errors**
 --- | ---
-![500 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/500.png "500 Server Error Page") | ![404 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/500.png "404 Server Error Page") 
+![500 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/500.png "500 Server Error Page") | ![404 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/404.png "404 Server Error Page") 
 
 -----------
 
@@ -56,7 +56,7 @@ Sometimes, you want to save your errors to your database (admin areas, multi-ten
 This db allows you to track, read & repair errors in your application on the fly. We deploy this in our admin areas, to help us
 appreciate any issues on our client apps.
 
-![500 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/db.png "500 Server Error Page")
+![Errors Table](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/db.png "Errors Table")
 
 This functionality is **`disabled`** by default
 
@@ -68,7 +68,7 @@ To enable, you need to do the following:
 
 	- config/initializers/exception_handler.rb
 	- ExceptionHandler.setup do |config|
-	-    config.db = false
+	-    config.db = true
 	- end
 
 ---------
@@ -93,7 +93,7 @@ Or install it yourself as:
 	$ rails generate exception_handler:install
 
 	# Migration
-	$ rails generate exception_handler:migrate
+	$ rails generate exception_handler:migration
 
 	# Files
 	$ rails generate exception_handler:assets
