@@ -35,7 +35,9 @@ The `errors` layout in important. If you try and load your "standard" layout wit
 --- | ---
 ![500 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/500.png "500 Server Error Page") | ![404 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/500.png "404 Server Error Page") 
 
-####Save Errors To DB
+-----------
+
+####Saving Errors To DB
 
 Adapted & refactored from [this tutorial](http://www.sharagoz.com/posts/1-rolling-your-own-exception-handler-in-rails-3)
 
