@@ -78,9 +78,11 @@ To enable, you need to do the following:
 
 ###Step1 
 
+You need to reference the [`exception_handler` gem](http://rubygems.org/gems/exception_handler). Once you have downloaded the gem, you'll be able to deploy it in your application.
+
 Add this line to your application's Gemfile:
 
-    gem 'exception_handler'
+![gem `exception_handler`](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/Gemfile.png "Gemfile")
 
 And then execute:
 
@@ -132,14 +134,18 @@ access to the configuration options which can change the gem's behavior:
 
 ## Usage
 
-###Dev
+###Development Environment
+
+**`config.exceptions_app`** is used in Rails' production environment. Therefore, if you wish to **test the gem in dev**,
+you'll need to make your app process requests as `production` for now. This is a temporary step, and will be
+resolved in a new version:
 
 	#config/environments/development.rb
 	config.consider_all_requests_local = false # true
 
-`config.exceptions_app` is used in Rails' production environment. Therefore, if you wish to test the gem in dev,
-you'll need to make your app process requests as `production` for now. This is a temporary step, and will be
-resolved in a new version
+You should change this setting as soon as you find 
+
+--
 
 ###Production
 
