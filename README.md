@@ -173,7 +173,7 @@ You should change this setting if you wish to test your styling in development m
 
     No action required
 
---
+---------
 
 ###Demo
 
