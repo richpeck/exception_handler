@@ -76,6 +76,8 @@ To enable, you need to do the following:
 
 ## Installation
 
+###Step1 
+
 Add this line to your application's Gemfile:
 
     gem 'exception_handler'
@@ -87,10 +89,21 @@ And then execute:
 Or install it yourself as:
 
     $ gem install exception_handler
+    
+
+###Step2 (IMPORTANT)
+
+Run:
+
+	rails generate exception_handler:install
 
 --
 
 ###Configuration
+
+[Exception handler](https://rubygems.org/gems/exception_handler) comes with 3 installers
+
+**You only need to use `rails generate exception_handler:install`**. The others allow you to include files on your system, or create the `errors` table.
 
 	# General
 	$ rails generate exception_handler:install #-> installs "config" file (initializer)
