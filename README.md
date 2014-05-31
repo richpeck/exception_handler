@@ -178,8 +178,9 @@ You should change this setting if you wish to test your styling in development m
 ###Demo
 
 **404 Error** | **500 Error**
---- | ---
-[Link](http://firststopcosmeticshop.co.uk/sdfsdf/sdf/sdfsdf): [![404 Error Page](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/404_demo.png "404 Error Page Demo")](http://firststopcosmeticshop.co.uk/sdfsdf/sdf/sdfsdf) | [Link](http://firststopcosmeticshop.co.uk/search/fasdfasdfasdfasdfasdf):[![500 Error Page](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/500_demo.png "500 Error Page Demo")](http://firststopcosmeticshop.co.uk/search/fasdfasdfasdfasdfasdf)
+:---: | :---:
+[![404 Error Page](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/404_demo.png "404 Error Page Demo")](http://firststopcosmeticshop.co.uk/sdfsdf/sdf/sdfsdf) | [![500 Error Page](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/500_demo.png "500 Error Page Demo")](http://firststopcosmeticshop.co.uk/search/fasdfasdfasdfasdfasdf)
+[Link](http://firststopcosmeticshop.co.uk/sdfsdf/sdf/sdfsdf) | [Link](http://firststopcosmeticshop.co.uk/search/fasdfasdfasdfasdfasdf)
 
 
 --------
