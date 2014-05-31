@@ -169,16 +169,19 @@ You should change this setting if you wish to test your styling in development m
 
     No action required
 
+--
+
 ###Demo
 
-####404
+###404 Error
 
 One of our [development apps](http://firststopcosmeticshop.co.uk/sdfsdf/sdf/sdfsdf):
 
 [![404 Error Page](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/404_demo.png "404 Error Page Demo")](http://firststopcosmeticshop.co.uk/sdfsdf/sdf/sdfsdf)
 
+--
 
-###500
+###500 Error
 
 One of our [development apps](http://firststopcosmeticshop.co.uk/search/fasdfasdfasdfasdfasdf):
 
