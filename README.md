@@ -123,7 +123,7 @@ This creates:
 
 This will install the database for you. Now you need to change `config.db = true`
 
-![DB Config]](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/config_db.png "Config DB")
+![DB Config](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/config_db.png "Config DB")
 
 
 ---------
