@@ -25,7 +25,7 @@ There are two types of error page:
 	- 404 errors
 	- 500 errors (+ other)
 
-The **`404`** error is standard (missing page) - we use your own `layout` for this. The **`500 & other errors`** are `server` issues, and so we have included an `errors` layout (`/views/layouts/errors.html.haml`).
+The custom **`404`** error uses your own `layout`. The **`500 & other errors`** are `server` issues, and so we have included an `errors` layout (`/views/layouts/errors.html.haml`).
 
 The `errors` layout in important. If you try and load your "standard" layout with an internal server error, all your
 "supporting" functionality is called too. Problem? You're likely going to cause even more errors.
@@ -67,6 +67,9 @@ To enable, you need to do the following:
 	- rake db:migrate #-> creates `errors` table
 
 	- config/initializers/exception_handler.rb
+	- ExceptionHandler.setup do |config|
+	-    config.db = false
+	- end
 
 ---------
 

@@ -8,7 +8,7 @@ ExceptionHandler.setup do |config|
 	#DB - 
 	#Default = false / true ("errors")
 	#Options = [string] = sets db name (if use true, default is "errors")
-	config.db = "errors"
+	config.db = false
 
 	#Email -
 	#Default = false / true
