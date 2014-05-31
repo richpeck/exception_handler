@@ -161,7 +161,7 @@ resolved in a new version:
 	#config/environments/development.rb
 	config.consider_all_requests_local = false # true
 
-You should change this setting as soon as you find 
+You should change this setting if you wish to test your styling in development mode. Please note **it should be temporary**
 
 --
 
@@ -171,7 +171,14 @@ You should change this setting as soon as you find
 
 ###Demo
 
-Demo to be put onto Heroku etc
+####404
+
+One of our [development apps](http://firststopcosmeticshop.co.uk/sdfsdf/sdf/sdfsdf):
+
+[![404 Error Page](http://firststopcosmeticshop.co.uk/sdfsdf/sdf/sdfsdf "404 Error Page Demo")]
+
+
+###500
 
 --------
 
