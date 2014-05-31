@@ -7,7 +7,7 @@
 [![Build Status](https://travis-ci.org/richpeck/exception_handler.svg?branch=master)](https://travis-ci.org/richpeck/exception_handler)
 
 
-[**ExceptionHandler** Rails Gem](https://rubygems.org/gems/exception_handler) (adapted from [this tutorial](https://gist.github.com/wojtha/8433843) & our own middleware)
+[**ExceptionHandler** Rails Gem](https://rubygems.org/gems/exception_handler) (adapted from [this tutorial](https://gist.github.com/wojtha/8433843) & [this tutorial](http://www.sharagoz.com/posts/1-rolling-your-own-exception-handler-in-rails-3))
 
 Works with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook in Rails' middleware stack:
 
@@ -23,7 +23,7 @@ You can deploy *custom error pages*. These allow you to serve your own design er
 There are two types of error page: 
 
 	- 404 errors
-	- 500 errors (& everything else)
+	- 500 errors (+ other)
 
 The **`404`** error is standard (missing page) - we use your own `layout` for this.
 The **`500 & other errors`** are `server` issues, and so we have included an `errors` layout (`/views/layouts/errors.html.haml`).
@@ -43,11 +43,11 @@ Adapted & refactored from [this tutorial](http://www.sharagoz.com/posts/1-rollin
 
 Sometimes, you want to save your errors to your database (admin areas, multi-tenant apps, etc). We've included some middleware which captures the exceptions & saves them to the db:
 
-   - Stack trace
-   - Target URL
-   - Referrer URL
-   - Params
-   - User Agent (Browser Details)
+	- Stack trace
+	- Target URL
+	- Referrer URL
+	- Params
+	- User Agent (Browser Details)
 
 ![500 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/db.png "500 Server Error Page")
 
