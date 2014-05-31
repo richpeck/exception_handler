@@ -94,6 +94,8 @@ And then execute:
 
 ![gem install](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/gem_install.png "gem install")
 
+--
+
 ###Step2
 
 Run:
@@ -148,7 +150,7 @@ You should change this setting as soon as you find
 
 --
 
-###Production
+###Production Environment
 
     No action required
 
