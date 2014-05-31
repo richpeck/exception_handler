@@ -156,7 +156,7 @@ This will install the database for you. Now you need to change `config.db = true
 
 ###Development Environment
 
-**`config.exceptions_app`** is used in Rails' production environment. Therefore, if you wish to **test the gem in dev**,
+**[`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration)** is only used in Rails' production environment. Therefore, if you wish to **test the gem in dev**,
 you'll need to make your app process requests as `production` for now. This is a temporary step, and will be
 resolved in a new version:
 
