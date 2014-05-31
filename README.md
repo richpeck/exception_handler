@@ -36,6 +36,7 @@ You can change them by using the **`rails generate exception_handler:assets --vi
  **500 Errors** | **404 Errors**
 --- | ---
 ![500 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/500.png "500 Server Error Page") | ![404 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/404.png "404 Server Error Page") 
+Uses **errors** layout | Uses **standard** layout
 
 -----------
 
