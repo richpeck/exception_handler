@@ -25,19 +25,29 @@ There are two types of error page:
 	- 404 errors
 	- 500 errors (& everything else)
 
-The 404 error is standard (missing page) - we use your default layout for this.
-The 500 & other errors are server issues, and so we have included an `errors` layout (`/views/layouts/errors.html.haml`).
+The **`404`** error is standard (missing page) - we use your own `layout` for this.
+The **`500 & other errors`** are `server` issues, and so we have included an `errors` layout (`/views/layouts/errors.html.haml`).
 
 The `errors` layout in important. If you try and load your "standard" layout with an internal server error, all your
 "supporting" functionality is called too. Problem? You're likely going to cause even more errors.
 
  **500 Errors** | **404 Errors**
 --- | ---
-![500 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/500.png "500 Server Error Page") | test
+![500 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/500.png "500 Server Error Page") | ![404 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/500.png "404 Server Error Page") 
 
 ####Save Errors To DB
 
-Sometimes, you want to save your errors to your database (admin areas, multi-tenant apps, etc). We've included some middleware which captures the routes 
+Adapted & refactored from [this tutorial](http://www.sharagoz.com/posts/1-rolling-your-own-exception-handler-in-rails-3)
+
+Sometimes, you want to save your errors to your database (admin areas, multi-tenant apps, etc). We've included some middleware which captures the exceptions & saves them to the db:
+
+   - Stack trace
+   - Target URL
+   - Referrer URL
+   - Params
+   - User Agent (Browser Details)
+
+![500 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/db.png "500 Server Error Page")
 
 ---------
 
