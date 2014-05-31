@@ -100,7 +100,9 @@ Run:
 ![Installation](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/install.png "Installation")
 
 This will create `config/initializers/exception_handler.rb`. Whilst not vital, it will give you 
-access to the configuration options which can change the gem's behavior. Very important
+access to the configuration options which can change the gem's behavior:
+
+![Config File](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/config.png "Configuration")
 
 --
 
