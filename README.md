@@ -163,6 +163,8 @@ resolved in a new version:
 	#config/environments/development.rb
 	config.consider_all_requests_local = false # true
 
+![Development Testing](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/development.png "Development Testing")
+
 You should change this setting if you wish to test your styling in development mode. Please note **it should be temporary**
 
 --
