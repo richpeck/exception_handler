@@ -31,8 +31,8 @@ The 500 & other errors are server issues, and so we have included an `errors` la
 The `errors` layout in important. If you try and load your "standard" layout with an internal server error, all your
 "supporting" functionality is called too. Problem? You're likely going to cause even more errors.
 
- ###500 Errors | ###404 Errors
---- | :---:
+ **500 Errors** | **404 Errors**
+--- | ---
 ![500 Server Error Pages](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/500.png "500 Server Error Page") | test
 
 ####Save Errors To DB
@@ -55,21 +55,16 @@ Or install it yourself as:
 
     $ gem install exception_handler
 
-###Generators
+###3 Step Install
 
 	# General
 	$ rails generate exception_handler:install
 
-	#Config (for db)
-	$ rails generate exception_handler:config
+	# Migration
+	$ rails generate exception_handler:migrate
 
-	#Assets
-	$ rails generate exception_handler:assets:all
-	-
-	$ rails generate exception_handler:assets:views
-	$ rails generate exception_handler:assets:controllers
-	$ rails generate exception_handler:assets:models
-	$ rails generate exception_handler:assets:assets
+	# Files
+	$ rails generate exception_handler:assets
 
 
 
