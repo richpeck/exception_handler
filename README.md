@@ -88,16 +88,23 @@ Or install it yourself as:
 
     $ gem install exception_handler
 
+--
+
 ###Configuration
 
 	# General
-	$ rails generate exception_handler:install
+	$ rails generate exception_handler:install #-> installs "config" file (initializer)
 
 	# Migration
-	$ rails generate exception_handler:migration
+	$ rails generate exception_handler:migration #-> generates migration for "errors" table
 
 	# Files
-	$ rails generate exception_handler:assets
+	$ rails generate exception_handler:assets -> controller, models, views & assets
+
+	$ rails generate exception_handler:assets --views #-> views only
+	$ rails generate exception_handler:assets --controllers #-> controllers only
+	$ rails generate exception_handler:assets --models #-> models only
+	$ rails generate exception_handler:assets --assets #-> assets only
 
 
 
