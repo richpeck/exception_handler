@@ -5,26 +5,25 @@ module ExceptionHandler
 		source_root File.expand_path("../../templates", __FILE__) 
 
 		#Option
-		class_option :config, type: :boolean, desc: 'Add initializer to /config/initializers, to help define config options'
 		class_option :assets, desc: 'Add views, controllers, models & assets to app (for customization)'
 		class_option :migration, type: :boolean, desc: 'Create migration'
 				
 		#Config
 		def create_config_file
-			return unless options.config? || options.empty?
+			return unless options.empty?
 			template "exception_handler.rb", "config/initializers/exception_handler.rb" # https://github.com/plataformatec/devise/blob/master/lib/generators/devise/install_generator.rb#L13
 		end
 
 		#Assets
 		def create_customization assets = options.assets
  			#(views / controllers / models / assets)
- 			return unless assets || options.empty?
+ 			return unless assets
 	 		file_generator assets
 		end
 
 		#Migration
 		def create_migration
-			return unless options.migration? || options.empty?
+			return unless options.migration?
 			template "create_table.rb", "db/migrate/create_table.rb" #-> Need to use ActiveRecord::Generators::Base
 		end
 

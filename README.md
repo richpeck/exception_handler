@@ -20,6 +20,17 @@ Works with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuri
 
 You can create *custom error pages*. These allow you to serve your own design error pages in production; showing both the error, and the problem. This is a big step forward from the standard Rails error reporting facility
 
+There are two types of error page: 
+
+	- 404 errors
+	- 500 errors (& everythig else)
+
+The 404 error is standard (missing page) - we use your default layout for this.
+The 500 & other errors are server issues, and so we have included an `errors` layout (`/views/layouts/errors.html.haml`).
+
+The `errors` layout in important. If you try and load your "standard" layout with an internal server error, all your
+"supporting" functionality is called too. Problem? You're likely going to cause even more errors.
+
 
 
 ####Save Errors To DB

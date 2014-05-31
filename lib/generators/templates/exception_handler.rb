@@ -4,11 +4,23 @@
 #Use the docs at http://github.com/richpeck/exception_handler for info
 ###
 ExceptionHandler.setup do |config|
+
 	#DB - 
 	#Default = false / true ("errors")
 	#Options = [string] = sets db name (if use true, default is "errors")
-	config.db = true
+	config.db = "errors"
+
 	#Email -
 	#Default = false / true
 	#config.email = 
+
+	#Social
+	config.social = {
+		twitter: 	"http://twitter.com/frontlineutils",
+		facebook: 	"https://facebook.com/frontline.utilities",
+		linkedin: 	"https://linkedin.com/company/frontline-utilities",
+		youtube: 	"https://youtube.com/user/frontlineutils",
+		fusion: 	"http://frontlinefusion.com/frontlineutils"
+	}
+
 end

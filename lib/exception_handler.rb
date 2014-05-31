@@ -16,7 +16,7 @@ module ExceptionHandler
 	#Exception Handler
 	class Exceptions < Rails::Engine
 		initializer "exception_handler.configure_rails_initialization" do |app|
-			app.config.middleware.use "ExceptionHandler::Message" #Parser
+			app.config.middleware.use "ExceptionHandler::Message" unless ExceptionHandler.config.db == false #Parser
 			app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } #Pages
 		end
 	end

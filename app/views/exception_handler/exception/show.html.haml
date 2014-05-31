@@ -1,5 +1,15 @@
-.box
-	%h1
-		= details[:name]
-	%p
-		= details[:message]
+.error
+	/Alert
+	= image_tag 'exception_handler/alert.png', width: "150", alt: "Error!", title: "Sorry, A Server Error Occurred", class: "alert"
+
+	/Message
+	.message
+		%strong
+			= details[:name]
+		%span
+			= details[:message]
+
+	/Contact
+	.contact
+		- ExceptionHandler.config.social.each do |item, address|
+			%a{ href: address, target: "_blank" }> #{image_tag "exception_handler/contact/#{item}.png", title: item.to_s.titleize}

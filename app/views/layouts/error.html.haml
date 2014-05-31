@@ -3,7 +3,8 @@
 	%head
 
 		/Info
-		= meta_tags
+		%title
+			= "Error :: #{@app_name}"
 
 		/Styling
 		:sass
@@ -19,35 +20,44 @@
 				display: block
 				margin: auto
 				margin: 10% auto 0 auto
-				width: 40%
+				width: 30%
 			
 			.error_container .error 
 				display: block 
 				text-align: center
 			
-			.error_container .error img 
+			.error_container .error img.icon
 				display: block
-				margin: 0 auto 15px auto
+				margin: 0 auto 25px auto
 			
 			.error_container .message > * 
 				display: block
 			
 			.error_container .message strong 
-				font-weight: bold
+				font:
+					weight: bold
+					size: 1.5em
 				color: #f00
+				margin: 15px 0 0
+
+			.error_container .message span
+				margin: 5px auto 0
+				font:
+					size: 0.75em
+				color: #606060
 			
-			.error_container .contact_info 
+			.error_container .contact 
 				display: block
 				text-align: center
-				margin: 25px 0 0 0
+				margin: 20px 0 0 0
 			
-			.error_container .contact_info a 
+			.error_container .contact a 
 				display: inline-block
-				margin: 0
+				margin: 0 1px
 				opacity: 0.4
 				transition: opacity 0.15s ease
 			
-			.error_container .contact_info a:hover 
+			.error_container .contact a:hover 
 				opacity: 0.8
 			
 

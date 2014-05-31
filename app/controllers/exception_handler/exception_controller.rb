@@ -5,7 +5,7 @@ module ExceptionHandler
     respond_to :html, :xml, :json
 
   	#Dependencies
-  	before_action :status
+  	before_action :status, :app_name
 
     #Layout
     layout :layout_status
@@ -51,7 +51,12 @@ module ExceptionHandler
 
     #Layout
     def layout_status
-      @status.to_s == "404" ? "application" : "error"
+      "error" if @status.to_s != "404"
+    end
+
+    #App
+    def app_name
+      @app_name   = Rails.application.class.parent_name
     end
 
   end
