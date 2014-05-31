@@ -84,8 +84,6 @@ Add this line to your application's Gemfile:
 
 	gem 'exception_handler'
 
-![gem `exception_handler`](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/Gemfile.png "Gemfile")
-
 And then execute:
 
     $ bundle
