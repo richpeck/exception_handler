@@ -143,7 +143,7 @@ This will migrate the datatable for you. Now you need to change `config.db = tru
 	# Migration
 	$ rails generate exception_handler:migration #-> generates migration for "errors" table
 
-![Migration Install](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/gem_install.png "Migration Install")
+![Migration Install](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/install_migration.png "Migration Install")
 
 
 	# Files

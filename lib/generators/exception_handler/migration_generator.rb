@@ -9,6 +9,8 @@ require 'rails/generators/active_record'
 
 module ExceptionHandler
   class MigrationGenerator < ActiveRecord::Generators::Base
+  		#Name - from http://old.thoughtsincomputation.com/posts/cgfr3-part-3-adding-a-generator
+  		argument :name, default: "migration"
 
 		#Source of Migrations
 		source_root File.expand_path("../../templates", __FILE__)
