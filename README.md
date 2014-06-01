@@ -137,11 +137,14 @@ This will migrate the datatable for you. Now you need to change `config.db = tru
 	# General
 	$ rails generate exception_handler:install #-> installs "config" file (initializer)
 
-	![gem install](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/gem_install.png "gem install")
+![gem install](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/gem_install.png "gem install")
 
 
 	# Migration
 	$ rails generate exception_handler:migration #-> generates migration for "errors" table
+
+![gem install](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/gem_install.png "gem install")
+
 
 	# Files
 	$ rails generate exception_handler:views #-> controller, models, views & assets
@@ -150,6 +153,8 @@ This will migrate the datatable for you. Now you need to change `config.db = tru
 	$ rails generate exception_handler:views controllers 	#-> controllers
 	$ rails generate exception_handler:views models 		#-> models
 	$ rails generate exception_handler:views assets 		#-> assets
+
+![gem install](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/gem_install.png "gem install")
 
 
 
