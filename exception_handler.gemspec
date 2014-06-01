@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rails", "~> 4.0.0"
   spec.add_development_dependency "haml", "~> 4.0.5"
   spec.add_development_dependency "sass", "~> 3.3.7"
+  spec.add_development_dependency "activerecord"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"
 end

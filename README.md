@@ -141,12 +141,12 @@ This will install the database for you. Now you need to change `config.db = true
 	$ rails generate exception_handler:migration #-> generates migration for "errors" table
 
 	# Files
-	$ rails generate exception_handler:assets -> controller, models, views & assets
+	$ rails generate exception_handler:views -> controller, models, views & assets
 
-	$ rails generate exception_handler:assets --views #-> views only
-	$ rails generate exception_handler:assets --controllers #-> controllers only
-	$ rails generate exception_handler:assets --models #-> models only
-	$ rails generate exception_handler:assets --assets #-> assets only
+	$ rails generate exception_handler:views views #-> views
+	$ rails generate exception_handler:views controllers #-> controllers
+	$ rails generate exception_handler:views models #-> models
+	$ rails generate exception_handler:views assets #-> assets
 
 
 
