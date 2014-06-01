@@ -8,13 +8,15 @@ require 'rails/generators/active_record'
 #Ref: https://github.com/plataformatec/devise/blob/master/lib/generators/active_record/devise_generator.rb
 
 module ExceptionHandler
-	class MigrationGenerator < ActiveRecord::Generators::Base
+  class MigrationGenerator < ActiveRecord::Generators::Base
 
 		#Source of Migrations
-		source_root File.expand_path("../templates", __FILE__)
+		source_root File.expand_path("../../templates", __FILE__)
+
+		###########################################
 
 		#Create Migration
-		def copy_devise_migration
+		def create_errors_migration
 			migration_template "create_table.rb", "db/migrate/create_errors.rb"
 		end
 

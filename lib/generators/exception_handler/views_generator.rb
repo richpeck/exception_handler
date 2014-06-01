@@ -5,7 +5,7 @@ module ExceptionHandler
 		@@views = %w(views controllers models assets)
 
 		#Options
-		class_option :files, default: @@views, desc: "Select file types (views, models, controllers, assets)"
+		class_option :files, aliases: "-v", default: @@views, type: :array, desc: "Select file types (views, models, controllers, assets)"
 
 		#Needed to reference files
 		source_root File.expand_path("../../../../app", __FILE__) 
@@ -25,15 +25,11 @@ module ExceptionHandler
 		def generate_files args
 
 			#Valid?
-			return raise args.inspect unless @@views.include? args
+			return raise args.inspect unless args.nil? || (args-@@views).empty?
 
 			#Types
-			if args.is_a? String
-				directory args, "app/#{args}"
-			elsif args.is_a? Array
-				for arg in args do
-					directory arg, "app/#{arg}"
-				end
+			for arg in args do
+				directory arg, "app/#{arg}"
 			end
 
 			#Success
