@@ -121,7 +121,7 @@ This creates:
 
 	$ rake db:migrate
 
-This will install the database for you. Now you need to change `config.db = true`
+This will migrate the datatable for you. Now you need to change `config.db = true`
 
 ![DB Config](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/config_db.png "Config DB")
 
@@ -136,6 +136,9 @@ This will install the database for you. Now you need to change `config.db = true
 
 	# General
 	$ rails generate exception_handler:install #-> installs "config" file (initializer)
+
+	![gem install](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/gem_install.png "gem install")
+
 
 	# Migration
 	$ rails generate exception_handler:migration #-> generates migration for "errors" table
