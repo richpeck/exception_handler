@@ -6,8 +6,9 @@ gemspec
 ###########################################
 
 #For Testing
-group :development, :test do
+group :test do
 	gem 'rspec-rails'
+	gem 'rails', '~> 4.1.1'
 	gem 'coveralls', require: false
 end
 
