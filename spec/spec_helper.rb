@@ -5,8 +5,6 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-ENV["RAILS_ENV"] = "test"
-
 ###########################################
 
 RSpec.configure do |config|

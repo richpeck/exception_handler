@@ -7,6 +7,7 @@ gemspec
 
 group :test do
 	gem 'coveralls', require: false
+	gem "rails", "~> 4.1.0" #-> for Rails testcases
 end
 
 ###########################################
