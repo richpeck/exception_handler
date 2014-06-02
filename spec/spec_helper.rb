@@ -11,12 +11,9 @@ Coveralls.wear!
 #
 
 #Rails
-require 'rails/generators/test_case'
-module Rails
-  def self.env
-    ActiveSupport::StringInquirer.new("test")
-  end
-end
+ENV["RAILS_ENV"] = "test"
+require File.expand_path('../../config/environment', __FILE__)
+require 'rails/test_help'
 
 ###########################################
 
