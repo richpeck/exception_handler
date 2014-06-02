@@ -9,11 +9,8 @@
 require 'coveralls'
 Coveralls.wear!
 
-#Rails
+#Env
 ENV["RAILS_ENV"] = 'test'
-
-#Rails
-require 'rspec/rails'
 
 #For Generators
 require "rails/generators/test_case"
