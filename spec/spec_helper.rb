@@ -4,6 +4,10 @@
 # loaded once.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+#Coveralls
+require 'coveralls'
+Coveralls.wear!
 #
 ###########################################
 
