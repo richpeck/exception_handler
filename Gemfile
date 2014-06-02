@@ -5,10 +5,13 @@ gemspec
 
 ###########################################
 
+#For Testing
+gem "rails", "~> 4.1.0" #-> for Rails testcases
+
+#For Texting
 group :test do
-	gem "generator_spec"
 	gem 'coveralls', require: false
-	gem "rails", "~> 4.1.0" #-> for Rails testcases
+	gem 'rspec-rails', ">= 2.0.0"
 end
 
 ###########################################

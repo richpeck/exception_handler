@@ -12,13 +12,13 @@ class InstallationSpec < Rails::Generators::TestCase
 
 	#Before
 	before(:all) do
-    prepare_destination
-    run_generator
-  end
+		prepare_destination
+		run_generator
+	end
 
 	#Config Installer
 	test "Assert Config Files Are Created" do 
-    assert_file "config/initializers/exception_handler.rb"
+		assert_file "config/initializers/exception_handler.rb"
 	end
 
 end
