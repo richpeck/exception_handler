@@ -1,7 +1,7 @@
 ###########################################
 
 require 'spec_helper'
-require "generators/devise/devise_generator"
+require "generators/exception_handler/install_generator"
 
 ###########################################
 
