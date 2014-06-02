@@ -4,7 +4,7 @@ require 'spec_helper'
 
 ###########################################
 
-class InstallerSpec < Rails::Generators::TestCase
+class InstallationSpec < Rails::Generators::TestCase
 
 	#Setup
 	tests ExceptionHandler::InstallGenerator
