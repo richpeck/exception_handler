@@ -10,7 +10,7 @@ require 'coveralls'
 Coveralls.wear!
 
 #Rails
-require File.expand_path("../rails/config/environment", __FILE__)
+require File.expand_path("../rails/config/environment.rb", __FILE__)
 require 'rspec/rails'
 
 ###########################################
