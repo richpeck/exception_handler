@@ -1,18 +1,18 @@
-#Coveralls
-require 'coveralls'
-Coveralls.wear!
-
 ###########################################
 
 require 'spec_helper'
+require "generators/devise/devise_generator"
 
 ###########################################
 
-describe "test" do
+class InstallerSpec < Rails::Generators::TestCase
+	tests ExceptionHandler::Generators::InstallGenerator
+	destination File.expand_path("../../tmp", __FILE__)
 
-  describe "404 Error" do
-    it "will show custom 404 error page" do
-    end
-  end
+	#Config Installer
+	test "should add config initializer" do 
+		run_generator %w(install)
+		File.exist?("config/intializers/exception_handler.rb").should be_true
+	end
 
 end
