@@ -6,7 +6,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 ENV["RAILS_ENV"] = "test"
-require "rails/config/environment"
+require "rails/config/environment.rb"
 
 ###########################################
 
