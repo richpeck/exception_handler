@@ -14,6 +14,10 @@ ENV["RAILS_ENV"] = 'test'
 #require File.expand_path("../../config/environment", __FILE__)
 require 'rails'
 
+require 'active_support'
+require 'active_support/deprecation'
+require 'activerecord-nulldb-adapter'
+
 ###########################################
 
 RSpec.configure do |config|
