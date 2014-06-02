@@ -11,9 +11,10 @@ Coveralls.wear!
 
 #Rails
 ENV["RAILS_ENV"] = 'test'
-#require File.expand_path("../../config/environment", __FILE__)
 require 'rails'
+#require File.expand_path("../../config/environment", __FILE__)
 
+#ActiveSupport
 require 'active_support'
 require 'active_support/deprecation'
 require 'activerecord-nulldb-adapter'
