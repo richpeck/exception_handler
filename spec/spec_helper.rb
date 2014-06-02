@@ -10,9 +10,9 @@ require 'coveralls'
 Coveralls.wear!
 
 #Rails
-ENV["RAILS_ENV"] ||= 'test'
-#require File.expand_path("../../rails/config/environment", __FILE__)
-require 'rspec/rails'
+ENV["RAILS_ENV"] = 'test'
+#require File.expand_path("../../config/environment", __FILE__)
+require 'rails'
 
 ###########################################
 
