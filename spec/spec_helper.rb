@@ -16,6 +16,10 @@ ENV["RAILS_ENV"] = 'test'
 require 'rails'
 require 'active_support'
 
+#For Generators
+require "rails/generators/test_case"
+require "generators/exception_handler/install_generator"
+
 
 ###########################################
 
