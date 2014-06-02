@@ -5,9 +5,9 @@ gemspec
 
 ###########################################
 
-#For Texting
-group :test do
-	gem 'rails', '~> 4.1.1'
+#For Testing
+group :development, :test do
+	gem 'rspec-rails'
 	gem 'coveralls', require: false
 end
 
