@@ -13,8 +13,7 @@ Coveralls.wear!
 ENV["RAILS_ENV"] = 'test'
 
 #Rails
-require 'rails'
-require 'active_support'
+require 'rspec/rails'
 
 #For Generators
 require "rails/generators/test_case"
