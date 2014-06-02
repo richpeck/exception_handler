@@ -7,7 +7,7 @@ require 'spec_helper'
 class InstallationSpec < Rails::Generators::TestCase
 
 	#Setup
-	tests ExceptionHandler::InstallGenerator
+	tests ExceptionHandler::Generators::InstallGenerator
 	destination File.expand_path("../../tmp", __FILE__)
 
 	#Before
