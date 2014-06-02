@@ -1,7 +1,6 @@
 ###########################################
 
 require 'spec_helper'
-require 'generators/exception_handler/install_generator'
 
 ###########################################
 

@@ -9,6 +9,15 @@
 require 'coveralls'
 Coveralls.wear!
 #
+
+#Rails
+require 'rails/generators/test_case'
+module Rails
+  def self.env
+    ActiveSupport::StringInquirer.new("test")
+  end
+end
+
 ###########################################
 
 RSpec.configure do |config|
