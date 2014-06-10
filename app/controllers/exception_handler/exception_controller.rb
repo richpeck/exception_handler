@@ -1,5 +1,5 @@
 module ExceptionHandler
-  class ExceptionController < ApplicationController
+  class ExceptionController < ActionController::Base
 
     #Response
     respond_to :html, :xml, :json
