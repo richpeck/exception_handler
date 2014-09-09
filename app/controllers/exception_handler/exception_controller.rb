@@ -51,7 +51,8 @@ module ExceptionHandler
 
     #Layout
     def layout_status
-      @status.to_s != "404" ? "error" : "application"
+      return ExceptionHandler.config.exception_layout || 'error' if @status.to_s != "404"
+      ExceptionHandler.config.error_layout || 'application'
     end
 
     #App

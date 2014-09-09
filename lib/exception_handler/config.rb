@@ -8,7 +8,7 @@
 
 module ExceptionHandler
   class Config
-	attr_accessor :db, :social
+	attr_accessor :db, :social, :error_layout, :exception_layout
 
 	def initialize
 		@db = false # -> db name (false = no; true = "errors"; [value] = [value])
@@ -19,6 +19,8 @@ module ExceptionHandler
 			youtube: 	"https://youtube.com/user/frontlineutils",
 			fusion: 	"http://frontlinefusion.com/frontlineutils"
 		}
+    @error_layout = nil
+    @exception_layout = nil
     end
   end
 end
