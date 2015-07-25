@@ -31,7 +31,7 @@ The `errors` layout in important. If you try and load your "standard" layout wit
 "supporting" functionality is called too. Problem? You're likely going to cause even more errors.
 
 **Custom error pages** are included by default.
-You can change them by using the **`rails generate exception_handler:assets --views`**:
+You can change them by using the **`rails generate exception_handler:views`**:
 
  **500 Errors** | **404 Errors**
 --- | ---
