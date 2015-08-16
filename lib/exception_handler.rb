@@ -4,9 +4,9 @@
 require "action_dispatch"
 
 #Gem Files
-versions = %w(version parser config)
-for version in versions do
-	require "exception_handler/#{version}"
+libs = %w(version parser config)
+for lib in libs do
+	require "exception_handler/#{lib}"
 end
 
 ###########################################
@@ -25,14 +25,17 @@ module ExceptionHandler
 	#      Config      #
 	####################
 
-	#Ref http://robots.thoughtbot.com/mygem-configure-block
-	mattr_accessor :config, :table
+	class << self
 
-	#Vars
-	@@config ||= Config.new
+		#Ref http://robots.thoughtbot.com/mygem-configure-block
+		#Can call ExceptionHandler.config.x
+		mattr_accessor :config
+
+	end
 
 	#Block (for initializer)
 	def self.setup
+		self.config ||= Config.new
 		yield(config) if block_given?
 	end
 

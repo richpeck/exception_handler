@@ -18,10 +18,20 @@ module ExceptionHandler
 
 		###########################################
 
-		#Create Migration
-		def create_errors_migration
-			migration_template "create_table.rb", "db/migrate/create_errors.rb"
+		#Table Name - false = off, true = errors, value = value
+		#Always outputs string for some reason...
+		def table_name
+    		ExceptionHandler.config.db || :errors
 		end
+
+		###########################################
+
+		#Create
+		def create_errors_migration
+			migration_template "migration.rb.erb", "db/migrate/exception_handler.rb"
+		end
+
+		###########################################
 
 	end
 end
