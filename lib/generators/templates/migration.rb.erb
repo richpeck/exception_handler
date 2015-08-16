@@ -1,6 +1,6 @@
-class CreateErrors < ActiveRecord::Migration
+class Create<%= table_name.to_s.gsub("_","").titleize %> < ActiveRecord::Migration
   def change
-    create_table :errors do |t|
+    create_table :<%= table_name %> do |t|
       t.string  :usable_type
       t.integer :usable_id
       t.text    :class_name

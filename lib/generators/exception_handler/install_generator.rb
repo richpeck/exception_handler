@@ -10,7 +10,7 @@ module ExceptionHandler
 			#Config
 			def create_config_file
 				return unless options.empty?
-				template "exception_handler.rb", "config/initializers/exception_handler.rb" # https://github.com/plataformatec/devise/blob/master/lib/generators/devise/install_generator.rb#L13
+				template "config.rb", "config/initializers/exception_handler.rb" # https://github.com/plataformatec/devise/blob/master/lib/generators/devise/install_generator.rb#L13
 			end
 
 			###########################################

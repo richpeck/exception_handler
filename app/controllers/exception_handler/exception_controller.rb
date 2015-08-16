@@ -16,7 +16,7 @@ module ExceptionHandler
 
   	#Show
     def show
-      respond_with status: @status
+      render status: @status
     end
 
     ####################
