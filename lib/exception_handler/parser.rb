@@ -70,7 +70,7 @@ module ExceptionHandler
 				user = @controller.send("current_user")
 				[:id].each do |field|
 					data[:id] = user.send(field) 	if user.respond_to?(field)
-					data[:type] = "user" 			if @controller.respond_to?("current_user")
+					data[:type] = "User" 			if @controller.respond_to?("current_user")
 				end
 			end
 			return data
