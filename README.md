@@ -255,7 +255,7 @@ $ bundle
 ```
 --
 
-###Config (Optional)
+####Config (Optional)
 
 ```
 rails g exception_handler:install
@@ -265,7 +265,7 @@ rails g exception_handler:install
 
 --
 
-###DB (Optional)
+####DB (Optional)
 ```
 rails generate exception_handler:migration
 ```
