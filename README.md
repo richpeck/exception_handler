@@ -212,6 +212,8 @@ If you need help, you may consider:
 
 
 
+---------
+
 # [![Exception Handler](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/title.png "Exception Handler Logo")](http://frontlineutilities.co.uk/ruby-on-rails/exception-handler)
 
 [![Gem Version](https://badge.fury.io/rb/exception_handler.svg)](http://badge.fury.io/rb/exception_handler)
@@ -228,7 +230,7 @@ If you need help, you may consider:
 
 It hooks into the **[`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration)** middleware:
 
-    config.exceptions_app sets the exceptions application invoked by the ShowException middleware when an exception happens. Defaults to ActionDispatch::PublicExceptions.new(Rails.public_path).
+![Exceptions_App middleware](/readme/exceptions_app.png)
 
 You can use `ExceptionHandler` to create custom **404, 400 & 500 production error pages**:
 
@@ -237,11 +239,9 @@ You can use `ExceptionHandler` to create custom **404, 400 & 500 production erro
 ![500 Server Error Pages](/readme/500.png "500 Server Error Page") | ![404 Server Error Pages](/readme/404.png "404 Server Error Page") 
 **layouts/errors.html.erb** | **layouts/application.html.erb**
 
-:file_folder:
-
 ----------
 
-#Installation (:[gem:](https://rubygems.org/gems/exception_handler/versions/0.3.45))
+#Installation ([:gem:](https://rubygems.org/gems/exception_handler/versions/0.4.0))
 
  `gem install 'exception_handler'`
 
@@ -249,7 +249,7 @@ or
 
 ```
 #gemfile
-gem 'exception_handler', '~> 4.0.0'
+gem 'exception_handler', '~> 0.4.0'
 
 $ bundle
 ```
@@ -260,7 +260,6 @@ $ bundle
 ```
 rails g exception_handler:install
 ```
-:arrow_down:
 
 ![Creates config/initializers/exception_handler.rb](/readme/config.png)
 
