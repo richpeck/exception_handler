@@ -253,7 +253,7 @@ gem 'exception_handler', '~> 0.4.0'
 
 $ bundle
 ```
----
+--
 
 ###Config (Optional)
 
@@ -263,7 +263,7 @@ rails g exception_handler:install
 
 ![Creates config/initializers/exception_handler.rb](/readme/config.png)
 
----
+--
 
 ###DB (Optional)
 ```
