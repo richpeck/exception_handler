@@ -240,7 +240,7 @@ You can use `ExceptionHandler` to create custom **404, 400 & 500 production erro
 **layouts/errors.html.erb** | **layouts/application.html.erb**
 
 --
-!(/readme/version.jpg "Version 0.4.0")
+![Latest Version Released 20th September 2015](/readme/version.jpg "Version 0.4.0")
 
  - Updated default imagery
  - DB table name changeable
@@ -290,8 +290,6 @@ If you want to set up database support (IE have exceptions saved to a table), yo
  - [Create an "issue"](https://github.com/richpeck/exception_handler/issues) 
  - Contact support (soon)
  - [Ask on StackOverflow](http://stackoverflow.com/questions/ask?tags=exception_handler&ruby_on_rails) 
-
----------
 
 ## Contribution
 
