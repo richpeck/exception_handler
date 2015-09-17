@@ -285,7 +285,7 @@ or
 
     $ bundle
 
-[See ExceptionHandler's RubyGems profile here.](https://rubygems.org/gems/exception_handler/versions/0.4.0)
+[<img src="https://rubygems.org/favicon.ico" height="30" /> Download from RubyGems](https://rubygems.org/gems/exception_handler/versions/0.4.0)
 
 
 ##Config (Optional)
