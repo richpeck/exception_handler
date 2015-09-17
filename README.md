@@ -243,12 +243,13 @@ You can use `ExceptionHandler` to create custom **404, 500 production error page
 
 50x errors have to use a barebones layout, because it's a *server* fault.
 
-We have included a layout for the 50x error.
+We have included a layout for the 50x error:
+
+[500 error layout]
 
 ----------
 
 ## Changelog
---
 
 ![Latest Version Released 20th September 2015](/readme/version.jpg "Version 0.4.0")
 
@@ -259,7 +260,7 @@ We have included a layout for the 50x error.
 
 ----------
 
-##Install ([<img src="https://rubygems.org/favicon.ico" width="20" />](https://rubygems.org/gems/exception_handler/versions/0.4.0))
+## [<img src="https://rubygems.org/favicon.ico" width="20" />](https://rubygems.org/gems/exception_handler/versions/0.4.0) Install
 
      gem install 'exception_handler'
  
