@@ -30,12 +30,21 @@ We created this gem from two tutorials, to give us the ability to make our own c
 **40x errors** can use your own layout (no server problems). 
 
 **50x errors** have to use a barebones layout (server problems).
-
 --
 
 Errors are handled by the `exception_handler.rb` lib file:
 
 ![Parse](/readme/parser.jpg "Parser")
+
+Whenever an exception is caught by `config.exceptions_app`, it is routed to the `exceptions` controller's `show` action.
+
+--
+
+In order to handle `500` server errors, we have had to include our own barebones layout. 
+
+You can [change the layout](#layout). 
+
+The reason why you need this for the 50x errors is because a server fault prevents your server from completing the request, so any layouts requiring database data will not work. 
 
 We have included a layout for the 50x error:
 
@@ -43,7 +52,7 @@ We have included a layout for the 50x error:
 
 ----------
 
-## <img src="/readme/icons/upgrade.png" width="28" /> Changelog
+## <img src="/readme/icons/upgrade.png" width="28" /> Updates
 
 ![Latest Version Released 20th September 2015](/readme/versions/0.4.0.jpg "Version 0.4.0")
 
@@ -85,9 +94,13 @@ or
 
 ##Config (Optional)
 
+If you wish to change any of the default settings (listed below), run the following command:
+
     rails g exception_handler:install
 
 ![Creates config/initializers/exception_handler.rb](/readme/config.jpg)
+
+This is an optional step. It gives you the ability to define your email, database and social options.
 
 ----------
 
@@ -98,6 +111,10 @@ If you want to set up database support (IE have exceptions saved to a table), yo
      rails generate exception_handler:migration
 
 ![Database](/readme/db.jpg "Database")
+
+This is an optional step. If you want to save the data, you will also need to ensure your `config.db` option is correct:
+
+![Database Edit](/readme/db_edit.jpg "Database Edit")
 
 ----------
 
