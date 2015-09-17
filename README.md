@@ -249,11 +249,11 @@ We have included a layout for the 50x error:
 
 ----------
 
-## Changelog
+## <img src="/readme/icons/ruby.png" width="28" /> Changelog
 
 ![Latest Version Released 20th September 2015](/readme/versions/0.4.0.jpg "Version 0.4.0")
 
- - Updated assets (for Error layout)
+ - Updated assets (new Error layout)
  - Variable DB name (uses inputted sym/string if available)
  - Email notifications
  - Enhanced options for `User` object (user data captured on exception invoke)
@@ -273,7 +273,7 @@ We have included a layout for the 50x error:
 
 ----------
 
-## [<img src="/readme/icons/ruby.png" width="20" />](https://rubygems.org/gems/exception_handler/versions/0.4.0) Install
+## [<img src="/readme/icons/ruby.png" width="28" />](https://rubygems.org/gems/exception_handler/versions/0.4.0) Install
 
      gem install 'exception_handler'
  
