@@ -38,6 +38,8 @@ Errors are handled by the `exception_handler.rb` lib file:
 
 Whenever an exception is caught by `config.exceptions_app`, it is routed to the `exceptions` controller's `show` action.
 
+![Exceptions Controller](/readme/exceptions_controller.jpg "Exceptions Controller")
+
 --
 
 In order to handle `500` server errors, we have had to include our own barebones layout. 
