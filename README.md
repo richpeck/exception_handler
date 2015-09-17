@@ -18,7 +18,9 @@ It hooks into the **[`config.exceptions_app`](http://guides.rubyonrails.org/conf
 
 You can use `ExceptionHandler` to create custom **404, 500 production error pages**.
 
-The standard Rails production error pages are not very appealing, and ruin the branding of your app. We created this gem from two tutorials, to give us the ability to make our own custom error pages. **ExceptionHandler** catches errors in the middleware (efficient), channeling the users to our custom `exceptions` controller. Here, we dissect data such as the error message, details, user agent, etc, redirect the user to a custom page, and store the data in your database.
+The standard Rails production error pages are not very appealing, and ruin the branding of your app.
+
+We created this gem from two tutorials, to give us the ability to make our own custom error pages. **ExceptionHandler** catches errors in the middleware (`config.exceptions_app`), channeling the users to our custom `exceptions` controller. Here, we dissect data such as the error message, details, user agent, etc, redirect the user to a custom view, storing the data in the db.
 
 **404** | **500**
 --- | ---
@@ -27,7 +29,13 @@ The standard Rails production error pages are not very appealing, and ruin the b
 
 **40x errors** can use your own layout (no server problems). 
 
-**50x errors** have to use a barebones layout (*server* problems).
+**50x errors** have to use a barebones layout (server problems).
+
+--
+
+Errors are handled by the `exception_handler.rb` lib file:
+
+![Parse](/readme/parser.jpg "Parser")
 
 We have included a layout for the 50x error:
 
