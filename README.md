@@ -226,7 +226,7 @@ If you need help, you may consider:
 ----------
 
 
-**ExceptionHandler** provides error handling for Rails 4+ apps.
+**ExceptionHandler** provides error handling for Rails 4+ apps (adapted from [1](https://gist.github.com/wojtha/8433843) & [2](http://www.sharagoz.com/posts/1-rolling-your-own-exception-handler-in-rails-3).
 
 It hooks into the **[`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration)** middleware:
 
@@ -240,7 +240,7 @@ You can use `ExceptionHandler` to create custom **404, 400 & 500 production erro
 **layouts/errors.html.erb** | **layouts/application.html.erb**
 
 --
-![Version 0.4.0](/readme/version.jpg "Version 0.4.0")
+!(/readme/version.jpg "Version 0.4.0")
 
  - Updated default imagery
  - DB table name changeable
@@ -251,37 +251,34 @@ You can use `ExceptionHandler` to create custom **404, 400 & 500 production erro
 
 ##Installation ([:gem:](https://rubygems.org/gems/exception_handler/versions/0.4.0))
 
- ```gem install 'exception_handler'
- ```
+     gem install 'exception_handler'
+ 
 
 or 
 
-```
-#gemfile
-gem 'exception_handler', '~> 0.4.0'
+    #gemfile
+    gem 'exception_handler', '~> 0.4.0'
 
-$ bundle
-```
+    $ bundle
+
+
 --
 
 #####Config (Optional)
 
-```
-rails g exception_handler:install
-```
+    rails g exception_handler:install
 
 ![Creates config/initializers/exception_handler.rb](/readme/config.jpg)
 
-Default confog
+Default config
 
 --
 
 #####DB (Optional)
 
 If you want to set up database support (IE have exceptions saved to a table), you need to create a migration:
-```
-rails generate exception_handler:migration
-```
+
+     rails generate exception_handler:migration
 
 ![Database](/readme/db.jpg "Database")
 
