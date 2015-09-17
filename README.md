@@ -253,24 +253,23 @@ We have included a layout for the 50x error:
 
 ![Latest Version Released 20th September 2015](/readme/versions/0.4.0.jpg "Version 0.4.0")
 
- - Updated default imagery
- - DB table name changeable
+ - Updated assets (for Error layout)
+ - Variable DB name (uses inputted sym/string if available)
  - Email notifications
- - `User` object
+ - Enhanced options for `User` object (user data captured on exception invoke)
 
 ![0.3.5 Released Apr 2015](/readme/versions/0.3.5.jpg "Version 0.3.5")
 
- - Updated default imagery
- - DB table name changeable
- - Email notifications
- - `User` object
+ - Small bug fixes
+ - Update to `config` object
+ - Changes to default migration & middleware template
 
 ![0.3.0 Released Oct 2014](/readme/versions/0.3.0.jpg "Version 0.3.0")
 
- - Updated default imagery
- - DB table name changeable
- - Email notifications
- - `User` object
+ - Original version release
+ - Middleware hook (for `config.exceptions_app`)
+ - Customizable config file
+ - Ability to customize views & layout
 
 ----------
 
