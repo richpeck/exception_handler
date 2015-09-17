@@ -22,7 +22,7 @@ The standard Rails production error pages are not very appealing, and ruin the b
 
 We created this gem from two tutorials, to give us the ability to make our own custom error pages. **ExceptionHandler** catches errors in the middleware (`config.exceptions_app`), channeling the users to our custom `exceptions` controller. Here, we dissect data such as the error message, details, user agent, etc, redirect the user to a custom view, storing the data in the db.
 
-**404** | **500**
+**404 Errors** | **500 Errors**
 --- | ---
 ![404 Error Page](/readme/400.jpg "404 Error Page (Uses Application Layout)") | ![500 Error Page](/readme/500.jpg "500 Error Page (Uses Error Layout)") 
 **layouts/application.html.erb** | **layouts/errors.html.erb** 
@@ -98,7 +98,7 @@ or
 
 If you wish to change any of the default settings (listed below), run the following command:
 
-    rails g exception_handler:install
+    $ rails g exception_handler:install
 
 ![Creates config/initializers/exception_handler.rb](/readme/config.jpg)
 
@@ -110,7 +110,7 @@ This is an optional step. It gives you the ability to define your email, databas
 
 If you want to set up database support (IE have exceptions saved to a table), you need to create a migration:
 
-     rails generate exception_handler:migration
+    $ rails generate exception_handler:migration
 
 ![Database](/readme/db.jpg "Database")
 
@@ -124,13 +124,10 @@ This is an optional step. If you want to save the data, you will also need to en
 
 If you want to change the views, you can have them put into your app:
 
-     rails generate exception_handler:migration
+    $ rails generate exception_handler:views #-> controller, models, views & assets
+	$ rails generate exception_handler:views -v views controllers models assets #-> remove as appropriate to install individual assets
 
-![Database](/readme/db.jpg "Database")
-
-This is an optional step. If you want to save the data, you will also need to ensure your `config.db` option is correct:
-
-![Database Edit](/readme/db_edit.jpg "Database Edit")
+The views will be appended to your app, and you'll be able to edit them as required.
 
 ----------
 
