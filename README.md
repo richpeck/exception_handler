@@ -32,6 +32,18 @@ We created this gem from two tutorials, to give us the ability to make our own c
 **50x errors** have to use a barebones layout
 --
 
+[500 error layout]
+
+In order to handle `500` server errors, we have had to include our own barebones layout. 
+
+You can [change the layout](#views-optional). 
+
+The reason why you need this for the 50x errors is because a server fault prevents your server from completing the request, so any layouts requiring database data will not work. 
+
+Our basic layout is inline-styled, and has no external DB calls. It shows the exception without causing any issues.
+
+--
+
 Errors are handled by the `exception_handler.rb` lib file:
 
 ![Parse](/readme/parser.jpg "Parser")
@@ -39,18 +51,6 @@ Errors are handled by the `exception_handler.rb` lib file:
 Whenever an exception is caught by `config.exceptions_app`, it is routed to the `exceptions` controller's `show` action.
 
 ![Exceptions Controller](/readme/exception_controller.jpg "Exceptions Controller")
-
---
-
-In order to handle `500` server errors, we have had to include our own barebones layout. 
-
-You can [change the layout](#layout). 
-
-The reason why you need this for the 50x errors is because a server fault prevents your server from completing the request, so any layouts requiring database data will not work. 
-
-We have included a layout for the 50x error:
-
-[500 error layout]
 
 ----------
 
@@ -82,7 +82,6 @@ We have included a layout for the 50x error:
 
      gem install 'exception_handler'
  
-
 or 
 
     #gemfile
@@ -139,8 +138,6 @@ Development Environment
 `config.exceptions_app` is only used in Rails' **production** environment. Therefore, if you wish to test the gem in dev, you'll need to make your app process requests as production for now. This is a temporary step, and will be resolved in a new version:
 
     #config/environments/development.rb
-    config.consider_all_requests_local = false # true
-
 ![#config/environments/development.rb](/readme/dev.jpg "Developer Testing")
 
 You should change this setting if you wish to test your styling in development mode. Please note it should be temporary
