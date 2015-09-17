@@ -27,9 +27,9 @@ We created this gem from two tutorials, to give us the ability to make our own c
 ![404 Error Page](/readme/400.jpg "404 Error Page (Uses Application Layout)") | ![500 Error Page](/readme/500.jpg "500 Error Page (Uses Error Layout)") 
 **layouts/application.html.erb** | **layouts/errors.html.erb** 
 
-**40x errors** can use your own layout (no server problems). 
+**40x errors** can use your own layout (no server problems)
 
-**50x errors** have to use a barebones layout (server problems).
+**50x errors** have to use a barebones layout
 --
 
 Errors are handled by the `exception_handler.rb` lib file:
