@@ -236,16 +236,14 @@ You can use `ExceptionHandler` to create custom **4xx, 5xx production error page
 
 **500** | **404**
 --- | ---
-![500 Server Error Pages](/readme/500.png "500 Server Error Page") | ![404 Server Error Pages](/readme/404.png "404 Server Error Page") 
+![500 Server Error Pages](/readme/500.jpg "500 Server Error Page") | ![404 Server Error Pages](/readme/404.png "404 Server Error Page") 
 **layouts/errors.html.erb** | **layouts/application.html.erb**
 
 40x errors can use your own layout. 
 
 50x errors have to use a barebones layout, because it's a *server* fault.
 
-We have included a layout for the 50x error. You can change it below.
-
-![Errors](/readme/screen_error.jpg "Errors")
+We have included a layout for the 50x error.
 
 --
 ![Latest Version Released 20th September 2015](/readme/version.jpg "Version 0.4.0")
