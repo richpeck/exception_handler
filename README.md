@@ -265,7 +265,7 @@ We have included a layout for the 50x error:
  - Email notifications
  - `User` object
 
-![0.3.0 Released Oct 2014](/readme/versions/0.3.5.jpg "Version 0.3.0")
+![0.3.0 Released Oct 2014](/readme/versions/0.3.0.jpg "Version 0.3.0")
 
  - Updated default imagery
  - DB table name changeable
@@ -274,7 +274,7 @@ We have included a layout for the 50x error:
 
 ----------
 
-## [<img src="/readme/icons/ruby.jpg" width="20" />](https://rubygems.org/gems/exception_handler/versions/0.4.0) Install
+## [<img src="/readme/icons/ruby.png" width="20" />](https://rubygems.org/gems/exception_handler/versions/0.4.0) Install
 
      gem install 'exception_handler'
  
