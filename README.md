@@ -259,7 +259,7 @@ We have included a layout for the 50x error.
 
 ----------
 
-##Install ([![RubyGems URL For ExceptionHandler](https://rubygems.org/favicon.ico)](https://rubygems.org/gems/exception_handler/versions/0.4.0))
+##Install ([<img src="https://rubygems.org/favicon.ico" width="20" />](https://rubygems.org/gems/exception_handler/versions/0.4.0))
 
      gem install 'exception_handler'
  
