@@ -249,7 +249,7 @@ We have included a layout for the 50x error:
 
 ----------
 
-## <img src="/readme/icons/ruby.png" width="28" /> Changelog
+## <img src="/readme/icons/upgrade.png" width="28" /> Changelog
 
 ![Latest Version Released 20th September 2015](/readme/versions/0.4.0.jpg "Version 0.4.0")
 
