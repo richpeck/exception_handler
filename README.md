@@ -245,7 +245,11 @@ You can use `ExceptionHandler` to create custom **404, 500 production error page
 
 We have included a layout for the 50x error.
 
+----------
+
+## Changelog
 --
+
 ![Latest Version Released 20th September 2015](/readme/version.jpg "Version 0.4.0")
 
  - Updated default imagery
@@ -255,7 +259,7 @@ We have included a layout for the 50x error.
 
 ----------
 
-##Installation ([:gem:](https://rubygems.org/gems/exception_handler/versions/0.4.0))
+##Install ([![RubyGems URL For ExceptionHandler](https://rubygems.org/favicon.ico)](https://rubygems.org/gems/exception_handler/versions/0.4.0))
 
      gem install 'exception_handler'
  
