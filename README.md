@@ -234,10 +234,10 @@ It hooks into the **[`config.exceptions_app`](http://guides.rubyonrails.org/conf
 
 You can use `ExceptionHandler` to create custom **4xx, 5xx production error pages**:
 
-**500** | **404**
+**40x** | **50x**
 --- | ---
-![500 Server Error Pages](/readme/500.jpg "500 Server Error Page") | ![404 Server Error Pages](/readme/404.png "404 Server Error Page") 
-**layouts/errors.html.erb** | **layouts/application.html.erb**
+![404 Server Error Pages](/readme/404.jpg "404 Server Error Page") | ![500 Server Error Pages](/readme/500.jpg "500 Server Error Page") 
+**layouts/application.html.erb** | **layouts/errors.html.erb** 
 
 40x errors can use your own layout. 
 
