@@ -214,7 +214,7 @@ If you need help, you may consider:
 
 ----------
 
-#![Exception Handler](/readme/title.png "Exception Handler Logo")
+![Exception Handler](/readme/title.png "Exception Handler Logo")
 
 [![Gem Version](https://badge.fury.io/rb/exception_handler.svg)](http://badge.fury.io/rb/exception_handler)
 [![Code Climate](https://codeclimate.com/github/richpeck/exception_handler.png)](https://codeclimate.com/github/richpeck/exception_handler)
@@ -251,7 +251,21 @@ We have included a layout for the 50x error:
 
 ## Changelog
 
-![Latest Version Released 20th September 2015](/readme/version.jpg "Version 0.4.0")
+![Latest Version Released 20th September 2015](/readme/versions/0.4.0.jpg "Version 0.4.0")
+
+ - Updated default imagery
+ - DB table name changeable
+ - Email notifications
+ - `User` object
+
+![0.3.5 Released Apr 2015](/readme/versions/0.3.5.jpg "Version 0.3.5")
+
+ - Updated default imagery
+ - DB table name changeable
+ - Email notifications
+ - `User` object
+
+![0.3.0 Released Oct 2014](/readme/versions/0.3.5.jpg "Version 0.3.0")
 
  - Updated default imagery
  - DB table name changeable
@@ -260,7 +274,7 @@ We have included a layout for the 50x error:
 
 ----------
 
-## [<img src="https://rubygems.org/favicon.ico" width="20" />](https://rubygems.org/gems/exception_handler/versions/0.4.0) Install
+## [<img src="/readme/icons/ruby.jpg" width="20" />](https://rubygems.org/gems/exception_handler/versions/0.4.0) Install
 
      gem install 'exception_handler'
  
