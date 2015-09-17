@@ -285,8 +285,9 @@ or
 
     $ bundle
 
-[<img src="https://rubygems.org/favicon.ico" height="30" /> Download from RubyGems](https://rubygems.org/gems/exception_handler/versions/0.4.0)
+[<img src="https://rubygems.org/favicon.ico" height="30" valign="middle" /> RubyGems Link](https://rubygems.org/gems/exception_handler/versions/0.4.0)
 
+----------
 
 ##Config (Optional)
 
@@ -294,11 +295,9 @@ or
 
 ![Creates config/initializers/exception_handler.rb](/readme/config.jpg)
 
-Default config
-
 --
 
-#####DB (Optional)
+##DB (Optional)
 
 If you want to set up database support (IE have exceptions saved to a table), you need to create a migration:
 
