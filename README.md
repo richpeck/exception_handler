@@ -236,7 +236,7 @@ You can use `ExceptionHandler` to create custom **4xx, 5xx production error page
 
 **40x** | **50x**
 --- | ---
-![404 Server Error Pages](/readme/404.jpg "404 Server Error Page") | ![500 Server Error Pages](/readme/500.jpg "500 Server Error Page") 
+![404 Server Error Pages](/readme/400.jpg "404 Server Error Page") | ![500 Server Error Pages](/readme/500.jpg "500 Server Error Page") 
 **layouts/application.html.erb** | **layouts/errors.html.erb** 
 
 40x errors can use your own layout. 
