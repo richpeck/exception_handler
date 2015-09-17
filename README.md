@@ -120,6 +120,41 @@ This is an optional step. If you want to save the data, you will also need to en
 
 ----------
 
+##Views (Optional)
+
+If you want to change the views, you can have them put into your app:
+
+     rails generate exception_handler:migration
+
+![Database](/readme/db.jpg "Database")
+
+This is an optional step. If you want to save the data, you will also need to ensure your `config.db` option is correct:
+
+![Database Edit](/readme/db_edit.jpg "Database Edit")
+
+----------
+
+## Usage
+
+Development Environment
+--
+
+`config.exceptions_app` is only used in Rails' **production** environment. Therefore, if you wish to test the gem in dev, you'll need to make your app process requests as production for now. This is a temporary step, and will be resolved in a new version:
+
+    #config/environments/development.rb
+    config.consider_all_requests_local = false # true
+
+![#config/environments/development.rb](/readme/dev.jpg "Developer Testing")
+
+You should change this setting if you wish to test your styling in development mode. Please note it should be temporary
+
+Production Environment
+--
+
+     No action required
+
+----------
+
 ## Support
 
  - Watch the video tutorial (soon)
