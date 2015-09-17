@@ -20,7 +20,7 @@ You can use `ExceptionHandler` to create custom **404, 500 production error page
 
 The standard Rails production error pages are not very appealing, and ruin the branding of your app. We created this gem from two tutorials, to give us the ability to make our own custom error pages. **ExceptionHandler** catches errors in the middleware (efficient), channeling the users to our custom `exceptions` controller. Here, we dissect data such as the error message, details, user agent, etc, redirect the user to a custom page, and store the data in your database.
 
-**40x** | **50x**
+**404** | **500**
 --- | ---
 ![404 Error Page](/readme/400.jpg "404 Error Page (Uses Application Layout)") | ![500 Error Page](/readme/500.jpg "500 Error Page (Uses Error Layout)") 
 **layouts/application.html.erb** | **layouts/errors.html.erb** 
@@ -59,7 +59,7 @@ We have included a layout for the 50x error:
 
 ----------
 
-## [<img src="/readme/icons/ruby.png" width="28" />](https://rubygems.org/gems/exception_handler/versions/0.4.0) Install
+## [<img src="/readme/icons/ruby.png" width="28" />](https://rubygems.org/gems/exception_handler/versions/0.4.0) Installation
 
      gem install 'exception_handler'
  
