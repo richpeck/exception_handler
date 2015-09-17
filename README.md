@@ -226,18 +226,26 @@ If you need help, you may consider:
 ----------
 
 
-**ExceptionHandler** provides error handling for Rails 4+ apps (adapted from [1](https://gist.github.com/wojtha/8433843) & [2](http://www.sharagoz.com/posts/1-rolling-your-own-exception-handler-in-rails-3).
+**ExceptionHandler** provides error handling for Rails 4+ apps (adapted from [1](https://gist.github.com/wojtha/8433843) & [2](http://www.sharagoz.com/posts/1-rolling-your-own-exception-handler-in-rails-3)).
 
 It hooks into the **[`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration)** middleware:
 
 ![Exceptions_App middleware](/readme/exceptions_app.png)
 
-You can use `ExceptionHandler` to create custom **404, 400 & 500 production error pages**:
+You can use `ExceptionHandler` to create custom **4xx, 5xx production error pages**:
 
 **500** | **404**
 --- | ---
 ![500 Server Error Pages](/readme/500.png "500 Server Error Page") | ![404 Server Error Pages](/readme/404.png "404 Server Error Page") 
 **layouts/errors.html.erb** | **layouts/application.html.erb**
+
+40x errors can use your own layout. 
+
+50x errors have to use a barebones layout, because it's a *server* fault.
+
+We have included a layout for the 50x error. You can change it below.
+
+![Errors](/readme/screen_error.jpg "Errors")
 
 --
 ![Latest Version Released 20th September 2015](/readme/version.jpg "Version 0.4.0")
