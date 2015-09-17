@@ -212,9 +212,9 @@ If you need help, you may consider:
 
 
 
----------
+----------
 
-# [![Exception Handler](https://raw.githubusercontent.com/richpeck/exception_handler/master/readme/title.png "Exception Handler Logo")](http://frontlineutilities.co.uk/ruby-on-rails/exception-handler)
+#![Exception Handler](/readme/title.png "Exception Handler Logo")
 
 [![Gem Version](https://badge.fury.io/rb/exception_handler.svg)](http://badge.fury.io/rb/exception_handler)
 [![Code Climate](https://codeclimate.com/github/richpeck/exception_handler.png)](https://codeclimate.com/github/richpeck/exception_handler)
@@ -239,11 +239,20 @@ You can use `ExceptionHandler` to create custom **404, 400 & 500 production erro
 ![500 Server Error Pages](/readme/500.png "500 Server Error Page") | ![404 Server Error Pages](/readme/404.png "404 Server Error Page") 
 **layouts/errors.html.erb** | **layouts/application.html.erb**
 
+--
+![Version 0.4.0](/readme/version.jpg "Version 0.4.0")
+
+ - Updated default imagery
+ - DB table name changeable
+ - Email notifications
+ - `User` object
+
 ----------
 
-#Installation ([:gem:](https://rubygems.org/gems/exception_handler/versions/0.4.0))
+##Installation ([:gem:](https://rubygems.org/gems/exception_handler/versions/0.4.0))
 
- `gem install 'exception_handler'`
+ ```gem install 'exception_handler'
+ ```
 
 or 
 
@@ -255,24 +264,42 @@ $ bundle
 ```
 --
 
-####Config (Optional)
+#####Config (Optional)
 
 ```
 rails g exception_handler:install
 ```
 
-![Creates config/initializers/exception_handler.rb](/readme/config.png)
+![Creates config/initializers/exception_handler.rb](/readme/config.jpg)
+
+Default confog
 
 --
 
-####DB (Optional)
+#####DB (Optional)
+
+If you want to set up database support (IE have exceptions saved to a table), you need to create a migration:
 ```
 rails generate exception_handler:migration
 ```
 
-
+![Database](/readme/db.jpg "Database")
 
 ----------
 
 ## Support
 
+ - Watch the video tutorial (soon)
+ - [Create an "issue"](https://github.com/richpeck/exception_handler/issues) 
+ - Contact support (soon)
+ - [Ask on StackOverflow](http://stackoverflow.com/questions/ask?tags=exception_handler&ruby_on_rails) 
+
+---------
+
+## Contribution
+
+1. Fork it ( https://github.com/richpeck/exception_handler/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
