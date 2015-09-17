@@ -266,7 +266,7 @@ We have included a layout for the 50x error:
 
 ![0.3.0 Released Oct 2014](/readme/versions/0.3.0.jpg "Version 0.3.0")
 
- - Original version release
+ - Original release
  - Middleware hook (for `config.exceptions_app`)
  - Customizable config file
  - Ability to customize views & layout
@@ -285,10 +285,10 @@ or
 
     $ bundle
 
+[See ExceptionHandler's RubyGems profile here.](https://rubygems.org/gems/exception_handler/versions/0.4.0)
 
---
 
-#####Config (Optional)
+##Config (Optional)
 
     rails g exception_handler:install
 
