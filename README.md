@@ -16,9 +16,9 @@ It hooks into the **[`config.exceptions_app`](http://guides.rubyonrails.org/conf
 
 ![Exceptions_App middleware](/readme/exceptions_app.png)
 
-You can use `ExceptionHandler` to create custom **404, 500 production error pages**.
+You can use **ExceptionHandler** to create custom **404, 500 production error pages**.
 
-The standard Rails production error pages are not very appealing, and ruin the branding of your app.
+The standard Rails production error pages are not appealing, and ruin the branding of your app.
 
 We created this gem from two tutorials, to give us the ability to make our own custom error pages. **ExceptionHandler** catches errors in the middleware (`config.exceptions_app`), channeling the users to our custom `exceptions` controller. Here, we dissect data such as the error message, details, user agent, etc, redirect the user to a custom view, storing the data in the db.
 
@@ -32,7 +32,7 @@ We created this gem from two tutorials, to give us the ability to make our own c
 **50x errors** have to use a barebones layout
 --
 
-[500 error layout]
+![Custom Layout](/readme/layout.jpg "Custom Layout for 50x Errors")
 
 In order to handle `500` server errors, we have had to include our own barebones layout. 
 
@@ -51,6 +51,12 @@ Errors are handled by the `exception_handler.rb` lib file:
 Whenever an exception is caught by `config.exceptions_app`, it is routed to the `exceptions` controller's `show` action.
 
 ![Exceptions Controller](/readme/exception_controller.jpg "Exceptions Controller")
+
+This gives us the most efficient & flexible way of catching, displaying & handling exceptions. 
+
+Here is an example of `exception_handler` in action:
+
+
 
 ----------
 
@@ -101,7 +107,7 @@ If you wish to change any of the default settings (listed below), run the follow
 
 ![Creates config/initializers/exception_handler.rb](/readme/config.jpg)
 
-This is an optional step. It gives you the ability to define your email, database and social options.
+This is an optional step. You can run `ExceptionHandler` just from the `gem` if you wish.
 
 ----------
 
@@ -127,6 +133,14 @@ If you want to change the views, you can have them put into your app:
 	$ rails generate exception_handler:views -v views controllers models assets #-> remove as appropriate to install individual assets
 
 The views will be appended to your app, and you'll be able to edit them as required.
+
+**Show**
+
+The `show` view 
+
+**Layout**
+
+One of the most 
 
 ----------
 
