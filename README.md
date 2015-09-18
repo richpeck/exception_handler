@@ -34,13 +34,15 @@ We created this gem from two tutorials, to give us the ability to make our own c
 
 ![Custom Layout](/readme/layout.jpg "Custom Layout for 50x Errors")
 
-In order to handle `500` server errors, we have had to include our own barebones layout. 
+In order to handle **`500` server errors**, we have had to include our own barebones layout. 
 
 You can [change the layout](#views-optional). 
 
 The reason why you need this for the 50x errors is because a server fault prevents your server from completing the request, so any layouts requiring database data will not work. 
 
 Our basic layout is inline-styled, and has no external DB calls. It shows the exception without causing any issues:
+
+![Layout Selection](/readme/layout_info.jpg "Layout Selection")
 
 ![Layout Code](/readme/layout_code.jpg "Layout Code")
 
@@ -86,14 +88,13 @@ Here is an example of `exception_handler` in action:
 
 ----------
 
-## [<img src="/readme/icons/ruby.png" width="28" />](https://rubygems.org/gems/exception_handler/versions/0.4.0) Installation
+## [<img src="/readme/icons/ruby.png" width="28" />](https://rubygems.org/gems/exception_handler/versions/0.4.0) Step 1 - Installation
 
      gem install 'exception_handler'
  
 or 
 
-    #gemfile
-    gem 'exception_handler', '~> 0.4.0'
+    gem 'exception_handler', '~> 0.4.0' # Gemfile
 
     $ bundle
 
@@ -101,7 +102,7 @@ or
 
 ----------
 
-##Config (Optional)
+##Step 2 - Config (Optional)
 
 If you wish to change any of the default settings (listed below), run the following command:
 
@@ -113,7 +114,7 @@ This is an optional step. You can run `ExceptionHandler` just from the `gem` if 
 
 ----------
 
-##DB (Optional)
+##Step 3 - DB (Optional)
 
 If you want to set up database support (IE have exceptions saved to a table), you need to create a migration:
 
@@ -127,7 +128,7 @@ This is an optional step. If you want to save the data, you will also need to en
 
 ----------
 
-##Views (Optional)
+##Step 4 - Views (Optional)
 
 If you want to change the views, you can have them put into your app:
 
@@ -140,15 +141,20 @@ The views will be appended to your app, and you'll be able to edit them as requi
 
 ![View](/readme/view.jpg "View")
 
-The view is a single form designed to work for all exceptions.
+The view is a single view designed to work for all exceptions.
 
 By default, it is split for `404` and `500` errors, but can be used as a single set of criteria if necessary.
 
+This works exactly the same as the other views in your app (IE the `exceptions` controller invokes the `show` action)
 
 
 **Layout**
 
-One of the most 
+One of the most critial aspects of **ExceptionHandler** is the custom `Error` layout.
+
+If you want to change the layout (for 500 error pages), you need to use the following:
+
+
 
 ----------
 
@@ -167,6 +173,12 @@ You should change this setting if you wish to test your styling in development m
 ###Production
 
      No action required
+
+----------
+
+## Misc
+
+### Usable_Tyoe & Usable_
 
 ----------
 
