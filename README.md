@@ -42,9 +42,13 @@ The reason why you need this for the 50x errors is because a server fault preven
 
 Our basic layout is inline-styled, and has no external DB calls. It shows the exception without causing any issues:
 
+**Controller**
 ![Layout Selection](/readme/layout_info.jpg "Layout Selection")
 
+**ERB**
 ![Layout Code](/readme/layout_code.jpg "Layout Code")
+
+If you wish to change the layout, you can do so either through the `controller` or `view` template.
 
 --
 
@@ -88,7 +92,7 @@ Here is an example of `exception_handler` in action:
 
 ----------
 
-## [<img src="https://rubygems.org/favicon.ico" height="30" valign="middle"  title="Download from RubyGems" />](https://rubygems.org/gems/exception_handler/versions/0.4.0) Step 1 - Installation
+## [<img src="https://rubygems.org/favicon.ico" height="30" valign="middle"  title="Download from RubyGems" target="_new" />](https://rubygems.org/gems/exception_handler/versions/0.4.0) 1 - Install
 
      gem install 'exception_handler'
  
@@ -100,7 +104,7 @@ or
 
 ----------
 
-##Step 2 - Config (Optional)
+##2 - Config (Optional)
 
 If you wish to change any of the default settings (listed below), run the following command:
 
@@ -112,7 +116,7 @@ This is an optional step. You can run `ExceptionHandler` just from the `gem` if 
 
 ----------
 
-##Step 3 - DB (Optional)
+##3 - DB (Optional)
 
 If you want to set up database support (IE have exceptions saved to a table), you need to create a migration:
 
@@ -126,7 +130,7 @@ This is an optional step. If you want to save the data, you will also need to en
 
 ----------
 
-##Step 4 - Views (Optional)
+##4 - Views (Optional)
 
 If you want to change the views, you can have them put into your app:
 
