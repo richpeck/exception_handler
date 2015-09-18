@@ -16,11 +16,19 @@
 ExceptionHandler.setup do |config|
 
   # DB -
-  # Options = false / true / :table_name (must exist)
+  # false / true / :table_name (must exist)
   config.db = false
 
+  # Exception Layout (for 500 errors, defaults to Error)
+  # false / name (str or sym)
+  config.exception_layout = false
+
+  # Error Layout (for 400 errors, defaults to Application)
+  # false / name (str or sym)
+  config.error_layout = false
+
   # Email -
-  # Default = false / true
+  # false / true
   # config.email =
 
   # Social
