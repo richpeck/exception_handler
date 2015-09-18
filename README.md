@@ -40,7 +40,9 @@ You can [change the layout](#views-optional).
 
 The reason why you need this for the 50x errors is because a server fault prevents your server from completing the request, so any layouts requiring database data will not work. 
 
-Our basic layout is inline-styled, and has no external DB calls. It shows the exception without causing any issues.
+Our basic layout is inline-styled, and has no external DB calls. It shows the exception without causing any issues:
+
+![Layout Code](/readme/layout_code.jpg "Layout Code")
 
 --
 
@@ -136,7 +138,13 @@ The views will be appended to your app, and you'll be able to edit them as requi
 
 **Show**
 
-The `show` view 
+![View](/readme/view.jpg "View")
+
+The view is a single form designed to work for all exceptions.
+
+By default, it is split for `404` and `500` errors, but can be used as a single set of criteria if necessary.
+
+
 
 **Layout**
 
@@ -146,18 +154,17 @@ One of the most
 
 ## Usage
 
-Development Environment
---
+###Development
 
-`config.exceptions_app` is only used in Rails' **production** environment. Therefore, if you wish to test the gem in dev, you'll need to make your app process requests as production for now. This is a temporary step, and will be resolved in a new version:
+`config.exceptions_app` is only used in Rails' **production** environment.
 
-    #config/environments/development.rb
+If you wish to test the gem in dev, you'll need to make your app process requests as production for now. This is a temporary step, and will be resolved in a new version:
+
 ![#config/environments/development.rb](/readme/dev.jpg "Developer Testing")
 
-You should change this setting if you wish to test your styling in development mode. Please note it should be temporary
+You should change this setting if you wish to test your styling in development mode. It should be temporary (you need to change it back once you have it looking how you like)
 
-Production Environment
---
+###Production
 
      No action required
 
