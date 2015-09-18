@@ -88,7 +88,7 @@ Here is an example of `exception_handler` in action:
 
 ----------
 
-## [<img src="/readme/icons/ruby.png" width="28" />](https://rubygems.org/gems/exception_handler/versions/0.4.0) Step 1 - Installation
+## [<img src="https://rubygems.org/favicon.ico" height="30" valign="middle"  title="Download from RubyGems" />](https://rubygems.org/gems/exception_handler/versions/0.4.0) Step 1 - Installation
 
      gem install 'exception_handler'
  
@@ -97,8 +97,6 @@ or
     gem 'exception_handler', '~> 0.4.0' # Gemfile
 
     $ bundle
-
-[<img src="https://rubygems.org/favicon.ico" height="30" valign="middle" /> RubyGems](https://rubygems.org/gems/exception_handler/versions/0.4.0)
 
 ----------
 
@@ -138,6 +136,7 @@ If you want to change the views, you can have them put into your app:
 The views will be appended to your app, and you'll be able to edit them as required.
 
 **Show**
+--
 
 ![View](/readme/view.jpg "View")
 
@@ -149,6 +148,7 @@ This works exactly the same as the other views in your app (IE the `exceptions` 
 
 
 **Layout**
+--
 
 One of the most critial aspects of **ExceptionHandler** is the custom `Error` layout.
 
@@ -170,15 +170,7 @@ If you wish to test the gem in dev, you'll need to make your app process request
 
 You should change this setting if you wish to test your styling in development mode. It should be temporary (you need to change it back once you have it looking how you like)
 
-###Production
-
-     No action required
-
-----------
-
-## Misc
-
-### Usable_Tyoe & Usable_
+### Usable_Type & Usable_ID
 
 ----------
 
