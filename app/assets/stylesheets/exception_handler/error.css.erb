@@ -1,0 +1,82 @@
+    	/* Responsive */
+
+    	@media screen and (max-width: 950px) {
+    		html {
+    			background-size: cover !important;
+				-moz-transition: 	background-size 0.5s ease-in-out;
+				-ms-transition: 	background-size 0.5s ease-in-out;
+				-o-transition: 		background-size 0.5s ease-in-out;
+				-webkit-transition: background-size 0.5s ease-in-out;
+				transition: 		background-size 0.5s ease-in-out;
+    		}
+    	}
+      
+      	/* Styling */
+
+		html {
+			height: 100%;
+			background: url(<%= asset_url("exception_handler/bg.jpg") %>) top left;
+			background-size: 100% 100%;
+		}
+		
+		body {
+			font-family: Helvetica, Arial, Sans-Serif;
+			font-size: 11px;
+			text-transform: capitalize;
+		}
+
+		.error_container {
+			display: block;
+			margin: 20% auto 0 auto;
+			width: 30%;
+		}
+		
+		.error_container .error {
+			display: block;
+			text-align: center;
+		}
+		
+		.error_container .error img.alert {
+			display: block;
+			margin: 0 auto 25px auto;
+		}
+		
+		.error_container .message > * {
+			display: block;
+		}
+		
+		.error_container .message strong {
+			font-weight: bold;
+			font-size: 1.5em;
+			color: #f00;
+			margin: 15px 0 0;
+		}
+
+		.error_container .message span {
+			margin: 5px auto 0;
+			font-size: 0.75em;
+			color: #fff;
+		}
+		
+		.error_container .contact {
+			display: block;
+			text-align: center;
+			margin: 20px 0 0 0;
+		}
+		
+		.error_container .contact a {
+			display: inline-block;
+			margin: 0 -1px; /* For inline block & ERB - HAML removes whitespace; ERB does now - http://haml.info/docs/yardoc/file.REFERENCE.html#whitespace_removal__and_ */
+			opacity: 0.4;
+			transition: opacity 0.15s ease;
+		}
+
+		.error_container .contact a img {
+			display: block;
+			width: 38px;
+			height: 38px;
+		}
+		
+		.error_container .contact a:hover {
+			opacity: 0.8;
+		}

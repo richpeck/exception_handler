@@ -43,6 +43,7 @@ The reason why you need this for the 50x errors is because a server fault preven
 Our basic layout is inline-styled, and has no external DB calls. It shows the exception without causing any issues:
 
 **Controller**
+
 ![Layout Selection](/readme/layout_info.jpg "Layout Selection")
 
 **ERB**
