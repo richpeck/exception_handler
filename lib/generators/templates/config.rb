@@ -21,11 +21,11 @@ ExceptionHandler.setup do |config|
 
   # Exception Layout (for 500 errors, defaults to Error)
   # false / name (str or sym)
-  config.exception_layout = false
+  #config.exception_layout = :your_name
 
   # Error Layout (for 400 errors, defaults to Application)
   # false / name (str or sym)
-  config.error_layout = false
+  #config.error_layout = :your_name
 
   # Email -
   # false / true
