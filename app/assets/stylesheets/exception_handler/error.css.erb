@@ -1,82 +1,102 @@
-    	/* Responsive */
+/* Vars */
+<% size = 20 %>
+<% opacity = 0.85 %>
 
-    	@media screen and (max-width: 950px) {
-    		html {
-    			background-size: cover !important;
-				-moz-transition: 	background-size 0.5s ease-in-out;
-				-ms-transition: 	background-size 0.5s ease-in-out;
-				-o-transition: 		background-size 0.5s ease-in-out;
-				-webkit-transition: background-size 0.5s ease-in-out;
-				transition: 		background-size 0.5s ease-in-out;
-    		}
-    	}
-      
-      	/* Styling */
 
-		html {
-			height: 100%;
-			background: url(<%= asset_url("exception_handler/bg.jpg") %>) top left;
-			background-size: 100% 100%;
-		}
-		
-		body {
-			font-family: Helvetica, Arial, Sans-Serif;
-			font-size: 11px;
-			text-transform: capitalize;
-		}
+/* Responsive */
+@media screen and (max-width: 950px) {
+	html 				{ background-size: cover !important; }
+	.error_container 	{ width: 55% !important; }
+}
 
-		.error_container {
-			display: block;
-			margin: 20% auto 0 auto;
-			width: 30%;
-		}
-		
-		.error_container .error {
-			display: block;
-			text-align: center;
-		}
-		
-		.error_container .error img.alert {
-			display: block;
-			margin: 0 auto 25px auto;
-		}
-		
-		.error_container .message > * {
-			display: block;
-		}
-		
-		.error_container .message strong {
-			font-weight: bold;
-			font-size: 1.5em;
-			color: #f00;
-			margin: 15px 0 0;
-		}
+/* Styling */
+html {
+	height: 100%;
+	background: url(<%= asset_url("exception_handler/bg.jpg") %>) top left;
+	background-size: 100% 100%;
+}
 
-		.error_container .message span {
-			margin: 5px auto 0;
-			font-size: 0.75em;
-			color: #fff;
-		}
-		
-		.error_container .contact {
-			display: block;
-			text-align: center;
-			margin: 20px 0 0 0;
-		}
-		
-		.error_container .contact a {
-			display: inline-block;
-			margin: 0 -1px; /* For inline block & ERB - HAML removes whitespace; ERB does now - http://haml.info/docs/yardoc/file.REFERENCE.html#whitespace_removal__and_ */
-			opacity: 0.4;
-			transition: opacity 0.15s ease;
-		}
+body {
+	color: #fff;
+	font-family: Helvetica, Arial, Sans-Serif;
+	font-size: 13px;
+	text-transform: capitalize;
+}
 
-		.error_container .contact a img {
-			display: block;
-			width: 38px;
-			height: 38px;
-		}
-		
-		.error_container .contact a:hover {
-			opacity: 0.8;
-		}
+.error_container {
+	display: block;
+	padding: 30px;
+	margin: 15% auto 0 auto;
+	width: 30%;
+	background: rgba(255,255,255,0.085);
+	border: 1px solid rgba(255,255,255,0.2);
+	-webkit-transition: width 0.15s ease-in-out;
+	-moz-transition: 	width 0.15s ease-in-out;
+	-ms-transition: 	width 0.15s ease-in-out;
+	-o-transition: 		width 0.15s ease-in-out;
+	transition: 		width 0.15s ease-in-out;
+}
+
+.error_container .error {
+	display: block;
+	text-align: center;
+}
+
+.error_container .error img.alert {
+	display: block;
+	margin: 0 auto 20px auto;
+}
+
+.error_container .message > * {
+	display: block;
+}
+
+.error_container .message strong {
+	font-weight: bold;
+	font-size: 2em;
+	margin: 0;
+	color: #ff0000;
+}
+
+.error_container .message span {
+	margin: 5px auto 0;
+	font-size: 0.75em;
+}
+
+/* Footer */
+footer {
+	display: block;
+	clear: both;
+	width:   90%;
+	height:  45px;
+	margin:  15px auto 0;
+	padding: 10px 15px;
+	border-top: 1px solid rgba(255,255,255,0.2);
+	box-sizing: border-box;
+}
+
+footer .app  		{ text-transform: uppercase; }
+footer .app strong  { font-size: 0.9em; letter-spacing: 1px; }
+footer .app span    { font-size: 0.85em; }
+
+footer .connect {
+	display: inline-block;
+	float: right;
+	text-align: center;
+}
+
+footer .connect:hover a { opacity: <%= opacity * 0.8 %>; }
+footer .connect a 		{
+	display: inline-block;
+	padding: 0 1px;
+	margin: 0 -1px; /* Use 0 -1px for inline block & ERB - HAML removes whitespace; ERB does now - http://haml.info/docs/yardoc/file.REFERENCE.html#whitespace_removal__and_ */
+	transition: opacity 0.2s ease;
+}
+
+footer .connect a img 				{ display: block; vertical-align: middle; }
+footer .connect a.facebook img 		{ height: <%= size %>px; }
+footer .connect a.twitter  img		{ height: <%= size %>px; }
+footer .connect a.linkedin img		{ height: <%= size %>px; }
+footer .connect a.youtube  img		{ height: <%= size %>px; }
+footer .connect a.fusion   img		{ height: <%= size %>px; }
+footer .connect:hover a:hover 		{ opacity: <%= opacity %>; }

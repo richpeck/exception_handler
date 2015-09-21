@@ -7,19 +7,12 @@
 	<div class="error">
 
 		<!--Alert -->
-		<%= image_tag 'exception_handler/alert.png', height: "115", alt: "Error!", title: "We've Got a #{@status} Error!", class: "alert" %>
+		<%= image_tag 'exception_handler/alert.png', height: "120", alt: "Error!", title: "We've Got a #{@status} Error!", class: "alert" %>
 	
 		<!--Message -->
 		<div class="message">
 			<strong><%= @status %> (<%= details[:name] %>)</strong>
 			<span><%= details[:message] %></span>
-		</div>
-
-		<!--Contact -->
-		<div class="contact">
-			<% ExceptionHandler.config.social.each do |item, address| %>
-				<%= link_to image_tag("exception_handler/connect/#{item}.png", title: "Find us on " + item.to_s.titleize), address, target: :blank %>
-			<% end %>
 		</div>
 		
 	</div>
