@@ -10,23 +10,22 @@
   
   <!--Body -->
   <body>
-    <div class="error_container">
+    <div class="container">
       <%= yield %>
     </div>
 
-	<!-- Footer -->
-	<footer>
-		<div class="connect">
-			<% ExceptionHandler.config.social.each do |item, address| %>
-				<%= link_to image_tag("exception_handler/connect/#{item}.png", title: "Find us on " + item.to_s.titleize), address, target: :blank, class: item.to_s %>
-			<% end %>
-		</div>
-		<div class="app">
-			<strong><%= @app_name %></strong>
-			<span> - <%= @status %> Error</span>
-		</div>
-	</footer>
+    <!-- Footer -->
+    <footer>
+    	<div class="connect">
+    		<% ExceptionHandler.config.social.each do |item, address| %>
+    			<%= link_to image_tag("exception_handler/connect/#{item}.png", title: "Find us on " + item.to_s.titleize), address, target: :blank, class: item.to_s %>
+    		<% end %>
+    	</div>
+    	<div class="app">
+    		<strong><%= @app_name %></strong>
+    		<span> - <%= @status %> Error</span>
+    	</div>
+    </footer>
 
   </body>
-
 </html>
