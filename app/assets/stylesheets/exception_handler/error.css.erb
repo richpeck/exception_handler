@@ -1,18 +1,22 @@
 /* Vars */
-<% size = 20 %>
+<% size = 18 %>
 <% opacity = 0.85 %>
+<% footer = 50 %>
 
 
 /* Responsive */
 @media screen and (max-width: 950px) {
 	html 				{ background-size: cover !important; }
-	.error_container 	{ width: 55% !important; }
+	.container .error	{ width: 55% !important; }
 }
 
 /* Styling */
+*  { margin: 0; }
+html, body { height: 100%;}
+
 html {
 	height: 100%;
-	background: url(<%= asset_url("exception_handler/bg.jpg") %>) top left;
+	background: #010008 url(<%= asset_url("exception_handler/bg.jpg") %>) top left no-repeat;
 	background-size: 100% 100%;
 }
 
@@ -21,14 +25,28 @@ body {
 	font-family: Helvetica, Arial, Sans-Serif;
 	font-size: 13px;
 	text-transform: capitalize;
+	text-shadow: 0px 2px 0px rgba(0,0,0,0.5);
 }
 
-.error_container {
+.container {
+	display: block;
+	min-height: 100%;
+	margin-top: 0;
+	margin-bottom: -<%= footer * 1.2 %>px;
+	box-sizing: border-box;
+}
+
+.container:after {
+	content: "";
+	display: block;
+}
+
+.container .error {
 	display: block;
 	padding: 30px;
-	margin: 15% auto 0 auto;
+	margin: auto;
 	width: 30%;
-	background: rgba(255,255,255,0.085);
+	text-align: center;	background: rgba(255,255,255,0.075);
 	border: 1px solid rgba(255,255,255,0.2);
 	-webkit-transition: width 0.15s ease-in-out;
 	-moz-transition: 	width 0.15s ease-in-out;
@@ -37,28 +55,23 @@ body {
 	transition: 		width 0.15s ease-in-out;
 }
 
-.error_container .error {
-	display: block;
-	text-align: center;
-}
-
-.error_container .error img.alert {
+.container .error img.alert {
 	display: block;
 	margin: 0 auto 20px auto;
 }
 
-.error_container .message > * {
+.container .message > * {
 	display: block;
 }
 
-.error_container .message strong {
+.container .message strong {
 	font-weight: bold;
 	font-size: 2em;
 	margin: 0;
 	color: #ff0000;
 }
 
-.error_container .message span {
+.container .message span {
 	margin: 5px auto 0;
 	font-size: 0.75em;
 }
@@ -70,9 +83,10 @@ footer {
 	width:   90%;
 	height:  45px;
 	margin:  15px auto 0;
-	padding: 10px 15px;
+	padding: 0 15px;
 	border-top: 1px solid rgba(255,255,255,0.2);
 	box-sizing: border-box;
+	max-height: <%= footer %>;
 }
 
 footer .app  		{ text-transform: uppercase; }
@@ -80,23 +94,25 @@ footer .app strong  { font-size: 0.9em; letter-spacing: 1px; }
 footer .app span    { font-size: 0.85em; }
 
 footer .connect {
-	display: inline-block;
+	display: block;
 	float: right;
 	text-align: center;
+	vertical-align: middle;
 }
 
 footer .connect:hover a { opacity: <%= opacity * 0.8 %>; }
 footer .connect a 		{
 	display: inline-block;
-	padding: 0 1px;
+	opacity: <%= opacity * 0.85 %>;
+	padding: 10px 4px 10px 0;
 	margin: 0 -1px; /* Use 0 -1px for inline block & ERB - HAML removes whitespace; ERB does now - http://haml.info/docs/yardoc/file.REFERENCE.html#whitespace_removal__and_ */
 	transition: opacity 0.2s ease;
 }
 
 footer .connect a img 				{ display: block; vertical-align: middle; }
-footer .connect a.facebook img 		{ height: <%= size %>px; }
-footer .connect a.twitter  img		{ height: <%= size %>px; }
-footer .connect a.linkedin img		{ height: <%= size %>px; }
-footer .connect a.youtube  img		{ height: <%= size %>px; }
-footer .connect a.fusion   img		{ height: <%= size %>px; }
-footer .connect:hover a:hover 		{ opacity: <%= opacity %>; }
+footer .connect a.facebook img 		{ height: <%= size * 0.89 %>px; }
+footer .connect a.twitter  img		{ height: <%= size * 0.9 %>px; }
+footer .connect a.linkedin img		{ height: <%= size * 0.95 %>px; }
+footer .connect a.youtube  img		{ height: <%= size * 0.95 %>px; }
+footer .connect a.fusion   img		{ height: <%= size * 1.05 %>px; }
+footer .connect:hover a:hover 		{ opacity: 1; }
