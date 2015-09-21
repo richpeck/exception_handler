@@ -12,41 +12,37 @@
 
 /* Styling */
 *  { margin: 0; }
-html, body { height: 100%;}
-
+html, body, .container { height: 100%; }
 html {
 	height: 100%;
 	background: #010008 url(<%= asset_url("exception_handler/bg.jpg") %>) top left no-repeat;
 	background-size: 100% 100%;
 }
 
-body {
-	color: #fff;
+body, a { color: #fff; text-decoration: none; }
+a:hover { text-decoration: underline; }
+body 	{
 	font-family: Helvetica, Arial, Sans-Serif;
 	font-size: 13px;
 	text-transform: capitalize;
 	text-shadow: 0px 2px 0px rgba(0,0,0,0.5);
 }
 
-.container {
-	display: block;
-	min-height: 100%;
-	margin-top: 0;
-	margin-bottom: -<%= footer * 1.2 %>px;
-	box-sizing: border-box;
-}
 
-.container:after {
-	content: "";
-	display: block;
+.container {
+	min-height: 100%;
+	overflow-y: hidden; /* Shouldn't need to have this */
+	margin-bottom: -<%= footer * 1.2 %>px;
 }
 
 .container .error {
 	display: block;
 	padding: 30px;
-	margin: auto;
-	width: 30%;
-	text-align: center;	background: rgba(255,255,255,0.075);
+	margin: 10% auto 0;
+	width: 25%;
+	text-align: center;
+	outline: 1px solid rgba(0,0,0,1);
+	background: rgba(255,255,255,0.075);
 	border: 1px solid rgba(255,255,255,0.2);
 	-webkit-transition: width 0.15s ease-in-out;
 	-moz-transition: 	width 0.15s ease-in-out;
@@ -96,11 +92,12 @@ footer .app span    { font-size: 0.85em; }
 footer .connect {
 	display: block;
 	float: right;
+	clear: both;
 	text-align: center;
 	vertical-align: middle;
 }
 
-footer .connect:hover a { opacity: <%= opacity * 0.8 %>; }
+footer .connect:hover a { opacity: <%= opacity * 0.5 %>; }
 footer .connect a 		{
 	display: inline-block;
 	opacity: <%= opacity * 0.85 %>;
@@ -110,9 +107,9 @@ footer .connect a 		{
 }
 
 footer .connect a img 				{ display: block; vertical-align: middle; }
-footer .connect a.facebook img 		{ height: <%= size * 0.89 %>px; }
-footer .connect a.twitter  img		{ height: <%= size * 0.9 %>px; }
-footer .connect a.linkedin img		{ height: <%= size * 0.95 %>px; }
-footer .connect a.youtube  img		{ height: <%= size * 0.95 %>px; }
+footer .connect a.facebook img 		{ height: <%= size * 0.85 %>px; }
+footer .connect a.twitter  img		{ height: <%= size * 0.85 %>px; }
+footer .connect a.linkedin img		{ height: <%= size * 0.9 %>px; }
+footer .connect a.youtube  img		{ height: <%= size * 0.9 %>px; }
 footer .connect a.fusion   img		{ height: <%= size * 1.05 %>px; }
 footer .connect:hover a:hover 		{ opacity: 1; }

@@ -22,7 +22,7 @@
     		<% end %>
     	</div>
     	<div class="app">
-    		<strong><%= @app_name %></strong>
+    		<strong><%= link_to @app_name, root_url, title: "Go to index" %></strong>
     		<span> - <%= @status %> Error</span>
     	</div>
     </footer>
