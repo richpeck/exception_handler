@@ -1,18 +1,22 @@
 <div class="error">
 	<% if @status.to_s == "404" %>
 
-		Sorry, this page is missing!
+		<%= content_tag :div, "Sorry, this page is missing!", class: "message" %>
 
 	<% else %>
 
-		<!--Alert -->
-		<%= image_tag 'exception_handler/alert.png', height: "120", alt: "Error!", title: "We've Got a #{@status} Error!", class: "alert" %>
-
 		<!--Message -->
-		<div class="message">
-			<strong><%= @status %> (<%= details[:name] %>)</strong>
-			<span><%= details[:message] %></span>
-		</div>
+		<%= content_tag :div, class: "message" do %>
+			<%= content_tag :div, class: "title" do %>
+				<span><%= details[:name] %></span>
+				<span><%= "Code: #{@status}" %></span>
+			<% end %>
+			<%= content_tag :div, class: "info" do %>
+				<strong>Sorry, an error has occured:</strong>
+				<span><%= details[:message] %></span>
+				<strong>The development team has been notified, we're working on it!</strong>
+			<% end %>
+		<% end %>
 			
 	<% end %>
 </div>

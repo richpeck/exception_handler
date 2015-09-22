@@ -1,7 +1,8 @@
 /* Vars */
-<% size = 18 %>
-<% opacity = 0.85 %>
-<% footer = 50 %>
+<% size 	= 18 %>
+<% opacity 	= 0.85 %>
+<% footer 	= 50 %>
+<% radius 	= 5 %>
 
 
 /* Responsive */
@@ -18,16 +19,14 @@ html {
 	background: #010008 url(<%= asset_url("exception_handler/bg.jpg") %>) top left no-repeat;
 	background-size: 100% 100%;
 }
-
-body, a { color: #fff; text-decoration: none; }
-a:hover { text-decoration: underline; }
-body 	{
+body {
 	font-family: Helvetica, Arial, Sans-Serif;
-	font-size: 13px;
+	font-size: 14px;
 	text-transform: capitalize;
-	text-shadow: 0px 2px 0px rgba(0,0,0,0.5);
 }
 
+a { color: #fff; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 .container {
 	min-height: 100%;
@@ -37,13 +36,18 @@ body 	{
 
 .container .error {
 	display: block;
-	padding: 30px;
 	margin: 10% auto 0;
 	width: 25%;
+	color: #000;
 	text-align: center;
-	outline: 1px solid rgba(0,0,0,1);
-	background: rgba(255,255,255,0.075);
-	border: 1px solid rgba(255,255,255,0.2);
+	background: rgba(255,255,255,1);
+	border: 1px solid rgba(0,0,0,1);
+	border-radius: <%= radius %>px;
+
+	-moz-background-clip: padding;  
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;  
+
 	-webkit-transition: width 0.15s ease-in-out;
 	-moz-transition: 	width 0.15s ease-in-out;
 	-ms-transition: 	width 0.15s ease-in-out;
@@ -56,31 +60,61 @@ body 	{
 	margin: 0 auto 20px auto;
 }
 
-.container .message > * {
+.container .message > * 	{ display: block; }
+.container .message .title {
 	display: block;
-}
-
-.container .message strong {
+	position: relative;
 	font-weight: bold;
-	font-size: 2em;
+	font-size: 0.85em;
 	margin: 0;
-	color: #ff0000;
+	color: rgba(255,255,255,1);
+	background: rgba(58,0,97,1);
+	padding: 12px 15px;
+	text-align: left;
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7a07ed+0,000000+100&amp;0+0,1+100 */
+	background: rgba(58,0,97,1) -moz-linear-gradient(top,  rgba(122,7,237,0) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
+	background: rgba(58,0,97,1) -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(122,7,237,0)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
+	background: rgba(58,0,97,1) -webkit-linear-gradient(top,  rgba(122,7,237,0) 0%,rgba(0,0,0,0.4) 100%); /* Chrome10+,Safari5.1+ */
+	background: rgba(58,0,97,1) -o-linear-gradient(top,  rgba(122,7,237,0) 0%,rgba(0,0,0,0.4) 100%); /* Opera 11.10+ */
+	background: rgba(58,0,97,1) -ms-linear-gradient(top,  rgba(122,7,237,0) 0%,rgba(0,0,0,0.4) 100%); /* IE10+ */
+	background: rgba(58,0,97,1) linear-gradient(to bottom,  rgba(122,7,237,0) 0%,rgba(0,0,0,0.4) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007a07ed', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+.container .message .title:after {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 1px;
+	background: rgba(255,255,255,0.15);
+	left: 0;
+	bottom: 1px;
 }
 
-.container .message span {
+.container .message > .info {
+	display: block;
+	padding: 15px;
 	margin: 5px auto 0;
 	font-size: 0.75em;
+	background: rgba(232,232,232,1);
+	border-top: 1px solid rgba(214,214,214,1);
 }
+.container .message > .info > * { display: block; }
+.container .message > .info strong {
+	display: inline-block;
+	margin: 5px 0;
+}
+
 
 /* Footer */
 footer {
-	display: block;
+	display: display;
+	vertical-align: middle;
 	clear: both;
-	width:   90%;
-	height:  45px;
+	color: #fff;
 	margin:  15px auto 0;
-	padding: 0 15px;
-	border-top: 1px solid rgba(255,255,255,0.2);
+	padding: 14px 1%;
+	background: rgba(0,0,0,1);
 	box-sizing: border-box;
 	max-height: <%= footer %>;
 }
@@ -94,14 +128,13 @@ footer .connect {
 	float: right;
 	clear: both;
 	text-align: center;
-	vertical-align: middle;
 }
 
 footer .connect:hover a { opacity: <%= opacity * 0.5 %>; }
 footer .connect a 		{
 	display: inline-block;
 	opacity: <%= opacity * 0.85 %>;
-	padding: 10px 4px 10px 0;
+	padding-left: 4px;
 	margin: 0 -1px; /* Use 0 -1px for inline block & ERB - HAML removes whitespace; ERB does now - http://haml.info/docs/yardoc/file.REFERENCE.html#whitespace_removal__and_ */
 	transition: opacity 0.2s ease;
 }
