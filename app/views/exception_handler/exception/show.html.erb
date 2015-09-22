@@ -8,11 +8,14 @@
 		<!--Message -->
 		<%= content_tag :div, class: "message" do %>
 			<%= content_tag :div, class: "title" do %>
-				<span><%= details[:name] %></span>
-				<span><%= "Code: #{@status}" %></span>
+				<span><%= "#{details[:name]} #{@status}" %></span>
+				<%= link_to image_tag("exception_handler/close.png"), root_url, title: "Close (Go back home)", class: "close" %>
+			<% end %>
+			<%= content_tag :div, class: "details" do %>
+				TEST
 			<% end %>
 			<%= content_tag :div, class: "info" do %>
-				<strong>Sorry, an error has occured:</strong>
+				<h2><%= @status %> Error</h2>
 				<span><%= details[:message] %></span>
 				<strong>The development team has been notified, we're working on it!</strong>
 			<% end %>

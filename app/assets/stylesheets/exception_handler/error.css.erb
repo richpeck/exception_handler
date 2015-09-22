@@ -1,8 +1,9 @@
 /* Vars */
-<% size 	= 18 %>
+<% size 	= 20 %>
 <% opacity 	= 0.85 %>
 <% footer 	= 50 %>
 <% radius 	= 5 %>
+<% title_bg = "rgba(227,11,11,1)" %>
 
 
 /* Responsive */
@@ -24,14 +25,26 @@ body {
 	font-size: 14px;
 	text-transform: capitalize;
 }
+body:before{
+	content: "";
+	background: url(<%=asset_url("exception_handler/noise.png") %>) repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+}
 
 a { color: #fff; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 .container {
+	position: relative;
 	min-height: 100%;
 	overflow-y: hidden; /* Shouldn't need to have this */
 	margin-bottom: -<%= footer * 1.2 %>px;
+	z-index: 1100;
 }
 
 .container .error {
@@ -40,6 +53,7 @@ a:hover { text-decoration: underline; }
 	width: 25%;
 	color: #000;
 	text-align: center;
+	overflow: hidden;
 	background: rgba(255,255,255,1);
 	border: 1px solid rgba(0,0,0,1);
 	border-radius: <%= radius %>px;
@@ -68,55 +82,100 @@ a:hover { text-decoration: underline; }
 	font-size: 0.85em;
 	margin: 0;
 	color: rgba(255,255,255,1);
-	background: rgba(58,0,97,1);
+	background: <%= title_bg %>;
 	padding: 12px 15px;
 	text-align: left;
 
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7a07ed+0,000000+100&amp;0+0,1+100 */
-	background: rgba(58,0,97,1) -moz-linear-gradient(top,  rgba(122,7,237,0) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
-	background: rgba(58,0,97,1) -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(122,7,237,0)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
-	background: rgba(58,0,97,1) -webkit-linear-gradient(top,  rgba(122,7,237,0) 0%,rgba(0,0,0,0.4) 100%); /* Chrome10+,Safari5.1+ */
-	background: rgba(58,0,97,1) -o-linear-gradient(top,  rgba(122,7,237,0) 0%,rgba(0,0,0,0.4) 100%); /* Opera 11.10+ */
-	background: rgba(58,0,97,1) -ms-linear-gradient(top,  rgba(122,7,237,0) 0%,rgba(0,0,0,0.4) 100%); /* IE10+ */
-	background: rgba(58,0,97,1) linear-gradient(to bottom,  rgba(122,7,237,0) 0%,rgba(0,0,0,0.4) 100%); /* W3C */
+	background: <%= title_bg %> -moz-linear-gradient(top,  rgba(227,11,11,0) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
+	background: <%= title_bg %> -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(227,11,11,0)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
+	background: <%= title_bg %> -webkit-linear-gradient(top, rgba(227,11,11,0) 0%,rgba(0,0,0,0.4) 100%); /* Chrome10+,Safari5.1+ */
+	background: <%= title_bg %> -o-linear-gradient(top,  rgba(227,11,11,0) 0%,rgba(0,0,0,0.4) 100%); /* Opera 11.10+ */
+	background: <%= title_bg %> -ms-linear-gradient(top,  rgba(227,11,11,0) 0%,rgba(0,0,0,0.4) 100%); /* IE10+ */
+	background: <%= title_bg %> linear-gradient(to bottom,  rgba(227,11,11,0) 0%,rgba(0,0,0,0.4) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007a07ed', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 }
+.container .message .title:before,
 .container .message .title:after {
 	position: absolute;
 	content: "";
 	width: 100%;
+	left: 0;
+}
+.container .message .title:before {
+	position: absolute;
+	content: "";
+	width: 100%;
+	left: 0;
+	height: 100%;
+	top: 0;
+	background: url(<%= asset_url("exception_handler/overlay.png") %>) repeat;
+	background-size: 100%;
+}
+.container .message .title:after  {
 	height: 1px;
 	background: rgba(255,255,255,0.15);
-	left: 0;
 	bottom: 1px;
 }
+.container .message .title a.close {
+	float: right;
+	padding: 10px;
+	position: relative;
+	top: -10px;
+	right: -10px;
+}
+.container .message .title a.close img {
+	width: 15px;
 
-.container .message > .info {
+	-webkit-transition: opacity 0.15s ease-in-out;
+	-moz-transition: 	opacity 0.15s ease-in-out;
+	-ms-transition: 	opacity 0.15s ease-in-out;
+	-o-transition: 		opacity 0.15s ease-in-out;
+	transition: 		opacity 0.15s ease-in-out;
+}
+.container .message .title a.close:hover img { opacity: 0.75; }
+
+.container .message .info {
 	display: block;
-	padding: 15px;
+	padding: 25px auto 0;
 	margin: 5px auto 0;
 	font-size: 0.75em;
 	background: rgba(232,232,232,1);
-	border-top: 1px solid rgba(214,214,214,1);
+	border-top: 1px solid rgba(199,199,199,1);
 }
-.container .message > .info > * { display: block; }
+.container .message .info > * {
+	display: block;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.container .message > .info h2 {
+	margin: 10px 0 3px;
+	font-size: 1.75em;
+	text-align: left;
+}
 .container .message > .info strong {
-	display: inline-block;
-	margin: 5px 0;
+	display: block;
+	margin: 20px 0 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: left;
+	background: rgba(221,221,221,1);
+	border-top: 1px solid rgba(190,190,190,1);
 }
 
 
 /* Footer */
 footer {
-	display: display;
+	display: block;
+	position: relative;
 	vertical-align: middle;
 	clear: both;
 	color: #fff;
 	margin:  15px auto 0;
 	padding: 14px 1%;
-	background: rgba(0,0,0,1);
 	box-sizing: border-box;
 	max-height: <%= footer %>;
+	z-index: 1100;
 }
 
 footer .app  		{ text-transform: uppercase; }
@@ -133,7 +192,7 @@ footer .connect {
 footer .connect:hover a { opacity: <%= opacity * 0.5 %>; }
 footer .connect a 		{
 	display: inline-block;
-	opacity: <%= opacity * 0.85 %>;
+	opacity: <%= opacity * 0.7 %>;
 	padding-left: 4px;
 	margin: 0 -1px; /* Use 0 -1px for inline block & ERB - HAML removes whitespace; ERB does now - http://haml.info/docs/yardoc/file.REFERENCE.html#whitespace_removal__and_ */
 	transition: opacity 0.2s ease;
@@ -143,6 +202,6 @@ footer .connect a img 				{ display: block; vertical-align: middle; }
 footer .connect a.facebook img 		{ height: <%= size * 0.85 %>px; }
 footer .connect a.twitter  img		{ height: <%= size * 0.85 %>px; }
 footer .connect a.linkedin img		{ height: <%= size * 0.9 %>px; }
-footer .connect a.youtube  img		{ height: <%= size * 0.9 %>px; }
-footer .connect a.fusion   img		{ height: <%= size * 1.05 %>px; }
+footer .connect a.youtube  img		{ height: <%= size * 0.875 %>px; }
+footer .connect a.fusion   img		{ height: <%= size %>px; }
 footer .connect:hover a:hover 		{ opacity: 1; }
