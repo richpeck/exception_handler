@@ -3,7 +3,7 @@
   <head>
 
     <!--Info -->
-    <title><%= "Error | #{@app_name}" %></title>
+    <title><%= "Code #{@status} (#{details[:name]}) | #{@app_name.upcase}" %></title>
     <%= stylesheet_link_tag "exception_handler/error" %>
 
   </head>
