@@ -119,13 +119,13 @@ a:hover { text-decoration: underline; }
 }
 .container .message .title a.close {
 	float: right;
-	padding: 10px;
+	padding: 12px;
 	position: relative;
 	top: -10px;
-	right: -10px;
+	right: -15px;
 }
 .container .message .title a.close img {
-	width: 15px;
+	width: 12px;
 
 	-webkit-transition: opacity 0.15s ease-in-out;
 	-moz-transition: 	opacity 0.15s ease-in-out;
@@ -149,20 +149,50 @@ a:hover { text-decoration: underline; }
 	padding-right: 15px;
 }
 .container .message > .info h2 {
-	margin: 10px 0 3px;
+	margin: 10px 0;
 	font-size: 1.75em;
 	text-align: left;
 }
-.container .message > .info strong {
+.container .message > .info .notification {
 	display: block;
+	position: relative;
+	clear: both;
 	margin: 20px 0 0;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	text-align: left;
-	background: rgba(221,221,221,1);
-	border-top: 1px solid rgba(190,190,190,1);
+	background: rgba(205,205,205,1);
+	border-top: 1px solid rgba(175,175,175,1);
 }
+.container .message > .info .notification > * 	 { vertical-align: middle; }
+.container .message > .info .notification strong {
+	display: inline-block;
+	max-width: 75%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow-x: hidden;
+}
+.container .message > .info .notification .version {
+	display: inline-block;
+	text-transform: lowercase;
+	padding: 0 15px 0 0;
+	margin: 0 10px 0 0;
+	border-right: 1px solid rgba(175,175,175,1);
+}
+.container .message > .info .notification a.home {
+	float: right;
+	position: relative;
+	right: -3px;
+	opacity: <%= opacity * 0.5 %>;
 
+	-webkit-transition: opacity 0.15s ease-in-out;
+	-moz-transition: 	opacity 0.15s ease-in-out;
+	-ms-transition: 	opacity 0.15s ease-in-out;
+	-o-transition: 		opacity 0.15s ease-in-out;
+	transition: 		opacity 0.15s ease-in-out;
+}
+.container .message > .info .notification a.home:hover { opacity: <%= opacity %>; }
+.container .message > .info .notification a.home img { height: 12px; }
 
 /* Footer */
 footer {

@@ -17,7 +17,11 @@
 			<%= content_tag :div, class: "info" do %>
 				<h2><%= @status %> Error</h2>
 				<span><%= details[:message] %></span>
-				<strong>The development team has been notified, we're working on it!</strong>
+				<div class="notification">
+					<%= link_to image_tag("exception_handler/home.png", title: "Go Home"), root_url, class: "home" %>
+					<div class="version">v<%= Rails.version %></div>
+					<strong>Our developers have been notified - we're working on it!</strong>
+				</div>
 			<% end %>
 		<% end %>
 			
