@@ -25,9 +25,9 @@ body {
 	font-size: 14px;
 	text-transform: capitalize;
 }
-body:before{
+body:before,
+body:after {
 	content: "";
-	background: url(<%=asset_url("exception_handler/noise.png") %>) repeat;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -35,6 +35,8 @@ body:before{
 	height: 100%;
 	z-index: 1000;
 }
+body:before{ background-image: url(<%=asset_url("exception_handler/noise.png") %>); background-repeat: repeat; }
+body:after{ background-image: url(<%=asset_url("exception_handler/bg_overlay.png") %>); background-repeat: no-repeat; }
 
 a { color: #fff; text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -74,7 +76,7 @@ a:hover { text-decoration: underline; }
 	margin: 0 auto 20px auto;
 }
 
-.container .message > * 	{ display: block; }
+.container .message > * { display: block; }
 .container .message .title {
 	display: block;
 	position: relative;
@@ -85,6 +87,8 @@ a:hover { text-decoration: underline; }
 	background: <%= title_bg %>;
 	padding: 12px 15px;
 	text-align: left;
+	text-shadow: 0px 1px 0px rgba(0,0,0,1);
+	overflow-y: hidden;
 
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7a07ed+0,000000+100&amp;0+0,1+100 */
 	background: <%= title_bg %> -moz-linear-gradient(top,  rgba(227,11,11,0) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
@@ -114,15 +118,14 @@ a:hover { text-decoration: underline; }
 }
 .container .message .title:after  {
 	height: 1px;
-	background: rgba(255,255,255,0.15);
-	bottom: 1px;
+	background: rgba(255,255,255,0.1);
+	bottom: 0px;
 }
 .container .message .title a.close {
 	float: right;
-	padding: 12px;
 	position: relative;
-	top: -10px;
-	right: -15px;
+	top: 2px;
+	right: -2px;
 }
 .container .message .title a.close img {
 	width: 12px;
@@ -135,13 +138,70 @@ a:hover { text-decoration: underline; }
 }
 .container .message .title a.close:hover img { opacity: 0.75; }
 
+
+
+.container .message .details {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	height: 310px;
+	width: 100%;
+	background-image: url(<%= asset_url("exception_handler/alert.jpg") %>);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+}
+.container .message .details:before,
+.container .message .details:after {
+	display: block;
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+}
+.container .message .details:after {
+	height: 2px;
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&amp;1+0,0+100 */
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0.485) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.85)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
+}
+.container .message .details:before {
+	height: 100%;
+	outline-offset: -1px;
+	outline: 1px solid rgba(255,255,255,0.1);
+}
+.container .message .details img {
+	margin: 10% 0 0 0;
+	padding: 0;
+}
+.container .message .details .status {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: #fff;
+	padding: 1em 15px;
+	font-size: 1.1em;
+	font-weight: bold;
+	background: rgba(0,0,0,0.5);
+	text-align: left;
+}
+
 .container .message .info {
 	display: block;
-	padding: 25px auto 0;
-	margin: 5px auto 0;
+	padding-top: 15px;
+	margin: auto;
 	font-size: 0.75em;
 	background: rgba(232,232,232,1);
-	border-top: 1px solid rgba(199,199,199,1);
 }
 .container .message .info > * {
 	display: block;
@@ -182,7 +242,7 @@ a:hover { text-decoration: underline; }
 .container .message > .info .notification a.home {
 	float: right;
 	position: relative;
-	right: -3px;
+	right: -6px;
 	opacity: <%= opacity * 0.5 %>;
 
 	-webkit-transition: opacity 0.15s ease-in-out;
@@ -209,8 +269,8 @@ footer {
 }
 
 footer .app  		{ text-transform: uppercase; }
-footer .app strong  { font-size: 0.9em; letter-spacing: 1px; }
-footer .app span    { font-size: 0.85em; }
+footer .app strong  { font-size: 1em; letter-spacing: 1px; }
+footer .app span    { font-size: 0.9em; }
 
 footer .connect {
 	display: block;
