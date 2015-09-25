@@ -53,7 +53,7 @@ Whilst it's common practice to use `config.exceptions_app = self.routes` to send
  
 or 
 
-    gem 'exception_handler', '~> 0.4.0' # Gemfile
+    gem 'exception_handler', '~> 0.4' # Gemfile
 
     $ bundle
 
@@ -84,6 +84,7 @@ You can run `ExceptionHandler` just from the `gem` if you wish.
 If you want to set up database support (IE have exceptions saved to a table), you need to create a migration:
 
     $ rails generate exception_handler:migration
+    $ rake db:migrate
 
 ![Database](/readme/db.jpg "Database")
 
@@ -110,7 +111,7 @@ The views will be appended to your app, and you'll be able to edit them as requi
 
 ![View](/readme/view.jpg "View")
 
-The view is a single view designed to work for all exceptions.
+The view is located in `app/views/exception_handler/show.html.erb` designed to work for all exceptions.
 
 By default, it is split for use with different layouts, data being available to both.
 
@@ -128,9 +129,7 @@ If you want to change the layout (for 500 error pages), you need to use the foll
 
 ----------
 
-## Usage
-
-###Development
+### Development
 
 `config.exceptions_app` is only used in Rails' **production** environment.
 
@@ -147,6 +146,8 @@ You should change this setting if you wish to test your styling in development m
 ## Bugs
 
 1. `ApplicationController`
+
+   ![ApplicationController](/readme/application_controller.jpg "Application Controller")
    
    A significant issue exists in respect to the inheritance of `exceptions_controller`.
    Our current version (`0.4`) inherits from the `ApplicationController`. This causes a problem for many applications.
