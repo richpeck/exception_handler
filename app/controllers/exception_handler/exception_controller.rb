@@ -5,7 +5,7 @@ module ExceptionHandler
     respond_to :html, :xml, :json
 
   	#Dependencies
-  	before_action :status, :app_name
+  	before_action :status, :app_details
 
     #Layout
     layout :layout_status
@@ -16,6 +16,8 @@ module ExceptionHandler
 
   	#Show
     def show
+      @layout = self.send(:_layout)
+      @message = @status == 404 ? "Sorry, this page is missing" : details[:message]
       render status: @status
     end
 
@@ -51,12 +53,12 @@ module ExceptionHandler
 
     #Layout
     def layout_status
-      @status.to_s != "404" ? ExceptionHandler.config.exception_layout || 'error' : ExceptionHandler.config.error_layout || nil #-> inherits ApplicationController layout
-      end
+      return ExceptionHandler.config.exception_layout || 'error' if @status.to_s != "404"
+      ExceptionHandler.config.error_layout || nil #-> inherits ApplicationController layout
     end
 
     #App
-    def app_name
+    def app_details
       @app_name = Rails.application.class.parent_name
     end
 

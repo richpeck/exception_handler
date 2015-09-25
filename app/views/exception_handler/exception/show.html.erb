@@ -1,9 +1,5 @@
 <div class="error">
-	<% if @status.to_s == "404" %>
-
-		<%= content_tag :div, "Sorry, this page is missing!", class: "message" %>
-
-	<% else %>
+	<% if @layout == "error" %>
 
 		<!--Message -->
 		<%= content_tag :div, class: "message" do %>
@@ -16,7 +12,7 @@
 				<div class="status"><%= @status %> Error</div>
 			<% end %>
 			<%= content_tag :div, class: "info" do %>
-				<span><%= details[:message] %></span>
+				<span><%= @message %></span>
 				<div class="notification">
 					<%= link_to image_tag("exception_handler/home.png", title: "Go Back Home"), root_url, class: "home" %>
 					<div class="version">v<%= Rails.version %></div>
@@ -24,6 +20,10 @@
 				</div>
 			<% end %>
 		<% end %>
+
+	<% else %>
+
+		<%= content_tag :div, @message, class: "message" %>
 			
 	<% end %>
 </div>
