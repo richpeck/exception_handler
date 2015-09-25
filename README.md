@@ -47,31 +47,7 @@ Whilst it's common practice to use `config.exceptions_app = self.routes` to send
 
 ----------
 
-## <img src="/readme/icons/upgrade.png" width="28" /> Updates
-
-![Latest Version Released 20th September 2015](/readme/versions/0.4.0.jpg "Version 0.4.0")
-
- - Updated assets (new Error layout)
- - Variable DB name (uses inputted sym/string if available)
- - Email notifications
- - Enhanced options for `User` object (user data captured on exception invoke)
-
-![0.3.5 Released Apr 2015](/readme/versions/0.3.5.jpg "Version 0.3.5")
-
- - Small bug fixes
- - Update to `config` object
- - Changes to default migration & middleware template
-
-![0.3.0 Released Oct 2014](/readme/versions/0.3.0.jpg "Version 0.3.0")
-
- - Original release
- - Middleware hook (for `config.exceptions_app`)
- - Customizable config file
- - Ability to customize views & layout
-
-----------
-
-## [<img src="https://rubygems.org/favicon.ico" height="30" valign="middle"  title="Download from RubyGems" target="_new" />](https://rubygems.org/gems/exception_handler/versions/0.4.0) 1 - Install
+## Installation
 
      gem install 'exception_handler'
  
@@ -81,9 +57,11 @@ or
 
     $ bundle
 
-----------
+--
 
-##2 - Config (Optional)
+### Options
+
+##### Config
 
 If you wish to change any of the default settings (listed below), run the following command:
 

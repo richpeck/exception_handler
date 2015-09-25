@@ -1,5 +1,5 @@
 module ExceptionHandler
-  class ExceptionController < ActionController::Base
+  class ExceptionController < ApplicationController
 
     #Response
     respond_to :html, :xml, :json
@@ -51,8 +51,8 @@ module ExceptionHandler
 
     #Layout
     def layout_status
-      return ExceptionHandler.config.exception_layout || 'error' if @status.to_s != "404"
-      ExceptionHandler.config.error_layout || 'application'
+      @status.to_s != "404" ? ExceptionHandler.config.exception_layout || 'error' : ExceptionHandler.config.error_layout || nil #-> inherits ApplicationController layout
+      end
     end
 
     #App
