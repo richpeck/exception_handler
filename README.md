@@ -57,7 +57,7 @@ or
 
     $ bundle
 
-You can see [`ExceptionHandler` on RubyGems here](https://rubygems.org/gems/exception_handler)
+You can see [`ExceptionHandler` on RubyGems](https://rubygems.org/gems/exception_handler)
 
 --
 
@@ -69,11 +69,13 @@ If you wish to change any of the default settings (listed below), run the follow
 
 ![Creates config/initializers/exception_handler.rb](/readme/config.jpg)
 
-This is an optional step. You can run `ExceptionHandler` just from the `gem` if you wish.
+This will deploy a file to `config/initializers/exception_handler.rb`, which you'll be able to edit as required.
 
-----------
+You can run `ExceptionHandler` just from the `gem` if you wish.
 
-##3 - DB (Optional)
+--
+
+#### DB (Optional)
 
 If you want to set up database support (IE have exceptions saved to a table), you need to create a migration:
 
@@ -85,9 +87,9 @@ This is an optional step. If you want to save the data, you will also need to en
 
 ![Database Edit](/readme/db_edit.jpg "Database Edit")
 
-----------
+--
 
-##4 - Views (Optional)
+#### Views (Optional)
 
 If you want to change the views, you can have them put into your app:
 
@@ -96,20 +98,18 @@ If you want to change the views, you can have them put into your app:
 
 The views will be appended to your app, and you'll be able to edit them as required.
 
-**Show**
---
+##### Show
 
 ![View](/readme/view.jpg "View")
 
 The view is a single view designed to work for all exceptions.
 
-By default, it is split for `404` and `500` errors, but can be used as a single set of criteria if necessary.
+By default, it is split for use with different layouts, data being available to both.
 
 This works exactly the same as the other views in your app (IE the `exceptions` controller invokes the `show` action)
 
 
-**Layout**
---
+##### Layout
 
 One of the most critial aspects of **ExceptionHandler** is the custom `Error` layout.
 
