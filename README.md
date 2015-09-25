@@ -23,30 +23,25 @@ It hooks into the **[`config.exceptions_app`](http://guides.rubyonrails.org/conf
 
 ![Exceptions_App middleware](/readme/exceptions_app.png)
 
-With **ExceptionHandler**, you can create custom **404, 500 production error pages**
+With **ExceptionHandler**, you can create custom **404 & 500 production error pages**:
 
 ![Exceptions_App middleware](/readme/subtitle.jpg)
 
 ---
 
-The standard Rails production error pages are not appealing, and ruin the branding of your app:
+**ExceptionHandler** catches errors in the middleware hook (`config.exceptions_app`), channeling the users to our [custom `exceptions` controller](blob/master/app/controllers/exception_handler/exception_controller.rb). It then dissects data such as the `message`, `details`, `user agent`, etc, redirect the user to a `custom view`, storing it in the db:
 
-![Exceptions_App middleware](/readme/current.png)
-
-**ExceptionHandler** catches errors in the middleware hook (`config.exceptions_app`), channeling the users to our [custom `exceptions` controller](blob/master/app/controllers/exception_handler/exception_controller.rb). Here, we dissect data such as the `message`, `details`, `user agent`, etc, redirect the user to a `custom view`, storing the data in the db.
-
-**404 Errors** | **50x Errors**
+**40x Errors** | **50x Errors**
 --- | ---
 ![404 Error Page](/readme/400.jpg "404 Error Page (Uses Application Layout)") | ![500 Error Page](/readme/500.jpg "500 Error Page (Uses Error Layout)") 
 **layouts/application.html.erb** | **layouts/errors.html.erb** 
 
---
 
 All exceptions in Rails are handled by the [`ActiveDispatch::ShowExceptions`](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware. 
 
-This is handled through a hook called `config.exceptions_app`, which is accessed through the `environment` files of rails `application.rb`, `environments/development.rb`, `environments/production.rb` etc.
+This is invoked through a hook called `config.exceptions_app`, accessed through the `environment` files of rails `application.rb`, `environments/development.rb`, `environments/production.rb` etc.
 
-Whilst it's common practice to use either `config.exceptions_app = self.routes` to handle exceptions, `ExceptionHandler` hooks its own middleware:
+Whilst it's common practice to use `config.exceptions_app = self.routes` to send exceptions to your routes, `ExceptionHandler` hooks directly into the middleware, giving us access to all the data:
 
 ![Parse](/readme/parser.jpg "Parser")
 
