@@ -63,6 +63,8 @@ You can see [`ExceptionHandler` on RubyGems](https://rubygems.org/gems/exception
 
 ##### Config
 
+*Optional*
+
 If you wish to change any of the default settings (listed below), run the following command:
 
     $ rails g exception_handler:install
@@ -75,7 +77,9 @@ You can run `ExceptionHandler` just from the `gem` if you wish.
 
 --
 
-#### DB (Optional)
+##### DB
+
+*Optional*
 
 If you want to set up database support (IE have exceptions saved to a table), you need to create a migration:
 
@@ -89,7 +93,9 @@ This is an optional step. If you want to save the data, you will also need to en
 
 --
 
-#### Views (Optional)
+##### Views
+
+*Optional*
 
 If you want to change the views, you can have them put into your app:
 
@@ -98,7 +104,9 @@ If you want to change the views, you can have them put into your app:
 
 The views will be appended to your app, and you'll be able to edit them as required.
 
-##### Show
+---
+
+###### Show
 
 ![View](/readme/view.jpg "View")
 
@@ -108,8 +116,9 @@ By default, it is split for use with different layouts, data being available to 
 
 This works exactly the same as the other views in your app (IE the `exceptions` controller invokes the `show` action)
 
+---
 
-##### Layout
+###### Layout
 
 One of the most critial aspects of **ExceptionHandler** is the custom `Error` layout.
 
