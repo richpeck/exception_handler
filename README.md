@@ -9,63 +9,46 @@
 
 ----------
 
+Sick of the standard Rails error pages?
 
-**ExceptionHandler** provides error handling for Rails 4+ apps (adapted from [1](https://gist.github.com/wojtha/8433843) & [2](http://www.sharagoz.com/posts/1-rolling-your-own-exception-handler-in-rails-3)).
+Need a custom layout to show professional-looking errors in production?
+
+`exception_handler` is exactly what you need!
+
+----------
+
+**ExceptionHandler** provides error handling for Rails 4+ apps *(adapted from [**1**](https://gist.github.com/wojtha/8433843) & [**2**](http://www.sharagoz.com/posts/1-rolling-your-own-exception-handler-in-rails-3))*.
 
 It hooks into the **[`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration)** middleware:
 
 ![Exceptions_App middleware](/readme/exceptions_app.png)
 
-You can use **ExceptionHandler** to create custom **404, 500 production error pages**.
+With **ExceptionHandler**, you can create custom **404, 500 production error pages**
 
-The standard Rails production error pages are not appealing, and ruin the branding of your app.
+![Exceptions_App middleware](/readme/subtitle.jpg)
 
-We created this gem from two tutorials, to give us the ability to make our own custom error pages. **ExceptionHandler** catches errors in the middleware (`config.exceptions_app`), channeling the users to our custom `exceptions` controller. Here, we dissect data such as the error message, details, user agent, etc, redirect the user to a custom view, storing the data in the db.
+---
 
-**404 Errors** | **500 Errors**
+The standard Rails production error pages are not appealing, and ruin the branding of your app:
+
+![Exceptions_App middleware](/readme/current.png)
+
+**ExceptionHandler** catches errors in the middleware hook (`config.exceptions_app`), channeling the users to our [custom `exceptions` controller](blob/master/app/controllers/exception_handler/exception_controller.rb). Here, we dissect data such as the `message`, `details`, `user agent`, etc, redirect the user to a `custom view`, storing the data in the db.
+
+**404 Errors** | **50x Errors**
 --- | ---
 ![404 Error Page](/readme/400.jpg "404 Error Page (Uses Application Layout)") | ![500 Error Page](/readme/500.jpg "500 Error Page (Uses Error Layout)") 
 **layouts/application.html.erb** | **layouts/errors.html.erb** 
 
-**40x errors** can use your own layout (no server problems)
-
-**50x errors** have to use a barebones layout
 --
 
-![Custom Layout](/readme/layout.jpg "Custom Layout for 50x Errors")
+All exceptions in Rails are handled by the [`ActiveDispatch::ShowExceptions`](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware. 
 
-In order to handle **`500` server errors**, we have had to include our own barebones layout. 
+This is handled through a hook called `config.exceptions_app`, which is accessed through the `environment` files of rails `application.rb`, `environments/development.rb`, `environments/production.rb` etc.
 
-You can [change the layout](#views-optional). 
-
-The reason why you need this for the 50x errors is because a server fault prevents your server from completing the request, so any layouts requiring database data will not work. 
-
-Our basic layout is inline-styled, and has no external DB calls. It shows the exception without causing any issues:
-
-**Controller**
-
-![Layout Selection](/readme/layout_info.jpg "Layout Selection")
-
-**ERB**
-![Layout Code](/readme/layout_code.jpg "Layout Code")
-
-If you wish to change the layout, you can do so either through the `controller` or `view` template.
-
---
-
-Errors are handled by the `exception_handler.rb` lib file:
+Whilst it's common practice to use either `config.exceptions_app = self.routes` to handle exceptions, `ExceptionHandler` hooks its own middleware:
 
 ![Parse](/readme/parser.jpg "Parser")
-
-Whenever an exception is caught by `config.exceptions_app`, it is routed to the `exceptions` controller's `show` action.
-
-![Exceptions Controller](/readme/exception_controller.jpg "Exceptions Controller")
-
-This gives us the most efficient & flexible way of catching, displaying & handling exceptions. 
-
-Here is an example of `exception_handler` in action:
-
-
 
 ----------
 
