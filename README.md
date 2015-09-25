@@ -57,9 +57,9 @@ or
 
     $ bundle
 
---
+You can see [`ExceptionHandler` on RubyGems here](https://rubygems.org/gems/exception_handler)
 
-### Options
+--
 
 ##### Config
 
@@ -134,6 +134,20 @@ You should change this setting if you wish to test your styling in development m
 ### Usable_Type & Usable_ID
 
 ----------
+
+## Bugs
+
+1. `ApplicationController`
+   
+   A significant issue exists in respect to the inheritance of `exceptions_controller`.
+   Our current version (`0.4`) inherits from the `ApplicationController`. This causes a problem for many applications.
+
+   If you use any sort of `before_action` callback in your controller, especially to populate variables, this
+   will cause untold problems in your `exceptions_controller`. 
+
+   `500` errors are server faults; trying to get the server to call more data will simply not work. It causes
+   an exception loop, leading to catastrophic failure.
+
 
 ## Support
 
