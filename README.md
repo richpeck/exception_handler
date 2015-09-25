@@ -115,7 +115,7 @@ One of the most critial aspects of **ExceptionHandler** is the custom `Error` la
 
 If you want to change the layout (for 500 error pages), you need to use the following:
 
-
+![Layout](/readme/layout.jpg "Layout")
 
 ----------
 
