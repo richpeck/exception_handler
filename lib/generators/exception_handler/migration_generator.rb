@@ -28,7 +28,7 @@ module ExceptionHandler
 
 		#Create
 		def create_errors_migration
-			migration_template "migration.rb.erb", "db/migrate/exception_handler.rb"
+			migration_template "migration.rb.erb", "db/migrate/create_errors.rb"
 		end
 
 		###########################################
