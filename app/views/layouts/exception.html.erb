@@ -17,12 +17,10 @@
     <!-- Footer -->
     <footer>
     	<div class="connect">
-    		<% ExceptionHandler.config[:social].each do |key,value| %>
-    			<%= link_to image_tag("exception_handler/connect/#{key}.png", title: "Find us on " + key.to_s.titleize), value.join("/"), target: :blank, class: key.to_s %>
-    		<% end %>
+    		<%= social %>
     	</div>
     	<div class="app">
-    		<strong><%= link_to @app_name, "google.com", title: "Go to index" %></strong>
+    		<strong><%= link_to @app_name, main_app.root_url, title: "Go to index" %></strong>
     		<span> - <%= @status %> Error</span>
     	</div>
     </footer>
