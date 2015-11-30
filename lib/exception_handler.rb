@@ -13,31 +13,26 @@ end
 
 module ExceptionHandler
 
+	#Config
+	#https://github.com/thoughtbot/paperclip/blob/523bd46c768226893f23889079a7aa9c73b57d68/lib/paperclip/railtie.rb#L13
+	mattr_accessor :config
+	@@config = ExceptionHandler::Config.defaults.deep_merge({}) #-> instance of defaults invoked with @@config, edited with deep_merge
+
 	#Exception Handler
 	class Exceptions < Rails::Engine
+		#Keep helpers in your engine
+		#http://guides.rubyonrails.org/engines.html#inside-an-engine
+		#http://stackoverflow.com/questions/31877839/accessing-helpers-from-the-parent-app-in-an-isolated-rails-engine
+		isolate_namespace ExceptionHandler
 
 		#Stylesheet
 		config.assets.precompile += %w(exception_handler/error.css) 
 
-		#Parser
+		#Hook
 		initializer "exception_handler.configure_rails_initialization" do |app|
-			app.config.middleware.use "ExceptionHandler::Message" unless ExceptionHandler.config.db == false #Parser
+			app.config.middleware.use "ExceptionHandler::Message" unless ExceptionHandler.config[:db] == false #Parser
 			app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } #Pages
 		end
 
-	end
-
-	####################
-	#      Config      #
-	####################
-
-	mattr_accessor :config, :table
-
-	#Vars
-	@@config ||= Config.new
-
-	#Block (for initializer)
-	def self.setup
-		yield(config) if block_given?
 	end
 end
