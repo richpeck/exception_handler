@@ -8,23 +8,26 @@
 
 module ExceptionHandler
   class Config
-	attr_accessor :db, :social, :error_layout, :exception_layout
+  		mattr_accessor :db, :email, :social, :layouts
 
-	def db
-		false
-	end
-
-	def initialize
-		@db = false # -> db name (false = no; true = "errors"; [value] = [value])
-		@social = {
-			facebook: 	"https://facebook.com/frontline.utilities",
-			twitter: 	"http://twitter.com/frontlineutils",
-			linkedin: 	"https://linkedin.com/company/frontline-utilities",
-			youtube: 	"https://youtube.com/user/frontlineutils",
-			fusion: 	"http://frontlinefusion.com/frontlineutils"
-		}
-    @error_layout = nil
-    @exception_layout = nil
-    end
+  		# Defaults
+  		# Merged with Rails options with @@config in engine
+		def self.defaults
+			{
+				db:   	false, #-> defaults to :errors if true, else use :table_name
+				email: 	false, #-> need to integrate
+				social: {
+				    :twitter 	=> 	['http://twitter.com', 'frontlineutils'],
+				    :facebook 	=> 	['https://facebook.com', 'frontline.utilities'],
+				    :linkedin 	=> 	['https://linkedin.com/company','frontline-utilities'],
+				    :youtube 	=>	['https://youtube.com/user', 'frontlineutils'],
+				    :fusion 	=> 	['https://frontlinefusion.com', 'frontlineutils'],
+				},
+				layouts: {
+				    '400' => nil,
+				    '500' => 'exception'
+				},
+			}
+		end
   end
 end

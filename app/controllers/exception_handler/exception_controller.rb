@@ -17,6 +17,9 @@ module ExceptionHandler
   	#Show
     def show
       @layout = self.send(:_layout)
+
+      ## Config "404 block" handler ##
+
       @message = @status == 404 ? "Sorry, this page is missing" : details[:message]
       render status: @status
     end
@@ -55,9 +58,9 @@ module ExceptionHandler
     def layout_status
       case  @status
         when 404
-          ExceptionHandler.config.error_layout || nil #-> inherits ApplicationController layout
+          ExceptionHandler.config[:layouts]["400"] || nil #-> inherits ApplicationController layout
         else
-          ExceptionHandler.config.exception_layout || 'error'
+          ExceptionHandler.config[:layouts]["500"] #-> should pull default if none sepecified
       end     
     end
 
