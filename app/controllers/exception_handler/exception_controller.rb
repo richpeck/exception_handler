@@ -10,6 +10,10 @@ module ExceptionHandler
     #Layout
     layout :layout_status
 
+    #Helper
+    #http://stackoverflow.com/questions/9809787/why-is-my-rails-mountable-engine-not-loading-helper-methods-correctly
+    helper ExceptionHandler::ApplicationHelper
+
     ####################
     #      Action      #
     ####################

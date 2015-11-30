@@ -23,6 +23,7 @@ module ExceptionHandler
 		#Keep helpers in your engine
 		#http://guides.rubyonrails.org/engines.html#inside-an-engine
 		#http://stackoverflow.com/questions/31877839/accessing-helpers-from-the-parent-app-in-an-isolated-rails-engine
+		#use main_app to call "main app" helpers etc http://stackoverflow.com/a/9178022/1143732 + http://edgeapi.rubyonrails.org/classes/Rails/Engine.html#class-Rails::Engine-label-Using+Engine-27s+routes+outside+Engine
 		isolate_namespace ExceptionHandler
 
 		#Stylesheet

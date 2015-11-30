@@ -5,7 +5,7 @@
 		<%= content_tag :div, class: "message" do %>
 			<%= content_tag :div, class: "title" do %>
 				<span><%= "#{@status} Error - #{details[:name]}" %></span>
-				<%= link_to image_tag("exception_handler/close.png"), "google.com", title: "Close (Go back home)", class: "close" %>
+				<%= link_to image_tag("exception_handler/close.png"), main_app.root_url, title: "Close (Go back home)", class: "close" %>
 			<% end %>
 			<%= content_tag :div, class: "details" do %>
 				<%= image_tag "exception_handler/alert.png", title: "#{@status} Error" %>
@@ -14,7 +14,7 @@
 			<%= content_tag :div, class: "info" do %>
 				<span><%= @message %></span>
 				<div class="notification">
-					<%= link_to image_tag("exception_handler/home.png", title: "Go Back Home"), "google.com", class: "home" %>
+					<%= link_to image_tag("exception_handler/home.png", title: "Go Back Home"), main_app.root_url, class: "home" %>
 					<div class="version">v<%= Rails.version %></div>
 					<strong>Our developers have been notified - we're working on it!</strong>
 				</div>
