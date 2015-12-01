@@ -10,6 +10,14 @@ module ExceptionHandler
   class Config
   		mattr_accessor :db, :email, :social, :layouts
 
+  		@@social = {
+		    :twitter 	=> 	'http://twitter.com',
+		    :facebook 	=> 	'https://facebook.com',
+		    :linkedin 	=> 	'https://linkedin.com/company',
+		    :youtube 	=>	'https://youtube.com/user',
+		    :fusion 	=> 	'https://frontlinefusion.com',
+		}
+
   		# Defaults
   		# Merged with Rails options with @@config in engine
 		def self.defaults
@@ -17,11 +25,11 @@ module ExceptionHandler
 				db:   	false, #-> defaults to :errors if true, else use :table_name
 				email: 	false, #-> need to integrate
 				social: {
-				    :twitter 	=> 	['http://twitter.com', 'frontlineutils'],
-				    :facebook 	=> 	['https://facebook.com', 'frontline.utilities'],
-				    :linkedin 	=> 	['https://linkedin.com/company','frontline-utilities'],
-				    :youtube 	=>	['https://youtube.com/user', 'frontlineutils'],
-				    :fusion 	=> 	['https://frontlinefusion.com', 'frontlineutils'],
+				    :twitter 	=> 	['frontlineutils', 		@@social[:twitter]],
+				    :facebook 	=> 	['frontline.utilities', @@social[:facebook]],
+				    :linkedin 	=> 	['frontline-utilities', @@social[:linkedin]],
+				    :youtube 	=>	['frontlineutils', 		@@social[:youtube]],
+				    :fusion 	=> 	['frontlineutils', 		@@social[:fusion]],
 				},
 				layouts: {
 				    '400' => nil,
