@@ -18,6 +18,12 @@ module ExceptionHandler
 	mattr_accessor :config
 	@@config = ExceptionHandler::Config.defaults #-> instance of defaults invoked with @@config, merged with deep_merge
 
+	# Don't have prefix method return anything.
+    # This will keep Rails Engine from generating all table prefixes with the engines name
+    # http://stackoverflow.com/questions/19435214/rails-mountable-engine-with-isolate-namespace-but-without-prefixed-namespace-on
+    def self.table_name_prefix
+    end
+
 	#Exception Handler
 	class Exceptions < Rails::Engine
 		#Keep helpers in your engine

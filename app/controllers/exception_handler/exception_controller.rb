@@ -21,12 +21,13 @@ module ExceptionHandler
   	#Show
     def show
       @layout = self.send(:_layout)
-      @message = @status == 404 ? "Sorry, this page is missing" : details[:message]
+      @message = (/^(5[0-9]{2})$/ !~ @status.to_s) ? "Sorry, this page is missing" : details[:message]
 
       ## Config "404 block" handler ##
-      if ExceptionHandler.config["404"]
-        eval ExceptionHandler.config["404"] #-> http://stackoverflow.com/questions/1188893/is-there-a-way-in-ruby-rails-to-execute-code-that-is-in-a-string
+      if /^(5[0-9]{2})$/ !~ @status.to_s && ExceptionHandler.config["404"] #-> http://www.justskins.com/forums/ruby-s-regexp-is-52846.html
+        eval ExceptionHandler.config["404"]
       else
+        ## Render (if eval do anything) ##
         render status: @status
       end
     end
