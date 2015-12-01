@@ -21,11 +21,14 @@ module ExceptionHandler
   	#Show
     def show
       @layout = self.send(:_layout)
+      @message = @status == 404 ? "Sorry, this page is missing" : details[:message]
 
       ## Config "404 block" handler ##
-
-      @message = @status == 404 ? "Sorry, this page is missing" : details[:message]
-      render status: @status
+      if ExceptionHandler.config["404"]
+        eval ExceptionHandler.config["404"] #-> http://stackoverflow.com/questions/1188893/is-there-a-way-in-ruby-rails-to-execute-code-that-is-in-a-string
+      else
+        render status: @status
+      end
     end
 
     ####################

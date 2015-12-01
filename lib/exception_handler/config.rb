@@ -29,5 +29,14 @@ module ExceptionHandler
 				},
 			}
 		end
+
+		#404 Callback (needs improving big time)
+		#Use the following:
+
+		#'404' => <<-EOF
+        #    redirect_to root_url, notice: "Hello"
+        #EOF
+
+        #This will invoke specifics for the 
   end
 end
