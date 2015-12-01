@@ -2,7 +2,7 @@ module ExceptionHandler
 	class ViewsGenerator < Rails::Generators::Base
 
 		#Views
-		@@views = %w(views controllers models assets)
+		@@views = %w(views controllers helpers models assets)
 
 		#Options
 		class_option :files, aliases: "-v", default: @@views, type: :array, desc: "Select file types (views, models, controllers, assets)"
