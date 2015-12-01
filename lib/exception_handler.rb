@@ -22,6 +22,7 @@ module ExceptionHandler
     # This will keep Rails Engine from generating all table prefixes with the engines name
     # http://stackoverflow.com/questions/19435214/rails-mountable-engine-with-isolate-namespace-but-without-prefixed-namespace-on
     def self.table_name_prefix
+    	#No prefix
     end
 
 	#Exception Handler
