@@ -6,16 +6,6 @@ module ExceptionHandler
 		#http://stackoverflow.com/questions/8028021/helpers-in-rails-engine
 		#ActiveSupport.on_load( :action_view ){ include ExceptionHandler::ViewHelpers }
 
-
-		##Defaults
-		@@defaults = {
-		    :twitter 	=> 	'http://twitter.com',
-		    :facebook 	=> 	'https://facebook.com',
-		    :linkedin 	=> 	'https://linkedin.com/company',
-		    :youtube 	=>	'https://youtube.com/user',
-		    :fusion 	=> 	'https://frontlinefusion.com',
-		}
-
 		#Social
 		def social *args
 			output = []
@@ -33,7 +23,7 @@ module ExceptionHandler
 
 		def link service #-> bloated way to allow single references in config
 			url = ExceptionHandler.config[:social][service]
-			url[1] = @@defaults[service] if !url[1]
+			url[1] = ExceptionHandler.social[service] if !url[1]
 			url.reverse!.join("/")
 		end
 
