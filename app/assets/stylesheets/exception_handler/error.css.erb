@@ -5,14 +5,19 @@
 <% radius 	= 5 %>
 <% title_bg = "rgba(227,11,11,1)" %>
 
-
+/**************/
 /* Responsive */
+/**************/
+
 @media screen and (max-width: 950px) {
 	html 				{ background-size: cover !important; }
 	.container .error	{ width: 55% !important; }
 }
 
+/***********/
 /* Styling */
+/***********/
+
 *  { margin: 0; }
 html, body, .container { height: 100%; }
 html {
@@ -138,7 +143,9 @@ a:hover { text-decoration: underline; }
 }
 .container .message .title a.close:hover img { opacity: 0.75; }
 
-
+/***********/
+/* Details */
+/***********/
 
 .container .message .details {
 	position: relative;
@@ -289,9 +296,9 @@ footer .connect a 		{
 }
 
 footer .connect a img 				{ display: block; vertical-align: middle; }
-footer .connect a.facebook img 		{ height: <%= size * 0.85 %>px; }
-footer .connect a.twitter  img		{ height: <%= size * 0.85 %>px; }
-footer .connect a.linkedin img		{ height: <%= size * 0.9 %>px; }
-footer .connect a.youtube  img		{ height: <%= size * 0.875 %>px; }
-footer .connect a.fusion   img		{ height: <%= size %>px; }
+footer .connect a.twitter  img		{ height: <%= size * 0.75 %>px; }
+footer .connect a.facebook img 		{ height: <%= size * 0.7 %>px; }
+footer .connect a.linkedin img		{ height: <%= size * 0.75 %>px; }
+footer .connect a.youtube  img		{ height: <%= size * 0.775 %>px; padding: 0 3px;}
+footer .connect a.fusion   img		{ height: <%= size * 0.8 %>px; }
 footer .connect:hover a:hover 		{ opacity: 1; }

@@ -31,6 +31,8 @@ module ExceptionHandler
 
 	end
 
+	private
+
 	#Parse
 	class Parser 
 
@@ -66,8 +68,8 @@ module ExceptionHandler
 		#User
 		def user(data = {})
 			# => refer to Joe's if want to find admin / user
-			if(@controller.respond_to?("current_user"))
-				user = @controller.send("current_user")
+			if @controller.respond_to?(:current_user)
+				user = @controller.send :current_user
 				[:id].each do |field|
 					data[:id] = user.send(field) 	if user.respond_to?(field)
 					data[:type] = "User" 			if @controller.respond_to?("current_user")
