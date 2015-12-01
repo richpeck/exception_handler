@@ -10,6 +10,7 @@
 ########################################################################################
 
 IMPORTANT -
+**IF UPGRADING***
 **DELETE INITIALIZER (config/initializers/exception_handler.rb)**
 
 We've changed the initialization process for ExceptionHandler.
@@ -17,6 +18,7 @@ We've changed the initialization process for ExceptionHandler.
 The initializer has been replaced with /config/application.rb
 options:
 
+#config/application.rb
 config.exception_handler = {
 	db:   	false, #-> defaults to :errors if true, else use :table_name
 	email: 	false, #-> need to integrate
@@ -40,4 +42,4 @@ those in config/application.rb.
 More info on the ExceptionHandler github page:
 http://github.com/richpeck/exception_handler
 
-THANK YOU!
+Thank you & enjoy!!
