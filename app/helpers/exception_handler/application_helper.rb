@@ -7,13 +7,13 @@ module ExceptionHandler
 		#ActiveSupport.on_load( :action_view ){ include ExceptionHandler::ViewHelpers }
 
 		#Social
-		def social *args
+		def social *services
 			output = []
 			# options = args.extract_options! http://simonecarletti.com/blog/2009/09/inside-ruby-on-rails-extract_options-from-arrays/ - args for arrays
 
-			services = args.any? ? args : ExceptionHandler.config[:social]
-			services.each do |key,value|
-    			output.push link_to(image_tag("exception_handler/connect/#{key}.png", title: "Find us on " + key.to_s.titleize), link(key), target: :blank, class: key.to_s)
+			services = ExceptionHandler.config[:social] unless services.any?
+			services.except(:url).each do |service,username| #-> except http://stackoverflow.com/a/11105831/1143732
+    			output.push link_to(image_tag("exception_handler/connect/#{service}.png", title: "Find us on " + service.to_s.titleize), link(service), target: :blank, class: service.to_s)
     		end
 
     		output.join("").html_safe #-> ruby returns last line
@@ -22,9 +22,10 @@ module ExceptionHandler
 		private
 
 		def link service #-> bloated way to allow single references in config
-			url = ExceptionHandler.config[:social][service]
-			url[1] = ExceptionHandler.social[service] if !url[1]
-			url.reverse!.join("/")
+			url = []
+			url.push ExceptionHandler.config[:social][:url][service]
+			url.push ExceptionHandler.config[:social][service]
+			url.join("/")
 		end
 
 	end

@@ -1,5 +1,5 @@
 /* Vars */
-<% size 	= 20 %>
+<% size 	= 18 %>
 <% opacity 	= 0.85 %>
 <% footer 	= 50 %>
 <% radius 	= 5 %>
@@ -261,18 +261,22 @@ a:hover { text-decoration: underline; }
 .container .message > .info .notification a.home:hover { opacity: <%= opacity %>; }
 .container .message > .info .notification a.home img { height: 12px; }
 
+/**********/
 /* Footer */
+/**********/
+
 footer {
 	display: block;
 	position: relative;
 	vertical-align: middle;
 	clear: both;
 	color: #fff;
-	margin:  15px auto 0;
-	padding: 14px 1%;
+	margin:  15px 2% 0;
+	padding: 14px 0;
 	box-sizing: border-box;
 	max-height: <%= footer %>;
 	z-index: 1100;
+	border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 footer .app  		{ text-transform: uppercase; }
@@ -293,12 +297,13 @@ footer .connect a 		{
 	padding-left: 4px;
 	margin: 0 -1px; /* Use 0 -1px for inline block & ERB - HAML removes whitespace; ERB does now - http://haml.info/docs/yardoc/file.REFERENCE.html#whitespace_removal__and_ */
 	transition: opacity 0.2s ease;
+	vertical-align: middle;
 }
 
-footer .connect a img 				{ display: block; vertical-align: middle; }
-footer .connect a.twitter  img		{ height: <%= size * 0.75 %>px; }
-footer .connect a.facebook img 		{ height: <%= size * 0.7 %>px; }
-footer .connect a.linkedin img		{ height: <%= size * 0.75 %>px; }
-footer .connect a.youtube  img		{ height: <%= size * 0.775 %>px; padding: 0 3px;}
-footer .connect a.fusion   img		{ height: <%= size * 0.8 %>px; }
+footer .connect a img 				{ display: block; padding: 0 5px; }
+footer .connect a.facebook img 		{ height: <%= size * 0.92 %>px; }
+footer .connect a.twitter  img		{ height: <%= size * 0.88 %>px; }
+footer .connect a.youtube  img		{ height: <%= size %>px; }
+footer .connect a.linkedin img		{ height: <%= size * 0.97 %>px; }
+footer .connect a.fusion   img		{ height: <%= size %>px; }
 footer .connect:hover a:hover 		{ opacity: 1; }
