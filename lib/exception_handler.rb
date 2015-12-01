@@ -16,7 +16,7 @@ module ExceptionHandler
 	#Config
 	#https://github.com/thoughtbot/paperclip/blob/523bd46c768226893f23889079a7aa9c73b57d68/lib/paperclip/railtie.rb#L13
 	mattr_accessor :config
-	@@config = ExceptionHandler::Config.defaults.deep_merge!({}) #-> instance of defaults invoked with @@config, merged with deep_merge
+	@@config = ExceptionHandler::Config.defaults #-> instance of defaults invoked with @@config, merged with deep_merge
 
 	#Exception Handler
 	class Exceptions < Rails::Engine
