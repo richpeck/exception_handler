@@ -1,6 +1,6 @@
 module ExceptionHandler
 	module Parser
-		class Save
+		class Data
 
 			#Init
 			def initialize(exception, request, controller)
@@ -13,12 +13,14 @@ module ExceptionHandler
 				message = ""
 				ActiveRecord::Base.logger.silence do
 					ExceptionHandler::Error.create info do |error|
-						message += "#{error.class_name}:\n "
-						#message += Rails.backtrace_cleaner.clean(error.trace.split("\n")).join("\n")
+						message += "\n======================\n"
+						message += "#{error.class_name}:\n"
+						message += "\n#{error.message}\n"
+						message += Rails.backtrace_cleaner.clean(error.trace.split("\n")).join("\n")
+						message += "\n======================\n"
 					end
 				end
 				Rails.logger.fatal message unless message.blank?
-				Rails.logger.info info[:usable_type]
 			end
 
 			private
@@ -32,7 +34,7 @@ module ExceptionHandler
 			def info
 				info = {
 					class_name: 	@exception.class.to_s,
-					message: 		@exception.to_s,
+					message: 		@exception.message.to_s,
 					trace: 			@exception.backtrace.join("\n"),
 					target_url: 	@request.url,
 					referer_url: 	@request.referer,
