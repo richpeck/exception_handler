@@ -4,10 +4,13 @@
 require "action_dispatch"
 
 #Gem Files
-libs = %w(version parser config)
+libs = %w(version parse config)
 for lib in libs do
 	require "exception_handler/#{lib}"
 end
+
+require "exception_handler/parser/save"
+require "exception_handler/parser/ignore"
 
 ###########################################
 
@@ -36,13 +39,18 @@ module ExceptionHandler
 		#Stylesheet
 		config.assets.precompile += %w(exception_handler/error.css) 
 
+		#Config
+		@@config = ExceptionHandler.config
+
 		#Hook
 		initializer "exception_handler.configure_rails_initialization" do |app|
 			
-			ExceptionHandler.config.deep_merge! app.config.exception_handler if app.config.respond_to?(:exception_handler)
+			#Options
+			@@config.deep_merge!(app.config.exception_handler) if app.config.respond_to? :exception_handler
 
-			app.config.middleware.use "ExceptionHandler::Message" unless ExceptionHandler.config[:db] == false #Parser
-			app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } #Pages
+			#Middleware
+			app.config.middleware.use ExceptionHandler::Parse if @@config[:db] #DB
+			app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } #Controller
 		end
 
 	end
