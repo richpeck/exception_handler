@@ -7,15 +7,13 @@ require "action_dispatch"
 #http://stackoverflow.com/a/735130/1143732
 require "exception_handler/config"
 require "exception_handler/parse"
+require "exception_handler/version"
 require "exception_handler/parser/data"
 require "exception_handler/parser/ignore"
 
 ###########################################
 
 module ExceptionHandler
-
-	#VERSION
- 	VERSION = "0.4.5"
 
 	#Config
 	#https://github.com/thoughtbot/paperclip/blob/523bd46c768226893f23889079a7aa9c73b57d68/lib/paperclip/railtie.rb#L13
@@ -50,7 +48,7 @@ module ExceptionHandler
 			@@config.deep_merge!(app.config.exception_handler) if app.config.respond_to? :exception_handler
 
 			#Middleware
-			app.config.middleware.use ExceptionHandler::Parse if @@config[:db] #DB
+			app.config.middleware.use ExceptionHandler::Parse if @@config[:db] # && ActiveRecord::Base.connection.table_exists?(:errors unless @@config[:db].blank?)  #DB
 			app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } #Controller
 		end
 

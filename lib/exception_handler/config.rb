@@ -8,7 +8,7 @@
 
 module ExceptionHandler
 	class Config
-  		mattr_accessor :db, :email, :social, :layouts
+  		mattr_accessor :db, :email, :table, :social, :layouts
 
   		# Defaults
   		# Merged with Rails options with @@config in engine
