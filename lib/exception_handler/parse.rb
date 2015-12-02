@@ -15,7 +15,7 @@ module ExceptionHandler
 			controller 	= env['action_controller.instance']
 			ignore 		= ExceptionHandler::Parser::Ignore.new(exception, request).match?
 
-			ExceptionHandler::Parser::Save.new(exception, request, controller).save unless ignore
+			ExceptionHandler::Parser::Data.new(exception, request, controller).save unless ignore
 			raise exception
 		end
 
