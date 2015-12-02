@@ -10,7 +10,7 @@
 ########################################################################################
 
 IMPORTANT -
-**IF UPGRADING***
+**IF UPGRADING EXCEPTION HANDLER (to 0.4.5)***
 **DELETE INITIALIZER (config/initializers/exception_handler.rb)**
 
 We've changed the initialization process for ExceptionHandler.
@@ -28,6 +28,13 @@ config.exception_handler = {
 	    :linkedin 	=> 	'frontline-utilities',
 	    :youtube 	=>	'frontlineutils',
 	    :fusion 	=> 	'frontlineutils',
+	    :url => {
+		    :facebook 	=> 	'https://facebook.com',
+		    :twitter 	=> 	'http://twitter.com',
+		    :youtube 	=>	'https://youtube.com/user',
+		    :linkedin 	=> 	'https://linkedin.com/company',
+		    :fusion 	=> 	'https://frontlinefusion.com',
+		},
 	},
 	layouts: {
 	    '400' => nil,
@@ -37,7 +44,8 @@ config.exception_handler = {
 
 If you've made any changes to your initializer,
 you MUST DELETE it, replacing the options with
-those in config/application.rb.
+those in config/application.rb, or
+config/environments/production.rb.
 
 More info on the ExceptionHandler github page:
 http://github.com/richpeck/exception_handler
