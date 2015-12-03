@@ -53,7 +53,7 @@ Whilst it's common practice to use `config.exceptions_app = self.routes` to send
  
 or 
 
-    gem 'exception_handler', '~> 0.4' # Gemfile
+    gem 'exception_handler', '~> 0.4.5' # Gemfile
 
     $ bundle
 
@@ -65,7 +65,7 @@ You can see [`ExceptionHandler` on RubyGems](https://rubygems.org/gems/exception
 
 *Optional*
 
-If you wish to change any of the default settings (listed below), run the following command:
+If you wish to change any of the default settings (listed below), you can now add `config.exception_handler` to your `config/application.rb` file:
 
     $ rails g exception_handler:install
 
