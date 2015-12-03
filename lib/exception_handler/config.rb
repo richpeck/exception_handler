@@ -10,6 +10,10 @@ module ExceptionHandler
 	class Config
   		mattr_accessor :db, :email, :table, :social, :layouts
 
+  		#Default Table Name
+  		# Has to be "errors" because "exceptions" is a reserved word
+  		TABLE_NAME = :errors
+
   		# Defaults
   		# Merged with Rails options with @@config in engine
 		def self.defaults
