@@ -13,6 +13,7 @@ module ExceptionHandler
     #Helper
     #http://stackoverflow.com/questions/9809787/why-is-my-rails-mountable-engine-not-loading-helper-methods-correctly
     helper ExceptionHandler::ApplicationHelper
+    include Rails.application.routes.url_helpers
 
     ####################
     #      Action      #
