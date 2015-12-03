@@ -4,12 +4,16 @@
 require "action_dispatch"
 
 #Libs
-#http://stackoverflow.com/a/735130/1143732
-require "exception_handler/config"
-require "exception_handler/parse"
-require "exception_handler/version"
-require "exception_handler/parser/data"
-require "exception_handler/parser/ignore"
+#http://stackoverflow.com/a/4528011/1143732
+#https://github.com/jekyll/jekyll/blob/master/lib/jekyll.rb#L8
+def require_all(path)
+  glob = File.join(File.dirname(__FILE__), path, '**/*.rb')
+  Dir[glob].each do |f|
+    require f
+  end
+end
+
+require_all "exception_handler"
 
 ###########################################
 
