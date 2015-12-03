@@ -6,18 +6,22 @@ require "action_dispatch"
 #Libs
 #http://stackoverflow.com/a/4528011/1143732
 #https://github.com/jekyll/jekyll/blob/master/lib/jekyll.rb#L8
-def require_all(path)
-  glob = File.join(File.dirname(__FILE__), path, '**/*.rb')
-  Dir[glob].each do |f|
-    require f
-  end
-end
+#def require_all(path)
+#  glob = File.join(File.dirname(__FILE__), path, '**/*.rb')
+#  Dir[glob].each do |f|
+#    require f
+#  end
+#end
 
-require_all "exception_handler"
+#http://stackoverflow.com/a/21693468/1143732
+Dir.glob(File.join(File.dirname(__FILE__), "exception_handler", '**/*.rb'), &method(:require))
 
 ###########################################
 
 module ExceptionHandler
+
+	#Version
+	autoload :VERSION, 'exception_handler/version'
 
 	#Config
 	#https://github.com/thoughtbot/paperclip/blob/523bd46c768226893f23889079a7aa9c73b57d68/lib/paperclip/railtie.rb#L13
