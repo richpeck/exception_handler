@@ -5,15 +5,8 @@ require "action_dispatch"
 
 #Libs
 #http://stackoverflow.com/a/4528011/1143732
-#https://github.com/jekyll/jekyll/blob/master/lib/jekyll.rb#L8
-#def require_all(path)
-#  glob = File.join(File.dirname(__FILE__), path, '**/*.rb')
-#  Dir[glob].each do |f|
-#    require f
-#  end
-#end
-
 #http://stackoverflow.com/a/21693468/1143732
+#https://github.com/jekyll/jekyll/blob/master/lib/jekyll.rb#L8
 Dir.glob(File.join(File.dirname(__FILE__), "exception_handler", '**/*.rb'), &method(:require))
 
 ###########################################
@@ -53,11 +46,12 @@ module ExceptionHandler
 		initializer "exception_handler.configure_rails_initialization" do |app|
 			
 			#Options
-			@@config.deep_merge!(app.config.exception_handler) if app.config.respond_to? :exception_handler
+			@@config.deep_merge! app.config.exception_handler if app.config.respond_to? :exception_handler
+			@@config[:db] = ExceptionHandler::Config::TABLE_NAME if @@config[:db] == true
 
 			#Middleware
 			app.config.middleware.use ExceptionHandler::Parse if @@config[:db] # && ActiveRecord::Base.connection.table_exists?(:errors unless @@config[:db].blank?)  #DB
-			app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } #Controller
+			app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } #Controller	
 		end
 
 	end
