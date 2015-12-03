@@ -10,10 +10,9 @@ module ExceptionHandler
     #Layout
     layout :layout_status
 
-    #Helper
-    #http://stackoverflow.com/questions/9809787/why-is-my-rails-mountable-engine-not-loading-helper-methods-correctly
-    helper ExceptionHandler::ApplicationHelper
-    include Rails.application.routes.url_helpers
+    #Helpers
+    helper ExceptionHandler::ApplicationHelper   #-> HELPERS http://stackoverflow.com/questions/9809787/why-is-my-rails-mountable-engine-not-loading-helper-methods-correctly
+    include Rails.application.routes.url_helpers #-> ROUTES http://stackoverflow.com/a/6074911/1143732
 
     ####################
     #      Action      #
