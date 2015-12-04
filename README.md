@@ -48,6 +48,7 @@ Simply, it gives you a concise, robust way to access all the data of an exceptio
 - [**Testing**](https://github.com/richpeck/exception_handler#testing)
 - [**Bugs**](https://github.com/richpeck/exception_handler#bugs)
 - [**Support**](https://github.com/richpeck/exception_handler#support)
+- [**Contribution**](https://github.com/richpeck/exception_handler#contribution)
 
 ----------
 
@@ -158,6 +159,7 @@ You should change this setting if you wish to test your styling in development m
    an exception loop, leading to catastrophic failure.
 
 
+----------
 
 <img src="readme/titles/support.png" id="support" />
 
@@ -165,6 +167,8 @@ You should change this setting if you wish to test your styling in development m
  - [Create an "issue"](https://github.com/richpeck/exception_handler/issues) 
  - Contact support (soon)
  - [Ask on StackOverflow](http://stackoverflow.com/questions/ask?tags=exception_handler&ruby_on_rails) 
+
+----------
 
 <img src="readme/titles/contribution.png" id="contribution" />
 
