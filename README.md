@@ -37,9 +37,9 @@ With **ExceptionHandler**, you can create custom **404 & 500 production error pa
 **layouts/application.html.erb** | **layouts/errors.html.erb** 
 
 
-All exceptions in Rails are handled by the [`ActiveDispatch::ShowExceptions`](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware. 
+All exceptions in Rails are handled by the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware. 
 
-This is invoked through a hook called `config.exceptions_app`, accessed through the `environment` files of rails `application.rb`, `environments/development.rb`, `environments/production.rb` etc.
+This is invoked through a hook called **`config.exceptions_app`**, accessed through the `environment` files of rails `application.rb`, `environments/development.rb`, `environments/production.rb` etc.
 
 Whilst it's common practice to use `config.exceptions_app = self.routes` to send exceptions to your routes, `ExceptionHandler` hooks directly into the middleware, giving us access to allllllllllllllll the data:
 
@@ -69,7 +69,11 @@ or
 
 You can see [`ExceptionHandler` on RubyGems](https://rubygems.org/gems/exception_handler)
 
---
+`ExceptionHandler` works out of the box.
+
+You only need to change 
+
+----------
 
 ##### Config
 
@@ -84,11 +88,9 @@ If you're upgrading to `0.4.6`, you need to remove your `exception_handler` init
 
 We've changed the load process to use Rails app `config` - **you don't need the `exception_handler` initializer any more**
 
---
+----------
 
 ##### DB
-
-*Optional*
 
 If you want to set up database support (IE have exceptions saved to a table), you need to create a migration:
 
@@ -97,15 +99,13 @@ If you want to set up database support (IE have exceptions saved to a table), yo
 
 ![Database](/readme/db.jpg "Database")
 
-This is an optional step. If you want to save the data, you will also need to ensure your `config.db` option is correct:
+This is an optional step. If you want to save the data, you will also need to ensure your config `db` option is either `true` || `:table_name`:
 
 ![Database Edit](/readme/db_edit.jpg "Database Edit")
 
---
+----------
 
 ##### Views
-
-*Optional*
 
 If you want to change the views, you can have them put into your app:
 
@@ -126,7 +126,7 @@ By default, it is split for use with different layouts, data being available to 
 
 This works exactly the same as the other views in your app (IE the `exceptions` controller invokes the `show` action)
 
----
+----------
 
 ###### Layout
 
