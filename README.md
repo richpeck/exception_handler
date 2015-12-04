@@ -45,7 +45,7 @@ Simply, it gives you a concise, robust way to access all the data of an exceptio
   - [DB](https://github.com/richpeck/exception_handler#db)
   - [Views](https://github.com/richpeck/exception_handler#views)
   - [Layout](https://github.com/richpeck/exception_handler#layout)
-- [**Development**](https://github.com/richpeck/exception_handler#development)
+- [**Testing**](https://github.com/richpeck/exception_handler#testing)
 - [**Bugs**](https://github.com/richpeck/exception_handler#bugs)
 
 ----------
@@ -129,7 +129,7 @@ If you want to change the layout (for 500 error pages), you need to use the foll
 
 ----------
 
-<img src="/readme/titles/testing.png" />
+<img src="/readme/titles/testing.png" id="testing" />
 
 `config.exceptions_app` is only used in Rails' **production** environment.
 
@@ -139,11 +139,9 @@ If you wish to test the gem in dev, you'll need to make your app process request
 
 You should change this setting if you wish to test your styling in development mode. It should be temporary (you need to change it back once you have it looking how you like)
 
-### Usable_Type & Usable_ID
-
 ----------
 
-## Bugs
+<img src="readme/titles/bugs.png" id="bugs" />
 
 1. `ApplicationController`
 
