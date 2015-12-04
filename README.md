@@ -10,13 +10,7 @@
 
 ----------
 
-Sick of the standard Rails error pages?
-
-Need a custom layout to show professional-looking errors in production?
-
-`exception_handler` is exactly what you need!
-
-**ExceptionHandler**, you can create custom **404 & 500 production error pages** *(adapted from [**1**](https://gist.github.com/wojtha/8433843) & [**2**](http://www.sharagoz.com/posts/1-rolling-your-own-exception-handler-in-rails-3))*:
+**ExceptionHandler** helps you can create custom **404 & 500 production error pages** *(adapted from [**1**](https://gist.github.com/wojtha/8433843) & [**2**](http://www.sharagoz.com/posts/1-rolling-your-own-exception-handler-in-rails-3))*:
 
 ![Exceptions_App middleware](/readme/subtitle.jpg)
 
@@ -26,7 +20,9 @@ Need a custom layout to show professional-looking errors in production?
 
 ---
 
-**ExceptionHandler** catches errors in the middleware hook (`config.exceptions_app`), channeling the users to our [custom `exceptions` controller](app/controllers/exception_handler/exception_controller.rb). It then dissects data such as the `message`, `details`, `user agent`, etc, redirect the user to a `custom view`, storing it in the db:
+**ExceptionHandler** catches errors in the middleware hook (`config.exceptions_app`), channeling the users to our [custom `exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
+
+It then dissects data such as the `message`, `details`, `user agent`, etc, redirect the user to a `custom view`, storing it in the db:
 
 **40x Errors** | **50x Errors**
 --- | ---
