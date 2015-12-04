@@ -59,7 +59,8 @@ or
     gem 'exception_handler', '~> 0.4.6' # Gemfile
 
 <a href="https://rubygems.org/gems/exception_handler" style="text-align: center">
-  You can see `ExceptionHandler` on RubyGems:
+  You can see `ExceptionHandler` on RubyGems
+  <br />
   <img src="/readme/rubygems.jpg" />
 </a>
 
@@ -67,7 +68,7 @@ or
 
 ##### Config
 
-If you wish to change any of the default settings (below), you can now add `config.exception_handler` to your `config/application.rb` or `config/production.rb` file:
+If you wish to change any of the default settings (below), you should now add `config.exception_handler` to your `config/application.rb` or `config/production.rb` file:
 
 ![Config Options](/readme/config.jpg)
 
@@ -100,13 +101,13 @@ You will also need to ensure your config `db` option is either `true` || `:table
 If you want to change the views, you can have them put into your app:
 
     $ rails generate exception_handler:views #-> controller, models, helpers, views & assets
-	  $ rails generate exception_handler:views -v views controllers models helpers assets #-> remove as appropriate to install individual assets
+	$ rails generate exception_handler:views -v views controllers models helpers assets #-> remove as appropriate to install individual assets
 
 The views will be appended to your app, and you'll be able to edit them as required.
 
 ---
 
-###### Show
+##### Show
 
 ![View](/readme/view.jpg "View")
 
@@ -118,9 +119,9 @@ This works exactly the same as the other views in your app (IE the `exceptions` 
 
 ----------
 
-###### Layout
+##### Layout
 
-One of the most critial aspects of **ExceptionHandler** is the custom `Error` layout.
+One of the most critial aspects of **ExceptionHandler** is the [custom `Exception` layout](/app/controllers/exception_handler/exception_controller.rb).
 
 If you want to change the layout (for 500 error pages), you need to use the following:
 
@@ -128,7 +129,7 @@ If you want to change the layout (for 500 error pages), you need to use the foll
 
 ----------
 
-### Development
+<img src="/readme/titles/testing.png" />
 
 `config.exceptions_app` is only used in Rails' **production** environment.
 
