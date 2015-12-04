@@ -49,13 +49,13 @@ Whilst it's common practice to use `config.exceptions_app = self.routes` to send
 
 ## Contents
 
-- [Installation](https://github.com/richpeck/exception_handler#installation)
+- [**Installation**](https://github.com/richpeck/exception_handler#installation)
   - [Config](https://github.com/richpeck/exception_handler#config)
   - [DB](https://github.com/richpeck/exception_handler#db)
   - [Views](https://github.com/richpeck/exception_handler#views)
   - [Layout](https://github.com/richpeck/exception_handler#layout)
-- [Development](https://github.com/richpeck/exception_handler#development)
-- [Bugs](https://github.com/richpeck/exception_handler#bugs)
+- [**Development**](https://github.com/richpeck/exception_handler#development)
+- [**Bugs**](https://github.com/richpeck/exception_handler#bugs)
 
 ----------
 
