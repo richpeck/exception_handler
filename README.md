@@ -71,7 +71,7 @@ You can see [`ExceptionHandler` on RubyGems](https://rubygems.org/gems/exception
 
 `ExceptionHandler` works out of the box.
 
-You only need to change 
+You only need to change the appropriate `config` option in `config/application.rb` or `config/production.rb` *if* you want any specific changes.
 
 ----------
 
@@ -92,14 +92,14 @@ We've changed the load process to use Rails app `config` - **you don't need the 
 
 ##### DB
 
-If you want to set up database support (IE have exceptions saved to a table), you need to create a migration:
+If you want to store exceptions in the db, you will need to set up a `migration`:
 
     $ rails generate exception_handler:migration
     $ rake db:migrate
 
 ![Database](/readme/db.jpg "Database")
 
-This is an optional step. If you want to save the data, you will also need to ensure your config `db` option is either `true` || `:table_name`:
+You will also need to ensure your config `db` option is either `true` || `:table_name`:
 
 ![Database Edit](/readme/db_edit.jpg "Database Edit")
 
@@ -109,8 +109,8 @@ This is an optional step. If you want to save the data, you will also need to en
 
 If you want to change the views, you can have them put into your app:
 
-    $ rails generate exception_handler:views #-> controller, models, views & assets
-	$ rails generate exception_handler:views -v views controllers models assets #-> remove as appropriate to install individual assets
+    $ rails generate exception_handler:views #-> controller, models, helpers, views & assets
+	  $ rails generate exception_handler:views -v views controllers models helpers assets #-> remove as appropriate to install individual assets
 
 The views will be appended to your app, and you'll be able to edit them as required.
 
