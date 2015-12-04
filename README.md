@@ -53,7 +53,7 @@ Whilst it's common practice to use `config.exceptions_app = self.routes` to send
  
 or 
 
-    gem 'exception_handler', '~> 0.4.5' # Gemfile
+    gem 'exception_handler', '~> 0.4.6' # Gemfile
 
     $ bundle
 
@@ -65,15 +65,16 @@ You can see [`ExceptionHandler` on RubyGems](https://rubygems.org/gems/exception
 
 *Optional*
 
-If you wish to change any of the default settings (listed below), you can now add `config.exception_handler` to your `config/application.rb` file:
+If you wish to change any of the default settings (listed below), you can now add `config.exception_handler` to your `config/application.rb` or `config/production.rb` file:
 
-    $ rails g exception_handler:install
+![Config Options](/readme/config.jpg)
 
-![Creates config/initializers/exception_handler.rb](/readme/config.jpg)
 
-This will deploy a file to `config/initializers/exception_handler.rb`, which you'll be able to edit as required.
+**IMPORTANT**
 
-You can run `ExceptionHandler` just from the `gem` if you wish.
+If you're upgrading to `0.4.6`, you need to remove your `exception_handler` initializer.
+
+We've changed the load process to use Rails app `config` - **you don't need the `exception_handler` initializer any more**
 
 --
 
