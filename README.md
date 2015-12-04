@@ -41,7 +41,7 @@ All exceptions in Rails are handled by the [`ActiveDispatch::ShowExceptions`](ht
 
 This is invoked through a hook called `config.exceptions_app`, accessed through the `environment` files of rails `application.rb`, `environments/development.rb`, `environments/production.rb` etc.
 
-Whilst it's common practice to use `config.exceptions_app = self.routes` to send exceptions to your routes, `ExceptionHandler` hooks directly into the middleware, giving us access to all the data:
+Whilst it's common practice to use `config.exceptions_app = self.routes` to send exceptions to your routes, `ExceptionHandler` hooks directly into the middleware, giving us access to allllllllllllllll the data:
 
 ![Parse](/readme/parser.jpg "Parser")
 
@@ -63,9 +63,7 @@ You can see [`ExceptionHandler` on RubyGems](https://rubygems.org/gems/exception
 
 ##### Config
 
-*Optional*
-
-If you wish to change any of the default settings (listed below), you can now add `config.exception_handler` to your `config/application.rb` or `config/production.rb` file:
+If you wish to change any of the default settings (below), you can now add `config.exception_handler` to your `config/application.rb` or `config/production.rb` file:
 
 ![Config Options](/readme/config.jpg)
 
