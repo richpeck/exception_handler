@@ -1,4 +1,7 @@
 ![Exception Handler](/readme/title.jpg "Exception Handler Logo")
+
+----------
+
 <p align="center">
   <a href="http://badge.fury.io/rb/exception_handler"><img src="https://badge.fury.io/rb/exception_handler.svg"></a>
   <a href="https://codeclimate.com/github/richpeck/exception_handler"><img src="https://codeclimate.com/github/richpeck/exception_handler.png"></a>
@@ -17,19 +20,13 @@ Need a custom layout to show professional-looking errors in production?
 
 ----------
 
-**ExceptionHandler** provides error handling for Rails 4+ apps *(adapted from [**1**](https://gist.github.com/wojtha/8433843) & [**2**](http://www.sharagoz.com/posts/1-rolling-your-own-exception-handler-in-rails-3))*.
-
-It hooks into the **[`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration)** middleware:
-
-![Exceptions_App middleware](/readme/exceptions_app.png)
-
-With **ExceptionHandler**, you can create custom **404 & 500 production error pages**:
+With **ExceptionHandler**, you can create custom **404 & 500 production error pages** *(adapted from [**1**](https://gist.github.com/wojtha/8433843) & [**2**](http://www.sharagoz.com/posts/1-rolling-your-own-exception-handler-in-rails-3))*:
 
 ![Exceptions_App middleware](/readme/subtitle.jpg)
 
 ---
 
-**ExceptionHandler** catches errors in the middleware hook (`config.exceptions_app`), channeling the users to our [custom `exceptions` controller](blob/master/app/controllers/exception_handler/exception_controller.rb). It then dissects data such as the `message`, `details`, `user agent`, etc, redirect the user to a `custom view`, storing it in the db:
+**ExceptionHandler** catches errors in the middleware hook (`config.exceptions_app`), channeling the users to our [custom `exceptions` controller](app/controllers/exception_handler/exception_controller.rb). It then dissects data such as the `message`, `details`, `user agent`, etc, redirect the user to a `custom view`, storing it in the db:
 
 **40x Errors** | **50x Errors**
 --- | ---
