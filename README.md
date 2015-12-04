@@ -1,4 +1,4 @@
-![Exception Handler](/readme/title.png "Exception Handler Logo")
+![Exception Handler](/readme/title.jpg "Exception Handler Logo")
 
 [![Gem Version](https://badge.fury.io/rb/exception_handler.svg)](http://badge.fury.io/rb/exception_handler)
 [![Code Climate](https://codeclimate.com/github/richpeck/exception_handler.png)](https://codeclimate.com/github/richpeck/exception_handler)
