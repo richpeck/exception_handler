@@ -1,7 +1,5 @@
 ![Exception Handler](/readme/title.jpg "Exception Handler Logo")
 
-----------
-
 <p align="center">
   <a href="http://badge.fury.io/rb/exception_handler"><img src="https://badge.fury.io/rb/exception_handler.svg"></a>
   <a href="https://codeclimate.com/github/richpeck/exception_handler"><img src="https://codeclimate.com/github/richpeck/exception_handler.png"></a>
