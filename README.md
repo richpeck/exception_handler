@@ -58,11 +58,10 @@ or
 
     gem 'exception_handler', '~> 0.4.6' # Gemfile
 
-You can see [`ExceptionHandler` on RubyGems](https://rubygems.org/gems/exception_handler)
-
-`ExceptionHandler` works out of the box.
-
-You only need to change the appropriate `config` option in `config/application.rb` or `config/production.rb` *if* you want any specific changes.
+<a href="https://rubygems.org/gems/exception_handler" style="text-align: center">
+  You can see `ExceptionHandler` on RubyGems:
+  <img src="/readme/rubygems.jpg" />
+</a>
 
 ----------
 
