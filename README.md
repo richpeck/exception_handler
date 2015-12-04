@@ -20,7 +20,7 @@
 
 ---
 
-**ExceptionHandler** uses the `config.exceptions_app` to catch errors & send them to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb). It then dissects data such as the `message`, `details`, `user agent`, etc, redirect the user to a `custom view`, storing it in the db:
+**ExceptionHandler** uses the `config.exceptions_app` to catch errors & send them to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb). It then extracts data such as `message`, `details`, `user agent`, & populates our `custom view`, storing it in the db:
 
 **40x Errors** | **50x Errors**
 --- | ---
@@ -32,7 +32,7 @@ All exceptions in Rails are handled by the [**`ActiveDispatch::ShowExceptions`**
 
 This is invoked through a hook called **`config.exceptions_app`**, accessed through the `environment` files of rails `application.rb`, `environments/development.rb`, `environments/production.rb` etc.
 
-Simply, it gives you a concise, robust way to access all the data of an exception, pushing your app to the next level in branding and usability:
+Simply, it gives you a concise, robust way to access all the data of an exception, pushing your app to the next level in branding and usability. There is no other system like this for Rails. `ExceptionHandler` is the *only* Rails production exception handling solution, giving you complete control over the feel of your application, even when it fails:
 
 ![Parse](/readme/parser.jpg "Parser")
 
