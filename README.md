@@ -57,7 +57,7 @@ Whilst it's common practice to use `config.exceptions_app = self.routes` to send
 - [Development](https://github.com/richpeck/exception_handler#development)
 - [Bugs](https://github.com/richpeck/exception_handler#bugs)
 
---
+----------
 
 ## Installation
 
