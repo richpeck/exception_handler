@@ -47,6 +47,16 @@ Whilst it's common practice to use `config.exceptions_app = self.routes` to send
 
 ----------
 
+## Contents
+
+- [Installation](https://github.com/richpeck/exception_handler#installation)
+  - [Config](https://github.com/richpeck/exception_handler#bugs)
+  - [DB](https://github.com/richpeck/exception_handler#db)
+  - [Views](https://github.com/richpeck/exception_handler#views)
+  - [Layout](https://github.com/richpeck/exception_handler#layout)
+- [Development](https://github.com/richpeck/exception_handler#development)
+- [Bugs](https://github.com/richpeck/exception_handler#bugs)
+
 ## Installation
 
      gem install 'exception_handler'
@@ -54,8 +64,6 @@ Whilst it's common practice to use `config.exceptions_app = self.routes` to send
 or 
 
     gem 'exception_handler', '~> 0.4.6' # Gemfile
-
-    $ bundle
 
 You can see [`ExceptionHandler` on RubyGems](https://rubygems.org/gems/exception_handler)
 
