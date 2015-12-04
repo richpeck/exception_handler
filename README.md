@@ -18,9 +18,9 @@ Need a custom layout to show professional-looking errors in production?
 
 ----------
 
-##Custom Error Pages
+##![Exceptions_App middleware](/readme/titles/custom_error_pages.png)
 
-With **ExceptionHandler**, you can create custom **404 & 500 production error pages** *(adapted from [**1**](https://gist.github.com/wojtha/8433843) & [**2**](http://www.sharagoz.com/posts/1-rolling-your-own-exception-handler-in-rails-3))*:
+**ExceptionHandler**, you can create custom **404 & 500 production error pages** *(adapted from [**1**](https://gist.github.com/wojtha/8433843) & [**2**](http://www.sharagoz.com/posts/1-rolling-your-own-exception-handler-in-rails-3))*:
 
 ![Exceptions_App middleware](/readme/subtitle.jpg)
 
