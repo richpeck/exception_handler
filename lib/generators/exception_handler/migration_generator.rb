@@ -21,7 +21,7 @@ module ExceptionHandler
 		#Table Name - false = off, true = errors, value = value
 		#Always outputs string for some reason...
 		def table_name
-    		ExceptionHandler.config[:db]
+    		ExceptionHandler.config.db
 		end
 
 		###########################################

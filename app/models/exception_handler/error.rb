@@ -3,7 +3,7 @@ module ExceptionHandler
 		#Table is called "errors"
 		#Dev needs to use migration to create db
 		def self.table_name
-			ExceptionHandler.config[:db]
+			ExceptionHandler.config.db
 		end
 
 		#Associations

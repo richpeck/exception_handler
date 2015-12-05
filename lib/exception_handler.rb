@@ -17,9 +17,8 @@ module ExceptionHandler
 	autoload :VERSION, 'exception_handler/version'
 
 	#Config
-	#https://github.com/thoughtbot/paperclip/blob/523bd46c768226893f23889079a7aa9c73b57d68/lib/paperclip/railtie.rb#L13
+	#Invoke instance of config -- loads defaults
 	mattr_accessor :config
-	@@config = ExceptionHandler::Config.defaults #-> instance of defaults invoked with @@config, merged with deep_merge
 
 	# Don't have prefix method return anything.
     # This will keep Rails Engine from generating all table prefixes with the engines name
@@ -39,18 +38,14 @@ module ExceptionHandler
 		#Stylesheet
 		config.assets.precompile += %w(exception_handler/error.css) 
 
-		#Config
-		@@config = ExceptionHandler.config
-
 		#Hook
 		initializer "exception_handler.configure_rails_initialization" do |app|
 			
 			#Options
-			@@config.deep_merge! app.config.exception_handler if app.config.respond_to? :exception_handler
-			@@config[:db] = ExceptionHandler::Config::TABLE_NAME if @@config[:db] == true
+			ExceptionHandler.config = ExceptionHandler::Config.new(app.config.respond_to?(:exception_handler) ? app.config.exception_handler : nil)
 
 			#Middleware
-			app.config.middleware.use ExceptionHandler::Parse if @@config[:db] # && ActiveRecord::Base.connection.table_exists?(:errors unless @@config[:db].blank?)  #DB
+			app.config.middleware.use ExceptionHandler::Parse if ExceptionHandler.config.db # && ActiveRecord::Base.connection.table_exists?(:errors unless @@config[:db].blank?)  #DB
 			app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } #Controller	
 		end
 

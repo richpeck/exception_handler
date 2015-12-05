@@ -19,7 +19,7 @@ module ExceptionHandler
 
 			#Errors
 			def errors #-> http://ruby-doc.org/core-2.2.0/Array.html#class-Array-label-Creating+Arrays
-				Array(ActionController::RoutingError, AbstractController::ActionNotFound, ActiveRecord::RecordNotFound)
+				[ActionController::RoutingError, AbstractController::ActionNotFound, ActiveRecord::RecordNotFound]
 			end
 
 			#Bots
