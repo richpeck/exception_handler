@@ -24,8 +24,8 @@ module ExceptionHandler
       @message = (/^(5[0-9]{2})$/ !~ @status.to_s) ? "Sorry, this page is missing" : details[:message]
 
       ## Config "404 block" handler ##
-      if /^(5[0-9]{2})$/ !~ @status.to_s && ExceptionHandler.config["404"] #-> http://www.justskins.com/forums/ruby-s-regexp-is-52846.html
-        eval ExceptionHandler.config["404"]
+      if /^(5[0-9]{2})$/ !~ @status.to_s && ExceptionHandler.config.layouts["404"] #-> http://www.justskins.com/forums/ruby-s-regexp-is-52846.html
+        eval ExceptionHandler.config.layouts["404"]
       else
         ## Render (if eval do anything) ##
         render status: @status
@@ -66,9 +66,9 @@ module ExceptionHandler
     def layout_status
       case  @status
         when 404
-          ExceptionHandler.config[:layouts]["400"] || nil #-> inherits ApplicationController layout
+          ExceptionHandler.config.layouts["400"] || nil #-> inherits ApplicationController layout
         else
-          ExceptionHandler.config[:layouts]["500"] #-> should pull default if none sepecified
+          ExceptionHandler.config.layouts["500"] #-> should pull default if none sepecified
       end     
     end
 

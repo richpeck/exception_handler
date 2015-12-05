@@ -8,46 +8,58 @@
 
 module ExceptionHandler
 	class Config
-  		mattr_accessor :db, :email, :table, :social, :layouts
 
-  		#Default Table Name
-  		# Has to be "errors" because "exceptions" is a reserved word
-  		TABLE_NAME = :errors
+		#Instace Objects
+		attr_accessor :db, :email, :social, :layouts
 
-  		# Defaults
-  		# Merged with Rails options with @@config in engine
-		def self.defaults
-			{
-				db:   	false, #-> defaults to :errors if true, else use :table_name
-				email: 	false, #-> need to integrate
-				social: {
-				    :facebook 	=> 	'frontline.utilities',
-				    :twitter 	=> 	'frontlineutils',
-				    :youtube 	=>	'frontlineutils',
-				    :linkedin 	=> 	'frontline-utilities',
-				    :fusion 	=> 	'frontlineutils',
-				    :url => {
-					    :facebook 	=> 	'https://facebook.com',
-					    :twitter 	=> 	'http://twitter.com',
-					    :youtube 	=>	'https://youtube.com/user',
-					    :linkedin 	=> 	'https://linkedin.com/company',
-					    :fusion 	=> 	'https://frontlinefusion.com',				    	
-				    },
-				},
-				layouts: {
-				    '400' => nil,
-				    '500' => 'exception'
-				},
-			}
+	###########################################
+
+		#Init
+		def initialize values
+			defaults = values.present? ? Config::DEFAULTS.deep_merge!(values) : Config::DEFAULTS
+			defaults.each do |k,v|
+				instance_variable_set("@#{k}",v) #-> http://apidock.com/ruby/Object/instance_variable_set	
+			end
 		end
 
-		#404 Callback (needs improving big time)
-		#Use the following:
+		# INSTANCE METHODS #
 
-		#'404' => <<-EOF
-        #    redirect_to root_url, notice: "Hello"
-        #EOF
+		#DB
+		def db
+			@db == true ? Config::TABLE_NAME : @db
+		end
 
-        #This will invoke specifics for the 
+	###########################################
+
+		#Default Table Name
+		# Has to be "errors" because "exceptions" is a reserved word
+		TABLE_NAME = :errors
+
+	    # Defaults
+		# http://stackoverflow.com/a/8917301/1143732
+		DEFAULTS = {
+			db:   	false, #-> defaults to :errors if true, else use :table_name
+			email: 	false, #-> need to integrate
+			social: {
+				:facebook 	=> 	'frontline.utilities',
+				:twitter 	=> 	'frontlineutils',
+				:youtube 	=>	'frontlineutils',
+				:linkedin 	=> 	'frontline-utilities',
+				:fusion 	=> 	'frontlineutils',
+				:url => {
+					:facebook 	=> 	'https://facebook.com',
+					:twitter 	=> 	'http://twitter.com',
+					:youtube 	=>	'https://youtube.com/user',
+					:linkedin 	=> 	'https://linkedin.com/company',
+					:fusion 	=> 	'https://frontlinefusion.com',				    	
+				},
+			},
+			layouts: {
+			    '400' => nil,
+			    '404' => nil, #-> 404 Callback (needs improving big time) Use the following: '404' => <<-EOF redirect_to root_url, notice: "Hello" EOF
+			    '500' => 'exception'
+			},
+		}
+
 	end
 end
