@@ -58,7 +58,7 @@ Simply, it gives you a concise, robust way to access all the data of an exceptio
  
 or 
 
-    gem 'exception_handler', '~> 0.4.6' # Gemfile
+    gem 'exception_handler', '~> 0.4.7' # Gemfile
 
 <a href="https://rubygems.org/gems/exception_handler" style="text-align: center">
   You can see `ExceptionHandler` on RubyGems
@@ -77,7 +77,7 @@ If you wish to change any of the default settings (below), you should now add `c
 
 **IMPORTANT**
 
-If you're upgrading to `0.4.6`, you need to remove your `exception_handler` initializer.
+If you're upgrading to `0.4.7`, you need to remove your `exception_handler` initializer.
 
 We've changed the load process to use Rails app `config` - **you don't need the `exception_handler` initializer any more**
 

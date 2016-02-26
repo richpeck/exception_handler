@@ -36,7 +36,7 @@ module ExceptionHandler
 		isolate_namespace ExceptionHandler
 
 		#Stylesheet
-		config.assets.precompile += %w(exception_handler/error.css) 
+		%w(error.css close.png alert.png home.png connect/facebook.png connect/fusion.png connect/linkedin.png connect/youtube.png connect/twitter.png).each { |a| config.assets.precompile << "exception_handler/#{a.to_s}" }
 
 		#Hook
 		initializer "exception_handler.configure_rails_initialization" do |app|

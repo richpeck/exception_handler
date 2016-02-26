@@ -10,7 +10,7 @@
 ########################################################################################
 
 IMPORTANT -
-**IF UPGRADING EXCEPTION HANDLER (to 0.4.5)***
+**IF UPGRADING EXCEPTION HANDLER (to 0.4.7)***
 **DELETE INITIALIZER (config/initializers/exception_handler.rb)**
 
 We've changed the initialization process for ExceptionHandler.
