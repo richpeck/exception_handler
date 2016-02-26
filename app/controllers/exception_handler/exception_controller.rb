@@ -20,7 +20,6 @@ module ExceptionHandler
 
   	#Show
     def show
-      @layout = self.send(:_layout)
       @message = (/^(5[0-9]{2})$/ !~ @status.to_s) ? "Sorry, this page is missing" : details[:message]
 
       ## Config "404 block" handler ##
@@ -40,8 +39,8 @@ module ExceptionHandler
 
     #Info
     def status
-      @exception  = env['action_dispatch.exception']
-      @status     = ActionDispatch::ExceptionWrapper.new(env, @exception).status_code
+      @exception  = request.env['action_dispatch.exception']
+      @status     = ActionDispatch::ExceptionWrapper.new(request.env, @exception).status_code
       @response   = ActionDispatch::ExceptionWrapper.rescue_responses[@exception.class.name]
     end
 
