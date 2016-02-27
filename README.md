@@ -180,18 +180,19 @@ You should change this setting if you wish to test your styling in development m
 
 <img src="readme/titles/changelog.png" id="changelog" />
 
+#0.5.0
  - Email notifications
  - Full test suite (finally)
  - Rails 4.2 & Rails 5.0 native ([`request.env`](https://github.com/rails/rails/commit/05934d24aff62d66fc62621aa38dae6456e276be) fix)
  - Controller fixed
  - `DB` fixed
- - Legacy initializer support (more here)
+ - Legacy initializer support ([more](https://github.com/richpeck/exception_handler/wiki/Setup))
  - Rails asset management improvement
 
 
 # 0.4.7
 
- - New config system (more here)
+ - New config system ([more](https://github.com/richpeck/exception_handler/wiki/Setup))
  - Fixed controller layout issues
  - Streamlined middleware
  - New layout & interface implementation
