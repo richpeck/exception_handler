@@ -5,7 +5,7 @@ module ExceptionHandler
     respond_to :html, :xml, :json
 
   	#Dependencies
-  	before_action :status, :app_details
+  	before_action :status
 
     #Layout
     layout :layout_status
@@ -65,15 +65,10 @@ module ExceptionHandler
     def layout_status
       case  @status
         when 404
-          ExceptionHandler.config.layouts["400"] || nil #-> inherits ApplicationController layout
+          ExceptionHandler.config.layouts["400"] || nil #-> inherits ApplicationController layout (nil means it will use standard layout from ApplicationController)
         else
-          ExceptionHandler.config.layouts["500"] #-> should pull default if none sepecified
+          ExceptionHandler.config.layouts["500"]        #-> should pull default if none sepecified
       end     
-    end
-
-    #App
-    def app_details
-      @app_name = Rails.application.class.parent_name
     end
 
   end
