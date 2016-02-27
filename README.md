@@ -47,8 +47,8 @@ Simply, it gives you a concise, robust way to access all the data of an exceptio
   - [Layout](https://github.com/richpeck/exception_handler#layout)
 - [**Testing**](https://github.com/richpeck/exception_handler#testing)
 - [**Bugs**](https://github.com/richpeck/exception_handler#bugs)
-- [**Changelog**](https://github.com/richpeck/exception_handler#changelog)
 - [**Support**](https://github.com/richpeck/exception_handler#support)
+- [**Changelog**](https://github.com/richpeck/exception_handler#changelog)
 - [**Contribution**](https://github.com/richpeck/exception_handler#contribution)
 
 ----------
