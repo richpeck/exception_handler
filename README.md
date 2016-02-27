@@ -47,6 +47,7 @@ Simply, it gives you a concise, robust way to access all the data of an exceptio
   - [Layout](https://github.com/richpeck/exception_handler#layout)
 - [**Testing**](https://github.com/richpeck/exception_handler#testing)
 - [**Bugs**](https://github.com/richpeck/exception_handler#bugs)
+- [**Changelog**](https://github.com/richpeck/exception_handler#changelog)
 - [**Support**](https://github.com/richpeck/exception_handler#support)
 - [**Contribution**](https://github.com/richpeck/exception_handler#contribution)
 
@@ -158,6 +159,28 @@ You should change this setting if you wish to test your styling in development m
    `500` errors are server faults; trying to get the server to call more data will simply not work. It causes
    an exception loop, leading to catastrophic failure.
 
+
+
+----------
+
+<img src="readme/titles/changelog.png" id="changelog" />
+
+#0.5
+
+ - Email notifications
+ - Full test suite (finally)
+ - Rails 4.2 & Rails 5.0 native ([`request.env`](https://github.com/rails/rails/commit/05934d24aff62d66fc62621aa38dae6456e276be) fix)
+ - Controller fixed
+ - `DB` fixed
+ - Legacy initializer support (more here)
+ - Rails asset management improvement
+
+#0.4.7
+
+ - New config system (more here)
+ - Fixed controller layout issues
+ - Streamlined middleware
+ - New layout & interface implementation
 
 ----------
 
