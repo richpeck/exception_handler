@@ -134,9 +134,18 @@ If you want to change the layout (for 500 error pages), you need to use the foll
 
 <img src="/readme/titles/testing.png" id="testing" />
 
+**`Exception Handler`** now supports a rigorous test suite:
+
+
+
+
+--
+
+# Development
+
 `config.exceptions_app` is only used in Rails' **production** environment.
 
-If you wish to test the gem in dev, you'll need to make your app process requests as production for now. This is a temporary step, and will be resolved in a new version:
+If you wish to customize in dev, you need to make your app process requests as production. This is a temporary step, and will be resolved in a new version:
 
 ![#config/environments/development.rb](/readme/dev.jpg "Developer Testing")
 
@@ -161,26 +170,6 @@ You should change this setting if you wish to test your styling in development m
 
 
 
-----------
-
-<img src="readme/titles/changelog.png" id="changelog" />
-
-#0.5
-
- - Email notifications
- - Full test suite (finally)
- - Rails 4.2 & Rails 5.0 native ([`request.env`](https://github.com/rails/rails/commit/05934d24aff62d66fc62621aa38dae6456e276be) fix)
- - Controller fixed
- - `DB` fixed
- - Legacy initializer support (more here)
- - Rails asset management improvement
-
-#0.4.7
-
- - New config system (more here)
- - Fixed controller layout issues
- - Streamlined middleware
- - New layout & interface implementation
 
 ----------
 
@@ -193,7 +182,30 @@ You should change this setting if you wish to test your styling in development m
 
 ----------
 
+<img src="readme/titles/changelog.png" id="changelog" />
+
+ - Email notifications
+ - Full test suite (finally)
+ - Rails 4.2 & Rails 5.0 native ([`request.env`](https://github.com/rails/rails/commit/05934d24aff62d66fc62621aa38dae6456e276be) fix)
+ - Controller fixed
+ - `DB` fixed
+ - Legacy initializer support (more here)
+ - Rails asset management improvement
+
+
+
+<img src="readme/titles/0.4.7.png" />
+
+ - New config system (more here)
+ - Fixed controller layout issues
+ - Streamlined middleware
+ - New layout & interface implementation
+
+----------
+
 <img src="readme/titles/contribution.png" id="contribution" />
+
+Contributions welcome.
 
 1. Fork it ( https://github.com/richpeck/exception_handler/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
