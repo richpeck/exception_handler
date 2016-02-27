@@ -40,16 +40,16 @@ Simply, it gives you a concise, robust way to access all the data of an exceptio
 
 <img src="/readme/titles/contents.png" title="Contents" />
 
-- [**Installation**](https://github.com/richpeck/exception_handler#installation)
-  - [Config](https://github.com/richpeck/exception_handler#config)
-  - [DB](https://github.com/richpeck/exception_handler#db)
-  - [Views](https://github.com/richpeck/exception_handler#views)
-  - [Layout](https://github.com/richpeck/exception_handler#layout)
-- [**Testing**](https://github.com/richpeck/exception_handler#testing)
-- [**Bugs**](https://github.com/richpeck/exception_handler#bugs)
-- [**Support**](https://github.com/richpeck/exception_handler#support)
-- [**Changelog**](https://github.com/richpeck/exception_handler#changelog)
-- [**Contribution**](https://github.com/richpeck/exception_handler#contribution)
+- [**Installation**](#installation)
+  - [Config](#config)
+  - [DB](#db)
+  - [Views](#views)
+  - [Layout](#layout)
+- [**Testing**](#testing)
+- [**Bugs**](#bugs)
+- [**Support**](#support)
+- [**Changelog**](#changelog)
+- [**Contribution**](#contribution)
 
 ----------
 
