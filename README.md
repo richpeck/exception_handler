@@ -20,7 +20,7 @@
 
 ---
 
-**ExceptionHandler** uses the `config.exceptions_app` to catch errors & send them to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb). It then extracts data such as `message`, `details`, `user agent`, & populates our `custom view`, storing it in the db:
+**ExceptionHandler** uses the `config.exceptions_app` to catch errors & send them to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb). It then extracts data such as `message`, `details`, `user agent`, & populates our `custom view`, storing it in the db, or sending a notification:
 
 **40x Errors** | **50x Errors**
 --- | ---
@@ -38,14 +38,12 @@ Simply, it gives you a concise, robust way to access all the data of an exceptio
 
 ----------
 
-<img src="/readme/titles/contents.png" title="Contents" />
-
 - [**Installation**](#installation)
   - [Config](#config)
   - [DB](#db)
   - [Views](#views)
   - [Layout](#layout)
-- [**Testing**](#testing)
+- [**Development**](#development)
 - [**Bugs**](#bugs)
 - [**Support**](#support)
 - [**Changelog**](#changelog)
@@ -59,7 +57,7 @@ Simply, it gives you a concise, robust way to access all the data of an exceptio
  
 or 
 
-    gem 'exception_handler', '~> 0.4.7' # Gemfile
+    gem 'exception_handler', '~> 0.5.0' # Gemfile
 
 <a href="https://rubygems.org/gems/exception_handler" style="text-align: center">
   You can see `ExceptionHandler` on RubyGems
@@ -132,11 +130,9 @@ If you want to change the layout (for 500 error pages), you need to use the foll
 
 ----------
 
-<img src="/readme/titles/testing.png" id="testing" />
+<img src="/readme/titles/testing.png" id="development" />
 
 **`Exception Handler`** now supports a rigorous test suite:
-
-
 
 
 --
@@ -193,8 +189,7 @@ You should change this setting if you wish to test your styling in development m
  - Rails asset management improvement
 
 
-
-<img src="readme/titles/0.4.7.png" />
+# 0.4.7
 
  - New config system (more here)
  - Fixed controller layout issues
