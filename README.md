@@ -46,10 +46,9 @@ It gives you a concise, robust way to access all the data of an exception, pushi
 - [**Development**](#development)
 - [**Bugs**](#bugs)
   - [`ApplicationController`](#applicationcontroller)
-  - 
+  - [Routes](#routes)
 - [**Support**](#support)
-  - [Video](#)
-  - [Email](#)
+  - [Video](#video)
   - [Issue](https://github.com/richpeck/exception_handler/issues)
   - [StackOverflow](http://stackoverflow.com/questions/ask?tags=exception_handler&ruby_on_rails)
 - [**Changelog**](#changelog)
@@ -207,17 +206,15 @@ If you are using any custom routes in `application` layout, you need to prepend 
 
 <img src="readme/titles/support.png" id="support" />
 
-#### Video (soon)
+#### Video
+
+**Soon**
 
 [![Test Video](http://img.youtube.com/vi/GY7Ps8fqGdc/0.jpg)](http://www.youtube.com/watch?v=GY7Ps8fqGdc "Test Video")
 
-#### [Email](http://)
-
 #### [Issue](https://github.com/richpeck/exception_handler/issues)
 
-**30 minute response time**
-
-Create an issue 
+**60 minute response time**
 
 #### [StackOverflow](http://stackoverflow.com/questions/ask?tags=exception_handler&ruby_on_rails) 
 
