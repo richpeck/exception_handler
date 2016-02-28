@@ -51,7 +51,7 @@ Simply, it gives you a concise, robust way to access all the data of an exceptio
 
 ----------
 
-## Installation
+## <img src="readme/ruby.png" width="32" />Installation
 
      gem install 'exception_handler'
  
@@ -151,7 +151,7 @@ You should change this setting if you wish to test your styling in development m
 
 <img src="readme/titles/bugs.png" id="bugs" />
 
-1. `ApplicationController`
+# `ApplicationController`
 
    ![ApplicationController](/readme/application_controller.jpg "Application Controller")
    
@@ -164,6 +164,10 @@ You should change this setting if you wish to test your styling in development m
    `500` errors are server faults; trying to get the server to call more data will simply not work. It causes
    an exception loop, leading to catastrophic failure.
 
+
+# Routes
+
+If you are using any custom routes in `application` layout, you need to prepend `main_app` to them:
 
 
 
