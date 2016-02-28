@@ -47,6 +47,8 @@ It gives you a concise, robust way to access all the data of an exception, pushi
 - [**Bugs**](#bugs)
 - [**Support**](#support)
 - [**Changelog**](#changelog)
+  - [0.5.0](#0.5.0)
+  - [0.4.7](#0.4.7)
 - [**Contribution**](#contribution)
 
 ----------
@@ -137,10 +139,9 @@ If you want to change the layout (for 500 error pages), you need to use the foll
 
 **`Exception Handler`** now supports a rigorous test suite:
 
+---
 
---
-
-# Development
+##### Development
 
 `config.exceptions_app` is only used in Rails' **production** environment.
 
@@ -154,7 +155,7 @@ You should change this setting if you wish to test your styling in development m
 
 <img src="readme/titles/bugs.png" id="bugs" />
 
-# `ApplicationController`
+#### `ApplicationController`
 
    ![ApplicationController](/readme/application_controller.jpg "Application Controller")
    
@@ -168,7 +169,7 @@ You should change this setting if you wish to test your styling in development m
    an exception loop, leading to catastrophic failure.
 
 
-# Routes
+#### Routes
 
 If you are using any custom routes in `application` layout, you need to prepend `main_app` to them:
 
@@ -187,7 +188,8 @@ If you are using any custom routes in `application` layout, you need to prepend 
 
 <img src="readme/titles/changelog.png" id="changelog" />
 
-#0.5.0
+#### 0.5.0
+ - Added locales
  - Email notifications
  - Full test suite (finally)
  - Rails 4.2 & Rails 5.0 native ([`request.env`](https://github.com/rails/rails/commit/05934d24aff62d66fc62621aa38dae6456e276be) fix)
@@ -198,7 +200,7 @@ If you are using any custom routes in `application` layout, you need to prepend 
  - Cut out most dev files from gem (drastic reduction in gem size)
 
 
-# 0.4.7
+#### 0.4.7
 
  - New config system ([more](https://github.com/richpeck/exception_handler/wiki/Setup))
  - Fixed controller layout issues
