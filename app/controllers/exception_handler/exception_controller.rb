@@ -5,7 +5,7 @@ module ExceptionHandler
     respond_to :html, :xml, :json
 
   	#Dependencies
-  	before_action :status
+  	before_action :status, :legacy #-> legacy required for old @message var
 
     #Layout
     layout :layout_status
@@ -20,7 +20,6 @@ module ExceptionHandler
 
   	#Show
     def show
-      @message = (/^(5[0-9]{2})$/ !~ @status.to_s) ? "Sorry, this page is missing" : details[:message]
 
       ## Config "404 block" handler ##
       if /^(5[0-9]{2})$/ !~ @status.to_s && ExceptionHandler.config.layouts["404"] #-> http://www.justskins.com/forums/ruby-s-regexp-is-52846.html
@@ -45,10 +44,11 @@ module ExceptionHandler
     end
 
     #Format
+    #https://gist.github.com/wojtha/8433843#file-ruby-rb-L29
     def details
       @details ||= {}.tap do |h|
         I18n.with_options scope: [:exception, :show, @response], exception_name: @exception.class.name, exception_message: @exception.message do |i18n|
-          h[:name]    = i18n.t "#{@exception.class.name.underscore}.title", default: i18n.t(:title, default: @exception.class.name)
+          h[:name]    = i18n.t "#{@exception.class.name.underscore}.title",       default: i18n.t(:title, default: @exception.class.name)
           h[:message] = i18n.t "#{@exception.class.name.underscore}.description", default: i18n.t(:description, default: @exception.message)
         end
       end
@@ -69,6 +69,12 @@ module ExceptionHandler
         else
           ExceptionHandler.config.layouts["500"]        #-> should pull default if none sepecified
       end     
+    end
+
+
+    #Legacy
+    def legacy
+      @message ||= (/^(5[0-9]{2})$/ !~ @status.to_s) ? "Sorry, this page is missing" : details[:message]
     end
 
   end

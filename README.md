@@ -46,9 +46,13 @@ It gives you a concise, robust way to access all the data of an exception, pushi
 - [**Development**](#development)
 - [**Bugs**](#bugs)
 - [**Support**](#support)
+  - [Video](#)
+  - [Email](#)
+  - [Issue]((https://github.com/richpeck/exception_handler/issues)
+  - [StackOverflow](http://stackoverflow.com/questions/ask?tags=exception_handler&ruby_on_rails)
 - [**Changelog**](#changelog)
-  - [0.5.0](#0.5.0)
-  - [0.4.7](#0.4.7)
+  - [0.5.0](#050)
+  - [0.4.7](#047)
 - [**Contribution**](#contribution)
 
 ----------
@@ -81,9 +85,9 @@ If you wish to change any of the default settings (below), you should now add `c
 
 **IMPORTANT**
 
-If you're upgrading to `0.4.7`, you need to remove your `exception_handler` initializer.
+If you're upgrading from `>= 0.4.7`, you need to **remove your `exception_handler` initializer**.
 
-We've changed the load process to use Rails app `config` - **you don't need the `exception_handler` initializer any more**
+We've changed the load process to use Rails app `config` - **you don't need the `exception_handler` initializer any more** ([more](https://github.com/richpeck/exception_handler/wiki/Setup))
 
 ----------
 
@@ -173,17 +177,6 @@ You should change this setting if you wish to test your styling in development m
 
 If you are using any custom routes in `application` layout, you need to prepend `main_app` to them:
 
-
-
-----------
-
-<img src="readme/titles/support.png" id="support" />
-
- - Watch the video tutorial (soon)
- - [Create an "issue"](https://github.com/richpeck/exception_handler/issues) 
- - Contact support (soon)
- - [Ask on StackOverflow](http://stackoverflow.com/questions/ask?tags=exception_handler&ruby_on_rails) 
-
 ----------
 
 <img src="readme/titles/changelog.png" id="changelog" />
@@ -206,6 +199,16 @@ If you are using any custom routes in `application` layout, you need to prepend 
  - Fixed controller layout issues
  - Streamlined middleware
  - New layout & interface implementation
+
+
+----------
+
+<img src="readme/titles/support.png" id="support" />
+
+ - Video (soon)
+ - [Email](http://)
+ - [Issue](https://github.com/richpeck/exception_handler/issues) 
+ - [StackOverflow](http://stackoverflow.com/questions/ask?tags=exception_handler&ruby_on_rails) 
 
 ----------
 
