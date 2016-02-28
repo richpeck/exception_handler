@@ -5,14 +5,11 @@ module ExceptionHandler
     #http://www.justinweiss.com/articles/respond-to-without-all-the-pain/
     respond_to :html, :xml, :json
 
-  	#Dependencies
-  	before_action :status
-
     #Layout
     layout :layout
 
     #Helpers
-    helper ExceptionHandler::Engine.helpers  #-> HELPERS http://stackoverflow.com/questions/9809787/why-is-my-rails-mountable-engine-not-loading-helper-methods-correctly
+    helper ExceptionHandler::Engine.helpers      #-> HELPERS http://stackoverflow.com/questions/9809787/why-is-my-rails-mountable-engine-not-loading-helper-methods-correctly
     include Rails.application.routes.url_helpers #-> ROUTES http://stackoverflow.com/a/6074911/1143732
 
     ####################
@@ -42,11 +39,11 @@ module ExceptionHandler
 
     #Layout
     def layout
-      case  @status
+      case  @exception.code
         when 404
           ExceptionHandler.config.layouts["404"] || nil #-> inherits ApplicationController layout (nil means it will use standard layout from ApplicationController)
         else
-          ExceptionHandler.config.layouts["500"]        #-> should pull default if none sepecified
+          ExceptionHandler.config.layouts["500"]        #-> use 500 "exception" layout
       end     
     end
 
