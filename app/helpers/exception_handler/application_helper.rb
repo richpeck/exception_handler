@@ -10,6 +10,11 @@ module ExceptionHandler
 		
 		##################
 
+		#App (Application name)
+		def app
+			Rails.application.class.parent_name
+		end
+
 		#Social
 		def social *services
 			output = []

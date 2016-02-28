@@ -1,18 +1,18 @@
 <div class="error">
-	<% if /^(5[0-9]{2})$/ =~ @exception.status.to_s %>
+	<% if /^(5[0-9]{2})$/ =~ @exception.code.to_s %>
 
 		<!--Message -->
 		<%= content_tag :div, class: "message" do %>
 			<%= content_tag :div, class: "title" do %>
-				<span><%= "#{@exception.status} Error - #{details[:name]}" %></span>
+				<span><%= "#{@exception.code} Error - #{@exception.message[:name]}" %></span>
 				<%= link_to image_tag("exception_handler/close.png"), main_app.root_url, title: "Close (Go back home)", class: "close" %>
 			<% end %>
 			<%= content_tag :div, class: "details" do %>
-				<%= image_tag "exception_handler/alert.png", title: "#{details[:code]} Error" %>
-				<div class="status"><%= @exception.status %> Error</div>
+				<%= image_tag "exception_handler/alert.png", title: "#{@exception.code} Error" %>
+				<div class="status"><%= @exception.code %> Error</div>
 			<% end %>
 			<%= content_tag :div, class: "info" do %>
-				<span><%= details[:message] %></span>
+				<span><%= @exception.message[:message] %></span>
 				<div class="notification">
 					<%= link_to image_tag("exception_handler/home.png", title: "Go Back Home"), main_app.root_url, class: "home" %>
 					<div class="version">v<%= Rails.version %></div>
@@ -23,7 +23,7 @@
 
 	<% else %>
 
-		<%= content_tag :div, @exception.status, class: "message" %>
+		<%= content_tag :div, @exception.message, class: "message" %>
 			
 	<% end %>
 </div>
