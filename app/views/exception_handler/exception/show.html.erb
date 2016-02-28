@@ -12,7 +12,7 @@
 				<div class="status"><%= @status %> Error</div>
 			<% end %>
 			<%= content_tag :div, class: "info" do %>
-				<span><%= @message %></span>
+				<span><%= @details.message %></span>
 				<div class="notification">
 					<%= link_to image_tag("exception_handler/home.png", title: "Go Back Home"), main_app.root_url, class: "home" %>
 					<div class="version">v<%= Rails.version %></div>
@@ -23,7 +23,7 @@
 
 	<% else %>
 
-		<%= content_tag :div, @message, class: "message" %>
+		<%= content_tag :div, @details.message, class: "message" %>
 			
 	<% end %>
 </div>
