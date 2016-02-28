@@ -51,7 +51,7 @@ Simply, it gives you a concise, robust way to access all the data of an exceptio
 
 ----------
 
-## <img src="readme/ruby.png" width="32" />Installation
+## <img src="readme/ruby.png" style="margin-right: 10px;" /> Installation
 
      gem install 'exception_handler'
  
