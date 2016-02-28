@@ -55,7 +55,6 @@ module ExceptionHandler
 				},
 			},
 			layouts: {
-			    '400' => nil,
 			    '404' => nil, #-> 404 Callback (needs improving big time) Use the following: '404' => <<-EOF redirect_to root_url, notice: "Hello" EOF
 			    '500' => 'exception'
 			},

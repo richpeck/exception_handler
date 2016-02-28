@@ -1,10 +1,14 @@
 module ExceptionHandler
 	module ApplicationHelper
 
+		##################
+
 		#Refs
 		#http://stackoverflow.com/a/5795683/1143732
 		#http://stackoverflow.com/questions/8028021/helpers-in-rails-engine
 		#ActiveSupport.on_load( :action_view ){ include ExceptionHandler::ViewHelpers }
+		
+		##################
 
 		#Social
 		def social *services
@@ -16,8 +20,11 @@ module ExceptionHandler
     			output.push link_to(image_tag("exception_handler/connect/#{service}.png", title: "Find us on " + service.to_s.titleize), link(service), target: :blank, class: service.to_s)
     		end
 
-    		output.join("").html_safe #-> ruby returns last line
+    	output.join("").html_safe #-> ruby returns last line
 		end
+
+
+		##################
 
 		private
 
@@ -27,6 +34,8 @@ module ExceptionHandler
 			url.push ExceptionHandler.config.social[service]
 			url.join("/")
 		end
+
+		##################
 
 	end
 end
