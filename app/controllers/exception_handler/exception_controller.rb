@@ -20,6 +20,7 @@ module ExceptionHandler
     #Amend responses in tests
     def show
       @exception = ExceptionHandler::Exception.new request #-> Service Object
+      respond_with @exception
     end
 
     ####################
