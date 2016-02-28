@@ -59,6 +59,9 @@ or
 
     gem 'exception_handler', '~> 0.5.0' # Gemfile
 
+<img src="readme/gemfile.jpg" title="Install ExceptionHandler In Your Gemfile" />
+
+<br />
 <a href="https://rubygems.org/gems/exception_handler" style="text-align: center">
   You can see `ExceptionHandler` on RubyGems
   <br />
