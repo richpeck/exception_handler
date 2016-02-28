@@ -1,13 +1,14 @@
 module ExceptionHandler
-	class Error < ActiveRecord::Base
-		#Table is called "errors"
-		#Dev needs to use migration to create db
-		def self.table_name
-			ExceptionHandler.config.db
-		end
+  class Error < ActiveRecord::Base
 
-		#Associations
-		belongs_to :usable, polymorphic: true
+    #Table is called "errors"
+    #Dev needs to use migration to create db
+    def self.table_name
+      ExceptionHandler.config.db
+    end
 
-	end
+    #Associations
+    belongs_to :usable, polymorphic: true
+
+  end
 end

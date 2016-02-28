@@ -7,10 +7,12 @@
 				<span><%= "#{@exception.status} Error - #{details[:name]}" %></span>
 				<%= link_to image_tag("exception_handler/close.png"), main_app.root_url, title: "Close (Go back home)", class: "close" %>
 			<% end %>
+
 			<%= content_tag :div, class: "details" do %>
 				<%= image_tag "exception_handler/alert.png", title: "#{@exception.status} Error" %>
 				<div class="status"><%= @exception.status %> Error</div>
 			<% end %>
+
 			<%= content_tag :div, class: "info" do %>
 				<span><%= details[:description] %></span>
 				<div class="notification">
@@ -19,6 +21,7 @@
 					<strong>Our developers have been notified - we're working on it!</strong>
 				</div>
 			<% end %>
+			
 		<% end %>
 
 	<% else %>
