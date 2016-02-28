@@ -32,7 +32,7 @@ All exceptions in Rails are handled by the [**`ActiveDispatch::ShowExceptions`**
 
 This is invoked through a hook called **`config.exceptions_app`**, accessed through the `environment` files of rails `application.rb`, `environments/development.rb`, `environments/production.rb` etc.
 
-Simply, it gives you a concise, robust way to access all the data of an exception, pushing your app to the next level in branding and usability. There is no other system like this for Rails. `ExceptionHandler` is the *only* Rails production exception handling solution, giving you complete control over the feel of your application, even when it fails:
+It gives you a concise, robust way to access all the data of an exception, pushing your app to the next level in branding and usability. There is no other system like this for Rails. `ExceptionHandler` is the *only* Rails production exception handling solution, giving you complete control over the feel of your application, even when it fails:
 
 ![Parse](/readme/parser.jpg "Parser")
 
@@ -51,7 +51,7 @@ Simply, it gives you a concise, robust way to access all the data of an exceptio
 
 ----------
 
-## <img src="readme/ruby.png" style="margin-right: 10px;" /> Installation
+## <img src="readme/titles/ruby.png" style="margin-right: 10px;" /> Installation
 
      gem install 'exception_handler'
  
