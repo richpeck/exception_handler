@@ -28,7 +28,7 @@ module ExceptionHandler
     end
 
 	#Exception Handler
-	class Exceptions < Rails::Engine
+	class Engine < Rails::Engine
 		#Keep helpers in your engine
 		#http://guides.rubyonrails.org/engines.html#inside-an-engine
 		#http://stackoverflow.com/questions/31877839/accessing-helpers-from-the-parent-app-in-an-isolated-rails-engine
