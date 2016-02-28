@@ -26,7 +26,7 @@ module ExceptionHandler
 
     ######################
 
-    alias_method :status, :code #-> http://stackoverflow.com/a/11848832/1143732
+    alias_method :status, :code #-> http://stackoverflow.com/a/11848832/1143732 (has to be below methods)
 
     ######################
 
