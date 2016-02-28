@@ -195,6 +195,7 @@ If you are using any custom routes in `application` layout, you need to prepend 
  - `DB` fixed
  - Legacy initializer support ([more](https://github.com/richpeck/exception_handler/wiki/Setup))
  - Rails asset management improvement
+ - Cut out most dev files from gem (drastic reduction in gem size)
 
 
 # 0.4.7
