@@ -212,7 +212,7 @@ If you are using any custom routes in `application` layout, you need to prepend 
 
 #### [Issue](https://github.com/richpeck/exception_handler/issues)
 
-**60 minute response time**
+**~60 minute response time**
 
 #### [StackOverflow](http://stackoverflow.com/questions/ask?tags=exception_handler&ruby_on_rails) 
 

@@ -2,10 +2,8 @@ en:
   exception:
     show:
       not_found:
-        code:        "%{exception_code}"
         title:       "Not Found"
         description: "Sorry, this page is missing."
       internal_server_error:
-        code:        "%{exception_code}"
         title:       "Internal Server Error"
-        description: "Sorry, the server failed with the error: %{exception_message}"
+        description: "Sorry, the server failed with the error: %{message}"
