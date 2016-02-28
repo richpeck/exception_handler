@@ -9,7 +9,7 @@ module ExceptionHandler
   	before_action :status
 
     #Layout
-    layout :layout_status
+    layout :layout
 
     #Helpers
     helper ExceptionHandler::Engine.helpers  #-> HELPERS http://stackoverflow.com/questions/9809787/why-is-my-rails-mountable-engine-not-loading-helper-methods-correctly
@@ -20,8 +20,9 @@ module ExceptionHandler
     ####################
 
   	#Show
+    #Amend responses in tests
     def show
-      # Amend responses in tests
+      @exception = ExceptionHandler::Exception.new request #-> Service Object
     end
 
     ####################
@@ -30,13 +31,7 @@ module ExceptionHandler
 
     protected
 
-    #Info
-    def status
-      @exception  = request.env['action_dispatch.exception']
-      @status     = ActionDispatch::ExceptionWrapper.new(request.env, @exception).status_code
-      @response   = ActionDispatch::ExceptionWrapper.rescue_responses[@exception.class.name]
-    end
-
+    # Status declarations moved to "show" w/ service object
     # Details moved to "View Helper"
 
     ####################
@@ -46,7 +41,7 @@ module ExceptionHandler
     private
 
     #Layout
-    def layout_status
+    def layout
       case  @status
         when 404
           ExceptionHandler.config.layouts["404"] || nil #-> inherits ApplicationController layout (nil means it will use standard layout from ApplicationController)

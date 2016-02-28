@@ -3,7 +3,7 @@
   <head>
 
     <!--Info -->
-    <title><%= "Error -- Code #{@status} (#{details[:name]})" %></title>
+    <title><%= "Error -- #{@status} Error (#{details[:name]})" %></title>
     <%= stylesheet_link_tag "exception_handler/error" %>
 
   </head>
@@ -20,7 +20,7 @@
     		<%= social %>
     	</div>
     	<div class="app">
-    		<strong><%= link_to @app_name, main_app.root_url, title: "Go to index" %></strong>
+    		<strong><%= link_to app, main_app.root_url, title: "Go to index" %></strong>
     		<span> - <%= @status %> Error</span>
     	</div>
     </footer>
