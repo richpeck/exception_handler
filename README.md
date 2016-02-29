@@ -20,12 +20,12 @@ Customize your `404` and `500` error pages to be branded to your application in 
 
 <p align="center">
   <img src="/readme/rails.png" width="300" title="Rails 4+ & 5 Compatible" /><br />
-</p>
-
 
 |         | Are           | Cool  |
 | :------------- |:-------------:| :-----|
 | Keep users informed | Show branded error pages | Maintain your error handling in one place |
+
+</p>
 
 This is the most feature-rich, stable & effective solution for **custom error pages** in Rails 4 & 5:
 
@@ -47,9 +47,9 @@ Rails exceptions are handled by the [**`ActiveDispatch::ShowExceptions`**](https
 
 <img src="/readme/exceptions_app.png" title="Exceptions App" />
 
-**ExceptionHandler** uses this to route exceptions straight to our `exceptions` controller. 
+**ExceptionHandler** uses this to route exceptions straight to our `exceptions` controller, allowing you complete autonomy over how it works.
 
-All other error gems send traffic through the "routes"
+
 
 ![Parse](/readme/parser.jpg "Parser")
 
