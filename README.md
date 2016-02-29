@@ -39,14 +39,14 @@ Tapping directly into the data stored in `Rack` (`message`, `details`, `user age
 **40x Errors** | **50x Errors**
 --- | ---
 ![404 Error Page](/readme/400.jpg "404 Error Page (Uses Application Layout)") | ![500 Error Page](/readme/500.jpg "500 Error Page (Uses Error Layout)") 
-**layouts/application.html.erb** | **layouts/exception.html.erb** 
+**layouts/application.html.erb**<br /> Loaded with `40x` errors (`Not Found`) | **layouts/exception.html.erb**<br /> Loaded with `50x` errors (`Internal Server Error`). 500 errors prevent Rails from loading other elements, thus standalone layout is required. 
 
 
 Rails exceptions are handled by the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
 
 
 
-This is invoked through the **`config.exceptions_app`** hook, courtesy `environment` files (`application.rb`, `environments/development.rb`, `environments/production.rb`).
+This is invoked through the **`config.exceptions_app`** hook, accessed through the `environment` files (`application.rb`, `environments/development.rb`, `environments/production.rb`).
 
 Whenever an exception is raised, the `config.exceptions_app` hook is called. This allows you to interject your own code.
 
