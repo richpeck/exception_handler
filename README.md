@@ -16,21 +16,25 @@
 
 **ExceptionHandler** is the *only* production-ready custom error page solution for Rails 4 & 5. 
 
-Customize your `404` and `500` error pages to be branded to your application in production.
+Customize your `404` and `500` error pages to be branded to your application in production:
 
 <p align="center">
   <img src="/readme/rails.png" width="300" title="Rails 4+ & 5 Compatible" /><br />
 </p>
 
-- Keep users informed of errors
-- Show polished exception pages
+- Keep users informed
+- Show branded exception pages
 - Maintain your error handling in one place
 
 This is the most feature-rich, stable & effective solution for **custom error pages** in Rails 4 & 5. We're *very* proud:
 
 ---
 
-**ExceptionHandler** uses the `config.exceptions_app` to catch errors & send them to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb). It then extracts data such as `message`, `details`, `user agent`, & populates our `custom view`, storing it in the db, or sending a notification:
+[[0.5]]
+
+**ExceptionHandler** uses the `config.exceptions_app` to catch errors & send them to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
+
+Tapping directly into the data stored in `Rack` (`message`, `details`, `user agent`), **ExceptionHandler** populates your own `custom view`, populating in the DB & sending email notifications of the error:
 
 **40x Errors** | **50x Errors**
 --- | ---
@@ -48,7 +52,7 @@ Whenever an exception is raised, the `config.exceptions_app` hook is called. Thi
 
 Most **custom rails error page** solutions just send exceptions to the routes (MASSIVE bloat). **ExceptionHandler** cuts ALL overhead, dealing directly with the middleware stack. **ExceptionHandler** is the most trustworthy, flexible and stable Rails custom exception handling solution, trusted by over 30,000 users worldwide. 
 
-**ExceptionHandler** gives you a concise, robust way to access all the data of an exception, pushing your app to the next level in branding and usability. There is no other system like this. `ExceptionHandler` is the *only* Rails production exception handling solution, giving you **complete control** over the feel of your application, even when it fails:
+**ExceptionHandler** gives you a concise, robust way to access all the data of an exception, pushing your app to the next level in branding and usability. There is no other system like this. `ExceptionHandler` is the *only* Rails production exception handling solution, giving you **complete control** over the feel of your application, even when it raises exceptions:
 
 ![Parse](/readme/parser.jpg "Parser")
 
@@ -72,7 +76,7 @@ Most **custom rails error page** solutions just send exceptions to the routes (M
 
 ----------
 
-## <img src="readme/titles/ruby.png" style="margin-right: 10px;" /> Installation
+## Installation
 
      gem install 'exception_handler'
  
