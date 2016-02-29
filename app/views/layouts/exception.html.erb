@@ -3,7 +3,7 @@
   <head>
 
     <!--Info -->
-    <title><%= "Error -- #{@exception.status} Error (#{details[:name]})" %></title>
+    <title><%= "Error -- #{@exception.status} Error (#{@exception.response})" %></title>
     <%= stylesheet_link_tag "exception_handler/error" %>
 
   </head>
