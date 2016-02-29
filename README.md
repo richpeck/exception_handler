@@ -22,17 +22,18 @@ Customize your `404` and `500` error pages to be branded to your application in 
   <img src="/readme/rails.png" width="300" title="Rails 4+ & 5 Compatible" /><br />
 </p>
 
-- Keep users informed
-- Show branded exception pages
-- Maintain your error handling in one place
 
-This is the most feature-rich, stable & effective solution for **custom error pages** in Rails 4 & 5. We're *very* proud:
+|         | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| Keep users informed | Show branded error pages | Maintain your error handling in one place |
+
+This is the most feature-rich, stable & effective solution for **custom error pages** in Rails 4 & 5:
 
 ---
 
 [[0.5]]
 
-**ExceptionHandler** uses the `config.exceptions_app` to catch errors & send them to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
+**ExceptionHandler** uses the `config.exceptions_app` to catch errors & send them to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
 Tapping directly into the data stored in `Rack` (`message`, `details`, `user agent`), **ExceptionHandler** populates your own `custom view`, populating in the DB & sending email notifications of the error:
 
@@ -48,7 +49,7 @@ Rails exceptions are handled by the [**`ActiveDispatch::ShowExceptions`**](https
 
 This is invoked through the **`config.exceptions_app`** hook, accessed through the `environment` files (`application.rb`, `environments/development.rb`, `environments/production.rb`).
 
-Whenever an exception is raised, the `config.exceptions_app` hook is called:
+Whenever an exception is raised, it calls the `config.exceptions_app` hook:
 
 ....
 
