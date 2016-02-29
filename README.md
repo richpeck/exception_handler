@@ -39,16 +39,18 @@ Tapping directly into the data stored in `Rack` (`message`, `details`, `user age
 **40x Errors** | **50x Errors**
 --- | ---
 ![404 Error Page](/readme/400.jpg "404 Error Page (Uses Application Layout)") | ![500 Error Page](/readme/500.jpg "500 Error Page (Uses Error Layout)") 
-**layouts/application.html.erb**<br /> Loaded with `40x` errors (`Not Found`) | **layouts/exception.html.erb**<br /> Loaded with `50x` errors (`Internal Server Error`). 500 errors prevent Rails from loading other elements, thus standalone layout is required. 
+**layouts/application.html.erb**<br /> Loaded with `40x` errors (`Not Found`). <br /><br /> Because 404 errors are not fatal, we can use the app's own layout -- BIG feature of the new `ExceptionHandler` | **layouts/exception.html.erb**<br /> Loaded with `50x` errors (`Internal Server Error`).<br /><br />500 errors prevent Rails from loading other elements, thus standalone layout is required. 
 
 
 Rails exceptions are handled by the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
 
-<img src="/readme/exceptions_app.jpg" title="Exceptions App" />
+<img src="/readme/exceptions_app.png" title="Exceptions App" />
 
 This is invoked through the **`config.exceptions_app`** hook, accessed through the `environment` files (`application.rb`, `environments/development.rb`, `environments/production.rb`).
 
-Whenever an exception is raised, the `config.exceptions_app` hook is called. This allows you to interject your own code.
+Whenever an exception is raised, the `config.exceptions_app` hook is called:
+
+....
 
 Most **custom rails error page** solutions just send exceptions to the routes (MASSIVE bloat). **ExceptionHandler** cuts ALL overhead, dealing directly with the middleware stack. **ExceptionHandler** is the most trustworthy, flexible and stable Rails custom exception handling solution, trusted by over 30,000 users worldwide. 
 
