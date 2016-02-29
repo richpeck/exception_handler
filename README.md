@@ -36,13 +36,13 @@ Rails exceptions are handled by the [**`ActiveDispatch::ShowExceptions`**](https
 
 
 
-This is invoked through the **`config.exceptions_app`** hook, accessed through the `environment` files of rails (`application.rb`, `environments/development.rb`, `environments/production.rb`). Whenever an exception is raised, the `config.exceptions_app` hook is called, allowing you to interject your own code into it.
+This is invoked through the **`config.exceptions_app`** hook, accessed through the `environment` files of rails (`application.rb`, `environments/development.rb`, `environments/production.rb`).
+
+Whenever an exception is raised, the `config.exceptions_app` hook is called, allowing you to interject your own code into it. Most **custom rails error page** solutions do this through the routes, **ExceptionHandler** cuts out ALL overhead, dealing directly with the middleware stack. **ExceptionHandler** is the most trustworthy, flexible and stable fix for Rails gems 
 
 **ExceptionHandler** gives you a concise, robust way to access all the data of an exception, pushing your app to the next level in branding and usability. There is no other system like this for Rails. `ExceptionHandler` is the *only* Rails production exception handling solution, giving you complete control over the feel of your application, even when it fails:
 
 ![Parse](/readme/parser.jpg "Parser")
-
-Most **custom rails error page** solutions deal with the routes, **ExceptionHandler** cuts out ALL overhead, dealing directly with the middleware stack. **ExceptionHandler** is the most trustworthy, flexible and stable fix for Rails gems 
 
 ----------
 
