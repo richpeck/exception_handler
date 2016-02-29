@@ -14,13 +14,14 @@
 
 ![Exceptions_App middleware](/readme/subtitle.jpg)
 
+**ExceptionHandler** is the *only* production-ready custom error page solution for Rails 4 & 5. 
+
+Customize your `404` and `500` error pages to be branded to your application in production:
+
 <p align="center">
   <img src="/readme/rails.png" title="Rails 4+ & 5 Compatible" /><br />
 </p>
 
-**ExceptionHandler** is the only production-ready custom error page solution for Rails 4 & 5. Customize your `404` and `500` error pages to be branded to your application in production:
-
-.... 
 
 ---
 
@@ -29,18 +30,18 @@
 **40x Errors** | **50x Errors**
 --- | ---
 ![404 Error Page](/readme/400.jpg "404 Error Page (Uses Application Layout)") | ![500 Error Page](/readme/500.jpg "500 Error Page (Uses Error Layout)") 
-**layouts/application.html.erb** | **layouts/errors.html.erb** 
+**layouts/application.html.erb** | **layouts/exception.html.erb** 
 
 
 Rails exceptions are handled by the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
 
 
 
-This is invoked through the **`config.exceptions_app`** hook, accessed through the `environment` files of rails (`application.rb`, `environments/development.rb`, `environments/production.rb`).
+This is invoked through the **`config.exceptions_app`** hook, accessed through the `environment` files (`application.rb`, `environments/development.rb`, `environments/production.rb`).
 
-Whenever an exception is raised, the `config.exceptions_app` hook is called, allowing you to interject your own code into it. Most **custom rails error page** solutions do this through the routes, **ExceptionHandler** cuts out ALL overhead, dealing directly with the middleware stack. **ExceptionHandler** is the most trustworthy, flexible and stable fix for Rails gems 
+Whenever an exception is raised, the `config.exceptions_app` hook is called, allowing you to interject your own code. Most **custom rails error page** solutions do this through the routes, **ExceptionHandler** cuts out ALL overhead, dealing directly with the middleware stack. **ExceptionHandler** is the most trustworthy, flexible and stable custom exception handling solution, trusted by over 30,000 users worldwide. 
 
-**ExceptionHandler** gives you a concise, robust way to access all the data of an exception, pushing your app to the next level in branding and usability. There is no other system like this for Rails. `ExceptionHandler` is the *only* Rails production exception handling solution, giving you complete control over the feel of your application, even when it fails:
+**ExceptionHandler** gives you a concise, robust way to access all the data of an exception, pushing your app to the next level in branding and usability. There is no other system like this. `ExceptionHandler` is the *only* Rails production exception handling solution, giving you **complete control** over the feel of your application, even when it fails:
 
 ![Parse](/readme/parser.jpg "Parser")
 
@@ -170,8 +171,8 @@ You should change this setting if you wish to test your styling in development m
 
    ![ApplicationController](/readme/application_controller.jpg "Application Controller")
    
-   A significant issue exists in respect to the inheritance of `exceptions_controller`.
-   Our current version (`0.4`) inherits from the `ApplicationController`. This causes a problem for many applications.
+   A significant issue exists in respect to the inheritance of `exceptions_controller`:
+   
 
    If you use any sort of `before_action` callback in your controller, especially to populate variables, this
    will cause untold problems in your `exceptions_controller`. 
@@ -214,7 +215,7 @@ If you are using any custom routes in `application` layout, you need to prepend 
 
 #### Video
 
-**Soon**
+**Coming Soon**
 
 [![Test Video](http://img.youtube.com/vi/GY7Ps8fqGdc/0.jpg)](http://www.youtube.com/watch?v=GY7Ps8fqGdc "Test Video")
 
@@ -222,7 +223,7 @@ If you are using any custom routes in `application` layout, you need to prepend 
 
 **~60 minute response time**
 
-#### [StackOverflow](http://stackoverflow.com/questions/ask?tags=exception_handler&ruby_on_rails) 
+#### [StackOverflow](http://stackoverflow.com/questions/ask?tags=exception-handler+ruby-on-rails) 
 
 **~24 hour response time**
 
