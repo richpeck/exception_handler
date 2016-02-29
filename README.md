@@ -10,7 +10,9 @@
 
 ----------
 
-**ExceptionHandler** helps you can create custom **404 & 500 production error pages**. Fully Rails 4.2+ & 5 compatible *(adapted from [**1**](https://gist.github.com/wojtha/8433843) & [**2**](http://www.sharagoz.com/posts/1-rolling-your-own-exception-handler-in-rails-3))*:
+**ExceptionHandler** helps you can create custom **404 & 500 production error pages** *(adapted from [**1**](https://gist.github.com/wojtha/8433843) & [**2**](http://www.sharagoz.com/posts/1-rolling-your-own-exception-handler-in-rails-3))*.
+
+Fully Rails 4 & 5 compatible:
 
 ![Exceptions_App middleware](/readme/subtitle.jpg)
 
@@ -18,7 +20,7 @@
   <img src="/readme/titles/custom_error_pages.png" title="Exceptions_App middleware" />
 </p>
 
-**ExceptionHandler** is the only production-ready custom error page solution for Rails. Customize your `404` and `500` error pages.
+**ExceptionHandler** is the only production-ready custom error page solution for Rails. Customize your `404` and `500` error pages to be branded to your application. 
 
 ---
 
