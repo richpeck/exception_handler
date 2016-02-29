@@ -13,11 +13,8 @@ Dir.glob(File.join(File.dirname(__FILE__), "exception_handler", '**/*.rb'), &met
 
 module ExceptionHandler
 
-	#Version
-	autoload :VERSION, 'exception_handler/version'
-
 	#Config
-	#Invoke instance of config -- loads defaults
+	#Invoke instance of config (x.config) -- loads defaults
 	mattr_accessor :config
 
 	# Don't have prefix method return anything.
@@ -35,7 +32,7 @@ module ExceptionHandler
 		#use main_app to call "main app" helpers etc http://stackoverflow.com/a/9178022/1143732 + http://edgeapi.rubyonrails.org/classes/Rails/Engine.html#class-Rails::Engine-label-Using+Engine-27s+routes+outside+Engine
 		isolate_namespace ExceptionHandler
 
-		#Stylesheet
+		#Assets
 		%w(error.css close.png alert.png home.png connect/facebook.png connect/fusion.png connect/linkedin.png connect/youtube.png connect/twitter.png).each { |a| config.assets.precompile << "exception_handler/#{a.to_s}" }
 
 		#Hook
@@ -45,8 +42,8 @@ module ExceptionHandler
 			ExceptionHandler.config = ExceptionHandler::Config.new(app.config.respond_to?(:exception_handler) ? app.config.exception_handler : nil)
 
 			#Middleware
-			app.config.middleware.use ExceptionHandler::Parse if ExceptionHandler.config.db # && ActiveRecord::Base.connection.table_exists?(:errors unless @@config[:db].blank?)  #DB
-			app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } #Controller	
+			app.config.middleware.use ExceptionHandler::Parse if ExceptionHandler.config.db 						# Saves to DB
+			app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } 	# Routes to Controller	
 		end
 
 	end

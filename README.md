@@ -19,9 +19,11 @@
 Customize your `404` and `500` error pages to be branded to your application in production:
 
 <p align="center">
-  <img src="/readme/rails.png" title="Rails 4+ & 5 Compatible" /><br />
+  <img src="/readme/rails.png" width="300" title="Rails 4+ & 5 Compatible" /><br />
 </p>
 
+
+This is the most feature-rich, stable & effective solution for custom error pages in Rails 4+. We're *very* proud:
 
 ---
 
@@ -37,9 +39,9 @@ Rails exceptions are handled by the [**`ActiveDispatch::ShowExceptions`**](https
 
 
 
-This is invoked through the **`config.exceptions_app`** hook, accessed through the `environment` files (`application.rb`, `environments/development.rb`, `environments/production.rb`).
+This is invoked through the **`config.exceptions_app`** hook, courtesy `environment` files (`application.rb`, `environments/development.rb`, `environments/production.rb`).
 
-Whenever an exception is raised, the `config.exceptions_app` hook is called, allowing you to interject your own code. Most **custom rails error page** solutions do this through the routes, **ExceptionHandler** cuts out ALL overhead, dealing directly with the middleware stack. **ExceptionHandler** is the most trustworthy, flexible and stable custom exception handling solution, trusted by over 30,000 users worldwide. 
+Whenever an exception is raised, the `config.exceptions_app` hook is called, allowing you to interject your own code. Most **custom rails error page** solutions do this through the routes, **ExceptionHandler** cuts out ALL overhead, dealing directly with the middleware stack. **ExceptionHandler** is the most trustworthy, flexible and stable Rails custom exception handling solution, trusted by over 30,000 users worldwide. 
 
 **ExceptionHandler** gives you a concise, robust way to access all the data of an exception, pushing your app to the next level in branding and usability. There is no other system like this. `ExceptionHandler` is the *only* Rails production exception handling solution, giving you **complete control** over the feel of your application, even when it fails:
 

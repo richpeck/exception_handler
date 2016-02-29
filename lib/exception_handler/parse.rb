@@ -12,10 +12,10 @@ module ExceptionHandler
 
 		rescue Exception => exception 
 			request 	= ActionDispatch::Request.new(env)
-			controller 	= env['action_controller.instance']
+			controller 	= request.env['action_controller.instance']
 			ignore 		= ExceptionHandler::Parser::Ignore.new(exception, request).match?
 
-			ExceptionHandler::Parser::Data.new(exception, request, controller).save unless ignore
+			ExceptionHandler::Parser::Data.create exception, request, controller unless ignore
 			raise exception
 		end
 
