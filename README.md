@@ -44,7 +44,7 @@ Tapping directly into the data stored in `Rack` (`message`, `details`, `user age
 
 Rails exceptions are handled by the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
 
-
+<img src="/readme/exceptions_app.jpg" title="Exceptions App" />
 
 This is invoked through the **`config.exceptions_app`** hook, accessed through the `environment` files (`application.rb`, `environments/development.rb`, `environments/production.rb`).
 
@@ -83,8 +83,6 @@ Most **custom rails error page** solutions just send exceptions to the routes (M
 or 
 
     gem 'exception_handler', '~> 0.5.0' # Gemfile
-
-<img src="readme/gemfile.jpg" title="Install ExceptionHandler In Your Gemfile" />
 
 <br />
 <a href="https://rubygems.org/gems/exception_handler" style="text-align: center">
