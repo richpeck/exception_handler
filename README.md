@@ -15,11 +15,10 @@
 ![Exceptions_App middleware](/readme/subtitle.jpg)
 
 <p align="center">
-  <img src="/readme/titles/custom_error_pages.png" title="Exceptions_App middleware" /><br />
-  <img src="/readme/rails.png" title="Ruby on Rails 4.2+ & 5 Compatible" />
+  <img src="/readme/rails.png" title="Rails 4+ & 5 Compatible" /><br />
 </p>
 
-**ExceptionHandler** is the only production-ready custom error page solution for Rails. Customize your `404` and `500` error pages to be branded to your application in production. 
+**ExceptionHandler** is the only production-ready custom error page solution for Rails 4 & 5. Customize your `404` and `500` error pages to be branded to your application in production. 
 
 ---
 
