@@ -18,7 +18,9 @@
   <img src="/readme/rails.png" title="Rails 4+ & 5 Compatible" /><br />
 </p>
 
-**ExceptionHandler** is the only production-ready custom error page solution for Rails 4 & 5. Customize your `404` and `500` error pages to be branded to your application in production. 
+**ExceptionHandler** is the only production-ready custom error page solution for Rails 4 & 5. Customize your `404` and `500` error pages to be branded to your application in production:
+
+.... 
 
 ---
 
@@ -30,13 +32,17 @@
 **layouts/application.html.erb** | **layouts/errors.html.erb** 
 
 
-All exceptions in Rails are handled by the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware. 
+Rails exceptions are handled by the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
 
-This is invoked through a hook called **`config.exceptions_app`**, accessed through the `environment` files of rails `application.rb`, `environments/development.rb`, `environments/production.rb` etc.
 
-It gives you a concise, robust way to access all the data of an exception, pushing your app to the next level in branding and usability. There is no other system like this for Rails. `ExceptionHandler` is the *only* Rails production exception handling solution, giving you complete control over the feel of your application, even when it fails:
+
+This is invoked through the **`config.exceptions_app`** hook, accessed through the `environment` files of rails (`application.rb`, `environments/development.rb`, `environments/production.rb`). Whenever an exception is raised, the `config.exceptions_app` hook is called, allowing you to interject your own code into it.
+
+**ExceptionHandler** gives you a concise, robust way to access all the data of an exception, pushing your app to the next level in branding and usability. There is no other system like this for Rails. `ExceptionHandler` is the *only* Rails production exception handling solution, giving you complete control over the feel of your application, even when it fails:
 
 ![Parse](/readme/parser.jpg "Parser")
+
+Most **custom rails error page** solutions deal with the routes, **ExceptionHandler** cuts out ALL overhead, dealing directly with the middleware stack. **ExceptionHandler** is the most trustworthy, flexible and stable fix for Rails gems 
 
 ----------
 
