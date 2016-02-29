@@ -24,7 +24,7 @@ Customize your `404` and `500` error pages to be branded to your application in 
 
 
 |         | Are           | Cool  |
-| ------------- |:-------------:| -----:|
+| :------------- |:-------------:| :-----|
 | Keep users informed | Show branded error pages | Maintain your error handling in one place |
 
 This is the most feature-rich, stable & effective solution for **custom error pages** in Rails 4 & 5:
@@ -47,15 +47,9 @@ Rails exceptions are handled by the [**`ActiveDispatch::ShowExceptions`**](https
 
 <img src="/readme/exceptions_app.png" title="Exceptions App" />
 
-This is invoked through the **`config.exceptions_app`** hook, accessed through the `environment` files (`application.rb`, `environments/development.rb`, `environments/production.rb`).
+**ExceptionHandler** uses this to route exceptions straight to our `exceptions` controller. 
 
-Whenever an exception is raised, it calls the `config.exceptions_app` hook:
-
-....
-
-Most **custom rails error page** solutions just send exceptions to the routes (MASSIVE bloat). **ExceptionHandler** cuts ALL overhead, dealing directly with the middleware stack. **ExceptionHandler** is the most trustworthy, flexible and stable Rails custom exception handling solution, trusted by over 30,000 users worldwide. 
-
-**ExceptionHandler** gives you a concise, robust way to access all the data of an exception, pushing your app to the next level in branding and usability. There is no other system like this. `ExceptionHandler` is the *only* Rails production exception handling solution, giving you **complete control** over the feel of your application, even when it raises exceptions:
+All other error gems send traffic through the "routes"
 
 ![Parse](/readme/parser.jpg "Parser")
 
