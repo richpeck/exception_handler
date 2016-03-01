@@ -49,7 +49,7 @@ Tapping directly into the data stored in `Rack` (`message`, `details`, `user age
 
 
 | t  | m |
-| -- | -- |
+| :--- | :--: |
 | **layouts/application.html.erb**<br /> Loaded with `40x` errors (`Not Found`). <br /><br /> Because 404 errors are not fatal, we can use the app's own layout -- BIG feature of the new `ExceptionHandler` | **layouts/exception.html.erb**<br /> Loaded with `50x` errors (`Internal Server Error`).<br /><br />500 errors prevent Rails from loading other elements, thus standalone layout is required. |
 
 
