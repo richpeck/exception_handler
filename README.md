@@ -18,8 +18,9 @@
 
 ---
 
-
-<img src="/readme/05_title.png" width="450" align="center" />
+<p align="center">
+  <img src="/readme/05_title.png" width="450" />
+</p>
 
 Customize your `404` and `500` error pages to be branded to your application in production:
 
