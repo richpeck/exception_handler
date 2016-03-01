@@ -18,9 +18,8 @@
 
 ---
 
-<p align="center">
-  <br /><img src="/readme/05_title.png" width="450" />
-</p>
+
+<img src="/readme/05_title.png" width="450" align="center" />
 
 Customize your `404` and `500` error pages to be branded to your application in production:
 
@@ -56,7 +55,9 @@ Tapping directly into the data stored in `Rack` (`message`, `details`, `user age
 Rails exceptions are handled by the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
 
 
-**ExceptionHandler** uses this to route exceptions straight to our `exceptions` controller, providing you access to whatever you want.
+**ExceptionHandler** uses this to route exceptions straight to our `exceptions` controller, providing you access to all the request data. 
+
+The benefit of working with **ExceptionHandler** is to give you the ability to 
 
 ----------
 
