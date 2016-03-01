@@ -26,6 +26,7 @@ Customize your `404` and `500` error pages to be branded to your application in 
 
 <p align="center">
   <img src="/readme/branded/tsla.jpg" title="Fully Branded Error Pages" /> <img src="/readme/branded/tsla.jpg" title="Fully Branded Error Pages" />
+  <img src="/readme/branded/tsla.jpg" title="Fully Branded Error Pages" /> <img src="/readme/branded/tsla.jpg" title="Fully Branded Error Pages" />
 </p>
 
 <p align="center">
