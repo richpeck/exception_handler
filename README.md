@@ -19,7 +19,7 @@
 ---
 
 <p align="center">
-  <br /><img src="/readme/05_title.png" width="450" />
+  <img src="/readme/05_title.png" width="450" />
 </p>
 
 Customize your `404` and `500` error pages to be branded to your application in production:
@@ -45,7 +45,7 @@ This is the most feature-rich, stable & effective solution for **custom error pa
 
 **ExceptionHandler** uses the `config.exceptions_app` to catch errors & send them to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
-Tapping directly into the data stored in `Rack` (`message`, `details`, `user agent`), **ExceptionHandler** populates your own `custom view`, populating in the DB & sending email notifications of the error:
+Tapping directly into the data stored in `Rack` (`message`, `details`, `user agent`), **ExceptionHandler** populates your own `custom view`, sending data to the DB & email notifications of the error:
 
 **40x Errors** | **50x Errors**
 --- | ---
@@ -55,7 +55,6 @@ Tapping directly into the data stored in `Rack` (`message`, `details`, `user age
 
 Rails exceptions are handled by the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
 
-<img src="/readme/exceptions_app.png" title="Exceptions App" />
 
 **ExceptionHandler** uses this to route exceptions straight to our `exceptions` controller, providing you access to whatever you want.
 
