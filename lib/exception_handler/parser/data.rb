@@ -50,7 +50,7 @@ module ExceptionHandler
 					info[:usable_type] 	= @user.model_name.human
 					info[:usable_id] 	  = @user.id
 				end
-				return info
+				info
 			end
 
 		end

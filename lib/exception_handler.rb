@@ -16,21 +16,16 @@ module ExceptionHandler
 	#Config
 	#Invoke instance of config (ExceptionHandler.config) -- loads defaults
 	mattr_accessor :config
-  @@config = nil
 
 	# Class methods
-    class << self
-    	# Don't have prefix method return anything.
-    	# This will keep Rails Engine from generating all table prefixes with the engines name
-    	# http://stackoverflow.com/questions/19435214/rails-mountable-engine-with-isolate-namespace-but-without-prefixed-namespace-on
-	    def table_name_prefix
-	    	#No prefix
-	    end
-
-	    #def config
-		#	ExceptionHandler::Config.new nil
-	    #end
+  class << self
+  	# Don't have prefix method return anything.
+  	# This will keep Rails Engine from generating all table prefixes with the engines name
+  	# http://stackoverflow.com/questions/19435214/rails-mountable-engine-with-isolate-namespace-but-without-prefixed-namespace-on
+    def table_name_prefix
+    	#No prefix
     end
+  end
 
 
 	#Exception Handler
