@@ -20,9 +20,9 @@ Customize your `404` and `500` error pages to be branded to your application in 
 
 <img src="/readme/404.jpg" title="Keep Branded" />
 
--- keep users informed
--- show branded error pages
--- middleware-centric error handling
+<img src="/readme/check.png" width="20" title="Keep Users Informed" /> keep users informed
+<img src="/readme/check.png" width="20" title="Keep Users Informed" /> show branded error pages
+<img src="/readme/check.png" width="20" title="Keep Users Informed" /> middleware-centric error handling
 
 This is the most feature-rich, stable & effective solution for **custom error pages** in Rails 4 & 5.
 
