@@ -15,7 +15,7 @@ module ExceptionHandler
 	###########################################
 
 		#Init
-		def initialize values
+		def initialize values=nil
 			defaults = values.present? ? Config::DEFAULTS.deep_merge!(values) : Config::DEFAULTS
 			defaults.each do |k,v|
 				instance_variable_set("@#{k}",v) #-> http://apidock.com/ruby/Object/instance_variable_set	

@@ -8,9 +8,13 @@ module ExceptionHandler
 			class << self
 				def create exception, request, controller
 
+          @exception  = exception
+          @request    = request
+          @controller = controller
+
 					#http://blog.habanerohq.com/post/16800611137/selectively-silence-activerecord-logging
 					message = ""
-					ActiveRecord::Base.logger.silence do
+					Rails.logger.silence do #-> stops Error.create from showing output
 						ExceptionHandler::Error.create info do |error|
 							message += "\n======================\n"
 							message += "#{error.class_name}:\n"
@@ -20,6 +24,7 @@ module ExceptionHandler
 						end
 					end
 					Rails.logger.fatal message unless message.blank?
+
 				end
 			end
 
