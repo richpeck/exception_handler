@@ -26,9 +26,6 @@ Gem::Specification.new do |s|
   # Options
   s.post_install_message = File.read(File.join(File.dirname(__FILE__), 'post_install_message.md')) #-> https://github.com/jarrett/ichiban/blob/master/ichiban.gemspec#L35
 
-  # prod Dependencies
-  #s.add_runtime_dependency "responders", '~> 2.1', '>= 2.1.1'
-
   # dev Dependencies
   s.add_development_dependency "bundler", "~> 1.6"
   s.add_development_dependency "rails", "~> 4.0.0"
