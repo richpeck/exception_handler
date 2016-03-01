@@ -16,18 +16,21 @@
 
 **ExceptionHandler** is the *only* production-ready custom error page solution for Rails 4 & 5. 
 
+---
+
 <p align="center">
   <img src="/readme/rails.png" width="300" /> <br />
-  Customize your `404` and `500` error pages to be branded to your application in production
 </p>
+
+Customize your `404` and `500` error pages to be branded to your application in production
 
 <img src="/readme/404.jpg" title="404 Error Pages" /> | <img src="/readme/404.jpg" title="500 Error Pages" />
 
 <p align="center">
-  <img src="/readme/check.png" width="18" title="Fully Responsive" align="absmiddle" /> Fully Responsive
+  <img src="/readme/check.png" width="18" title="Fully Responsive" align="absmiddle" /> Responsive
   <img src="/readme/check.png" width="18" title="Branded Error Pages" align="absmiddle" /> Branded Error Pages
   <img src="/readme/check.png" width="18" title="Middleware Exception Handling" align="absmiddle" /> Middleware Exception Handling
-  <img src="/readme/check.png" width="18" title="Keep Users Informed" align="absmiddle" /> Middleware Exception Handling 
+  <img src="/readme/check.png" width="18" title="Keep Users Informed" align="absmiddle" /> Fully Customizable
 </p>
 
 
