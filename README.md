@@ -24,7 +24,7 @@
 
 Customize your `404` and `500` error pages to be branded to your application in production:
 
-<img src="/readme/404.jpg" title="404 Error Pages" /> | <img src="/readme/404.jpg" title="500 Error Pages" />
+<img src="/readme/branded/tsla.jpg" title="Fully Branded Error Pages" /> | <img src="/readme/branded/tsla.jpg" title="Fully Branded Error Pages" />
 
 <p align="center">
   <div style="display: inline-block; vertical-align: middle;"><img src="/readme/check.png" width="24" title="Fully Responsive"              style="display: inline-block; vertical-align: middle; margin-right: 10px;" />Responsive</div>
