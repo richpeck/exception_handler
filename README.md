@@ -18,11 +18,13 @@
 
 Customize your `404` and `500` error pages to be branded to your application in production:
 
-<img src="/readme/404.jpg" title="Keep Branded" />
+<img src="/readme/404.jpg" title="404 Error Pages" /> | <img src="/readme/404.jpg" title="500 Error Pages" />
 
-<img src="/readme/check.png" width="24" title="Keep Users Informed" /> Keep Users Informed
-<img src="/readme/check.png" width="24" title="Keep Users Informed" /> Branded Error Pages
-<img src="/readme/check.png" width="24" title="Keep Users Informed" /> Middleware Exception Handling
+<p align="center">
+  <img src="/readme/check.png" width="24" title="Keep Users Informed" align="absmiddle" /> Keep Users Informed
+  <img src="/readme/check.png" width="24" title="Keep Users Informed" align="absmiddle" /> Branded Error Pages
+  <img src="/readme/check.png" width="24" title="Keep Users Informed" align="absmiddle" /> Middleware Exception Handling
+</p>
 
 <p align="center">
   <img src="/readme/rails.png" width="300" />
