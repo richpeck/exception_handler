@@ -18,10 +18,6 @@
 
 ---
 
-<p align="center">
-  <img src="/readme/rails.png" width="300" /> <br />
-</p>
-
 Customize your `404` and `500` error pages to be branded to your application in production:
 
 <p align="center">
@@ -29,10 +25,10 @@ Customize your `404` and `500` error pages to be branded to your application in 
 </p>
 
 <p align="center">
-  <div style="display: inline-block; vertical-align: middle;"><img src="/readme/check.png" width="24" title="Fully Responsive"              style="display: inline-block; vertical-align: middle; margin-right: 10px;" />Responsive</div>
-  <div style="display: inline-block; vertical-align: middle;"><img src="/readme/check.png" width="24" title="Branded Error Pages"           style="display: inline-block; vertical-align: middle; margin-right: 10px;" />Branded Error Pages</div>
-  <div style="display: inline-block; vertical-align: middle;"><img src="/readme/check.png" width="24" title="Middleware Exception Handling" style="display: inline-block; vertical-align: middle; margin-right: 10px;" />Middleware Exception Handling</div>
-  <div style="display: inline-block; vertical-align: middle;"><img src="/readme/check.png" width="24" title="Keep Users Informed"           style="display: inline-block; vertical-align: middle; margin-right: 10px;" />Fully Customizable</div>
+  <img src="/readme/check.png" width="24" title="Fully Responsive"                />Responsive
+  <img src="/readme/check.png" width="24" title="Branded Error Pages"             />Branded Error Pages
+  <img src="/readme/check.png" width="24" title="Middleware Exception Handling"   />Middleware Exception Handling
+  <img src="/readme/check.png" width="24" title="Keep Users Informed"             />Fully Customizable
 </p>
 
 
