@@ -18,7 +18,7 @@
 
 Customize your `404` and `500` error pages to be branded to your application in production:
 
-<img src="/readme/branding.jpg" title="Keep Branded" />
+<img src="/readme/404jpg" title="Keep Branded" />
 
 -- keep users informed
 -- show branded error pages
