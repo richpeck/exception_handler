@@ -27,10 +27,10 @@ Customize your `404` and `500` error pages to be branded to your application in 
 <img src="/readme/404.jpg" title="404 Error Pages" /> | <img src="/readme/404.jpg" title="500 Error Pages" />
 
 <p align="center">
-  <img src="/readme/check.png" width="24" title="Fully Responsive"              style="display: inline-block; vertical-align: middle; margin-right: 10px;" />Responsive
-  <img src="/readme/check.png" width="24" title="Branded Error Pages"           style="display: inline-block; vertical-align: middle; margin-right: 10px;" />Branded Error Pages
-  <img src="/readme/check.png" width="24" title="Middleware Exception Handling" style="display: inline-block; vertical-align: middle; margin-right: 10px;" />Middleware Exception Handling
-  <img src="/readme/check.png" width="24" title="Keep Users Informed"           style="display: inline-block; vertical-align: middle; margin-right: 10px;" />Fully Customizable
+  <div style="display: inline-block; vertical-align: middle;"><img src="/readme/check.png" width="24" title="Fully Responsive"              style="display: inline-block; vertical-align: middle; margin-right: 10px;" />Responsive</div>
+  <div style="display: inline-block; vertical-align: middle;"><img src="/readme/check.png" width="24" title="Branded Error Pages"           style="display: inline-block; vertical-align: middle; margin-right: 10px;" />Branded Error Pages</div>
+  <div style="display: inline-block; vertical-align: middle;"><img src="/readme/check.png" width="24" title="Middleware Exception Handling" style="display: inline-block; vertical-align: middle; margin-right: 10px;" />Middleware Exception Handling</div>
+  <div style="display: inline-block; vertical-align: middle;"><img src="/readme/check.png" width="24" title="Keep Users Informed"           style="display: inline-block; vertical-align: middle; margin-right: 10px;" />Fully Customizable</div>
 </p>
 
 
