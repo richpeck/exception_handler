@@ -29,10 +29,10 @@ Customize your `404` and `500` error pages to be branded to your application in 
 </p>
 
 <p align="center">
-  <img src="/readme/check.png" height="14" title="Fully Responsive"               align="middle" />Responsive
-  <img src="/readme/check.png" height="14" title="Branded Error Pages"            align="middle" />Branded Error Pages
-  <img src="/readme/check.png" height="14" title="Middleware Exception Handling"  align="middle" />Middleware Exception Handling
-  <img src="/readme/check.png" height="14" title="Keep Users Informed"            align="middle" />Fully Customizable
+  <img src="/readme/check.png" height="14" title="Fully Responsive"               align="middle" />Responsive &nbsp;
+  <img src="/readme/check.png" height="14" title="Branded Error Pages"            align="middle" />Branded Error Pages &nbsp;
+  <img src="/readme/check.png" height="14" title="Middleware Exception Handling"  align="middle" />Middleware Exception Handling &nbsp;
+  <img src="/readme/check.png" height="14" title="Keep Users Informed"            align="middle" />Fully Customizable &nbsp;
 </p>
 
 
