@@ -107,7 +107,7 @@ or
 
 ----------
 
-##### <img src="readme/titles/conf.png" height="32" alt="Configuration" align="absmiddle" /> Config
+##### <img src="readme/titles/conf.jpg" height="32" alt="Configuration" align="absmiddle" /> Config
 
 If you wish to change any of the default settings (below), you should now add `config.exception_handler` to your `config/application.rb` or `config/production.rb` file:
 
