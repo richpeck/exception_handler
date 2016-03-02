@@ -64,7 +64,9 @@ By catching any exception with the [`config.exceptions_app`](http://guides.rubyo
   <img src="readme/exceptions_app.jpg" title="Exceptions App" />
 </p>
 
-**ExceptionHandler** uses our custom middleware to extract *all* the exception data for the request. Not only is this the most succinct, efficient way to do this, it also allows you to customize the *entire* fault-recovery process. This professional-grade system is trusted by over 30,000 users for a reason - it works *well*.
+**ExceptionHandler** uses our custom middleware to extract *all* the exception data for the request. Not only is this the most succinct, efficient way to do this, it also allows you to customize the *entire* fault-recovery process.
+
+This professional-grade system is trusted by over 30,000 users - it works *well*.
 
 This has *never* been done before - it's completely unique - the only professional-grade solution to catch, process & handle exceptions in Rails. Unlike other solutions - mostly directing requests to `routes` - **ExceptionHandler** directs requests directly to the controller. 
 
