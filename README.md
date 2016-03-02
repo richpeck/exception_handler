@@ -72,6 +72,8 @@ This has *never* been done before - it's completely unique - the only profession
 
 ----------
 
+<img src="/readme/500.jpg" title="Contents" align="right" />
+
 <p align="left">
   <br />
   <img src="/readme/titles/contents.jpg" title="Contents" />
