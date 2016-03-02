@@ -90,7 +90,7 @@ This has *never* been done before - it's completely unique - the only profession
 
 ----------
 
-## Installation
+## <img src="readme/titles/ruby-rails.jpg" width="32" alt="Ruby on Rails" /> Installation
 
      gem install 'exception_handler'
  
