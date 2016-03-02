@@ -41,7 +41,7 @@ This is the most feature-rich, stable & effective solution for **custom error pa
 
 [[0.5]]
 
-**ExceptionHandler** uses the `config.exceptions_app` to catch errors & send them to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
+**ExceptionHandler** uses `config.exceptions_app` to catch errors & send them to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
 Tapping directly into the data stored in `Rack` (`message`, `details`, `user agent`), **ExceptionHandler** populates your own `custom view`, sending data to the DB & email notifications of the error:
 
@@ -68,7 +68,7 @@ By catching any exception with the [`config.exceptions_app`](http://guides.rubyo
 
 This professional-grade system is trusted by over 30,000 users - it works *well*.
 
-This has *never* been done before - it's completely unique - the only solution to catch, process & handle exceptions in Rails. Unlike other solutions - mostly directing requests to `routes` - **ExceptionHandler** directs requests directly to the controller. 
+This has *never* been done before - it's completely unique - the only professional solution to catch, process & handle exceptions in Rails. Unlike other solutions - mostly directing requests to `routes` - **ExceptionHandler** directs requests directly to the controller. 
 
 ----------
 
