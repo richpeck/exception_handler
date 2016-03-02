@@ -122,7 +122,7 @@ We've changed the load process to use Rails app `config` - **you don't need the 
 
 ----------
 
-##### DB
+##### <img src="readme/titles/db.png" height="32" alt="Database Functionality" align="absmiddle" /> DB
 
 If you want to store exceptions in the db, you will need to set up a `migration`:
 
