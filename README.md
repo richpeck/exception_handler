@@ -56,7 +56,7 @@ Rails exceptions are handled by the [**`ActiveDispatch::ShowExceptions`**](https
 
 ....
 
-By catching any exception with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook, **ExceptionHandler** invokes our `ExceptionsController` directly, cutting out all overhead & providing the most professional solution you need:
+By catching any exception with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook, **ExceptionHandler** invokes our `ExceptionsController` directly, removing *all* overhead:
 
 > **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**.
 
