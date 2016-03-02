@@ -73,6 +73,7 @@ This has *never* been done before - it's completely unique - the only profession
 ----------
 
 <p align="left">
+  <br />
   <img src="/readme/titles/contents.jpg" title="Contents" />
 </p>
 
