@@ -19,8 +19,8 @@
 ---
 
 <p align="center">
-  <br /><img src="/readme/05_title.png" width="450" />
-  <strong>Customize your `404` and `500` error pages to be <ubranded</u> to your application in production:</strong>
+  <br /><img src="/readme/05_title.png" width="450" /><br/>
+  <strong>Customize your `404` and `500` error pages to be <u>branded</u> to your application in production:</strong>
 </p>
 
 <p align="center">
