@@ -43,6 +43,9 @@ This is the most feature-rich, stable & effective solution for **custom error pa
 -- Rails 5 compatible
 -- Locales support
 -- Legacy initializer support
+-- Upgraded controller & view code
+-- DB fix
+-- Tests
 
 **ExceptionHandler** uses `config.exceptions_app` to catch errors & send them to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
@@ -69,9 +72,7 @@ By catching any exception with the [`config.exceptions_app`](http://guides.rubyo
 
 **ExceptionHandler** uses our custom middleware to extract *all* the exception data for the request. Not only is this the most succinct, efficient way to do this, it also allows you to customize the *entire* fault-recovery process.
 
-This professional-grade system is trusted by over 30,000 users - it works *well*.
-
-This has *never* been done before - it's completely unique - the only professional solution to catch, process & handle exceptions in Rails. Unlike other solutions - mostly directing requests to `routes` - **ExceptionHandler** sends requests directly to the controller. 
+It's completely unique - the only professional solution to catch, process & handle exceptions in Rails. Unlike other solutions - mostly directing requests to `routes` - **ExceptionHandler** sends requests directly to the controller. 
 
 ----------
 
