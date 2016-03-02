@@ -22,12 +22,7 @@
   <br /><img src="/readme/05_title.png" width="450" />
 </p>
 
-Customize your `404` and `500` error pages to be branded to your application in production:
-
-<p align="center">
-  <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" /> <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" />
-  <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" /> <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" />
-</p>
+Customize your `404` and `500` error pages to be **branded** to your application in production:
 
 <p align="center">
   <img src="/readme/check.png" height="22" title="Fully Responsive"               align="absmiddle" />&nbsp; Responsive &nbsp;
@@ -36,6 +31,10 @@ Customize your `404` and `500` error pages to be branded to your application in 
   <img src="/readme/check.png" height="22" title="Keep Users Informed"            align="absmiddle" />&nbsp; Fully Customizable &nbsp;
 </p>
 
+<p align="center">
+  <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" /> <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" />
+  <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" /> <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" />
+</p>
 
 This is the most feature-rich, stable & effective solution for **custom error pages** in Rails 4 & 5.
 
