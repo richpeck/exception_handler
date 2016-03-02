@@ -72,7 +72,7 @@ This has *never* been done before - it's completely unique - the only profession
 
 ----------
 
-<img src="/readme/500.jpg" title="Contents" align="right" />
+<img src="/readme/500.jpg" title="Contents" width="400" align="right" />
 
 <p align="left">
   <br />
