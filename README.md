@@ -72,8 +72,9 @@ This has *never* been done before - it's completely unique - the only profession
 
 ----------
 
-<br />
-<img src="/readme/titles/contents.jpg" title="Contents" />
+<p align="left">
+  <img src="/readme/titles/contents.jpg" title="Contents" />
+</p>
 
 - [**Installation**](#installation)
   - [Config](#config)
