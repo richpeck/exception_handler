@@ -76,13 +76,10 @@ This has *never* been done before - it's completely unique - the only profession
 
 <p align="left">
   <br />
-  <img src="/readme/titles/contents.jpg" title="Contents" />
+  <img src="/readme/titles/1clickinstall.jpg" title="1 Click Install" />
 </p>
 
 - [**Installation**](#installation)
-  - [Config](#config)
-  - [DB](#db)
-  - [Views](#views)
 - [**Development**](#testing)
 - [**Bugs**](#bugs)
 - [**Support**](#support)
