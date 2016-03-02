@@ -72,11 +72,12 @@ This has *never* been done before - it's completely unique - the only profession
 
 ----------
 
+<img src="/readme/titles/contents.jpg" title="Contents" />
+
 - [**Installation**](#installation)
   - [Config](#config)
   - [DB](#db)
   - [Views](#views)
-  - [Layout](#layout)
 - [**Development**](#testing)
 - [**Bugs**](#bugs)
 - [**Support**](#support)
@@ -90,7 +91,7 @@ This has *never* been done before - it's completely unique - the only profession
 
 ----------
 
-## <img src="readme/titles/ruby-rails.jpg" height="32" alt="Ruby on Rails" align="absmiddle" /> Installation
+## <img src="readme/titles/ruby-rails.jpg" height="32" alt="Ruby on Rails" align="absmiddle" id="installation" /> Installation
 
      gem install 'exception_handler'
  
@@ -107,7 +108,7 @@ or
 
 ----------
 
-##### <img src="readme/titles/conf.png" height="32" alt="Configuration" align="absmiddle" /> Config
+##### <img src="readme/titles/conf.png" height="32" alt="Configuration" align="absmiddle" id="config" /> Config
 
 If you wish to change any of the default settings (below), you should now add `config.exception_handler` to your `config/application.rb` or `config/production.rb` file:
 
@@ -122,7 +123,7 @@ We've changed the load process to use Rails app `config` - **you don't need the 
 
 ----------
 
-##### <img src="readme/titles/db.png" height="32" alt="Database Functionality" align="absmiddle" /> DB
+##### <img src="readme/titles/db.png" height="32" alt="Database Functionality" align="absmiddle" id="db" /> DB
 
 If you want to store exceptions in the db, you will need to set up a `migration`:
 
@@ -141,30 +142,9 @@ You will also need to ensure your config `db` option is either `true` || `:table
 
 If you want to change the views, you can have them put into your app:
 
-    $ rails generate exception_handler:views #-> controller, models, helpers, views & assets
-	$ rails generate exception_handler:views -v views controllers models helpers assets #-> remove as appropriate to install individual assets
+    $ rails generate exception_handler:views                                            #-> controller, models, helpers, views & assets
+	  $ rails generate exception_handler:views -v views controllers models helpers assets #-> remove as appropriate to install individual assets
 
-The views will be appended to your app, and you'll be able to edit them as required.
-
----
-
-##### Show
-
-![View](/readme/view.jpg "View")
-
-The view is located in `app/views/exception_handler/show.html.erb` designed to work for all exceptions.
-
-By default, it is split for use with different layouts, data being available to both.
-
-This works exactly the same as the other views in your app (IE the `exceptions` controller invokes the `show` action)
-
-----------
-
-##### Layout
-
-One of the most critial aspects of **ExceptionHandler** is the [custom `Exception` layout](/app/controllers/exception_handler/exception_controller.rb).
-
-If you want to change the layout (for 500 error pages), you need to use the following:
 
 ![Layout](/readme/layout.jpg "Layout")
 
