@@ -40,6 +40,9 @@ This is the most feature-rich, stable & effective solution for **custom error pa
 ---
 
 [[0.5]]
+-- Rails 5 compatible
+-- Locales support
+-- Legacy initializer support
 
 **ExceptionHandler** uses `config.exceptions_app` to catch errors & send them to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
@@ -101,12 +104,8 @@ or
 
     gem 'exception_handler', '~> 0.5.0' # Gemfile
 
-<br />
-<a href="https://rubygems.org/gems/exception_handler" style="text-align: center">
-  You can see `ExceptionHandler` on RubyGems
-  <br />
-  <img src="/readme/rubygems.jpg" />
-</a>
+
+30,000 users can't be wrong (rubygems)
 
 ----------
 
