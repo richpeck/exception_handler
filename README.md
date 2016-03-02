@@ -40,7 +40,7 @@ This is the most feature-rich, stable & effective solution for **custom error pa
 ---
 
 [[0.5]]
--- Rails 5 compatible
+-- FULLY Rails 5 compatible
 -- Locales support
 -- Legacy initializer support
 -- Upgraded controller & view code
@@ -62,7 +62,7 @@ Rails exceptions are handled by the [**`ActiveDispatch::ShowExceptions`**](https
 
 ....
 
-By catching any exception with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook, **ExceptionHandler** invokes our `ExceptionsController` directly, removing *all* overhead:
+By catching exceptions with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook, **ExceptionHandler** invokes our `ExceptionsController` directly, removing *all* overhead:
 
 > **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**.
 
@@ -72,7 +72,7 @@ By catching any exception with the [`config.exceptions_app`](http://guides.rubyo
 
 **ExceptionHandler** uses our custom middleware to extract *all* the exception data for the request. Not only is this the most succinct, efficient way to do this, it also allows you to customize the *entire* fault-recovery process.
 
-It's completely unique - the only professional solution to catch, process & handle exceptions in Rails. Unlike other solutions - mostly directing requests to `routes` - **ExceptionHandler** sends requests directly to the controller. 
+It's completely unique - the **only** professional solution to catch, process & handle exceptions in Rails. Unlike other solutions - mostly directing requests to `routes` - **ExceptionHandler** sends requests directly to the controller. 
 
 ----------
 
