@@ -60,11 +60,13 @@ module ExceptionHandler
       #http://api.rubyonrails.org/classes/Rails/Application.html#class-Rails::Application-label-Booting+process
       ExceptionHandler.config = ExceptionHandler::Config.new app.config.try(:exception_handler)
 
-      app.config.middleware.use ExceptionHandler::Parse if ExceptionHandler.config.db                                           # Saves to DB 
-      app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) }                     # Routes to Controller
+      #Actions
+      app.config.middleware.use ExceptionHandler::Parse if ExceptionHandler.config.db #-> DB
+      app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } #-> Controller
 
       #Dev
-      app.config.consider_all_requests_local = false if Rails.env.development? && ExceptionHandler.config.dev #-> dev "false" by default -> better_errors overrides currently
+      app.config.consider_all_requests_local = false if Rails.env.development? && ExceptionHandler.config.dev
+
     end
 
   end
