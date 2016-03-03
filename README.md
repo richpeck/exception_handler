@@ -144,7 +144,7 @@ You will also need to ensure your config `db` option is either `true` || `:table
 If you want to change the views, you can have them put into your app:
 
     $ rails generate exception_handler:views                                            #-> controller, models, helpers, views & assets
-	  $ rails generate exception_handler:views -v views controllers models helpers assets #-> remove as appropriate to install individual assets
+    $ rails generate exception_handler:views -v views controllers models helpers assets #-> remove as appropriate to install individual assets
 
 
 ![Layout](/readme/layout.jpg "Layout")
