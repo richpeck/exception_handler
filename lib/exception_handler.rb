@@ -13,35 +13,35 @@ Dir.glob(File.join(File.dirname(__FILE__), "exception_handler", '**/*.rb'), &met
 
 module ExceptionHandler
 
-	#Config
-	#Invoke instance of config (ExceptionHandler.config) -- loads defaults
-	mattr_accessor :config
+  #Config
+  #Invoke instance of config (ExceptionHandler.config) -- loads defaults
+  mattr_accessor :config
 
-	# Class methods
+  # Class methods
   class << self
-  	# Don't have prefix method return anything.
-  	# This will keep Rails Engine from generating all table prefixes with the engines name
-  	# http://stackoverflow.com/questions/19435214/rails-mountable-engine-with-isolate-namespace-but-without-prefixed-namespace-on
+    # Don't have prefix method return anything.
+    # This will keep Rails Engine from generating all table prefixes with the engines name
+    # http://stackoverflow.com/questions/19435214/rails-mountable-engine-with-isolate-namespace-but-without-prefixed-namespace-on
     def table_name_prefix
-    	#No prefix
+      #No prefix
     end
   end
 
   #########################
 
-	#Exception Handler
-	class Engine < Rails::Engine
-		#Keep helpers in your engine
-		#http://guides.rubyonrails.org/engines.html#inside-an-engine
-		#http://stackoverflow.com/questions/31877839/accessing-helpers-from-the-parent-app-in-an-isolated-rails-engine
-		#use main_app to call "main app" helpers etc http://stackoverflow.com/a/9178022/1143732 + http://edgeapi.rubyonrails.org/classes/Rails/Engine.html#class-Rails::Engine-label-Using+Engine-27s+routes+outside+Engine
-		isolate_namespace ExceptionHandler
+  #Exception Handler
+  class Engine < Rails::Engine
+    #Keep helpers in your engine
+    #http://guides.rubyonrails.org/engines.html#inside-an-engine
+    #http://stackoverflow.com/questions/31877839/accessing-helpers-from-the-parent-app-in-an-isolated-rails-engine
+    #use main_app to call "main app" helpers etc http://stackoverflow.com/a/9178022/1143732 + http://edgeapi.rubyonrails.org/classes/Rails/Engine.html#class-Rails::Engine-label-Using+Engine-27s+routes+outside+Engine
+    isolate_namespace ExceptionHandler
 
-		#Assets
-		config.assets.precompile << %w(exception_handler/**)
+    #Assets
+    config.assets.precompile << %w(exception_handler/**)
 
-		#Hook
-		initializer :configure_rails_initialization do |app|
+    #Hook
+    initializer :configure_rails_initialization do |app|
 
       #Has to be loaded after Rails app
       #Boot order:
@@ -60,9 +60,9 @@ module ExceptionHandler
       #http://api.rubyonrails.org/classes/Rails/Application.html#class-Rails::Application-label-Booting+process
       ExceptionHandler.config = ExceptionHandler::Config.new app.config.try(:exception_handler)
 
-			app.config.middleware.use ExceptionHandler::Parse if ExceptionHandler.config.db 						            # Saves to DB
-			app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } 	# Routes to Controller	
-		end
+      app.config.middleware.use ExceptionHandler::Parse if ExceptionHandler.config.db 						            # Saves to DB
+      app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } 	# Routes to Controller	
+    end
 
     #Dev
     if Rails.env.development? #-> skip if not development env
@@ -71,7 +71,7 @@ module ExceptionHandler
       end
     end
 
-	end
+  end
 
   #########################
 end
