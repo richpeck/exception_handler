@@ -108,22 +108,19 @@ or
 
 30,000 users can't be wrong (rubygems)
 
-Create professional-grade applications with the help of **Rails custom error pages**.
-
 ----------
 
-##### Config
+## Config
+
+> **IMPORTANT**
+>
+> If you're upgrading from `>= 0.4.7`, you need to **remove your `exception_handler` initializer**.
+>
+> We've changed the load process to use Rails app `config` - **you don't need the `exception_handler` initializer any more** ([more](https://github.com/richpeck/exception_handler/wiki/Setup))
 
 If you wish to change any of the default settings (below), you should now add `config.exception_handler` to your `config/application.rb` or `config/production.rb` file:
 
 ![Config Options](/readme/config.jpg)
-
-
-**IMPORTANT**
-
-If you're upgrading from `>= 0.4.7`, you need to **remove your `exception_handler` initializer**.
-
-We've changed the load process to use Rails app `config` - **you don't need the `exception_handler` initializer any more** ([more](https://github.com/richpeck/exception_handler/wiki/Setup))
 
 ----------
 
