@@ -33,7 +33,6 @@
 <p align="center">
   <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" /> <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" />
   <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" /> <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" />
-  <br />Keep Apps Branded In Production
 </p>
 
 This is the most feature-rich, stable & effective solution for **custom error pages** in Rails 4 & 5.
@@ -43,6 +42,8 @@ This is the most feature-rich, stable & effective solution for **custom error pa
 <p align="center">
   <img src="/readme/05.jpg" title="Version 0.5" width="450" />
 </p>
+
+--- cultivate your brand
 
 **ExceptionHandler** uses `config.exceptions_app` to catch errors & send them to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
@@ -75,7 +76,7 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 ----------
 
-<img src="/readme/500.jpg" title="Contents" width="400" align="right" />
+<img src="/readme/install.jpg" title="One Click Install" width="400" align="right" />
 
 <p align="left">
   <br />
