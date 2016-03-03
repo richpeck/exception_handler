@@ -151,7 +151,7 @@ If you want to change the views, you can have them put into your app:
 
 ----------
 
-<img src="/readme/titles/testing.png" id="development" />
+<img src="/readme/titles/testing.jpg" id="development" />
 
 **`Exception Handler`** now supports a rigorous test suite:
 
