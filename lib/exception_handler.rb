@@ -66,14 +66,12 @@ module ExceptionHandler
 
     #Dev
     if Rails.env.development? #-> skip if not development env
-      initializer :after_initialize do |app| #-> works except if better errors is on system
+      initializer :before_initialize do |app| #-> works with better_errors. after_initialize doesn't work with better errors
         app.config.consider_all_requests_local = false if ExceptionHandler.config.dev #-> dev "false" by default
       end
     end
 
   end
-
-  #########################
 end
 
 ###########################################
