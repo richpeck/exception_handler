@@ -18,7 +18,7 @@ module ExceptionHandler
 
   	#Show
     #Amend responses in tests
-    # Need to test validity of JSON responses etc
+    #Need to test validity of JSON responses etc
     def show
       @exception = ExceptionHandler::Exception.new request #-> Service Object
     end
