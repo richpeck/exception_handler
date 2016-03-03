@@ -53,8 +53,11 @@ Tapping directly into the data stored in `Rack` (`message`, `details`, `user age
 </div>
 
 
-Rails exceptions are handled by the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware
+Rails exceptions are handled by the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
 
+<p align="center">
+  <img src="/readme/middleware.jpg" title="Exceptions handled by the ActiveDispatch::ShowExceptions Middleware" />
+</p>
 
 By catching exceptions with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook, **ExceptionHandler** invokes our `ExceptionsController` directly, removing *all* overhead:
 
@@ -97,8 +100,8 @@ It's completely unique - the **only** professional solution to catch, process & 
  
 or 
 
-    gem 'exception_handler', '~> 0.5.0' # Gemfile
-
+    #Gemfile
+    gem 'exception_handler', '~> 0.5.0'
 
 30,000 users can't be wrong (rubygems)
 
