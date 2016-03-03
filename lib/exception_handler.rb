@@ -27,6 +27,7 @@ module ExceptionHandler
     end
   end
 
+  #########################
 
 	#Exception Handler
 	class Engine < Rails::Engine
@@ -40,7 +41,7 @@ module ExceptionHandler
 		config.assets.precompile << %w(exception_handler/**)
 
 		#Hook
-		initializer "exception_handler.configure_rails_initialization" do |app|
+		initializer :configure_rails_initialization do |app|
 
       #Has to be loaded after Rails app
       #Boot order:
@@ -63,5 +64,16 @@ module ExceptionHandler
 			app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } 	# Routes to Controller	
 		end
 
+    #Dev
+    if Rails.env.development? #-> skip if not development env
+      initializer :after_initialize do |app| #-> works except if better errors is on system
+        app.config.consider_all_requests_local = false if ExceptionHandler.config.dev #-> dev "false" by default
+      end
+    end
+
 	end
+
+  #########################
 end
+
+###########################################

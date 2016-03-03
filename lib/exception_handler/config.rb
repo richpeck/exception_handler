@@ -10,7 +10,7 @@ module ExceptionHandler
 	class Config
 
 		#Instace Objects
-		attr_accessor :db, :email, :social, :layouts
+		attr_accessor :dev, :db, :email, :social, :layouts
 
 	###########################################
 
@@ -38,6 +38,7 @@ module ExceptionHandler
 	    # Defaults
 		# http://stackoverflow.com/a/8917301/1143732
 		DEFAULTS = {
+			dev: 	false, #-> defaults to "false" for dev mode
 			db:   	false, #-> defaults to :errors if true, else use :table_name
 			email: 	false, #-> need to integrate
 			social: {
