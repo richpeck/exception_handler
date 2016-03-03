@@ -60,15 +60,11 @@ module ExceptionHandler
       #http://api.rubyonrails.org/classes/Rails/Application.html#class-Rails::Application-label-Booting+process
       ExceptionHandler.config = ExceptionHandler::Config.new app.config.try(:exception_handler)
 
-      app.config.middleware.use ExceptionHandler::Parse if ExceptionHandler.config.db 						            # Saves to DB
-      app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } 	# Routes to Controller	
-    end
+      app.config.middleware.use ExceptionHandler::Parse if ExceptionHandler.config.db                                           # Saves to DB 
+      app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) }                     # Routes to Controller
 
-    #Dev
-    if Rails.env.development? #-> skip if not development env
-      initializer :before_initialize do |app| #-> works with better_errors. after_initialize doesn't work with better errors
-        app.config.consider_all_requests_local = false if ExceptionHandler.config.dev #-> dev "false" by default
-      end
+      #Dev
+      app.config.consider_all_requests_local = false if Rails.env.development? && ExceptionHandler.config.dev #-> dev "false" by default -> better_errors overrides currently
     end
 
   end
