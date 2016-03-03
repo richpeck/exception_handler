@@ -16,7 +16,7 @@ module ExceptionHandler
     #      Action      #
     ####################
 
-  	#Show
+    #Show
     #Amend responses in tests
     #Need to test validity of JSON responses etc
     def show
