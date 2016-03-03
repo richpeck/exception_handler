@@ -33,6 +33,7 @@
 <p align="center">
   <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" /> <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" />
   <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" /> <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" />
+  <br />Keep Apps Branded In Production
 </p>
 
 This is the most feature-rich, stable & effective solution for **custom error pages** in Rails 4 & 5.
@@ -67,6 +68,8 @@ By catching exceptions with the [`config.exceptions_app`](http://guides.rubyonra
   <img src="readme/exceptions_app.jpg" title="Exceptions App" />
 </p>
 
+---
+
 **ExceptionHandler** uses our custom middleware to extract *all* the exception data for the request. Not only is this the most succinct, efficient way to do this, it also allows you to customize the *entire* fault-recovery process.
 
 It's completely unique - the **only** professional solution to catch, process & handle exceptions in Rails. Unlike other solutions - mostly directing requests to `routes` - **ExceptionHandler** sends requests directly to the controller. 
@@ -94,7 +97,7 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 ----------
 
-## <img src="readme/titles/ruby-rails.jpg" height="32" alt="Ruby on Rails" align="absmiddle" id="installation" /> Installation
+## Installation
 
      gem install 'exception_handler'
  
@@ -109,7 +112,7 @@ Create professional-grade applications with the help of **Rails custom error pag
 
 ----------
 
-##### <img src="readme/titles/config.png" height="32" alt="Configuration" align="absmiddle" id="config" /> Config
+##### Config
 
 If you wish to change any of the default settings (below), you should now add `config.exception_handler` to your `config/application.rb` or `config/production.rb` file:
 
@@ -124,7 +127,7 @@ We've changed the load process to use Rails app `config` - **you don't need the 
 
 ----------
 
-##### <img src="readme/titles/db.png" height="32" alt="Database Functionality" align="absmiddle" id="db" /> DB
+##### DB
 
 If you want to store exceptions in the db, you will need to set up a `migration`:
 
