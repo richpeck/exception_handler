@@ -39,13 +39,9 @@ This is the most feature-rich, stable & effective solution for **custom error pa
 
 ---
 
-[[0.5]]
--- FULLY Rails 5 compatible
--- Locales support
--- Legacy initializer support
--- Upgraded controller & view code
--- DB fix
--- Tests
+<p align="center">
+  <img src="/readme/05.jpg" title="Version 0.5" />
+</p>
 
 **ExceptionHandler** uses `config.exceptions_app` to catch errors & send them to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
