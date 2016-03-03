@@ -90,7 +90,7 @@ It's completely unique - the **only** professional solution to catch, process & 
   - [Video](#video)
   - [Issue](https://github.com/richpeck/exception_handler/issues)
   - [StackOverflow](http://stackoverflow.com/questions/ask?tags=exception_handler&ruby_on_rails)
-- [**Changelog**](#changelog)
+- [**Roadmap**](#roadmap)
   - [0.5.0](#050)
   - [0.4.7](#047)
 - [**Contribution**](#contribution)
@@ -191,7 +191,7 @@ If you are using any custom routes in `application` layout, you need to prepend 
 
 ----------
 
-<img src="readme/titles/changelog.png" id="changelog" />
+<img src="readme/titles/roadmap.jpg" id="roadmap" />
 
 #### 0.5.0
  - Added locales
