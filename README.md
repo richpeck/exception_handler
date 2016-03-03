@@ -53,6 +53,7 @@ Tapping directly into the data stored in `Rack` (`message`, `details`, `user age
   <img src="/readme/500.jpg" title="500 Errors" width="435" />
 </div>
 
+---
 
 Rails exceptions are handled by the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
 
@@ -67,8 +68,6 @@ By catching exceptions with the [`config.exceptions_app`](http://guides.rubyonra
 <p align="center">
   <img src="readme/exceptions_app.jpg" title="Exceptions App" />
 </p>
-
----
 
 **ExceptionHandler** uses our custom middleware to extract *all* the exception data for the request. Not only is this the most succinct, efficient way to do this, it also allows you to customize the *entire* fault-recovery process.
 
