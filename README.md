@@ -169,7 +169,7 @@ You should change this setting if you wish to test your styling in development m
 
 ----------
 
-<img src="readme/titles/bugs.png" id="bugs" />
+<img src="readme/titles/bugs.jpg" id="bugs" />
 
 #### `ApplicationController`
 
@@ -216,7 +216,7 @@ If you are using any custom routes in `application` layout, you need to prepend 
 
 ----------
 
-<img src="readme/titles/support.png" id="support" />
+<img src="readme/titles/support.jpg" id="support" />
 
 #### Video
 
