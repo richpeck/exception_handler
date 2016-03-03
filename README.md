@@ -76,12 +76,11 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 ----------
 
-<img src="/readme/install.jpg" title="One Click Install" width="400" align="right" />
-
-<p align="left">
+<p align="right">
   <br />
-  <img src="/readme/titles/1clickinstall.jpg" title="1 Click Install" />
+  <img src="/readme/install.jpg" title="One Click Install" width="400" align="right" />
 </p>
+
 
 - [**Installation**](#installation)
 - [**Development**](#testing)
