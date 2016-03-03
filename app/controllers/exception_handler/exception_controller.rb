@@ -18,9 +18,9 @@ module ExceptionHandler
 
   	#Show
     #Amend responses in tests
+    # Need to test validity of JSON responses etc
     def show
       @exception = ExceptionHandler::Exception.new request #-> Service Object
-      # Need to test validity of JSON responses etc
     end
 
     ####################
@@ -40,7 +40,7 @@ module ExceptionHandler
 
     #Layout
     def layout
-      (/^(5[0-9]{2})$/ !~ @exception.code) ? (ExceptionHandler.config.layouts["404"] || nil) : ExceptionHandler.config.layouts["500"] #-> inherits ApplicationController layout (nil means it will use standard layout from ApplicationController)    
+      (/^(5[0-9]{2})$/ !~ @exception.code.to_s) ? (ExceptionHandler.config.layouts["404"] || nil) : ExceptionHandler.config.layouts["500"] #-> if not 500, use predefined layout
     end
 
     ####################
