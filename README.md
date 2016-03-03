@@ -191,6 +191,7 @@ If you are using any custom routes in `application` layout, you need to prepend 
 
 ----------
 
+<br />
 <img src="readme/titles/roadmap.jpg" id="roadmap" />
 
 #### 0.5.0
@@ -233,7 +234,7 @@ If you are using any custom routes in `application` layout, you need to prepend 
 
 ----------
 
-<img src="readme/titles/contribution.png" id="contribution" />
+<img src="readme/titles/contribution.jpg" id="contribution" />
 
 Contributions welcome.
 
