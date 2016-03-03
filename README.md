@@ -158,7 +158,7 @@ If you want to change the views, you can have them put into your app:
 
 ##### Development
 
-`config.exceptions_app` is only used in Rails' **production** environment.
+> `config.exceptions_app` is only used in Rails' **production** environment.
 
 If you wish to customize in dev, you need to make your app process requests as production. This is a temporary step, and will be resolved in a new version:
 
