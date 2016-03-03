@@ -40,12 +40,7 @@ module ExceptionHandler
 
     #Layout
     def layout
-      case  @exception.code
-        when 404
-          ExceptionHandler.config.layouts["404"] || nil #-> inherits ApplicationController layout (nil means it will use standard layout from ApplicationController)
-        else
-          ExceptionHandler.config.layouts["500"]        #-> use 500 "exception" layout
-      end     
+      (/^(5[0-9]{2})$/ !~ @exception.code) ? (ExceptionHandler.config.layouts["404"] || nil) : ExceptionHandler.config.layouts["500"] #-> inherits ApplicationController layout (nil means it will use standard layout from ApplicationController)    
     end
 
     ####################
