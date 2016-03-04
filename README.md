@@ -62,6 +62,8 @@ Tapping directly into the data stored in `Rack` (`message`, `details`, `user age
   <img src="/readme/middleware.jpg" title="Exceptions handled by the ActiveDispatch::ShowExceptions Middleware" />
 </p>
 
+<img src="/readme/responsive.jpg" title="Exceptions handled by the ActiveDispatch::ShowExceptions Middleware" />
+
 ---
 
 By catching exceptions directly through the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook, **ExceptionHandler** invokes our `ExceptionsController` directly:
