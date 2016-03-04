@@ -25,6 +25,10 @@ module ExceptionHandler
     def table_name_prefix
       #No prefix
     end
+
+    def config
+      ExceptionHandler::Config.new
+    end
   end
 
   #########################
@@ -40,33 +44,39 @@ module ExceptionHandler
     #Assets
     config.assets.precompile << %w(exception_handler/**)
 
+    #Config
+    config.before_initialize do |app|
+      ExceptionHandler.config = ExceptionHandler::Config.new app.config.try(:exception_handler) #-> Var
+    end
+
+    #Boot order:
+    #http://api.rubyonrails.org/classes/Rails/Application.html#class-Rails::Application-label-Booting+process
+    #1)  require "config/boot.rb" to setup load paths
+    #2)  require railties and engines
+    #3)  Define Rails.application as "class MyApp::Application < Rails::Application"
+    #4)  Run config.before_configuration callbacks
+    #5)  Load config/environments/ENV.rb
+    #6)  Run config.before_initialize callbacks
+    #7)  Run Railtie#initializer defined by railties, engines and application.
+    #    One by one, each engine sets up its load paths, routes and runs its config/initializers/* files.
+    #8)  Custom Railtie#initializers added by railties, engines and applications are executed
+    #9)  Build the middleware stack and run to_prepare callbacks
+    #10) Run config.before_eager_load and eager_load! if eager_load is true
+    #11) Run config.after_initialize callbacks
+
     #Hook
-    initializer :configure_rails_initialization do |app|
-
-      #Has to be loaded after Rails app
-      #Boot order:
-      #1)  require "config/boot.rb" to setup load paths
-      #2)  require railties and engines
-      #3)  Define Rails.application as "class MyApp::Application < Rails::Application"
-      #4)  Run config.before_configuration callbacks
-      #5)  Load config/environments/ENV.rb
-      #6)  Run config.before_initialize callbacks
-      #7)  Run Railtie#initializer defined by railties, engines and application.
-      #    One by one, each engine sets up its load paths, routes and runs its config/initializers/* files.
-      #8)  Custom Railtie#initializers added by railties, engines and applications are executed
-      #9)  Build the middleware stack and run to_prepare callbacks
-      #10) Run config.before_eager_load and eager_load! if eager_load is true
-      #11) Run config.after_initialize callbacks
-      #http://api.rubyonrails.org/classes/Rails/Application.html#class-Rails::Application-label-Booting+process
-      ExceptionHandler.config = ExceptionHandler::Config.new app.config.try(:exception_handler)
-
-      #Actions
+    initializer :exception_handler do |app|
       app.config.middleware.use ExceptionHandler::Parse if ExceptionHandler.config.db #-> DB
       app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } #-> Controller
+    end
 
-      #Dev
-      app.config.consider_all_requests_local = false if Rails.env.development? && ExceptionHandler.config.dev
-
+    #Dev
+    if Rails.env.development?
+      #Separate helper to make more efficient
+      #Has to load before better_errors if using in dev
+      initializer :exception_handler_requests, before: "better_errors.configure_rails_initialization" do |app| #-> "before" ref - http://blog.carbonfive.com/2011/02/25/configure-your-gem-the-rails-way-with-railtie/ && http://apidock.com/rails/Rails/Initializable/Initializer/before
+        app.config.consider_all_requests_local = false #-> show in dev mode
+      end
     end
 
   end
