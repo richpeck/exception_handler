@@ -76,11 +76,9 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 ----------
 
-<p align="right">
-  <br />
-  <img src="/readme/install.jpg" title="One Click Install" width="400" align="right" />
+<p align="left">
+  <img src="/readme/1clickinstall.jpg" title="1 Click Install" />
 </p>
-
 
 - [**Installation**](#installation)
 - [**Development**](#testing)
@@ -96,101 +94,16 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 ----------
 
-## Installation
+30,000 users can't be wrong (Rubygems)
 
-     gem install 'exception_handler'
- 
-or 
+ExceptionHandler has been **completely reworked** for `Rails 5`:
 
-    #Gemfile
-    gem 'exception_handler', '~> 0.5.0'
 
-30,000 users can't be wrong (rubygems)
+
+
 
 ----------
 
-## Config
-
-> **IMPORTANT**
->
-> If you're upgrading from `>= 0.4.7`, you need to **remove your `exception_handler` initializer**.
->
-> We've changed the load process to use Rails app `config` - **you don't need the `exception_handler` initializer any more** ([more](https://github.com/richpeck/exception_handler/wiki/Setup))
-
-If you wish to change any of the default settings (below), you should now add `config.exception_handler` to your `config/application.rb` or `config/production.rb` file:
-
-![Config Options](/readme/config.jpg)
-
-----------
-
-##### DB
-
-If you want to store exceptions in the db, you will need to set up a `migration`:
-
-    $ rails generate exception_handler:migration
-    $ rake db:migrate
-
-![Database](/readme/db.jpg "Database")
-
-You will also need to ensure your config `db` option is either `true` || `:table_name`:
-
-![Database Edit](/readme/db_edit.jpg "Database Edit")
-
-----------
-
-##### Views
-
-If you want to change the views, you can have them put into your app:
-
-    $ rails generate exception_handler:views                                            #-> controller, models, helpers, views & assets
-    $ rails generate exception_handler:views -v views controllers models helpers assets #-> remove as appropriate to install individual assets
-
-
-![Layout](/readme/layout.jpg "Layout")
-
-----------
-
-<img src="/readme/titles/testing.jpg" id="development" />
-
-**`Exception Handler`** now supports a rigorous test suite:
-
----
-
-##### Development
-
-> `config.exceptions_app` is only used in Rails' **production** environment.
-
-If you wish to customize in dev, you need to make your app process requests as production. This is a temporary step, and will be resolved in a new version:
-
-![#config/environments/development.rb](/readme/dev.jpg "Developer Testing")
-
-You should change this setting if you wish to test your styling in development mode. It should be temporary (you need to change it back once you have it looking how you like)
-
-----------
-
-<img src="readme/titles/bugs.jpg" id="bugs" />
-
-#### `ApplicationController`
-
-   ![ApplicationController](/readme/application_controller.jpg "Application Controller")
-   
-   A significant issue exists in respect to the inheritance of `exceptions_controller`:
-   
-
-   If you use any sort of `before_action` callback in your controller, especially to populate variables, this
-   will cause untold problems in your `exceptions_controller`. 
-
-   `500` errors are server faults; trying to get the server to call more data will simply not work. It causes
-   an exception loop, leading to catastrophic failure.
-
-
-#### Routes
-
-If you are using any custom routes in `application` layout, you need to prepend `main_app` to them:
-
-----------
-
-<br />
 <img src="readme/titles/roadmap.jpg" id="roadmap" />
 
 #### 0.5.0
@@ -215,30 +128,4 @@ If you are using any custom routes in `application` layout, you need to prepend 
 
 ----------
 
-<img src="readme/titles/support.jpg" id="support" />
-
-#### Video
-
-**Coming Soon**
-
-[![Test Video](http://img.youtube.com/vi/GY7Ps8fqGdc/0.jpg)](http://www.youtube.com/watch?v=GY7Ps8fqGdc "Test Video")
-
-#### [Issue](https://github.com/richpeck/exception_handler/issues)
-
-**~60 minute response time**
-
-#### [StackOverflow](http://stackoverflow.com/questions/ask?tags=exception-handler+ruby-on-rails) 
-
-**~24 hour response time**
-
 ----------
-
-<img src="readme/titles/contribution.jpg" id="contribution" />
-
-Contributions welcome.
-
-1. Fork it ( https://github.com/richpeck/exception_handler/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
