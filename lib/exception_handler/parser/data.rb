@@ -39,17 +39,17 @@ module ExceptionHandler
       #Info
       def info
         info = {
-          class_name: 	@exception.class.to_s,
-          message: 		  @exception.message.to_s,
-          trace: 			  @exception.backtrace.join("\n"),
-          target_url: 	@request.url,
-          referer_url: 	@request.referer,
-          params: 		  @request.params.inspect,
-          user_agent: 	@request.user_agent
+          class_name:   @exception.class.to_s,
+          message:      @exception.message.to_s,
+          trace:        @exception.backtrace.join("\n"),
+          target_url:   @request.url,
+          referer_url:  @request.referer,
+          params:       @request.params.inspect,
+          user_agent:   @request.user_agent
         }
         if @user && @user.respond_to(:id)
-          info[:usable_type] 	= @user.model_name.human
-          info[:usable_id] 	  = @user.id
+          info[:usable_type]  = @user.model_name.human
+          info[:usable_id]    = @user.id
         end
         info
       end
