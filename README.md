@@ -77,7 +77,7 @@ It's completely unique - the **only** professional solution to catch, process & 
 ----------
 
 <p align="left">
-  <img src="/readme/1clickinstall.jpg" title="1 Click Install" />
+  <img src="/readme/titles/1clickinstall.jpg" title="1 Click Install" />
 </p>
 
 - [**Installation**](#installation)
@@ -103,8 +103,6 @@ ExceptionHandler has been **completely reworked** for `Rails 5`:
 
 
 ----------
-
-<img src="readme/titles/roadmap.jpg" id="roadmap" />
 
 #### 0.5.0
  - Added locales
