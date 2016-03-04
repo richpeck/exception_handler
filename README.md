@@ -62,6 +62,8 @@ Tapping directly into the data stored in `Rack` (`message`, `details`, `user age
   <img src="/readme/test.jpg" title="Exceptions handled by the ActiveDispatch::ShowExceptions Middleware" />
 </p>
 
+---
+
 By catching exceptions with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook, **ExceptionHandler** invokes our `ExceptionsController` directly, removing *all* overhead:
 
 > **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**.
