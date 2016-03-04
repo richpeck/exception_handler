@@ -56,6 +56,10 @@ Tapping directly into the data stored in `Rack` (`message`, `details`, `user age
 
 ---
 
+<p align="center">
+  <img src="/readme/titles/middleware-powered.jpg" title="Middleware-Powered Exception Handling" width="450" />
+</p>
+
 **`ExceptionHandler`** works directly on the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware, cutting out *all* overhead:
 
 <p align="center">
