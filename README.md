@@ -59,12 +59,12 @@ Tapping directly into the data stored in `Rack` (`message`, `details`, `user age
 **`ExceptionHandler`** works directly on the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
 
 <p align="center">
-  <img src="/readme/test.jpg" title="Exceptions handled by the ActiveDispatch::ShowExceptions Middleware" />
+  <img src="/readme/middleware.jpg" title="Exceptions handled by the ActiveDispatch::ShowExceptions Middleware" />
 </p>
 
 ---
 
-By catching exceptions with the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook, **ExceptionHandler** invokes our `ExceptionsController` directly, removing *all* overhead:
+By catching exceptions directly through the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook, **ExceptionHandler** invokes our `ExceptionsController` directly, removing *all* overhead:
 
 > **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**.
 
@@ -77,10 +77,6 @@ By catching exceptions with the [`config.exceptions_app`](http://guides.rubyonra
 It's completely unique - the **only** professional solution to catch, process & handle exceptions in Rails. Unlike other solutions - mostly directing requests to `routes` - **ExceptionHandler** sends requests directly to the controller. 
 
 ----------
-
-<p align="left">
-  <img src="/readme/titles/1clickinstall.jpg" title="1 Click Install" />
-</p>
 
 - [**Installation**](#installation)
 - [**Development**](#testing)
