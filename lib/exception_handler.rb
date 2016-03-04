@@ -14,8 +14,11 @@ Dir.glob(File.join(File.dirname(__FILE__), "exception_handler", '**/*.rb'), &met
 module ExceptionHandler
 
   #Config
-  #Invoke instance of config (ExceptionHandler.config) -- loads defaults
+  #Invoke instance of config (ExceptionHandler.config) -- loads defaults -- can merge through class
   mattr_accessor :config
+
+  #Default (has to init so is available in all areas)
+  @@config = "" #-> should initialize class & then append in initializer
 
   # Class methods
   class << self
@@ -24,10 +27,6 @@ module ExceptionHandler
     # http://stackoverflow.com/questions/19435214/rails-mountable-engine-with-isolate-namespace-but-without-prefixed-namespace-on
     def table_name_prefix
       #No prefix
-    end
-
-    def config
-      ExceptionHandler::Config.new
     end
   end
 
@@ -65,18 +64,16 @@ module ExceptionHandler
     #11) Run config.after_initialize callbacks
 
     #Hook
-    initializer :exception_handler do |app|
-      app.config.middleware.use ExceptionHandler::Parse if ExceptionHandler.config.db #-> DB
-      app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } #-> Controller
-    end
+    #Needs to fire before better_errors (for dev)
+    initializer :exception_handler, before: "better_errors.configure_rails_initialization" do |app| #-> "before" ref - http://blog.carbonfive.com/2011/02/25/configure-your-gem-the-rails-way-with-railtie/ && http://apidock.com/rails/Rails/Initializable/Initializer/before - should degrade gracefully
 
-    #Dev
-    if Rails.env.development?
-      #Separate helper to make more efficient
-      #Has to load before better_errors if using in dev
-      initializer :exception_handler_requests, before: "better_errors.configure_rails_initialization" do |app| #-> "before" ref - http://blog.carbonfive.com/2011/02/25/configure-your-gem-the-rails-way-with-railtie/ && http://apidock.com/rails/Rails/Initializable/Initializer/before
-        app.config.consider_all_requests_local = false #-> show in dev mode
-      end
+      #Action
+      app.config.middleware.use ExceptionHandler::Parse if ExceptionHandler.config.try(:db) #-> DB
+      app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } #-> Controller
+
+      #Dev
+      #Logic needed after initialize (app data)
+      app.config.consider_all_requests_local = false if Rails.env.development? and ExceptionHandler.config.try(:dev)
     end
 
   end
