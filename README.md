@@ -42,7 +42,7 @@ This is the most feature-rich, stable & effective solution for **custom error pa
 <p align="center">
   <img src="/readme/05.jpg" title="Version 0.5" width="450" />
   <br />
-  <a href="#config">Config</a><a href="#support">Support</a>
+  <a href="#config">Config</a> - <a href="#support">Support</a>
 </p>
 
 **ExceptionHandler** uses `config.exceptions_app` to catch errors & send them to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
