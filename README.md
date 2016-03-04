@@ -41,9 +41,9 @@ This is the most feature-rich, stable & effective solution for **custom error pa
 
 <p align="center">
   <img src="/readme/05.jpg" title="Version 0.5" width="450" />
+  <br />
+  <a href="#config">Config</a><a href="#support">Support</a>
 </p>
-
---- cultivate your brand
 
 **ExceptionHandler** uses `config.exceptions_app` to catch errors & send them to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
@@ -72,25 +72,13 @@ By catching exceptions directly through the [`config.exceptions_app`](http://gui
   <img src="readme/exceptions_app.jpg" title="Exceptions App" />
 </p>
 
-As opposed to other exception suites, this gives you DIRECT access to all the data which matters, straight to your own modular `ExceptionsController`.
+As opposed to other exception suites, this gives you DIRECT access to all the data which matters, straight to your own modular `ExceptionsController`:
+
+
 
 **ExceptionHandler** uses our custom middleware to extract *all* the exception data for the request. Not only is this the most succinct, efficient way to do this, it also allows you to customize the *entire* fault-recovery process.
 
 It's completely unique - the **only** professional solution to catch, process & handle exceptions in Rails. Unlike other solutions - mostly directing requests to `routes` - **ExceptionHandler** sends requests directly to the controller. 
-
-----------
-
-- [**Installation**](#installation)
-- [**Development**](#testing)
-- [**Bugs**](#bugs)
-- [**Support**](#support)
-  - [Video](#video)
-  - [Issue](https://github.com/richpeck/exception_handler/issues)
-  - [StackOverflow](http://stackoverflow.com/questions/ask?tags=exception_handler&ruby_on_rails)
-- [**Roadmap**](#roadmap)
-  - [0.5.0](#050)
-  - [0.4.7](#047)
-- [**Contribution**](#contribution)
 
 ----------
 
