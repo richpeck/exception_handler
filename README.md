@@ -40,7 +40,7 @@ This is the most feature-rich, stable & effective solution for **custom error pa
 ---
 
 <p align="center">
-  <img src="/readme/05.jpg" title="Version 0.5" width="450" />
+  <img src="https://d13yacurqjgara.cloudfront.net/users/16711/screenshots/2381757/client_present.png" title="Version 0.5" width="450" />
   <br />
   <a href="#config">Config</a> - <a href="#support">Support</a>
 </p>
