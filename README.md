@@ -56,7 +56,7 @@ Tapping directly into the data stored in `Rack` (`message`, `details`, `user age
 
 ---
 
-**`ExceptionHandler`** works directly on the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
+**`ExceptionHandler`** works directly on the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware, cutting out *all* overhead:
 
 <p align="center">
   <img src="/readme/middleware.jpg" title="Exceptions handled by the ActiveDispatch::ShowExceptions Middleware" />
@@ -64,13 +64,15 @@ Tapping directly into the data stored in `Rack` (`message`, `details`, `user age
 
 ---
 
-By catching exceptions directly through the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook, **ExceptionHandler** invokes our `ExceptionsController` directly, removing *all* overhead:
+By catching exceptions directly through the [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook, **ExceptionHandler** invokes our `ExceptionsController` directly:
 
 > **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**.
 
 <p align="center">
   <img src="readme/exceptions_app.jpg" title="Exceptions App" />
 </p>
+
+As opposed to other exception suites, this gives you DIRECT access to all the data which matters, straight to your own modular `ExceptionsController`.
 
 **ExceptionHandler** uses our custom middleware to extract *all* the exception data for the request. Not only is this the most succinct, efficient way to do this, it also allows you to customize the *entire* fault-recovery process.
 
