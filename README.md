@@ -83,7 +83,7 @@ As opposed to other exception suites (which use the `routes`), this gives you DI
 
 **ExceptionHandler** uses our [custom middleware](https://github.com/richpeck/exception_handler/blob/0.5/lib/exception_handler/parse.rb) to extract *all* the exception data for the request. Not only is this the most succinct, efficient way to do this, it also allows you to customize the *entire* fault-recovery process.
 
-It's completely unique - the **only** professional solution to catch, process & handle exceptions in Rails. Unlike other solutions - mostly directing requests to `routes` - **ExceptionHandler** sends requests directly to the controller. 
+It's completely unique - the **only** professional solution to catch, process & handle exceptions in Rails.
 
 ----------
 
