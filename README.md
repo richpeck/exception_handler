@@ -57,6 +57,7 @@ Tapping directly into the data stored in `Rack` (`message`, `details`, `user age
 ---
 
 <p align="center">
+  <br />
   <img src="/readme/titles/middleware.jpg" title="The Only Middleware-Powered Rails Exceptions Suite" />
 </p>
 
