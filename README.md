@@ -49,6 +49,10 @@ This is the most feature-rich, stable & effective solution for **custom error pa
 
 Tapping directly into the data stored in `Rack` (`message`, `details`, `user agent`), **ExceptionHandler** populates your own `custom view`, sending data to the DB & email notifications of the error:
 
+<p align="center">
+  <img src="/readme/rails.jpg" title="Rails" />
+</p>
+
 <div align="center">
   <img src="/readme/400.jpg" title="400 Errors" width="435" />
   <img src="/readme/500.jpg" title="500 Errors" width="435" />
