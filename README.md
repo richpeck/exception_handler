@@ -47,7 +47,7 @@ This is the most feature-rich, stable & effective solution for **custom error pa
 
 **ExceptionHandler** uses `config.exceptions_app` to catch & send errors to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
-Harnessing data stored in `Rack` (`message`, `details`, `user agent`), **ExceptionHandler** populates your own `custom view`, sending data to the DB & email notifications of the error:
+Data stored in `Rack` (`message`, `details`, `user agent`) gives **ExceptionHandler** the ability to populate its own `custom view`. This gives you the ability to **maintain your branding** *even* when your app experiences an exception:
 
 <div align="center">
   <img src="/readme/400.jpg" title="400 Errors" width="435" />
