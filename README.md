@@ -44,7 +44,7 @@ This is the most feature-rich, stable & effective solution for **custom error pa
 </p>
 
 [Install](#1clickinstall) | [Config](#config) | [Support](#support)
-:...: | :...: | :...:
+:----: | :----: | :----:
 
 **ExceptionHandler** uses `config.exceptions_app` to catch & send errors to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
