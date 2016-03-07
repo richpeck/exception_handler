@@ -1,7 +1,7 @@
 ![Exception Handler](/readme/title.jpg "Exception Handler Logo")
 
 <p align="center">
-  <strong><a href="#install">Install</a> - <a href="#config">Config</a> - <a href="#support">Support</a></strong>
+  <strong><a href="#user-content-install">Install</a> - <a href="#config">Config</a> - <a href="#support">Support</a></strong>
 </p>
 
 <p align="center">
@@ -66,7 +66,7 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
 </p>
 
 <p align="center">
-  <strong><a href="#install">Install</a> - <a href="#config">Config</a> - <a href="#support">Support</a></strong>
+  <strong><a href="#user-content-install">Install</a> - <a href="#config">Config</a> - <a href="#support">Support</a></strong>
 </p>
 
 ----
