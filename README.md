@@ -55,7 +55,7 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
 ----
 
 <p align="center">
-  <img src="readme/titles/users.jpg" title="Trusted by 30,000+ Users!" width="400" />
+  <a href="http://rubygems.org/gems/exception_handler"><img src="readme/titles/users.jpg" title="Trusted by 30,000+ Users!" width="450" /></a>
 </p>
 
 **ExceptionHandler** uses `config.exceptions_app` to catch & send errors to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
