@@ -139,7 +139,7 @@ From one simple install, you get a **plug and play** solution -- works straight 
 --
 
 #### 0.5.1
- - Release Summer 2016
+ - Next release
 
 #### 0.5.0
  - Added locales
@@ -164,5 +164,3 @@ From one simple install, you get a **plug and play** solution -- works straight 
 ----------
 
 [Test](#test)
-
-----------
