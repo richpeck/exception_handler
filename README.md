@@ -127,7 +127,13 @@ Gemfile | Image / Rubygems / 30000
 :----: | :----:
 
 
+## Config
 
+`ExceptionHandler 0.5` has the SIMPLEST config possible...
+
+[[[]]]
+
+From one simple install
 
 
 ----------
