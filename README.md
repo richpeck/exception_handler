@@ -54,6 +54,7 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
 
 ----
 
+<br />
 <p align="center">
   <a href="http://rubygems.org/gems/exception_handler"><img src="readme/titles/users.jpg" title="Trusted by 30,000+ Users!" width="450" /></a>
 </p>
