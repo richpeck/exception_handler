@@ -23,7 +23,7 @@
 ---
 
 <p align="center">
-  <br /><img src="readme/05.jpg" title="Completely Reworked for Rails 5!" width="450" /><br/>
+  <br /><img src="/readme/05_title.png" width="450" /><br/>
   <strong>Customize <i>404</i> and <i>500</i> error pages to be branded to your application in production:</strong>
 </p>
 
@@ -43,7 +43,7 @@ The most feature-rich, stable & effective solution for **custom error pages** in
 
 ---
 
-<p align="center">
+<p align="right">
   <img src="readme/05.jpg" title="Completely Reworked for Rails 5!" width="450" />
 </p>
 
