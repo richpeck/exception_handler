@@ -49,7 +49,7 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
 <br />
 
 <p align="center">
-  <a href="#install">Install</a> - <a href="#config">Config</a> - <a href="#support">Support</a>
+  <img src="readme/titles/install.jpg" title="1 Click Install for ExceptionHandler 5 on Rails 5" width="300" />
 </p>
 
 ----
