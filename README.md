@@ -40,8 +40,10 @@ This is the most feature-rich, stable & effective solution for **custom error pa
 ---
 
 <p align="center">
-  <img src="readme/05.jpg" title="Version 0.5" width="450" />
+  <img src="readme/05.jpg" title="Completely Reworked for Rails 5!" width="450" />
 </p>
+
+Completely Reworked for Rails 5!
 
 [Install](#1clickinstall) | [Config](#config) | [Support](#support)
 :----: | :----: | :----:
