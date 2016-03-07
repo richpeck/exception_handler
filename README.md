@@ -47,7 +47,7 @@ This is the most feature-rich, stable & effective solution for **custom error pa
   <img src="readme/05.jpg" title="Completely Reworked for Rails 5!" width="450" />
 </p>
 
-## Bigger, Bolder & Badder for Rails 5
+##### Bigger, Bolder & Badder for Rails 5
 Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** even more powerful & efficient. Now you can use ExceptionHandler directly with a single click -- **plug and play** custom exception pages:
 
 <p align="center">
