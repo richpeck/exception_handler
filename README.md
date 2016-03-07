@@ -23,7 +23,7 @@
 ---
 
 <p align="center">
-  <br /><img src="/readme/05_title.png" width="450" /><br/>
+  <br /><img src="readme/05.jpg" title="Completely Reworked for Rails 5!" width="450" /><br/>
   <strong>Customize <i>404</i> and <i>500</i> error pages to be branded to your application in production:</strong>
 </p>
 
@@ -83,7 +83,7 @@ The power of **`ExceptionHandler`** lies directly in its capacity to access the 
 
 Rails invokes [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) whenever an exception is raised.
 
-**ExceptionHandler** injects our `ExceptionsController` to provide the most efficient response:
+**ExceptionHandler** injects our `ExceptionsController` into this hook to provide the most efficient response:
 
 > **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**.
 
