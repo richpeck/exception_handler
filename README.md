@@ -63,6 +63,8 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
 
 ----
 
+# How it Works
+
 **ExceptionHandler** uses `config.exceptions_app` to catch & send errors to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
 It uses data stored in `Rack` (`message`, `details`, `user agent`) to populate its `custom view`. This gives you the ability to **maintain your branding** *even* when your app experiences an exception:
