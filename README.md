@@ -39,7 +39,7 @@
   <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" /> <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" />
 </p>
 
-This is the most feature-rich, stable & effective solution for **custom error pages** in Rails 4 & 5.
+The most feature-rich, stable & effective solution for **custom error pages** in Rails 4 & 5.
 
 ---
 
@@ -61,9 +61,7 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
 
 **ExceptionHandler** uses `config.exceptions_app` to catch & send errors to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
-Contrary to other exception gems, this works *directly* with the middleware to capture exceptions AS they happen. Most others send the errors through the routes, increasing delays & inefficiency.
-
-`ExceptionHandler` uses data stored in `Rack` (`message`, `details`, `user agent`) to populate its `custom view`. This gives you the ability to **maintain your branding** *even* when your app experiences an exception:
+It uses data stored in `Rack` (`message`, `details`, `user agent`) to populate its `custom view`. This gives you the ability to **maintain your branding** *even* when your app experiences an exception:
 
 <div align="center">
   <img src="/readme/400.jpg" title="400 Errors" width="435" />
