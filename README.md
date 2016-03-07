@@ -28,10 +28,10 @@
 </p>
 
 <p align="center">
-  <img src="/readme/check.png" height="22" title="Fully Responsive"               align="absmiddle" />&nbsp; Responsive &nbsp;
-  <img src="/readme/check.png" height="22" title="Branded Error Pages"            align="absmiddle" />&nbsp; Branded Error Pages &nbsp;
-  <img src="/readme/check.png" height="22" title="Middleware Exception Handling"  align="absmiddle" />&nbsp; Middleware Exception Handling &nbsp;
-  <img src="/readme/check.png" height="22" title="Keep Users Informed"            align="absmiddle" />&nbsp; Fully Customizable &nbsp;
+  <img src="/readme/check.png" height="22" title="Fully Responsive"               align="absmiddle" />&nbsp; <strong>Responsive</strong> &nbsp;
+  <img src="/readme/check.png" height="22" title="Branded Error Pages"            align="absmiddle" />&nbsp; <strong>Branded Error Pages</strong> &nbsp;
+  <img src="/readme/check.png" height="22" title="Middleware Exception Handling"  align="absmiddle" />&nbsp; <strong>Middleware Exception Handling</strong> &nbsp;
+  <img src="/readme/check.png" height="22" title="Keep Users Informed"            align="absmiddle" />&nbsp; <strong>Fully Customizable</strong> &nbsp;
 </p>
 
 <p align="center">
