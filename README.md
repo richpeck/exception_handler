@@ -52,11 +52,11 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
 
 [[install]] / [[config]] / [[deploy]]
 
-<p align="center">
-  <img src="readme/titles/users.jpg" title="Trusted by 30,000+ Users!" width="350" />
-</p>
-
 ----
+
+<p align="center">
+  <img src="readme/titles/users.jpg" title="Trusted by 30,000+ Users!" width="400" />
+</p>
 
 **ExceptionHandler** uses `config.exceptions_app` to catch & send errors to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
