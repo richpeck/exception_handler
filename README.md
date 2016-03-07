@@ -58,7 +58,9 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
 Gemfile | Image / Rubygems / 30000
 :----: | :----:
 
-----
+Along with an amazing array of streamlined functionality, `ExceptionHandler 0.5` features a **new config section**
+
+
 
 **ExceptionHandler** uses `config.exceptions_app` to catch & send errors to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
