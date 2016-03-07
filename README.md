@@ -47,7 +47,9 @@ This is the most feature-rich, stable & effective solution for **custom error pa
 
 ----
 
-[Install](#1clickinstall) | [Config](#config) | [Support](#support)
+<p align="center">
+  <a href="#install">Install</a> - <a href="#config">Config</a> - <a href="#support">Support</a>
+</p>
 
 ----
 
