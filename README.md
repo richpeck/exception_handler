@@ -1,6 +1,10 @@
 ![Exception Handler](/readme/title.jpg "Exception Handler Logo")
 
 <p align="center">
+  <a href="#install">Install</a> - <a href="#config">Config</a> - <a href="#support">Support</a>
+</p>
+
+<p align="center">
   <a href="http://badge.fury.io/rb/exception_handler"><img src="https://badge.fury.io/rb/exception_handler.svg"></a>
   <a href="https://codeclimate.com/github/richpeck/exception_handler"><img src="https://codeclimate.com/github/richpeck/exception_handler.png"></a>
   <a href="https://gemnasium.com/richpeck/exception_handler"><img src="https://gemnasium.com/richpeck/exception_handler.svg"></a>
@@ -43,7 +47,7 @@ This is the most feature-rich, stable & effective solution for **custom error pa
   <img src="readme/05.jpg" title="Completely Reworked for Rails 5!" width="450" />
 </p>
 
-####Bigger, Bolder & Badder for Rails 5
+## Bigger, Bolder & Badder for Rails 5
 Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** even more powerful & efficient. Now you can use ExceptionHandler directly with a single click -- **plug and play** custom exception pages:
 
 <p align="center">
