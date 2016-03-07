@@ -103,8 +103,8 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 <br />
 
-<p align="center">
-  <img src="readme/titles/install.jpg" title="1 Click Install for ExceptionHandler 5 on Rails 5" width="325" id="install" />
+<p align="center" id="install">
+  <img src="readme/titles/install.jpg" title="1 Click Install for ExceptionHandler 5 on Rails 5" width="325" />
 </p>
 
 Gemfile | Image / Rubygems / 30000
