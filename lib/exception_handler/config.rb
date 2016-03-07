@@ -38,15 +38,15 @@ module ExceptionHandler
       # Defaults
       # http://stackoverflow.com/a/8917301/1143732
       DEFAULTS = {
-        dev: 	false, #-> defaults to "false" for dev mode
-        db:   	false, #-> defaults to :errors if true, else use :table_name
+        dev: 	  false, #-> defaults to "false" for dev mode
+        db:     false, #-> defaults to :errors if true, else use :table_name
         email: 	false, #-> need to integrate
         social: {
           :facebook 	=> 	'frontline.utilities',
-          :twitter 	=> 	'frontlineutils',
-          :youtube 	=>	'frontlineutils',
+          :twitter 	  => 	'frontlineutils',
+          :youtube 	  =>	'frontlineutils',
           :linkedin 	=> 	'frontline-utilities',
-          :fusion 	=> 	'frontlineutils',
+          :fusion 	 => 	'frontlineutils',
           :url => {
             :facebook 	=> 	'https://facebook.com',
             :twitter 	=> 	'http://twitter.com',
