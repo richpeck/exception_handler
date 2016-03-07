@@ -133,10 +133,13 @@ Gemfile | Image / Rubygems / 30000
 
 [[[]]]
 
-From one simple install
+From one simple install, you get a **plug and play** solution -- works straight out of the box:
 
 
-----------
+--
+
+#### 0.5.1
+ - Release Summer 2016
 
 #### 0.5.0
  - Added locales
@@ -159,5 +162,7 @@ From one simple install
 
 
 ----------
+
+[Test](#test)
 
 ----------
