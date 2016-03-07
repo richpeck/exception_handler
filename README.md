@@ -1,7 +1,7 @@
 ![Exception Handler](/readme/title.jpg "Exception Handler Logo")
 
 <p align="center">
-  <a href="#install">Install</a> - <a href="#config">Config</a> - <a href="#support">Support</a>
+  <strong><a href="#install">Install</a> - <a href="#config">Config</a> - <a href="#support">Support</a></strong>
 </p>
 
 <p align="center">
