@@ -43,11 +43,13 @@ The most feature-rich, stable & effective solution for **custom error pages** in
 
 ---
 
-<p align="right">
+<p align="center">
   <img src="readme/05.jpg" title="Completely Reworked for Rails 5!" width="450" />
+  <br />
+  <h3>Bigger, Bolder & Badder for Rails 5</h3>
 </p>
 
-##### Bigger, Bolder & Badder for Rails 5:
+
 Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** even more powerful & efficient. Now you can use `ExceptionHandler` directly with a single click -- **plug and play** custom exception pages
 
 [[install]] / [[config]] / [[deploy]]
