@@ -63,6 +63,10 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
   [[install]] / [[config]] / [[deploy]]
 </p>
 
+<p align="center">
+  <strong><a href="#install">Install</a> - <a href="#config">Config</a> - <a href="#support">Support</a></strong>
+</p>
+
 ----
 
 # How it Works
