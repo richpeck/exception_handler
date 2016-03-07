@@ -45,7 +45,7 @@ This is the most feature-rich, stable & effective solution for **custom error pa
 
 **Reworked for Rails 5** - Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** even more powerful & efficient. Now you can use ExceptionHandler directly with a single click -- **plug and play** custom exception pages:
 
-----
+<br />
 
 <p align="center">
   <a href="#install">Install</a> - <a href="#config">Config</a> - <a href="#support">Support</a>
