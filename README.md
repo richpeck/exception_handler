@@ -68,7 +68,7 @@ Data stored in `Rack` (`message`, `details`, `user agent`) gives **ExceptionHand
   <img src="/readme/titles/middleware.jpg" title="The Only Middleware-Powered Rails Exceptions Suite" />
 </p>
 
-**`ExceptionHandler`** directly harnesses the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
+The power of **`ExceptionHandler`** lies directly in its capacity to access the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
 
 <p align="center">
   <img src="/readme/middleware.jpg" title="Exceptions handled by the ActiveDispatch::ShowExceptions Middleware" />
