@@ -50,7 +50,6 @@ This is the most feature-rich, stable & effective solution for **custom error pa
 ##### Bigger, Bolder & Badder for Rails 5
 Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** even more powerful & efficient. Now you can use ExceptionHandler directly with a single click -- **plug and play** custom exception pages:
 
---
 <p align="center">
   <img src="readme/titles/install.jpg" title="1 Click Install for ExceptionHandler 5 on Rails 5" width="300" id="install" />
 </p>
@@ -60,7 +59,7 @@ Gemfile | Image / Rubygems / 30000
 
 Along with an amazing array of streamlined functionality, `ExceptionHandler 0.5` features a **new config section**
 
-
+--
 
 **ExceptionHandler** uses `config.exceptions_app` to catch & send errors to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
