@@ -53,7 +53,7 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
 [[install]] / [[config]] / [[deploy]]
 
 <p align="center">
-  <strong>Trusted by 30,000+ Users!</strong>
+  <img src="readme/titles/users.jpg" title="Trusted by 30,000+ Users!" width="350" />
 </p>
 
 ----
