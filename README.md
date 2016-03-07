@@ -57,7 +57,9 @@ The most feature-rich, stable & effective solution for **custom error pages** in
 
 Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** even more powerful & efficient. Now you can use `ExceptionHandler` directly with a single click -- **plug and play** custom exception pages
 
-[[install]] / [[config]] / [[deploy]]
+<p align="center">
+  [[install]] / [[config]] / [[deploy]]
+</p>
 
 ----
 
