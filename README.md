@@ -44,7 +44,7 @@ The most feature-rich, stable & effective solution for **custom error pages** in
 ---
 
 <p align="center">
-  <img src="readme/05.jpg" title="Completely Reworked for Rails 5!" width="350" />
+  <img src="readme/05.gif" title="Completely Reworked for Rails 5!" width="350" />
 </p>
 
 
