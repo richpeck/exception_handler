@@ -48,10 +48,10 @@ The most feature-rich, stable & effective solution for **custom error pages** in
 </p>
 
 <p align="center">
-  <img src="/readme/check_bk.png" height="22" title="New Controller"           align="absmiddle" />&nbsp; <strong>New Controller</strong> &nbsp;
-  <img src="/readme/check_bk.png" height="22" title="New Middleware"           align="absmiddle" />&nbsp; <strong>New Middleware</strong> &nbsp;
-  <img src="/readme/check_bk.png" height="22" title="Full Test Suite"          align="absmiddle" />&nbsp; <strong>Full Test Suite</strong> &nbsp;
-  <img src="/readme/check_bk.png" height="22" title="Rails 4 & 5 Compatible"   align="absmiddle" />&nbsp; <strong>Rails 4 & 5 Compatible</strong> &nbsp;
+  <img src="/readme/check_02.png" height="22" title="New Controller"           align="absmiddle" />&nbsp; <strong>New Controller</strong> &nbsp;
+  <img src="/readme/check_02.png" height="22" title="New Middleware"           align="absmiddle" />&nbsp; <strong>New Middleware</strong> &nbsp;
+  <img src="/readme/check_02.png" height="22" title="Full Test Suite"          align="absmiddle" />&nbsp; <strong>Full Test Suite</strong> &nbsp;
+  <img src="/readme/check_02.png" height="22" title="Rails 4 & 5 Compatible"   align="absmiddle" />&nbsp; <strong>Rails 4 & 5 Compatible</strong> &nbsp;
 </p>
 
 
