@@ -77,17 +77,17 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
 
 It uses data stored in `Rack` (`message`, `details`, `user agent`) to populate its `custom view`. This gives you the ability to **maintain your branding** *even* when your app experiences an exception:
 
-<p align="center">
+<div align="center">
   <img src="/readme/400.jpg" title="400 Errors" width="435" />
   <img src="/readme/500.jpg" title="500 Errors" width="435" />
-  <br />
-  <br />
-</p>
+</div>
 
 --
 
 <div align="center">
+  <br />
   <img src="/readme/titles/middleware.jpg" title="Middleware Powered Exceptions" width="300" />
+  <br />
 </div>
 
 The power of **`ExceptionHandler`** lies directly in its capacity to access the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
