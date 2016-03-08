@@ -163,4 +163,4 @@ From one simple install, you get a **plug and play** solution -- works straight 
 
 ----------
 
-[Frontline Utilities LTD](http://frontlineutilities.co.uk)
+[FL](http://frontlineutilities.co.uk)
