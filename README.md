@@ -143,8 +143,7 @@ Gemfile | Image / Rubygems / 30000
 
 #### Views
 
-
----
+--
 
 <p align="center" id="support">
   <br />
