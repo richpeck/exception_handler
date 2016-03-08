@@ -86,6 +86,7 @@ It uses data stored in `Rack` (`message`, `details`, `user agent`) to populate i
   <br />
   <img src="/readme/arrow_down.png" title="Middleware Powered Exceptions" width="16" />
   <br />
+  <br />
   <img src="/readme/titles/middleware.jpg" title="The Only Middleware-Powered Rails Exceptions Suite" />
 </p>
 
