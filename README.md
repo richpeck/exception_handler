@@ -157,7 +157,7 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 Github Issue (1hr) | Stackoverflow (24hrs) | Video (Soon)
 :----: | :----: | :----:
-Issue | ![StackOverflow](/readme/stackoverflow.png) | Video
+Issue | [![StackOverflow](/readme/stackoverflow.png)](http://stackoverflow.com/questions/ask?tags=ruby-on-rails+exception-handler) | Video
 
 --
 
