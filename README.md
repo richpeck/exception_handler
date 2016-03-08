@@ -148,7 +148,7 @@ Gemfile | Image / Rubygems / 30000
 
 <p align="center" id="support">
   <br />
-  <img src="readme/titles/support.jpg" title="1hr & 24 hr Support" width="175" />
+  <img src="readme/titles/support.jpg" title="1hr & 24 hr Support" width="225" />
 </p>
 
 #### 0.5.1
