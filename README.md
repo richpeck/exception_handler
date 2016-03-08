@@ -144,16 +144,22 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 #### Dev Mode
 
+Want to test?
+
     #config/application.rb
     config.exception_handler = {
       dev: true 
     }
 
-
+--
 
 #### Defaults
 
+--
+
 #### Layouts
+
+--
 
 #### Views
 
