@@ -163,4 +163,4 @@ From one simple install, you get a **plug and play** solution -- works straight 
 
 ----------
 
-[Test](#test)
+[Frontline Utilities LTD](http://frontlineutilities.co.uk) - [R S Peck](http://stackoverflow.com/users/1143732/richard-peck)
