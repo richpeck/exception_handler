@@ -71,7 +71,7 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
 
 ----
 
-# How it Works
+<img src="/readme/titles/works.jpg" title="How It Works" width="300" />
 
 **ExceptionHandler** uses `config.exceptions_app` to catch & send errors to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
