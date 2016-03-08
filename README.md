@@ -131,7 +131,7 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 `ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the defaults so you don't have to.
 
---
+----
 
 <p align="center" id="config">
   <br />
@@ -140,7 +140,16 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 **`ExceptionHandler 0.5`** has the SIMPLEST config possible...
 
+
+
 #### Dev Mode
+
+    #config/application.rb
+    config.exception_handler = {
+      dev: true 
+    }
+
+
 
 #### Defaults
 
@@ -148,7 +157,7 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 #### Views
 
---
+----
 
 <p align="center" id="support">
   <br />
