@@ -152,23 +152,25 @@ You can apply the above options to the
 
 #### Defaults
 
+As can be seen in the [`config` class](/lib/exception_handler/config.rb), the following are all the options `exception_handler` accepts:
+
     #config/application.rb
     config.exception_handler = {
       dev:    false, #-> defaults to "false" for dev mode
-      db:     false, #-> defaults to :errors if true, else use :table_name
+      db:     false, #-> defaults to :errors if true, else input "table_name" as string
       email:  false, #-> need to integrate
       social: {
-        :facebook   =>  'frontline.utilities',
-        :twitter    =>  'frontlineutils',
-        :youtube    =>  'frontlineutils',
-        :linkedin   =>  'frontline-utilities',
-        :fusion    =>   'frontlineutils',
-        :url => {
-          :facebook   =>  'https://facebook.com',
-          :twitter  =>  'http://twitter.com',
-          :youtube  =>  'https://youtube.com/user',
-          :linkedin   =>  'https://linkedin.com/company',
-         :fusion  =>  'https://frontlinefusion.com',              
+        :facebook   =>  'frontline.utilities', #-> Facebook handle
+        :twitter    =>  'frontlineutils',      #-> Twitter handle
+        :youtube    =>  'frontlineutils',      #-> YouTube handle
+        :linkedin   =>  'frontline-utilities', #-> LinkedIn handle
+        :fusion    =>   'frontlineutils',      #-> Fusion handle
+        :url => {                             
+          :facebook   =>  'https://facebook.com',          #-> no need to edit
+          :twitter    =>  'http://twitter.com',            #-> no need to edit
+          :youtube    =>  'https://youtube.com/user',      #-> no need to edit
+          :linkedin   =>  'https://linkedin.com/company',  #-> no need to edit
+          :fusion     =>  'https://frontlinefusion.com',   #-> no need to edit              
         },
       },
       layouts: {
@@ -176,6 +178,12 @@ You can apply the above options to the
         '500' => 'exception'
       }
     }
+
+The above are used as *defaults*.
+
+You have the ability to change any one of the options. 
+
+You can change the options for each `environment` (EG `development` / `production` / `staging`).
 
 --
 
