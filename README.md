@@ -126,6 +126,8 @@ It's completely unique - the **only** professional solution to catch, process & 
 Gemfile | Image / Rubygems / 30000
 :----: | :----:
 
+`ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup))
+
 --
 
 <p align="center" id="config">
@@ -133,7 +135,7 @@ Gemfile | Image / Rubygems / 30000
   <img src="readme/titles/config.jpg" title="Instant Custom Error Pages For Rails 4 & 5" width="325" />
 </p>
 
-`ExceptionHandler 0.5` has the SIMPLEST config possible...
+**`ExceptionHandler 0.5`** has the SIMPLEST config possible...
 
 #### Dev Mode
 
@@ -149,6 +151,12 @@ Gemfile | Image / Rubygems / 30000
   <br />
   <img src="readme/titles/support.jpg" title="1hr & 24 hr Support" width="225" />
 </p>
+
+1hr Response | 24h Response | Video
+:----: | :----: | :----:
+Issue | Stackoverflow | Video
+
+--
 
 #### 0.5.1
  - Next release
