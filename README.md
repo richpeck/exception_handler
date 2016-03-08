@@ -155,9 +155,9 @@ It's completely unique - the **only** professional solution to catch, process & 
   <img src="readme/titles/support.jpg" title="1hr & 24 hr Support" width="225" />
 </p>
 
-1hr Response | 24h Response | Video
+Github Issue (1hr) | Stackoverflow (24hrs) | Video (Soon)
 :----: | :----: | :----:
-Issue | Stackoverflow | Video
+Issue | ![StackOverflow](/readme/stackoverflow.png) | Video
 
 --
 
