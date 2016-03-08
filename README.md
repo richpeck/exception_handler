@@ -35,7 +35,7 @@
 </p>
 
 <p align="center">
-  <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" /> <img src="https://d13yacurqjgara.cloudfront.net/users/13307/screenshots/2542146/iphone_game.jpg" width="425" title="Fully Branded Error Pages" />
+  <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" /> <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" />
   <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" /> <img src="/readme/branded/tsla.jpg" width="425" title="Fully Branded Error Pages" />
 </p>
 
