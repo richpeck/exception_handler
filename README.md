@@ -126,7 +126,7 @@ It's completely unique - the **only** professional solution to catch, process & 
 Gemfile | Image / Rubygems / 30000
 :----: | :----:
 
-`ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup))
+`ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the defaults so you don't have to.
 
 --
 
@@ -183,4 +183,4 @@ Issue | Stackoverflow | Video
 
 ----------
 
-[FL](http://frontlineutilities.co.uk)
+[**FL**](http://frontlineutilities.co.uk)
