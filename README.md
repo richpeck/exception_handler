@@ -81,7 +81,6 @@ It uses data stored in `Rack` (`message`, `details`, `user agent`) to populate i
   <img src="/readme/400.jpg" title="400 Errors" width="435" />
   <img src="/readme/500.jpg" title="500 Errors" width="435" />
   <br />
-  <img src="/readme/arrow_down.png" title="Middleware Powered Exceptions" width="16" />
   <br />
   <img src="/readme/titles/middleware.jpg" title="Middleware Powered Exceptions" width="300" />
 </p>
