@@ -1,7 +1,7 @@
 ![Exception Handler](/readme/title.jpg "Exception Handler Logo")
 
 <p align="center">
-  <strong><a href="#user-content-install">Install</a> - <a href="#user-content-config">Config</a> - <a href="#user-content-support">Support</a></strong>
+  <img src="readme/config.png" title="Config" /> &nbsp; <img src="readme/config.png" title="Config" /> &nbsp; <img src="readme/config.png" title="Config" />
 </p>
 
 <p align="center">
@@ -82,7 +82,7 @@ It uses data stored in `Rack` (`message`, `details`, `user agent`) to populate i
   <br />
 </p>
 
-The power of **`ExceptionHandler`** lies directly in its capacity to access the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
+The power of **`ExceptionHandler`** lies in its capacity to access the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
 
 <p align="center">
   <img src="/readme/middleware.jpg" title="Exceptions handled by the ActiveDispatch::ShowExceptions Middleware" />
@@ -134,9 +134,7 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 [[Test]]
 
-*Every* Rails application has [`environment` files](http://guides.rubyonrails.org/configuring.html#creating-rails-environments). 
-
-**`ExceptionHandler`** can be configured to run differently in each environment.
+**`ExceptionHandler`** can be configured to run differently in each [`environment`](http://guides.rubyonrails.org/configuring.html#creating-rails-environments).
 
 You can apply the above options to the 
 
@@ -144,7 +142,7 @@ You can apply the above options to the
 
 #### Defaults
 
-As can be seen in the [`config` class](/lib/exception_handler/config.rb), the following are all the options `exception_handler` accepts:
+As can be seen in the [`config`](/lib/exception_handler/config.rb) class, the following are all the options `exception_handler` accepts:
 
     #config/application.rb
     config.exception_handler = {
