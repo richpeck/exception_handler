@@ -1,7 +1,7 @@
 ![Exception Handler](/readme/title.jpg "Exception Handler Logo")
 
 <p align="center">
-  <img src="readme/config.png" title="Config" /> &nbsp; <img src="readme/config.png" title="Config" /> &nbsp; <img src="readme/config.png" title="Config" />
+  <strong><a href="#user-content-install">Install</a></strong> - <strong><a href="#user-content-config">Config</a></strong> - <strong><a href="#user-content-support">Support</a></strong>
 </p>
 
 <p align="center">
@@ -179,7 +179,7 @@ You can change the options for each `environment` (EG `development` / `productio
 
 --
 
-#### Dev Mode
+#### Dev
 
 Want to test?
 
