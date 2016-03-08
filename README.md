@@ -123,13 +123,11 @@ It's completely unique - the **only** professional solution to catch, process & 
   <img src="readme/titles/install.jpg" title="1 Click Install for ExceptionHandler 5 on Rails 5" width="325" />
 </p>
 
-<div align="center">
     gem install "exception_handler"
 
     or
 
     gem 'exception_handler', '~> 0.5.0' #-> Gemfile
-</div>
 
 `ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the defaults so you don't have to.
 
