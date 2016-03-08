@@ -83,6 +83,7 @@ It uses data stored in `Rack` (`message`, `details`, `user agent`) to populate i
   <br />
   <img src="/readme/arrow_down.png" title="Middleware Powered Exceptions" width="16" />
   <br />
+  <img src="/readme/titles/middleware.jpg" title="Middleware Powered Exceptions" width="300" />
 </p>
 
 The power of **`ExceptionHandler`** lies directly in its capacity to access the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
