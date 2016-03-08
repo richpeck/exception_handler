@@ -127,15 +127,17 @@ It's completely unique - the **only** professional solution to catch, process & 
 Gemfile | Image / Rubygems / 30000
 :----: | :----:
 
+--
 
-## Config
+<p align="center" id="config">
+  <img src="readme/titles/config.jpg" title="Instant Custom Error Pages For Rails 4 & 5" width="325" />
+</p>
 
 `ExceptionHandler 0.5` has the SIMPLEST config possible...
 
 [[[]]]
 
-From one simple install, you get a **plug and play** solution -- works straight out of the box:
-
+#### Dev Mode
 
 --
 
