@@ -1,7 +1,7 @@
 ![Exception Handler](/readme/title.jpg "Exception Handler Logo")
 
 <p align="center">
-  <strong><a href="#user-content-install">Install</a> - <a href="#config">Config</a> - <a href="#support">Support</a></strong>
+  <strong><a href="#user-content-install">Install</a> - <a href="#user-content-config">Config</a> - <a href="#support">Support</a></strong>
 </p>
 
 <p align="center">
@@ -66,7 +66,7 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
 </p>
 
 <p align="center">
-  <strong><a href="#user-content-install">Install</a> - <a href="#config">Config</a> - <a href="#support">Support</a></strong>
+  <strong><a href="#user-content-install">Install</a> - <a href="#user-content-config">Config</a> - <a href="#support">Support</a></strong>
 </p>
 
 ----
@@ -135,9 +135,14 @@ Gemfile | Image / Rubygems / 30000
 
 `ExceptionHandler 0.5` has the SIMPLEST config possible...
 
-[[[]]]
-
 #### Dev Mode
+
+#### Defaults
+
+#### Layouts
+
+#### Views
+
 
 --
 
