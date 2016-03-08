@@ -140,7 +140,9 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 **`ExceptionHandler 0.5`** has the SIMPLEST config possible...
 
+[[Test]]
 
+--
 
 #### Dev Mode
 
@@ -150,6 +152,8 @@ Want to test?
     config.exception_handler = {
       dev: true 
     }
+
+
 
 --
 
