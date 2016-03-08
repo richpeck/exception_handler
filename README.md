@@ -119,6 +119,7 @@ It's completely unique - the **only** professional solution to catch, process & 
 ----------
 
 <p align="center" id="install">
+  <br />
   <img src="readme/titles/install.jpg" title="1 Click Install for ExceptionHandler 5 on Rails 5" width="325" />
 </p>
 
@@ -128,6 +129,7 @@ Gemfile | Image / Rubygems / 30000
 --
 
 <p align="center" id="config">
+  <br />
   <img src="readme/titles/config.jpg" title="Instant Custom Error Pages For Rails 4 & 5" width="325" />
 </p>
 
