@@ -291,6 +291,9 @@ Github Issue (1hr) | Stackoverflow (24hrs) | Video (Soon)
 
 --
 
+<br />
+<img src="readme/titles/changelog.jpg" title="Changelog" id="changelog" />
+
 #### 0.5.1
  - Next release
 
