@@ -152,9 +152,8 @@ You can apply the above options to any of Rails' environment files, allowing you
 
 ----
 
-<p>
-  <img src="readme/titles/defaults.jpg" title="Defaults" id="defaults" />
-</p>
+<br />
+<img src="readme/titles/defaults.jpg" title="Defaults" id="defaults" />
 
 As can be seen in the [`config class`](/lib/exception_handler/config.rb), the following are all the options `exception_handler` accepts:
 
@@ -201,9 +200,8 @@ The benefit of this is that it gives you the ability to customize `ExceptionHand
 
 ----
 
-<p>
-  <img src="readme/titles/dev.jpg" title="Development Mode (New!!!)" id="dev" />
-</p>
+<br />
+<img src="readme/titles/dev.jpg" title="Development Mode (New!!!)" id="dev" />
 
 Want to test in the `dev` environment?
 
@@ -223,9 +221,8 @@ If you wish to test **`ExceptionHandler`** in `development`, you'll have to use 
 
 ----
 
-<p>
-  <img src="readme/titles/layout.jpg" title="Layout" id="layout" />
-</p>
+<br />
+<img src="readme/titles/layout.jpg" title="Layout" id="layout" />
 
 One of the most critial aspects of ExceptionHandler is the custom Exception layout.
 
@@ -235,9 +232,8 @@ If you want to change the layout (for `500` error pages), you need to use the fo
 
 ----
 
-<p>
-  <img src="readme/titles/view.jpg" title="Views" id="view" />
-</p>
+<br />
+<img src="readme/titles/view.jpg" title="Views" id="view" />
 
 `ExceptonHandler` comes with its own inbuilt views & controller.
 
@@ -248,9 +244,8 @@ If you want to change it, you need to add the views into your app with the [`gen
 
 ----
 
-<p>
-  <img src="readme/titles/db.jpg" title="Database" id="db" />
-</p>
+<br />
+<img src="readme/titles/db.jpg" title="Database" id="db" />
 
 If you want to store exceptions in your `db`, you will need to set up a **migration**:
 
