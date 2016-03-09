@@ -195,6 +195,8 @@ You can change the options for each [`environment file`](http://guides.rubyonrai
 - `config/production.rb`
 - `config/staging.rb`
 
+The benefit of this is that it gives you the ability to customize `ExceptionHandler` for any of your environments. Contrary to a shitty `initializer`, you're able to sculpt the gem to work FOR YOU. 
+
 --
 
 #### Dev
