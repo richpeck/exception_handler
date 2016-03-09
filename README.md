@@ -142,11 +142,11 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 You can apply the above options to the 
 
-**IMPORTANT**
-
-If you're upgrading from >= `0.4.7`, you need to **remove your `exception_handler` initializer**.
-
-We've changed the load process to use Rails app config - **you don't need the `exception_handler` initializer any more**
+> **IMPORTANT**
+>
+> If you're upgrading from >= `0.4.7`, you need to **remove your `exception_handler` initializer**.
+> 
+> We've changed the load process to use Rails app config - **you don't need the `exception_handler` initializer any more**
 
 --
 
@@ -227,13 +227,13 @@ You will also need to ensure your config db option is either `true` or `"table_n
   <img src="/readme/db.jpg" title="ExceptionHandler DB Config">
 </p>
 
-**IMPORTANT**
-
-`ExceptionHandler`'s [new config system](https://github.com/richpeck/exception_handler/wiki/Setup) is `environment` agnostic. 
-
-**Where you declare your `db` setting will change depending on your environment**
-
-If you declare `db` in `application.rb`, it will be applicable for all `environments`; only declaring in `production.rb` will set it for production *only*.
+> **IMPORTANT**
+> 
+> `ExceptionHandler`'s [new config system](https://github.com/richpeck/exception_handler/wiki/Setup) is `environment` agnostic. 
+> 
+> **Where you declare your `db` setting will change depending on your environment**
+> 
+> If you declare `db` in `application.rb`, it will be applicable for all `environments`; only declaring in `production.rb` will set it for production *only*.
 
 ----
 
