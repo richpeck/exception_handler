@@ -130,7 +130,6 @@ or
 
 If you want to change *any* settings (detailed [below](#user-content-config)), you **simply** need to change `config/application.rb` / `config/environments/your_env.rb`. The ***POWER*** of this *new config system* means you're able to deploy `ExceptionHandler` in the most unobtrusive, versatile way possible.
 
-<br />
 <p align="center">
   <a href="http://rubygems.org/gems/exception_handler" target="_blank"><img src="/readme/rubygems.jpg" title="Download Through RubyGems" width="550" border="1"/></a>
 </p>
