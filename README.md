@@ -208,13 +208,12 @@ Want to test?
       dev: true # -> Runs in development mode WITHOUT changing the app environment files
     }
 
-<p align="center">
-  <img src="/readme/dev.jpg" title="ExceptionHandler Dev Mode - NEW!!!!!">
-</p>
+<img src="/readme/dev.jpg" title="ExceptionHandler Dev Mode - NEW!!!!!">
 
-`config.exceptions_app` *only* works when you have [`config.consider_all_requests_local = true`](http://blog.bigbinary.com/2009/02/05/rescue_action_in_public-local_request-and-how-to-configure-local_request.html), which is either in **`production`** or **`!= development`**
+`config.exceptions_app` *only* works when you have [`config.consider_all_requests_local = true`](http://blog.bigbinary.com/2009/02/05/rescue_action_in_public-local_request-and-how-to-configure-local_request.html), which is `false` in `development`.
 
-If you wish to test in `development`, you'll have to use the `dev: true` option in your `exception_handler` config, *or* change `config.consider_all_requests_local = true` in `config/development.rb`.
+
+If you wish to test **`ExceptionHandler**` in `development`, you'll have to use the `dev: true` option in your `exception_handler` config, *or* change `config.consider_all_requests_local = true` in `config/development.rb`.
 
 --
 
@@ -228,7 +227,7 @@ If you wish to test in `development`, you'll have to use the `dev: true` option 
 
 #### DB
 
-If you want to store exceptions in the db, you will need to set up a migration:
+If you want to store exceptions in your `db`, you will need to set up a **migration**:
 
     $ rails generate exception_handler:migration
     $ rake db:migrate
