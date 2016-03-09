@@ -138,9 +138,15 @@ It's completely unique - the **only** professional solution to catch, process & 
   <img src="/readme/defaults.jpg" title="ExceptionHandler Default Configuration Options">
 </p>
 
-**`ExceptionHandler`** can be configured to run differently in each [`environment`](http://guides.rubyonrails.org/configuring.html#creating-rails-environments).
+**`ExceptionHandler`** can be configured to run in different [`environments`](http://guides.rubyonrails.org/configuring.html#creating-rails-environments).
 
 You can apply the above options to the 
+
+**IMPORTANT**
+
+If you're upgrading from >= `0.4.7`, you need to **remove your `exception_handler` initializer**.
+
+We've changed the load process to use Rails app config - **you don't need the `exception_handler` initializer any more**
 
 --
 
@@ -171,9 +177,10 @@ As can be seen in the [`config`](/lib/exception_handler/config.rb) class, the fo
         '404' => nil, #-> 404 Callback (needs improving big time) Use the following: '404' => <<-EOF redirect_to root_url, notice: "Hello" EOF
         '500' => 'exception'
       }
+      '404' => nil #-> gives direction to 404 errors (default loads "show" view of ExceptionsController)
     }
 
-The above are used as *defaults*.
+The above are used as ***defaults***.
 
 You have the ability to change any one of the options. 
 
@@ -190,10 +197,12 @@ Want to test?
       dev: true # -> Runs in development mode WITHOUT changing the app environment files
     }
 
-`config.exceptions_app` *only* works in `production` / `staging` / `test` mode.
+
+
+
+`config.exceptions_app` *only* works when you have `config.consider_all_requests_local = false`
 
 If you wish to test in `development`, you'll have to use the `dev: true` option in your `exception_handler` config.
-
 
 --
 
@@ -202,6 +211,29 @@ If you wish to test in `development`, you'll have to use the `dev: true` option 
 --
 
 #### Views
+
+--
+
+#### DB
+
+If you want to store exceptions in the db, you will need to set up a migration:
+
+    $ rails generate exception_handler:migration
+    $ rake db:migrate
+
+You will also need to ensure your config db option is either `true` or `"table_name"`:
+
+<p align="center">
+  <img src="/readme/db.jpg" title="ExceptionHandler DB Config">
+</p>
+
+**IMPORTANT**
+
+`ExceptionHandler`'s [new config system](https://github.com/richpeck/exception_handler/wiki/Setup) is `environment` agnostic. 
+
+**Where you declare your `db` setting will change depending on your environment**
+
+If you declare `db` in `application.rb`, it will be applicable for all `environments`; only declaring in `production.rb` will set it for production *only*.
 
 ----
 
