@@ -125,6 +125,8 @@ or
 
 `ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](https://github.com/richpeck/exception_handler/tree/0.5#defaults) so you just have to install the gem & let it run.
 
+If you want to change *any* settings (detailed below), you **simply** need to change `config/application.rb` / `config/environments/your_env.rb`.
+
 ----
 
 <p align="center" id="config">
