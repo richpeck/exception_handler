@@ -152,8 +152,9 @@ You can apply the above options to any of Rails' environment files, allowing you
 
 ----
 
-<br />
-<img src="readme/titles/defaults.jpg" title="Defaults" id="defaults" />
+<p>
+  <img src="readme/titles/defaults.jpg" title="Defaults" id="defaults" />
+</p>
 
 As can be seen in the [`config class`](/lib/exception_handler/config.rb), the following are all the options `exception_handler` accepts:
 
@@ -200,8 +201,9 @@ The benefit of this is that it gives you the ability to customize `ExceptionHand
 
 ----
 
-<br />
-<img src="readme/titles/dev.jpg" title="Development Mode (New!!!)" id="dev" />
+<p>
+  <img src="readme/titles/dev.jpg" title="Development Mode (New!!!)" id="dev" />
+</p>
 
 Want to test?
 
@@ -221,15 +223,16 @@ If you wish to test **`ExceptionHandler`** in `development`, you'll have to use 
 
 ----
 
-<br />
-<img src="readme/titles/layout.jpg" title="Layout" id="layout" />
-
+<p>
+  <img src="readme/titles/layout.jpg" title="Layout" id="layout" />
+</p>
 
 
 ----
 
-<br />
-<img src="readme/titles/view.jpg" title="Views" id="view" />
+<p>
+  <img src="readme/titles/view.jpg" title="Views" id="view" />
+</p>
 
 `ExceptonHandler` comes with its own inbuilt views & controller.
 
@@ -240,8 +243,9 @@ If you want to change it, you need to add the views into your app with the [`gen
 
 ----
 
-<br />
-<img src="readme/titles/db.jpg" title="Database" id="db" />
+<p>
+  <img src="readme/titles/db.jpg" title="Database" id="db" />
+</p>
 
 If you want to store exceptions in your `db`, you will need to set up a **migration**:
 
