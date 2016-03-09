@@ -116,6 +116,8 @@ It's completely unique - the **only** professional solution to catch, process & 
   <strong>Plug & Play - You Don't Need <i>Any</i> Configuration To Run ExceptionHandler</strong>
 </p>
 
+<a href="http://rubygems.org/gems/exception_handler" target="_blank"><img src="/readme/rubygems.jpg" title="Download Through RubyGems" align="left" width="350" /></a>
+
 <p align="center">
   <img src="/readme/gemfile.jpg" title="Install the exception_handler gem" />
 </p>
@@ -130,7 +132,6 @@ or
 
 If you want to change *any* settings (detailed [below](#user-content-config)), you **simply** need to change `config/application.rb` / `config/environments/your_env.rb`. The ***POWER*** of this *new config system* means you're able to deploy `ExceptionHandler` in the most unobtrusive, versatile way possible.
 
-<a href="http://rubygems.org/gems/exception_handler" target="_blank"><img src="/readme/rubygems.jpg" title="Download Through RubyGems" align="left"/></a>
 
 ----
 
