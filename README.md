@@ -116,6 +116,9 @@ It's completely unique - the **only** professional solution to catch, process & 
   <strong>You Don't Need <i>Any</i> Configuration To Run ExceptionHandler</strong>
 </p>
 
+<p align="center">
+  <img src="readme/gemfile.jpg" title="Add exception_handler to your Gemfile" />
+</p>
 
     gem install "exception_handler"
 
