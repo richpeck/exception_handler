@@ -134,7 +134,9 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 **`ExceptionHandler 0.5`** has the SIMPLEST config possible...
 
-[[Test]]
+<p align="center">
+  <img src="/readme/defaults.jpg" title="ExceptionHandler Default Configuration Options">
+</p>
 
 **`ExceptionHandler`** can be configured to run differently in each [`environment`](http://guides.rubyonrails.org/configuring.html#creating-rails-environments).
 
