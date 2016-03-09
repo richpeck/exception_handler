@@ -69,6 +69,10 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
 
 It uses data stored in `Rack` (`message`, `details`, `user agent`) to populate its `custom view`. This gives you the ability to **maintain your branding** *even* when your app experiences an exception.
 
+<p align="center">
+  <strong><a href="#user-content-install">Install</a></strong> - <strong><a href="#user-content-config">Config</a></strong> - <strong><a href="#user-content-support">Support</a></strong>
+</p>
+
 ----
 
 <p align="center">
