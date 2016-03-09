@@ -287,7 +287,7 @@ You will also need to ensure your config db option is either `true` or `"table_n
 
 Github Issue (1hr) | Stackoverflow (24hrs) | Video (Soon)
 :----: | :----: | :----:
-[![StackOverflow](/readme/github.png)](https://github.com/richpeck/exception_handler/issues) | [![StackOverflow](/readme/stackoverflow.png)](http://stackoverflow.com/questions/ask?tags=ruby-on-rails+exception-handler) | ![Youtube](/readme/youtube.png)
+[![StackOverflow](/readme/github.jpg)](https://github.com/richpeck/exception_handler/issues) | [![StackOverflow](/readme/stackoverflow.jpg)](http://stackoverflow.com/questions/ask?tags=ruby-on-rails+exception-handler) | ![Youtube](/readme/youtube.png)
 
 --
 
