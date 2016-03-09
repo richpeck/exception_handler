@@ -98,7 +98,7 @@ Rails invokes [`config.exceptions_app`](http://guides.rubyonrails.org/configurin
   <img src="readme/exceptions_app.jpg" title="Exceptions App" />
 </p>
 
-As opposed to other exception suites (which use the `routes`), this gives you DIRECT access to the exception through the middleware stack, straight to the `ExceptionsController`:
+As opposed to other exception suites (which use the `routes`), this gives you DIRECT access to the exception through the middleware stack, straight to the [`ExceptionsController`](/app/controllers/exception_handler/exception_controller.rb):
 
 <p align="center">
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" /> &nbsp;
