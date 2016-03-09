@@ -285,9 +285,9 @@ You will also need to ensure your config db option is either `true` or `"table_n
   <img src="readme/titles/support.jpg" title="1hr & 24 hr Support" width="225" />
 </p>
 
-Github Issue (1hr) | Stackoverflow (24hrs) | Video (Soon)
-:----: | :----: | :----:
-[![StackOverflow](/readme/github.jpg)](https://github.com/richpeck/exception_handler/issues) | [![StackOverflow](/readme/stackoverflow.jpg)](http://stackoverflow.com/questions/ask?tags=ruby-on-rails+exception-handler) | ![Youtube](/readme/youtube.png)
+Github Issue (1hr) | Stackoverflow (24hrs)
+:----: | :----:
+[![StackOverflow](/readme/github.jpg)](https://github.com/richpeck/exception_handler/issues) | [![StackOverflow](/readme/stackoverflow.jpg)](http://stackoverflow.com/questions/ask?tags=ruby-on-rails+exception-handler)
 
 --
 
