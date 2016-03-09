@@ -134,6 +134,9 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 **`ExceptionHandler 0.5`** has the SIMPLEST config possible...
 
+<p align="center">
+  <img src="/readme/defaults.jpg" title="ExceptionHandler Default Configuration Options">
+</p>
 
 **`ExceptionHandler`** can be configured to run in different [`environments`](http://guides.rubyonrails.org/configuring.html#creating-rails-environments).
 
@@ -152,10 +155,10 @@ You can apply the above options to the
 As can be seen in the [`config`](/lib/exception_handler/config.rb) class, the following are all the options `exception_handler` accepts:
 
 <p align="center">
-  <img src="/readme/defaults.jpg" title="ExceptionHandler Default Configuration Options">
+  <img src="/readme/config_defaults.jpg" title="ExceptionHandler Default Configuration Options">
 </p>
 
-    #config/application.rb
+    # config.rb
     config.exception_handler = {
       dev:    false, #-> defaults to "false" for dev mode
       db:     false, #-> defaults to :errors if true, else input "table_name" as string
