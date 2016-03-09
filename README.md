@@ -101,10 +101,10 @@ Rails invokes [`config.exceptions_app`](http://guides.rubyonrails.org/configurin
 As opposed to other exception suites (which use the `routes`), this gives you DIRECT access to the exception through the middleware stack, straight to the `ExceptionsController`:
 
 <p align="center">
-  <img src="readme/config.png" title="Config" /> &nbsp;
+  <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" /> &nbsp;
 </p>
 
-**ExceptionHandler** uses our [custom middleware](https://github.com/richpeck/exception_handler/blob/0.5/lib/exception_handler/parse.rb) to extract *all* the exception data for the request. Not only is this the most succinct, efficient way to do this, it also allows you to customize the *entire* fault-recovery process.
+**ExceptionHandler** uses [custom middleware](https://github.com/richpeck/exception_handler/blob/0.5/lib/exception_handler/parse.rb) to extract *all* the exception data for the request. Not only is this the most succinct, efficient way to do this, it also allows you to customize the *entire* fault-recovery process.
 
 It's completely unique - the **only** professional solution to catch, process & handle exceptions in Rails.
 
