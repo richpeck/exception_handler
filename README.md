@@ -116,7 +116,7 @@ It's completely unique - the **only** professional solution to catch, process & 
   <strong>Plug & Play - You Don't Need <i>Any</i> Configuration To Run ExceptionHandler</strong>
 </p>
 
-<a href="http://rubygems.org/gems/exception_handler" target="_blank"><img src="/readme/rubygems.jpg" title="Download Through RubyGems" align="left" width="350" /></a>
+<a href="http://rubygems.org/gems/exception_handler" target="_blank"><img src="/readme/rubygems.jpg" title="Download Through RubyGems" align="right" width="425" /></a>
 
     gem install "exception_handler"
 
