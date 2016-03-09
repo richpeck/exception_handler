@@ -46,13 +46,13 @@ module ExceptionHandler
           :twitter 	  => 	'frontlineutils',
           :youtube 	  =>	'frontlineutils',
           :linkedin 	=> 	'frontline-utilities',
-          :fusion 	 => 	'frontlineutils',
+          :fusion 	  => 	'frontlineutils',
           :url => {
             :facebook 	=> 	'https://facebook.com',
             :twitter 	  => 	'http://twitter.com',
             :youtube 	  =>	'https://youtube.com/user',
             :linkedin 	=> 	'https://linkedin.com/company',
-            :fusion 	 => 	'https://frontlinefusion.com',				    	
+            :fusion 	  => 	'https://frontlinefusion.com',				    	
           },
         },
         layouts: {
