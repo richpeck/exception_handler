@@ -119,11 +119,11 @@ It's completely unique - the **only** professional solution to catch, process & 
 
     gem install "exception_handler"
 
-    or
+or
 
     gem 'exception_handler', '~> 0.5.0' #-> Gemfile
 
-`ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the defaults so you just have to install the gem & let it run.
+`ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](https://github.com/richpeck/exception_handler/tree/0.5#defaults) so you just have to install the gem & let it run.
 
 ----
 
@@ -159,7 +159,7 @@ As can be seen in the [`config`](/lib/exception_handler/config.rb) class, the fo
 </p>
 
     # config.rb
-    config.exception_handler = {
+    DEFAULTS = {
       dev:    false, #-> defaults to "false" for dev mode
       db:     false, #-> defaults to :errors if true, else input "table_name" as string
       email:  false, #-> need to integrate
