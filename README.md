@@ -111,7 +111,7 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 <p align="center" id="install">
   <br />
-  <img src="readme/titles/install.jpg" title="1 Click Install for ExceptionHandler 5 on Rails 5" width="200" />
+  <img src="readme/titles/install.jpg" title="1 Click Install for ExceptionHandler 5 on Rails 5" width="350" />
   <br />
   <strong>You Don't Need <i>Any</i> Configuration To Run ExceptionHandler</strong>
 </p>
