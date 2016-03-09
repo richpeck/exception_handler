@@ -224,7 +224,7 @@ If you wish to test **`ExceptionHandler`** in `development`, you'll have to use 
 <br />
 <img src="readme/titles/layout.jpg" title="Layout" id="layout" />
 
-One of the most critial aspects of `ExceptionHandler` is the custom `Exception` layout.
+One of the most critial aspects of **`ExceptionHandler`** is the custom `Exception` layout.
 
 If you want to change the layout (for `500` error pages), you need to use the following:
 
@@ -237,7 +237,7 @@ You'll need to [generate](#user-content-view) it into your application before be
 <br />
 <img src="readme/titles/view.jpg" title="Views" id="view" />
 
-`ExceptonHandler` comes with its own inbuilt views & controller.
+**`ExceptionHandler`** comes with its own inbuilt views & controller.
 
 If you want to change it, you need to add the views into your app with the [`generator`](/lib/generators/exception_handler/views_generator.rb)
 
