@@ -210,7 +210,9 @@ Want to test?
 
 <img src="/readme/dev.jpg" title="ExceptionHandler Dev Mode - NEW!!!!!">
 
-[`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) *only* works when you have [`config.consider_all_requests_local = true`](http://blog.bigbinary.com/2009/02/05/rescue_action_in_public-local_request-and-how-to-configure-local_request.html), which is `false` in `development`.
+[`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) *only* works when you have [`config.consider_all_requests_local = true`](http://blog.bigbinary.com/2009/02/05/rescue_action_in_public-local_request-and-how-to-configure-local_request.html), which is `true` in `development`:
+
+> **`config.consider_all_requests_local`** is a flag. If true then any error will cause detailed debugging information to be dumped in the `HTTP` response, and the Rails::Info controller will show the application runtime context in `/rails/info/properties`. `True` by default in development and test environments, and false in production mode. For finer-grained control, set this to false and implement `local_request?` in controllers to specify which requests should provide debugging information on errors.
 
 
 If you wish to test **`ExceptionHandler`** in `development`, you'll have to use the `dev: true` option in your `exception_handler` config, *or* change `config.consider_all_requests_local = true` in `config/development.rb`.
@@ -235,6 +237,8 @@ If you want to store exceptions in your `db`, you will need to set up a **migrat
 You will also need to ensure your config db option is either `true` or `"table_name"`:
 
 <img src="/readme/db.jpg" title="ExceptionHandler DB Config">
+
+<img src="/readme/db_screenshot.jpg" title="ExceptionHandler Database">
 
 > **IMPORTANT**
 > 
