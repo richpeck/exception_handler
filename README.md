@@ -319,4 +319,4 @@ Github Issue (1hr) | Stackoverflow (24hrs)
 
 ----------
 
-Created by [Richard Peck](http://stackoverflow.com/users/1143732/richard-peck) for [**FL**](http://frontlineutilities.co.uk)
+&copy; [**Richard Peck**](http://stackoverflow.com/users/1143732/richard-peck) for [**FL**](http://frontlineutilities.co.uk)
