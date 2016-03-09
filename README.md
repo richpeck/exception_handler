@@ -224,11 +224,13 @@ If you wish to test **`ExceptionHandler`** in `development`, you'll have to use 
 <br />
 <img src="readme/titles/layout.jpg" title="Layout" id="layout" />
 
-One of the most critial aspects of ExceptionHandler is the custom Exception layout.
+One of the most critial aspects of `ExceptionHandler` is the custom `Exception` layout.
 
 If you want to change the layout (for `500` error pages), you need to use the following:
 
 <img src="readme/layout.jpg" title="Custom Exceptions Layout For ExceptionHandler" />
+
+You'll need to [generate](#user-content-view) it into your application before being able to edit:
 
 ----
 
