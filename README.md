@@ -123,7 +123,7 @@ or
 
     gem 'exception_handler', '~> 0.5.0' #-> Gemfile
 
-`ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](https://github.com/richpeck/exception_handler/tree/0.5#defaults) - you just need to install the gem & let it run.
+`ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](#user-content-defaults) - you just need to install the gem & let it run.
 
 If you want to change *any* settings (detailed [below](#user-content-config)), you **simply** need to change `config/application.rb` / `config/environments/your_env.rb`. The ***POWER*** of this *new config system* means you're able to adapt `ExceptionHandler` in the most unobtrusive, versatile way possible.
 
@@ -150,8 +150,9 @@ You can apply the above options to any of Rails' environment files, allowing you
 > 
 > We've changed the load process to use Rails app config - **you don't need the `exception_handler` initializer any more**
 
---
+----
 
+<br />
 <img src="readme/titles/defaults.jpg" title="Defaults" id="defaults" />
 
 As can be seen in the [`config class`](/lib/exception_handler/config.rb), the following are all the options `exception_handler` accepts:
@@ -197,8 +198,9 @@ You can change the options for each [`environment file`](http://guides.rubyonrai
 
 The benefit of this is that it gives you the ability to customize `ExceptionHandler` for any of your environments. Contrary to a shitty `initializer`, you're able to sculpt the gem to work FOR YOU. 
 
---
+----
 
+<br />
 <img src="readme/titles/dev.jpg" title="Development Mode (New!!!)" id="dev" />
 
 Want to test?
@@ -217,14 +219,16 @@ Want to test?
 
 If you wish to test **`ExceptionHandler`** in `development`, you'll have to use the `dev: true` option in your `exception_handler` config, *or* change `config.consider_all_requests_local = true` in `config/development.rb`.
 
---
+----
 
+<br />
 <img src="readme/titles/layout.jpg" title="Layout" id="layout" />
 
 
 
---
+----
 
+<br />
 <img src="readme/titles/view.jpg" title="Views" id="view" />
 
 `ExceptonHandler` comes with its own inbuilt views & controller.
@@ -234,8 +238,9 @@ If you want to change it, you need to add the views into your app with the [`gen
     $ rails generate exception_handler:views                                            #-> controller, models, helpers, views & assets
     $ rails generate exception_handler:views -v views controllers models helpers assets #-> remove as appropriate to install individual assets
 
---
+----
 
+<br />
 <img src="readme/titles/db.jpg" title="Database" id="db" />
 
 If you want to store exceptions in your `db`, you will need to set up a **migration**:
