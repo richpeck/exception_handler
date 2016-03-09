@@ -289,6 +289,10 @@ Github Issue (1hr) | Stackoverflow (24hrs)
 :----: | :----:
 [![StackOverflow](/readme/github.jpg)](https://github.com/richpeck/exception_handler/issues) | [![StackOverflow](/readme/stackoverflow.jpg)](http://stackoverflow.com/questions/ask?tags=ruby-on-rails+exception-handler)
 
+We use **`ExceptionHandler`** in production, so we have a vested interest in keeping it running smoothly.
+
+Asking in either of the above services will give you a response. Don't be shy, we want to make this the best `exception handling` middleware for Rails.
+
 --
 
 <br />
@@ -319,4 +323,4 @@ Github Issue (1hr) | Stackoverflow (24hrs)
 
 ----------
 
-&copy; [**Richard Peck**](http://stackoverflow.com/users/1143732/richard-peck) for [**FL**](http://frontlineutilities.co.uk)
+&copy; 2016 [**Richard Peck**](http://stackoverflow.com/users/1143732/richard-peck) for [**FL**](http://frontlineutilities.co.uk)
