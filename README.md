@@ -118,10 +118,6 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 <a href="http://rubygems.org/gems/exception_handler" target="_blank"><img src="/readme/rubygems.jpg" title="Download Through RubyGems" align="left" width="350" /></a>
 
-<p align="center">
-  <img src="/readme/gemfile.jpg" title="Install the exception_handler gem" />
-</p>
-
     gem install "exception_handler"
 
 or
