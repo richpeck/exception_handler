@@ -60,6 +60,10 @@ The most feature-rich, stable & effective solution for **custom error pages** in
 
 Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** even more powerful & efficient. Now you can use `ExceptionHandler` directly with a single click -- **plug and play** custom exception pages:
 
+<p align="center">
+  <strong><a href="#user-content-install">Install</a></strong> - <strong><a href="#user-content-config">Config</a></strong> - <strong><a href="#user-content-support">Support</a></strong>
+</p>
+
 <div align="center">
   <img src="/readme/400.jpg" title="400 Errors" width="435" />
   <img src="/readme/500.jpg" title="500 Errors" width="435" />
@@ -68,10 +72,6 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
 **ExceptionHandler** uses `config.exceptions_app` to catch & send errors to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
 It uses data stored in `Rack` (`message`, `details`, `user agent`) to populate its `custom view`. This gives you the ability to **maintain your branding** *even* when your app experiences an exception.
-
-<p align="center">
-  <strong><a href="#user-content-install">Install</a></strong> - <strong><a href="#user-content-config">Config</a></strong> - <strong><a href="#user-content-support">Support</a></strong>
-</p>
 
 ----
 
@@ -121,6 +121,8 @@ It's completely unique - the **only** professional solution to catch, process & 
 or
 
     gem 'exception_handler', '~> 0.5.0' #-> Gemfile
+
+<img src="/readme/gemfile.jpg" title="Install the exception_handler gem" />
 
 `ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](#user-content-defaults) - you just need to install the gem & let it run.
 
