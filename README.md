@@ -134,7 +134,7 @@ If you want to change *any* settings (detailed [below](#user-content-config)), y
   <a href="http://rubygems.org/gems/exception_handler" target="_blank">
     <img src="/readme/rubygems.jpg" title="Download Through RubyGems" width="450" border="1" />
     <br />
-    <strong>30,000 Users And Counting</strong>
+    <strong><font size="3">30,000 Users And Counting!!</font></strong>
   </a>
 </p>
 
