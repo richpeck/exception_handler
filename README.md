@@ -125,7 +125,7 @@ or
 
 `ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](https://github.com/richpeck/exception_handler/tree/0.5#defaults) - you just need to install the gem & let it run.
 
-If you want to change *any* settings (detailed below), you **simply** need to change `config/application.rb` / `config/environments/your_env.rb`.
+If you want to change *any* settings (detailed below), you **simply** need to change `config/application.rb` / `config/environments/your_env.rb`. The ***POWER*** of this *new config system* means you're able to adapt `ExceptionHandler` in the most unobtrusive, versatile way possible.
 
 ----
 
@@ -212,7 +212,7 @@ Want to test?
 
 [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) *only* works when you have [`config.consider_all_requests_local = true`](http://blog.bigbinary.com/2009/02/05/rescue_action_in_public-local_request-and-how-to-configure-local_request.html), which is `true` in `development`:
 
-> **`config.consider_all_requests_local`** is a flag. If true then any error will cause detailed debugging information to be dumped in the `HTTP` response, and the Rails::Info controller will show the application runtime context in `/rails/info/properties`. `True` by default in development and test environments, and false in production mode. For finer-grained control, set this to false and implement `local_request?` in controllers to specify which requests should provide debugging information on errors.
+> **`config.consider_all_requests_local`** is a flag. If true then any error will cause detailed debugging information to be dumped in the `HTTP` response, and the `Rails::Info controller` will show the application runtime context in `/rails/info/properties`. `True` by default in development and test environments, and false in production mode. For finer-grained control, set this to false and implement `local_request?` in controllers to specify which requests should provide debugging information on errors.
 
 
 If you wish to test **`ExceptionHandler`** in `development`, you'll have to use the `dev: true` option in your `exception_handler` config, *or* change `config.consider_all_requests_local = true` in `config/development.rb`.
@@ -221,9 +221,18 @@ If you wish to test **`ExceptionHandler`** in `development`, you'll have to use 
 
 #### Layouts
 
+
+
 --
 
-#### Views
+#### View
+
+`ExceptonHandler` comes with its own inbuilt views & controller.
+
+If you want to change it, you need to add the views into your app with the [`generator`](/lib/generators/exception_handler/views_generator.rb)
+
+    $ rails generate exception_handler:views                                            #-> controller, models, helpers, views & assets
+    $ rails generate exception_handler:views -v views controllers models helpers assets #-> remove as appropriate to install individual assets
 
 --
 
