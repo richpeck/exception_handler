@@ -244,6 +244,16 @@ If you want to change it, you need to add the views into your app with the [`gen
     $ rails generate exception_handler:views                                            #-> controller, models, helpers, views & assets
     $ rails generate exception_handler:views -v views controllers models helpers assets #-> remove as appropriate to install individual assets
 
+--
+
+<img src="readme/view.jpg" title="ExceptionHandler Show view" />
+
+The view is located in **`app/views/exception_handler/show.html.erb`** designed to work for all exceptions.
+
+By default, it is split for use with different layouts, data being available to both.
+
+This works exactly the same as the other views in your app (IE the `exceptions controller` invokes the `show` action)
+
 ----
 
 <br />
