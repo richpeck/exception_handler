@@ -123,7 +123,7 @@ or
 
     gem 'exception_handler', '~> 0.5.0' #-> Gemfile
 
-`ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](https://github.com/richpeck/exception_handler/tree/0.5#defaults) so you just have to install the gem & let it run.
+`ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](https://github.com/richpeck/exception_handler/tree/0.5#defaults) - you just need to install the gem & let it run.
 
 If you want to change *any* settings (detailed below), you **simply** need to change `config/application.rb` / `config/environments/your_env.rb`.
 
@@ -140,9 +140,9 @@ If you want to change *any* settings (detailed below), you **simply** need to ch
   <img src="/readme/defaults.jpg" title="ExceptionHandler Default Configuration Options">
 </p>
 
-**`ExceptionHandler`** can be configured to run in different [`environments`](http://guides.rubyonrails.org/configuring.html#creating-rails-environments).
+The MAGIC is that it uses [`environment files`](http://guides.rubyonrails.org/configuring.html#creating-rails-environments).
 
-You can apply the above options to the 
+You can apply the above options to any of Rails' environment files, allowing you to customize the `ExceptionHandler` gem without inducing ANY overhead. `Initializer` files just get in the way. 
 
 > **IMPORTANT**
 >
@@ -154,7 +154,7 @@ You can apply the above options to the
 
 #### Defaults
 
-As can be seen in the [`config`](/lib/exception_handler/config.rb) class, the following are all the options `exception_handler` accepts:
+As can be seen in the [`config class`](/lib/exception_handler/config.rb), the following are all the options `exception_handler` accepts:
 
 <p align="center">
   <img src="/readme/config_defaults.jpg" title="ExceptionHandler Default Configuration Options">
@@ -188,7 +188,12 @@ As can be seen in the [`config`](/lib/exception_handler/config.rb) class, the fo
 
 The above are ***defaults***.
 
-You can change the options for each `environment` (EG `development` / `production` / `staging`).
+You can change the options for each [`environment file`](http://guides.rubyonrails.org/configuring.html#creating-rails-environments): 
+
+- `config/application.rb`
+- `config.development.rb`
+- `config/production.rb`
+- `config/staging.rb`
 
 --
 
