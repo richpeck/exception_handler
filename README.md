@@ -246,9 +246,9 @@ If you want to change it, you need to add the views into your app with the [`gen
 
 --
 
-<img src="readme/view.jpg" title="ExceptionHandler Show view" />
+<img src="readme/show.jpg" title="ExceptionHandler Show view" />
 
-The view is located in **`app/views/exception_handler/show.html.erb`** designed to work for all exceptions.
+`ExceptionHandler` uses `exceptions#show` -- located in **`app/views/exception_handler/show.html.erb`** designed to work for all exceptions.
 
 By default, it is split for use with different layouts, data being available to both.
 
