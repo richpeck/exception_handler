@@ -125,7 +125,7 @@ or
 
 `ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](#user-content-defaults) - you just need to install the gem & let it run.
 
-If you want to change *any* settings (detailed [below](#user-content-config)), you **simply** need to change `config/application.rb` / `config/environments/your_env.rb`. The ***POWER*** of this *new config system* means you're able to adapt `ExceptionHandler` in the most unobtrusive, versatile way possible.
+If you want to change *any* settings (detailed [below](#user-content-config)), you **simply** need to change `config/application.rb` / `config/environments/your_env.rb`. The ***POWER*** of this *new config system* means you're able to deploy `ExceptionHandler` in the most unobtrusive, versatile way possible.
 
 ----
 
@@ -205,7 +205,7 @@ The benefit of this is that it gives you the ability to customize `ExceptionHand
   <img src="readme/titles/dev.jpg" title="Development Mode (New!!!)" id="dev" />
 </p>
 
-Want to test?
+Want to test in the `dev` environment?
 
     #config/application.rb
     config.exception_handler = {
@@ -227,6 +227,11 @@ If you wish to test **`ExceptionHandler`** in `development`, you'll have to use 
   <img src="readme/titles/layout.jpg" title="Layout" id="layout" />
 </p>
 
+One of the most critial aspects of ExceptionHandler is the custom Exception layout.
+
+If you want to change the layout (for `500` error pages), you need to use the following:
+
+<img src="layout.jpg" title="Custom Exceptions Layout For ExceptionHandler" />
 
 ----
 
