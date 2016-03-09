@@ -39,7 +39,7 @@ module ExceptionHandler
       # http://stackoverflow.com/a/8917301/1143732
       DEFAULTS = {
         dev: 	  false, #-> defaults to "false" for dev mode
-        db:     false, #-> defaults to :errors if true, else use :table_name
+        db:     false, #-> defaults to :errors if true, else use "table_name" / :table_name
         email: 	false, #-> need to integrate
         social: {
           :facebook 	=> 	'frontline.utilities',
