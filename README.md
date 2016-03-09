@@ -114,7 +114,7 @@ It's completely unique - the **only** professional solution to catch, process & 
   <br />
   <img src="readme/titles/install.jpg" title="1 Click Install for ExceptionHandler 5 on Rails 5" width="325" />
   <br />
-  <strong>Plug & Play - You Don't Need <i>Any</i> Configuration To Change ExceptionHandler</strong>
+  <strong>Plug & Play - You Don't Need <i>Any</i> Configuration To Run ExceptionHandler</strong>
 </p>
 
     gem install "exception_handler"
@@ -123,7 +123,7 @@ It's completely unique - the **only** professional solution to catch, process & 
 
     gem 'exception_handler', '~> 0.5.0' #-> Gemfile
 
-`ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the defaults so you don't have to.
+`ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the defaults so you just have to install the gem & let it run.
 
 ----
 
@@ -134,9 +134,6 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 **`ExceptionHandler 0.5`** has the SIMPLEST config possible...
 
-<p align="center">
-  <img src="/readme/defaults.jpg" title="ExceptionHandler Default Configuration Options">
-</p>
 
 **`ExceptionHandler`** can be configured to run in different [`environments`](http://guides.rubyonrails.org/configuring.html#creating-rails-environments).
 
@@ -153,6 +150,10 @@ You can apply the above options to the
 #### Defaults
 
 As can be seen in the [`config`](/lib/exception_handler/config.rb) class, the following are all the options `exception_handler` accepts:
+
+<p align="center">
+  <img src="/readme/defaults.jpg" title="ExceptionHandler Default Configuration Options">
+</p>
 
     #config/application.rb
     config.exception_handler = {
@@ -180,9 +181,7 @@ As can be seen in the [`config`](/lib/exception_handler/config.rb) class, the fo
       '404' => nil #-> gives direction to 404 errors (default loads "show" view of ExceptionsController)
     }
 
-The above are used as ***defaults***.
-
-You have the ability to change any one of the options. 
+The above are ***defaults***.
 
 You can change the options for each `environment` (EG `development` / `production` / `staging`).
 
@@ -223,9 +222,7 @@ If you want to store exceptions in the db, you will need to set up a migration:
 
 You will also need to ensure your config db option is either `true` or `"table_name"`:
 
-<p align="center">
-  <img src="/readme/db.jpg" title="ExceptionHandler DB Config">
-</p>
+<img src="/readme/db.jpg" title="ExceptionHandler DB Config">
 
 > **IMPORTANT**
 > 
