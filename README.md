@@ -129,6 +129,8 @@ If you want to change *any* settings (detailed [below](#user-content-config)), y
 
 <p align="center">
   <img src="/readme/rubygems.jpg" title="Join 30,000 Users On RubyGems" />
+  <br />
+  <img src="/readme/titles/rubygems.jpg" title="30,000 Users Can't Be Wrong" />
 </p>
 
 ----
