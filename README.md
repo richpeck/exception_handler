@@ -61,10 +61,6 @@ The most feature-rich, stable & effective solution for **custom error pages** in
 
 Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** even more powerful & efficient. Now you can use `ExceptionHandler` directly with a single click -- **plug and play** custom exception pages
 
-<p align="center">
-  <img src="readme/config.png" title="Config" /> &nbsp; <img src="readme/config.png" title="Config" /> &nbsp; <img src="readme/config.png" title="Config" />
-</p>
-
 <div align="center">
   <img src="/readme/400.jpg" title="400 Errors" width="435" />
   <img src="/readme/500.jpg" title="500 Errors" width="435" />
