@@ -125,7 +125,7 @@ or
 
 `ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](https://github.com/richpeck/exception_handler/tree/0.5#defaults) - you just need to install the gem & let it run.
 
-If you want to change *any* settings (detailed below), you **simply** need to change `config/application.rb` / `config/environments/your_env.rb`. The ***POWER*** of this *new config system* means you're able to adapt `ExceptionHandler` in the most unobtrusive, versatile way possible.
+If you want to change *any* settings (detailed [below](#user-content-config)), you **simply** need to change `config/application.rb` / `config/environments/your_env.rb`. The ***POWER*** of this *new config system* means you're able to adapt `ExceptionHandler` in the most unobtrusive, versatile way possible.
 
 ----
 
@@ -152,7 +152,7 @@ You can apply the above options to any of Rails' environment files, allowing you
 
 --
 
-#### Defaults
+<img src="readme/titles/defaults.jpg" title="Defaults" id="defaults" />
 
 As can be seen in the [`config class`](/lib/exception_handler/config.rb), the following are all the options `exception_handler` accepts:
 
@@ -199,7 +199,7 @@ The benefit of this is that it gives you the ability to customize `ExceptionHand
 
 --
 
-#### Dev (NEW!!!)
+<img src="readme/titles/dev.jpg" title="Development Mode (New!!!)" id="dev" />
 
 Want to test?
 
@@ -219,13 +219,13 @@ If you wish to test **`ExceptionHandler`** in `development`, you'll have to use 
 
 --
 
-#### Layouts
+<img src="readme/titles/layout.jpg" title="Layout" id="layout" />
 
 
 
 --
 
-#### View
+<img src="readme/titles/view.jpg" title="Views" id="view" />
 
 `ExceptonHandler` comes with its own inbuilt views & controller.
 
@@ -236,7 +236,7 @@ If you want to change it, you need to add the views into your app with the [`gen
 
 --
 
-#### DB
+<img src="readme/titles/db.jpg" title="Database" id="db" />
 
 If you want to store exceptions in your `db`, you will need to set up a **migration**:
 
