@@ -231,7 +231,7 @@ One of the most critial aspects of ExceptionHandler is the custom Exception layo
 
 If you want to change the layout (for `500` error pages), you need to use the following:
 
-<img src="layout.jpg" title="Custom Exceptions Layout For ExceptionHandler" />
+<img src="readme/layout.jpg" title="Custom Exceptions Layout For ExceptionHandler" />
 
 ----
 
