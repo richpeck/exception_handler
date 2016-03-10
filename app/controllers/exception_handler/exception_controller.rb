@@ -40,7 +40,7 @@ module ExceptionHandler
 
     #Layout
     def layout
-      (/^(5[0-9]{2})$/ !~ @exception.code.to_s) ? (ExceptionHandler.config.layouts["404"] || nil) : ExceptionHandler.config.layouts["500"] #-> if not 500, use predefined layout
+      (/^(5[0-9]{2})$/ !~ @exception.code.to_s) ? (ExceptionHandler.config.layouts["400"] || nil) : ExceptionHandler.config.layouts["500"] #-> if not 500, use predefined layout
     end
 
     ####################
