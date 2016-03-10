@@ -89,6 +89,8 @@ Rails invokes [`config.exceptions_app`](http://guides.rubyonrails.org/configurin
 
 > **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**.
 
+.
+
 <p align="center">
   <img src="readme/exceptions_app.jpg" title="Exceptions App" />
 </p>
