@@ -85,7 +85,7 @@ The power of **`ExceptionHandler`** lies in its capacity to access the [**`Activ
 
 Rails invokes [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) whenever an exception is raised.
 
-**ExceptionHandler** injects our `ExceptionsController` into this hook to provide the most efficient response:
+**ExceptionHandler** injects our `ExceptionController` into this hook to provide the most efficient response:
 
 > **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**.
 
@@ -93,7 +93,7 @@ Rails invokes [`config.exceptions_app`](http://guides.rubyonrails.org/configurin
   <img src="readme/exceptions_app.jpg" title="Exceptions App" />
 </p>
 
-As opposed to other exception suites (which use the `routes`), this gives you DIRECT access to the exception through the middleware stack, straight to the [`ExceptionsController`](/app/controllers/exception_handler/exception_controller.rb):
+As opposed to other exception suites (which use the `routes`), this gives you DIRECT access to the exception through the middleware stack, straight to the [`ExceptionController`](/app/controllers/exception_handler/exception_controller.rb):
 
 <p align="center">
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
