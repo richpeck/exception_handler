@@ -128,7 +128,7 @@ If you want to change *any* settings (detailed [below](#user-content-config)), y
 
 <p align="center">
   <a href="http://rubygems.org/gems/exception_handler" target="_blank">
-    <img src="/readme/rubygems.jpg" title="Download Through RubyGems" />
+    <img src="/readme/rubygems.jpg" title="30,000+ Downloads Through RubyGems" />
     <br />
   </a>
 </p>
