@@ -184,9 +184,9 @@ As can be seen in the [`config class`](/lib/exception_handler/config.rb), the fo
       },
       layouts: {
         '404' => nil, #-> 404 Callback (needs improving big time) Use the following: '404' => <<-EOF redirect_to root_url, notice: "Hello" EOF
+        '400' => nil, #-> layout for 400 error code (404 should only be used as response)
         '500' => 'exception'
-      }
-      '404' => nil #-> gives direction to 404 errors (default loads "show" view of ExceptionsController)
+      },
     }
 
 The above are ***defaults***.
