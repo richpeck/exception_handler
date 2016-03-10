@@ -194,9 +194,9 @@ The above are ***defaults***.
 You can change the options for each [`environment file`](http://guides.rubyonrails.org/configuring.html#creating-rails-environments): 
 
 - `config/application.rb`
-- `config.development.rb`
-- `config/production.rb`
-- `config/staging.rb`
+- `config/environments/development.rb`
+- `config/environments/production.rb`
+- `config/environments/staging.rb`
 
 The benefit of this is that it gives you the ability to customize `ExceptionHandler` for any of your environments. Contrary to a shitty `initializer`, you're able to sculpt the gem to work FOR YOU. 
 
