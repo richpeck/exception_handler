@@ -139,7 +139,7 @@ If you want to change *any* settings (detailed [below](#user-content-config)), y
 **`ExceptionHandler 0.5`** has the SIMPLEST config possible...
 
 <p align="center">
-  <img src="/readme/defaults.jpg" title="ExceptionHandler Default Configuration Options">
+  <img src="/readme/config_defaults.jpg" title="ExceptionHandler Default Configuration Options">
 </p>
 
 The MAGIC is that it uses [`environment files`](http://guides.rubyonrails.org/configuring.html#creating-rails-environments).
@@ -160,7 +160,7 @@ You can apply the above options to any of Rails' environment files, allowing you
 As can be seen in the [`config class`](/lib/exception_handler/config.rb), the following are all the options `exception_handler` accepts:
 
 <p align="center">
-  <img src="/readme/config_defaults.jpg" title="ExceptionHandler Default Configuration Options">
+  <img src="/readme/defaults.jpg" title="ExceptionHandler Default Configuration Options">
 </p>
 
     # config.rb
