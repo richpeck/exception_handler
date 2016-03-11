@@ -173,7 +173,7 @@ As can be seen in the [`config class`](/lib/exception_handler/config.rb), the fo
         :twitter    =>  'frontlineutils',      #-> Twitter handle
         :youtube    =>  'frontlineutils',      #-> YouTube handle
         :linkedin   =>  'frontline-utilities', #-> LinkedIn handle
-        :fusion    =>   'frontlineutils',      #-> Fusion handle
+        :fusion     =>   'frontlineutils',     #-> Fusion handle
         :url => {                             
           :facebook   =>  'https://facebook.com',          #-> no need to edit
           :twitter    =>  'http://twitter.com',            #-> no need to edit
