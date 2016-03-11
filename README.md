@@ -325,4 +325,4 @@ Asking in either of the above services will give you a response. Don't be shy, w
 
 ----------
 
-&copy; 2016 [**Richard Peck**](http://stackoverflow.com/users/1143732/richard-peck) for [**FL**](http://frontlineutilities.co.uk)
+&copy; 2016 [**R Peck**](http://stackoverflow.com/users/1143732/richard-peck) for [**FL**](http://frontlineutilities.co.uk)
