@@ -35,8 +35,8 @@
 </p>
 
 <p align="center">
-  <img src="/readme/branded/1.jpg" width="425" title="Fully Branded Error Pages" /> <img src="/readme/branded/2.jpg" width="425" title="Fully Branded Error Pages" />
-  <img src="/readme/branded/3.jpg" width="425" title="Fully Branded Error Pages" /> <img src="/readme/branded/4.jpg" width="425" title="Fully Branded Error Pages" />
+  <img src="/readme/branded/1.jpg" width="425" title="Fully Branded Error Pages" /> <img src="/readme/branded/1.jpg" width="425" title="Fully Branded Error Pages" />
+  <img src="/readme/branded/1.jpg" width="425" title="Fully Branded Error Pages" /> <img src="/readme/branded/1.jpg" width="425" title="Fully Branded Error Pages" />
 </p>
 
 The most feature-rich, stable & effective solution for **custom error pages** in Rails 4 & 5.
