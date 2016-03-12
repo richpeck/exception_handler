@@ -20,21 +20,20 @@
 # Needs the RSpec helper / config 
 require 'spec_helper'
 
-require 'rails_helper'
-
 ####
 
 module ExceptionHandler
-  describe ApplicationHelper, type: :helper do 
+  describe "ApplicationHelper", type: :helper do 
 
     # Defs
-    let (:page) { ErrorPage.new exception, { "PATH_INFO" => "/some/path" } }
+    #let (:page) { ErrorPage.new exception, { "PATH_INFO" => "/some/path" } }
 
     #####################################################
 
     # "app" method
+    # https://www.relishapp.com/rspec/rspec-rails/v/2-0/docs/helper-specs/helper-spec
     it "displays parent Rails app name" do
-
+      helper.app.should eql(Rails.application.class.parent_name)
     end
   end
 end
