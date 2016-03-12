@@ -18,7 +18,9 @@
 #####################################################
 
 # Needs the RSpec helper / config 
-require "spec_helper"
+require 'spec_helper'
+
+require 'rails_helper'
 
 ####
 
