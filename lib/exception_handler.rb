@@ -40,6 +40,12 @@ module ExceptionHandler
     #use main_app to call "main app" helpers etc http://stackoverflow.com/a/9178022/1143732 + http://edgeapi.rubyonrails.org/classes/Rails/Engine.html#class-Rails::Engine-label-Using+Engine-27s+routes+outside+Engine
     isolate_namespace ExceptionHandler
 
+    #Tests (generates dummy Rails app)
+    #http://stackoverflow.com/q/32082637/1143732 (ref in question)
+    config.generators do |g|
+      g.test_framework :rspec
+    end
+
     #Assets
     config.assets.precompile << %w(exception_handler/**)
 
