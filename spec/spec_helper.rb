@@ -13,14 +13,10 @@
 require 'coveralls'
 Coveralls.wear!
 
-#Load
-$LOAD_PATH << File.join(File.dirname(__FILE__), '..', 'lib')
-$LOAD_PATH << File.join(File.dirname(__FILE__))
-
 #Env
 ENV["RAILS_ENV"] ||= 'test'
-require File.expand_path("../dummy/config/environment", __FILE__)
-require 'rspec/rails'
+#require File.expand_path("../dummy/config/environment", __FILE__)
+require 'rails'
 require 'rspec/autorun'
 
 #Filesspec
