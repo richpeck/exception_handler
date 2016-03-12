@@ -13,13 +13,8 @@ Coveralls.wear!
 ENV["RAILS_ENV"] = 'test'
 
 #Rails
-#require 'rails'
-#require 'active_support'
-
-#For Generators
-require "rails/generators/test_case"
-require "generators/exception_handler/install_generator"
-
+require 'rails'
+require 'active_support'
 
 ###########################################
 
@@ -34,3 +29,7 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = 'random'
 end
+
+###########################################
+
+require "exception_handler"
