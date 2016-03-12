@@ -14,10 +14,12 @@ require 'coveralls'
 Coveralls.wear!
 
 #Env
+#Need to generate "dummy" rails app -- BEST done with rails plugin new [[plugin_name]]
+#http://stackoverflow.com/a/7472277/1143732
+#http://guides.rubyonrails.org/plugins.html
 ENV["RAILS_ENV"] ||= 'test'
-#require File.expand_path("../dummy/config/environment", __FILE__)
+require File.expand_path("../dummy/config/environment.rb", __FILE__)
 require 'rails'
-require 'rspec/autorun'
 
 #Files
 ENGINE_RAILS_ROOT=File.join(File.dirname(__FILE__), '../')
@@ -35,7 +37,6 @@ config = YAML::load(IO.read(File.dirname(__FILE__) + '/database.yml'))
 ###########################################
 
 RSpec.configure do |config|
-  config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
 
