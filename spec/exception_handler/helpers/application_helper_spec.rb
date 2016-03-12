@@ -9,7 +9,7 @@
 ##                   |_|                           ##
 #####################################################
 
-# Should reside in spec/module/helpers
+# Should reside in spec/**module**/helpers
 # Testing specific helpers (in this case ApplicationHelper)
 # Refs...
 # http://stackoverflow.com/a/12846630/1143732

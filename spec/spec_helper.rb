@@ -16,6 +16,12 @@ ENV["RAILS_ENV"] = 'test'
 require 'rails'
 require 'active_support'
 
+#Message
+puts "Testing Against Rails #{Rails.version}"
+
+#Options
+config = YAML::load(IO.read(File.dirname(__FILE__) + '/database.yml'))
+
 ###########################################
 
 RSpec.configure do |config|
