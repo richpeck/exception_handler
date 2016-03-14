@@ -10,28 +10,28 @@ require 'rails/generators/active_record'
 module ExceptionHandler
   class MigrationGenerator < ActiveRecord::Generators::Base
   
-  		#Name - from http://old.thoughtsincomputation.com/posts/cgfr3-part-3-adding-a-generator
-  		argument :name, default: "migration"
+    #Name - from http://old.thoughtsincomputation.com/posts/cgfr3-part-3-adding-a-generator
+    argument :name, default: "migration"
 
-		#Source of Migrations
-		source_root File.expand_path("../../templates", __FILE__)
+    #Source of Migrations
+    source_root File.expand_path("../../templates", __FILE__)
 
-		###########################################
+    ###########################################
 
-		#Table Name - false = off, true = errors, value = value
-		#Always outputs string for some reason...
-		def table_name
-    		ExceptionHandler.config.db
-		end
+    #Table Name - false = off, true = errors, value = value
+    #Always outputs string for some reason...
+    def table_name
+      ExceptionHandler.config.db
+    end
 
-		###########################################
+    ###########################################
 
-		#Create
-		def create_errors_migration
-			migration_template "migration.rb.erb", "db/migrate/create_errors.rb"
-		end
+    #Create
+    def create_errors_migration
+      migration_template "migration.rb.erb", "db/migrate/create_errors.rb"
+    end
 
-		###########################################
+    ###########################################
 
-	end
+  end
 end

@@ -1,0 +1,9 @@
+en:
+  exception:
+    show:
+      not_found:
+        title:       "Not Found"
+        description: "Sorry, this page is missing."
+      internal_server_error:
+        title:       "Internal Server Error"
+        description: "Sorry, the server failed with the error: %{message}"
