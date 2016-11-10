@@ -71,8 +71,8 @@ Gem::Specification.new do |s|
   # => Dev
   # => For testing etc
   s.add_development_dependency "rake"
-  s.add_development_dependency "rspec",       ">= 10.0.0"
-  s.add_development_dependency "rspec-rails", ">= 3.0.0"
+  s.add_development_dependency "rspec"
+  s.add_development_dependency "rspec-rails"
   s.add_development_dependency "sqlite3",     ">= 1.3.10"
 
 ##############################################################
