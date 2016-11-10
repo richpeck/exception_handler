@@ -1,50 +1,45 @@
 module ExceptionHandler
   class ExceptionController < ApplicationController
 
-    #Response
-    #http://www.justinweiss.com/articles/respond-to-without-all-the-pain/
+    # => Response
+    # => http://www.justinweiss.com/articles/respond-to-without-all-the-pain/
     respond_to :html, :xml, :json
 
-    #Layout
-    layout :layout
+    ##################################
+    ##################################
 
-    #Helpers
-    helper ExceptionHandler::Engine.helpers      #-> HELPERS http://stackoverflow.com/questions/9809787/why-is-my-rails-mountable-engine-not-loading-helper-methods-correctly
-    include Rails.application.routes.url_helpers #-> ROUTES http://stackoverflow.com/a/6074911/1143732
+    # => Definitions
+    # => Exception model (tied to DB)
+    before_action { |e| @exception = ExceptionHandler::Exception.new request: e.request }
+    before_action { @exception.save if @exception.valid? && ExceptionHandler.config.try(:db) }
+
+    # => Routes
+    # => Removes need for "main_app" prefix in routes
+    # => http://stackoverflow.com/a/40251516/1143732
+    helper Rails.application.routes.url_helpers
+
+    # => Layout
+    # => Layouts only 400 / 500 because they are the only error responses (300 is redirect)
+    # => http://guides.rubyonrails.org/layouts_and_rendering.html#the-status-option
+    # => Layout proc kills inheritance, needs to be method for now
+    layout :layout
 
     ####################
     #      Action      #
     ####################
 
-    #Show
-    #Amend responses in tests
-    #Need to test validity of JSON responses etc
     def show
-      @exception = ExceptionHandler::Exception.new request #-> Service Object
-      render status: @exception.status #-> Show apppropriate response
+      respond_with @exception, status: @exception.status
     end
 
-    ####################
-    #   Dependencies   #
-    ####################
-
-    protected
-
-    # Status declarations moved to "show" w/ service object
-    # Details moved to "View Helper"
-
-    ####################
-    #      Layout      #
-    ####################
+    ##################################
+    ##################################
 
     private
 
-    #Layout
     def layout
-      (/^(5[0-9]{2})$/ !~ @exception.code.to_s) ? (ExceptionHandler.config.layouts["400"] || nil) : ExceptionHandler.config.layouts["500"] #-> if not 500, use predefined layout
+      ExceptionHandler.config.layouts[ @exception.status[0] + "00" ]
     end
-
-    ####################
 
   end
 end

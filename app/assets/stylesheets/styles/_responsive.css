@@ -1,0 +1,5 @@
+/* Responsive */
+@media screen and (max-width: 950px) {
+	html 				{ background-size: cover !important; }
+	.container .error	{ width: 55% !important; }
+}

@@ -1,0 +1,13 @@
+##################################
+##################################
+# Have to use strings rather than integers
+##################################
+##################################
+
+en:
+  exception:
+    not_found:              "Page missing"
+    internal_server_error:  "Server failed with the error: %{message}"
+
+##################################
+##################################

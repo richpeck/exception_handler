@@ -18,8 +18,11 @@ module ExceptionHandler
       def initialize values=nil
         defaults = values.present? ? Config::DEFAULTS.deep_merge!(values) : Config::DEFAULTS
         defaults.each do |k,v|
-          instance_variable_set("@#{k}",v) #-> http://apidock.com/ruby/Object/instance_variable_set	
+          instance_variable_set("@#{k}",v) #-> http://apidock.com/ruby/Object/instance_variable_set
         end
+
+        # => Errors
+        raise(Exception, "ExceptionHandler :: Valid Email Required") if @email && !@email.is_a?(String)
       end
 
       # INSTANCE METHODS #
@@ -52,12 +55,11 @@ module ExceptionHandler
             :twitter 	  => 	'http://twitter.com',
             :youtube 	  =>	'https://youtube.com/user',
             :linkedin 	=> 	'https://linkedin.com/company',
-            :fusion 	  => 	'https://frontlinefusion.com',				    	
+            :fusion 	  => 	'https://frontlinefusion.com',
           },
         },
         layouts: {
-          '404' => nil, #-> 404 Callback (needs improving big time) Use the following: '404' => <<-EOF redirect_to root_url, notice: "Hello" EOF
-          '400' => nil, #-> layout for 400 error code (404 should only be used as response)
+          '400' => nil, # => defaults to "ApplicationController" layout
           '500' => 'exception'
         },
       }
