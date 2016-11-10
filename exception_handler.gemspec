@@ -61,7 +61,7 @@ Gem::Specification.new do |s|
   ##############################################################
 
   # => Ruby
-  #s.required_ruby_version = ">= 2.1.0"
+  s.required_ruby_version = ">= 2.1.0"
 
   # => Runtime
   s.add_dependency "bundler",    "~> 1.6"
