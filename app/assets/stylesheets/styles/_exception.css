@@ -6,7 +6,7 @@
   color:           #fff;
   position:        relative;
   width:           fit-content;
-  top:             15%;
+  top:             50%;
   margin:          auto;
   background:      rgba(255,255,255,0.175);
   border:          1px solid rgba(0,0,0,1);
@@ -18,6 +18,7 @@
   text-shadow:     0px 1px 0px rgba(0,0,0,1);
   overflow-y:      hidden;
   transition:      background 0.1s ease-in-out;
+  transform:       translateY(-50%);
 }
 .exception::before {
   content:        attr(data-status) " Error";
@@ -44,7 +45,7 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007a07ed', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 }
 .exception::after {
-  content:    "TEST";
+  content:    attr(data-app);
   display:    block;
   padding:    0.25em;
   background: rgba(232,232,232,0.25);
