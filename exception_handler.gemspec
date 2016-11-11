@@ -68,8 +68,8 @@ Gem::Specification.new do |s|
   s.add_dependency "rails",      ">= 4.2.0"
   s.add_dependency "responders", "~> 2.3"
 
-  # => Extra dependencies
-  s.add_dependency "autoprefixer-rails"
+  # => Extras
+  s.add_development_dependency "autoprefixer-rails"
 
   # => Dev
   # => For testing etc
