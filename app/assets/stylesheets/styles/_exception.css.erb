@@ -57,7 +57,7 @@
 .exception span:before {
   display: block;
   content: url(<%= asset_url("exception_handler/alert.png") %>);
-  padding: 3em 0;
+  padding: 5em 0;
   text-align: center;
 }
 .exception span:after {
@@ -82,10 +82,11 @@
   position: relative;
   display: block;
   min-height: 288px;
-  padding: 0 2em 3em;
+  padding: 0 2em 3.5em;
   box-sizing: border-box;
   background: #000 url(<%= asset_url("exception_handler/alert.jpg") %>) top center no-repeat;
   background-size: cover;
+  text-align: center;
 
   border-width: 0 1px;
   border-style: solid;
@@ -95,8 +96,9 @@
   display: block;
   margin-bottom: 0.5em;
   margin-top: 0.25em;
-  font-size: 1.75em;
+  font-size: 1.95em;
   text-transform: uppercase;
+  text-decoration: underline;
 }
 
 /* ---------------------------------------------------- */
