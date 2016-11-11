@@ -11,9 +11,11 @@
   <%= content_tag :body, yield %>
 
   <!-- Footer -->
-  <%= content_tag :footer do %>
-    <% ExceptionHandler.config.social.except!(:url).each do |k,v| %>
-      <%= link_to image_tag("exception_handler/connect/#{k}.png"), "x", id: k %>
+  <% if ExceptionHandler.config.try(:social) %>
+    <%= content_tag :footer do %>
+      <% ExceptionHandler.config.social.each do |k,v| %>
+        <%= link_to image_tag("exception_handler/connect/#{k}.png"), v[:url] + "/" + v[:name], id: v[:name] %>
+      <% end %>
     <% end %>
   <% end %>
 </html>

@@ -43,24 +43,17 @@ module ExceptionHandler
       DEFAULTS = {
         dev: 	  false, #-> defaults to "false" for dev mode
         db:     false, #-> defaults to :errors if true, else use "table_name" / :table_name
-        email: 	false, #-> need to integrate
+        email: 	false, #-> requires string email and ActionMailer
         social: {
-          :facebook 	=> 	'frontline.utilities',
-          :twitter 	  => 	'frontlineutils',
-          :youtube 	  =>	'frontlineutils',
-          :linkedin 	=> 	'frontline-utilities',
-          :fusion 	  => 	'frontlineutils',
-          :url => {
-            :facebook 	=> 	'https://facebook.com',
-            :twitter 	  => 	'http://twitter.com',
-            :youtube 	  =>	'https://youtube.com/user',
-            :linkedin 	=> 	'https://linkedin.com/company',
-            :fusion 	  => 	'https://frontlinefusion.com',
-          },
+          facebook: { name: "frontline.utilities", url: "https://facebook.com" },
+          twitter:  { name: "frontlineutils",      url: "http://twitter.com" },
+          youtube:  { name: "frontlineutils",      url: "https://youtube.com/user" },
+          linkedin: { name: "frontline-utilities", url: "https://linkedin.com/company" },
+          fusion:   { name: "flutils",             url: "https://frontlinefusion.com" }
         },
         layouts: {
-          '400' => nil, # => defaults to "ApplicationController" layout
-          '500' => 'exception'
+          "400" => nil,         # => inherits from "ApplicationController" layout
+          "500" => "exception"
         },
       }
 
