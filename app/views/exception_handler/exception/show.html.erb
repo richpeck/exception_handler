@@ -1,1 +1,3 @@
-<%= content_tag :div, @exception.description, class: "exception", data: { status: @exception.status, response: @exception.response, rails: Rails.version, app: Rails.application.class.parent_name } %>
+<%= content_tag :div, class: "exception", data: { status: @exception.status, response: @exception.response.to_s.humanize, rails: Rails.version } do %>
+  <%= content_tag :span, @exception.description.html_safe %>
+<% end %>

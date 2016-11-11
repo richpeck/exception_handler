@@ -128,7 +128,7 @@ module ExceptionHandler
 
       # => Server Response ("Not Found" etc)
       def response
-        ActionDispatch::ExceptionWrapper.rescue_responses[ exception.class.name ]
+        ActionDispatch::ExceptionWrapper.rescue_responses[exception.class.name]
       end
 
     ##################################
