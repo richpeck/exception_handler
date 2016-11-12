@@ -19,7 +19,7 @@
 ---
 
 <p align="center">
-  <img src="readme/main/subtitle.png" width="450" /><br/>
+  <img src="readme/main/version.png" width="450" /><br/>
 </p>
 
 <p align="center">
