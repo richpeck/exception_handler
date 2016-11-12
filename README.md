@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="http://badge.fury.io/rb/exception_handler"><img src="https://badge.fury.io/rb/exception_handler.svg" align="absmiddle"></a>
-  <a href="http://rubygems.org/richpeck/exception_handler"><img src="http://ruby-gem-downloads-badge.herokuapp.com/exception_handler/0.5.1?type=total" align="absmiddle" /></a>
+  <a href="http://rubygems.org/richpeck/exception_handler"><img src="http://ruby-gem-downloads-badge.herokuapp.com/exception_handler/0.5.1?type=total&color=brightgreen" align="absmiddle" /></a>
   <a href="https://codeclimate.com/github/richpeck/exception_handler"><img src="https://codeclimate.com/github/richpeck/exception_handler/badges/gpa.svg" align="absmiddle"/></a>
   <a href="https://gemnasium.com/richpeck/exception_handler"><img src="https://gemnasium.com/richpeck/exception_handler.svg" align="absmiddle"></a>
   <a href='https://coveralls.io/github/richpeck/exception_handler?branch=master'><img src='https://coveralls.io/repos/github/richpeck/exception_handler/badge.svg?branch=master' alt='Coverage Status' align="absmiddle" /></a>
@@ -110,7 +110,8 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 or
 
-    gem 'exception_handler', '~> 0.5.0' #-> Gemfile
+    # Gemfile
+    gem 'exception_handler', '~> 0.6.5'
 
 `ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](#user-content-defaults) - you just need to install the gem & let it run.
 
@@ -125,20 +126,27 @@ If you want to change *any* settings (detailed [below](#user-content-config)), y
 
 ----
 
-<p align="center" id="config">
-  <br />
-  <img src="readme/titles/config.jpg" title="Instant Custom Error Pages For Rails 4 & 5" width="325" />
+<p id="config">
+  <img src="readme/titles/setup.jpg" title="Instant Custom Error Pages For Rails 4 & 5" />
+<br /><br />
+  <a href="#defaults"><img src="readme/titles/setup/defaults.jpg" height="50" align="absmiddle" /></a>
+  <a href="#defaults"><img src="readme/titles/setup/defaults.jpg" height="50" align="absmiddle" /></a>
 </p>
 
-**`ExceptionHandler 0.5`** has the SIMPLEST config possible...
+--
+
+
+**`ExceptionHandler 0.6.5`** has *drastically* improved our famous 1-click install.
+
+Not only have we removed all the bloat, but our initialization process now relies on a *single* hook which will set all the config variables as required. This is stark difference to the myriad of poorly-designed gems which cause massive lag in your Rails initialization process. `ExceptionHandler` is now more streamlined than ever:
 
 <p align="center">
-  <img src="readme/config_defaults.jpg" title="ExceptionHandler Default Configuration Options">
+  <img src="readme/config_defaults.jpg" title="ExceptionHandler Default Config Options">
 </p>
 
-The MAGIC is that it uses [`environment files`](http://guides.rubyonrails.org/configuring.html#creating-rails-environments).
+The **MAGIC** lies in the [`environment files`](http://guides.rubyonrails.org/configuring.html#creating-rails-environments).
 
-You can apply the above options to any of Rails' environment files, allowing you to customize the `ExceptionHandler` gem without inducing ANY overhead. `Initializer` files just get in the way.
+Instead of dopey initializers (which slow the system down), you can just use the Rails config files to set environment-dependent options. This allows
 
 > **IMPORTANT**
 >
@@ -148,8 +156,9 @@ You can apply the above options to any of Rails' environment files, allowing you
 
 ----
 
-<br />
-<img src="readme/titles/defaults.jpg" title="Defaults" id="defaults" />
+<p id="defaults">
+  <img src="readme/titles/defaults.jpg" title="Defaults" />
+</p>
 
 As can be seen in the [`config class`](/lib/exception_handler/config.rb), the following are all the options `exception_handler` accepts:
 
@@ -280,19 +289,23 @@ You will also need to ensure your config db option is either `true` or `"table_n
   <img src="readme/titles/support.jpg" title="1hr & 24 hr Support" />
 </p>
 
-Github Issue (1hr) | Stackoverflow (24hrs)
+We offer support through [GitHub](http://github.com/richpeck/exception_handler/issues) and [StackOverflow](http://stackoverflow.com/questions/ask?tags=ruby-on-rails+exception-handler).
+
+Whilst we can't guarantee response times, we are always eager to make sure `ExceptionHandler` is the most secure, robust and effective solution for Rails exception pages. You can use the links below to access support directly:
+
+Github (~1hr) | Stackoverflow (~24hrs)
 :----: | :----:
 [![StackOverflow](readme/github.jpg)](https://github.com/richpeck/exception_handler/issues) | [![StackOverflow](readme/stackoverflow.jpg)](http://stackoverflow.com/questions/ask?tags=ruby-on-rails+exception-handler)
 
-We use **`ExceptionHandler`** in production, so we have a vested interest in keeping it running smoothly.
+We use **`ExceptionHandler`** in production, so have a vested interest in keeping it running smoothly.
 
 ---
 
 <img src="readme/titles/changelog.jpg" title="Changelog" id="changelog" />
 
-The next version will be `0.7.0`. Current is `0.6.5`.
+The next version will be **`0.7.0`**. Current is **`0.6.5`**.
 
-Functionality remains consistent with both releases, the main difference will be the way in which they handle backend processes. `0.6.5` completely overhauled the backend, making the `controller`, `model` and `middleware` much more streamlined. Here is a rundown of what to expect...
+Functionality remains consistent with both releases, the main difference will be the way in which they handle backend processes. **`0.6.5`** completely overhauled the backend, making the `controller`, `model` and `middleware` much more streamlined. Here is a rundown of what to expect...
 
 ### → 0.7.0
  - Completely new style
