@@ -338,6 +338,4 @@ Here is a rundown of what to expect ...
 
 ----------
 
-<a href="http://www.frontlineutilities.co.uk" target="_blank" align="absmiddle"><img src="readme/fl.png" height="22" title="Frontline Utilities LTD" alt="Frontline Utilities LTD" align="absmiddle" /></a> &copy; 2016 <a href="http://stackoverflow.com/users/1143732/richard-peck" target="_blank" align="absmiddle"><img src="https://avatars0.githubusercontent.com/u/1104431" title="Richard Peck" align="absmiddle" height="22" alt="Richard Peck" /></a>
-
-----------
+<strong>&copy; 2016</strong> <a href="http://www.frontlineutilities.co.uk" target="_blank" align="absmiddle"><img src="readme/fl.png" height="22" title="Frontline Utilities LTD" alt="Frontline Utilities LTD" align="absmiddle" /></a>  <a href="http://stackoverflow.com/users/1143732/richard-peck" target="_blank" align="absmiddle"><img src="https://avatars0.githubusercontent.com/u/1104431" title="Richard Peck" align="absmiddle" height="22" alt="Richard Peck" /></a>
