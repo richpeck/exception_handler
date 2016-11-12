@@ -19,7 +19,7 @@
 ---
 
 <p align="center">
-  <br /><img src="readme/main/05_title.png" width="450" /><br/>
+  <img src="readme/main/subtitle.png" width="450" /><br/>
 </p>
 
 <p align="center">
