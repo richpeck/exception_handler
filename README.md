@@ -287,20 +287,21 @@ Github Issue (1hr) | Stackoverflow (24hrs)
 
 We use **`ExceptionHandler`** in production, so we have a vested interest in keeping it running smoothly.
 
-Asking in either of the above services will give you a response. Don't be shy, we want to make this the best `exception handling` middleware for Rails.
-
 --
 
-<br />
 <img src="readme/titles/changelog.jpg" title="Changelog" id="changelog" />
 
-#### 0.7.0
+The next version will be `0.7.0`. Current is `0.6.5`.
+
+Functionality remains consistent with both releases, the main difference will be the way in which they handle backend processes. `0.6.5` completely overhauled the backend, making the `controller`, `model` and `middleware` much more streamlined. Here is a rundown of what to expect:
+
+#### → 0.7.0
  - Completely new style
  - Custom exceptions
  - Test suite integration
  - Full readme / wiki overhaul
 
-#### 0.6.5
+#### → 0.6.5
  - Streamlined interface
  - ActiveRecord / Middleware overhaul
  - Supports Sprockets 4+ ([`manifest.js`](http://eileencodes.com/posts/the-sprockets-4-manifest/))
@@ -308,7 +309,7 @@ Asking in either of the above services will give you a response. Don't be shy, w
  - Asset overhaul & improvement
  - Removed dependencies
 
-#### 0.5.0
+#### → 0.5.0
  - Added locales
  - Email notifications
  - Full test suite
@@ -319,14 +320,13 @@ Asking in either of the above services will give you a response. Don't be shy, w
  - Rails asset management improvement
  - Reduced gem file
 
-#### 0.4.7
+#### → 0.4.7
 
  - New config system ([more](https://github.com/richpeck/exception_handler/wiki/1-Setup))
  - Fixed controller layout issues
  - Streamlined middleware
  - New layout & interface implementation
 
-
 ----------
 
-&copy; 2016 [**R Peck**](http://stackoverflow.com/users/1143732/richard-peck) for [**FL**](http://frontlineutilities.co.uk)
+&copy; 2016 [**Richard Peck**](http://stackoverflow.com/users/1143732/richard-peck) for [**FL**](http://frontlineutilities.co.uk)
