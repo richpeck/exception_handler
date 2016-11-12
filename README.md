@@ -277,7 +277,6 @@ You will also need to ensure your config db option is either `true` or `"table_n
 ----
 
 <p align="center" id="support">
-  <br />
   <img src="readme/titles/support.jpg" title="1hr & 24 hr Support" width="225" />
 </p>
 
@@ -295,15 +294,13 @@ The next version will be `0.7.0`. Current is `0.6.5`.
 
 Functionality remains consistent with both releases, the main difference will be the way in which they handle backend processes. `0.6.5` completely overhauled the backend, making the `controller`, `model` and `middleware` much more streamlined. Here is a rundown of what to expect...
 
---
-
-#### → 0.7.0
+### → 0.7.0 (Major Overhaul)
  - Completely new style
  - Custom exceptions
  - Test suite integration
  - Full readme / wiki overhaul
 
-#### → 0.6.5
+### → 0.6.5
  - Streamlined interface
  - ActiveRecord / Middleware overhaul
  - Supports Sprockets 4+ ([`manifest.js`](http://eileencodes.com/posts/the-sprockets-4-manifest/))
@@ -311,7 +308,7 @@ Functionality remains consistent with both releases, the main difference will be
  - Asset overhaul & improvement
  - Removed dependencies
 
-#### → 0.5.0
+### → 0.5.0
  - Added locales
  - Email notifications
  - Full test suite
@@ -322,7 +319,7 @@ Functionality remains consistent with both releases, the main difference will be
  - Rails asset management improvement
  - Reduced gem file
 
-#### → 0.4.7
+### → 0.4.7
 
  - New config system ([more](https://github.com/richpeck/exception_handler/wiki/1-Setup))
  - Fixed controller layout issues
