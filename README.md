@@ -126,13 +126,13 @@ If you want to change *any* settings (detailed [below](#user-content-config)), y
 
 ----
 
-<p id="config">
+<p align="center" id="config">
   <img src="readme/titles/setup.jpg" title="Instant Custom Error Pages For Rails 4 & 5" />
 <br />
-  <a href="#defaults"><img src="readme/titles/setup/defaults.jpg" height="50" align="absmiddle" /></a>
-  <a href="#dev"><img src="readme/titles/setup/dev.jpg" height="50" align="absmiddle" /></a>
-  <a href="#email"><img src="readme/titles/setup/email.jpg" height="50" align="absmiddle" /></a>
-  <a href="#views"><img src="readme/titles/setup/views.jpg" height="50" align="absmiddle" /></a>
+  <a href="#defaults"><img src="readme/titles/setup/defaults.jpg" height="25" align="absmiddle" /></a>
+  <a href="#dev"><img src="readme/titles/setup/dev.jpg" height="25" align="absmiddle" /></a>
+  <a href="#email"><img src="readme/titles/setup/email.jpg" height="25" align="absmiddle" /></a>
+  <a href="#views"><img src="readme/titles/setup/views.jpg" height="25" align="absmiddle" /></a>
 </p>
 
 --
@@ -143,12 +143,12 @@ If you want to change *any* settings (detailed [below](#user-content-config)), y
 Not only have we removed all the bloat, but our initialization process now relies on a *single* hook which will set all the config variables as required. This is stark difference to the myriad of poorly-designed gems which cause massive lag in your Rails initialization process. `ExceptionHandler` is now more streamlined than ever:
 
 <p align="center">
-  <img src="readme/config_defaults.jpg" title="ExceptionHandler Default Config Options">
+  <img src="readme/defaults.jpg" title="ExceptionHandler Default Config Options">
 </p>
 
 The **MAGIC** lies in the [`environment files`](http://guides.rubyonrails.org/configuring.html#creating-rails-environments).
 
-Instead of dopey initializers (which slow the system down), you can just use the Rails config files to set environment-dependent options. This allows
+Instead of dopey initializers (which slow the system down), you can just use the Rails config files to set environment-dependent options. This allows us to maximize performance without any of the overhead associated with old-fashioned gems.
 
 > **IMPORTANT**
 >
@@ -168,47 +168,38 @@ As can be seen in[`config`](/lib/exception_handler/config.rb), the following are
   <img src="readme/defaults.jpg" title="ExceptionHandler Default Configuration Options">
 </p>
 
-    # config.rb
+    # Defaults
     DEFAULTS = {
-      dev:    false, #-> defaults to "false" for dev mode
-      db:     false, #-> defaults to :errors if true, else input "table_name" as string
-      email:  false, #-> need to integrate
+      dev: 	  false, #-> defaults to "false" for dev mode
+      db:     false, #-> defaults to :errors if true, else use "table_name" / :table_name
+      email: 	false, #-> requires string email and ActionMailer
       social: {
-        :facebook   =>  'frontline.utilities', #-> Facebook handle
-        :twitter    =>  'frontlineutils',      #-> Twitter handle
-        :youtube    =>  'frontlineutils',      #-> YouTube handle
-        :linkedin   =>  'frontline-utilities', #-> LinkedIn handle
-        :fusion     =>   'frontlineutils',     #-> Fusion handle
-        :url => {                             
-          :facebook   =>  'https://facebook.com',          #-> no need to edit
-          :twitter    =>  'http://twitter.com',            #-> no need to edit
-          :youtube    =>  'https://youtube.com/user',      #-> no need to edit
-          :linkedin   =>  'https://linkedin.com/company',  #-> no need to edit
-          :fusion     =>  'https://frontlinefusion.com',   #-> no need to edit              
-        },
+        facebook: { name: "frontline.utilities", url: "https://facebook.com" },
+        twitter:  { name: "frontlineutils",      url: "http://twitter.com" },
+        youtube:  { name: "frontlineutils",      url: "https://youtube.com/user" },
+        linkedin: { name: "frontline-utilities", url: "https://linkedin.com/company" },
+        fusion:   { name: "flutils",             url: "https://frontlinefusion.com" }
       },
       layouts: {
-        '404' => nil, #-> 404 Callback (needs improving big time) Use the following: '404' => <<-EOF redirect_to root_url, notice: "Hello" EOF
-        '400' => nil, #-> layout for 400 error code (404 should only be used as response)
-        '500' => 'exception'
+        "400" => nil,         # => inherits from "ApplicationController" layout
+        "500" => "exception"
       },
     }
 
-The above are ***defaults***.
-
-You can change the options for each [`environment file`](http://guides.rubyonrails.org/configuring.html#creating-rails-environments):
+You can apply any of the above defaults into one of the Rails [`environment files`](http://guides.rubyonrails.org/configuring.html#creating-rails-environments):
 
 - `config/application.rb`
 - `config/environments/development.rb`
 - `config/environments/production.rb`
 - `config/environments/staging.rb`
 
-The benefit of this is that it gives you the ability to customize `ExceptionHandler` for any of your environments. Contrary to a shitty `initializer`, you're able to sculpt the gem to work FOR YOU.
+The benefit of this is that it gives you the ability to customize `ExceptionHandler` for *any* of your environments. Contrary to a shitty `initializer`, you're able to sculpt the gem to work for YOU.
 
 ----
 
-<br />
-<img src="readme/titles/dev.jpg" title="Development Mode (New!!!)" id="dev" />
+<p id="dev">
+  <img src="readme/titles/dev.jpg" title="Development Mode" />
+</p>
 
 Want to test in the `dev` environment?
 
@@ -307,7 +298,11 @@ We use **`ExceptionHandler`** in production, so have a vested interest in keepin
 
 The next version will be **`0.7.0`**. Current is **`0.6.5`**.
 
-Functionality remains consistent with both releases, the main difference will be the way in which they handle backend processes. **`0.6.5`** completely overhauled the backend, making the `controller`, `model` and `middleware` much more streamlined. Here is a rundown of what to expect...
+Functionality remains consistent with both releases, the main difference will be the way in which they handle backend processes. **`0.6.5`** completely overhauled the backend, making the `controller`, `model` and `middleware` much more streamlined.
+
+The biggest update for **`0.6.5.`** has been the removal of most of the middleware, putting the entire system into a central class. This not only allows us to centralize the data structure, but also remove many files which didn't matter.
+
+Here is a rundown of what to expect ...
 
 ### → 0.7.0
  - Completely new style
