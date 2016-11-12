@@ -315,13 +315,13 @@ Asking in either of the above services will give you a response. Don't be shy, w
  - Rails 4.2 & Rails 5.0 native ([`request.env`](https://github.com/rails/rails/commit/05934d24aff62d66fc62621aa38dae6456e276be) fix)
  - Controller fixed
  - `DB` fixed
- - Legacy initializer support ([more](https://github.com/richpeck/exception_handler/wiki/Setup))
+ - Legacy initializer support ([more](1-Setup))
  - Rails asset management improvement
  - Reduced gem file
 
 #### 0.4.7
 
- - New config system ([more](https://github.com/richpeck/exception_handler/wiki/Setup))
+ - New config system ([more](1-Setup))
  - Fixed controller layout issues
  - Streamlined middleware
  - New layout & interface implementation
