@@ -14,7 +14,7 @@
 
 ----------
 
-<h5><center>**ExceptionHandler** creates custom **404 & 500 production error pages for Rails 4 & 5**.</center></h5>
+<h5><center><strong>ExceptionHandler</strong> creates custom <strong>404 & 500 production error pages for Rails 4 & 5</strong>.</center></h5>
 
 ![Exceptions_App middleware](readme/main/subtitle.jpg)
 
