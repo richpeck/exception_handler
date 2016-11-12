@@ -294,7 +294,7 @@ The next version will be `0.7.0`. Current is `0.6.5`.
 
 Functionality remains consistent with both releases, the main difference will be the way in which they handle backend processes. `0.6.5` completely overhauled the backend, making the `controller`, `model` and `middleware` much more streamlined. Here is a rundown of what to expect...
 
-### → 0.7.0 (Major Overhaul)
+### → 0.7.0
  - Completely new style
  - Custom exceptions
  - Test suite integration
