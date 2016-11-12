@@ -159,7 +159,7 @@ Instead of dopey initializers (which slow the system down), you can just use the
 ----
 
 <p id="defaults">
-  <img src="readme/titles/setup/defaults.jpg" title="Defaults" height="75" />
+  <img src="readme/titles/setup/defaults.jpg" title="Defaults" height="75" border="2" />
 </p>
 
 As can be seen in[`config`](/lib/exception_handler/config.rb), the following are all the options `ExceptionHandler` accepts:
