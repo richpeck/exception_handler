@@ -1,7 +1,7 @@
 ![Exception Handler](readme/main/title.jpg "Exception Handler Logo")
 
-<p align="center" style="background:red">
-  <strong><a href="#user-content-install">Install</a></strong> - <strong><a href="#user-content-config">Setup</a></strong> - <strong><a href="#user-content-support">Support</a></strong>
+<p align="center">
+  <font size="4"><strong>Custom 404 & 500 production error pages for Rails 4 & 5.</font></strong>
 </p>
 
 <p align="center">
@@ -12,17 +12,14 @@
   <a href="https://travis-ci.org/richpeck/exception_handler"><img src="https://travis-ci.org/richpeck/exception_handler.svg?branch=master"></a>
 </p>
 
-----------
-
-<h5><center><strong>ExceptionHandler</strong> creates custom <strong><u>404 & 500 production error pages</u> for Rails 4 & 5</strong>.</center></h5>
-
-![Exceptions_App middleware](readme/main/subtitle.jpg)
+<p align="center">
+  <strong><a href="#user-content-install">Install</a></strong> → <strong><a href="#user-content-config">Setup</a></strong> → <strong><a href="#user-content-support">Support</a></strong>
+</p>
 
 ---
 
 <p align="center">
   <br /><img src="readme/main/05_title.png" width="450" /><br/>
-  <strong>The <u>ONLY</u> <i>404</i> and <i>500</i> custom production error pages.</strong>
 </p>
 
 <p align="center">
