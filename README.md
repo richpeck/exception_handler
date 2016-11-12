@@ -338,4 +338,4 @@ Here is a rundown of what to expect ...
 
 ----------
 
-&copy; 2016 [**Richard Peck**](http://stackoverflow.com/users/1143732/richard-peck) for [**FL**](http://frontlineutilities.co.uk)
+&copy; 2016 [**Richard Peck**](http://stackoverflow.com/users/1143732/richard-peck) for <a href="http://www.frontlineutilities.co.uk"><img src="readme/fl.png" height="14" align="absmiddle" /></a>
