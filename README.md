@@ -1,7 +1,7 @@
 ![Exception Handler](readme/main/title.jpg "Exception Handler Logo")
 
-<p align="center">
-  <strong><a href="#user-content-install">Install</a></strong> - <strong><a href="#user-content-config">Config</a></strong> - <strong><a href="#user-content-support">Support</a></strong>
+<p align="center" style="background:red">
+  <strong><a href="#user-content-install">Install</a></strong> - <strong><a href="#user-content-config">Setup</a></strong> - <strong><a href="#user-content-support">Support</a></strong>
 </p>
 
 <p align="center">
@@ -14,7 +14,7 @@
 
 ----------
 
-<h5><center><strong>ExceptionHandler</strong> creates custom <strong>404 & 500 production error pages for Rails 4 & 5</strong>.</center></h5>
+<h5><center><strong>ExceptionHandler</strong> creates custom <strong><u>404 & 500 production error pages</u> for Rails 4 & 5</strong>.</center></h5>
 
 ![Exceptions_App middleware](readme/main/subtitle.jpg)
 
