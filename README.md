@@ -294,13 +294,19 @@ Asking in either of the above services will give you a response. Don't be shy, w
 <br />
 <img src="readme/titles/changelog.jpg" title="Changelog" id="changelog" />
 
-#### 0.5.5
+#### 0.7.0
+ - Completely new style
+ - Custom exceptions
+ - Test suite integration
+ - Full readme / wiki overhaul
+
+#### 0.6.5
  - Streamlined interface
- - Supports Sprockets 4+
+ - ActiveRecord / Middleware overhaul
+ - Supports Sprockets 4+ (`manifest.js`)
  - Email integration
  - Asset overhaul & improvement
  - Removed dependencies
- - Allows different exceptions
 
 #### 0.5.0
  - Added locales
