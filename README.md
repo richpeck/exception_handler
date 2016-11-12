@@ -276,8 +276,8 @@ You will also need to ensure your config db option is either `true` or `"table_n
 
 ----
 
-<p align="center" id="support">
-  <img src="readme/titles/support.jpg" title="1hr & 24 hr Support" width="225" />
+<p id="support">
+  <img src="readme/titles/support.jpg" title="1hr & 24 hr Support" />
 </p>
 
 Github Issue (1hr) | Stackoverflow (24hrs)
