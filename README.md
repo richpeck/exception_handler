@@ -303,7 +303,7 @@ Asking in either of the above services will give you a response. Don't be shy, w
 #### 0.6.5
  - Streamlined interface
  - ActiveRecord / Middleware overhaul
- - Supports Sprockets 4+ (`manifest.js`)
+ - Supports Sprockets 4+ ([`manifest.js`](http://eileencodes.com/posts/the-sprockets-4-manifest/))
  - Email integration
  - Asset overhaul & improvement
  - Removed dependencies
