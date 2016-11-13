@@ -1,7 +1,6 @@
 class Create<%= table_name.to_s.gsub("_","").titleize %> < ActiveRecord::Migration
   def change
     create_table :<%= table_name %> do |t|
-      t.references  :usable, polymorphic: true
       t.text        :class_name
       t.text        :message
       t.text        :trace

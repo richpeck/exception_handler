@@ -16,20 +16,23 @@ module ExceptionHandler
 
       #Init
       def initialize values=nil
-        defaults = values.present? ? Config::DEFAULTS.deep_merge!(values) : Config::DEFAULTS
+        defaults = values.present? ? Config::DEFAULTS.deep_merge!(values) : DEFAULTS
         defaults.each do |k,v|
           instance_variable_set("@#{k}",v) #-> http://apidock.com/ruby/Object/instance_variable_set
         end
 
         # => Errors
         raise(Exception, "ExceptionHandler :: Valid Email Required") if @email && !@email.is_a?(String)
+        raise(Exception, "ExceptionHandler :: Migration Required → Table \"#{db}\" doesn't exist") if @db && !ActiveRecord::Base.connection.table_exists?(db)
       end
 
-      # INSTANCE METHODS #
+    ###########################################
+
+      # Public (Instance) Methods #
 
       #DB
       def db
-        @db == true ? Config::TABLE_NAME : @db
+        @db == true ? TABLE_NAME : @db
       end
 
     ###########################################
@@ -52,7 +55,7 @@ module ExceptionHandler
           fusion:   { name: "flutils",             url: "https://frontlinefusion.com" }
         },
         layouts: {
-          "400" => nil,         # => inherits from "ApplicationController" layout
+          "400" => nil, # => inherits from "ApplicationController" layout
           "500" => "exception"
         },
       }
