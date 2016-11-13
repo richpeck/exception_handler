@@ -1,8 +1,12 @@
 module ExceptionHandler
-  class Exception < ActiveRecord::Base
+  class Exception 
 
-    # => Search Bots (const)
-    BOTS = %w(Baidu Gigabot Googlebot libwww-per lwp-trivial msnbot SiteUptime Slurp Wordpress ZIBB ZyBorg Yandex Jyxobot Huaweisymantecspider ApptusBot)
+    # => Include individual elements
+    # => Only required if no db present (no ActiveRecord)
+    if !ExceptionHandler.config.try(:db)
+      include ActiveModel::Model
+      include ActiveModel::Validations
+    end
 
     ##################################
     ##################################
@@ -13,8 +17,7 @@ module ExceptionHandler
 
         # Schema
         ###################
-        # usable_type
-        # usable_id
+        # Users removed in this version
         # class_name      @exception.class.name
         # status          ActionDispatch::ExceptionWrapper.new(@request.env, @exception).status_code
         # message         @exception.message
@@ -28,20 +31,18 @@ module ExceptionHandler
 
       # => Table is called "errors"
       # => Dev needs to use migration to create db
-      def self.table_name
-        "users" #ExceptionHandler.config.db
+      if ExceptionHandler.config.try(:db)
+        def self.table_name
+          ExceptionHandler.config.db
+        end
       end
 
     ##################################
     ##################################
 
       ####################
-      #   Associations   #
+      #     Options      #
       ####################
-
-      # => Associations
-      # => Used to populate current_user
-      belongs_to :usable, polymorphic: true
 
       # => Email
       # => after_initialize invoked after .new method called
@@ -53,7 +54,7 @@ module ExceptionHandler
 
       # => Validations
       validates :klass, exclusion:    { in: [ActionController::RoutingError, AbstractController::ActionNotFound, ActiveRecord::RecordNotFound], message: "%{value}" }, if: "referrer.blank?"
-      validates :user_agent, format:  { without: Regexp.new( BOTS.join("|"), Regexp::IGNORECASE ) }
+      validates :user_agent, format:  { without: Regexp.new( ExceptionHandler::BOTS.join("|"), Regexp::IGNORECASE ) }
 
     ##################################
     ##################################
