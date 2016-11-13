@@ -1,6 +1,5 @@
 module ExceptionHandler
 
-
   # => Search Bots
   # => Used in "Exception" class
   BOTS = %w(Baidu Gigabot Googlebot libwww-per lwp-trivial msnbot SiteUptime Slurp Wordpress ZIBB ZyBorg Yandex Jyxobot Huaweisymantecspider ApptusBot)
