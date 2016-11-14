@@ -1,7 +1,7 @@
 ###########################################
 
 require 'rails/generators/active_record'
-require 'exception_handler/exception' # => ATTRS constant (for all attributes)
+require 'exception_handler/exception' # => ATTRS constant (for attributes)
 
 ###########################################
 
