@@ -10,7 +10,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 module ExceptionHandler
   module VERSION
     MAJOR = 0
-    MINOR = 6
+    MINOR = 7
     TINY  = 0
     PRE   = nil # "alpha"
 
@@ -76,7 +76,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rake"
   s.add_development_dependency "rspec"
   s.add_development_dependency "rspec-rails"
-  s.add_development_dependency "sqlite3",     ">= 1.3.10"
+  s.add_development_dependency "sqlite3", ">= 1.3.10"
 
 ##############################################################
 ##############################################################
