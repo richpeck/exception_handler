@@ -294,9 +294,9 @@ We use **`ExceptionHandler`** in production, so have a vested interest in keepin
 
 ---
 
-<img src="readme/titles/changelog.jpg" title="Changelog" id="changelog" />
+<img src="readme/changelog/title.jpg" title="Changelog" id="changelog" />
 
-The next version will be **`0.7.0`**.
+The current version will be **`0.7.0`**.
 
 Functionality remains consistent with both releases, the main difference will be the way in which they handle backend processes. **`0.6.5`** completely overhauled the backend, making the `controller`, `model` and `middleware` much more streamlined.
 
@@ -304,41 +304,40 @@ The biggest update for **`0.6.5.`** has been the removal of most of the middlewa
 
 Here is a rundown of what to expect ...
 
-### → 0.7.0
- - Custom exceptions
- - Test suite integration
- - Exception "mapping" (choose which exceptions to handle)
- - Email notifications
- - Model backend
- - Sprockets 4+
- - Readme / wiki overhaul
+### → 0.7.0 :checkered_flag:
+ - [ ] Custom exceptions
+ - [x] Test suite integration
+ - [ ] Exception "mapping" (choose which exceptions to handle)
+ - [x] [Email](https://github.com/richpeck/exception_handler/wiki/2-Email)
+ - [x] Model backend
+ - [x] Sprockets 4+
+ - [x] Readme / wiki overhaul
 
-### → 0.6.5
- - Streamlined interface
- - ActiveRecord / Middleware overhaul
- - Supports Sprockets 4+ ([`manifest.js`](http://eileencodes.com/posts/the-sprockets-4-manifest/))
- - Email integration
- - Asset overhaul & improvement
- - Removed dependencies
+### → 0.6.5 :godmode:
+ - [x] Streamlined interface
+ - [x] ActiveRecord / Middleware overhaul
+ - [x] Supports Sprockets 4+ ([`manifest.js`](http://eileencodes.com/posts/the-sprockets-4-manifest/))
+ - [x] Email integration
+ - [x] Asset overhaul & improvement
+ - [x] Removed dependencies
 
-### → 0.5.0
- - Added locales
- - Email notifications
- - Full test suite
- - Rails 4.2 & Rails 5.0 native ([`request.env`](https://github.com/rails/rails/commit/05934d24aff62d66fc62621aa38dae6456e276be) fix)
- - Controller fixed
- - `DB` fixed
- - Legacy initializer support ([more](https://github.com/richpeck/exception_handler/wiki/1-Setup))
- - Rails asset management improvement
- - Reduced gem file
+### → 0.5.0 :earth_africa:
+ - [x] Added locales
+ - [x] Email notifications
+ - [x] Full test suite
+ - [x] Rails 4.2 & Rails 5.0 native ([`request.env`](https://github.com/rails/rails/commit/05934d24aff62d66fc62621aa38dae6456e276be) fix)
+ - [x] Controller fixed
+ - [x] `DB` fixed
+ - [x] Legacy initializer support ([more](https://github.com/richpeck/exception_handler/wiki/1-Setup))
+ - [x] Rails asset management improvement
+ - [x] Reduced gem file
 
-### → 0.4.7
-
- - New config system ([more](https://github.com/richpeck/exception_handler/wiki/1-Setup))
- - Fixed controller layout issues
- - Streamlined middleware
- - New layout & interface implementation
+### → 0.4.7 :computer:
+ - [x] New config system ([more](https://github.com/richpeck/exception_handler/wiki/1-Setup))
+ - [x] Fixed controller layout issues
+ - [x] Streamlined middleware
+ - [x] New layout & interface implementation
 
 ----------
 
-<strong>&copy; 2016</strong> <a href="http://www.fl.co.uk" target="_blank" align="absmiddle"><img src="readme/fl.png" height="22" title="Frontline Utilities LTD" alt="Frontline Utilities LTD" align="absmiddle" /></a>  <a href="http://stackoverflow.com/users/1143732/richard-peck" target="_blank" align="absmiddle"><img src="https://avatars0.githubusercontent.com/u/1104431" title="Richard Peck" align="absmiddle" height="22" alt="Richard Peck" /></a>
+<strong>:copyright: 2016</strong> <a href="http://www.frontlineutilities.co.uk" target="_blank" align="absmiddle"><img src="readme/fl.png" height="22" title="Frontline Utilities LTD" alt="Frontline Utilities LTD" align="absmiddle" /></a>  <a href="http://stackoverflow.com/users/1143732/richard-peck" target="_blank" align="absmiddle"><img src="https://avatars0.githubusercontent.com/u/1104431" title="Richard Peck" align="absmiddle" height="22" alt="Richard Peck" /></a>
