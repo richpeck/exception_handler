@@ -20,7 +20,7 @@
 ---
 
 <p align="center">
-  <img src="readme/version.png" /><br/>
+  <img src="readme/version.jpg" /><br/>
 </p>
 
 <p align="center">
@@ -296,7 +296,7 @@ We use **`ExceptionHandler`** in production, so have a vested interest in keepin
 
 <img src="readme/titles/changelog.jpg" title="Changelog" id="changelog" />
 
-The next version will be **`0.7.0`**. Current is **`0.6.5`**.
+The next version will be **`0.7.0`**. 
 
 Functionality remains consistent with both releases, the main difference will be the way in which they handle backend processes. **`0.6.5`** completely overhauled the backend, making the `controller`, `model` and `middleware` much more streamlined.
 
@@ -305,10 +305,13 @@ The biggest update for **`0.6.5.`** has been the removal of most of the middlewa
 Here is a rundown of what to expect ...
 
 ### → 0.7.0
- - Completely new style
  - Custom exceptions
  - Test suite integration
- - Full readme / wiki overhaul
+ - Exception "mapping" (choose which exceptions to handle)
+ - Email notifications
+ - Model backend
+ - Sprockets 4+
+ - Readme / wiki overhaul
 
 ### → 0.6.5
  - Streamlined interface
@@ -338,4 +341,4 @@ Here is a rundown of what to expect ...
 
 ----------
 
-<strong>&copy; 2016</strong> <a href="http://www.frontlineutilities.co.uk" target="_blank" align="absmiddle"><img src="readme/fl.png" height="22" title="Frontline Utilities LTD" alt="Frontline Utilities LTD" align="absmiddle" /></a>  <a href="http://stackoverflow.com/users/1143732/richard-peck" target="_blank" align="absmiddle"><img src="https://avatars0.githubusercontent.com/u/1104431" title="Richard Peck" align="absmiddle" height="22" alt="Richard Peck" /></a>
+<strong>&copy; 2016</strong> <a href="http://www.fl.co.uk" target="_blank" align="absmiddle"><img src="readme/fl.png" height="22" title="Frontline Utilities LTD" alt="Frontline Utilities LTD" align="absmiddle" /></a>  <a href="http://stackoverflow.com/users/1143732/richard-peck" target="_blank" align="absmiddle"><img src="https://avatars0.githubusercontent.com/u/1104431" title="Richard Peck" align="absmiddle" height="22" alt="Richard Peck" /></a>
