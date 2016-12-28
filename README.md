@@ -296,13 +296,13 @@ We use **`ExceptionHandler`** in production, so have a vested interest in keepin
 
 <img src="readme/changelog/title.jpg" title="Changelog" id="changelog" />
 
-The current version will be **`0.7.0`**.
+Current version is **`0.7.0`**.
 
-Functionality remains consistent with both releases, the main difference will be the way in which they handle backend processes. **`0.6.5`** completely overhauled the backend, making the `controller`, `model` and `middleware` much more streamlined.
+Functionality remains consistent with previous releases, main difference will be the way in which they handle backend processes. **`0.7.0`** completely overhauled the backend, making the `controller`, `model` and `middleware` much more streamlined.
 
-The biggest update for **`0.6.5.`** has been the removal of most of the middleware, putting the entire system into a central class. This not only allows us to centralize the data structure, but also remove many files which didn't matter.
+The biggest update for **`0.7.0.`** has been the removal of most middleware, putting the entire system into a central class. This not only allows us to centralize the data structure, but also remove many files which didn't matter.
 
-Here is a rundown of what to expect ...
+Here is a rundown of what's been implemented ...
 
 ### → 0.7.0 :checkered_flag:
  - [ ] Custom exceptions

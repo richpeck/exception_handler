@@ -3,7 +3,7 @@ module ExceptionHandler
 
     # => Response
     # => http://www.justinweiss.com/articles/respond-to-without-all-the-pain/
-    respond_to :html, :xml, :json
+    respond_to :all
 
     ##################################
     ##################################
