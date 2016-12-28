@@ -52,7 +52,7 @@
   <img src="readme/check_02.png" height="22" title="Rails 4 & 5 Compatible"   align="absmiddle" />&nbsp; <strong>FULLY Rails 4 & 5 Compatible</strong> &nbsp;
 </p>
 
-Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** even more powerful & efficient. Now you can use `ExceptionHandler` directly with a single click -- **plug and play** custom exception pages:
+Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** even more powerful & efficient. Now you can use `ExceptionHandler` directly with a single click → **plug and play** custom exception pages:
 
 <div align="center">
   <img src="readme/400.jpg" title="400 Errors" width="435" />
