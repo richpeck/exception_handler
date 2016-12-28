@@ -13,33 +13,11 @@ module ExceptionHandler
     attr_accessor :dev, :db, :email, :social, :layouts
 
     ###########################################
-
-      #Init
-      def initialize values=nil
-        defaults = values.present? ? Config::DEFAULTS.deep_merge!(values) : DEFAULTS
-        defaults.each do |k,v|
-          instance_variable_set("@#{k}",v) #-> http://apidock.com/ruby/Object/instance_variable_set
-        end
-
-        # => Errors
-        raise(Exception, "ExceptionHandler :: Valid Email Required") if @email && !@email.is_a?(String)
-        #raise(Exception, "ExceptionHandler :: Migration Required → Table \"#{db}\" doesn't exist") if @db && !ActiveRecord::Base.connection.table_exists?(db)
-      end
-
     ###########################################
 
-      # Public (Instance) Methods #
-
-      #DB
-      def db
-        @db == true ? TABLE_NAME : @db
-      end
-
-    ###########################################
-
-      #Default Table Name
+      # Table Name
       # Has to be "errors" because "exceptions" is a reserved word
-      TABLE_NAME = :errors
+      TABLE = :errors
 
       # Defaults
       # http://stackoverflow.com/a/8917301/1143732
@@ -60,6 +38,29 @@ module ExceptionHandler
         },
       }
 
+    ###########################################
+    ###########################################
+
+      #Init
+      def initialize values
+        # => Defaults
+        DEFAULTS.deep_merge!(values || {}).each do |k,v|
+          instance_variable_set("@#{k}",v)
+        end
+
+        # => Errors
+        raise(Exception, "ExceptionHandler :: Valid Email Required") if @email && !@email.is_a? String
+        #raise(Exception, "ExceptionHandler :: Migration Required → Table \"#{db}\" doesn't exist") if @db && !ActiveRecord::Base.connection.table_exists?(db)
+      end
+
+    ###########################################
+    ###########################################
+
+      def db
+        @db == true ? TABLE_NAME : @db
+      end
+
+    ###########################################
     ###########################################
 
   end
