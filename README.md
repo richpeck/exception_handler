@@ -296,7 +296,7 @@ We use **`ExceptionHandler`** in production, so have a vested interest in keepin
 
 <img src="readme/titles/changelog.jpg" title="Changelog" id="changelog" />
 
-The next version will be **`0.7.0`**. 
+The next version will be **`0.7.0`**.
 
 Functionality remains consistent with both releases, the main difference will be the way in which they handle backend processes. **`0.6.5`** completely overhauled the backend, making the `controller`, `model` and `middleware` much more streamlined.
 
