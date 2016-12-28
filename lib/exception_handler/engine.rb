@@ -28,6 +28,7 @@ module ExceptionHandler
         ExceptionHandler.config ||= ExceptionHandler::Config.new config.try(:exception_handler) # => Vars
         app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) } # => Middleware
         app.config.consider_all_requests_local = !ExceptionHandler.config.try(:dev) if Rails.env.development? # => Dev
+
       end
 
     #########################################################
