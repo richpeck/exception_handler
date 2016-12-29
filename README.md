@@ -278,9 +278,7 @@ You will also need to ensure your config db option is either `true` or `"table_n
 
 ----
 
-<p id="support">
-  <img src="readme/sections/support/title.png" title="1hr & 24 hr Support" />
-</p>
+### ![Support][support]
 
 We offer support through [GitHub](http://github.com/richpeck/exception_handler/issues) and [StackOverflow](http://stackoverflow.com/questions/ask?tags=ruby-on-rails+exception-handler).
 
@@ -304,17 +302,14 @@ The biggest update for **`0.7.0.`** has been the removal of most middleware, put
 
 Here is a rundown of what's been implemented ...
 
-| ### [→ 0.7.0](https://github.com/richpeck/exception_handler/releases/tag/0.7.0) |
-| --- |
-| - [ ] Custom exceptions |
-| - [x] Test suite integration |
-| - [ ] Exception "mapping" (choose which exceptions to handle) |
-| - [x] [Email](https://github.com/richpeck/exception_handler/wiki/2-Email) |
-| - [x] Model backend |
-| - [x] Sprockets 4+ |
-| - [x] Readme / wiki overhaul |
-
-
+### [→ 0.7.0](https://github.com/richpeck/exception_handler/releases/tag/0.7.0)
+ - [ ] Custom exceptions
+ - [x] Test suite integration
+ - [ ] Exception "mapping" (choose which exceptions to handle)
+ - [x] [Email](https://github.com/richpeck/exception_handler/wiki/2-Email)
+ - [x] Model backend
+ - [x] Sprockets 4+
+ - [x] Readme / wiki overhaul
 
 ### [→ 0.6.5](https://github.com/richpeck/exception_handler/releases/tag/0.6.5)
  - [x] Streamlined interface
@@ -353,7 +348,7 @@ You are welcome to contribute:
 
 ----------
 
-:copyright: <strong>2017</strong> [![Frontline Utilities LTD][fl]][frontlineutilities.co.uk][![Richard S Peck][profile]][stackoverflow.com]
+:copyright: <strong>2017</strong> [![Frontline Utilities LTD][fl]][frontlineutilities.co.uk] [![Richard S Peck][profile]][stackoverflow.com]
 
 <!-- ################################### -->
 <!-- ################################### -->
@@ -363,8 +358,9 @@ You are welcome to contribute:
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
-[changelog]:    readme/changelog/title.png "Changelog - 0.7.0"
-[contribution]: readme/contributions/title.png "Contributions"
+[support]:      readme/titles/support.png "Support"
+[changelog]:    readme/titles/changelog.png "Changelog"
+[contribution]: readme/titles/contributions.png "Contributions"
 [fl]:           readme/fl.jpg "Frontline Utilities LTD"
 [profile]:      https://avatars0.githubusercontent.com/u/1104431 "Richard Peck"
 
