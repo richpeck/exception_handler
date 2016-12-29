@@ -340,20 +340,29 @@ Here is a rundown of what's been implemented ...
 
 ----------
 
-<!-- Refs -->
-<!-- Comments http://stackoverflow.com/a/20885980/1143732 -->
-<!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
-
-<!-- Images -->
-[changelog]:        readme/changelog/title.png "Changelog - 0.7.0"
-[contribution]:     readme/contributions/title.png "Contributions"
-[fl]:               readme/fl.jpg "Frontline Utilities LTD"
-
-
 ## ![How To Contribute][contribution]
 
 You are welcome to contribute:
 
 ----------
 
-:copyright: <strong>2017</strong> <a href="http://www.frontlineutilities.co.uk" target="_blank" align="absmiddle"><img src="readme/fl.png" height="22" title="Frontline Utilities LTD" alt="Frontline Utilities LTD" align="absmiddle" /></a>  <a href="http://stackoverflow.com/users/1143732/richard-peck?tab=profile" target="_blank" align="absmiddle"><img src="https://avatars0.githubusercontent.com/u/1104431" title="Richard Peck" align="absmiddle" height="22" alt="Richard Peck" /></a>
+:copyright: <strong>2017</strong>
+
+![Frontline Utilities LTD]][fl]
+
+<a href="http://www.frontlineutilities.co.uk" target="_blank" align="absmiddle"><img src="readme/fl.png" height="22" title="Frontline Utilities LTD" alt="Frontline Utilities LTD" align="absmiddle" /></a>  <a href="http://stackoverflow.com/users/1143732/richard-peck?tab=profile" target="_blank" align="absmiddle"><img src="https://avatars0.githubusercontent.com/u/1104431" title="Richard Peck" align="absmiddle" height="22" alt="Richard Peck" /></a>
+
+<!-- ################################### -->
+<!-- ################################### -->
+
+<!-- Refs -->
+<!-- Comments http://stackoverflow.com/a/20885980/1143732 -->
+<!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
+
+<!-- Images -->
+[changelog]:    readme/changelog/title.png "Changelog - 0.7.0" height=50
+[contribution]: readme/contributions/title.png "Contributions"
+[fl]:           readme/fl.jpg "Frontline Utilities LTD"
+
+<!-- ################################### -->
+<!-- ################################### -->
