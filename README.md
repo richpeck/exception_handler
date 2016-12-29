@@ -348,9 +348,7 @@ You are welcome to contribute:
 
 ----------
 
-:copyright: <strong>2017</strong> [![Frontline Utilities LTD][fl]][frontlineutilities.co.uk] [![Richard Peck][profile]][stackoverflow.com]
-
-<a href="http://stackoverflow.com/users/1143732/richard-peck?tab=profile" align="absmiddle" ><img src="https://avatars0.githubusercontent.com/u/1104431" height="22" align="absmiddle" /></a>
+:copyright: <strong>2017</strong> [![Frontline Utilities LTD][fl]][frontlineutilities.co.uk] <a href="http://stackoverflow.com/users/1143732/richard-peck?tab=profile" align="absmiddle" ><img src="https://avatars0.githubusercontent.com/u/1104431" height="22" align="absmiddle" /></a>
 
 <!-- ################################### -->
 <!-- ################################### -->
