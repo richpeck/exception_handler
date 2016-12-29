@@ -294,7 +294,7 @@ We use **`ExceptionHandler`** in production, so have a vested interest in keepin
 
 ---
 
-##
+## ![Changelog - Current Version 0.7.0][changelog]
 
 Current version is **`0.7.0`**.
 
@@ -340,18 +340,12 @@ Here is a rundown of what's been implemented ...
 
 ----------
 
-<!-- Comment -->
+<!-- Refs -->
+<!-- Comments http://stackoverflow.com/a/20885980/1143732 -->
+<1-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
-[//]: # -------------------- #
-[//]: # References
-[//]: # -------------------- #
-[//]: # Comments => http://stackoverflow.com/a/20885980/1143732
-[//]: # Images   => https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images
-
-[//]: # -------------------- #
-[//]: # Images
-[//]: # -------------------- #
-[logo]
+<!-- Images -->
+[changelog]: readme/changelog/title.png "Changelog - 0.7.0"
 
 ----------
 
