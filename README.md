@@ -294,9 +294,9 @@ We use **`ExceptionHandler`** in production, so have a vested interest in keepin
 
 ---
 
-## ![Changelog - Current Version 0.7.0][changelog]
+### ![Changelog - Current Version 0.7.0][changelog]
 
-Current version is **`0.7.0`**.
+Current version is [**`0.7.0`**](https://github.com/richpeck/exception_handler/releases/latest)
 
 Functionality remains consistent with previous releases, main difference will be the way in which they handle backend processes. **`0.7.0`** completely overhauled the backend, making the `controller`, `model` and `middleware` much more streamlined.
 
