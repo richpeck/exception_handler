@@ -255,7 +255,7 @@ This works exactly the same as the other views in your app (IE the `exceptions c
 ----
 
 <br />
-<img src="readme/titles/db.jpg" title="Database" id="db" />
+![Database][db]
 
 If you want to store exceptions in your `db`, you will need to set up a **migration**:
 
@@ -358,6 +358,7 @@ You are welcome to contribute:
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
+[db]:           readme/titles/db.png
 [support]:      readme/titles/support.png "Support"
 [changelog]:    readme/titles/changelog.png "Changelog"
 [contribution]: readme/titles/contributions.png "Contributions"
@@ -368,7 +369,7 @@ You are welcome to contribute:
 [frontlineutilities.co.uk]: http://www.frontlineutilities.co.uk
 [stackoverflow.com]:        http://stackoverflow.com/users/1143732/richard-peck?tab=profile
 [fork]:                     #fork-destination-box
-[pull_requests]:            /pull
+[pull]:                     /pull
 
 <!-- ################################### -->
 <!-- ################################### -->
