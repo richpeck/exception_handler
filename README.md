@@ -369,7 +369,7 @@ You are welcome to contribute:
 [frontlineutilities.co.uk]: http://www.frontlineutilities.co.uk
 [stackoverflow.com]:        http://stackoverflow.com/users/1143732/richard-peck?tab=profile
 [fork]:                     #fork-destination-box
-[pull]:                     /pull
+[pull]:                     ./pulls
 
 <!-- ################################### -->
 <!-- ################################### -->
