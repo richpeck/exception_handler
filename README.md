@@ -294,7 +294,7 @@ We use **`ExceptionHandler`** in production, so have a vested interest in keepin
 
 ---
 
-# <img src="readme/sections/changelog/title.png" title="Changelog" id="changelog" height="50" />
+##
 
 Current version is **`0.7.0`**.
 
@@ -340,8 +340,16 @@ Here is a rundown of what's been implemented ...
 
 ----------
 
+[//]: # -------------------- #
+[//]: # References
+[//]: # -------------------- #
+[//]: # Comments => http://stackoverflow.com/a/20885980/1143732
+[//]: # Images   => https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images
 
-
+[//]: # -------------------- #
+[//]: # Images
+[//]: # -------------------- #
+[logo]
 
 ----------
 
