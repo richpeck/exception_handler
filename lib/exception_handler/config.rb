@@ -15,28 +15,28 @@ module ExceptionHandler
     ###########################################
     ###########################################
 
-      # Table Name
-      # Has to be "errors" because "exceptions" is a reserved word
-      TABLE = :errors
+    # Table Name
+    # Has to be "errors" because "exceptions" is a reserved word
+    TABLE = :errors
 
-      # Defaults
-      # http://stackoverflow.com/a/8917301/1143732
-      DEFAULTS = {
-        dev:    false, #-> defaults to "false" for dev mode
-        db:     false, #-> defaults to :errors if true, else use "table_name" / :table_name
-        email: 	false, #-> requires string email and ActionMailer
-        social: {
-          facebook: { name: "frontline.utilities", url: "https://facebook.com" },
-          twitter:  { name: "frontlineutils",      url: "http://twitter.com" },
-          youtube:  { name: "frontlineutils",      url: "https://youtube.com/user" },
-          linkedin: { name: "frontline-utilities", url: "https://linkedin.com/company" },
-          fusion:   { name: "flutils",             url: "https://frontlinefusion.com" }
-        },
-        layouts: {
-          "400" => nil, # => inherits from "ApplicationController" layout
-          "500" => "exception"
-        },
-      }
+    # Defaults
+    # http://stackoverflow.com/a/8917301/1143732
+    DEFAULTS = {
+      dev:    false, #-> defaults to "false" for dev mode
+      db:     false, #-> defaults to :errors if true, else use "table_name" / :table_name
+      email: 	false, #-> requires string email and ActionMailer
+      social: {
+        facebook: { name: "frontline.utilities", url: "https://facebook.com" },
+        twitter:  { name: "frontlineutils",      url: "http://twitter.com" },
+        youtube:  { name: "frontlineutils",      url: "https://youtube.com/user" },
+        linkedin: { name: "frontline-utilities", url: "https://linkedin.com/company" },
+        fusion:   { name: "flutils",             url: "https://frontlinefusion.com" }
+      },
+      layouts: {
+        "400" => nil, # => inherits from "ApplicationController" layout
+        "500" => "exception"
+      },
+    }
 
     ###########################################
     ###########################################

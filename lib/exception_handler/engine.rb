@@ -25,7 +25,7 @@ module ExceptionHandler
       # => This should be config.before_initialize but because ActiveRecord is not initialized, cannot check for table
       initializer :exception_handler, before: "better_errors.configure_rails_initialization" do |app|
 
-        # => Hooks
+        # => Vars
         ExceptionHandler.config ||= ExceptionHandler::Config.new config.try(:exception_handler)
 
         # => Middleware

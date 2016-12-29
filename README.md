@@ -59,7 +59,7 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
   <img src="readme/500.jpg" title="500 Errors" width="435" />
 </div>
 
-**ExceptionHandler** uses `config.exceptions_app` to catch & send errors to the [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
+**ExceptionHandler** uses `config.exceptions_app` to catch & send errors to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
 It uses data stored in `Rack` (`message`, `details`, `user agent`) to populate its `custom view`. This gives you the ability to **maintain your branding** *even* when your app experiences an exception.
 
@@ -369,7 +369,7 @@ You are welcome to contribute:
 [frontlineutilities.co.uk]: http://www.frontlineutilities.co.uk
 [stackoverflow.com]:        http://stackoverflow.com/users/1143732/richard-peck?tab=profile
 [fork]:                     #fork-destination-box
-[pull]:                     ./pulls
+[pull]:                     http://github.com/richpeck/exception_handler/pulls
 
 <!-- ################################### -->
 <!-- ################################### -->
