@@ -304,14 +304,17 @@ The biggest update for **`0.7.0.`** has been the removal of most middleware, put
 
 Here is a rundown of what's been implemented ...
 
-### [→ 0.7.0](https://github.com/richpeck/exception_handler/releases/tag/0.7.0)
- - [ ] Custom exceptions
- - [x] Test suite integration
- - [ ] Exception "mapping" (choose which exceptions to handle)
- - [x] [Email](https://github.com/richpeck/exception_handler/wiki/2-Email)
- - [x] Model backend
- - [x] Sprockets 4+
- - [x] Readme / wiki overhaul
+| ### [→ 0.7.0](https://github.com/richpeck/exception_handler/releases/tag/0.7.0) |
+| --- |
+| - [ ] Custom exceptions |
+| - [x] Test suite integration |
+| - [ ] Exception "mapping" (choose which exceptions to handle) |
+| - [x] [Email](https://github.com/richpeck/exception_handler/wiki/2-Email) |
+| - [x] Model backend |
+| - [x] Sprockets 4+ |
+| - [x] Readme / wiki overhaul |
+
+
 
 ### [→ 0.6.5](https://github.com/richpeck/exception_handler/releases/tag/0.6.5)
  - [x] Streamlined interface
