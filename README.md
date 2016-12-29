@@ -342,9 +342,9 @@ Here is a rundown of what's been implemented ...
 
 You are welcome to contribute:
 
-- Fork
+- [Fork][fork]
 - Write your contributions
-- Create pull request
+- [Create pull request][pull]
 
 ----------
 
@@ -367,6 +367,8 @@ You are welcome to contribute:
 <!-- Links -->
 [frontlineutilities.co.uk]: http://www.frontlineutilities.co.uk
 [stackoverflow.com]:        http://stackoverflow.com/users/1143732/richard-peck?tab=profile
+[fork]:                     #fork-destination-box
+[pull_requests]:            /pull
 
 <!-- ################################### -->
 <!-- ################################### -->
