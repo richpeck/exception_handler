@@ -342,10 +342,17 @@ Here is a rundown of what's been implemented ...
 
 <!-- Refs -->
 <!-- Comments http://stackoverflow.com/a/20885980/1143732 -->
-<1-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
+<!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
-[changelog]: readme/changelog/title.png "Changelog - 0.7.0"
+[changelog]:        readme/changelog/title.png "Changelog - 0.7.0"
+[contribution]:     readme/contributions/title.png "Contributions"
+[fl]:               readme/fl.jpg "Frontline Utilities LTD"
+
+
+## ![How To Contribute][contribution]
+
+You are welcome to contribute:
 
 ----------
 
