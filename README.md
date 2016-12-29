@@ -31,8 +31,8 @@
 </p>
 
 <p align="center">
-  <img src="readme/sections/branded/1.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/sections/branded/2.jpg" width="425" title="Fully Branded Error Pages" />
-  <img src="readme/sections/branded/3.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/sections/branded/4.jpg" width="425" title="Fully Branded Error Pages" />
+  <img src="readme/branded/1.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/2.jpg" width="425" title="Fully Branded Error Pages" />
+  <img src="readme/branded/3.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/4.jpg" width="425" title="Fully Branded Error Pages" />
 </p>
 
 ---
