@@ -43,13 +43,13 @@ module ExceptionHandler
 
       #Init
       def initialize values
-        # => Defaults
+        # => Vars
         DEFAULTS.deep_merge!(values || {}).each do |k,v|
           instance_variable_set("@#{k}",v)
         end
 
         # => Errors
-        raise(Exception, "ExceptionHandler :: Valid Email Required") if @email && !@email.is_a? String
+        raise(Exception, "ExceptionHandler :: Valid Email Required") if @email && !@email.is_a?(String)
         #raise(Exception, "ExceptionHandler :: Migration Required → Table \"#{db}\" doesn't exist") if @db && !ActiveRecord::Base.connection.table_exists?(db)
       end
 

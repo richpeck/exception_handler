@@ -31,8 +31,8 @@
 </p>
 
 <p align="center">
-  <img src="readme/branded/1.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/2.jpg" width="425" title="Fully Branded Error Pages" />
-  <img src="readme/branded/3.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/4.jpg" width="425" title="Fully Branded Error Pages" />
+  <img src="readme/sections/branded/1.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/sections/branded/2.jpg" width="425" title="Fully Branded Error Pages" />
+  <img src="readme/sections/branded/3.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/sections/branded/4.jpg" width="425" title="Fully Branded Error Pages" />
 </p>
 
 ---
@@ -111,7 +111,7 @@ It's completely unique - the **only** professional solution to catch, process & 
 or
 
     # Gemfile
-    gem 'exception_handler', '~> 0.6.5'
+    gem 'exception_handler', '~> 0.7.0'
 
 `ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](#user-content-defaults) - you just need to install the gem & let it run.
 
@@ -138,7 +138,7 @@ If you want to change *any* settings (detailed [below](#user-content-config)), y
 --
 
 
-**`ExceptionHandler 0.6.5`** has *drastically* improved our famous 1-click install.
+**`ExceptionHandler 0.7.0`** has *drastically* improved our famous 1-click install.
 
 Not only have we removed all the bloat, but our initialization process now relies on a *single* hook which will set all the config variables as required. This is stark difference to the myriad of poorly-designed gems which cause massive lag in your Rails initialization process. `ExceptionHandler` is now more streamlined than ever:
 
@@ -294,7 +294,7 @@ We use **`ExceptionHandler`** in production, so have a vested interest in keepin
 
 ---
 
-<img src="readme/changelog/title.jpg" title="Changelog" id="changelog" />
+<img src="readme/sections/changelog/title.png" title="Changelog" id="changelog" height="50" />
 
 Current version is **`0.7.0`**.
 
@@ -313,7 +313,7 @@ Here is a rundown of what's been implemented ...
  - [x] Sprockets 4+
  - [x] Readme / wiki overhaul
 
-### → 0.6.5 :godmode:
+### → 0.6.5
  - [x] Streamlined interface
  - [x] ActiveRecord / Middleware overhaul
  - [x] Supports Sprockets 4+ ([`manifest.js`](http://eileencodes.com/posts/the-sprockets-4-manifest/))
@@ -321,7 +321,7 @@ Here is a rundown of what's been implemented ...
  - [x] Asset overhaul & improvement
  - [x] Removed dependencies
 
-### → 0.5.0 :earth_africa:
+### → 0.5.0
  - [x] Added locales
  - [x] Email notifications
  - [x] Full test suite
@@ -332,7 +332,7 @@ Here is a rundown of what's been implemented ...
  - [x] Rails asset management improvement
  - [x] Reduced gem file
 
-### → 0.4.7 :computer:
+### → 0.4.7
  - [x] New config system ([more](https://github.com/richpeck/exception_handler/wiki/1-Setup))
  - [x] Fixed controller layout issues
  - [x] Streamlined middleware
