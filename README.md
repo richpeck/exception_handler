@@ -294,7 +294,7 @@ We use **`ExceptionHandler`** in production, so have a vested interest in keepin
 
 ---
 
-### ![Changelog - Current Version 0.7.0][changelog]
+# ![Changelog - Current Version 0.7.0][changelog]
 
 Current version is [**`0.7.0`**](https://github.com/richpeck/exception_handler/releases/latest)
 
@@ -344,12 +344,13 @@ Here is a rundown of what's been implemented ...
 
 You are welcome to contribute:
 
+- Fork
+- Write your contributions
+- Create pull request
+
 ----------
 
-:copyright: <strong>2017</strong>
-
-[![Frontline Utilities LTD][fl]][frontlineutilities.co.uk]
-[![Richard S Peck][profile]][stackoverflow.com]
+:copyright: <strong>2017</strong> [![Frontline Utilities LTD][fl]][frontlineutilities.co.uk][![Richard S Peck][profile]][stackoverflow.com]
 
 <!-- ################################### -->
 <!-- ################################### -->
