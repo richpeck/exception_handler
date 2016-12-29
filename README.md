@@ -279,7 +279,7 @@ You will also need to ensure your config db option is either `true` or `"table_n
 ----
 
 <p id="support">
-  <img src="readme/titles/support.jpg" title="1hr & 24 hr Support" />
+  <img src="readme/sections/support/title.png" title="1hr & 24 hr Support" />
 </p>
 
 We offer support through [GitHub](http://github.com/richpeck/exception_handler/issues) and [StackOverflow](http://stackoverflow.com/questions/ask?tags=ruby-on-rails+exception-handler).
@@ -294,7 +294,7 @@ We use **`ExceptionHandler`** in production, so have a vested interest in keepin
 
 ---
 
-<img src="readme/sections/changelog/title.png" title="Changelog" id="changelog" height="50" />
+# <img src="readme/sections/changelog/title.png" title="Changelog" id="changelog" height="50" />
 
 Current version is **`0.7.0`**.
 
@@ -304,7 +304,7 @@ The biggest update for **`0.7.0.`** has been the removal of most middleware, put
 
 Here is a rundown of what's been implemented ...
 
-### → 0.7.0 :checkered_flag:
+### [→ 0.7.0](https://github.com/richpeck/exception_handler/releases/tag/0.7.0)
  - [ ] Custom exceptions
  - [x] Test suite integration
  - [ ] Exception "mapping" (choose which exceptions to handle)
@@ -313,7 +313,7 @@ Here is a rundown of what's been implemented ...
  - [x] Sprockets 4+
  - [x] Readme / wiki overhaul
 
-### → 0.6.5
+### [→ 0.6.5](https://github.com/richpeck/exception_handler/releases/tag/0.6.5)
  - [x] Streamlined interface
  - [x] ActiveRecord / Middleware overhaul
  - [x] Supports Sprockets 4+ ([`manifest.js`](http://eileencodes.com/posts/the-sprockets-4-manifest/))
@@ -321,7 +321,7 @@ Here is a rundown of what's been implemented ...
  - [x] Asset overhaul & improvement
  - [x] Removed dependencies
 
-### → 0.5.0
+### [→ 0.5.0](https://github.com/richpeck/exception_handler/releases/tag/0.5.0)
  - [x] Added locales
  - [x] Email notifications
  - [x] Full test suite
@@ -332,11 +332,16 @@ Here is a rundown of what's been implemented ...
  - [x] Rails asset management improvement
  - [x] Reduced gem file
 
-### → 0.4.7
+### [→ 0.4.6](https://github.com/richpeck/exception_handler/releases/tag/0.4.6)
  - [x] New config system ([more](https://github.com/richpeck/exception_handler/wiki/1-Setup))
  - [x] Fixed controller layout issues
  - [x] Streamlined middleware
  - [x] New layout & interface implementation
+
+----------
+
+
+
 
 ----------
 
