@@ -109,7 +109,7 @@ It's completely unique - the **only** professional solution to catch, process & 
 
 or
 
-[![Gemfile][gemfile]][rubgems]
+[![Gemfile][gemfile]][rubygems]
 
 `ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](#user-content-defaults) - you just need to install the gem & let it run.
 
