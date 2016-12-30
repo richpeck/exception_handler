@@ -85,15 +85,11 @@ The power of **`ExceptionHandler`** lies in its capacity to access the [**`Activ
 
 `ActiveDispatch::ShowExceptions` references [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) whenever an exception is raised:
 
-<p align="center">
-  <img src="readme/exceptions_app_0.jpg" title="config.exceptions_app sets the exceptions application invoked by the ShowException middleware when an exception happens. Defaults to ActionDispatch::PublicExceptions.new(Rails.public_path)" />
-</p>
+![config.exceptions_app sets the exceptions application invoked by the ShowException middleware when an exception happens. Defaults to ActionDispatch::PublicExceptions.new(Rails.public_path)][exceptions_app_0]
 
 Because `ExceptionHandler` injects a controller into this hook, it gets FULL access to the erroneous request. This allows us to do everything from create a custom backend to different styling:
 
-<p align="center">
-  <img src="readme/exceptions_app.jpg"   title="Exceptions App" />
-</p>
+![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
 **ExceptionHandler** uses our [custom middleware](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/engine.rb#L28) to extract *all* the exception data for the request. Combined with a robust `config` infrastructure, it allows us to fully customize the entire exception protocol:
 
@@ -208,7 +204,7 @@ The benefit of this is that it gives you the ability to customize `ExceptionHand
 
 Want to test in the `dev` environment?
 
-    #config/application.rb
+    # config/application.rb
     config.exception_handler = {
       dev: true # -> Runs in development mode WITHOUT changing the app environment files
     }
@@ -363,12 +359,14 @@ You are welcome to contribute:
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
-[db]:           readme/titles/db.png
-[support]:      readme/titles/support.png "Support"
-[changelog]:    readme/titles/changelog.png "Changelog"
-[contribution]: readme/titles/contributions.png "Contributions"
-[fl]:           readme/fl.jpg "Frontline Utilities LTD"
-[profile]:      https://avatars0.githubusercontent.com/u/1104431 "R Peck"
+[exceptions_app_0]: readme/exceptions_app_0.jpg
+[exceptions_app]:   readme/exceptions_app.jpg
+[db]:               readme/titles/db.png
+[support]:          readme/titles/support.png "Support"
+[changelog]:        readme/titles/changelog.png "Changelog"
+[contribution]:     readme/titles/contributions.png "Contributions"
+[fl]:               readme/fl.jpg "Frontline Utilities LTD"
+[profile]:          https://avatars0.githubusercontent.com/u/1104431 "R Peck"
 
 <!-- Links -->
 [frontlineutilities.co.uk]: http://www.frontlineutilities.co.uk
