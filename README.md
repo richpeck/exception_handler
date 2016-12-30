@@ -61,13 +61,13 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
 
 **ExceptionHandler** uses `config.exceptions_app` to catch & send errors to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
-It uses data stored in the `request` (`message`, `details`, `user agent`) to populate our `custom view`. This gives us the ability to **maintain your branding** *even* when your app experiences an exception:
+It uses data stored in the **`request`** (`message`, `details`, `user agent`) to populate our `custom view`. This gives us the ability to **maintain your branding** *even* when your app experiences an exception:
 
-[[ image ]]
+| |
 
 `ExceptionHandler` creates **100% branded error pages in Rails**.
 
-No more poorly designed `404` or `500` errors - `ExceptionHandler` hooks DIRECTLY into your existing CSS to create a compelling & professional design with NO work on your part.
+No more poorly designed `404` or `500` errors - `ExceptionHandler` hooks DIRECTLY into your existing CSS to create a compelling & professional design with NO work on your part ...
 
 ----
 
@@ -79,9 +79,7 @@ No more poorly designed `404` or `500` errors - `ExceptionHandler` hooks DIRECTL
 
 The power of **`ExceptionHandler`** lies in its capacity to access the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
 
-<p align="center">
-  <img src="readme/middleware.jpg" title="Exceptions handled by the ActiveDispatch::ShowExceptions Middleware" />
-</p>
+![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
 `ActiveDispatch::ShowExceptions` references [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) whenever an exception is raised:
 
@@ -91,7 +89,7 @@ Because `ExceptionHandler` injects our own controller into this hook, it gets FU
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
-**ExceptionHandler** uses our [custom middleware](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/engine.rb#L28) to extract *all* the exception data for the request. Combined with a robust `config` infrastructure, it allows us to fully customize the entire exception protocol:
+**ExceptionHandler** uses our [custom middleware](lib/exception_handler/engine.rb#L28) to extract *all* the exception data for the request. Combined with a robust `config` infrastructure, it allows us to fully customize the entire exception protocol:
 
 <p align="center">
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
@@ -107,12 +105,11 @@ It's completely unique - the **only** professional solution to catch, process & 
   <strong>You Don't Need <i>Any</i> Configuration To Run ExceptionHandler</strong>
 </p>
 
-    gem install "exception_handler"
+![Gem][gem]
 
 or
 
-    # Gemfile
-    gem 'exception_handler', '~> 0.7.0'
+![Gemfile][gemfile]
 
 `ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](#user-content-defaults) - you just need to install the gem & let it run.
 
@@ -359,6 +356,9 @@ You are welcome to contribute:
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
+[gem]:              readme/gem.jpg
+[gemfile]:          readme/gemfile.jpg
+[middleware]:       readme/middleware.jpg
 [exceptions_app]:   readme/exceptions_app.jpg
 [db]:               readme/titles/db.png
 [support]:          readme/titles/support.png "Support"
