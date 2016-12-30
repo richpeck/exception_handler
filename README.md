@@ -72,7 +72,7 @@ No more poorly designed `404` or `500` errors - `ExceptionHandler` hooks DIRECTL
 ----
 
 <p align="center">
-  ![Middleware-Powered Exceptions][middleware_title]
+  <img src="readme/titles/middleware.jpg" title="Middleware-Powered Exceptions" />
 </p>
 
 The power of **`ExceptionHandler`** lies in its capacity to access the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
@@ -87,13 +87,11 @@ Because `ExceptionHandler` injects our own controller into this hook, it gets FU
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
-**ExceptionHandler** uses our [custom middleware](lib/exception_handler/engine.rb#L28) to extract *all* the exception data for the request. Combined with a robust `config` infrastructure, it allows us to fully customize the entire exception protocol:
-
 <p align="center">
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
 </p>
 
-It's completely unique - the **only** professional solution to catch, process & handle exceptions in Rails.
+This is the **only** professional solution to catch, process & handle exceptions in Rails.
 
 ----------
 
@@ -354,7 +352,6 @@ You are welcome to contribute:
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
-[middleware_title]: readme/titles/middleware.jpg
 [gem]:              readme/gem.jpg
 [gemfile]:          readme/gemfile.jpg
 [middleware]:       readme/middleware.jpg
