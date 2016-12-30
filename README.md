@@ -93,7 +93,7 @@ Because `ExceptionHandler` injects our own controller into this hook, it gets FU
 </p>
 
 <p align="center">
-  **The *only* professional solution to catch, process & handle exceptions in Rails.**
+  <strong>The <i>only</i> professional solution to catch, process & handle exceptions in Rails.</strong>
 </p>
 
 ----------
