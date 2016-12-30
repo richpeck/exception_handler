@@ -85,9 +85,9 @@ The power of **`ExceptionHandler`** lies in its capacity to access the [**`Activ
 
 `ActiveDispatch::ShowExceptions` references [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) whenever an exception is raised:
 
-![config.exceptions_app sets the exceptions application invoked by the ShowException middleware when an exception happens. Defaults to ActionDispatch::PublicExceptions.new(Rails.public_path)][exceptions_app_0]
+> **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**.
 
-Because `ExceptionHandler` injects a controller into this hook, it gets FULL access to the erroneous request. This allows us to do everything from create a custom backend to different styling:
+Because `ExceptionHandler` injects our own controller into this hook, it gets FULL access to the erroneous request. This allows us to do everything from create a custom backend to different styling:
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
@@ -359,7 +359,6 @@ You are welcome to contribute:
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
-[exceptions_app_0]: readme/exceptions_app_0.jpg
 [exceptions_app]:   readme/exceptions_app.jpg
 [db]:               readme/titles/db.png
 [support]:          readme/titles/support.png "Support"
