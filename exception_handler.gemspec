@@ -18,10 +18,6 @@ module ExceptionHandler
   end
 end
 
-# => Declaration
-# => https://github.com/rails/rails/blob/master/rails.gemspec#L1
-version = ExceptionHandler::VERSION::STRING
-
 ##############################################################
 ##############################################################
 
@@ -33,7 +29,7 @@ Gem::Specification.new do |s|
   # => General
   s.platform      = Gem::Platform::RUBY
   s.name          = "exception_handler"
-  s.version       = version
+  s.version       = ExceptionHandler::VERSION::STRING
 
   # => Author
   s.authors       = ["Richard Peck"]
