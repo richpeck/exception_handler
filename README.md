@@ -63,7 +63,8 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
 
 It uses data stored in the **`request`** (`message`, `details`, `user agent`) to populate our `custom view`. This gives us the ability to **maintain your branding** *even* when your app experiences an exception:
 
-| |
+| Features |
+| TEST
 
 `ExceptionHandler` creates **100% branded error pages in Rails**.
 
@@ -91,7 +92,9 @@ Because `ExceptionHandler` injects our own controller into this hook, it gets FU
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
 </p>
 
-This is the **only** professional solution to catch, process & handle exceptions in Rails.
+<p align="center">
+  **The *only* professional solution to catch, process & handle exceptions in Rails.**
+</p>
 
 ----------
 
