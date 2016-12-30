@@ -89,11 +89,13 @@ Because `ExceptionHandler` injects our own controller into this hook, it gets FU
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
 <p align="center">
-  <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
+  <strong>The <i>only</i> professional solution to catch, process & handle exceptions in Rails:</strong>
 </p>
 
 <p align="center">
-  <strong>The <i>only</i> professional solution to catch, process & handle exceptions in Rails.</strong>
+  <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
+  <br />
+  <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
 </p>
 
 ----------
