@@ -59,11 +59,11 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
   <img src="readme/500.jpg" title="500 Errors" width="435" />
 </div>
 
-**ExceptionHandler** uses `config.exceptions_app` to catch & send errors to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb)
+**ExceptionHandler** uses `config.exceptions_app` to catch & send errors to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
-It uses data stored in `Rack` (`message`, `details`, `user agent`) to populate its `custom view`. This gives you the ability to **maintain your branding** *even* when your app experiences an exception:
+It uses data stored in the `request` (`message`, `details`, `user agent`) to populate our `custom view`. This gives us the ability to **maintain your branding** *even* when your app experiences an exception:
 
-[[ image ]]d
+[[ image ]]
 
 `ExceptionHandler` creates **100% branded error pages in Rails**.
 
@@ -85,21 +85,22 @@ The power of **`ExceptionHandler`** lies in its capacity to access the [**`Activ
 
 `ActiveDispatch::ShowExceptions` references [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) whenever an exception is raised.
 
-**ExceptionHandler** injects our `ExceptionController` into this hook to provide a custom response:
+Because `ExceptionHandler` injects a controller into this hook, it gets FULL access to the erroneous request. This allows us to do everything from create a custom backend to different styling.
 
-> **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**.
+By default, Rails handles errors through the routes. This is bloated and inefficient - **`ExceptionHandler`** gives FULL control:
+
+> **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**
 
 <p align="center">
   <img src="readme/exceptions_app.jpg" title="Exceptions App" />
 </p>
 
-As opposed to other exception suites (which use the `routes`), this gives you DIRECT access to the exception through the middleware stack, straight to the [`ExceptionController`](/app/controllers/exception_handler/exception_controller.rb):
+
+**ExceptionHandler** uses [custom middleware](https://github.com/richpeck/exception_handler/blob/0.5/lib/exception_handler/parse.rb) to extract *all* the exception data for the request. Not only is this the most succinct & efficient way to do this, it also allows you to customize the *entire* fault-recovery process:
 
 <p align="center">
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
 </p>
-
-**ExceptionHandler** uses [custom middleware](https://github.com/richpeck/exception_handler/blob/0.5/lib/exception_handler/parse.rb) to extract *all* the exception data for the request. Not only is this the most succinct & efficient way to do this, it also allows you to customize the *entire* fault-recovery process.
 
 It's completely unique - the **only** professional solution to catch, process & handle exceptions in Rails.
 
