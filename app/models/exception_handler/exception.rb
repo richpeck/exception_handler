@@ -3,13 +3,13 @@ module ExceptionHandler
   ############################################################
   ############################################################
 
-  # => Search Bots
-  # => Used in "Exception" class
-  BOTS = %w(Baidu Gigabot Googlebot libwww-per lwp-trivial msnbot SiteUptime Slurp Wordpress ZIBB ZyBorg Yandex Jyxobot Huaweisymantecspider ApptusBot)
+    # => Search Bots
+    # => Used in "Exception" class
+    BOTS = %w(Baidu Gigabot Googlebot libwww-per lwp-trivial msnbot SiteUptime Slurp Wordpress ZIBB ZyBorg Yandex Jyxobot Huaweisymantecspider ApptusBot)
 
-  # => Attributes
-  # => Determine schema size etc
-  ATTRS = %i(class_name status message trace target referrer params user_agent)
+    # => Attributes
+    # => Determine schema etc
+    ATTRS = %i(class_name status message trace target referrer params user_agent)
 
   ############################################################
   ############################################################

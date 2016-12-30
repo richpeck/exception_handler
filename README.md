@@ -300,7 +300,7 @@ Functionality remains consistent with previous releases, main difference will be
 
 The biggest update for **`0.7.0.`** has been the removal of most middleware, putting the entire system into a central class. This not only allows us to centralize the data structure, but also remove many files which didn't matter.
 
-Here is a rundown of what's been implemented ...
+Here is a rundown of what's been implemented ↴
 
 ### [→ 0.7.0](https://github.com/richpeck/exception_handler/releases/tag/0.7.0)
  - [ ] Custom exceptions

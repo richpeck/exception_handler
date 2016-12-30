@@ -19,6 +19,9 @@ module ExceptionHandler
     # Has to be "errors" because "exceptions" is a reserved word
     TABLE = :errors
 
+    ###########################################
+    ###########################################
+
     # Defaults
     # http://stackoverflow.com/a/8917301/1143732
     DEFAULTS = {
@@ -57,7 +60,7 @@ module ExceptionHandler
     ###########################################
 
       def db
-        @db == true ? TABLE_NAME : @db
+        @db == true ? TABLE : @db
       end
 
     ###########################################
