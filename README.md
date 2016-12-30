@@ -72,9 +72,7 @@ No more poorly designed `404` or `500` errors - `ExceptionHandler` hooks DIRECTL
 ----
 
 <p align="center">
-  <br />
-  <img src="readme/titles/middleware.jpg" title="Middleware Powered Exceptions" width="300" />
-  <br />
+  ![Middleware-Powered Exceptions][middleware_title]
 </p>
 
 The power of **`ExceptionHandler`** lies in its capacity to access the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
@@ -356,6 +354,7 @@ You are welcome to contribute:
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
+[middleware_title]: readme/titles/middleware.jpg
 [gem]:              readme/gem.jpg
 [gemfile]:          readme/gemfile.jpg
 [middleware]:       readme/middleware.jpg
