@@ -73,14 +73,14 @@ No more poorly designed `404` or `500` errors - `ExceptionHandler` hooks DIRECTL
 ----
 
 <p align="center">
-  <img src="readme/titles/middleware.jpg" title="Middleware-Powered Exceptions" width="400" />
+  <img src="readme/titles/middleware.jpg" title="Middleware-Powered Exceptions" width="350" />
 </p>
 
-The power of **`ExceptionHandler`** lies in its capacity to access the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
+**`ExceptionHandler's`** secret is its access to the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-`ActiveDispatch::ShowExceptions` references [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) whenever an exception is raised:
+`ActiveDispatch::ShowExceptions` references [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) when an exception is raised:
 
 > **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**.
 
