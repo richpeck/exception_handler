@@ -95,7 +95,7 @@ Because `ExceptionHandler` injects a controller into this hook, it gets FULL acc
   <img src="readme/exceptions_app.jpg"   title="Exceptions App" />
 </p>
 
-**ExceptionHandler** uses our [custom middleware](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/engine.rb) to extract *all* the exception data for the request. Combined with a robust `config` infrastructure, it allows us to fully customize the entire exception protocol:
+**ExceptionHandler** uses our [custom middleware](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/engine.rb#L28) to extract *all* the exception data for the request. Combined with a robust `config` infrastructure, it allows us to fully customize the entire exception protocol:
 
 <p align="center">
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
