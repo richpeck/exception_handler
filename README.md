@@ -52,16 +52,22 @@
   <img src="readme/check_02.png" height="22" title="Rails 4 & 5 Compatible"   align="absmiddle" />&nbsp; <strong align="absmiddle">FULLY Rails 4 & 5 Compatible</strong> &nbsp;
 </p>
 
-Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** even more powerful & efficient. Now you can use `ExceptionHandler` directly with a single click → **plug and play** custom exception pages ↴
+Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** even more powerful & efficient. Now you can use `ExceptionHandler` directly with a single click - **plug and play** custom exception pages ↴
 
 <div align="center">
   <img src="readme/400.jpg" title="400 Errors" width="435" />
   <img src="readme/500.jpg" title="500 Errors" width="435" />
 </div>
 
-**ExceptionHandler** uses `config.exceptions_app` to catch & send errors to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
+**ExceptionHandler** uses `config.exceptions_app` to catch & send errors to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb)
 
-It uses data stored in `Rack` (`message`, `details`, `user agent`) to populate its `custom view`. This gives you the ability to **maintain your branding** *even* when your app experiences an exception.
+It uses data stored in `Rack` (`message`, `details`, `user agent`) to populate its `custom view`. This gives you the ability to **maintain your branding** *even* when your app experiences an exception:
+
+[[ image ]]d
+
+`ExceptionHandler` creates **100% branded error pages in Rails**.
+
+No more poorly designed `404` or `500` errors - `ExceptionHandler` hooks DIRECTLY into your existing CSS to create a compelling & professional design with NO work on your part.
 
 ----
 
@@ -77,9 +83,9 @@ The power of **`ExceptionHandler`** lies in its capacity to access the [**`Activ
   <img src="readme/middleware.jpg" title="Exceptions handled by the ActiveDispatch::ShowExceptions Middleware" />
 </p>
 
-Rails invokes [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) whenever an exception is raised.
+`ActiveDispatch::ShowExceptions` references [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) whenever an exception is raised.
 
-**ExceptionHandler** injects our `ExceptionController` into this hook to provide the most efficient response:
+**ExceptionHandler** injects our `ExceptionController` into this hook to provide a custom response:
 
 > **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**.
 
@@ -93,7 +99,7 @@ As opposed to other exception suites (which use the `routes`), this gives you DI
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
 </p>
 
-**ExceptionHandler** uses [custom middleware](https://github.com/richpeck/exception_handler/blob/0.5/lib/exception_handler/parse.rb) to extract *all* the exception data for the request. Not only is this the most succinct, efficient way to do this, it also allows you to customize the *entire* fault-recovery process.
+**ExceptionHandler** uses [custom middleware](https://github.com/richpeck/exception_handler/blob/0.5/lib/exception_handler/parse.rb) to extract *all* the exception data for the request. Not only is this the most succinct & efficient way to do this, it also allows you to customize the *entire* fault-recovery process.
 
 It's completely unique - the **only** professional solution to catch, process & handle exceptions in Rails.
 
@@ -115,7 +121,7 @@ or
 
 `ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](#user-content-defaults) - you just need to install the gem & let it run.
 
-If you want to change *any* settings (detailed [below](#user-content-config)), you **simply** need to change `config/application.rb` / `config/environments/your_env.rb`. The ***POWER*** of this *new config system* means you're able to deploy `ExceptionHandler` in the most unobtrusive, versatile way possible.
+If you want to change *any* settings (detailed [below](#user-content-config)), you **simply** need to change `config/application.rb` or `config/environments/your_env.rb`. The ***POWER*** of this *new config system* means you're able to deploy `ExceptionHandler` in the most unobtrusive, versatile way possible.
 
 <p align="center">
   <a href="http://rubygems.org/gems/exception_handler" target="_blank">
