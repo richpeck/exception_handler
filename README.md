@@ -83,20 +83,19 @@ The power of **`ExceptionHandler`** lies in its capacity to access the [**`Activ
   <img src="readme/middleware.jpg" title="Exceptions handled by the ActiveDispatch::ShowExceptions Middleware" />
 </p>
 
-`ActiveDispatch::ShowExceptions` references [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) whenever an exception is raised.
-
-Because `ExceptionHandler` injects a controller into this hook, it gets FULL access to the erroneous request. This allows us to do everything from create a custom backend to different styling.
-
-By default, Rails handles errors through the routes. This is bloated and inefficient - **`ExceptionHandler`** gives FULL control:
-
-> **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**
+`ActiveDispatch::ShowExceptions` references [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) whenever an exception is raised:
 
 <p align="center">
-  <img src="readme/exceptions_app.jpg" title="Exceptions App" />
+  <img src="readme/exceptions_app_0.jpg" title="config.exceptions_app sets the exceptions application invoked by the ShowException middleware when an exception happens. Defaults to ActionDispatch::PublicExceptions.new(Rails.public_path)" />
 </p>
 
+Because `ExceptionHandler` injects a controller into this hook, it gets FULL access to the erroneous request. This allows us to do everything from create a custom backend to different styling:
 
-**ExceptionHandler** uses [custom middleware](https://github.com/richpeck/exception_handler/blob/0.5/lib/exception_handler/parse.rb) to extract *all* the exception data for the request. Not only is this the most succinct & efficient way to do this, it also allows you to customize the *entire* fault-recovery process:
+<p align="center">
+  <img src="readme/exceptions_app.jpg"   title="Exceptions App" />
+</p>
+
+**ExceptionHandler** uses our [custom middleware](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/engine.rb) to extract *all* the exception data for the request. Combined with a robust `config` infrastructure, it allows us to fully customize the entire exception protocol:
 
 <p align="center">
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
@@ -107,7 +106,6 @@ It's completely unique - the **only** professional solution to catch, process & 
 ----------
 
 <p align="center" id="install">
-  <br />
   <img src="readme/titles/install.jpg" title="1 Click Install for ExceptionHandler 5 on Rails 5" width="350" />
   <br />
   <strong>You Don't Need <i>Any</i> Configuration To Run ExceptionHandler</strong>
