@@ -105,11 +105,11 @@ It's completely unique - the **only** professional solution to catch, process & 
   <strong>You Don't Need <i>Any</i> Configuration To Run ExceptionHandler</strong>
 </p>
 
-![Gem][gem]
+[![Gem][gem]][rubygems]
 
 or
 
-![Gemfile][gemfile]
+[![Gemfile][gemfile]][rubgems]
 
 `ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](#user-content-defaults) - you just need to install the gem & let it run.
 
@@ -368,6 +368,7 @@ You are welcome to contribute:
 [profile]:          https://avatars0.githubusercontent.com/u/1104431 "R Peck"
 
 <!-- Links -->
+[rubygems]:                 http://rubygems.org/gems/exception_handler
 [frontlineutilities.co.uk]: http://www.frontlineutilities.co.uk
 [stackoverflow.com]:        http://stackoverflow.com/users/1143732/richard-peck?tab=profile
 [fork]:                     #fork-destination-box
