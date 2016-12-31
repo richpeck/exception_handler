@@ -38,7 +38,7 @@
 ---
 
 <p align="center">
-  <img src="readme/05.jpg" title="Version 0.7.0 Broke All Boundaries" />
+  <img src="readme/rails.jpg" title="Rails 5 Compatible" />
 </p>
 
 <p align="center">
