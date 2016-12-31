@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <img src="readme/titles/reworked.png" title="Reworked for Rails 5" width="450" />
+  <img src="readme/titles/reworked.png" title="Reworked for Rails 5" width="600" />
 </p>
 
 <p align="center">
