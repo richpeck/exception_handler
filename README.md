@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <img src="readme/titles/reworked.png" title="Reworked for Rails 5" width="600" />
+  <img src="readme/titles/reworked.png" title="Reworked for Rails 5" width="650" />
 </p>
 
 <p align="center">
@@ -101,9 +101,9 @@ Because `ExceptionHandler` injects our own controller into this hook, it gets FU
 ----------
 
 <p align="center" id="install">
-  <img src="readme/titles/install.jpg" title="1 Click Install for ExceptionHandler 5 on Rails 5" width="400" />
+  <img src="readme/titles/install.png" title="1 Click Install for ExceptionHandler 0.7.0 on Rails 5" width="450" />
   <br />
-  <strong>↓ You Don't Need <i>Any</i> Configuration To Run ExceptionHandler ↓</strong>
+  <strong>↓ <u>NO</u> Configuration Needed ↓</strong>
 </p>
 
 [![Gem][gem]][rubygems]
@@ -127,11 +127,13 @@ If you want to change *any* settings (detailed [below](#user-content-config)), y
 
 <p align="center" id="config">
   <img src="readme/titles/setup.jpg" title="Instant Custom Error Pages For Rails 4 & 5" />
-<br />
-  <a href="#defaults"><img src="readme/titles/setup/defaults.jpg" height="50" align="absmiddle" /></a>
-  <a href="#dev"><img src="readme/titles/setup/dev.jpg" height="50 align="absmiddle" /></a>
-  <a href="#email"><img src="readme/titles/setup/email.jpg" height="50 align="absmiddle" /></a>
-  <a href="#views"><img src="readme/titles/setup/views.jpg" height="50" align="absmiddle" /></a>
+</p>
+
+<p align="center">
+  <a href="#defaults"><img src="readme/titles/db.png" height="50" align="absmiddle" /></a>
+  <a href="#dev"><img src="readme/titles/dev.png" height="50 align="absmiddle" /></a>
+  <a href="#email"><img src="readme/titles/email.png" height="50 align="absmiddle" /></a>
+  <a href="#views"><img src="readme/titles/views.png" height="50" align="absmiddle" /></a>
 </p>
 
 --
