@@ -38,10 +38,6 @@
 ---
 
 <p align="center">
-  <img src="readme/rails.jpg" title="Fully Rails 5 Compatible" />
-</p>
-
-<p align="center">
   <img src="readme/titles/compatible.png" title="Fully Rails 5 Compatible" width="600" />
 </p>
 
@@ -52,11 +48,11 @@
   <img src="readme/check_02.png" height="22" title="Rails 4 & 5 Compatible"   align="absmiddle" />&nbsp; <strong align="absmiddle">Instant Setup</strong> &nbsp;
 </p>
 
-Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** even more powerful & efficient. Now you can use `ExceptionHandler` directly with a single click - **plug and play** custom exception pages ↴
+Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** even more powerful & efficient. Now you can use `ExceptionHandler` directly with a single click - **plug and play** custom exception pages:
 
 <div align="center">
-  <img src="readme/400.jpg" title="400 Errors" width="435" />
-  <img src="readme/500.jpg" title="500 Errors" width="435" />
+  <img src="readme/404.png" title="400 Errors" width="440" />
+  <img src="readme/500.jpg" title="500 Errors" width="440" />
 </div>
 
 **ExceptionHandler** uses `config.exceptions_app` to catch & send errors to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
