@@ -39,7 +39,7 @@
 
 <p align="center">
   <br />
-  <img src="readme/titles/compatible.png" title="Fully Rails 5 Compatible" width="600" />
+  <img src="readme/titles/compatible.png" title="Fully Rails 5 Compatible" />
 </p>
 
 <p align="center">
