@@ -87,7 +87,7 @@ Because `ExceptionHandler` injects our own controller into this hook, it gets FU
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
 <p align="center">
-  <strong>This is the <i>only</i> professional solution to catch, process & handle exceptions in Rails:</strong>
+  <strong>This is the <i>ONLY</i> professional solution to catch, process & handle exceptions in Rails:</strong>
 </p>
 
 <p align="center">
@@ -112,13 +112,6 @@ or
 `ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](#user-content-defaults) - you just need to install the gem & let it run.
 
 If you want to change *any* settings (detailed [below](#user-content-config)), you **simply** need to change `config/application.rb` or `config/environments/your_env.rb`. The ***POWER*** of this *new config system* means you're able to deploy `ExceptionHandler` in the most unobtrusive, versatile way possible.
-
-<p align="center">
-  <a href="http://rubygems.org/gems/exception_handler" target="_blank">
-    <img src="readme/rubygems.jpg" title="30,000+ Downloads Through RubyGems" />
-    <br />
-  </a>
-</p>
 
 ----
 
