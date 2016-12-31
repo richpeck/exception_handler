@@ -38,11 +38,7 @@
 ---
 
 <p align="center">
-  <img src="readme/rails.jpg" title="Rails 5 Compatible" />
-</p>
-
-<p align="center">
-  <img src="readme/titles/reworked.png" title="Reworked for Rails 5" width="650" />
+  <img src="readme/rails.jpg" title="Fully Rails 5 Compatible" />
 </p>
 
 <p align="center">
