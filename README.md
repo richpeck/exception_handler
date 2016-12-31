@@ -73,10 +73,11 @@ No more poorly designed `404` or `500` errors - `ExceptionHandler` hooks DIRECTL
 ----
 
 <p align="center">
+  <br />
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="450" />
 </p>
 
-**`ExceptionHandler's`** secret is access to the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
+**`ExceptionHandler's`** secret is the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
@@ -101,9 +102,8 @@ Because `ExceptionHandler` injects our own controller into this hook, it gets FU
 ----------
 
 <p align="center" id="install">
-  <img src="readme/titles/install.png" title="1 Click Install for ExceptionHandler 0.7.0 on Rails 5" width="450" />
   <br />
-  <strong>↓ <u>NO</u> Configuration Needed ↓</strong>
+  <img src="readme/titles/install.png" title="1 Click Install for ExceptionHandler 0.7.0 on Rails 5" width="450" />
 </p>
 
 [![Gem][gem]][rubygems]
