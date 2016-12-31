@@ -38,11 +38,11 @@
 ---
 
 <p align="center">
-  <img src="readme/05.jpg" title="Reworked for Rails 5" />
+  <img src="readme/05.jpg" title="Version 0.7.0 Broke All Boundaries" />
 </p>
 
 <p align="center">
-  <img src="readme/titles/reworked.jpg" title="Reworked for Rails 5" width="450" />
+  <img src="readme/titles/reworked.png" title="Reworked for Rails 5" width="450" />
 </p>
 
 <p align="center">
@@ -61,7 +61,7 @@ Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** 
 
 **ExceptionHandler** uses `config.exceptions_app` to catch & send errors to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
-It uses data stored in the **`request`** (`message`, `details`, `user agent`) to populate our `custom view`. This gives us the ability to **maintain your branding** *even* when your app experiences an exception:
+By managing the **`request`** directly (`message`, `details`, `user agent`), we can populate our `custom view` with as much information as required. This gives us the ability to **maintain your branding** *even* when your app experiences an exception:
 
 | Features |
 | TEST
@@ -76,7 +76,7 @@ No more poorly designed `404` or `500` errors - `ExceptionHandler` hooks DIRECTL
   <img src="readme/titles/middleware.jpg" title="Middleware-Powered Exceptions" width="350" />
 </p>
 
-**`ExceptionHandler's`** secret is its access to the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
+**`ExceptionHandler's`** secret is access to the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
@@ -89,7 +89,7 @@ Because `ExceptionHandler` injects our own controller into this hook, it gets FU
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
 <p align="center">
-  <strong>The <i>only</i> professional solution to catch, process & handle exceptions in Rails:</strong>
+  <strong>This is the <i>only</i> professional solution to catch, process & handle exceptions in Rails:</strong>
 </p>
 
 <p align="center">
@@ -196,9 +196,7 @@ The benefit of this is that it gives you the ability to customize `ExceptionHand
 
 ----
 
-<p id="dev">
-  <img src="readme/titles/dev.jpg" title="Development Mode" />
-</p>
+![Development Mode][dev]
 
 Want to test in the `dev` environment?
 
@@ -231,8 +229,7 @@ You'll need to [generate](#user-content-view) it into your application before be
 
 ----
 
-<br />
-<img src="readme/titles/view.jpg" title="Views" id="view" />
+![View][view]
 
 **`ExceptionHandler`** comes with its own inbuilt views & controller.
 
@@ -253,7 +250,6 @@ This works exactly the same as the other views in your app (IE the `exceptions c
 
 ----
 
-<br />
 ![Database][db]
 
 If you want to store exceptions in your `db`, you will need to set up a **migration**:
@@ -361,6 +357,8 @@ You are welcome to contribute:
 [gemfile]:          readme/gemfile.jpg
 [middleware]:       readme/middleware.jpg
 [exceptions_app]:   readme/exceptions_app.jpg
+[view]:             readme/titles/view.jpg
+[dev]:              readme/titles/dev.jpg
 [db]:               readme/titles/db.png
 [support]:          readme/titles/support.png "Support"
 [changelog]:        readme/titles/changelog.png "Changelog"
