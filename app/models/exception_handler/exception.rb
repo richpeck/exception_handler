@@ -119,7 +119,7 @@ module ExceptionHandler
 
           # => Description
           def description
-            I18n.with_options scope: [:exception], message: message do |i18n|
+            I18n.with_options scope: [:exception], message: message, status: status do |i18n|
               i18n.t response, default: status
             end
           end

@@ -7,7 +7,7 @@
 en:
   exception:
     not_found:              "Page missing"
-    internal_server_error:  "<strong>500 Error</strong>  %{message}"
+    internal_server_error:  "<strong>%{status} Error</strong>  %{message} <p>Return home</p>"
 
 ##################################
 ##################################
