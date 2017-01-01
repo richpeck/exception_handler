@@ -26,7 +26,7 @@ module ExceptionHandler
       twitter:  "http://twitter.com",
       youtube:  "https://youtube.com/user",
       linkedin: "https://linkedin.com/company",
-      fusion:   "https://frontlinefusion.com"
+      fusion:   "http://frontlinefusion.com"
     }
 
     ###########################################
