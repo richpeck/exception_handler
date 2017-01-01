@@ -19,6 +19,16 @@ module ExceptionHandler
     # Has to be "errors" because "exceptions" is a reserved word
     TABLE = :errors
 
+    # Social URLs
+    # Extracted from "social" block
+    SOCIAL = {
+      facebook: "https://facebook.com",
+      twitter:  "http://twitter.com",
+      youtube:  "https://youtube.com/user",
+      linkedin: "https://linkedin.com/company",
+      fusion:   "https://frontlinefusion.com"
+    }
+
     ###########################################
     ###########################################
 
@@ -29,11 +39,11 @@ module ExceptionHandler
       db:     false, #-> defaults to :errors if true, else use "table_name" / :table_name
       email: 	false, #-> requires string email and ActionMailer
       social: {
-        facebook: { name: "frontline.utilities", url: "https://facebook.com" },
-        twitter:  { name: "frontlineutils",      url: "http://twitter.com" },
-        youtube:  { name: "frontlineutils",      url: "https://youtube.com/user" },
-        linkedin: { name: "frontline-utilities", url: "https://linkedin.com/company" },
-        fusion:   { name: "flutils",             url: "https://frontlinefusion.com" }
+        facebook: nil,
+        twitter:  nil,
+        youtube:  nil,
+        linkedin: nil,
+        fusion:   nil,
       },
       layouts: {
         "400" => nil, # => inherits from "ApplicationController" layout

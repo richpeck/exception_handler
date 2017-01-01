@@ -8,14 +8,14 @@
   width:           20%;
   top:             48%;
   margin:          auto;
-  background:      rgba(255,255,255,0.15);
   border:          1px solid rgba(0,0,0,1);
   max-width:       400px;
   min-width:       350px;
   border-radius:   5px;
   box-sizing:      border-box;
   box-shadow:      0px 0px 2px 0px rgba(0,0,0,0.5);
-  background-clip: border-box;
+  background:      rgba(9,0,1,1);
+  background-clip: content-box;
   overflow-x:      hidden;
   overflow-y:      hidden;
   transition:      background 0.1s ease-in-out;
@@ -28,11 +28,10 @@
   font-size:         1.25em;
   font-weight:       bold;
   text-transform:    capitalize;
-  background-color:  rgba(0,0,0,1);
   padding:           1em;
-  box-sizing:        border-box;
+  line-height:       10px;
   text-shadow:       0 1px 0 rgba(0,0,0,1);
-  line-height:       1em;
+  border-bottom:     1px solid rgba(135,15,15,1);
   vertical-align:    middle;
   background-color:  rgba(227,11,11,1);
   background-image:  url(<%= asset_url("exception_handler/noise.png") %>), -moz-linear-gradient(top,  rgba(227,11,11,0) 0%, rgba(0,0,0,0.55) 100%); /* FF3.6+ */
@@ -44,34 +43,56 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007a07ed', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 }
 .exception::after {
-  content:       attr(data-rails) " \203A\203A  Our developers have been notified. Click here to go home.";
+  content:       attr(data-rails) " \203A\203A  Our developers have been notified. Click to go home.";
   display:       block;
   padding:       1em;
   font-size:     0.8em;
   color:         rgba(255,255,255,1);
-  background:    rgba(0,0,0,0.5);
+  background:    rgba(0,0,0,0.75);
+
+  border-width:  0 1px 1px;
+  border-color:  rgba(255,255,255,0.1);
+  border-style:  solid
 }
 .exception:hover { cursor: pointer; }
 
 .exception span:before {
   display:         block;
   content:         url(<%= asset_url("exception_handler/alert.png") %>);
-  padding:         3em 0;
+  padding:         3.5em 0 2em;
   text-align:      center;
-  border-bottom:   2px solid rgba(255,255,255,0.15);
 }
 .exception span {
   position:         relative;
   display:          block;
   min-height:       288px;
   color:            rgba(255,255,255,1);
-  padding:          0 2.5em 2.5em;
+  padding:          0 2.5em 3.5em;
   box-sizing:       border-box;
-  background:       rgba(14,0,0,1) url(<%= asset_url("exception_handler/alert.jpg") %>) top center no-repeat;
+  background-clip:  border-box;
+  background:       url(<%= asset_url("exception_handler/alert.jpg") %>) top center no-repeat;
 
-  border-width:     0 1px;
-  border-style:     solid;
-  border-color:     rgba(255,255,255,0.065);
+  border-top:       1px solid rgba(0,0,0,0.05);
+  border-left:      1px solid rgba(255,255,255,0.08);
+  border-right:     1px solid rgba(255,255,255,0.08);
+}
+.exception span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2px;
+
+  background: rgba(0,0,0,0.35);
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0.35)), color-stop(100%, rgba(0,0,0,0)));
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 100%);
+  background: -o-linear-gradient(top, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 100%);
+  background: -ms-linear-gradient(top, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
 }
 .exception span strong {
   display:          block;
@@ -80,6 +101,6 @@
   text-transform:   uppercase;
 }
 .exception span p { display: block; margin-top: 1em; text-decoration: underline; }
-.exception span p:before { content: "← "; }
+.exception span p:before { content: "←"; padding-right: 0.5em; }
 /* ---------------------------------------------------- */
 /* ---------------------------------------------------- */

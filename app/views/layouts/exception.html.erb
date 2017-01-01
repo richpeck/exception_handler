@@ -2,7 +2,7 @@
 <html>
   <!-- Head -->
   <head>
-    <%= content_tag :title, "Error - #{@exception.status} (#{@exception.response.to_s.gsub("_", " ").titleize})" %>
+    <%= content_tag :title, "Error - #{@exception.status} (#{@exception.response.to_s.gsub("_", " ").titleize}) | #{Rails.application.class.parent_name.titleize}" %>
     <%= stylesheet_link_tag :exception_handler %>
     <%= favicon_link_tag %>
   </head>
@@ -14,7 +14,7 @@
   <% if ExceptionHandler.config.try(:social) %>
     <%= content_tag :footer do %>
       <% ExceptionHandler.config.social.each do |k,v| %>
-        <%= link_to image_tag("exception_handler/connect/#{k}.png"), v[:url] + "/" + v[:name], id: v[:name], title: k.to_s.titleize if v %>
+        <%= link_to image_tag("exception_handler/connect/#{k}.png"), ExceptionHandler::Config::SOCIAL[k] + "/" + v, id: k, title: "#{k.to_s.titleize} Feed" if v %>
       <% end %>
     <% end %>
   <% end %>
