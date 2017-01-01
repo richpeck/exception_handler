@@ -20,6 +20,7 @@
   overflow-y:      hidden;
   transition:      background 0.1s ease-in-out;
   transform:       translateY(-50%);
+  z-index:         10;
 }
 .exception::before {
   content:           url(<%= asset_url("exception_handler/icon.png") %>) "  " attr(data-response);
