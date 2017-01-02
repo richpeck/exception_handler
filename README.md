@@ -61,7 +61,9 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
 </div>
 
 <br />
-The secret lies in [**`config.exceptions_app`**][exception_app].
+The secret lies in [**`config.exceptions_app`**][exception_app]:
+
+![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
 `ExceptionHandler` overrides this hook, sending erroneous requests to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb).
 
@@ -81,7 +83,9 @@ Handling **`requests`** directly (`message`, `details`, `user agent`) means we c
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="450" />
 </p>
 
-Each time Rails raises an exception, [**`ActiveDispatch::ShowExceptions`**][show_exception] is invoked:
+<p align="center">
+  Unlike other exception gems, ExceptionHandler has *zero* overhead.
+</p>
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
@@ -94,7 +98,7 @@ Because `ExceptionHandler` injects our own controller into this hook, it gets FU
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
 <p align="center">
-  <strong>This is the <i>ONLY</i> professional solution to catch, process & handle exceptions in Rails:</strong>
+  <strong>This is the <i>ONLY</i> professional solution to catch, process & handle exceptions in Rails - WITHOUT BLOAT:</strong>
 </p>
 
 <p align="center">
