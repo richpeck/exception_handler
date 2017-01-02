@@ -62,15 +62,15 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
 </div>
 
 <br />
-The secret lies in [`config.exceptions_app`][exception_app]
+The secret lies in [**`config.exceptions_app`**][exception_app].
 
-`ExceptionHandler` overrides this hook, sending all errors to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb).
+`ExceptionHandler` overrides this hook, sending erroneous requests to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb).
 
 
 Handling **`requests`** directly (`message`, `details`, `user agent`) means we can populate our custom `view` with as much information as required. This gives us the ability to **maintain your branding** when your app raises an exception:
 
 <p align="center">
-  TEST || TEST 2
+  Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 Support
 </p>
 
 **ExceptionHandler works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ↴
@@ -82,7 +82,7 @@ Handling **`requests`** directly (`message`, `details`, `user agent`) means we c
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="450" />
 </p>
 
-The [**`ActiveDispatch::ShowExceptions`**][shoe_exception] middleware is where it all works:
+The [**`ActiveDispatch::ShowExceptions`**][show_exception] middleware is where it all works:
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
