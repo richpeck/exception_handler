@@ -61,9 +61,13 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
   <img src="readme/500.png" title="500 Errors" width="430" />
 </div>
 
+<br />
+
 <p align="center">
   Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
 </p>
+
+With major upgrades to the backend and other aspects of code,
 
 ----
 
@@ -77,6 +81,7 @@ Handling **`requests`** directly (`message`, `details`, `user agent`) means we c
 
 **ExceptionHandler works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ↴
 
+----
 
 <p align="center">
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="450" />
