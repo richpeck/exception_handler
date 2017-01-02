@@ -87,7 +87,7 @@ By handling **`requests`** directly (`message`, `details`, `user agent`), `Excep
 </p>
 
 <p align="center">
-  <strong>Because <i>ExceptionHandler</i> hooks directly into the <a href="https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb">ActiveDispatch::ShowExceptions</a> middleware, NO bloat is introduced into your app. This is EXTREMELY important as it means ExceptionHandler is completely unobtrusive - PLUG AND PLAY:</strong>
+<strong>Because <i>ExceptionHandler</i> hooks directly into the <a href="https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb">ActiveDispatch::ShowExceptions</a> middleware, NO bloat is introduced into your app. This is EXTREMELY important as it means ExceptionHandler is completely unobtrusive (PLUG AND PLAY):</strong>
 </p>
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
