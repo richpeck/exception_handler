@@ -82,7 +82,7 @@ Handling **`requests`** directly (`message`, `details`, `user agent`) means we c
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="450" />
 </p>
 
-The [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware is where it all works:
+The [**`ActiveDispatch::ShowExceptions`**][shoe_exception] middleware is where it all works:
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
@@ -368,6 +368,7 @@ You are welcome to contribute:
 [profile]:          https://avatars0.githubusercontent.com/u/1104431 "R Peck"
 
 <!-- Links -->
+[show_exception]: https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb
 [exception_app]:          http://guides.rubyonrails.org/configuring.html#rails-general-configuration
 [rubygems]:                 http://rubygems.org/gems/exception_handler
 [frontlineutilities.co.uk]: http://www.frontlineutilities.co.uk
