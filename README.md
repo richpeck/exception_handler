@@ -68,7 +68,7 @@ The secret lies in [**`config.exceptions_app`**][exception_app]:
 `ExceptionHandler` overrides this hook, sending erroneous requests to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb).
 
 
-Handling **`requests`** directly (`message`, `details`, `user agent`) means we can populate our custom `view` with as much information as required. This gives us the ability to **maintain your branding** when your app raises an exception:
+Handling **`requests`** directly (`message`, `details`, `user agent`) means we can populate a custom `view` with any information required. This gives us the ability to **maintain your branding** when your app raises an exception:
 
 <p align="center">
   Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
