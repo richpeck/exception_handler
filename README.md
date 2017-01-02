@@ -61,21 +61,19 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
   <img src="readme/500.png" title="500 Errors" width="430" />
 </p>
 
-With major upgrades to the backend, **ExceptionHandler 0.7.0** is the leading exception management solution for Rails 5 ...
+With major upgrades to the backend, **ExceptionHandler [0.7.0][latest]** is the leading exception management solution for Rails 5 ...
 
 <p align="center">
   Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
 </p>
 
-----
-
 The secret lies in [**`config.exceptions_app`**][exception_app]:
 
-![Exceptions App][config.exceptions_app]
+![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
 `ExceptionHandler` overrides the hook, sending erroneous requests to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb):
 
-![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
+![Exceptions App][config.exceptions_app]
 
 Handling **`requests`** directly (`message`, `details`, `user agent`) means we can populate a custom `view` with any information required. This gives us the ability to **maintain your branding** when your app raises an exception:
 
@@ -376,6 +374,7 @@ You are welcome to contribute:
 [profile]:          https://avatars0.githubusercontent.com/u/1104431 "R Peck"
 
 <!-- Links -->
+[latest]:                   https://github.com/richpeck/exception_handler/releases/latest
 [show_exception]: https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb
 [exception_app]:          http://guides.rubyonrails.org/configuring.html#rails-general-configuration
 [rubygems]:                 http://rubygems.org/gems/exception_handler
