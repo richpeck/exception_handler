@@ -86,11 +86,11 @@ Handling **`requests`** directly (`message`, `details`, `user agent`) means we c
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="450" />
 </p>
 
-Unlike other exception gems, `ExceptionHandler` has **ZERO** overhead:
+**Unlike other exception gems, `ExceptionHandler` has ZERO overhead:**
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-It hooks directly into `ActiveDispatch::ShowExceptions` middleware.
+It hooks directly into [`ActiveDispatch::ShowExceptions`][show_exception] middleware.
 
 This means Rails is ONLY invoked when an actual exception is raised. Other gems load Rails TWICE (slow).
 
