@@ -61,7 +61,7 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
   <img src="readme/500.png" title="500 Errors" width="430" />
 </div>
 
-<br />
+----
 
 The secret lies in [**`config.exceptions_app`**][exception_app]:
 
@@ -77,10 +77,8 @@ Handling **`requests`** directly (`message`, `details`, `user agent`) means we c
 
 **ExceptionHandler works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ↴
 
-----
 
 <p align="center">
-  <br />
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="450" />
 </p>
 
