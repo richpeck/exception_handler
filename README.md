@@ -67,9 +67,13 @@ With major upgrades to the backend, **ExceptionHandler [0.7.0][latest]** is the 
   Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
 </p>
 
+<p align="center">
+  <a href="#defaults"><img src="readme/titles/db.png" height="65" align="absmiddle" /></a>
+  <a href="#dev"><img src="readme/titles/dev.png" height="65" align="absmiddle" /></a>
+  <a href="#email"><img src="readme/titles/email.png" height="65" align="absmiddle" /></a>
+</p>
+
 **ExceptionHandler works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part…
-
-
 
 ----
 
@@ -108,29 +112,13 @@ This means that we can use a single controller action to build our `@exception` 
   <img src="readme/titles/install.png" title="1 Click Install for ExceptionHandler 0.7.0 on Rails 5" width="400" />
 </p>
 
-| [![Gemfile][gemfile]][rubygems] | [![Gem][gem]][rubygems] |
-| --- | --- |
-| Gemfile | RubyGems |
+[![Gemfile][gemfile]][rubygems] [![Gem][gem]][rubygems]
 
 `ExceptionHandler`'s **config** system stores the - you just need to install the gem & let it run.
 
 If you want to change *any* settings (detailed [below](#user-content-config)), you **simply** need to change `config/application.rb` or `config/environments/your_env.rb`. The ***POWER*** of this *new config system* means you're able to deploy `ExceptionHandler` in the most unobtrusive, versatile way possible:
 
 ----
-
-<p align="center" id="config">
-  <img src="readme/titles/setup.jpg" title="Instant Custom Error Pages For Rails 4 & 5" />
-</p>
-
-<p align="center">
-  <a href="#defaults"><img src="readme/titles/db.png" height="50" align="absmiddle" /></a>
-  <a href="#dev"><img src="readme/titles/dev.png" height="50 align="absmiddle" /></a>
-  <a href="#email"><img src="readme/titles/email.png" height="50 align="absmiddle" /></a>
-  <a href="#views"><img src="readme/titles/views.png" height="50" align="absmiddle" /></a>
-</p>
-
---
-
 
 **`ExceptionHandler 0.7.0`** has *drastically* improved our famous 1-click install.
 
