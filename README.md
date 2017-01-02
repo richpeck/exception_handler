@@ -43,7 +43,7 @@
 
 <p align="center">
   <br />
-  <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="655" />
+  <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="550" />
 </p>
 
 <p align="center">
@@ -60,6 +60,8 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
   <img src="readme/404.png" title="400 Errors" width="440" />
   <img src="readme/500.png" title="500 Errors" width="440" />
 </div>
+
+<br />
 
 The secret lies in [**`config.exceptions_app`**][exception_app]:
 
