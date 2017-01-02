@@ -63,9 +63,13 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
 
 <br />
 
-The secret lies in `config.exceptions_app`
+The secret lies in [`config.exceptions_app`][exceptions_app]:
 
-By overriding this hook, `ExceptionHandler` sends all errors to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb)
+> **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**.
+
+By overriding this hook, `ExceptionHandler` sends all errors to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb):
+
+![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
 Handling the **`request`** directly (`message`, `details`, `user agent`) allows us to populate our custom `view` with as much information as required. This gives us the ability to **maintain your branding** when your app raises an exception:
 
@@ -86,13 +90,12 @@ The [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-`ActiveDispatch::ShowExceptions` references [`config.exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) when an exception is raised:
+`ActiveDispatch::ShowExceptions` references `config.exceptions_app` when an exception is raised:
 
-> **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**.
 
 Because `ExceptionHandler` injects our own controller into this hook, it gets FULL access to the erroneous request. This allows us to do everything from create a custom backend to different styling:
 
-![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
+
 
 <p align="center">
   <strong>This is the <i>ONLY</i> professional solution to catch, process & handle exceptions in Rails:</strong>
@@ -367,6 +370,7 @@ You are welcome to contribute:
 [profile]:          https://avatars0.githubusercontent.com/u/1104431 "R Peck"
 
 <!-- Links -->
+[exceptions_app]:         http://guides.rubyonrails.org/configuring.html#rails-general-configuration
 [rubygems]:                 http://rubygems.org/gems/exception_handler
 [frontlineutilities.co.uk]: http://www.frontlineutilities.co.uk
 [stackoverflow.com]:        http://stackoverflow.com/users/1143732/richard-peck?tab=profile
