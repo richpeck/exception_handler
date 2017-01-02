@@ -67,7 +67,7 @@ The secret lies in [`config.exceptions_app`][exception_app]:
 
 ![Exceptions App][config.exceptions_app]
 
-By overriding this hook, `ExceptionHandler` sends all errors to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb):
+`ExceptionHandler` overrides this hook, sending all errors to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb):
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
@@ -356,7 +356,7 @@ You are welcome to contribute:
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
-[config.exceptions_app] readme/config.exceptions_app.jpg
+[config.exceptions_app]: readme/config.exceptions_app.jpg
 [gem]:              readme/gem.jpg
 [gemfile]:          readme/gemfile.jpg
 [middleware]:       readme/middleware.jpg
