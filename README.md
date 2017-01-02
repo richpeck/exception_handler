@@ -89,9 +89,6 @@ Because we handle **`requests`** directly (`message`, `details`, `user agent`), 
 
 This is important at is means `ExceptionHandler` has absolutely ZERO bloat on an app. Rails is invoked ONCE (not twice like it is when using routes), delivering a response JUST LIKE if an exception wasn't raised.
 
-
-
-
 <p align="center">
   <strong>The <i>ONLY</i> professional solution to catch, process & handle Rails exceptions <i>WITHOUT</i> BLOAT:</strong>
 </p>
@@ -100,22 +97,17 @@ This is important at is means `ExceptionHandler` has absolutely ZERO bloat on an
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
 </p>
 
-The beauty of ExceptionHandler is that you only have to serve **two** error responses - `400` & `500`.
+The REAL beauty of ExceptionHandler is that you only have to serve **two** error responses → `400` & `500`. This means you only need
 
-This means that we can use a single controller action to build our `@exception` object, responding to the HTTP request with the status code raised by the exception. We have built this into a
+This means that we can use a single controller action to build our `@exception` object, responding to the HTTP request with the status code raised by the exception. We have built this into a simple & effective solution:
 
 ----------
 
 <p align="center" id="install">
-  <br />
   <img src="readme/titles/install.png" title="1 Click Install for ExceptionHandler 0.7.0 on Rails 5" width="400" />
 </p>
 
-[![Gem][gem]][rubygems]
-
-or
-
-[![Gemfile][gemfile]][rubygems]
+[![Gem][gem]][rubygems] [![Gemfile][gemfile]][rubygems]
 
 `ExceptionHandler`'s **config** system stores the - you just need to install the gem & let it run.
 
