@@ -53,7 +53,7 @@
   <img src="readme/check_02.png" height="22" title="Rails 4 & 5 Compatible"   align="absmiddle" />&nbsp; <strong align="absmiddle">Fully Rails 4 & 5 Compatible</strong> &nbsp;
 </p>
 
-Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more powerful & efficient. Now you can use `ExceptionHandler` directly with a single click → **plug and play** custom exception pages:
+Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more powerful & efficient. Now you can use `ExceptionHandler` with a single click → **plug and play** custom exception pages:
 
 <div align="center">
   <br />
@@ -61,17 +61,19 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
   <img src="readme/500.png" title="500 Errors" width="440" />
 </div>
 
-<br />
+---
 
-**ExceptionHandler** uses `config.exceptions_app` to send errors to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
+The secret lies in `config.exceptions_app`.
 
-By handling the **`request`** directly (`message`, `details`, `user agent`), we can populate our `custom view` with as much information as required. This gives us the ability to **maintain your branding** *even* when your app experiences an exception:
+By overriding this hook, `ExceptionHandler` replaces all the files [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
+
+Handling the **`request`** directly (`message`, `details`, `user agent`) allows us to populate a custom `view` with as much information as required. This gives us the ability to **maintain your branding** *even* when your app experiences an exception:
 
 <p align="center">
   TEST || TEST 2
 </p>
 
-Now `ExceptionHandler` works 100% in Rails 5 and Sprockets 4. `ExceptionHandler` hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ...
+`.0.7.0` allows it to work 100% in Rails 5 and Sprockets 4. `ExceptionHandler` hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ...
 
 ----
 
