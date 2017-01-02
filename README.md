@@ -67,9 +67,7 @@ With major upgrades to the backend, **ExceptionHandler [0.7.0][latest]** is the 
   Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
 </p>
 
-----
-
-The secret lies in [**`config.exceptions_app`**][exception_app]:
+The secret lies in [**`config.exceptions_app`**][exception_app]
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
@@ -81,13 +79,15 @@ By handling **`requests`** directly (`message`, `details`, `user agent`), `Excep
 
 **ExceptionHandler works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ↴
 
+----
+
 <p align="center">
   <br />
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="400" />
 </p>
 
 <p align="center">
-  <strong>`ExceptionHandler` hooks directly into the [`ActiveDispatch::ShowExceptions`][show_exception] middleware - NO bloat is introduced into your app:</strong>
+  <strong>Because <i>ExceptionHandler</i> hooks directly into the [`ActiveDispatch::ShowExceptions`][show_exception] middleware, NO bloat is introduced into your app. This is EXTREMELY important as it means ExceptionHandler is completely unobtrusive - PLUG AND PLAY:</strong>
 </p>
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
