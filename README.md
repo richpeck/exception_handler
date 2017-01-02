@@ -67,13 +67,14 @@ With major upgrades to the backend, **ExceptionHandler [0.7.0][latest]** is the 
   Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
 </p>
 
-**ExceptionHandler works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ↴
+**ExceptionHandler works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part…
 
 
 
 ----
 
 <p align="center">
+  <br />
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="400" />
 </p>
 
@@ -82,11 +83,11 @@ The secret lies in [**`config.exceptions_app`**][exception_app] ↴
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
-Because we can handle **`requests`** directly (`message`, `details`, `user agent`), `ExceptionHandler` populates our custom `view` with any details required. This gives us the ability to **maintain your branding** (layout / css) even when exceptions are raised ...
+Because we handle **`requests`** directly (`message`, `details`, `user agent`), `ExceptionHandler` populates our custom `view` with any details required. This gives us the ability to **maintain your branding** (layout / css) even when exceptions are raised:
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-This is important at is means `ExceptionHandler` has absolutely ZERO bloat on an app. Rails is invoked ONCE (not twice like it is when using the routes), delivering a response JUST LIKE it would if an exception wasn't raised.
+This is important at is means `ExceptionHandler` has absolutely ZERO bloat on an app. Rails is invoked ONCE (not twice like it is when using routes), delivering a response JUST LIKE if an exception wasn't raised.
 
 
 
