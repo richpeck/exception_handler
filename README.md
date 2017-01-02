@@ -42,7 +42,8 @@
 </p>
 
 <p align="center">
-  <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="600" />
+  <br />
+  <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="550" />
 </p>
 
 <p align="center">
@@ -55,6 +56,7 @@
 Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more powerful & efficient. Now you can use `ExceptionHandler` with a single click → **plug and play** custom exception pages:
 
 <p align="center">
+  <br />
   <img src="readme/404.png" title="400 Errors" width="430" />
   <img src="readme/500.png" title="500 Errors" width="430" />
 </p>
