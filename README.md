@@ -62,12 +62,12 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
 </div>
 
 <br />
-The secret lies in [`config.exceptions_app`][exception_app].
+The secret lies in [`config.exceptions_app`][exception_app]
 
-`ExceptionHandler` overrides this hook, sending all errors to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb):
+`ExceptionHandler` overrides this hook, sending all errors to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb).
 
 
-Handling the **`request`** directly (`message`, `details`, `user agent`) allows us to populate our custom `view` with as much information as required. This gives us the ability to **maintain your branding** when your app raises an exception:
+Handling **`requests`** directly (`message`, `details`, `user agent`) means we can populate our custom `view` with as much information as required. This gives us the ability to **maintain your branding** when your app raises an exception:
 
 <p align="center">
   TEST || TEST 2
