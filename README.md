@@ -86,13 +86,15 @@ Handling **`requests`** directly (`message`, `details`, `user agent`) means we c
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="450" />
 </p>
 
+Because it hooks directly into [`ActiveDispatch::ShowExceptions`][show_exception], Rails is ONLY invoked when an exception is raised. Route-based solutions load Rails twice, causing latency & resource hogging.
+
 **It has ZERO overhead:**
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-Because it hooks directly into [`ActiveDispatch::ShowExceptions`][show_exception], Rails is ONLY invoked when an exception is raised. Route-based solutions load Rails twice, causing latency & resource hogging.
 
-Furthermore, hooking directly into the middleware means that 
+
+Furthermore, hooking directly into the middleware means that
 
 
 
@@ -106,7 +108,7 @@ Furthermore, hooking directly into the middleware means that
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
 </p>
 
-Installing & customizing `ExceptionHandler` is now simpler than ever -
+Installing & customizing `ExceptionHandler` is extremely simple and works out the box in production.
 
 ----------
 
@@ -121,9 +123,9 @@ or
 
 [![Gemfile][gemfile]][rubygems]
 
-`ExceptionHandler`'s new **config** system (introduced in [`0.4.7`](https://github.com/richpeck/exception_handler/wiki/Setup)) stores all the [defaults](#user-content-defaults) - you just need to install the gem & let it run.
+`ExceptionHandler`'s **config** system stores the - you just need to install the gem & let it run.
 
-If you want to change *any* settings (detailed [below](#user-content-config)), you **simply** need to change `config/application.rb` or `config/environments/your_env.rb`. The ***POWER*** of this *new config system* means you're able to deploy `ExceptionHandler` in the most unobtrusive, versatile way possible.
+If you want to change *any* settings (detailed [below](#user-content-config)), you **simply** need to change `config/application.rb` or `config/environments/your_env.rb`. The ***POWER*** of this *new config system* means you're able to deploy `ExceptionHandler` in the most unobtrusive, versatile way possible:
 
 ----
 
