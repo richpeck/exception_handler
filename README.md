@@ -61,12 +61,13 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
   <img src="readme/500.png" title="500 Errors" width="430" />
 </div>
 
+<br />
+
 The secret lies in [**`config.exceptions_app`**][exception_app]:
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
 `ExceptionHandler` overrides this hook, sending erroneous requests to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb).
-
 
 Handling **`requests`** directly (`message`, `details`, `user agent`) means we can populate a custom `view` with any information required. This gives us the ability to **maintain your branding** when your app raises an exception:
 
@@ -84,7 +85,7 @@ Handling **`requests`** directly (`message`, `details`, `user agent`) means we c
 </p>
 
 <p align="center">
-  <strong>Unlike other exception gems, ExceptionHandler has <i>zero</i> overhead.</strong>
+  <strong>Unlike other exception gems, ExceptionHandler has <i>ZERO</i> overhead.</strong>
 </p>
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
