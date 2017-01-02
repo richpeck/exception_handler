@@ -61,8 +61,6 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
   <img src="readme/500.png" title="500 Errors" width="430" />
 </div>
 
-<br />
-
 <p align="center">
   Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
 </p>
@@ -84,6 +82,7 @@ Handling **`requests`** directly (`message`, `details`, `user agent`) means we c
 ----
 
 <p align="center">
+  <br />
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="450" />
 </p>
 
