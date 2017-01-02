@@ -38,7 +38,6 @@
 ---
 
 <p align="center">
-  <br />
   <img src="readme/05.jpg" title="Fully Rails 5 Compatible" />
 </p>
 
@@ -81,8 +80,6 @@ Handling **`requests`** directly (`message`, `details`, `user agent`) means we c
   <br />
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="450" />
 </p>
-
-The [**`ActiveDispatch::ShowExceptions`**][show_exception] middleware is where it all works:
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
