@@ -67,9 +67,9 @@ With major upgrades to the backend, **ExceptionHandler [0.7.0][latest]** is the 
   Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
 </p>
 
-The secret lies in [**`config.exceptions_app`**][exception_app]:
-
 ----
+
+The secret lies in [**`config.exceptions_app`**][exception_app]:
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
@@ -87,7 +87,7 @@ By handling **`requests`** directly (`message`, `details`, `user agent`), `Excep
 </p>
 
 <p align="center">
-  **`ExceptionHandler` hooks directly into the [`ActiveDispatch::ShowExceptions`][show_exception] middleware - NO bloat is introduced into your app:**
+  <strong>`ExceptionHandler` hooks directly into the [`ActiveDispatch::ShowExceptions`][show_exception] middleware - NO bloat is introduced into your app:</strong>
 </p>
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
