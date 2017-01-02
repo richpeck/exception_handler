@@ -53,21 +53,23 @@
   <img src="readme/check_02.png" height="22" title="Rails 4 & 5 Compatible"   align="absmiddle" />&nbsp; <strong align="absmiddle">Fully Rails 4 & 5 Compatible</strong> &nbsp;
 </p>
 
-Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** even more powerful & efficient. Now you can use `ExceptionHandler` directly with a single click - **plug and play** custom exception pages:
+Brand new `controller`, `middleware` & options have made **`ExceptionHandler`** even more powerful & efficient. Now you can use `ExceptionHandler` directly with a single click → **plug and play** custom exception pages:
 
 <div align="center">
+  <br />
   <img src="readme/404.png" title="400 Errors" width="440" />
   <img src="readme/500.png" title="500 Errors" width="440" />
 </div>
 
+<br />
+
 **ExceptionHandler** uses `config.exceptions_app` to catch & send errors to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
-By managing the **`request`** directly (`message`, `details`, `user agent`), we can populate our `custom view` with as much information as required. This gives us the ability to **maintain your branding** *even* when your app experiences an exception:
+By handling the **`request`** (`message`, `details`, `user agent`), we can populate our `custom view` with as much information as required. This gives us the ability to **maintain your branding** *even* when your app experiences an exception:
 
-| Features |
-| TEST
-
-`ExceptionHandler` creates **100% branded error pages in Rails**.
+<p align="center">
+  TEST || TEST 2
+</p>
 
 No more poorly designed `404` or `500` errors - `ExceptionHandler` hooks DIRECTLY into your existing CSS to create a compelling & professional design with NO work on your part ...
 
