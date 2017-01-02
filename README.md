@@ -61,8 +61,6 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
   <img src="readme/500.png" title="500 Errors" width="430" />
 </div>
 
-<br />
-
 The secret lies in [**`config.exceptions_app`**][exception_app]:
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
@@ -86,7 +84,7 @@ Handling **`requests`** directly (`message`, `details`, `user agent`) means we c
 </p>
 
 <p align="center">
-  Unlike other exception gems, ExceptionHandler has *zero* overhead.
+  <strong>Unlike other exception gems, ExceptionHandler has <i>zero</i> overhead.</strong>
 </p>
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
