@@ -42,6 +42,7 @@
 </p>
 
 <p align="center">
+  <br />
   <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="550" />
 </p>
 
@@ -56,8 +57,8 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
 
 <div align="center">
   <br />
-  <img src="readme/404.png" title="400 Errors" width="440" />
-  <img src="readme/500.png" title="500 Errors" width="440" />
+  <img src="readme/404.png" title="400 Errors" width="430" />
+  <img src="readme/500.png" title="500 Errors" width="430" />
 </div>
 
 <br />
