@@ -75,7 +75,7 @@ The secret lies in [**`config.exceptions_app`**][exception_app]:
 
 ![Exceptions App][config.exceptions_app]
 
-Handling **`requests`** directly (`message`, `details`, `user agent`) means we can populate a custom `view` with any information required. This gives us the ability to **maintain your branding** when your app raises an exception:
+Handling **`requests`** directly (`message`, `details`, `user agent`) means we can populate a custom `view` with any information required. This gives us the ability to **maintain your branding** when your app raises an exception.
 
 **ExceptionHandler works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ↴
 
@@ -86,13 +86,13 @@ Handling **`requests`** directly (`message`, `details`, `user agent`) means we c
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="450" />
 </p>
 
-**Unlike other exception gems, `ExceptionHandler` has ZERO overhead:**
+`ExceptionHandler` has **ZERO** overhead:
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-It hooks directly into [`ActiveDispatch::ShowExceptions`][show_exception] middleware.
+It hooks directly into [`ActiveDispatch::ShowExceptions`][show_exception] middleware...
 
-This means Rails is ONLY invoked when an actual exception is raised. Other gems load Rails TWICE (slow).
+... meaning Rails is ONLY invoked when an exception is raised. Other gems load Rails TWICE, which causes latency.
 
 
 
@@ -107,6 +107,8 @@ This means Rails is ONLY invoked when an actual exception is raised. Other gems 
   <br />
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
 </p>
+
+Installing & customizing `ExceptionHandler` is now simpler than ever -
 
 ----------
 
