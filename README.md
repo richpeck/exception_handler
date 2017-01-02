@@ -61,19 +61,17 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
   <img src="readme/500.png" title="500 Errors" width="440" />
 </div>
 
----
-
 The secret lies in `config.exceptions_app`.
 
-By overriding this hook, `ExceptionHandler` replaces all the files [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
+By overriding this hook, `ExceptionHandler` sends all errors to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
 
-Handling the **`request`** directly (`message`, `details`, `user agent`) allows us to populate a custom `view` with as much information as required. This gives us the ability to **maintain your branding** *even* when your app experiences an exception:
+Handling the **`request`** directly (`message`, `details`, `user agent`) allows us to populate our custom `view` with as much information as required. This gives us the ability to **maintain your branding** when your app experiences an exception:
 
 <p align="center">
   TEST || TEST 2
 </p>
 
-`.0.7.0` allows it to work 100% in Rails 5 and Sprockets 4. `ExceptionHandler` hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ...
+**`ExceptionHandler` works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ...
 
 ----
 
