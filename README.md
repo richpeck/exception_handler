@@ -69,6 +69,8 @@ With major upgrades to the backend, **ExceptionHandler [0.7.0][latest]** is the 
 
 The secret lies in [**`config.exceptions_app`**][exception_app]:
 
+----
+
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
 `ExceptionHandler` overrides the hook, sending erroneous requests to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb):
@@ -77,21 +79,20 @@ The secret lies in [**`config.exceptions_app`**][exception_app]:
 
 By handling **`requests`** directly (`message`, `details`, `user agent`), `ExceptionHandler` can populate a custom `view` with any information required. This gives us the ability to **maintain your branding** when your app raises an exception.
 
-**ExceptionHandler works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part...
-
-----
+**ExceptionHandler works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ↴
 
 <p align="center">
+  <br />
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="400" />
 </p>
 
-<h3>ZERO OVERHEAD ↴</h3>
-
-**`ExceptionHandler` hooks directly into the [`ActiveDispatch::ShowExceptions`][show_exception] middleware - NO bloat is introduced into your app:**
+<p align="center">
+  **`ExceptionHandler` hooks directly into the [`ActiveDispatch::ShowExceptions`][show_exception] middleware - NO bloat is introduced into your app:**
+</p>
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-This gives *direct* access to the exception request, allowing us to perform a number of different operations on it (emailing, saving etc). This means **zero overhead**.
+This gives *direct* access to the exception request, allowing us to perform a number of different operations on it (emailing, saving etc). This means **zero overhead**:
 
 
 <p align="center">
