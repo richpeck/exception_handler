@@ -62,14 +62,10 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
 </div>
 
 <br />
-
-The secret lies in [`config.exceptions_app`][exception_app]:
-
-![Exceptions App][config.exceptions_app]
+The secret lies in [`config.exceptions_app`][exception_app].
 
 `ExceptionHandler` overrides this hook, sending all errors to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb):
 
-![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
 Handling the **`request`** directly (`message`, `details`, `user agent`) allows us to populate our custom `view` with as much information as required. This gives us the ability to **maintain your branding** when your app raises an exception:
 
@@ -92,10 +88,11 @@ The [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4
 
 `ActiveDispatch::ShowExceptions` references `config.exceptions_app` when an exception is raised:
 
+![Exceptions App][config.exceptions_app]
 
 Because `ExceptionHandler` injects our own controller into this hook, it gets FULL access to the erroneous request. This allows us to do everything from create a custom backend to different styling:
 
-
+![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
 <p align="center">
   <strong>This is the <i>ONLY</i> professional solution to catch, process & handle exceptions in Rails:</strong>
