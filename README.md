@@ -61,6 +61,10 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
   <img src="readme/500.png" title="500 Errors" width="430" />
 </div>
 
+<p align="center">
+  Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
+</p>
+
 ----
 
 The secret lies in [**`config.exceptions_app`**][exception_app]:
@@ -70,10 +74,6 @@ The secret lies in [**`config.exceptions_app`**][exception_app]:
 `ExceptionHandler` overrides this hook, sending erroneous requests to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb).
 
 Handling **`requests`** directly (`message`, `details`, `user agent`) means we can populate a custom `view` with any information required. This gives us the ability to **maintain your branding** when your app raises an exception:
-
-<p align="center">
-  Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
-</p>
 
 **ExceptionHandler works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ↴
 
