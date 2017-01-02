@@ -67,7 +67,7 @@ With major upgrades to the backend, **ExceptionHandler [0.7.0][latest]** is the 
   Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
 </p>
 
-The secret lies in [**`config.exceptions_app`**][exception_app]
+The secret lies in [**`config.exceptions_app`**][exception_app]:
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
@@ -75,7 +75,7 @@ The secret lies in [**`config.exceptions_app`**][exception_app]
 
 ![Exceptions App][config.exceptions_app]
 
-By handling **`requests`** directly (`message`, `details`, `user agent`), `ExceptionHandler` can populate a custom `view` with any information required. This gives us the ability to **maintain your branding** when your app raises an exception.
+By handling **`requests`** directly (`message`, `details`, `user agent`), `ExceptionHandler` can populate a custom `view` with any information required. This gives us the ability to **maintain your branding** (layout / css) even when exceptions are raised.
 
 **ExceptionHandler works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ↴
 
@@ -86,9 +86,7 @@ By handling **`requests`** directly (`message`, `details`, `user agent`), `Excep
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="400" />
 </p>
 
-<p align="center">
-<strong>Because <i>ExceptionHandler</i> hooks directly into the <a href="https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb">ActiveDispatch::ShowExceptions</a> middleware, NO bloat is introduced into your app. This is EXTREMELY important as it means ExceptionHandler is completely unobtrusive (PLUG AND PLAY):</strong>
-</p>
+**Because *ExceptionHandler* hooks directly into the <a href="https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb">ActiveDispatch::ShowExceptions</a> middleware, NO bloat is introduced into your app. This is EXTREMELY important as it means ExceptionHandler is <i>completely</i> unobtrusive (PLUG AND PLAY):**
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
@@ -101,11 +99,11 @@ This gives *direct* access to the exception request, allowing us to perform a nu
 
 <p align="center">
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
-  <br />
-  <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
 </p>
 
-Installing & customizing `ExceptionHandler` is extremely simple and works out the box in production.
+The beauty of ExceptionHandler is that you only have to serve **two** error responses - `400` & `500`.
+
+This means that we can use a single controller action to build our `@exception` object, responding to the HTTP request with the status code raised by the exception. We have built this into a
 
 ----------
 
