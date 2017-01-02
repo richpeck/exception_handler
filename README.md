@@ -55,7 +55,6 @@
 Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more powerful & efficient. Now you can use `ExceptionHandler` with a single click → **plug and play** custom exception pages:
 
 <div align="center">
-  <br />
   <img src="readme/404.png" title="400 Errors" width="440" />
   <img src="readme/500.png" title="500 Errors" width="440" />
 </div>
