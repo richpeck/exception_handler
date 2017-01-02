@@ -61,17 +61,19 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
   <img src="readme/500.png" title="500 Errors" width="440" />
 </div>
 
-The secret lies in `config.exceptions_app`.
+<br />
 
-By overriding this hook, `ExceptionHandler` sends all errors to our [`exceptions` controller](app/controllers/exception_handler/exception_controller.rb).
+The secret lies in `config.exceptions_app`
 
-Handling the **`request`** directly (`message`, `details`, `user agent`) allows us to populate our custom `view` with as much information as required. This gives us the ability to **maintain your branding** when your app experiences an exception:
+By overriding this hook, `ExceptionHandler` sends all errors to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb)
+
+Handling the **`request`** directly (`message`, `details`, `user agent`) allows us to populate our custom `view` with as much information as required. This gives us the ability to **maintain your branding** when your app raises an exception:
 
 <p align="center">
   TEST || TEST 2
 </p>
 
-**`ExceptionHandler` works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ...
+**ExceptionHandler works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ↴
 
 ----
 
@@ -80,7 +82,7 @@ Handling the **`request`** directly (`message`, `details`, `user agent`) allows 
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="450" />
 </p>
 
-**`ExceptionHandler's`** secret is the [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware:
+The [**`ActiveDispatch::ShowExceptions`**](https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware is where it all works:
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
