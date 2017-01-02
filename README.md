@@ -55,11 +55,12 @@
 
 Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more powerful & efficient. Now you can use `ExceptionHandler` with a single click → **plug and play** custom exception pages:
 
-<div align="center">
-  <br />
+<p align="center">
   <img src="readme/404.png" title="400 Errors" width="430" />
   <img src="readme/500.png" title="500 Errors" width="430" />
-</div>
+</p>
+
+<br />
 
 <p align="center">
   Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
