@@ -71,9 +71,11 @@ With major upgrades to the backend, **ExceptionHandler 0.7.0** is the leading ex
 
 The secret lies in [**`config.exceptions_app`**][exception_app]:
 
-![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
+![Exceptions App][config.exceptions_app]
 
-`ExceptionHandler` overrides this hook, sending erroneous requests to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb).
+`ExceptionHandler` overrides the hook, sending erroneous requests to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb):
+
+![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
 Handling **`requests`** directly (`message`, `details`, `user agent`) means we can populate a custom `view` with any information required. This gives us the ability to **maintain your branding** when your app raises an exception:
 
