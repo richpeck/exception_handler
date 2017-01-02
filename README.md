@@ -86,15 +86,12 @@ Handling **`requests`** directly (`message`, `details`, `user agent`) means we c
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="450" />
 </p>
 
-Because it hooks directly into [`ActiveDispatch::ShowExceptions`][show_exception], Rails is ONLY invoked when an exception is raised. Route-based solutions load Rails twice, causing latency & resource hogging.
+`ExceptionHandler` hooks directly into the [**`ActiveDispatch::ShowExceptions`**][show_exception] middleware.
 
-**It has ZERO overhead:**
+This gives *direct* access to the exception request, allowing us to perform a number of different operations on it (emailing, saving etc). This means **zero overhead**:
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-
-
-Furthermore, hooking directly into the middleware means that
 
 
 
