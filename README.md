@@ -87,21 +87,17 @@ Handling **`requests`** directly (`message`, `details`, `user agent`) means we c
 </p>
 
 <p align="center">
-  <strong>Unlike other exception gems, ExceptionHandler has <i>ZERO</i> overhead.</strong>
+  <strong>Unlike other exception gems, ExceptionHandler has <i>ZERO</i> overhead - hooks directly into the middleware:</strong>
 </p>
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-References `config.exceptions_app` when an exception is raised:
+Every time Rails raises an exception, `ActiveDispatch::ShowExceptions` directs the request to the value held in `config.exceptions_app`.
 
-![Exceptions App][config.exceptions_app]
 
-Because `ExceptionHandler` injects our own controller into this hook, it gets FULL access to the erroneous request. This allows us to do everything from create a custom backend to different styling:
-
-![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
 <p align="center">
-  <strong>This is the <i>ONLY</i> professional solution to catch, process & handle exceptions in Rails - WITHOUT BLOAT:</strong>
+  <strong>The <i>ONLY</i> professional solution to catch, process & handle exceptions in Rails - WITHOUT BLOAT:</strong>
 </p>
 
 <p align="center">
