@@ -97,17 +97,20 @@ This is important at is means `ExceptionHandler` has absolutely ZERO bloat on an
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
 </p>
 
-The REAL beauty of ExceptionHandler is that you only have to serve **two** error responses → `400` & `500`. This means you only need
+The REAL beauty of ExceptionHandler is that you only have to serve **two** error responses → `400` & `500`. This is per the [HTTP spec](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4) - a browser CANNOT read any other form of error.
 
 This means that we can use a single controller action to build our `@exception` object, responding to the HTTP request with the status code raised by the exception. We have built this into a simple & effective solution:
 
 ----------
 
 <p align="center" id="install">
+  <br />
   <img src="readme/titles/install.png" title="1 Click Install for ExceptionHandler 0.7.0 on Rails 5" width="400" />
 </p>
 
-[![Gem][gem]][rubygems] [![Gemfile][gemfile]][rubygems]
+| [![Gemfile][gemfile]][rubygems] | [![Gem][gem]][rubygems] |
+| --- | --- |
+| Gemfile | RubyGems |
 
 `ExceptionHandler`'s **config** system stores the - you just need to install the gem & let it run.
 
