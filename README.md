@@ -67,13 +67,8 @@ With major upgrades to the backend, **ExceptionHandler [0.7.0][latest]** is the 
   Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
 </p>
 
-<p align="center">
-  <a href="#defaults"><img src="readme/titles/db.png" height="65" align="absmiddle" /></a>
-  <a href="#dev"><img src="readme/titles/dev.png" height="65" align="absmiddle" /></a>
-  <a href="#email"><img src="readme/titles/email.png" height="65" align="absmiddle" /></a>
-</p>
-
-**ExceptionHandler works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part…
+<h2>ExceptionHandler works 100% with Rails 5 and Sprockets 4.</h2>
+It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part…
 
 ----
 
