@@ -69,7 +69,7 @@ The secret lies in [**`config.exceptions_app`**][exception_app].
 Handling **`requests`** directly (`message`, `details`, `user agent`) means we can populate our custom `view` with as much information as required. This gives us the ability to **maintain your branding** when your app raises an exception:
 
 <p align="center">
-  Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 Support
+  Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
 </p>
 
 **ExceptionHandler works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ↴
@@ -81,9 +81,11 @@ Handling **`requests`** directly (`message`, `details`, `user agent`) means we c
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="450" />
 </p>
 
+Each time Rails raises an exception, [**`ActiveDispatch::ShowExceptions`**][show_exception] is invoked:
+
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-`ActiveDispatch::ShowExceptions` references `config.exceptions_app` when an exception is raised:
+References `config.exceptions_app` when an exception is raised:
 
 ![Exceptions App][config.exceptions_app]
 
