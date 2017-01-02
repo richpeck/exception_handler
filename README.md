@@ -63,9 +63,9 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
 
 <br />
 
-The secret lies in [`config.exceptions_app`][exceptions_app]:
+The secret lies in [`config.exceptions_app`][exception_app]:
 
-> **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**.
+![Exceptions App][config.exceptions_app]
 
 By overriding this hook, `ExceptionHandler` sends all errors to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb):
 
@@ -356,6 +356,7 @@ You are welcome to contribute:
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
+[config.exceptions_app] readme/config.exceptions_app.jpg
 [gem]:              readme/gem.jpg
 [gemfile]:          readme/gemfile.jpg
 [middleware]:       readme/middleware.jpg
@@ -370,7 +371,7 @@ You are welcome to contribute:
 [profile]:          https://avatars0.githubusercontent.com/u/1104431 "R Peck"
 
 <!-- Links -->
-[exceptions_app]:         http://guides.rubyonrails.org/configuring.html#rails-general-configuration
+[exception_app]:          http://guides.rubyonrails.org/configuring.html#rails-general-configuration
 [rubygems]:                 http://rubygems.org/gems/exception_handler
 [frontlineutilities.co.uk]: http://www.frontlineutilities.co.uk
 [stackoverflow.com]:        http://stackoverflow.com/users/1143732/richard-peck?tab=profile
