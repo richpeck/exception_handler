@@ -61,13 +61,13 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
   <img src="readme/500.png" title="500 Errors" width="430" />
 </p>
 
-With major upgrades to the backend, **ExceptionHandler 0.7.0** is the leading exception management solution for Rails 5:
+With major upgrades to the backend, **ExceptionHandler 0.7.0** is the leading exception management solution for Rails 5 ...
 
 <p align="center">
   Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
 </p>
 
-Now you can create a PROFITABLE experience for *every* visitor:
+----
 
 The secret lies in [**`config.exceptions_app`**][exception_app]:
 
