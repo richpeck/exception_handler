@@ -67,13 +67,9 @@ With major upgrades to the backend, **ExceptionHandler [0.7.0][latest]** is the 
   Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
 </p>
 
-The secret lies in [**`config.exceptions_app`**][exception_app]:
-
-![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
-
-By handling **`requests`** directly (`message`, `details`, `user agent`), `ExceptionHandler` can populate a custom `view` with any information required. This gives us the ability to **maintain your branding** (layout / css) even when exceptions are raised.
-
 **ExceptionHandler works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ↴
+
+
 
 ----
 
@@ -82,11 +78,16 @@ By handling **`requests`** directly (`message`, `details`, `user agent`), `Excep
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="400" />
 </p>
 
-**Because *ExceptionHandler* hooks directly into the <a href="https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb">ActiveDispatch::ShowExceptions</a> middleware, NO bloat is introduced into your app. This is EXTREMELY important as it means ExceptionHandler is <i>completely</i> unobtrusive (PLUG AND PLAY):**
+The secret lies in [**`config.exceptions_app`**][exception_app]:
+
+
+![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
+
+Because we can handle **`requests`** directly (`message`, `details`, `user agent`), `ExceptionHandler` populates our custom `view` with any details required. This gives us the ability to **maintain your branding** (layout / css) even when exceptions are raised ...
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-This gives *direct* access to the exception request, allowing us to perform a number of different operations on it (emailing, saving etc). This means **zero overhead**:
+This is important at is means ExceptionHandler has absolutely ZERO bloat on any app.
 
 
 <p align="center">
