@@ -87,7 +87,7 @@ By handling **`requests`** directly (`message`, `details`, `user agent`), `Excep
 </p>
 
 <p align="center">
-  <strong>Because <i>ExceptionHandler</i> hooks directly into the [`ActiveDispatch::ShowExceptions`][show_exception] middleware, NO bloat is introduced into your app. This is EXTREMELY important as it means ExceptionHandler is completely unobtrusive - PLUG AND PLAY:</strong>
+  <strong>Because <i>ExceptionHandler</i> hooks directly into the <a href="https://github.com/rails/rails/blob/4-0-stable/actionpack/lib/action_dispatch/middleware/show_exceptions.rb">ActiveDispatch::ShowExceptions</a> middleware, NO bloat is introduced into your app. This is EXTREMELY important as it means ExceptionHandler is completely unobtrusive - PLUG AND PLAY:</strong>
 </p>
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
@@ -111,7 +111,7 @@ Installing & customizing `ExceptionHandler` is extremely simple and works out th
 
 <p align="center" id="install">
   <br />
-  <img src="readme/titles/install.png" title="1 Click Install for ExceptionHandler 0.7.0 on Rails 5" width="450" />
+  <img src="readme/titles/install.png" title="1 Click Install for ExceptionHandler 0.7.0 on Rails 5" width="400" />
 </p>
 
 [![Gem][gem]][rubygems]
