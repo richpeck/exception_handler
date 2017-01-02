@@ -71,10 +71,6 @@ The secret lies in [**`config.exceptions_app`**][exception_app]:
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
-`ExceptionHandler` overrides the hook, sending erroneous requests to our [exceptions controller](app/controllers/exception_handler/exception_controller.rb):
-
-![Exceptions App][config.exceptions_app]
-
 By handling **`requests`** directly (`message`, `details`, `user agent`), `ExceptionHandler` can populate a custom `view` with any information required. This gives us the ability to **maintain your branding** (layout / css) even when exceptions are raised.
 
 **ExceptionHandler works 100% in Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part ↴
@@ -94,7 +90,7 @@ This gives *direct* access to the exception request, allowing us to perform a nu
 
 
 <p align="center">
-  <strong>The <i>ONLY</i> professional solution to catch, process & handle exceptions in Rails - WITHOUT BLOAT:</strong>
+  <strong>The <i>ONLY</i> professional solution to catch, process & handle Rails exceptions <i>WITHOUT</i> BLOAT:</strong>
 </p>
 
 <p align="center">
