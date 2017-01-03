@@ -310,16 +310,6 @@ Here is a rundown of what's been implemented ↴
 
 ----------
 
-## ![How To Contribute][contribution]
-
-You are welcome to contribute:
-
-- [Fork][fork]
-- Write your contributions
-- [Create pull request][pull]
-
-----------
-
 :copyright: <a href="http://www.frontlineutilities.co.uk" align="absmiddle" ><img src="readme/fl.jpg" height="22" align="absmiddle" /></a> <a href="http://stackoverflow.com/users/1143732/richard-peck?tab=profile" align="absmiddle" ><img src="https://avatars0.githubusercontent.com/u/1104431" height="22" align="absmiddle" /></a>
 
 <!-- ################################### -->

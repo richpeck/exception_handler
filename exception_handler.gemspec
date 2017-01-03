@@ -62,7 +62,7 @@ Gem::Specification.new do |s|
   # => Runtime
   s.add_dependency "bundler",    "~> 1.6"
   s.add_dependency "rails",      ">= 4.2.0"
-  s.add_dependency "responders", "~> 2.3"
+  s.add_dependency "responders"
 
   # => Extras
   s.add_development_dependency "autoprefixer-rails"
