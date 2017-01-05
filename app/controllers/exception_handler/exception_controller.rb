@@ -3,7 +3,10 @@ module ExceptionHandler
 
     # => Response
     # => http://www.justinweiss.com/articles/respond-to-without-all-the-pain/
-    respond_to :html, :xml, :json
+    respond_to :html, :js, :json, :xml
+
+    # => CSRF
+    protect_from_forgery
 
     ##################################
     ##################################
@@ -12,6 +15,10 @@ module ExceptionHandler
     # => Exception model (tied to DB)
     before_action { |e| @exception = ExceptionHandler::Exception.new request: e.request }
     before_action { @exception.save if @exception.valid? && ExceptionHandler.config.try(:db) }
+
+    # => Response format (required for non-standard formats (.css / .gz etc))
+    # => request.format required until responders updates with wildcard / failsafe (:all)
+    before_action { |e| e.request.format = :html unless self.class.respond_to.include? e.request.format }
 
     # => Routes
     # => Removes need for "main_app" prefix in routes

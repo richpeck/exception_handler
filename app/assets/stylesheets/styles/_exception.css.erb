@@ -2,61 +2,79 @@
 /* ---------------------------------------------------- */
 
 .exception {
-  display:         block;
-  color:           #fff;
-  position:        relative;
-  width:           30%;
-  top:             48%;
-  margin:          auto;
-  background:      rgba(255,255,255,0.15);
-  border:          1px solid rgba(0,0,0,1);
-  max-width:       450px;
-  min-width:       350px;
-  font-size:       0.85em;
-  border-radius:   5px;
-  box-sizing:      border-box;
-  box-shadow:      0px 0px 6px 0px rgba(0,0,0,0.8);
-  background-clip: border-box;
-  text-shadow:     0 1px 0 rgba(0,0,0,1);
-  overflow-x:      hidden;
-  overflow-y:      hidden;
-  transition:      background 0.1s ease-in-out;
-  transform:       translateY(-50%);
+  display:          block;
+  color:            rgba(0,0,0,1);
+  position:         relative;
+  width:            20%;
+  top:              48%;
+  margin:           auto;
+  border:           1px solid rgba(0,0,0,1);
+  max-width:        400px;
+  min-width:        350px;
+  border-radius:    5px;
+  box-sizing:       border-box;
+  box-shadow:       0px 0px 2px 0px rgba(0,0,0,0.5);
+  background:       rgba(16,0,1,1);
+  background-image: linear-gradient(to bottom, rgba(16,0,1,1) 70%,rgba(0,0,0,1) 100%);
+  background-clip:  content-box;
+  overflow-x:       hidden;
+  overflow-y:       hidden;
+  transition:       background 0.1s ease-in-out;
+  transform:        translateY(-50%);
+  z-index:          10;
 }
 .exception::before {
-  content:           attr(data-status) " Error (" attr(data-response) ") …";
+  content:           url(<%= asset_url("exception_handler/icon.png") %>) "  " attr(data-response);
   display:           block;
-  color:             #fff;
-  font-size:         1.75em;
+  color:             rgba(255,255,255,1);
+  font-size:         1.25em;
   font-weight:       bold;
   text-transform:    capitalize;
-  background-color:  rgba(227,11,11,1);
   padding:           1em;
-  box-sizing:        border-box;
+  line-height:       10px;
+  text-shadow:       0 1px 0 rgba(0,0,0,1);
+  border-bottom:     1px solid rgba(122,11,11,1);
+  vertical-align:    middle;
   background-color:  rgba(227,11,11,1);
-
-  background-image: url(<%= asset_url("exception_handler/noise.png") %>), -moz-linear-gradient(top,  rgba(227,11,11,0) 0%, rgba(0,0,0,0.55) 100%); /* FF3.6+ */
-  background-image: url(<%= asset_url("exception_handler/noise.png") %>), -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(227,11,11,0)), color-stop(100%,rgba(0,0,0,0.55))); /* Chrome,Safari4+ */
-  background-image: url(<%= asset_url("exception_handler/noise.png") %>), -webkit-linear-gradient(top, rgba(227,11,11,0) 0%,rgba(0,0,0,0.55) 100%); /* Chrome10+,Safari5.1+ */
-  background-image: url(<%= asset_url("exception_handler/noise.png") %>), -o-linear-gradient(top,  rgba(227,11,11,0) 0%,rgba(0,0,0,0.55) 100%); /* Opera 11.10+ */
-  background-image: url(<%= asset_url("exception_handler/noise.png") %>), -ms-linear-gradient(top,  rgba(227,11,11,0) 0%,rgba(0,0,0,0.55) 100%); /* IE10+ */
-  background-image: url(<%= asset_url("exception_handler/noise.png") %>), linear-gradient(to bottom,  rgba(227,11,11,0) 0%,rgba(0,0,0,0.55) 100%); /* W3C */
+  background-image:  url(<%= asset_url("exception_handler/noise.png") %>), linear-gradient(to bottom,  rgba(227,11,11,0) 0%,rgba(0,0,0,0.55) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007a07ed', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 }
 .exception::after {
   content:       attr(data-rails) " \203A\203A  Our developers have been notified. Click here to go home.";
   display:       block;
   padding:       1em;
-  font-size:     0.9em;
-  background:    rgba(0,0,0,0.5);
+  font-size:     0.8em;
+  line-height:   11px;
+  color:         rgba(255,255,255,1);
+  text-align:    center;
+  box-siing:     border-box;
+
+  border-width:  0 1px 1px;
+  border-color:  rgba(255,255,255,0.09);
+  border-style:  solid
 }
 .exception:hover { cursor: pointer; }
 
 .exception span:before {
-  display: block;
-  content: url(<%= asset_url("exception_handler/alert.png") %>);
-  padding: 5em 0;
-  text-align: center;
+  display:         block;
+  content:         url(<%= asset_url("exception_handler/alert.png") %>);
+  padding:         3.5em 0 1em;
+  text-align:      center;
+}
+.exception span {
+  position:         relative;
+  display:          block;
+  min-height:       288px;
+  color:            rgba(255,255,255,1);
+  padding:          0 2.5em 3em;
+  box-sizing:       border-box;
+  background-clip:  border-box;
+  text-align:       center;
+  background:       url(<%= asset_url("exception_handler/alert.jpg") %>) top center no-repeat;
+
+  border-top:       1px solid rgba(0,0,0,0.05);
+  border-left:      1px solid rgba(255,255,255,0.08);
+  border-right:     1px solid rgba(255,255,255,0.08);
 }
 .exception span:after {
   content: "";
@@ -76,28 +94,12 @@
   background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
 }
-.exception span {
-  position: relative;
-  display: block;
-  min-height: 288px;
-  padding: 0 2em 3.5em;
-  box-sizing: border-box;
-  background: #000 url(<%= asset_url("exception_handler/alert.jpg") %>) top center no-repeat;
-  background-size: cover;
-  text-align: center;
-
-  border-width: 0 1px;
-  border-style: solid;
-  border-color: rgba(255,255,255,0.065);
-}
 .exception span strong {
-  display: block;
-  margin-bottom: 0.5em;
-  margin-top: 0.25em;
-  font-size: 1.95em;
-  text-transform: uppercase;
-  text-decoration: underline;
+  display:          block;
+  font-size:        2em;
+  margin:           1em 0 0.25em;
+  text-transform:   uppercase;
 }
-
+.exception span p { display: block; margin-top: 1.5em; font-size: 0.85em; text-decoration: underline; }
 /* ---------------------------------------------------- */
 /* ---------------------------------------------------- */

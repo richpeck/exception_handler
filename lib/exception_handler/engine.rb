@@ -1,6 +1,9 @@
 module ExceptionHandler
   class Engine < Rails::Engine
 
+    # => Rails default MIME types:
+    # => http://apidock.com/rails/ActionController/MimeResponds/InstanceMethods/respond_to#14-Rails-defined-Mime-Types
+
     #########################################################
     #########################################################
 
@@ -24,9 +27,14 @@ module ExceptionHandler
       # => Hooks
       # => This should be config.before_initialize but because ActiveRecord is not initialized, cannot check for table
       initializer :exception_handler, before: "better_errors.configure_rails_initialization" do |app|
-        ExceptionHandler.config ||= ExceptionHandler::Config.new config.try(:exception_handler)                       # => Vars
-        app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) }         # => Rails
-        app.config.consider_all_requests_local = false if Rails.env.development? && ExceptionHandler.config.try(:dev) # => Dev
+
+        # => Vars
+        ExceptionHandler.config ||= ExceptionHandler::Config.new config.try(:exception_handler)
+
+        # => Middleware
+        app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) }
+        app.config.consider_all_requests_local = !ExceptionHandler.config.try(:dev) if Rails.env.development?
+
       end
 
     #########################################################

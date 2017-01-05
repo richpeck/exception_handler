@@ -10,17 +10,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 module ExceptionHandler
   module VERSION
     MAJOR = 0
-    MINOR = 6
+    MINOR = 7
     TINY  = 0
     PRE   = nil # "alpha"
 
     STRING = [MAJOR, MINOR, TINY, PRE].compact.join(".")
   end
 end
-
-# => Declaration
-# => https://github.com/rails/rails/blob/master/rails.gemspec#L1
-version = ExceptionHandler::VERSION::STRING
 
 ##############################################################
 ##############################################################
@@ -33,7 +29,7 @@ Gem::Specification.new do |s|
   # => General
   s.platform      = Gem::Platform::RUBY
   s.name          = "exception_handler"
-  s.version       = version
+  s.version       = ExceptionHandler::VERSION::STRING
 
   # => Author
   s.authors       = ["Richard Peck"]
@@ -66,7 +62,7 @@ Gem::Specification.new do |s|
   # => Runtime
   s.add_dependency "bundler",    "~> 1.6"
   s.add_dependency "rails",      ">= 4.2.0"
-  s.add_dependency "responders", "~> 2.3"
+  s.add_dependency "responders"
 
   # => Extras
   s.add_development_dependency "autoprefixer-rails"
@@ -76,7 +72,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rake"
   s.add_development_dependency "rspec"
   s.add_development_dependency "rspec-rails"
-  s.add_development_dependency "sqlite3",     ">= 1.3.10"
+  s.add_development_dependency "sqlite3", ">= 1.3.10"
 
 ##############################################################
 ##############################################################
