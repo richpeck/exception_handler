@@ -2,9 +2,15 @@
 <html>
   <!-- Head -->
   <head>
+    <!-- Info -->
     <%= content_tag :title, "Error - #{@exception.status} (#{@exception.response.to_s.gsub("_", " ").titleize}) | #{Rails.application.class.parent_name.titleize}" %>
+
+    <!-- Styling -->
     <%= stylesheet_link_tag :exception_handler %>
-    <%= favicon_link_tag %>
+    <%= favicon_link_tag "exception_handler/favicon.ico" %>
+
+    <!-- Auth -->
+    <%= csrf_meta_tags %>
   </head>
 
   <!-- Body -->

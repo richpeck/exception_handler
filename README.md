@@ -275,6 +275,7 @@ The biggest update for **`0.7.0.`** has been the removal of most middleware, put
 Here is a rundown of what's been implemented ↴
 
 ### [→ 0.7.0](https://github.com/richpeck/exception_handler/releases/tag/0.7.0)
+ - [ ] Wildcard mime types
  - [ ] Custom exceptions
  - [x] Test suite integration
  - [ ] Exception "mapping" (choose which exceptions to handle)

@@ -1,6 +1,9 @@
 module ExceptionHandler
   class Engine < Rails::Engine
 
+    # => Rails default MIME types:
+    # => http://apidock.com/rails/ActionController/MimeResponds/InstanceMethods/respond_to#14-Rails-defined-Mime-Types
+
     #########################################################
     #########################################################
 
