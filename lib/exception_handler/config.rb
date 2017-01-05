@@ -13,12 +13,52 @@ module ExceptionHandler
     attr_accessor :dev, :db, :email, :social, :layouts
 
     ###########################################
+    ###########################################
+
+    # Table Name
+    # Has to be "errors" because "exceptions" is a reserved word
+    TABLE = :errors
+
+    # Social URLs
+    # Extracted from "social" block
+    SOCIAL = {
+      facebook: "https://facebook.com",
+      twitter:  "http://twitter.com",
+      youtube:  "https://youtube.com/user",
+      linkedin: "https://linkedin.com/company",
+      fusion:   "http://frontlinefusion.com"
+    }
+
+    ###########################################
+    ###########################################
+
+    # Defaults
+    # http://stackoverflow.com/a/8917301/1143732
+    DEFAULTS = {
+      dev:    false, #-> defaults to "false" for dev mode
+      db:     false, #-> defaults to :errors if true, else use "table_name" / :table_name
+      email: 	false, #-> requires string email and ActionMailer
+      social: {
+        facebook: nil,
+        twitter:  nil,
+        youtube:  nil,
+        linkedin: nil,
+        fusion:   nil,
+      },
+      layouts: {
+        "400" => nil, # => inherits from "ApplicationController" layout
+        "500" => "exception"
+      },
+    }
+
+    ###########################################
+    ###########################################
 
       #Init
-      def initialize values=nil
-        defaults = values.present? ? Config::DEFAULTS.deep_merge!(values) : DEFAULTS
-        defaults.each do |k,v|
-          instance_variable_set("@#{k}",v) #-> http://apidock.com/ruby/Object/instance_variable_set
+      def initialize values
+        # => Vars
+        DEFAULTS.deep_merge!(values || {}).each do |k,v|
+          instance_variable_set("@#{k}",v)
         end
 
         # => Errors
@@ -27,39 +67,13 @@ module ExceptionHandler
       end
 
     ###########################################
+    ###########################################
 
-      # Public (Instance) Methods #
-
-      #DB
       def db
-        @db == true ? TABLE_NAME : @db
+        @db == true ? TABLE : @db
       end
 
     ###########################################
-
-      #Default Table Name
-      # Has to be "errors" because "exceptions" is a reserved word
-      TABLE_NAME = :errors
-
-      # Defaults
-      # http://stackoverflow.com/a/8917301/1143732
-      DEFAULTS = {
-        dev:    false, #-> defaults to "false" for dev mode
-        db:     false, #-> defaults to :errors if true, else use "table_name" / :table_name
-        email: 	false, #-> requires string email and ActionMailer
-        social: {
-          facebook: { name: "frontline.utilities", url: "https://facebook.com" },
-          twitter:  { name: "frontlineutils",      url: "http://twitter.com" },
-          youtube:  { name: "frontlineutils",      url: "https://youtube.com/user" },
-          linkedin: { name: "frontline-utilities", url: "https://linkedin.com/company" },
-          fusion:   { name: "flutils",             url: "https://frontlinefusion.com" }
-        },
-        layouts: {
-          "400" => nil, # => inherits from "ApplicationController" layout
-          "500" => "exception"
-        },
-      }
-
     ###########################################
 
   end

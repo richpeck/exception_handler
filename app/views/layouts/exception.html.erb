@@ -2,9 +2,15 @@
 <html>
   <!-- Head -->
   <head>
-    <%= content_tag :title, "Error - #{@exception.status} (#{@exception.response.to_s.gsub("_", " ").titleize})" %>
+    <!-- Info -->
+    <%= content_tag :title, "Error - #{@exception.status} (#{@exception.response.to_s.gsub("_", " ").titleize}) | #{Rails.application.class.parent_name.titleize}" %>
+
+    <!-- Styling -->
     <%= stylesheet_link_tag :exception_handler %>
-    <%= favicon_link_tag %>
+    <%= favicon_link_tag "exception_handler/favicon.ico" %>
+
+    <!-- Auth -->
+    <%= csrf_meta_tags %>
   </head>
 
   <!-- Body -->
@@ -14,7 +20,7 @@
   <% if ExceptionHandler.config.try(:social) %>
     <%= content_tag :footer do %>
       <% ExceptionHandler.config.social.each do |k,v| %>
-        <%= link_to image_tag("exception_handler/connect/#{k}.png"), v[:url] + "/" + v[:name], id: v[:name] if v %>
+        <%= link_to image_tag("exception_handler/connect/#{k}.png"), ExceptionHandler::Config::SOCIAL[k] + "/" + v, id: k, title: "#{k.to_s.titleize} Feed", target: :blank if v %>
       <% end %>
     <% end %>
   <% end %>

@@ -25,5 +25,8 @@ end
 # => https://github.com/jekyll/jekyll/blob/master/lib/jekyll.rb#L8
 Dir.glob(File.join(File.dirname(__FILE__), 'exception_handler', '**/*.rb'), &method(:require))
 
+# => External Dependencies
+require 'responders'
+
 #########################################################
 #########################################################
