@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="http://badge.fury.io/rb/exception_handler"><img src="https://badge.fury.io/rb/exception_handler.svg" align="absmiddle"></a>
-  <a href="http://rubygems.org/richpeck/exception_handler"><img src="http://ruby-gem-downloads-badge.herokuapp.com/exception_handler/0.5.1?type=total&color=brightgreen" align="absmiddle" /></a>
+  <a href="http://rubygems.org/gems/exception_handler"><img src="http://ruby-gem-downloads-badge.herokuapp.com/exception_handler/0.5.1?type=total&color=brightgreen" align="absmiddle" /></a>
   <a href="https://codeclimate.com/github/richpeck/exception_handler"><img src="https://codeclimate.com/github/richpeck/exception_handler/badges/gpa.svg" align="absmiddle"/></a>
   <a href="https://gemnasium.com/richpeck/exception_handler"><img src="https://gemnasium.com/richpeck/exception_handler.svg" align="absmiddle"></a>
   <a href='https://coveralls.io/github/richpeck/exception_handler?branch=master'><img src='https://coveralls.io/repos/github/richpeck/exception_handler/badge.svg?branch=master' alt='Coverage Status' align="absmiddle" /></a>
@@ -63,8 +63,8 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
 With major upgrades to the backend, **ExceptionHandler [0.7.0][latest]** is the leading exception management solution for Rails 5:
 
 <p align="center">
-  <h3>Features</h3>
-  Custom 500 Errors Layout || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
+  <h2>Features</h2>
+  <img src="readme/titles/layout.png" width="240"/> || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
 </p>
 
 **ExceptionHandler works 100% with Rails 5 and Sprockets 4**. It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part…
@@ -264,7 +264,7 @@ We use **`ExceptionHandler`** in production, so have a vested interest in keepin
 
 ---
 
-# ![Changelog - Current Version 0.7.0][changelog]
+# ![Changelog][changelog]
 
 Current version is [**`0.7.0`**](https://github.com/richpeck/exception_handler/releases/latest)
 
@@ -274,17 +274,17 @@ The biggest update for **`0.7.0.`** has been the removal of most middleware, put
 
 Here is a rundown of what's been implemented ↴
 
-### [→ 0.7.0](https://github.com/richpeck/exception_handler/releases/tag/0.7.0)
- - [ ] Wildcard mime types
+### [0.7.0](https://github.com/richpeck/exception_handler/releases/tag/0.7.0)
+ - [x] Wildcard mime types
  - [ ] Custom exceptions
- - [x] Test suite integration
+ - [ ] Test suite integration
  - [ ] Exception "mapping" (choose which exceptions to handle)
  - [x] [Email](https://github.com/richpeck/exception_handler/wiki/2-Email)
  - [x] Model backend
  - [x] Sprockets 4+
  - [x] Readme / wiki overhaul
 
-### [→ 0.6.5](https://github.com/richpeck/exception_handler/releases/tag/0.6.5)
+### [0.6.5](https://github.com/richpeck/exception_handler/releases/tag/0.6.5)
  - [x] Streamlined interface
  - [x] ActiveRecord / Middleware overhaul
  - [x] Supports Sprockets 4+ ([`manifest.js`](http://eileencodes.com/posts/the-sprockets-4-manifest/))
@@ -292,7 +292,7 @@ Here is a rundown of what's been implemented ↴
  - [x] Asset overhaul & improvement
  - [x] Removed dependencies
 
-### [→ 0.5.0](https://github.com/richpeck/exception_handler/releases/tag/0.5.0)
+### [0.5.0](https://github.com/richpeck/exception_handler/releases/tag/0.5.0)
  - [x] Added locales
  - [x] Email notifications
  - [x] Full test suite
@@ -303,11 +303,14 @@ Here is a rundown of what's been implemented ↴
  - [x] Rails asset management improvement
  - [x] Reduced gem file
 
-### [→ 0.4.6](https://github.com/richpeck/exception_handler/releases/tag/0.4.6)
+### [0.4.6](https://github.com/richpeck/exception_handler/releases/tag/0.4.6)
  - [x] New config system ([more](https://github.com/richpeck/exception_handler/wiki/1-Setup))
  - [x] Fixed controller layout issues
  - [x] Streamlined middleware
  - [x] New layout & interface implementation
+
+----------
+![404 + 500 Errors][banner]
 
 ----------
 
@@ -321,6 +324,7 @@ Here is a rundown of what's been implemented ↴
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
+[banner]:           readme/banner.png
 [config.exceptions_app]: readme/config.exceptions_app.jpg
 [gem]:              readme/gem.jpg
 [gemfile]:          readme/gemfile.jpg
