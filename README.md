@@ -161,7 +161,7 @@ Functionality remains consistent with previous releases.
 
 Main difference with `0.7.0` is the way we have overhauled the backend. By introducing a class and several other options, the system is able to run much smoother than before. 99% of bloat has been removed:
 
-### [0.7.5](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
+### [0.8.0](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
  - [ ] HTTP-based layouts
  - [ ] Custom exception mapping
 
