@@ -1,5 +1,5 @@
 module ExceptionHandler
-  class ExceptionController < ApplicationController
+  class ExceptionsController < ApplicationController
 
     # => Response
     # => http://www.justinweiss.com/articles/respond-to-without-all-the-pain/
