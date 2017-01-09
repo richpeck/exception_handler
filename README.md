@@ -126,19 +126,36 @@ If you want to change *any* settings (detailed [below](#user-content-config)), y
 
 ## Config
 
+From `0.4.7`, **`ExceptionHandler`** manages config from the central Rails config.
 
 
 ## Database
 
 ## Email
 
+## Layout
 
 ---
 
 
 ## Custom Exceptions
 
-Custom exceptions are handled by [`config.action_dispatch.rescue_responses`][rescue_responses]:
+Due to popular demand, we investigated how to add custom exceptions.
+
+Turns out the functionality is *already* built into Rails [`config.action_dispatch.rescue_responses`][rescue_responses]:
+
+![ActionDispatch][config.action_dispatch.rescue_responses]
+
+Because the browser can only read `4xx` or `5xx` HTTP errors, any exceptions raised inside Rails have to be "translated". This is handled by the `action_dispatch.rescue_responses` middleware.
+
+Specifically, you have to register your custom exception against an HTTP response code. This is done as follows:
+
+    # config/application.rb
+    config.action_dispatch.rescue_responses["ActionController::YourError"] = :bad_request
+
+The full list of [Rails HTTP response codes][status_codes] can be found here:
+
+
 
 ---
 
@@ -210,6 +227,7 @@ We use `ExceptionHandler` in production, so it's imperative for us to keep it wo
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
+[config.action_dispatch.rescue_responses]: readme/config.action_dispatch.rescue_responses.jpg
 [banner]:           readme/banner.png
 [config.exceptions_app]: readme/config.exceptions_app.jpg
 [gem]:              readme/gem.jpg
@@ -226,6 +244,7 @@ We use `ExceptionHandler` in production, so it's imperative for us to keep it wo
 [profile]:          https://avatars0.githubusercontent.com/u/1104431 "R Peck"
 
 <!-- Links -->
+[status_codes]: http://guides.rubyonrails.org/layouts_and_rendering.html#the-status-option
 [stackoverflow]: http://stackoverflow.com/questions/ask?tags=ruby-on-rails+exception-handler
 [rescue_responses]: http://guides.rubyonrails.org/configuring.html#config.action_dispatch.rescue_responses
 [latest]: https://github.com/richpeck/exception_handler/releases/latest
