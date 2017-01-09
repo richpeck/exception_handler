@@ -133,15 +133,12 @@ If you want to change *any* settings (detailed [below](#user-content-config)), y
 ## Email
 
 
---
+---
 
 
 ## Custom Exceptions
 
 Custom exceptions are handled by [`config.action_dispatch.rescue_responses`][rescue_responses]:
-
-
-> **UPDATE** - `0.8.0` will completely rework the layout engine for  individual HTTP status codes.
 
 ---
 
@@ -149,17 +146,11 @@ Custom exceptions are handled by [`config.action_dispatch.rescue_responses`][res
 
 We use `ExceptionHandler` in production, so it's imperative for us to keep it working properly.
 
-We have two avenues for support: [StackOverflow][stackoverflow] and [Github Issues](https://github.com/richpeck/exception_handler/issues) - we respond to both as quickly as possible.
-
 ---
 
-**Current stable is [`1.0.0`](https://github.com/richpeck/exception_handler/releases/latest)**
+**Current stable is [`0.7.5`](https://github.com/richpeck/exception_handler/releases/latest)**
 
-Functionality remains consistent with previous releases.
-
-Main difference with `1.0.0` is the way we have overhauled the backend. By introducing a class and several other options, the system is able to run much smoother than before. 99% of bloat has been removed:
-
-### [1.0.0](https://github.com/richpeck/exception_handler/releases/tag/1.0.0)
+### [0.7.5](https://github.com/richpeck/exception_handler/releases/tag/1.0.0)
  - [ ] HTTP-based layouts
  - [ ] Custom exception mapping
 
