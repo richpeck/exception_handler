@@ -120,7 +120,7 @@ module ExceptionHandler
           # => Description
           def description
             I18n.with_options scope: [:exception], message: message, status: status do |i18n|
-              i18n.t response, default: Rack::Utils::HTTP_STATUS_CODES[status]
+              i18n.t response, default: Rack::Utils::HTTP_STATUS_CODES[status] || status
             end
           end
 
@@ -173,7 +173,7 @@ module ExceptionHandler
 
           # => Status code (404, 500 etc)
           def status
-            ActionDispatch::ExceptionWrapper.new(request.env, exception).status_code.to_s
+            ActionDispatch::ExceptionWrapper.new(request.env, exception).status_code
           end
 
           # => Server Response ("Not Found" etc)

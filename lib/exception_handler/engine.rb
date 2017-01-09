@@ -35,6 +35,11 @@ module ExceptionHandler
         app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionsController.action(:show).call(env) }
         app.config.consider_all_requests_local = !ExceptionHandler.config.try(:dev) if Rails.env.development?
 
+        # => Custom Exceptions
+        ExceptionHandler.config.try(:custom_exceptions).try(:each) do |exception,response|
+          app.action_dispatch.rescue_responses[exception] = response
+        end
+
       end
 
     #########################################################
