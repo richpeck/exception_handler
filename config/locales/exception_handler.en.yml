@@ -14,6 +14,9 @@
 # Have to use strings rather than integers
 # https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L544
 
+# By default, exceptions will show their "response" code (404 = "Not Found")
+# If you want to create custom messages, you have to assign the values as [response]: "message"
+
 #######################################################################################
 #######################################################################################
 

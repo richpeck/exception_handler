@@ -42,6 +42,7 @@
 </p>
 
 <p align="center">
+  <br />
   <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="550" />
 </p>
 
@@ -65,6 +66,7 @@ For over 3 years, `ExceptionHandler` has provided production-level Rails excepti
 ----
 
 <p align="center">
+  <br />
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="400" />
 </p>
 
@@ -76,7 +78,7 @@ All Rails exceptions are handled with the `config.exceptions_app` callback. This
 
 ![config.exceptions_app][config.exceptions_app]
 
-Every time Rails raises an exception, the [`ShowExceptions`][show_exception] middleware takes the request and forwards it to the `exceptions_app` hook. This hook is expected to return a response; which response is up to you:
+Every time Rails raises an exception, the [`ShowExceptions`][show_exception] middleware takes the request and forwards it to the `config.exceptions_app` hook. This hook is expected to return a response; which response is up to you:
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
