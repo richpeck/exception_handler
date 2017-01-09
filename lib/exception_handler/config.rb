@@ -9,18 +9,18 @@
 module ExceptionHandler
   class Config
 
-    #Instace Objects
+    # => Instace Objects
     attr_accessor :dev, :db, :email, :social, :layouts
 
     ###########################################
     ###########################################
 
-    # Table Name
-    # Has to be "errors" because "exceptions" is a reserved word
+    # => Table Name
+    # => Has to be "errors" because "exceptions" is a reserved word
     TABLE = :errors
 
-    # Social URLs
-    # Extracted from "social" block
+    # => Social URLs
+    # => Extracted from "social" block
     SOCIAL = {
       facebook: "https://facebook.com",
       twitter:  "http://twitter.com",
@@ -32,8 +32,8 @@ module ExceptionHandler
     ###########################################
     ###########################################
 
-    # Defaults
-    # http://stackoverflow.com/a/8917301/1143732
+    # => Defaults
+    # => http://stackoverflow.com/a/8917301/1143732
     DEFAULTS = {
       dev:    false, #-> defaults to "false" for dev mode
       db:     false, #-> defaults to :errors if true, else use "table_name" / :table_name
@@ -54,21 +54,21 @@ module ExceptionHandler
     ###########################################
     ###########################################
 
-      #Init
+      # => Init
       def initialize values
-        # => Vars
         DEFAULTS.deep_merge!(values || {}).each do |k,v|
           instance_variable_set("@#{k}",v)
         end
 
-        # => Errors
-        raise(Exception, "ExceptionHandler :: Valid Email Required") if @email && !@email.is_a?(String)
+        # => Validations
+        raise(Exception, "ExceptionHandler::Valid Email Required") if @email && !@email.is_a?(String)
         #raise(Exception, "ExceptionHandler :: Migration Required → Table \"#{db}\" doesn't exist") if @db && !ActiveRecord::Base.connection.table_exists?(db)
       end
 
     ###########################################
     ###########################################
 
+      # => DB
       def db
         @db == true ? TABLE : @db
       end

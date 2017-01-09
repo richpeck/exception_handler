@@ -45,7 +45,7 @@ module ExceptionHandler
     private
 
     def layout
-      ExceptionHandler.config.layouts[ @exception.status[0] + "00" ]
+      ExceptionHandler.config.layouts[@exception.status]
     end
 
   end
