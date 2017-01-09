@@ -4,7 +4,7 @@ require 'spec_helper'
 #####################################
 
   # => ExceptionController
-  describe ExceptionHandler::ExceptionController do
+  describe ExceptionHandler::ExceptionsController do
 
 
     # => @exception
