@@ -56,7 +56,7 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
 
 <p align="center">
   <br />
-  <img src="readme/404.png" title="400 Errors" width="430" />
+  <img src="readme/400.png" title="400 Errors" width="430" />
   <img src="readme/500.png" title="500 Errors" width="430" />
 </p>
 
@@ -76,16 +76,22 @@ It hooks DIRECTLY into your existing CSS to create a professional exception inte
 ----
 
 <p align="center">
-  <br />
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="400" />
 </p>
 
 The secret lies in [**`config.exceptions_app`**][exception_app] ↴
 
+![config.exceptions_app][config.exceptions_app]
+
+All Rails exceptions are handled with the `config.exceptions_app` callback. This is assigned in the `config/application.rb` or `config/environments/*.rb files` - it needs to be a callback:
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
-Because we handle **`requests`** directly (`message`, `details`, `user agent`), `ExceptionHandler` populates our custom `view` with any details required. This gives us the ability to **maintain your branding** (layout / css) even when exceptions are raised:
+Every time Rails raises an exception, the [`ShowExceptions`][show_exception] middleware takes the request and forwards it to the `exceptions_app` hook. This hook is expected to return a response; which response is up to you:
+
+
+
+`ExceptionHandler` injects our [controller](app/controllers/exception_handler/exceptions_controller.rb) into `exceptions_app`, meaning **`requests`** are handled directly (`message`, `details`, `user agent`). `ExceptionHandler` populates our custom `view` with any details required, giving us the ability to **maintain branding** (layout / css) even when exceptions are raised:
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
@@ -126,11 +132,19 @@ If you want to change *any* settings (detailed [below](#user-content-config)), y
 
 ## Email
 
+
+--
+
+
 ## Custom Exceptions
 
 Custom exceptions are handled by [`config.action_dispatch.rescue_responses`][rescue_responses]:
 
 
+
+
+
+> **UPDATE** - `0.7.5` will completely rework the layout engine for  individual HTTP status codes.
 
 ---
 ## Support
