@@ -60,20 +60,7 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
   <img src="readme/500.png" title="500 Errors" width="430" />
 </p>
 
-<p align="center">
-  With major upgrades to the backend, <strong>ExceptionHandler <a href="https://github.com/richpeck/exception_handler/releases/latest">latest</a></strong> is the leading exception management solution for Rails 5:
-</p>
-
-<p align="center">
-  <h3>Features</h3>
-  <img src="readme/titles/layout.png" width="240"/> || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
-</p>
-
-<p align="center">
-  <strong>100% works with Rails 5 and Sprockets 4</strong>
-  <br />
-  Hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part …
-</p>
+For over 3 years, `ExceptionHandler` has provided production-level Rails exception handling for `400` and `500` errors. Now - with version `0.7.0` - it's even more powerful:
 
 ----
 
@@ -107,7 +94,7 @@ This means `ExceptionHandler` has absolutely ZERO bloat. Rails is invoked ONCE (
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
 </p>
 
-The REAL beauty of ExceptionHandler is that you only have to serve **two** error responses → `400` & `500`. This is per the [HTTP spec](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4) - a browser CANNOT read any other form of error.
+The REAL beauty of ExceptionHandler is that **you only have to serve two error responses** → `400` & `500`. This is per the [HTTP spec](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4) - a browser CANNOT read any other form of error.
 
 This means that we can use a single controller action to build our `@exception` object, responding to the HTTP request with the status code raised by the exception. We have built this into a simple & effective solution:
 
@@ -142,22 +129,33 @@ From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6)
 
 ## Custom Exceptions
 
-Due to popular demand, we investigated how to add custom exceptions.
+Due to popular demand, we investigated how to add **custom exceptions**.
 
-Turns out the functionality is *already* built into Rails [`config.action_dispatch.rescue_responses`][rescue_responses]:
+Turns out the functionality is *already* built into Rails [`config.action_dispatch.rescue_responses`][rescue_responses] ↴
 
 ![ActionDispatch][config.action_dispatch.rescue_responses]
 
-Because the browser can only read `4xx` or `5xx` HTTP errors, any exceptions raised inside Rails have to be "translated". This is handled by the `action_dispatch.rescue_responses` middleware.
+Because the browser can only read `4xx` or `5xx` HTTP errors, any exception raised inside Rails has to be interpolated. This is handled by the `action_dispatch.rescue_responses` middleware.
 
-Specifically, you have to register your custom exception against an HTTP response code. This is done as follows:
+Specifically, you have to register your custom exception against an [HTTP response code][status_codes]. This is done as follows:
 
     #config/application.rb
     config.action_dispatch.rescue_responses["ActionController::YourError"] = :bad_request
 
-The full list of [Rails HTTP response codes][status_codes] can be found here:
+The full list of Rails HTTP response codes can be found [here][status_codes]. The default is `bad_request` / `500`.
 
+We have now built this functionality into `ExceptionHandler` --
 
+    # config/application.rb
+    config.exception_handler = {
+      custom_exceptions = {
+        "ActionController::MyError" => :bad_request
+      }
+    }
+
+This just recreates the declarations in our gem.
+
+May remove the functionality but since so many people requested it, we'll keep it for now.
 
 ---
 
