@@ -81,21 +81,21 @@ It hooks DIRECTLY into your existing CSS to create a professional exception inte
 
 The secret lies in [**`config.exceptions_app`**][exception_app] ↴
 
-![config.exceptions_app][config.exceptions_app]
+![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
 All Rails exceptions are handled with the `config.exceptions_app` callback. This is assigned in the `config/application.rb` or `config/environments/*.rb files` - it needs to be a callback:
 
-![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
+![config.exceptions_app][config.exceptions_app]
 
 Every time Rails raises an exception, the [`ShowExceptions`][show_exception] middleware takes the request and forwards it to the `exceptions_app` hook. This hook is expected to return a response; which response is up to you:
 
-
+![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
 `ExceptionHandler` injects our [controller](app/controllers/exception_handler/exceptions_controller.rb) into `exceptions_app`, meaning **`requests`** are handled directly (`message`, `details`, `user agent`). `ExceptionHandler` populates our custom `view` with any details required, giving us the ability to **maintain branding** (layout / css) even when exceptions are raised:
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-This is important at is means `ExceptionHandler` has absolutely ZERO bloat. Rails is invoked ONCE (not twice like it is when using routes), delivering a response JUST LIKE if an exception wasn't raised.
+This means `ExceptionHandler` has absolutely ZERO bloat. Rails is invoked ONCE (not twice like it is when using routes), delivering a response JUST LIKE if an exception wasn't raised.
 
 <p align="center">
   <strong>The <i>ONLY</i> professional solution to catch, process & handle Rails exceptions <i>WITHOUT</i> BLOAT:</strong>
