@@ -69,9 +69,11 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
   <img src="readme/titles/layout.png" width="240"/> || DB || Model || Config || Email || 400 Default Layout || Sprockets 4 || Custom Exceptions
 </p>
 
-**100% works with Rails 5 and Sprockets 4**.
-
-It hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part…
+<p align="center">
+  <strong>100% works with Rails 5 and Sprockets 4</strong>
+  <br />
+  Hooks DIRECTLY into your existing CSS to create a professional exception interface with NO work on your part …
+</p>
 
 ----
 
@@ -126,7 +128,7 @@ If you want to change *any* settings (detailed [below](#user-content-config)), y
 
 ## Config
 
-From `0.4.7`, **`ExceptionHandler`** manages config from the central Rails config.
+From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6), **`ExceptionHandler`** manages its config from the central Rails config.
 
 
 ## Database
@@ -150,7 +152,7 @@ Because the browser can only read `4xx` or `5xx` HTTP errors, any exceptions rai
 
 Specifically, you have to register your custom exception against an HTTP response code. This is done as follows:
 
-    # config/application.rb
+    #config/application.rb
     config.action_dispatch.rescue_responses["ActionController::YourError"] = :bad_request
 
 The full list of [Rails HTTP response codes][status_codes] can be found here:
