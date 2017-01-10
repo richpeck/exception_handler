@@ -138,11 +138,12 @@ The `layout` has been improved dramatically:
 
 [[ layout screenshot ]]
 
-You can assign layouts depending on the *status code* of the response:
+You can now assign layouts to the *status code* of the response:
 
 
 
 By default, `5xx` errors are shown with our [`exception` layout][layout] - this can be overridden by changing the `config` to use the
+
 
 
 ---
@@ -179,8 +180,6 @@ This just recreates the declarations in our gem.
 ---
 
 ## Support
-
-We use `ExceptionHandler` in production, so it's imperative for us to keep it working properly:
 
 stackoverflow
 github issues
