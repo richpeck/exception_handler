@@ -83,7 +83,7 @@ The secret lies in [**`config.exceptions_app`**][exception_app] ↴
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-All Rails exceptions are handled with the `config.exceptions_app` callback. This is assigned in `config/application.rb` or `config/environments/*.rb`:
+All Rails exceptions are handled with the `config.exceptions_app` callback, assigned in `config/application.rb` or `config/environments/*.rb`:
 
 ![config.exceptions_app][config.exceptions_app]
 
@@ -157,7 +157,36 @@ Config options are as follows:
       }
     }
 
-You can use this in `config/application.rb` / `config/enviroments/*.rb`, providing environment-dependent config options. Quite why you'd want more than one declaration I don't know.
+If you're using a Rails Engine, you will have to wrap the config in an initializer block:
+
+    # lib/engine.rb
+    module YourModule
+      class Engine < Rails::Engine
+        initializer :config do |app|
+          app.config.exception_handler = {
+            dev:    false,
+            db:     false,
+            email: 	false,
+            social: {
+              facebook: nil,
+              twitter:  nil,
+              youtube:  nil,
+              linkedin: nil,
+              fusion:   nil,
+            },
+            layouts: {
+              400 => nil,
+              500 => "exception"
+            }
+          }
+        end
+      end
+    end
+
+The above config is *default* only. You only need to provide the inputs you want, for example:
+
+    #config/application.rb
+    config.exception_handler = { dev: true }
 
 ----
 
@@ -211,7 +240,7 @@ By default, `5xx` errors are shown with our [`exception` layout][layout] - this 
 
 [[ layout ]]
 
-Now the *majority* of design is handled with the CSS; the `view` and `controller` are minimal.
+Now the *majority* of design is handled with the CSS. The view is completely DRY and the entire system is extremely modular.
 
 ---
 
