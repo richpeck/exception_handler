@@ -119,14 +119,31 @@ If you want to change *any* settings (detailed [below](#user-content-config)), y
 
 ## Config
 
-From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6), **`ExceptionHandler`** manages its config from the central Rails config.
+From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6), **`ExceptionHandler`** manages its config from the central Rails config (not an initializer)
 
 
 ## Database
 
+The `Exception` model creates the `@exception` object for us.
+
 ## Email
 
+## View
+
+
+
 ## Layout
+
+The `layout` has been improved dramatically:
+
+[[ layout screenshot ]]
+
+You can assign layouts depending on the *status code* of the response:
+
+
+
+By default, `5xx` errors are shown with our [`exception` layout][layout] - this can be overridden by changing the `config` to use the
+
 
 ---
 
@@ -159,20 +176,19 @@ We have now built this functionality into `ExceptionHandler` --
 
 This just recreates the declarations in our gem.
 
-May remove the functionality but since so many people requested it, we'll keep it for now.
-
 ---
 
 ## Support
 
-We use `ExceptionHandler` in production, so it's imperative for us to keep it working properly.
+We use `ExceptionHandler` in production, so it's imperative for us to keep it working properly:
+
+stackoverflow
+github issues
 
 ---
 
-**Current stable is [`0.7.5`](https://github.com/richpeck/exception_handler/releases/latest)**
-
 ### [0.7.5](https://github.com/richpeck/exception_handler/releases/tag/1.0.0)
- - [ ] HTTP-based layouts
+ - [ ] HTTP code layouts
  - [ ] Custom exception mapping
 
 ### [0.7.0](https://github.com/richpeck/exception_handler/releases/tag/0.7.0)
@@ -248,6 +264,7 @@ We use `ExceptionHandler` in production, so it's imperative for us to keep it wo
 [profile]:          https://avatars0.githubusercontent.com/u/1104431 "R Peck"
 
 <!-- Links -->
+[layout]: app/views/layouts/exception.html.erb
 [status_codes]: http://guides.rubyonrails.org/layouts_and_rendering.html#the-status-option
 [stackoverflow]: http://stackoverflow.com/questions/ask?tags=ruby-on-rails+exception-handler
 [rescue_responses]: http://guides.rubyonrails.org/configuring.html#config.action_dispatch.rescue_responses

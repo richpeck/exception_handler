@@ -46,8 +46,8 @@ module ExceptionHandler
         fusion:   nil,
       },
       layouts: {
-        "400" => nil, # => inherits from "ApplicationController" layout
-        "500" => "exception"
+        400 => nil, # => inherits from "ApplicationController" layout
+        500 => "exception"
       },
     }
 
@@ -60,9 +60,8 @@ module ExceptionHandler
           instance_variable_set("@#{k}",v)
         end
 
-        # => Validations
-        raise(Exception, "ExceptionHandler::Valid Email Required") if @email && !@email.is_a?(String)
-        #raise(Exception, "ExceptionHandler :: Migration Required → Table \"#{db}\" doesn't exist") if @db && !ActiveRecord::Base.connection.table_exists?(db)
+        raise Exception.new("ExceptionHandler - Email Is Not Valid") if @email && !@email.is_a?(String)
+        raise Exception.new("ExceptionHandler - Migration Required → Table \"#{db}\" doesn't exist") if @db && !ActiveRecord::Base.connection.table_exists?(db)
       end
 
     ###########################################
