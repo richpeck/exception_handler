@@ -75,6 +75,7 @@ Now, at version [`0.7.5`](https://github.com/richpeck/exception_handler/releases
 ----
 
 <p align="center">
+  <br />
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="400" />
 </p>
 
@@ -90,7 +91,7 @@ Each time Rails raises an exception, the [`ShowExceptions`][show_exception] midd
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
-Because our callback parses the erroneous request, we are able to do whatever we need. This is a major advantage over the "default" way of handling `Rails` exceptions - using the routes invokes Rails twice and does not persist the request (`exception` is lost).
+Because our callback parses the erroneous request, we are able to do whatever we need before serving a response. This is a major advantage over the "default" way of handling `Rails` exceptions - using the routes invokes Rails twice and does not persist the request (`exception` is lost).
 
  `ExceptionHandler` is the **only** gem to provide middleware-powered exception handling.  It populates our custom `view` with any details required, giving us the ability to **maintain branding** when exceptions are raised:
 
@@ -111,29 +112,72 @@ You can install `ExceptionHandler` (plug and play) using the details below:
 ----------
 
 <p align="center" id="install">
+  <br />
   <img src="readme/titles/install.png" title="1 Click Install for ExceptionHandler 0.7.0 on Rails 5" width="400" />
+  <br />
+  <strong>Install the gem and it will work in <i>production</i> with ZERO configuration:</strong>
 </p>
 
 [![Gemfile][gemfile]][rubygems] [![Gem][gem]][rubygems]
 
-
+**You can install `ExceptionHandler` without the need to configure.**
 
 ----
 
 ## Config
 
-From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6), **`ExceptionHandler`** manages its config from the central Rails config (not an initializer)
+From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6), **`ExceptionHandler`** manages its config from the central Rails config (not an initializer):
 
+[[ config ]]
+
+This gives us unprecedented flexibility - environment-driven development etc.
+
+Config options are as follows:
+
+    #config/application.rb
+    ...
+    config.exception_handler = {
+      dev:    false, # => set to "true" for dev mode
+      db:     false, # => defaults to :errors if true, else use "table_name" / :table_name
+      email: 	false, # => requires string email and ActionMailer
+      social: {
+        facebook: nil, # => this has changed from previous versions (it is now just the username)
+        twitter:  nil,
+        youtube:  nil,
+        linkedin: nil,
+        fusion:   nil,
+      },
+      layouts: {
+        400 => nil, # => inherits from "ApplicationController" layout
+        500 => "exception"
+      }
+    }
+
+This allows us to change
+
+----
+
+## Dev Mode
+
+By default, `ExceptionHandler` only works in production.
+
+If you want to enable it to work in dev,
+
+----
 
 ## Database
 
 The `Exception` model creates the `@exception` object for us.
 
+---
+
 ## Email
+
+---
 
 ## View
 
-
+---
 
 ## Layout
 
@@ -188,6 +232,8 @@ stackoverflow
 github issues
 
 ---
+
+## Changelog
 
 ### [0.7.5](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
  - [ ] HTTP code layouts
