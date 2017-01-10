@@ -123,7 +123,7 @@ Even better, you can install `ExceptionHandler` (plug and play) with a single cl
 
 
 <p align="center">
-  <a href="#config">Config</a> → <a href="#dev-mode">Dev Mode</a> → <a href="#database">Database</a> → <a href="#email">Email</a> → <a href="#view">View</a> → <a href="#locales">Locales</a> → <a href="#custom-exceptions">Custom Exceptions</a>
+  <strong><a href="#config">Config</a></strong> → <strong><a href="#dev-mode">Dev Mode</a></strong> → <strong><a href="#database">Database</a></strong> → <strong><a href="#email">Email</a></strong> → <strong><a href="#view">View</a></strong> → <strong><a href="#locales">Locales</a></strong> → <strong><a href="#custom-exceptions">Custom Exceptions</a></strong>
 </p>
 
 ----
@@ -134,7 +134,7 @@ From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6)
 
 [[ config ]]
 
-This gives us unprecedented flexibility - environment-driven development etc.
+This gives us unprecedented flexibility → environment-driven development etc.
 
 Config options are as follows:
 
@@ -157,7 +157,7 @@ Config options are as follows:
       }
     }
 
-This allows us to change
+You can use this in `config/application.rb` / `config/enviroments/*.rb`, providing environment-dependent config options. Quite why you'd want more than one declaration I don't know.
 
 ----
 
@@ -177,6 +177,10 @@ The `Exception` model creates the `@exception` object for us.
 
 ## Email
 
+You can also send emails with `ExceptionHandler` (requires `ActionMailer` setup).
+
+See the [full tutorial here](https://github.com/richpeck/exception_handler/wiki/2-Email).
+
 ---
 
 ## View
@@ -185,9 +189,11 @@ The `Exception` model creates the `@exception` object for us.
 
 ## Locales
 
-`0.7.5` introduced flexible locales.
+`0.7.5` introduced flexible locales:
 
-By default, `ExceptionHandler`
+
+
+This means `ExceptionHandler` calls its "message" by the status code of the exception.
 
 ---
 
@@ -203,11 +209,9 @@ You can now assign layouts to the *status code* of the response:
 
 By default, `5xx` errors are shown with our [`exception` layout][layout] - this can be overridden by changing the `config` to use a layout of your choice. If you want to inherit the `ApplicationController` layout, set the various status codes to `nil`.
 
-Our professionally designed `exception` layout has also been improved:
-
 [[ layout ]]
 
-Now the *majority* of design is handled with the CSS.
+Now the *majority* of design is handled with the CSS; the `view` and `controller` are minimal.
 
 ---
 
@@ -234,7 +238,7 @@ We have built this functionality into `ExceptionHandler` --
     # config/application.rb
     config.exception_handler = {
       custom_exceptions = {
-        "ActionController::MyError" => :bad_request
+        "ActionController::YourError" => :bad_request
       }
     }
 
