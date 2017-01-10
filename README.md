@@ -75,7 +75,6 @@ Now, at version [`0.7.5`](https://github.com/richpeck/exception_handler/releases
 ----
 
 <p align="center">
-  <br />
   <img src="readme/titles/middleware.png" title="Middleware-Powered Exceptions" width="400" />
 </p>
 
@@ -87,42 +86,37 @@ All Rails exceptions are handled with the `config.exceptions_app` callback. This
 
 ![config.exceptions_app][config.exceptions_app]
 
-Each time Rails raises an exception, the [`ShowExceptions`][show_exception] middleware takes the request and forwards it to the `config.exceptions_app` hook. This hook is expected to return a response - allowing us to use our controller:
+Each time Rails raises an exception, the [`ShowExceptions`][show_exception] middleware takes the request and forwards it to the `config.exceptions_app` hook. This hook is expected to return a response - this is where we can inject our own callback (in our case a [`controller`](app/controllers/exception_handler/exceptions_controller.rb)):
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
-Because `ExceptionHandler` injects our [controller](app/controllers/exception_handler/exceptions_controller.rb) into `exceptions_app`, **`requests`** are handled directly (`message`, `status`, `details`, `user agent`). This is a BIG advantage over the "default" way of handling Rails exceptions - using the routes invokes Rails twice and does not persist the request (`exception` data is lost).
+Because our callback parses the erroneous request, we are able to do whatever we need. This is a major advantage over the "default" way of handling `Rails` exceptions - using the routes invokes Rails twice and does not persist the request (`exception` is lost).
 
- `ExceptionHandler` is the only gem to provide
-
- It populates our custom `view` with any details required, giving us the ability to **maintain branding** (layout / css) even when exceptions are raised:
+ `ExceptionHandler` is the **only** gem to provide middleware-powered exception handling.  It populates our custom `view` with any details required, giving us the ability to **maintain branding** when exceptions are raised:
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-**This means `ExceptionHandler` has ZERO bloat**. Rails is invoked ONCE (not twice like it is when using routes), delivering a response JUST LIKE an exception wasn't raised.
+**This makes `ExceptionHandler` the MOST EFFECTIVE and EFFICIENT gem to handle exceptions in Rails**. Once invoked, its `model`, `controller` and `views` work together to serve the most efficient responses to Rails errors.
 
 <p align="center">
-  <strong>ExceptionHandler - the <i>ONLY</i> professional solution to manage Rails exceptions <i>WITHOUT</i> BLOAT:</strong>
+  <strong>The <i>ONLY</i> professional solution to manage Rails exceptions WITHOUT BLOAT:</strong>
 </p>
 
 <p align="center">
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
 </p>
 
-You can install `ExceptionHandler` without any configuration (plug and play) by using the details below:
+You can install `ExceptionHandler` (plug and play) using the details below:
 
 ----------
 
 <p align="center" id="install">
-  <br />
   <img src="readme/titles/install.png" title="1 Click Install for ExceptionHandler 0.7.0 on Rails 5" width="400" />
 </p>
 
 [![Gemfile][gemfile]][rubygems] [![Gem][gem]][rubygems]
 
-`ExceptionHandler`'s **config** system stores the - you just need to install the gem & let it run.
 
-If you want to change *any* settings (detailed [below](#user-content-config)), you **simply** need to change `config/application.rb` or `config/environments/your_env.rb`. The ***POWER*** of this *new config system* means you're able to deploy `ExceptionHandler` in the most unobtrusive, versatile way possible:
 
 ----
 
@@ -166,7 +160,7 @@ Turns out the functionality is *already* built into Rails [`config.action_dispat
 
 ![ActionDispatch][config.action_dispatch.rescue_responses]
 
-Because the browser can only read `4xx` or `5xx` HTTP errors, any exception raised inside Rails has to be interpolated. This is handled by the `action_dispatch.rescue_responses` middleware.
+Because the browser can only read `4xx` or `5xx` HTTP errors, any exception raised inside Rails needs to be interpolated. This is handled by the `action_dispatch.rescue_responses` middleware.
 
 Specifically, you have to register your custom exception against an [HTTP response code][status_codes]. This is done as follows:
 
