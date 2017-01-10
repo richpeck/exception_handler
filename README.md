@@ -157,7 +157,7 @@ Config options are as follows:
       }
     }
 
-If you're using a Rails Engine, you will have to wrap the config in an initializer block:
+If you're using a [`Rails` Engine](http://guides.rubyonrails.org/engines.html), you will have to wrap the config in an initializer block:
 
     # lib/engine.rb
     module YourModule
