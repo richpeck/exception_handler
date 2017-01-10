@@ -61,7 +61,7 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
   <img src="readme/500.png" title="500 Errors" width="430" />
 </p>
 
-<center>For over 3 years, <strong>ExceptionHandler</strong> has provided production-level Rails exception handling for 4xx and 5xx errors:</center>
+<p align="center">For over 3 years, <strong>ExceptionHandler</strong> has provided production-level <strong>Rails</strong> exception handling for <strong>4xx</strong> and <strong>5xx</strong> errors:</p>
 
 [[ stuff ]]
 
