@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <strong><a href="#user-content-install">Install</a></strong> → <strong><a href="#user-content-config">Setup</a></strong> → <strong><a href="#user-content-support">Support</a></strong>
+  <strong><a href="#install">Install</a></strong> → <strong><a href="#config">Setup</a></strong> → <strong><a href="#support">Support</a></strong>
 </p>
 
 ---
@@ -61,7 +61,7 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
   <img src="readme/500.png" title="500 Errors" width="430" />
 </p>
 
-For over 3 years, `ExceptionHandler` has provided production-level `Rails` exception handling for `4xx` and `5xx` errors:
+<center>For over 3 years, <strong>ExceptionHandler</strong> has provided production-level Rails exception handling for 4xx and 5xx errors:</center>
 
 [[ stuff ]]
 
@@ -115,7 +115,8 @@ You can install `ExceptionHandler` (plug and play) using the details below:
   <br />
   <img src="readme/titles/install.png" title="1 Click Install for ExceptionHandler 0.7.0 on Rails 5" width="400" />
   <br />
-  <strong>Install the gem and it will work in <i>production</i> with ZERO configuration:</strong>
+  <strong>Installing the gem is <i>simple</i> - ZERO configuration required:</strong>
+  <br /><br />
 </p>
 
 [![Gemfile][gemfile]][rubygems] [![Gem][gem]][rubygems]
@@ -179,6 +180,14 @@ The `Exception` model creates the `@exception` object for us.
 
 ---
 
+## Locales
+
+The big improvement with `0.7.5` is flexible locales.
+
+By default, `ExceptionHandler`
+
+---
+
 ## Layout
 
 The `layout` has been improved dramatically:
@@ -213,7 +222,7 @@ Specifically, you have to register your custom exception against an [HTTP respon
 
 The full list of Rails HTTP response codes can be found [here][status_codes]. The default is `bad_request` / `500`.
 
-We have now built this functionality into `ExceptionHandler` --
+We have built this functionality into `ExceptionHandler` --
 
     # config/application.rb
     config.exception_handler = {
@@ -222,7 +231,7 @@ We have now built this functionality into `ExceptionHandler` --
       }
     }
 
-This just recreates the declarations in our gem.
+This just recreates the declarations in our gem, so may remove it. We figured if you're raising custom exceptions, you may wish to keep them with `ExceptionHandler`'s config, rather than separate.
 
 ---
 
@@ -278,7 +287,7 @@ github issues
 ![404 + 500 Errors][banner]
 
 <p align="center">
-  <strong>[`ExceptionHandler`](#) is now the leading custom error pages gem for Rails.</strong>
+  <strong><a href="#">ExceptionHandler</a> is now the leading custom error pages gem for Rails.</strong>
   <br />
   No other gem is as simple or effective at providing beautiful exception pages in production.
 </p>
