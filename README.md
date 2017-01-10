@@ -87,11 +87,11 @@ All Rails exceptions are handled with the `config.exceptions_app` callback. This
 
 ![config.exceptions_app][config.exceptions_app]
 
-Each time Rails raises an exception, the [`ShowExceptions`][show_exception] middleware takes the request and forwards it to the `config.exceptions_app` hook. This hook is expected to return a response - this is where we can inject our own callback (in our case a [`controller`](app/controllers/exception_handler/exceptions_controller.rb)):
+Each time Rails raises an exception, the [`ShowExceptions`][show_exception] middleware takes the request and forwards it to `config.exceptions_app`. This hook is expected to return a response - this is where we can inject our own callback (in our case a [`controller`](app/controllers/exception_handler/exceptions_controller.rb)):
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
-Because our callback parses the erroneous request, we are able to do whatever we need before serving a response. This is a major advantage over the "default" way of handling `Rails` exceptions - using the routes invokes Rails twice and does not persist the request (`exception` is lost).
+Because our callback parses the erroneous request, we are able to do whatever we need before serving a response. This is a major advantage over the "default" way of handling `Rails` exceptions (routes). This invokes Rails twice and does not persist the request (exception lost).
 
  `ExceptionHandler` is the **only** gem to provide middleware-powered exception handling.  It populates our custom `view` with any details required, giving us the ability to **maintain branding** when exceptions are raised:
 
@@ -107,7 +107,7 @@ Because our callback parses the erroneous request, we are able to do whatever we
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
 </p>
 
-You can install `ExceptionHandler` (plug and play) using the details below:
+Even better, you can install `ExceptionHandler` (plug and play) with a single click:
 
 ----------
 
@@ -116,12 +116,15 @@ You can install `ExceptionHandler` (plug and play) using the details below:
   <img src="readme/titles/install.png" title="1 Click Install for ExceptionHandler 0.7.0 on Rails 5" width="400" />
   <br />
   <strong>Installing the gem is <i>simple</i> - ZERO configuration required:</strong>
-  <br /><br />
+  <br />
 </p>
 
 [![Gemfile][gemfile]][rubygems] [![Gem][gem]][rubygems]
 
-**You can install `ExceptionHandler` without the need to configure.**
+
+<p align="center">
+  <a href="#config">Config</a> → <a href="#dev-mode">Dev Mode</a> → <a href="#database">Database</a> → <a href="#email">Email</a> → <a href="#view">View</a> → <a href="#locales">Locales</a> → <a href="#custom-exceptions">Custom Exceptions</a>
+</p>
 
 ----
 
@@ -182,7 +185,7 @@ The `Exception` model creates the `@exception` object for us.
 
 ## Locales
 
-The big improvement with `0.7.5` is flexible locales.
+`0.7.5` introduced flexible locales.
 
 By default, `ExceptionHandler`
 
@@ -196,11 +199,15 @@ The `layout` has been improved dramatically:
 
 You can now assign layouts to the *status code* of the response:
 
+[[ status codes ]]
 
+By default, `5xx` errors are shown with our [`exception` layout][layout] - this can be overridden by changing the `config` to use a layout of your choice. If you want to inherit the `ApplicationController` layout, set the various status codes to `nil`.
 
-By default, `5xx` errors are shown with our [`exception` layout][layout] - this can be overridden by changing the `config` to use the
+Our professionally designed `exception` layout has also been improved:
 
+[[ layout ]]
 
+Now the *majority* of design is handled with the CSS.
 
 ---
 
