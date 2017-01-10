@@ -28,7 +28,7 @@ module ExceptionHandler
     # => Layout
     # => Layouts only 400 / 500 because they are the only error responses (300 is redirect)
     # => http://guides.rubyonrails.org/layouts_and_rendering.html#the-status-option
-    # => Layout proc kills inheritance, needs to be method for now
+    # => Layout proc kills "nil" inheritance, needs to be method for now
     layout :layout
 
     ####################
@@ -47,6 +47,9 @@ module ExceptionHandler
     def layout
       ExceptionHandler.config.layouts[@exception.status]
     end
+
+    ##################################
+    ##################################
 
   end
 end

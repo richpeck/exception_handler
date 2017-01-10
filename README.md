@@ -65,6 +65,13 @@ For over 3 years, `ExceptionHandler` has provided production-level Rails excepti
 
 [[ stuff ]]
 
+The magic lies in the fact that browsers can only read `4xx` & `5xx` error responses. Any exceptions raised by Rails have to be interpolated into one of these response codes. Thus, `ExceptionHandler` simply has to manage how these errors are passed to the browser.
+
+Unlike other gems, `ExceptionHandler` uses a custom `controller` to build an `@exception` object. This allows us to save the exception, email it or do anything else we may need. The gem has already been a massive success and we continue to actively maintain it.
+
+Now, at version `0.7.5`, we invite you to try it for yourself...
+
+
 ----
 
 <p align="center">
