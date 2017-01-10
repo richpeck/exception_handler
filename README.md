@@ -69,7 +69,7 @@ Since browsers only read `4xx` & `5xx` error codes, any exceptions raised by Rai
 
 Unlike other gems, **`ExceptionHandler` uses a custom [`controller`](app/controllers/exception_handler/exceptions_controller.rb) to build an [`@exception`](app/models/exception_handler/exception.rb) object**. This allows us to save the exception, email it or do anything else we may need. The gem has already been a massive success and we continue to actively maintain it.
 
-Now, at version [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), we invite you to try for yourself...
+Now, at version [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), we invite you to try for yourself ...
 
 
 ----
@@ -83,7 +83,7 @@ The secret lies in [**`config.exceptions_app`**][exception_app] ↴
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-All Rails exceptions are handled with the `config.exceptions_app` callback. This is assigned in `config/application.rb` or `config/environments/*.rb`; referenced by the [`ShowExceptions`][show_exception] middleware:
+All Rails exceptions are handled with the `config.exceptions_app` callback. This is assigned in `config/application.rb` or `config/environments/*.rb`:
 
 ![config.exceptions_app][config.exceptions_app]
 
@@ -91,21 +91,25 @@ Each time Rails raises an exception, the [`ShowExceptions`][show_exception] midd
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
-Because `ExceptionHandler` injects our [controller](app/controllers/exception_handler/exceptions_controller.rb) into `exceptions_app`, **`requests`** are handled directly (`message`, `status`, `details`, `user agent`). `ExceptionHandler` populates our custom `view` with any details required, giving us the ability to **maintain branding** (layout / css) even when exceptions are raised:
+Because `ExceptionHandler` injects our [controller](app/controllers/exception_handler/exceptions_controller.rb) into `exceptions_app`, **`requests`** are handled directly (`message`, `status`, `details`, `user agent`). This is a BIG advantage over the "default" way of handling Rails exceptions - using the routes invokes Rails twice and does not persist the request (`exception` data is lost).
+
+ `ExceptionHandler` is the only gem to provide
+
+ It populates our custom `view` with any details required, giving us the ability to **maintain branding** (layout / css) even when exceptions are raised:
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-This means `ExceptionHandler` has absolutely ZERO bloat. Rails is invoked ONCE (not twice like it is when using routes), delivering a response JUST LIKE if an exception wasn't raised.
+**This means `ExceptionHandler` has ZERO bloat**. Rails is invoked ONCE (not twice like it is when using routes), delivering a response JUST LIKE an exception wasn't raised.
 
 <p align="center">
-  <strong>`ExceptionHandler` - the <i>ONLY</i> professional solution to manage Rails exceptions <i>WITHOUT</i> BLOAT:</strong>
+  <strong>ExceptionHandler - the <i>ONLY</i> professional solution to manage Rails exceptions <i>WITHOUT</i> BLOAT:</strong>
 </p>
 
 <p align="center">
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
 </p>
 
-
+You can install `ExceptionHandler` without any configuration (plug and play) by using the details below:
 
 ----------
 
