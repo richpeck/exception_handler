@@ -10,7 +10,7 @@ module ExceptionHandler
   class Config
 
     # => Instace Objects
-    attr_accessor :dev, :db, :email, :social, :layouts
+    attr_accessor :dev, :db, :email, :social, :layouts, :custom_exceptions
 
     ###########################################
     ###########################################
@@ -48,7 +48,7 @@ module ExceptionHandler
       layouts: {
         400 => nil, # => inherits from "ApplicationController" layout
         500 => "exception"
-      },
+      }
     }
 
     ###########################################

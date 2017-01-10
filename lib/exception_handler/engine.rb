@@ -37,7 +37,7 @@ module ExceptionHandler
 
         # => Custom Exceptions
         ExceptionHandler.config.try(:custom_exceptions).try(:each) do |exception,response|
-          app.action_dispatch.rescue_responses[exception] = response
+          app.config.action_dispatch.rescue_responses[exception] = response
         end
 
       end
