@@ -35,9 +35,9 @@ module ExceptionHandler
     # => Defaults
     # => http://stackoverflow.com/a/8917301/1143732
     DEFAULTS = {
-      dev:    false, #-> defaults to "false" for dev mode
-      db:     false, #-> defaults to :errors if true, else use "table_name" / :table_name
-      email: 	false, #-> requires string email and ActionMailer
+      dev:    false, # => defaults to "false" for dev mode
+      db:     false, # => defaults to :errors if true, else use "table_name" / :table_name
+      email: 	false, # => requires string email and ActionMailer
       social: {
         facebook: nil,
         twitter:  nil,
