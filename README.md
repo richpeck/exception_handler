@@ -129,7 +129,7 @@ Even better, you can install `ExceptionHandler` (plug and play) with a single cl
 <p align="center">
   Works straight out the box - you just need to install it from the <strong>CLI</strong> or <strong>Gemfile</strong>, and it will automatically run in <strong>production</strong>.
   <br />
-  <strong>↓ To run in development, use <a href="#dev-mode">dev mode</a> ↓</strong>
+  <strong>:star: To run in development, use <a href="#dev-mode">dev mode</a> :star:</strong>
 </p>
 
 ----
