@@ -65,7 +65,7 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
 
 [[ stuff ]]
 
-Since browsers only read `4xx` & `5xx` error codes, any exceptions raised by Rails have to be interpolated. Thus, `ExceptionHandler` simply has to manage how the `4xx` / `5xx` errors are passed to the browser.
+Since browsers only read `4xx` & `5xx` error codes, any exceptions raised by Rails have to be inferred. Thus, `ExceptionHandler` simply has to manage how the `4xx` / `5xx` errors are passed to the browser.
 
 Unlike other gems, **`ExceptionHandler` uses a custom [`controller`](app/controllers/exception_handler/exceptions_controller.rb) to build an [`@exception`](app/models/exception_handler/exception.rb) object**. This allows us to save the exception, email it or do anything else we may need. The gem has already been a massive success and we continue to actively maintain it.
 
@@ -156,8 +156,17 @@ Config options are as follows:
         fusion:   nil,
       },
       layouts: {
-        400 => nil, # => inherits from "ApplicationController" layout
-        500 => "exception"
+        # => nil inherits from ApplicationController
+        # => 4xx errors should be nil
+        # => 5xx errors should be "exception" but can be nil if explicitly defined
+        500 => "exception",
+        501	=> "exception",
+        502 => "exception",
+        503 => "exception",
+        504 => "exception",
+        505 => "exception",
+        507 => "exception",
+        510 => "exception"
       }
     }
 
@@ -182,8 +191,17 @@ If you're using a [`Rails` Engine](http://guides.rubyonrails.org/engines.html), 
               fusion:   nil,
             },
             layouts: {
-              400 => nil,
-              500 => "exception"
+              # => nil inherits from ApplicationController
+              # => 4xx errors should be nil
+              # => 5xx errors should be "exception" but can be nil if explicitly defined
+              500 => "exception",
+              501	=> "exception",
+              502 => "exception",
+              503 => "exception",
+              504 => "exception",
+              505 => "exception",
+              507 => "exception",
+              510 => "exception"
             }
           }
         end
@@ -284,7 +302,7 @@ The *majority* our `layout` is handled with the CSS. This allows the view to be 
 
 ## Custom Exceptions
 
-Due to popular demand, we added **custom exceptions**.
+Due to popular demand, we added **custom exceptions** in [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5).
 
 The functionality is *already* built into Rails [`config.action_dispatch.rescue_responses`][rescue_responses] ↴
 
@@ -320,8 +338,8 @@ If you want to take control over the entire `ExceptionHandler` flow, you'll want
 
 ## Support
 
-stackoverflow
-github issues
+[stackoverflow][stackoverflow]
+[github issues]
 
 ---
 
@@ -417,6 +435,7 @@ github issues
 [stackoverflow.com]: http://stackoverflow.com/users/1143732/richard-peck?tab=profile
 [fork]: #fork-destination-box
 [pull]:  http://github.com/richpeck/exception_handler/pulls
+[issues]: http://github.com/richpeck/exception_handler/issues
 
 <!-- ################################### -->
 <!-- ################################### -->

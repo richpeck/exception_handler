@@ -10,8 +10,16 @@ module ExceptionHandler
   class Config
 
     # => Instace Objects
+    # => ExceptionHandler.config.dev
+    # => ExceptionHandler.config.db
+    # => ExceptionHandler.config.email
+    # => ExceptionHandler.config.social
+    # => ExceptionHandler.config.layouts
+    # => ExceptionHandler.config.custom_exceptions
     attr_accessor :dev, :db, :email, :social, :layouts, :custom_exceptions
 
+    ###########################################
+    ###########################################
     ###########################################
     ###########################################
 
@@ -23,10 +31,10 @@ module ExceptionHandler
     # => Extracted from "social" block
     SOCIAL = {
       facebook: "https://facebook.com",
-      twitter:  "http://twitter.com",
+      twitter:  "https://twitter.com",
       youtube:  "https://youtube.com/user",
       linkedin: "https://linkedin.com/company",
-      fusion:   "http://frontlinefusion.com"
+      fusion:   "https://frontlinefusion.com"
     }
 
     ###########################################
@@ -46,8 +54,17 @@ module ExceptionHandler
         fusion:   nil,
       },
       layouts: {
-        400 => nil, # => inherits from "ApplicationController" layout
-        500 => "exception"
+        # => nil inherits from ApplicationController
+        # => 4xx errors should be nil
+        # => 5xx errors should be "exception" but can be nil if explicitly defined
+        500 => "exception",
+        501	=> "exception",
+        502 => "exception",
+        503 => "exception",
+        504 => "exception",
+        505 => "exception",
+        507 => "exception",
+        510 => "exception"
       }
     }
 
@@ -55,23 +72,31 @@ module ExceptionHandler
     ###########################################
 
       # => Init
+      # => Merges DEFAULTS to values, creates instances vars (for attr_accessor)
       def initialize values
+
+        # => Vars
         DEFAULTS.deep_merge!(values || {}).each do |k,v|
           instance_variable_set("@#{k}",v)
         end
 
+        # => Validation
         raise Exception.new("ExceptionHandler - Email Is Not Valid") if @email && !@email.is_a?(String)
         raise Exception.new("ExceptionHandler - Migration Required → Table \"#{db}\" doesn't exist") if @db && !ActiveRecord::Base.connection.table_exists?(db)
+
       end
 
     ###########################################
     ###########################################
 
       # => DB
+      # => If config db = "true", use TABLE constant
       def db
         @db == true ? TABLE : @db
       end
 
+    ###########################################
+    ###########################################
     ###########################################
     ###########################################
 
