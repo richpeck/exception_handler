@@ -216,13 +216,17 @@ If you want to enable it in dev, enable the [`dev`](lib/exception_handler/config
     # config/application.rb
     config.exception_handler = { dev: true }
 
-This disables [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), making Rails behave as it would in production. This gives you the ability to edit the exception flow, either creating your own interface or ensuring it works correctly.
+This disables [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), making Rails behave as it would in production. This gives you the ability to edit the exception flow, either creating your own interface or ensuring it works correctly:
 
-In `development`, Rails has a robust error management system... not to mention [`better_errors`][better_errors] being *very* good:
+[[ dev mode ]]
+
+--
+
+In `development`, Rails has a robust error management system, not to mention [`better_errors`][better_errors] being *very* good:
 
 [![Better Errors - Great for development rails error testing](https://camo.githubusercontent.com/3fa6840d5e20236b4f768d6ed4b42421ba7c2f21/68747470733a2f2f692e696d6775722e636f6d2f367a42474141622e706e67)](https://github.com/charliesome/better_errors)
 
-This negates the need for [`exception_handler`](http://github.com/richpeck/excption_handler) in `development`. However, if you want to see how it works, or change the flow - just use `config.exception_handler = { dev:true }` from the Rails config.
+This negates the need for [`exception_handler`](http://github.com/richpeck/excption_handler) in `development`. However, if you want to see how it works, or change the flow - use `config.exception_handler = { dev:true }` from the Rails config.
 
 ----
 
@@ -253,7 +257,7 @@ See the [full tutorial here](https://github.com/richpeck/exception_handler/wiki/
 
 `ExceptionHandler` now populates the view by accessing `exception - [status_name]` from the locales. If no value exists, the default will be the `status name`, as defined by [`Rack::Utils::HTTP_STATUS_CODES`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L544):
 
-You also get access to `%{message}` and `%{status}` objects, both inferring data from the Rails
+You also get access to `%{message}` and `%{status}` objects, both inferring data from the `@exception` object.
 
 ---
 
@@ -267,28 +271,30 @@ You can now assign layouts to the *status code* of the response:
 
 [[ status codes ]]
 
-By default, `5xx` errors are shown with our [`exception` layout][layout] - this can be overridden by changing the `config` to use a layout of your choice. If you want to inherit the `ApplicationController` layout, set the various status codes to `nil`.
+By default, `5xx` errors are shown with our [`exception` layout][layout] - this can be overridden by changing the `config` to use a layout of your choice. If you want to inherit the `ApplicationController` layout, keep the various status codes to `nil`.
 
 [[ layout ]]
 
-Now the *majority* of design is handled with the CSS. The view is completely DRY and the entire system modular.
+The *majority* our `layout` is handled with the CSS. This allows the view to be completely modular:
+
+[[ CSS ]]
 
 ---
 
 
 ## Custom Exceptions
 
-Due to popular demand, we investigated how to add **custom exceptions**.
+Due to popular demand, we added **custom exceptions**.
 
-Turns out the functionality is *already* built into Rails [`config.action_dispatch.rescue_responses`][rescue_responses] ↴
+The functionality is *already* built into Rails [`config.action_dispatch.rescue_responses`][rescue_responses] ↴
 
 ![ActionDispatch][config.action_dispatch.rescue_responses]
 
-Because the browser can only read `4xx` or `5xx` HTTP errors, any exception raised inside Rails needs to be interpolated. This is handled by the `action_dispatch.rescue_responses` middleware.
+Because the browser can only read `4xx` or `5xx` HTTP errors, any exception raised inside Rails needs to be interpolated. This is handled by the [`config.action_dispatch.rescue_responses`][rescue_responses] middleware.
 
 Specifically, you have to register your custom exception against an [HTTP response code][status_codes]. This is done as follows:
 
-    #config/application.rb
+    # config/application.rb
     config.action_dispatch.rescue_responses["ActionController::YourError"] = :bad_request
 
 The full list of Rails HTTP response codes can be found [here][status_codes]. The default is `bad_request` / `500`.
@@ -297,12 +303,10 @@ We have built this functionality into `ExceptionHandler` --
 
     # config/application.rb
     config.exception_handler = {
-      custom_exceptions = {
-        "ActionController::YourError" => :bad_request
-      }
+      custom_exceptions = { "ActionController::YourError" => :bad_request }
     }
 
-This just recreates the declarations in our gem, so may remove it. We figured if you're raising custom exceptions, you may wish to keep them with `ExceptionHandler`'s config, rather than separate.
+This does nothing different to the base Rails functionality, so may remove it. We figured if you're raising custom exceptions, you may wish to keep them with `ExceptionHandler`'s config, rather than separate.
 
 ---
 
