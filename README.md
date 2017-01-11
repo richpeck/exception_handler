@@ -260,7 +260,7 @@ The `Exception` model creates the `@exception` object for us, allowing us to sto
 
 You can also send emails with `ExceptionHandler` (requires [`ActionMailer`](http://guides.rubyonrails.org/action_mailer_basics.html)).
 
-See the [full tutorial here](https://github.com/richpeck/exception_handler/wiki/2-Email)
+See the [full tutorial here](https://github.com/richpeck/exception_handler/wiki/2-Email).
 
 ---
 
@@ -360,6 +360,12 @@ You can use the following commands:
     rails g exception_handler:views -v models
     rails g exception_handler:views -v assets
     rails g exception_handler:views -v views controllers models assets
+
+From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own migration system.
+
+Specifically
+
+
 
 ---
 
