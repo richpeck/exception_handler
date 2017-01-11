@@ -127,7 +127,7 @@ Even better, you can install `ExceptionHandler` (plug and play) with a single cl
 </p>
 
 <p align="center">
-  Works straight out the box - you just need to install it from the <strong>CLI</strong> or <strong>Gemfile</strong>, and it will automatically run in `production`. If you want to run it in development, use <a href="#dev mode">dev mode</a>:
+  Works straight out the box - you just need to install it from the <strong>CLI</strong> or <strong>Gemfile</strong>, and it will automatically run in <strong>production</strong>. If you want to run it in development, use <a href="#dev-mode">dev mode</a>:
 </p>
 
 ----
@@ -191,7 +191,7 @@ If you're using a [`Rails` Engine](http://guides.rubyonrails.org/engines.html), 
       end
     end
 
-**The above config is *default* only.** You only need to provide the inputs you want, for example:
+**The above config is *default*.** You *only* need to provide the inputs you want, for example:
 
     # config/application.rb
     config.exception_handler = { dev: true }
@@ -211,7 +211,7 @@ This ruthlessly simple and effective config system works on all versions of rail
 
 By default, `ExceptionHandler` only works in production.
 
-If you want to enable it to work in dev, you can just enable the [`dev`](lib/exception_handler/config.rb#L38) option:
+If you want to enable it in dev, enable the [`dev`](lib/exception_handler/config.rb#L38) option:
 
     # config/application.rb
     config.exception_handler = { dev: true }
@@ -220,9 +220,9 @@ This disables [`config.consider_all_requests_local`](http://guides.rubyonrails.o
 
 In `development`, Rails has a robust error management system... not to mention [`better_errors`][better_errors] being *very* good:
 
-![Better Errors - Great for development rails error testing](https://camo.githubusercontent.com/3fa6840d5e20236b4f768d6ed4b42421ba7c2f21/68747470733a2f2f692e696d6775722e636f6d2f367a42474141622e706e67)
+[![Better Errors - Great for development rails error testing](https://camo.githubusercontent.com/3fa6840d5e20236b4f768d6ed4b42421ba7c2f21/68747470733a2f2f692e696d6775722e636f6d2f367a42474141622e706e67)](https://github.com/charliesome/better_errors)
 
-This negates the need for `exception_handler` in `development`. However, if you wanted to see how it worked, or change the flow - just use `dev:true` from the Rails config.
+This negates the need for [`exception_handler`](http://github.com/richpeck/excption_handler) in `development`. However, if you want to see how it works, or change the flow - just use `config.exception_handler = { dev:true }` from the Rails config.
 
 ----
 
@@ -248,9 +248,12 @@ See the [full tutorial here](https://github.com/richpeck/exception_handler/wiki/
 
 [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5) introduced flexible locales:
 
+[[ locales ]]
 
 
-This means `ExceptionHandler` calls its "message" by the status code of the exception.
+`ExceptionHandler` now populates the view by accessing `exception - [status_name]` from the locales. If no value exists, the default will be the `status name`, as defined by [`Rack::Utils::HTTP_STATUS_CODES`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L544):
+
+You also get access to `%{message}` and `%{status}` objects, both inferring data from the Rails
 
 ---
 
@@ -305,6 +308,9 @@ This just recreates the declarations in our gem, so may remove it. We figured if
 
 ## Generators
 
+If you want to take control over the entire `ExceptionHandler` flow, you'll want to `generate` the views into your own application:
+
+[[ Generator ]]
 
 ---
 
