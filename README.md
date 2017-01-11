@@ -250,7 +250,7 @@ This negates the need for [`exception_handler`](http://github.com/richpeck/excpt
 
 ## Database
 
-The `Exception` model creates the `@exception` object for us.
+The `Exception` model creates the `@exception` object for us, allowing us to store in the `db`.
 
 ---
 
@@ -263,6 +263,12 @@ See the [full tutorial here](https://github.com/richpeck/exception_handler/wiki/
 ---
 
 ## View
+
+From [`0.7.0`](#070), we drastically overhauled the view system:
+
+[[ View ]]
+
+Now, the view is 100% modular - using the `@exception` object, and populating with
 
 ---
 
@@ -315,7 +321,7 @@ Specifically, you have to register your custom exception against an [HTTP respon
     # config/application.rb
     config.action_dispatch.rescue_responses["ActionController::YourError"] = :bad_request
 
-The full list of Rails HTTP response codes can be found [here][status_codes]. The default is `bad_request` / `500`.
+The full list of Rails HTTP response codes can be found [here][status_codes]. The default is `internal_server_error` / `500`.
 
 We have built this functionality into `ExceptionHandler` --
 
@@ -339,15 +345,15 @@ If you want to take control over the entire `ExceptionHandler` flow, you'll want
 ## Support
 
 [stackoverflow][stackoverflow]
-[github issues]
+[github issues][issues]
 
 ---
 
 ## Changelog
 
 ### [0.7.5](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
- - [ ] HTTP code layouts
- - [ ] Custom exception mapping
+ - [x] [HTTP status layouts](#layouts)
+ - [x] [Custom exception mapping](#custom_exceptions)
 
 ### [0.7.0](https://github.com/richpeck/exception_handler/releases/tag/0.7.0)
  - [x] Wildcard mime types
