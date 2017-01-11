@@ -85,7 +85,7 @@ The secret lies in [**`config.exceptions_app`**][exception_app] ↴
 
 All Rails exceptions are handled with the `config.exceptions_app` callback, assigned in `config/application.rb` or `config/environments/*.rb`:
 
-![config.exceptions_app][config.exceptions_app]
+> **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**
 
 Each time Rails raises an exception, the [`ShowExceptions`][show_exception] middleware takes the request and forwards it to `config.exceptions_app`. This hook is expected to return a response - this is where we can inject our own callback (in our case a [`controller`](app/controllers/exception_handler/exceptions_controller.rb)):
 
@@ -129,18 +129,18 @@ Even better, you can install `ExceptionHandler` (plug and play) with a single cl
 <p align="center">
   Works straight out the box - you just need to install it from the <strong>CLI</strong> or <strong>Gemfile</strong>, and it will automatically run in <strong>production</strong>.
   <br />
-  <strong>:star: To run in development, use <a href="#dev-mode">dev mode</a> :star:</strong>
+  <strong>↓ To run in development, use <a href="#dev-mode">dev mode</a> ↓</strong>
 </p>
 
 ----
 
 ## Config
 
-From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6), **`ExceptionHandler`** manages its config from the central Rails config (not an initializer):
+From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6), **`ExceptionHandler`** manages its config from the central Rails config:
 
 [[ config ]]
 
-This gives us flexibility → environment-dependent development etc.
+This gives us flexibility (environment-dependent development etc).
 
 Config options are as follows:
 
@@ -159,10 +159,10 @@ Config options are as follows:
       },
       layouts: {
         # => nil inherits from ApplicationController
-        # => 4xx errors should be nil
+        # => 4xx errors default to nil
         # => 5xx errors should be "exception" but can be nil if explicitly defined
         500 => "exception",
-        501	=> "exception",
+        501 => "exception",
         502 => "exception",
         503 => "exception",
         504 => "exception",
@@ -194,10 +194,10 @@ If you're using a [`Rails` Engine](http://guides.rubyonrails.org/engines.html), 
             },
             layouts: {
               # => nil inherits from ApplicationController
-              # => 4xx errors should be nil
+              # => 4xx default to nil
               # => 5xx errors should be "exception" but can be nil if explicitly defined
               500 => "exception",
-              501	=> "exception",
+              501 => "exception",
               502 => "exception",
               503 => "exception",
               504 => "exception",
@@ -246,7 +246,7 @@ In `development`, Rails has a robust error management system, not to mention [`b
 
 [![Better Errors - Great for development rails error testing](https://camo.githubusercontent.com/3fa6840d5e20236b4f768d6ed4b42421ba7c2f21/68747470733a2f2f692e696d6775722e636f6d2f367a42474141622e706e67)](https://github.com/charliesome/better_errors)
 
-This negates the need for [`exception_handler`](http://github.com/richpeck/excption_handler) in `development`. However, if you want to see how it works, or change the flow - use `config.exception_handler = { dev:true }` from the Rails config.
+This negates the need for [`exception_handler`](http://github.com/richpeck/excption_handler) in `development`. However, if you want to see how it works - or change the flow - use `config.exception_handler = { dev:true }` from the Rails config.
 
 ----
 
@@ -270,7 +270,17 @@ From [`0.7.0`](#070), we drastically overhauled the view system:
 
 [[ View ]]
 
-Now, the view is 100% modular - using the `@exception` object, and populating with
+Now, the [view](app/views/exception_handler/exceptions/show.html.erb) is 100% modular - using the `@exception` object, and populating with `locales`.
+
+The view works very simply:
+
+    <%= content_tag :div, class: "exception", data: { status: @exception.status, response: @exception.response.to_s.humanize, rails: Rails.version }, onclick: ("location.href=\"#{root_url}\";" if @exception.status == "500" && Rails.application.routes.recognize_path("/")), title: ("Return Home" if @exception.status == "500" && Rails.application.routes.recognize_path("/")) do %>
+      <%= content_tag :span, @exception.description.html_safe %>
+    <% end %>
+
+The view is invoked by `ExceptionHandler` each time an error is raised.
+
+The way the view *looks* will depend on the [`layout`](#layout)
 
 ---
 
@@ -283,7 +293,7 @@ Now, the view is 100% modular - using the `@exception` object, and populating wi
 
 `ExceptionHandler` now populates the view by accessing `exception - [status_name]` from the locales. If no value exists, the default will be the `status name`, as defined by [`Rack::Utils::HTTP_STATUS_CODES`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L544):
 
-You also get access to `%{message}` and `%{status}` objects, both inferring data from the `@exception` object.
+You also get access to `%{message}` and `%{status}`, both inferring data from the `@exception` object.
 
 ---
 
@@ -310,7 +320,7 @@ The *majority* our `layout` is handled with the CSS. This allows the view to be 
 
 ## Custom Exceptions
 
-Due to popular demand, we added **custom exceptions** in [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5).
+Due to popular demand, we added **custom exceptions** in [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
 
 The functionality is *already* built into Rails [`config.action_dispatch.rescue_responses`][rescue_responses] ↴
 
@@ -323,7 +333,7 @@ Specifically, you have to register your custom exception against an [HTTP respon
     # config/application.rb
     config.action_dispatch.rescue_responses["ActionController::YourError"] = :bad_request
 
-The full list of Rails HTTP response codes can be found [here][status_codes]. The default is `internal_server_error` / `500`.
+The full list of Rails HTTP response codes can be found [here][status_codes]. The default is `internal_server_error / 500`.
 
 We have built this functionality into `ExceptionHandler` --
 
@@ -341,6 +351,15 @@ This does nothing different to the base Rails functionality, so may remove it. W
 If you want to take control over the entire `ExceptionHandler` flow, you'll want to `generate` the views into your own application:
 
 [[ Generator ]]
+
+You can use the following commands:
+
+    rails g exception_handler:views
+    rails g exception_handler:views -v views
+    rails g exception_handler:views -v controllers
+    rails g exception_handler:views -v models
+    rails g exception_handler:views -v assets
+    rails g exception_handler:views -v views controllers models assets
 
 ---
 
