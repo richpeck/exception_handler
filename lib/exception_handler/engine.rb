@@ -6,6 +6,8 @@ module ExceptionHandler
 
     #########################################################
     #########################################################
+    #########################################################
+    #########################################################
 
       # => Wraps helpers in ExceptionHandler module
       # => http://guides.rubyonrails.org/engines.html#inside-an-engine
@@ -40,10 +42,20 @@ module ExceptionHandler
           app.config.action_dispatch.rescue_responses[exception] = response
         end
 
+        # => Migration
+        # => This has to be kept in an initializer (to access app)
+        # => https://blog.pivotal.io/labs/labs/leave-your-migrations-in-your-rails-engines
+        config.paths["db/migrate"].expanded.each do |expanded_path|
+          app.config.paths["db/migrate"] << expanded_path if ExceptionHandler.config.try(:db)
+        end
+
       end
 
     #########################################################
     #########################################################
+    #########################################################
+    #########################################################
+
 
   end
 end

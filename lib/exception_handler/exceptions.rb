@@ -1,4 +1,4 @@
 module ExceptionHandler
-  class EmailError   < StandardError; end
-  class MissingTable < StandardError; end
+  class InvalidEmail < StandardError; end # => Email not valid
+  class MissingTable < StandardError; end # => No table present
 end

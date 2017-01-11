@@ -69,7 +69,7 @@ Since browsers only read `4xx` & `5xx` error codes, any exceptions raised by Rai
 
 Unlike other gems, **`ExceptionHandler` uses a custom [`controller`](app/controllers/exception_handler/exceptions_controller.rb) to build an [`@exception`](app/models/exception_handler/exception.rb) object**. This allows us to save the exception, email it or do anything else we may need. The gem has already been a massive success and we continue to actively maintain it.
 
-Now, at version [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), we invite you to try for yourself ...
+Now, at version [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), we invite you to try for yourself...
 
 
 ----
@@ -127,7 +127,7 @@ Even better, you can install `ExceptionHandler` (plug and play) with a single cl
 </p>
 
 <p align="center">
-  Works straight out the box - you just need to install it from the <strong>CLI</strong> or <strong>Gemfile</strong>, and it will automatically run in <strong>production</strong>. If you want to run it in development, use <a href="#dev-mode">dev mode</a>:
+  Works straight out the box - you just need to install it from the <strong>CLI</strong> or <strong>Gemfile</strong>, and it will automatically run in <strong>production</strong>. To run in development, use <a href="#dev-mode">dev mode</a> ↴
 </p>
 
 ----
@@ -221,7 +221,7 @@ If you're using a [`Rails` Engine](http://guides.rubyonrails.org/engines.html), 
       }
     }
 
-This ruthlessly simple and effective config system works on all versions of rails from `4.2` onwards... enjoy.
+This ruthlessly simple and effective config system works on `Rails 4.2+`... enjoy.
 
 ----
 
@@ -345,7 +345,7 @@ If you want to take control over the entire `ExceptionHandler` flow, you'll want
 ## Support
 
 [stackoverflow][stackoverflow]
-[github issues][issues]
+[github][issues]
 
 ---
 

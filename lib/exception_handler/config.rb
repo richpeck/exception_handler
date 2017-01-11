@@ -43,9 +43,9 @@ module ExceptionHandler
     # => Defaults
     # => http://stackoverflow.com/a/8917301/1143732
     DEFAULTS = {
-      dev:    false, # => defaults to "false" for dev mode
-      db:     false, # => defaults to :errors if true, else use "table_name" / :table_name
-      email: 	false, # => requires string email and ActionMailer
+      dev:    nil, # => defaults to "false" for dev mode
+      db:     nil, # => defaults to :errors if true, else use "table_name" / :table_name
+      email: 	nil, # => requires string email and ActionMailer
       social: {
         facebook: nil,
         twitter:  nil,
@@ -82,7 +82,7 @@ module ExceptionHandler
 
         # => Validation
         raise(ExceptionHandler::InvalidEmail, "ExceptionHandler - Email Is Not Valid") if @email and !@email.is_a?(String)
-        raise(ExceptionHandler::MissingTable, "ExceptionHandler - Migration Required → Table \"#{db}\" doesn't exist") if @db and !ActiveRecord::Base.connection.table_exists?(db)
+        #raise(ExceptionHandler::MissingTable, "ExceptionHandler - Migration Required → Table \"#{db}\" doesn't exist") if @db and !ActiveRecord::Base.connection.table_exists?(db)
 
       end
 
@@ -92,7 +92,7 @@ module ExceptionHandler
       # => DB
       # => If config db = "true", use TABLE constant
       def db
-        @db == true ? TABLE : @db
+        @db == true ? TABLE : @db.try(:parameterize, separator: "_")
       end
 
     ###########################################
