@@ -58,7 +58,7 @@ module ExceptionHandler
         # => 4xx errors should be nil
         # => 5xx errors should be "exception" but can be nil if explicitly defined
         500 => "exception",
-        501	=> "exception",
+        501 => "exception",
         502 => "exception",
         503 => "exception",
         504 => "exception",
@@ -81,8 +81,8 @@ module ExceptionHandler
         end
 
         # => Validation
-        raise Exception.new("ExceptionHandler - Email Is Not Valid") if @email && !@email.is_a?(String)
-        raise Exception.new("ExceptionHandler - Migration Required → Table \"#{db}\" doesn't exist") if @db && !ActiveRecord::Base.connection.table_exists?(db)
+        raise(ExceptionHandler::InvalidEmail, "ExceptionHandler - Email Is Not Valid") if @email and !@email.is_a?(String)
+        raise(ExceptionHandler::MissingTable, "ExceptionHandler - Migration Required → Table \"#{db}\" doesn't exist") if @db and !ActiveRecord::Base.connection.table_exists?(db)
 
       end
 
