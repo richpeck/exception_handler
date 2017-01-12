@@ -87,6 +87,8 @@ All Rails exceptions are handled with the `config.exceptions_app` callback, assi
 
 > **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**
 
+![config.exceptions_app][config.exceptions_app]
+
 Each time Rails raises an exception, the [`ShowExceptions`][show_exception] middleware takes the request and forwards it to `config.exceptions_app`. This hook is expected to return a response - this is where we can inject our own callback (in our case a [`controller`](app/controllers/exception_handler/exceptions_controller.rb)):
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
@@ -446,6 +448,7 @@ The one drawback to this is that if you remove the `ExceptionHandler` gem before
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
+[config.exceptions_app]: readme/config.exceptions_app.jpg
 [config.action_dispatch.rescue_responses]: readme/config.action_dispatch.rescue_responses.jpg
 [banner]:           readme/banner.png
 [gem]:              readme/gem.jpg
