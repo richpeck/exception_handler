@@ -74,6 +74,7 @@ module ExceptionHandler
       # => Init
       # => Merges DEFAULTS to values, creates instances vars (for attr_accessor)
       def initialize values
+
         # => Vars
         DEFAULTS.deep_merge!(values || {}).each do |k,v|
           instance_variable_set("@#{k}",v)
@@ -81,7 +82,7 @@ module ExceptionHandler
 
         # => Validation
         raise ExceptionHandler::Error, "Email Not Valid" if @email && !@email.nil? && !@email.is_a?(String)
-        raise ExceptionHandler::Error, "Migration Required → Table \"#{db}\" doesn't exist" if @db && !ActiveRecord::Base.connection.table_exists?(db)
+        raise ExceptionHandler::Error, "Migration Required → \"#{db}\" doesn't exist" if @db && !ActiveRecord::Base.connection.table_exists?(db)
       end
 
     ###########################################

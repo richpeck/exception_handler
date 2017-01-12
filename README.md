@@ -42,7 +42,8 @@
 </p>
 
 <p align="center">
-  <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="575" />
+  <br />
+  <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="550" />
 </p>
 
 <p align="center">
@@ -85,8 +86,6 @@ The secret lies in [**`config.exceptions_app`**][exception_app] ↴
 All Rails exceptions are handled with the `config.exceptions_app` callback, assigned in `config/application.rb` or `config/environments/*.rb`:
 
 > **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**
-
-![config.exceptions_app - The key to all Rails exceptions][config.exceptions_app]
 
 Each time Rails raises an exception, the [`ShowExceptions`][show_exception] middleware takes the request and forwards it to `config.exceptions_app`. This hook is expected to return a response - this is where we can inject our own callback (in our case a [`controller`](app/controllers/exception_handler/exceptions_controller.rb)):
 
@@ -449,7 +448,6 @@ The one drawback to this is that if you remove the `ExceptionHandler` gem before
 <!-- Images -->
 [config.action_dispatch.rescue_responses]: readme/config.action_dispatch.rescue_responses.jpg
 [banner]:           readme/banner.png
-[config.exceptions_app]: readme/config.exceptions_app.jpg
 [gem]:              readme/gem.jpg
 [gemfile]:          readme/gemfile.jpg
 [middleware]:       readme/middleware.jpg
