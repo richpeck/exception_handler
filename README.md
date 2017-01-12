@@ -42,8 +42,7 @@
 </p>
 
 <p align="center">
-  <br />
-  <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="550" />
+  <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="575" />
 </p>
 
 <p align="center">
@@ -361,6 +360,8 @@ You can use the following commands:
     rails g exception_handler:views -v models
     rails g exception_handler:views -v assets
     rails g exception_handler:views -v views controllers models assets
+
+--
 
 From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own migration system.
 
