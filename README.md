@@ -83,13 +83,15 @@ The secret lies in [**`config.exceptions_app`**][exception_app] ↴
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-All Rails exceptions are handled with the `config.exceptions_app` callback, assigned in `config/application.rb` or `config/environments/*.rb`:
+All Rails exceptions are handled with the `config.exceptions_app` callback, assigned in `config/application.rb` or `config/environments/*.rb` ↓
 
 > **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**
 
 ![config.exceptions_app][config.exceptions_app]
 
 Each time Rails raises an exception, the [`ShowExceptions`][show_exception] middleware takes the request and forwards it to `config.exceptions_app`. This hook is expected to return a response - this is where we can inject our own callback (in our case a [`controller`](app/controllers/exception_handler/exceptions_controller.rb)):
+
+> `app.config.exceptions_app` = ->(env) { `ExceptionHandler::ExceptionsController.action(:show).call(env)` }
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
