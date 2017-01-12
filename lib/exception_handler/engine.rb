@@ -23,10 +23,6 @@ module ExceptionHandler
       # => For Sprockets 4, had to include link_tree in exception_handler.css
       config.assets.precompile << %w(exception_handler.css)
 
-      # => Custom Exception Registration
-      # => Not required, saving for future reference (unregistered exception classes return 500 by default)
-      #config.action_dispatch.rescue_responses["ExceptionHandler::Error"] = :internal_server_error
-
     #########################################################
     #########################################################
 
