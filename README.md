@@ -274,13 +274,13 @@ Now, the [view](app/views/exception_handler/exceptions/show.html.erb) is 100% mo
 
 The view works very simply:
 
-    <%= content_tag :div, class: "exception", data: { status: @exception.status, response: @exception.response.to_s.humanize, rails: Rails.version }, onclick: ("location.href=\"#{root_url}\";" if @exception.status == "500" && Rails.application.routes.recognize_path("/")), title: ("Return Home" if @exception.status == "500" && Rails.application.routes.recognize_path("/")) do %>
+    <%= content_tag :div, class: "exception" do %>
       <%= content_tag :span, @exception.description.html_safe %>
     <% end %>
 
 The view is invoked by `ExceptionHandler` each time an error is raised.
 
-The way the view *looks* will depend on the [`layout`](#layout)
+The way the view *looks* will depend on the [`layout`](#layout),
 
 ---
 
@@ -289,7 +289,6 @@ The way the view *looks* will depend on the [`layout`](#layout)
 [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5) introduced flexible locales:
 
 [[ locales ]]
-
 
 `ExceptionHandler` now populates the view by accessing `exception - [status_name]` from the locales. If no value exists, the default will be the `status name`, as defined by [`Rack::Utils::HTTP_STATUS_CODES`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L544):
 

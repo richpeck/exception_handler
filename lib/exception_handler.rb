@@ -3,16 +3,29 @@
 
 module ExceptionHandler
 
-  # => Table Prefix
-  # => Keeps Rails Engine from generating all table prefixes with the engines name
-  # => http://stackoverflow.com/questions/19435214/rails-mountable-engine-with-isolate-namespace-but-without-prefixed-namespace-on
-  def self.table_name_prefix
-    # => No prefix
-  end
+  ##############################
+  ##############################
 
-  # => Config
-  # => Invoke instance of config (ExceptionHandler.config)
-  mattr_accessor :config
+    # => Table Prefix
+    # => Keeps Rails Engine from generating all table prefixes with the engines name
+    # => http://stackoverflow.com/questions/19435214/rails-mountable-engine-with-isolate-namespace-but-without-prefixed-namespace-on
+    def self.table_name_prefix
+      # => No prefix
+    end
+
+    # => Config
+    # => Invoke instance of config (ExceptionHandler.config)
+    mattr_accessor :config
+
+  ##############################
+  ##############################
+
+    # => Exceptions
+    # => https://github.com/thoughtbot/paperclip/blob/master/lib/paperclip/errors.rb
+    class Error < StandardError; end
+
+  ##############################
+  ##############################
 
 end
 
