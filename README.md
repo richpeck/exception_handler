@@ -377,6 +377,9 @@ Specifically
 
 ## Changelog
 
+### [0.8.0](https://github.com/richpeck/exception_handler/releases/tag/0.8.0)
+ - [ ] ActiveModel Rebuild
+
 ### [0.7.5](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
  - [x] [HTTP status layouts](#layouts)
  - [x] [Custom exception mapping](#custom_exceptions)
