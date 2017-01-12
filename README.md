@@ -69,7 +69,7 @@ Since browsers only read `4xx` & `5xx` error codes, any exceptions raised by Rai
 
 Unlike other gems, **`ExceptionHandler` uses a custom [`controller`](app/controllers/exception_handler/exceptions_controller.rb) to build an [`@exception`](app/models/exception_handler/exception.rb) object**. This allows us to save the exception, email it or do anything else we may need. The gem has already been a massive success and we continue to actively maintain it.
 
-Now, at version [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), we invite you to try for yourself...
+Now, at version [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), we invite you to try yourself...
 
 
 ----
@@ -452,7 +452,7 @@ The one drawback to this is that if you remove the `ExceptionHandler` gem before
 <!-- Images -->
 [config.exceptions_app]: readme/config.exceptions_app.jpg
 [config.action_dispatch.rescue_responses]: readme/config.action_dispatch.rescue_responses.jpg
-[banner]:           readme/banner.png
+[banner]:           readme/banner.jpg
 [gem]:              readme/gem.jpg
 [gemfile]:          readme/gemfile.jpg
 [middleware]:       readme/middleware.jpg
