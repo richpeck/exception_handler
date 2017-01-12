@@ -91,11 +91,11 @@ All Rails exceptions are handled with the `config.exceptions_app` callback, assi
 
 Each time Rails raises an exception, the [`ShowExceptions`][show_exception] middleware takes the request and forwards it to `config.exceptions_app`. This hook is expected to return a response - this is where we can inject our own callback (in our case a [`controller`](app/controllers/exception_handler/exceptions_controller.rb)):
 
-> `app.config.exceptions_app` = ->(env) { `ExceptionHandler::ExceptionsController.action(:show).call(env)` }
+> ```app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionsController.action(:show).call(env) }```
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
-Because our callback persists the erroneous request, we are able to do whatever we need before serving a response. This is a major advantage over the "default" way of handling `Rails` exceptions (routes). This invokes Rails twice and does not persist the request (exception lost).
+Because our callback passes the request, we are able to do whatever we need before serving a response. This is a major advantage over the "default" way of handling `Rails` exceptions (routes). This invokes Rails twice and does not persist the request (exception lost).
 
  `ExceptionHandler` is the **only** gem to provide middleware-powered exception handling.  It populates our custom `view` with any details required, giving us the ability to **maintain branding** when exceptions are raised:
 
