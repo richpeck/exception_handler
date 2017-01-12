@@ -23,50 +23,50 @@ module ExceptionHandler
     ###########################################
     ###########################################
 
-    # => Table Name
-    # => Has to be "errors" because "exceptions" is a reserved word
-    TABLE = :errors
+      # => Table Name
+      # => Has to be "errors" because "exceptions" is a reserved word
+      TABLE = :errors
 
-    # => Social URLs
-    # => Extracted from "social" block
-    SOCIAL = {
-      facebook: "https://facebook.com",
-      twitter:  "https://twitter.com",
-      youtube:  "https://youtube.com/user",
-      linkedin: "https://linkedin.com/company",
-      fusion:   "https://frontlinefusion.com"
-    }
-
-    ###########################################
-    ###########################################
-
-    # => Defaults
-    # => http://stackoverflow.com/a/8917301/1143732
-    DEFAULTS = {
-      dev:    nil, # => defaults to "false" for dev mode
-      db:     nil, # => defaults to :errors if true, else use "table_name" / :table_name
-      email: 	nil, # => requires string email and ActionMailer
-      social: {
-        facebook: nil,
-        twitter:  nil,
-        youtube:  nil,
-        linkedin: nil,
-        fusion:   nil,
-      },
-      layouts: {
-        # => nil inherits from ApplicationController
-        # => 4xx errors should be nil
-        # => 5xx errors should be "exception" but can be nil if explicitly defined
-        500 => "exception",
-        501 => "exception",
-        502 => "exception",
-        503 => "exception",
-        504 => "exception",
-        505 => "exception",
-        507 => "exception",
-        510 => "exception"
+      # => Social URLs
+      # => Extracted from "social" block
+      SOCIAL = {
+        facebook: "https://facebook.com",
+        twitter:  "https://twitter.com",
+        youtube:  "https://youtube.com/user",
+        linkedin: "https://linkedin.com/company",
+        fusion:   "https://frontlinefusion.com"
       }
-    }
+
+    ###########################################
+    ###########################################
+
+      # => Defaults
+      # => http://stackoverflow.com/a/8917301/1143732
+      DEFAULTS = {
+        dev:    nil, # => defaults to "false" for dev mode
+        db:     nil, # => defaults to :errors if true, else use "table_name" / :table_name
+        email: 	nil, # => requires string email and ActionMailer
+        social: {
+          facebook: nil,
+          twitter:  nil,
+          youtube:  nil,
+          linkedin: nil,
+          fusion:   nil,
+        },
+        layouts: {
+          # => nil inherits from ApplicationController
+          # => 4xx errors should be nil
+          # => 5xx errors should be "exception" but can be nil if explicitly defined
+          500 => "exception",
+          501 => "exception",
+          502 => "exception",
+          503 => "exception",
+          504 => "exception",
+          505 => "exception",
+          507 => "exception",
+          510 => "exception"
+        }
+      }
 
     ###########################################
     ###########################################
@@ -81,9 +81,8 @@ module ExceptionHandler
         end
 
         # => Validation
-        raise(ExceptionHandler::InvalidEmail, "ExceptionHandler - Email Is Not Valid") if @email and !@email.is_a?(String)
-        #raise(ExceptionHandler::MissingTable, "ExceptionHandler - Migration Required → Table \"#{db}\" doesn't exist") if @db and !ActiveRecord::Base.connection.table_exists?(db)
-
+        raise ExceptionHandler::Error, "Email Not Valid" unless @email.try(:is_a?, String)
+        #raise ExceptionHandler::Error, "ExceptionHandler - Migration Required → Table \"#{db}\" doesn't exist" if @db and !ActiveRecord::Base.connection.table_exists?(db)
       end
 
     ###########################################
