@@ -388,7 +388,7 @@ The one drawback to this is that if you remove the `ExceptionHandler` gem before
 ## Changelog
 
 ### [0.8.0](https://github.com/richpeck/exception_handler/releases/tag/0.8.0)
- - [ ] ActiveModel Rebuild
+ - [ ] ActiveModel rebuild
 
 ### [0.7.5](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
  - [x] [HTTP status layouts](#layouts)
@@ -429,13 +429,27 @@ The one drawback to this is that if you remove the `ExceptionHandler` gem before
  - [x] Streamlined middleware
  - [x] New layout & interface implementation
 
-----------
+----
+
 ![404 + 500 Errors][banner]
 
 <p align="center">
   <strong><a href="#">ExceptionHandler</a> is now the leading custom error pages gem for Rails.</strong>
   <br />
   No other gem is as simple or effective at providing beautiful exception pages in production.
+</p>
+
+<p align="center">
+  <a href="http://badge.fury.io/rb/exception_handler"><img src="https://badge.fury.io/rb/exception_handler.svg" align="absmiddle"></a>
+  <a href="http://rubygems.org/gems/exception_handler"><img src="http://ruby-gem-downloads-badge.herokuapp.com/exception_handler/0.5.1?type=total&color=brightgreen" align="absmiddle" /></a>
+  <a href="https://codeclimate.com/github/richpeck/exception_handler"><img src="https://codeclimate.com/github/richpeck/exception_handler/badges/gpa.svg" align="absmiddle"/></a>
+  <a href="https://gemnasium.com/richpeck/exception_handler"><img src="https://gemnasium.com/richpeck/exception_handler.svg" align="absmiddle"></a>
+  <a href='https://coveralls.io/github/richpeck/exception_handler?branch=master'><img src='https://coveralls.io/repos/github/richpeck/exception_handler/badge.svg?branch=master' alt='Coverage Status' align="absmiddle" /></a>
+  <a href="https://travis-ci.org/richpeck/exception_handler"><img src="https://travis-ci.org/richpeck/exception_handler.svg?branch=master" align="absmiddle"></a>
+</p>
+
+<p align="center">
+  <strong><a href="https://rubygems.org/gems/exception_handler">Download Here</a></strong>
 </p>
 
 ----------
