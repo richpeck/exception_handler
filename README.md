@@ -362,9 +362,13 @@ You can use the following commands:
 
 From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own migration system.
 
-Specifically
+If you set the [`db`](#db) option in the `config`, you will need to run `rails db:migrate` to populate the `ExceptionHandler` table in your db. This is handled automatically - you don't need to generate a migration any more.
 
+To rollback the `ExceptionHandler` migration, you will need to use the following command:
 
+    rails db:migrate:down VERSION=000000
+
+The one drawback to this is that if you remove the `ExceptionHandler` gem before you rollback the migration, it won't exist anymore. You can only fire the above command if you have `ExceptionHandler` installed.
 
 ---
 

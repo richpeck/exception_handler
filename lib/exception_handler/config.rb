@@ -82,7 +82,7 @@ module ExceptionHandler
 
         # => Validation
         raise ExceptionHandler::Error, "Email Not Valid" unless @email.try(:is_a?, String)
-        #raise ExceptionHandler::Error, "ExceptionHandler - Migration Required → Table \"#{db}\" doesn't exist" if @db and !ActiveRecord::Base.connection.table_exists?(db)
+        #raise ExceptionHandler::Error, "Migration Required → Table \"#{db}\" doesn't exist" if @db and !ActiveRecord::Base.connection.table_exists? db
       end
 
     ###########################################
