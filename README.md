@@ -119,12 +119,11 @@ Even better, **you can install `ExceptionHandler` with a single click:**
   <br />
   <img src="readme/titles/install.png" title="1 Click Install for ExceptionHandler 0.7.0 on Rails 5" width="400" />
   <br />
-  <strong>Custom Rails Error Pages → ZERO configuration required:</strong>
-  <br /><br />
+  <strong>Custom Rails Error Pages - ZERO configuration required:</strong>
+  <br />
 </p>
 
 [![Gemfile][gemfile]][rubygems] [![Gem][gem]][rubygems]
-
 
 <p align="center">
   <strong><a href="#config">Config</a></strong> → <strong><a href="#dev-mode">Dev Mode</a></strong> → <strong><a href="#database">Database</a></strong> → <strong><a href="#email">Email</a></strong> → <strong><a href="#view">View</a></strong> → <strong><a href="#locales">Locales</a></strong> → <strong><a href="#custom-exceptions">Custom Exceptions</a></strong> → <strong><a href="#generators">Generators</a></strong>
