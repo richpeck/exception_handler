@@ -120,10 +120,13 @@ Even better, **you can install `ExceptionHandler` with a single click:**
   <br />
   <strong>Custom Rails Error Pages - ZERO configuration:</strong>
   <br />
-  <img src="readme/arrow.png" />
 </p>
 
-[![Gemfile][gemfile]][rubygems] [![Gem][gem]][rubygems]
+<p align="center">
+  <img src="readme/arrow.png" />
+  <br />
+  <a href="http://rubygems.org/gems/exception_handler"><img src="readme/gem.jpg" /></a> <a href="http://rubygems.org/gems/exception_handler"><img src="readme/gemfile.jpg" /></a>
+</p>
 
 <p align="center">
   <strong><a href="#config">Config</a></strong> → <strong><a href="#dev-mode">Dev Mode</a></strong> → <strong><a href="#database">Database</a></strong> → <strong><a href="#email">Email</a></strong> → <strong><a href="#view">View</a></strong> → <strong><a href="#locales">Locales</a></strong> → <strong><a href="#custom-exceptions">Custom Exceptions</a></strong> → <strong><a href="#generators">Generators</a></strong>
