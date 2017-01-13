@@ -126,8 +126,9 @@ Even better, **you can install `ExceptionHandler` with a single click:**
   <a href="http://rubygems.org/gems/exception_handler"><img src="readme/gem.jpg" /></a> <a href="http://rubygems.org/gems/exception_handler"><img src="readme/gemfile.jpg" /></a>
 </p>
 
+### Features:
 <p align="center">
-  <strong><a href="#config">Config</a></strong> → <strong><a href="#dev-mode">Dev Mode</a></strong> → <strong><a href="#database">Database</a></strong> → <strong><a href="#email">Email</a></strong> → <strong><a href="#view">View</a></strong> → <strong><a href="#locales">Locales</a></strong> → <strong><a href="#custom-exceptions">Custom Exceptions</a></strong> → <strong><a href="#generators">Generators</a></strong>
+  <a href="#config"><img src="readme/titles/icons/dev.png" alt="Dev Mode" align="absmiddle" /> Config</a>&nbsp;&nbsp;<a href="#dev-mode" title="Dev Mode"><img src="readme/titles/icons/dev.png" alt="Dev Mode" align="absmiddle" /> Dev Mode</a>&nbsp;&nbsp;<a href="#database"><img src="readme/titles/icons/dev.png" alt="Dev Mode" align="absmiddle" />  Database</a>&nbsp;&nbsp;<a href="#email"><img src="readme/titles/icons/dev.png" alt="Dev Mode" align="absmiddle" />  Email</a>&nbsp;&nbsp;<a href="#view"><img src="readme/titles/icons/dev.png" alt="Dev Mode" align="absmiddle" />  View</a>&nbsp;&nbsp;<a href="#locales"><img src="readme/titles/icons/dev.png" alt="Dev Mode" align="absmiddle" />  Locales</a>&nbsp;&nbsp;<a href="#custom-exceptions"><img src="readme/titles/icons/dev.png" alt="Dev Mode" align="absmiddle" />  Custom Exceptions</a>&nbsp;&nbsp;<a href="#generators"><img src="readme/titles/icons/dev.png" alt="Dev Mode" align="absmiddle" />Generators</a>
 </p>
 
 <p align="center">
@@ -231,7 +232,7 @@ This ruthlessly simple and effective config system works on `Rails 4.2+`... enjo
 
 ----
 
-## Dev Mode
+## <img src="readme/titles/icons/dev.png" /> Dev Mode
 
 By default, `ExceptionHandler` only works in production.
 
@@ -288,7 +289,7 @@ The way the view *looks* will depend on the [`layout`](#layout),
 
 ---
 
-<h2 id="locales">:speech_balloon: Locales</a></h2>
+## :speech_balloon: Locales
 
 [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5) introduced flexible locales:
 
@@ -300,7 +301,7 @@ You also get access to `%{message}` and `%{status}`, both inferring data from th
 
 ---
 
-<a href="#layout">:computer: Layout</a>
+## :computer: Layout
 
 The `layout` has been improved dramatically:
 
