@@ -350,6 +350,8 @@ This does nothing different to the base Rails functionality, so may remove it. W
 
 ## Generators
 
+#### Files
+
 If you want to take control over the entire `ExceptionHandler` flow, you'll want to `generate` the views into your own application:
 
 [[ Generator ]]
@@ -363,7 +365,13 @@ You can use the following commands:
     rails g exception_handler:views -v assets
     rails g exception_handler:views -v views controllers models assets
 
+If you don't include any switches, you'll have **all** the folders put into your app.
+
+Each switch defines which folders you want (`-v views` will only copy `views` from `exception_handler` to your app).
+
 --
+
+#### Migrations
 
 From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own migration system.
 
