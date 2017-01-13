@@ -288,7 +288,7 @@ The way the view *looks* will depend on the [`layout`](#layout),
 
 ---
 
-<h2 id="locales"><img src="readme/titles/icons/locales.png" height="16" /> Locales</a>
+<h2 id="locales">:speech_balloon: Locales</a></h2>
 
 [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5) introduced flexible locales:
 
@@ -300,7 +300,7 @@ You also get access to `%{message}` and `%{status}`, both inferring data from th
 
 ---
 
-## Layout
+<a href="#layout">:computer: Layout</a>
 
 The `layout` has been improved dramatically:
 
