@@ -134,15 +134,9 @@ Even better, **you can install `ExceptionHandler` with a single click:**
 
 ---
 
-<p align="center">
-  Works straight out the box - you just need to install it from the <strong>CLI</strong> or <strong>Gemfile</strong>, and it will automatically run in <strong>production</strong>.
-  <br />
-  <strong>↓ To run in development, use <a href="#dev-mode">dev mode</a> ↓</strong>
-</p>
 
-----
 
-## <img src="readme/titles/icons/config.png" align="absmiddle" /> Config
+### <img src="readme/titles/icons/config.png" align="absmiddle" /> Config
 
 From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6), **`ExceptionHandler`** manages its config from the central Rails config:
 
@@ -235,7 +229,7 @@ This ruthlessly simple and effective config system works on `Rails 4.2+`... enjo
 
 ----
 
-## <img src="readme/titles/icons/dev.png" align="absmiddle" /> Dev Mode
+### <img src="readme/titles/icons/dev.png" align="absmiddle" /> Dev Mode
 
 By default, `ExceptionHandler` only works in production.
 
@@ -258,7 +252,7 @@ This negates the need for [`exception_handler`](http://github.com/richpeck/excpt
 
 ----
 
-## <img src="readme/titles/icons/database.png" align="absmiddle" /> Database
+### <img src="readme/titles/icons/database.png" align="absmiddle" /> Database
 
 The `Exception` model creates the `@exception` object for us, allowing us to store in the `db`.
 
@@ -272,7 +266,7 @@ See the [full tutorial here](https://github.com/richpeck/exception_handler/wiki/
 
 ---
 
-## <img src="readme/titles/icons/views.png" align="absmiddle" /> Views
+### <img src="readme/titles/icons/views.png" align="absmiddle" /> Views
 
 From [`0.7.0`](#070), we drastically overhauled the view system:
 
@@ -292,7 +286,7 @@ The way the view *looks* will depend on the [`layout`](#layout),
 
 ---
 
-## <img src="readme/titles/icons/locales.png" align="absmiddle" /> Locales
+### <img src="readme/titles/icons/locales.png" align="absmiddle" /> Locales
 
 [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5) introduced flexible locales:
 
@@ -304,7 +298,7 @@ You also get access to `%{message}` and `%{status}`, both inferring data from th
 
 ---
 
-## <img src="readme/titles/icons/layout.png" align="absmiddle" /> Layout
+### <img src="readme/titles/icons/layout.png" align="absmiddle" /> Layout
 
 The `layout` has been improved dramatically:
 
@@ -325,7 +319,7 @@ The *majority* our `layout` is handled with the CSS. This allows the view to be 
 ---
 
 
-## <img src="readme/titles/icons/custom.png" align="absmiddle" /> Custom Exceptions
+### <img src="readme/titles/icons/custom.png" align="absmiddle" /> Custom Exceptions
 
 Due to popular demand, we added **custom exceptions** in [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
 
@@ -353,7 +347,7 @@ This does nothing different to the base Rails functionality, so may remove it. W
 
 ---
 
-## <img src="readme/titles/icons/generators.png" align="absmiddle" /> Generators
+### <img src="readme/titles/icons/generators.png" align="absmiddle" /> Generators
 
 #### Files
 
@@ -390,7 +384,7 @@ The drawback to this is that if you remove the `ExceptionHandler` gem before you
 
 ---
 
-## <img src="readme/titles/icons/support.png" align="absmiddle" /> Support
+### <img src="readme/titles/icons/support.png" align="absmiddle" /> Support
 
 <p align="center">
   <a href="http://stackoverflow.com/questions/ask?tags=ruby-on-rails+exception-handler">Stackoverflow</a>
@@ -399,7 +393,7 @@ The drawback to this is that if you remove the `ExceptionHandler` gem before you
 
 ---
 
-## <img src="readme/titles/icons/changelog.png" align="absmiddle" /> Changelog
+### <img src="readme/titles/icons/changelog.png" align="absmiddle" /> Changelog
 
 ### [0.7.5](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
  - [x] [HTTP status layouts](#layouts)
