@@ -126,13 +126,6 @@ Even better, **you can install `ExceptionHandler` with a single click:**
   <a href="http://rubygems.org/gems/exception_handler"><img src="readme/gem.jpg" /></a> <a href="http://rubygems.org/gems/exception_handler"><img src="readme/gemfile.jpg" /></a>
 </p>
 
-
-<p align="center">
-  Works straight out the box - you just need to install it from the <strong>CLI</strong> or <strong>Gemfile</strong>, and it will automatically run in <strong>production</strong>.
-  <br />
-  <strong>↓ To run in development, use <a href="#dev-mode">dev mode</a> ↓</strong>
-</p>
-
 ---
 
 <p align="center">
@@ -140,6 +133,14 @@ Even better, **you can install `ExceptionHandler` with a single click:**
 </p>
 
 ---
+
+<p align="center">
+  Works straight out the box - you just need to install it from the <strong>CLI</strong> or <strong>Gemfile</strong>, and it will automatically run in <strong>production</strong>.
+  <br />
+  <strong>↓ To run in development, use <a href="#dev-mode">dev mode</a> ↓</strong>
+</p>
+
+----
 
 ## <img src="readme/titles/icons/config.png" align="absmiddle" /> Config
 
