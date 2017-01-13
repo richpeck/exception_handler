@@ -42,7 +42,8 @@
 </p>
 
 <p align="center">
-  <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="575" />
+  <br />
+  <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="600" />
 </p>
 
 <p align="center">
@@ -94,7 +95,7 @@ Each time Rails raises an exception, the [`ShowExceptions`][show_exception] midd
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
-Because our callback passes the request, we are able to do whatever we need before serving a response. This is a major advantage over the "default" way of handling `Rails` exceptions (routes). This invokes Rails twice and does not persist the request (exception lost).
+Because our callback passes the request, we are able to do whatever we need before serving a response. This is a major advantage over the "default" way of handling `Rails` exceptions (routes). The routes invokes Rails twice and does not persist the request (exception lost).
 
  `ExceptionHandler` is the **only** gem to provide middleware-powered exception handling.  It populates our custom `view` with any details required, giving us the ability to **maintain branding** when exceptions are raised:
 
