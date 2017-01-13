@@ -42,7 +42,8 @@
 </p>
 
 <p align="center">
-  <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="625" />
+  <br />
+  <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="600" />
 </p>
 
 <p align="center">
@@ -103,14 +104,14 @@ Because our callback passes the request, we are able to do whatever we need befo
 **This makes `ExceptionHandler` the MOST EFFECTIVE and EFFICIENT gem to handle exceptions in Rails**. Once invoked, its `model`, `controller` and `views` work together to serve the most efficient responses to Rails errors.
 
 <p align="center">
-  <strong>The <i>ONLY</i> professional solution to manage Rails exceptions WITHOUT BLOAT:</strong>
+  <strong>The ONLY professional solution to manage Rails exceptions WITHOUT BLOAT:</strong>
 </p>
 
 <p align="center">
   <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
 </p>
 
-Even better, you can install `ExceptionHandler` (plug and play) with a single click:
+Even better, **you can install `ExceptionHandler` with a single click:**
 
 ----------
 
@@ -118,8 +119,8 @@ Even better, you can install `ExceptionHandler` (plug and play) with a single cl
   <br />
   <img src="readme/titles/install.png" title="1 Click Install for ExceptionHandler 0.7.0 on Rails 5" width="400" />
   <br />
-  <strong>Installing the gem is <i>simple</i> - ZERO configuration required:</strong>
-  <br />
+  <strong>Custom Rails Error Pages → ZERO configuration required:</strong>
+  <br /><br />
 </p>
 
 [![Gemfile][gemfile]][rubygems] [![Gem][gem]][rubygems]
@@ -373,7 +374,7 @@ Each switch defines which folders you want (`-v views` will only copy `views` fr
 
 #### Migrations
 
-From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own migration system.
+From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own [migration system](lib/exception_handler/engine.rb#L58).
 
 If you set the [`db`](#db) option in the `config`, you will need to run `rails db:migrate` to populate the `ExceptionHandler` table in your db. This is handled automatically - you don't need to generate a migration any more.
 
