@@ -389,8 +389,10 @@ The drawback to this is that if you remove the `ExceptionHandler` gem before you
 
 ## <img src="readme/titles/icons/support.png" align="absmiddle" /> Support
 
-[stackoverflow][stackoverflow]
-[github][issues]
+<p align="center">
+  <a href="http://stackoverflow.com/questions/ask?tags=ruby-on-rails+exception-handler">Stackoverflow</a>
+  <a href="https://github.com/richpeck/exception_handler/issues">Github</a>
+</p>
 
 ---
 
@@ -437,7 +439,7 @@ The drawback to this is that if you remove the `ExceptionHandler` gem before you
 
 ----
 
-![404 + 500 Errors][banner]
+[![404 + 500 Errors][banner]][rubygems]
 
 <p align="center">
   <strong><a href="#">ExceptionHandler</a> is now the leading custom error pages gem for Rails.</strong>
