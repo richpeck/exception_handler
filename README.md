@@ -118,7 +118,7 @@ Even better, **you can install `ExceptionHandler` with a single click:**
   <br />
   <img src="readme/titles/install.png" title="1 Click Install for ExceptionHandler 0.7.0 on Rails 5" width="400" />
   <br />
-  <strong>Custom Rails Error Pages - ZERO configuration</strong>
+  <strong>Custom Rails Error Pages - ZERO configuration needed:</strong>
   <br />
 </p>
 
@@ -288,7 +288,7 @@ The way the view *looks* will depend on the [`layout`](#layout),
 
 ---
 
-## Locales
+<h2 id="locales"><img src="readme/titles/icons/locales.png" height="16" /> Locales</a>
 
 [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5) introduced flexible locales:
 
