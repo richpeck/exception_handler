@@ -42,7 +42,6 @@
 </p>
 
 <p align="center">
-  <br />
   <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="600" />
 </p>
 
@@ -119,7 +118,7 @@ Even better, **you can install `ExceptionHandler` with a single click:**
   <br />
   <img src="readme/titles/install.png" title="1 Click Install for ExceptionHandler 0.7.0 on Rails 5" width="400" />
   <br />
-  <strong>Custom Rails Error Pages - ZERO configuration required:</strong>
+  <strong>Custom Rails Error Pages - ZERO configuration:</strong>
   <br />
 </p>
 
@@ -381,7 +380,7 @@ To rollback the `ExceptionHandler` migration, you will need to use the following
 
     rails db:migrate:down VERSION=000000
 
-The one drawback to this is that if you remove the `ExceptionHandler` gem before you rollback the migration, it won't exist anymore. You can only fire the above command if you have `ExceptionHandler` installed.
+The drawback to this is that if you remove the `ExceptionHandler` gem before you rollback the migration, it won't exist anymore. You can only fire the above command if you have `ExceptionHandler` installed.
 
 ---
 
@@ -393,9 +392,6 @@ The one drawback to this is that if you remove the `ExceptionHandler` gem before
 ---
 
 ## Changelog
-
-### [0.8.0](https://github.com/richpeck/exception_handler/releases/tag/0.8.0)
- - [ ] ActiveModel rebuild
 
 ### [0.7.5](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
  - [x] [HTTP status layouts](#layouts)
