@@ -430,7 +430,7 @@ The drawback to this is that if you remove the `ExceptionHandler` gem before you
  - [x] New config system
  - [x] Fixed controller layout issues
  - [x] Streamlined middleware
- - [x] New layout & interface implementation
+ - [x] New layout & interface
 
 ----
 
