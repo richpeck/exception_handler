@@ -32,14 +32,6 @@ module ExceptionHandler
         ExceptionHandler.config ||= ExceptionHandler::Config.new config.try(:exception_handler)
       end
 
-      # => Custom Exceptions
-      # => Allows users to define custom exceptions & assign to HTTP status code
-      config.before_initialize do |app|
-        ExceptionHandler.config.try(:custom_exceptions).try(:each) do |exception,response|
-          config.action_dispatch.rescue_responses[exception] = response
-        end
-      end
-
     #########################################################
     #########################################################
 
