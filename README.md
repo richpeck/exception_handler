@@ -38,10 +38,11 @@
 ---
 
 <p align="center">
-  <img src="readme/05.jpg" title="Version 0.7.0" />
+  <img src="readme/rails.jpg" title="Version 0.7.0" />
 </p>
 
 <p align="center">
+  <br />
   <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="600" />
 </p>
 
