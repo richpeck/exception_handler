@@ -89,7 +89,7 @@ module ExceptionHandler
         # => Email
         # => after_initialize invoked after .new method called
         # => Should have been after_create but user may not save
-        after_initialize Proc.new { |e| ExceptionHandler::ExceptionMailer.new_exception(e).deliver } if ExceptionHandler.config.try(:email) && ExceptionHandler.config.email.is_a?(String)
+        after_initialize Proc.new { |e| ExceptionHandler::ExceptionMailer.new_exception(e).deliver } if ExceptionHandler.config.try(:email).try(:is_a?, String)
 
         # => Attributes
         attr_accessor :request, :klass, :exception, :description
@@ -120,7 +120,7 @@ module ExceptionHandler
           # => Description
           def description
             I18n.with_options scope: [:exception], message: message, status: status do |i18n|
-              i18n.t response, default: status
+              i18n.t response, default: Rack::Utils::HTTP_STATUS_CODES[status] || status
             end
           end
 
@@ -173,7 +173,7 @@ module ExceptionHandler
 
           # => Status code (404, 500 etc)
           def status
-            ActionDispatch::ExceptionWrapper.new(request.env, exception).status_code.to_s
+            ActionDispatch::ExceptionWrapper.new(request.env, exception).status_code
           end
 
           # => Server Response ("Not Found" etc)

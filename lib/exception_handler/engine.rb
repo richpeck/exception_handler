@@ -6,6 +6,8 @@ module ExceptionHandler
 
     #########################################################
     #########################################################
+    #########################################################
+    #########################################################
 
       # => Wraps helpers in ExceptionHandler module
       # => http://guides.rubyonrails.org/engines.html#inside-an-engine
@@ -24,19 +26,33 @@ module ExceptionHandler
     #########################################################
     #########################################################
 
-      # => Hooks
-      # => This should be config.before_initialize but because ActiveRecord is not initialized, cannot check for table
-      initializer :exception_handler, before: "better_errors.configure_rails_initialization" do |app|
-
-        # => Vars
+      # => Config
+      # => Builds lib/exception_handler/config.rb
+      config.before_initialize do |app|
         ExceptionHandler.config ||= ExceptionHandler::Config.new config.try(:exception_handler)
-
-        # => Middleware
-        app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionController.action(:show).call(env) }
-        app.config.consider_all_requests_local = !ExceptionHandler.config.try(:dev) if Rails.env.development?
-
       end
 
+    #########################################################
+    #########################################################
+
+      # => Middleware
+      # => This should be config.before_initialize but because ActiveRecord is not initialized, cannot check for table
+      initializer :exception_handler, before: "better_errors.configure_rails_initialization" do |app|
+        app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionsController.action(:show).call(env) }
+        app.config.consider_all_requests_local = !ExceptionHandler.config.try(:dev) if Rails.env.development?
+      end
+
+      # => Migrations
+      # => This has to be kept in an initializer (to access app)
+      # => https://blog.pivotal.io/labs/labs/leave-your-migrations-in-your-rails-engines
+      initializer :migration_paths do |app|
+        config.paths["db/migrate"].expanded.each do |expanded_path|
+          app.config.paths["db/migrate"] << expanded_path if ExceptionHandler.config.try(:db)
+        end
+      end
+
+    #########################################################
+    #########################################################
     #########################################################
     #########################################################
 
