@@ -41,10 +41,8 @@
   <img src="readme/rails.jpg" title="Version 0.7.5 Released Early 2017" />
 </p>
 
----
-
 <p align="center">
-  <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="625" />
+  <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="525" />
 </p>
 
 <p align="center">
@@ -255,7 +253,7 @@ The `Exception` model creates the `@exception` object for us, allowing us to sto
 
 ---
 
-## <img src="readme/titles/icons/email.png" align="absmiddle" /> Email
+## Email
 
 You can also send emails with `ExceptionHandler` (requires [`ActionMailer`](http://guides.rubyonrails.org/action_mailer_basics.html)).
 
