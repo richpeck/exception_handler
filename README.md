@@ -45,9 +45,8 @@
   <strong>At version <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/0.7.5">0.7.5</a></strong>, ExceptionHandler is now the <i>leader</i> in custom Rails error pages:</strong>
 </p>
 
----
-
 <p align="center">
+  <br />
   <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="625" />
 </p>
 
@@ -74,7 +73,7 @@ Since browsers only read `4xx` & `5xx` error codes, any exceptions raised by Rai
 
 Unlike other gems, **`ExceptionHandler` uses a custom [`controller`](app/controllers/exception_handler/exceptions_controller.rb) to build an [`@exception`](app/models/exception_handler/exception.rb) object**. This allows us to save the exception, email it or do anything else we may need. The gem has already been a massive success and we continue to actively maintain it.
 
-Now we invite you to try for yourself...
+Now you can try for yourself ...
 
 
 ----
@@ -332,9 +331,9 @@ The *majority* our `layout` is handled with the CSS. This allows the view to be 
 
 ## <img src="readme/titles/icons/custom.png" align="absmiddle" /> Custom Exceptions
 
-Due to popular demand, we looked into **custom exceptions** for [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5).
+Due to popular demand, we investigated **custom exceptions** for [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5).
 
-Turns out the functionality is *already* built into Rails [`config.action_dispatch.rescue_responses`][rescue_responses] ↴
+Since the functionality is built into Rails ([`config.action_dispatch.rescue_responses`][rescue_responses]), we didn't feel it necessary to include in `ExceptionHandler` ↴
 
 ![ActionDispatch][config.action_dispatch.rescue_responses]
 
