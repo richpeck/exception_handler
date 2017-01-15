@@ -82,19 +82,17 @@ The secret lies in [**`config.exceptions_app`**][exception_app] ↴
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-All Rails exceptions are handled with `config.exceptions_app` (in `config/application.rb` or `config/environments/*.rb`):
+All Rails exceptions are handled by `config.exceptions_app`:
 
 > **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**
 
-![config.exceptions_app][config.exceptions_app]
-
-Each time Rails raises an exception, [`ShowExceptions`][show_exception] takes the request and forwards it to `config.exceptions_app`. This is expected to return a response - this is where we can inject our own callback (in our case a [`controller`](app/controllers/exception_handler/exceptions_controller.rb)):
+Each time an exception is raised, [`ShowExceptions`][show_exception] takes the request and forwards it to `config.exceptions_app`. This is expected to return a response - allowing us to inject a [`controller`](app/controllers/exception_handler/exceptions_controller.rb):
 
 > ```app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionsController.action(:show).call(env) }```
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
-Because *our* callback passes the request, we are able to do whatever we need before serving a response. This is a major advantage over the "default" (routes). The routes invokes Rails twice and does not persist the request.
+Because *our* callback handles the entire request, we are able to do whatever we need before serving a response. This is a **major** advantage over the "default" (routes). The routes invokes Rails twice and does not persist the request.
 
  **`ExceptionHandler` is the only gem to provide middleware-powered exception handling.**  It populates our custom `view` with details, giving us the ability to **maintain branding** when exceptions are raised:
 
@@ -235,7 +233,7 @@ This disables [`config.consider_all_requests_local`](http://guides.rubyonrails.o
 
 ## Database
 
-**We also have `ActiveRecord`.**
+**We also have `ActiveRecord` integration.**
 
 If you want to save your exceptions to `db`, you need to enable the `db` config option:
 
@@ -244,11 +242,11 @@ If you want to save your exceptions to `db`, you need to enable the `db` config 
       db: true
     }
 
-This enables `ActiveRecord::Base` on the `Exception` class, allowing us to save to the database.
+This enables `ActiveRecord::Base` on the [`Exception`](app/models/exception_handler/exception.rb) class, allowing us to save to the database.
 
-In order for this to work, you the correct table in your db.
+In order for this to work, you need the correct table in your db.
 
-To do this, once you've enabled the option, just run `rake db:migrate` from your console. Our new [`migration system`](https://github.com/richpeck/exception_handler/tree/readme#migrations) will automatically append our migration.
+To do this, once you've enabled the option, run `rails db:migrate` from your console. Our new [`migration system`](https://github.com/richpeck/exception_handler/tree/readme#migrations) will automatically run the migration.
 
 ---
 
@@ -263,9 +261,9 @@ If you want to receive emails whenever your application raises an error, you can
       email: "your@email.com",
     }
 
-> **Please Note** this requires [`ActionMailer`](http://guides.rubyonrails.org/action_mailer_basics.html) to be set up. If you don't have any outbound SMTP server, sign up to [`SendGrid`](http://sendgrid.com) for free.
+> **Please Note** this requires [`ActionMailer`](http://guides.rubyonrails.org/action_mailer_basics.html). If you don't have any outbound SMTP server, sign up to [`SendGrid`](http://sendgrid.com) for free.
 
-See the [full tutorial here](https://github.com/richpeck/exception_handler/wiki/2-Email)
+See the [**full tutorial** here](https://github.com/richpeck/exception_handler/wiki/2-Email)
 
 ---
 
@@ -315,7 +313,7 @@ Each locale should use the `status_symbol` as described [here](https://github.co
 
 ## Layout
 
-**The `layout` has been improved:**
+**The `layout` has also been improved:**
 
 [[ layout screenshot ]]
 
@@ -378,13 +376,17 @@ Each switch defines which folders you want (EG `-v views` will only copy `views`
 
 **From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own [migration system](lib/exception_handler/engine.rb#L58).**
 
-you don't need to generate a migration any more - if you set the `db` option in config, run `rails db:migrate` and the migration will be run.
+You don't need to generate a migration any more.
+
+If you set the `db` option in config, run `rails db:migrate` and the migration will be run.
 
 To rollback, use the following:
 
     rails db:migrate:down VERSION=000000
 
-> The drawback to this is that if you remove the `ExceptionHandler` gem before you rollback the migration, it won't exist anymore. You can only fire the above command when you have `ExceptionHandler` installed.
+> The drawback to this is that if you remove the `ExceptionHandler` gem before you rollback the migration, it won't exist anymore.
+
+> You can **only** fire the above command when you have `ExceptionHandler` installed.
 
 ---
 
