@@ -348,11 +348,11 @@ The above deals with the inference of a `Rails` exception into an `HTTP` one.
 
 Because `HTTP` can only process `4xx` / `5xx` errors, it does not matter how Rails deals with the exceptions. The only thing which counts is how they're sent back to the client.
 
-If you have custom exceptions, you'll need to register them with Rails by using the code above. The default is `500` / `:internal_server_error` - meaning if you'd prefer your app to just return `500` errors for your custom exception, leave it at that.
+If you have custom exceptions, you'll need to register them with Rails by using the code above. The default is `500` / `:internal_server_error` - meaning if you'd prefer your app to just return `500` errors for your custom exception, you don't need to explicitly declare them.
 
 ---
 
-## <img src="readme/titles/icons/generators.png" align="absmiddle" /> Generators
+## Generators
 
 #### Files
 
@@ -389,7 +389,7 @@ The drawback to this is that if you remove the `ExceptionHandler` gem before you
 
 ---
 
-## <img src="readme/titles/icons/support.png" align="absmiddle" /> Support
+## Support
 
 <p align="center">
   <a href="http://stackoverflow.com/questions/ask?tags=ruby-on-rails+exception-handler">Stackoverflow</a>
@@ -398,11 +398,10 @@ The drawback to this is that if you remove the `ExceptionHandler` gem before you
 
 ---
 
-## <img src="readme/titles/icons/changelog.png" align="absmiddle" /> Changelog
+## Changelog
 
 ### [0.7.5](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
- - [x] [Status-based layouts](#layouts)
- - [ ] Status based locales
+ - [x] [HTTP status integration](#layouts)
 
 ### [0.7.0](https://github.com/richpeck/exception_handler/releases/tag/0.7.0)
  - [x] Wildcard mime types
