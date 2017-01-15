@@ -333,9 +333,9 @@ The *majority* our `layout` is handled with the CSS. This allows the view to be 
 
 ## Custom Exceptions
 
-We investigated **custom exceptions** for [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
+**We investigated *custom exceptions* for [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5).**
 
-Since the functionality is built into Rails, we didn't feel it necessary to include:
+Since the functionality is built into Rails, we didn't feel it necessary to include it...
 
 [`config.action_dispatch.rescue_responses`][rescue_responses]  ↴
 
@@ -344,9 +344,9 @@ Since the functionality is built into Rails, we didn't feel it necessary to incl
     # config/application.rb
     config.action_dispatch.rescue_responses["ActionController::YourError"] = :bad_request
 
-The above only deals with the inference of a *Rails* exception into an *HTTP* one.
+The above deals with the inference of a *`Rails`* exception into an *`HTTP`* one.
 
-Because HTTP can only process `4xx` / `5xx` errors, it does not matter how Rails deals with the exceptions. The only thing which counts is how they're sent back to the client.
+Because `HTTP` can only process `4xx` / `5xx` errors, it does not matter how Rails deals with the exceptions. The only thing which counts is how they're sent back to the client.
 
 If you have custom exceptions, you'll need to register them with Rails by using the code above <br /> (default `500` / `:internal_server_error`).
 
