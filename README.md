@@ -42,14 +42,13 @@
 </p>
 
 <p align="center">
-  <strong>At version <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/0.7.5">0.7.5</a></strong> ExceptionHandler is the <i>leader</i> in custom Rails error pages:</strong>
+  <strong>At version <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/0.7.5">0.7.5</a></strong>, ExceptionHandler is the <i>leader</i> in custom Rails error pages:</strong>
 </p>
 
 ---
 
 <p align="center">
-  <br />
-  <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="600" />
+  <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="625" />
 </p>
 
 <p align="center">
@@ -408,8 +407,8 @@ The drawback to this is that if you remove the `ExceptionHandler` gem before you
 ## <img src="readme/titles/icons/changelog.png" align="absmiddle" /> Changelog
 
 ### [0.7.5](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
- - [x] [HTTP status layouts](#layouts)
- - [x] [Custom exception mapping](#custom_exceptions)
+ - [x] [Status-based layouts](#layouts)
+ - [x] [Status-based locales](#locales)
 
 ### [0.7.0](https://github.com/richpeck/exception_handler/releases/tag/0.7.0)
  - [x] Wildcard mime types
