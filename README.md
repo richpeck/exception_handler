@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  Now at version <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/0.7.5">0.7.5</a></strong>, ExceptionHandler is the leader in <strong>custom Rails error pages</strong>:
+  Now at version <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/0.7.5">0.7.5</a></strong>, <strong>ExceptionHandler</strong> is the leader in <strong>custom Rails error pages</strong>:
 </p>
 
 ---
