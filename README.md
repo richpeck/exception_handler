@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <strong>At version <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/0.7.5">0.7.5</a></strong>, ExceptionHandler is now the <i>leader</i> in custom Rails error pages</strong>
+  <strong>At version <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/0.7.5">0.7.5</a></strong>, ExceptionHandler is now the <i>leader</i> in custom Rails error pages:</strong>
 </p>
 
 ---
@@ -331,26 +331,24 @@ The *majority* our `layout` is handled with the CSS. This allows the view to be 
 ---
 
 
-## <img src="readme/titles/icons/custom.png" align="absmiddle" /> Custom Exceptions
+## Custom Exceptions
 
-Due to popular demand, we investigated **custom exceptions** for [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5).
+We investigated **custom exceptions** for [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
 
-Since the functionality is built into Rails ([`config.action_dispatch.rescue_responses`][rescue_responses]), we didn't feel it necessary to include in `ExceptionHandler` ↴
+Since the functionality is built into Rails, we didn't feel it necessary to include:
+
+[`config.action_dispatch.rescue_responses`][rescue_responses]  ↴
 
 ![ActionDispatch][config.action_dispatch.rescue_responses]
-
-Because the browser can only read `4xx` or `5xx` HTTP errors, any exception raised inside Rails needs to be inferred. This is handled by the [`config.action_dispatch.rescue_responses`][rescue_responses] middleware.
-
-Specifically, you have to register your custom exception against an [HTTP response code][status_codes]. This is done as follows:
 
     # config/application.rb
     config.action_dispatch.rescue_responses["ActionController::YourError"] = :bad_request
 
-The full list of Rails HTTP response codes can be found [here][status_codes].
+The above only deals with the inference of a *Rails* exception into an *HTTP* one.
 
-Default is `internal_server_error / 500`.
+Because HTTP can only process `4xx` / `5xx` errors, it does not matter how Rails deals with the exceptions. The only thing which counts is how they're sent back to the client.
 
-We decided against including this as native functionality in `ExceptionHandler` - if you want to map custom exceptions, you can do it from the `Rails` config.
+If you have custom exceptions, you'll need to register them with Rails by using the code above <br /> (default `500` / `:internal_server_error`).
 
 ---
 
