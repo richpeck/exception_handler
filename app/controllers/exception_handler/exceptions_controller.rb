@@ -1,5 +1,5 @@
 module ExceptionHandler
-  class ExceptionController < ApplicationController
+  class ExceptionsController < ApplicationController
 
     # => Response
     # => http://www.justinweiss.com/articles/respond-to-without-all-the-pain/
@@ -28,7 +28,7 @@ module ExceptionHandler
     # => Layout
     # => Layouts only 400 / 500 because they are the only error responses (300 is redirect)
     # => http://guides.rubyonrails.org/layouts_and_rendering.html#the-status-option
-    # => Layout proc kills inheritance, needs to be method for now
+    # => Layout proc kills "nil" inheritance, needs to be method for now
     layout :layout
 
     ####################
@@ -45,8 +45,11 @@ module ExceptionHandler
     private
 
     def layout
-      ExceptionHandler.config.layouts[ @exception.status[0] + "00" ]
+      ExceptionHandler.config.layouts[@exception.status]
     end
+
+    ##################################
+    ##################################
 
   end
 end
