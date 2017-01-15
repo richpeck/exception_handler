@@ -41,14 +41,9 @@
   <img src="readme/rails.jpg" title="Version 0.7.5 Released Early 2017" />
 </p>
 
-<p align="center">
-  <strong>At version <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/0.7.5">0.7.5</a></strong>, ExceptionHandler is now the <i>leader</i> in custom Rails error pages:</strong>
-</p>
-
 ---
 
 <p align="center">
-  <br />
   <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="625" />
 </p>
 
@@ -107,17 +102,7 @@ Because our callback passes the request, we are able to do whatever we need befo
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-**This makes `ExceptionHandler` the MOST EFFECTIVE and EFFICIENT gem to handle exceptions in Rails**. Once invoked, its `model`, `controller` and `views` work together to serve the most efficient responses to Rails errors.
-
-<p align="center">
-  <strong>The ONLY professional solution to manage Rails exceptions WITHOUT BLOAT:</strong>
-</p>
-
-<p align="center">
-  <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
-</p>
-
-Even better, **you can install `ExceptionHandler` with a single click:**
+**This makes `ExceptionHandler` the MOST EFFECTIVE and EFFICIENT gem to handle exceptions in Rails**. Once invoked, its `model`, `controller` and `views` work together to serve the most efficient responses to Rails errors...
 
 ----------
 
@@ -148,7 +133,7 @@ Even better, **you can install `ExceptionHandler` with a single click:**
 
 ----
 
-## <img src="readme/titles/icons/config.png" align="absmiddle" /> Config
+## Config
 
 From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6), **`ExceptionHandler`** manages its config from the central Rails config:
 
@@ -241,7 +226,7 @@ This ruthlessly simple and effective config system works on `Rails 4.2+`... enjo
 
 ----
 
-## <img src="readme/titles/icons/dev.png" align="absmiddle" /> Dev Mode
+## Dev Mode
 
 By default, `ExceptionHandler` only works in production.
 
@@ -264,7 +249,7 @@ This negates the need for [`exception_handler`](http://github.com/richpeck/excpt
 
 ----
 
-## <img src="readme/titles/icons/database.png" align="absmiddle" /> Database
+## Database
 
 The `Exception` model creates the `@exception` object for us, allowing us to store in the `db`.
 
@@ -278,7 +263,7 @@ See the [full tutorial here](https://github.com/richpeck/exception_handler/wiki/
 
 ---
 
-## <img src="readme/titles/icons/views.png" align="absmiddle" /> Views
+## Views
 
 From [`0.7.0`](#070), we drastically overhauled the view system:
 
@@ -298,7 +283,7 @@ The way the view *looks* will depend on the [`layout`](#layout),
 
 ---
 
-## <img src="readme/titles/icons/locales.png" align="absmiddle" /> Locales
+## Locales
 
 [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5) introduced flexible locales:
 
@@ -310,7 +295,7 @@ You also get access to `%{message}` and `%{status}`, both inferring data from th
 
 ---
 
-## <img src="readme/titles/icons/layout.png" align="absmiddle" /> Layout
+## Layout
 
 The `layout` has been improved dramatically:
 
@@ -385,7 +370,7 @@ To rollback the `ExceptionHandler` migration, you will need to use the following
 
     rails db:migrate:down VERSION=000000
 
-The drawback to this is that if you remove the `ExceptionHandler` gem before you rollback the migration, it won't exist anymore. You can only fire the above command if you have `ExceptionHandler` installed.
+The drawback to this is that if you remove the `ExceptionHandler` gem before you rollback the migration, it won't exist anymore. You can only fire the above command when you have `ExceptionHandler` installed.
 
 ---
 
