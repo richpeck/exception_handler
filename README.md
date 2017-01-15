@@ -48,7 +48,6 @@
 ---
 
 <p align="center">
-  <br />
   <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="625" />
 </p>
 
@@ -404,7 +403,7 @@ The drawback to this is that if you remove the `ExceptionHandler` gem before you
 
 ### [0.7.5](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
  - [x] [Status-based layouts](#layouts)
- - [x] [Status-based locales](#locales)
+ - [ ] Status based locales
 
 ### [0.7.0](https://github.com/richpeck/exception_handler/releases/tag/0.7.0)
  - [x] Wildcard mime types
