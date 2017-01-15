@@ -82,25 +82,25 @@ The secret lies in [**`config.exceptions_app`**][exception_app] ↴
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-All Rails exceptions are handled with the `config.exceptions_app` callback, assigned in `config/application.rb` or `config/environments/*.rb` ↓
+All Rails exceptions are handled with `config.exceptions_app` (in `config/application.rb` or `config/environments/*.rb`):
 
 > **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**
 
 ![config.exceptions_app][config.exceptions_app]
 
-Each time Rails raises an exception, the [`ShowExceptions`][show_exception] middleware takes the request and forwards it to `config.exceptions_app`. This hook is expected to return a response - this is where we can inject our own callback (in our case a [`controller`](app/controllers/exception_handler/exceptions_controller.rb)):
+Each time Rails raises an exception, [`ShowExceptions`][show_exception] takes the request and forwards it to `config.exceptions_app`. This is expected to return a response - this is where we can inject our own callback (in our case a [`controller`](app/controllers/exception_handler/exceptions_controller.rb)):
 
 > ```app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionsController.action(:show).call(env) }```
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
-Because our callback passes the request, we are able to do whatever we need before serving a response. This is a major advantage over the "default" way of handling `Rails` exceptions (routes). The routes invokes Rails twice and does not persist the request (exception lost).
+Because *our* callback passes the request, we are able to do whatever we need before serving a response. This is a major advantage over the "default" (routes). The routes invokes Rails twice and does not persist the request.
 
- `ExceptionHandler` is the **only** gem to provide middleware-powered exception handling.  It populates our custom `view` with any details required, giving us the ability to **maintain branding** when exceptions are raised:
+ **`ExceptionHandler` is the only gem to provide middleware-powered exception handling.**  It populates our custom `view` with details, giving us the ability to **maintain branding** when exceptions are raised:
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-**This makes `ExceptionHandler` the MOST EFFECTIVE and EFFICIENT gem to handle exceptions in Rails**. Once invoked, its `model`, `controller` and `views` work together to serve the most efficient responses to Rails errors...
+**This makes `ExceptionHandler` the most EFFECTIVE and EFFICIENT gem to handle exceptions in Rails**. Once invoked, its `model`, `controller` and `views` work together to serve the most efficient responses to Rails errors ...
 
 ----------
 
@@ -118,7 +118,7 @@ Because our callback passes the request, we are able to do whatever we need befo
 
 
 <p align="center">
-  You just need to install it from the <strong>CLI</strong> or <strong>Gemfile</strong>, and it will automatically run in <strong>production</strong>.
+  You just need to install it from the <strong>CLI</strong> or <strong>Gemfile</strong>, and it will AUTOMATICALLY run in <strong>production</strong>.
   <br />
   <strong>↓ To run in development, use <a href="#dev-mode">dev mode</a> ↓</strong>
 </p>
@@ -133,7 +133,7 @@ Because our callback passes the request, we are able to do whatever we need befo
 
 ## Config
 
-**From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6), **`ExceptionHandler`** manages its config from the central Rails `config` hash:**
+**From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6), `ExceptionHandler` manages its config from the central Rails `config` hash:**
 
 [[ config ]]
 
@@ -376,21 +376,21 @@ Each switch defines which folders you want (EG `-v views` will only copy `views`
 
 ### Migrations (deprecated)
 
-From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own [migration system](lib/exception_handler/engine.rb#L58).
+**From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own [migration system](lib/exception_handler/engine.rb#L58).**
 
-If you set the [`db`](#db) option in the `config`, you will need to run `rails db:migrate` to populate the `ExceptionHandler` table in your db. This is handled automatically - you don't need to generate a migration any more.
+you don't need to generate a migration any more - if you set the `db` option in config, run `rails db:migrate` and the migration will be run.
 
-To rollback the `ExceptionHandler` migration, you will need to use the following command:
+To rollback, use the following:
 
     rails db:migrate:down VERSION=000000
 
-The drawback to this is that if you remove the `ExceptionHandler` gem before you rollback the migration, it won't exist anymore. You can only fire the above command when you have `ExceptionHandler` installed.
+> The drawback to this is that if you remove the `ExceptionHandler` gem before you rollback the migration, it won't exist anymore. You can only fire the above command when you have `ExceptionHandler` installed.
 
 ---
 
 ## Support
 
-Just ask in our [Github issues](https://github.com/richpeck/exception_handler/issues) (normally respond within 2 hrs).
+Just ask in our [Github issues](https://github.com/richpeck/exception_handler/issues) :smile:
 
 ---
 
