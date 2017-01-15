@@ -42,12 +42,13 @@
 </p>
 
 <p align="center">
-  <strong>At version <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/0.7.5">0.7.5</a></strong>, ExceptionHandler is the <i>leader</i> in custom Rails error pages:</strong>
+  <strong>At version <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/0.7.5">0.7.5</a></strong>, ExceptionHandler is now the <i>leader</i> in custom Rails error pages:</strong>
 </p>
 
 ---
 
 <p align="center">
+  <br />
   <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="625" />
 </p>
 
@@ -332,29 +333,24 @@ The *majority* our `layout` is handled with the CSS. This allows the view to be 
 
 ## <img src="readme/titles/icons/custom.png" align="absmiddle" /> Custom Exceptions
 
-Due to popular demand, we added **custom exceptions** in [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
+Due to popular demand, we looked into **custom exceptions** for [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5).
 
-The functionality is *already* built into Rails [`config.action_dispatch.rescue_responses`][rescue_responses] ↴
+Turns out the functionality is *already* built into Rails [`config.action_dispatch.rescue_responses`][rescue_responses] ↴
 
 ![ActionDispatch][config.action_dispatch.rescue_responses]
 
-Because the browser can only read `4xx` or `5xx` HTTP errors, any exception raised inside Rails needs to be interpolated. This is handled by the [`config.action_dispatch.rescue_responses`][rescue_responses] middleware.
+Because the browser can only read `4xx` or `5xx` HTTP errors, any exception raised inside Rails needs to be inferred. This is handled by the [`config.action_dispatch.rescue_responses`][rescue_responses] middleware.
 
 Specifically, you have to register your custom exception against an [HTTP response code][status_codes]. This is done as follows:
 
     # config/application.rb
     config.action_dispatch.rescue_responses["ActionController::YourError"] = :bad_request
 
-The full list of Rails HTTP response codes can be found [here][status_codes]. The default is `internal_server_error / 500`.
+The full list of Rails HTTP response codes can be found [here][status_codes].
 
-We have built this functionality into `ExceptionHandler` --
+Default is `internal_server_error / 500`.
 
-    # config/application.rb
-    config.exception_handler = {
-      custom_exceptions = { "ActionController::YourError" => :bad_request }
-    }
-
-This does nothing different to the base Rails functionality, so may remove it. We figured if you're raising custom exceptions, you may wish to keep them with `ExceptionHandler`'s config, rather than separate.
+We decided against including this as native functionality in `ExceptionHandler` - if you want to map custom exceptions, you can do it from the `Rails` config.
 
 ---
 
