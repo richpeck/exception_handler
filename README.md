@@ -42,6 +42,12 @@
 </p>
 
 <p align="center">
+  At version <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/0.7.5">0.7.5</a></strong>, ExceptionHandler is the leader in <strong>custom Rails error pages</strong>
+</p>
+
+---
+
+<p align="center">
   <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="600" />
 </p>
 
