@@ -68,7 +68,7 @@ Since browsers only read `4xx` & `5xx` error codes, any exceptions raised by Rai
 
 Unlike other gems, **`ExceptionHandler` uses a custom [`controller`](app/controllers/exception_handler/exceptions_controller.rb) to build an [`@exception`](app/models/exception_handler/exception.rb) object**. This allows us to save the exception, email it or do anything else we may need. The gem has already been a massive success and we continue to actively maintain it.
 
-Now you can try for yourself ...
+Now you can try for yourself...
 
 
 ----
@@ -98,7 +98,9 @@ Because *our* callback handles the entire request, we are able to do whatever we
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-**This makes `ExceptionHandler` the most EFFECTIVE and EFFICIENT gem to handle exceptions in Rails**. Once invoked, its `model`, `controller` and `views` work together to serve the most efficient responses to Rails errors ...
+**`ExceptionHandler` is the most EFFECTIVE and EFFICIENT gem to handle exceptions in Rails**.
+
+Once invoked, its `model`, `controller` and `views` work together to serve the best responses to Rails errors ...
 
 ----------
 
@@ -116,12 +118,16 @@ Because *our* callback handles the entire request, we are able to do whatever we
 
 
 <p align="center">
-  You just need to install it from the <strong>CLI</strong> or <strong>Gemfile</strong>, and it will AUTOMATICALLY run in <strong>production</strong>.
+  You can install it from the <strong>CLI</strong> or <strong>Gemfile</strong> - it will AUTOMATICALLY run in <strong>production</strong>.
   <br />
   <strong>↓ To run in development, use <a href="#dev-mode">dev mode</a> ↓</strong>
 </p>
 
 ---
+
+<p align="center">
+  If you want to set up `ExceptionHandler` to run your way, there are features to make it run correctly...
+</p>
 
 <p align="center">
   <a href="#config"><img src="readme/titles/icons/config.png" alt="Cinfiguration Options" align="absmiddle" /> Config</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#dev-mode" title="Dev Mode"><img src="readme/titles/icons/dev.png" alt="Dev" align="absmiddle" /> Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#database"><img src="readme/titles/icons/database.png" alt="Database" align="absmiddle" />  Database</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#email"><img src="readme/titles/icons/email.png" alt="Email" align="absmiddle" />  Email</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#views"><img src="readme/titles/icons/views.png" alt="Views" align="absmiddle" />  Views</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#locales"><img src="readme/titles/icons/locales.png" alt="Locales" align="absmiddle" />  Locales</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#custom-exceptions"><img src="readme/titles/icons/custom.png" alt="Custom Exceptions" align="absmiddle" />  Custom Exceptions</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#generators"><img src="readme/titles/icons/generators.png" alt="Generators" align="absmiddle" />  Generators</a>
@@ -135,7 +141,7 @@ Because *our* callback handles the entire request, we are able to do whatever we
 
 [[ config ]]
 
-Options are as follows:
+[Options](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb#L45) are as follows:
 
     #config/application.rb
     ...
@@ -252,7 +258,7 @@ To do this, once you've enabled the option, run `rails db:migrate` from your con
 
 ## Email
 
-**`ExceptionHandler` now sends email notifications**.
+**`ExceptionHandler` now sends email notifications**:
 
 If you want to receive emails whenever your application raises an error, you can do so by adding your email to the config:
 
@@ -287,7 +293,7 @@ Each time `ExceptionHandler` returns a response, it invokes this view. The diffe
 
 ## Locales
 
-**[`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5) introduced locales...**
+**[`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5) introduced locales ...**
 
 [[ locales ]]
 
@@ -313,7 +319,7 @@ Each locale should use the `status_symbol` as described [here](https://github.co
 
 ## Layout
 
-**The `layout` has also been improved:**
+**The `layout` has also been improved ↴**
 
 [[ layout screenshot ]]
 
@@ -472,7 +478,6 @@ Just ask in our [Github issues](https://github.com/richpeck/exception_handler/is
 
 <!-- Images -->
 [http_codes]:       readme/http_codes.png
-[config.exceptions_app]: readme/config.exceptions_app.jpg
 [config.action_dispatch.rescue_responses]: readme/config.action_dispatch.rescue_responses.jpg
 [banner]:           readme/banner.jpg
 [gem]:              readme/gem.jpg
