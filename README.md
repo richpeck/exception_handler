@@ -412,7 +412,7 @@ To rollback, use the following:
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
-[layout]:           readme/layout.png
+[layout_img]:       readme/layout.png
 [view_img]:         readme/view.jpg
 [http_codes]:       readme/http_codes.png
 [config]:           readme/config.jpg
