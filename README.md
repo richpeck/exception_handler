@@ -42,6 +42,7 @@
 </p>
 
 <p align="center">
+  <br />
   <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="600" />
 </p>
 
@@ -92,7 +93,7 @@ Each time an exception is raised, [`ShowExceptions`][show_exception] takes the r
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
-Because *our* callback handles the entire request, we are able to do whatever we need before serving a response. This is a **major** advantage over the "default" (routes). The routes invokes Rails twice and does not persist the request.
+Because our callback handles the entire request, we are able to do whatever we need before serving a response. This is a **major** advantage over the "default" (routes). The routes invokes Rails twice and does not persist the request.
 
  **`ExceptionHandler` is the only gem to provide middleware-powered exception handling.**  It populates our custom `view` with details, giving us the ability to **maintain branding** when exceptions are raised:
 
@@ -126,7 +127,7 @@ Once invoked, its `model`, `controller` and `views` work together to serve the b
 ---
 
 <p align="center">
-  If you want to set it up your way, these features will help...
+  If you want to set it up your way, you can use these features...
 </p>
 
 <p align="center">
@@ -269,7 +270,7 @@ If you want to receive emails whenever your application raises an error, you can
 
 > **Please Note** this requires [`ActionMailer`](http://guides.rubyonrails.org/action_mailer_basics.html). If you don't have any outbound SMTP server, use [`SendGrid`](http://sendgrid.com) for free.
 
-[Full tutorial here](https://github.com/richpeck/exception_handler/wiki/2-Email).
+[Full tutorial here](https://github.com/richpeck/exception_handler/wiki/2-Email)
 
 ---
 
