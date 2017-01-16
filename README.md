@@ -144,7 +144,7 @@ Once invoked, its `model`, `controller` and `views` work together to serve the b
 
 [![config][config]](lib/exception_handler/config.rb#L45)
 
-If you're using an [`engine`](http://guides.rubyonrails.org/engines.html), you **don't** need to use an `initializer`:
+If you're using an [`engine`](http://guides.rubyonrails.org/engines.html), you don't need to use an `initializer`:
 
     # lib/engine.rb
     module YourModule
@@ -160,7 +160,7 @@ If you're using an [`engine`](http://guides.rubyonrails.org/engines.html), you *
 
     end
 
-You **only** need to provide the inputs you want, for example:
+You only need to provide the inputs you want, for example:
 
     # config/application.rb
     config.exception_handler = {
@@ -176,7 +176,7 @@ You **only** need to provide the inputs you want, for example:
 
 ## Dev Mode
 
-**By default, `ExceptionHandler` only works in production...**
+**By default, `ExceptionHandler` only works in production.**
 
 If you want to enable it in dev, enable the [`dev`](lib/exception_handler/config.rb#L38) option:
 
@@ -185,7 +185,7 @@ If you want to enable it in dev, enable the [`dev`](lib/exception_handler/config
 
 This disables [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), making Rails behave as it would in production. This gives you the ability to edit the exception flow, either creating your own interface or ensuring it works correctly:
 
-[[ dev mode ]]
+[[ two screens showing the transition ]]
 
 ----
 
@@ -210,7 +210,7 @@ To do this, once you've enabled the option, run `rails db:migrate` from your con
 
 ## Email
 
-**`ExceptionHandler` now sends email notifications**
+**`ExceptionHandler` also now sends email notifications.**
 
 If you want to receive emails whenever your application raises an error, you can do so by adding your email to the config:
 
@@ -231,41 +231,28 @@ If you want to receive emails whenever your application raises an error, you can
 
 ![View][view_img]
 
-The [view](app/views/exception_handler/exceptions/show.html.erb) is now modular - we pass the `@exception` object and populate with the [`locales`](#locales):
-
-    <%= content_tag :div, class: "exception" do %>
-      <%= content_tag :span, @exception.description.html_safe %>
-    <% end %>
-
-Each time `ExceptionHandler` returns a response, it invokes this view.
-
-The difference lies in the `layout` → `5xx` errors use our `exception` layout by default.
+[Wiew](app/views/exception_handler/exceptions/show.html.erb) is modular - `@exception` populated with [`locales`](#locales).
 
 ---
 
 ## Locales
 
-**[`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5) introduced locales ...**
+**[`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5) introduced [locales](config/locales/exception_handler.yml) ...**
 
 [[ locales ]]
 
 The `ExceptionHandler` view is populated by [`@exception.description`](app/models/exception_handler/exception.rb#L121), which pulls from the `locales`.
 
-By default, only the `404` and `500` locales are defined:
-
-[[ locales ]]
-
-If you want custom messages, you need the following:
+If you want custom messages, you need the following. The key is defined by the HTTP [`status_code`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L544)
 
     # config/locales/en.yml
     en:
       exception_handler:
         not_found: "Your message here"
+        unauthorized: "You need to login to continue"
         internal_server_error: "This is a test to show the %{status} of the error"
 
-You also get access to `%{message}` and `%{status}`, both inferring data from the `@exception` object.
-
-Each locale should use the `status_symbol` as described [here](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L544).
+You get access to `%{message}` and `%{status}`, both inferring from `@exception`.
 
 ---
 
@@ -273,7 +260,7 @@ Each locale should use the `status_symbol` as described [here](https://github.co
 
 **The `layout` has also been improved ↴**
 
-[[ layout screenshot ]]
+![Layout][layout]
 
 We now assign layouts to the **status code** of the response:
 
@@ -292,18 +279,16 @@ The *majority* our `layout` is handled with the CSS. This allows the view to be 
 
 ## Custom Exceptions
 
-**Custom Exceptions also supported in [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)**.
+**Custom Exceptions also supported in [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)**
 
 Rails handles this for us - [**`config.action_dispatch.rescue_responses`**][rescue_responses]  ↴
 
 ![ActionDispatch][config.action_dispatch.rescue_responses]
 
+You need to add to the `rescue_responses` hash in your app's config (mapped to [`status codes`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L544)):
+
     # config/application.rb
     config.action_dispatch.rescue_responses["ActionController::YourError"] = :bad_request
-
-Works by taking a hash of exceptions and matching them to [`status codes`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L544)
-
-All standard exceptions are covered. If you wish to add a custom exception, you need to add to the hash.
 
 Because `HTTP` can only process `4xx` / `5xx` errors, if `Rails` raises an exception, it needs to assign one of the error status codes. **Default** is [`internal_server_error`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L595) - if you'd prefer your app to just return `500` errors for your custom exception, you don't need to explicitly declare them.
 
@@ -326,13 +311,13 @@ The following commands will copy the directories...
 
 If you don't include any switches, this will copy **all** the folders put into your app.
 
-Each switch defines which folders you want (EG `-v views` will only copy `views` directory).
+Each switch defines which folders you want (EG `-v views` will only copy `views` dir).
 
 ---
 
 ### Migrations (deprecated)
 
-**From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own [migration system](lib/exception_handler/engine.rb#L58).**
+**From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own [migration system](lib/exception_handler/engine.rb#L58)**
 
 You don't need to generate a migration any more.
 
@@ -427,6 +412,7 @@ To rollback, use the following:
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
+[layout]:           readme/layout.png
 [view_img]:         readme/view.jpg
 [http_codes]:       readme/http_codes.png
 [config]:           readme/config.jpg
