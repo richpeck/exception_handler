@@ -208,7 +208,7 @@ If you're using a [`Rails` Engine](http://guides.rubyonrails.org/engines.html), 
 
     end
 
-**The above config is *default*.** You **only** need to provide the inputs you want, for example:
+**The above is default.** You **only** need to provide the inputs you want, for example:
 
     # config/application.rb
     config.exception_handler = {
@@ -224,7 +224,7 @@ If you're using a [`Rails` Engine](http://guides.rubyonrails.org/engines.html), 
 
 ## Dev Mode
 
-**By default, `ExceptionHandler` only works in production ...**
+**By default, `ExceptionHandler` only works in production...**
 
 If you want to enable it in dev, enable the [`dev`](lib/exception_handler/config.rb#L38) option:
 
@@ -269,7 +269,7 @@ If you want to receive emails whenever your application raises an error, you can
 
 > **Please Note** this requires [`ActionMailer`](http://guides.rubyonrails.org/action_mailer_basics.html). If you don't have any outbound SMTP server, use [`SendGrid`](http://sendgrid.com) for free.
 
-See the [full tutorial here](https://github.com/richpeck/exception_handler/wiki/2-Email).
+[Full tutorial here](https://github.com/richpeck/exception_handler/wiki/2-Email).
 
 ---
 
@@ -285,7 +285,9 @@ The [view](app/views/exception_handler/exceptions/show.html.erb) is now *modular
       <%= content_tag :span, @exception.description.html_safe %>
     <% end %>
 
-Each time `ExceptionHandler` returns a response, it invokes this view. The difference lies in the `layout` -- `5xx` errors use our `exception` layout by default.
+Each time `ExceptionHandler` returns a response, it invokes this view.
+
+The difference lies in the `layout` → `5xx` errors use our `exception` layout by default.
 
 ---
 
@@ -388,15 +390,13 @@ To rollback, use the following:
 
     rails db:migrate:down VERSION=000000
 
-> The drawback to this is that if you remove the `ExceptionHandler` gem before you rollback the migration, it won't exist anymore.
-
-> You can **only** fire the above command when you have `ExceptionHandler` installed.
+> The drawback to this is that if you remove `ExceptionHandler` before you rollback the migration, it won't exist anymore. You can **only** fire the `rollback` when you have `ExceptionHandler` installed.
 
 ---
 
 ## Support
 
-Just ask in our [Github issues](https://github.com/richpeck/exception_handler/issues) :smile:
+[Github issues](https://github.com/richpeck/exception_handler/issues)
 
 ---
 
