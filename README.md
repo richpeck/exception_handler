@@ -65,11 +65,11 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
 
 ![HTTP Error Codes][http_codes]
 
-Since browsers only read `4xx` & `5xx` error codes, any exceptions raised by Rails have to be inferred. Thus, `ExceptionHandler` simply has to manage how the `4xx` / `5xx` errors are passed to the browser.
+Since **browsers only read `4xx` & `5xx` error codes**, all Rails exceptions have to be inferred. Thus, `ExceptionHandler` simply has to manage how the `4xx` / `5xx` errors are passed to the browser.
 
 Unlike other gems, **`ExceptionHandler` uses a custom [`controller`](app/controllers/exception_handler/exceptions_controller.rb) to build an [`@exception`](app/models/exception_handler/exception.rb) object**. This allows us to save the exception, email it or do anything else we may need. The gem has already been a massive success and we continue to actively maintain it.
 
-Now you can try for yourself...
+Now you can try for yourself ...
 
 
 ----
@@ -172,7 +172,7 @@ As follows:
       }
     }
 
-If you're using a [`Rails` Engine](http://guides.rubyonrails.org/engines.html), you **don't** need to include it in an `initializer`:
+If you're using an [`Engine`](http://guides.rubyonrails.org/engines.html), you **don't** need to include it in an `initializer`:
 
     # lib/engine.rb
     module YourModule
@@ -181,29 +181,8 @@ If you're using a [`Rails` Engine](http://guides.rubyonrails.org/engines.html), 
         # => ExceptionHandler
         # => Works in and out of an initializer
         config.exception_handler = {
-          dev:    false,
-          db:     false,
-          email: 	false,
-          social: {
-            facebook: nil,
-            twitter:  nil,
-            youtube:  nil,
-            linkedin: nil,
-            fusion:   nil,
-          },
-          layouts: {
-            # => nil inherits from ApplicationController
-            # => 4xx default to nil
-            # => 5xx errors should be "exception" but can be nil if explicitly defined
-            500 => "exception",
-            501 => "exception",
-            502 => "exception",
-            503 => "exception",
-            504 => "exception",
-            505 => "exception",
-            507 => "exception",
-            510 => "exception"
-          }
+          dev: false,
+          db:  true
         }
       end
 
