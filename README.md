@@ -163,14 +163,10 @@ If you're using an [`engine`](http://guides.rubyonrails.org/engines.html), you d
 You only need to provide the inputs you want, for example:
 
     # config/application.rb
-    config.exception_handler = {
-      dev: true
-    }
+    config.exception_handler = { dev: true }
 
     # config/environments/production.rb
-    config.exception_handler = {
-      social: { fusion: "flutils" }
-    }
+    config.exception_handler = { social: { fusion: "flutils" }}
 
 ----
 
@@ -260,11 +256,11 @@ You get access to `%{message}` and `%{status}`, both inferring from `@exception`
 
 **The `layout` has also been improved ↴**
 
-![Layout][layout]
+![Layout][layout_img]
 
 We now assign layouts to the **status code** of the response:
 
-[[ status codes ]]
+![Layout][layouts_img]
 
 By default, `5xx` errors are shown with our [`exception` layout][layout] - this can be overridden by changing the `config` to use a layout of your choice. If you want to inherit the `ApplicationController` layout, assign the codes to `nil`.
 
@@ -412,6 +408,7 @@ To rollback, use the following:
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
+[layouts_img]:      readme/layouts.jpg
 [layout_img]:       readme/layout.png
 [view_img]:         readme/view.jpg
 [http_codes]:       readme/http_codes.png
