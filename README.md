@@ -376,7 +376,7 @@ To rollback, use the following:
 
 ## Support
 
-[Github issues](https://github.com/richpeck/exception_handler/issues)
+[Issues](https://github.com/richpeck/exception_handler/issues)
 
 ---
 
