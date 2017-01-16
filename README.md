@@ -126,7 +126,7 @@ Once invoked, its `model`, `controller` and `views` work together to serve the b
 ---
 
 <p align="center">
-  If you want to set up `ExceptionHandler` to run your way, there are features to make it run correctly...
+  If you want to set it up your way, these features will help...
 </p>
 
 <p align="center">
@@ -211,13 +211,13 @@ If you're using a [`Rails` Engine](http://guides.rubyonrails.org/engines.html), 
 **The above config is *default*.** You **only** need to provide the inputs you want, for example:
 
     # config/application.rb
-    config.exception_handler = { dev: true }
+    config.exception_handler = {
+      dev: true
+    }
 
     # config/environments/production.rb
     config.exception_handler = {
-      social: {
-        fusion: "flutils"
-      }
+      social: { fusion: "flutils" }
     }
 
 ----
@@ -250,7 +250,7 @@ If you want to save your exceptions to `db`, you need to enable the `db` config 
 
 This enables `ActiveRecord::Base` on the [`Exception`](app/models/exception_handler/exception.rb) class, allowing us to save to the database.
 
-In order for this to work, you need the correct table in your db.
+In order for this to work, your db needs the correct table.
 
 To do this, once you've enabled the option, run `rails db:migrate` from your console. Our new [`migration system`](https://github.com/richpeck/exception_handler/tree/readme#migrations) will automatically run the migration.
 
@@ -258,18 +258,18 @@ To do this, once you've enabled the option, run `rails db:migrate` from your con
 
 ## Email
 
-**`ExceptionHandler` now sends email notifications**:
+**`ExceptionHandler` now sends email notifications**
 
 If you want to receive emails whenever your application raises an error, you can do so by adding your email to the config:
 
     # config/application.rb
     config.exception_handler = {
-      email: "your@email.com",
+      email: "your@email.com"
     }
 
-> **Please Note** this requires [`ActionMailer`](http://guides.rubyonrails.org/action_mailer_basics.html). If you don't have any outbound SMTP server, sign up to [`SendGrid`](http://sendgrid.com) for free.
+> **Please Note** this requires [`ActionMailer`](http://guides.rubyonrails.org/action_mailer_basics.html). If you don't have any outbound SMTP server, use [`SendGrid`](http://sendgrid.com) for free.
 
-See the [**full tutorial** here](https://github.com/richpeck/exception_handler/wiki/2-Email)
+See the [full tutorial here](https://github.com/richpeck/exception_handler/wiki/2-Email).
 
 ---
 
@@ -279,9 +279,7 @@ See the [**full tutorial** here](https://github.com/richpeck/exception_handler/w
 
 [[ View ]]
 
-The [view](app/views/exception_handler/exceptions/show.html.erb) is now *modular* - we pass the `@exception` object and populate with the [`locales`](#locales).
-
-The view is very simple:
+The [view](app/views/exception_handler/exceptions/show.html.erb) is now *modular* - we pass the `@exception` object and populate with the [`locales`](#locales):
 
     <%= content_tag :div, class: "exception" do %>
       <%= content_tag :span, @exception.description.html_safe %>
@@ -297,18 +295,18 @@ Each time `ExceptionHandler` returns a response, it invokes this view. The diffe
 
 [[ locales ]]
 
-The `ExceptionHandler` view is populated by `@exception.description`, which pulls from the `locales`.
+The `ExceptionHandler` view is populated by [`@exception.description`](app/models/exception_handler/exception.rb#L121), which pulls from the `locales`.
 
 By default, only the `404` and `500` locales are defined:
 
 [[ locales ]]
 
-If you want custom messages, you need to create the following:
+If you want custom messages, you need the following:
 
     # config/locales/en.yml
     en:
       exception_handler:
-        not_found: "Your locale here"
+        not_found: "Your message here"
         internal_server_error: "This is a test to show the %{status} of the error"
 
 You also get access to `%{message}` and `%{status}`, both inferring data from the `@exception` object.
@@ -340,7 +338,7 @@ The *majority* our `layout` is handled with the CSS. This allows the view to be 
 
 ## Custom Exceptions
 
-**Custom Exceptions also supported in [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)**
+**Custom Exceptions also supported in [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)**.
 
 Rails handles this for us - [**`config.action_dispatch.rescue_responses`**][rescue_responses]  ↴
 
@@ -359,11 +357,11 @@ Because `HTTP` can only process `4xx` / `5xx` errors, if `Rails` raises an excep
 
 ## Generators
 
-**You can generate `ExceptionHandler` into your own application:**
+**You can generate `ExceptionHandler` into your own application.**
 
 [[ Generator ]]
 
-You can use the following commands...
+The following commands will copy the directories...
 
     rails g exception_handler:views
     rails g exception_handler:views -v views
