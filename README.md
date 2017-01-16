@@ -133,46 +133,16 @@ Once invoked, its `model`, `controller` and `views` work together to serve the b
 </p>
 
 <p align="center">
-  <a href="#config"><img src="readme/titles/icons/config.png" alt="Cinfiguration Options" align="absmiddle" height="24" /> Config</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#dev-mode" title="Dev Mode"><img src="readme/titles/icons/dev.png" alt="Dev" align="absmiddle" height="24" /> Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#database"><img src="readme/titles/icons/database.png" alt="Database" align="absmiddle" height="24" />  Database</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#email"><img src="readme/titles/icons/email.png" alt="Email" align="absmiddle" height="24" />  Email</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#views"><img src="readme/titles/icons/views.png" alt="Views" align="absmiddle" height="24" />  Views</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#locales"><img src="readme/titles/icons/locales.png" alt="Locales" align="absmiddle" />  Locales</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#custom-exceptions"><img src="readme/titles/icons/custom.png" alt="Custom Exceptions" align="absmiddle" height="24" />  Custom Exceptions</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#generators"><img src="readme/titles/icons/generators.png" alt="Generators" align="absmiddle" height="24" />  Generators</a>
+  <a href="#config"><img src="readme/titles/icons/config.png" alt="Cinfiguration Options" align="absmiddle" height="24" /> Config</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#dev-mode" title="Dev Mode"><img src="readme/titles/icons/dev.png" alt="Dev" align="absmiddle" height="24" /> Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#database"><img src="readme/titles/icons/database.png" alt="Database" align="absmiddle" height="24" />  Database</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#email"><img src="readme/titles/icons/email.png" alt="Email" align="absmiddle" height="24" />  Email</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#views"><img src="readme/titles/icons/views.png" alt="Views" align="absmiddle" height="24" />  Views</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#locales"><img src="readme/titles/icons/locales.png" alt="Locales" align="absmiddle" height="24" />  Locales</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#custom-exceptions"><img src="readme/titles/icons/custom.png" alt="Custom Exceptions" align="absmiddle" height="24" />  Custom Exceptions</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#generators"><img src="readme/titles/icons/generators.png" alt="Generators" align="absmiddle" height="24" />  Generators</a>
 </p>
 
 ----
 
 ## Config
 
-**From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6), `ExceptionHandler` manages its config from the central Rails `config` hash:**
+**From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6), `ExceptionHandler` manages its [config](lib/exception_handler/config.rb#L45) from the central Rails `config` hash:**
 
 [![config][config]](lib/exception_handler/config.rb#L45)
-
-As follows:
-
-    #config/application.rb
-    ...
-    config.exception_handler = {
-      dev:    false, # => set to "true" for dev mode
-      db:     false, # => defaults to :errors if true, else use "table_name" / :table_name
-      email:  false, # => requires string email and ActionMailer
-      social: {
-        facebook: nil, # => this has changed from previous versions (it is now just the username)
-        twitter:  nil,
-        youtube:  nil,
-        linkedin: nil,
-        fusion:   nil,
-      },
-      layouts: {
-        # => nil inherits from ApplicationController
-        # => 4xx errors default to nil
-        # => 5xx errors should be "exception" but can be nil if explicitly defined
-        500 => "exception",
-        501 => "exception",
-        502 => "exception",
-        503 => "exception",
-        504 => "exception",
-        505 => "exception",
-        507 => "exception",
-        510 => "exception"
-      }
-    }
 
 If you're using an [`engine`](http://guides.rubyonrails.org/engines.html), you **don't** need to use an `initializer`:
 
@@ -190,7 +160,7 @@ If you're using an [`engine`](http://guides.rubyonrails.org/engines.html), you *
 
     end
 
-**The above is default.** You only need to provide the inputs you want, for example:
+You **only** need to provide the inputs you want, for example:
 
     # config/application.rb
     config.exception_handler = {
