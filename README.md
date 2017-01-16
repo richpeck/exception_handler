@@ -229,7 +229,7 @@ If you want to receive emails whenever your application raises an error, you can
 
 **From [`0.7.0`](#070), we overhauled the view system:**
 
-![View][view]
+![View][view_img]
 
 The [view](app/views/exception_handler/exceptions/show.html.erb) is now modular - we pass the `@exception` object and populate with the [`locales`](#locales):
 
@@ -427,7 +427,7 @@ To rollback, use the following:
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
-[view]:             readme/view.jpg
+[view_img]:         readme/view.jpg
 [http_codes]:       readme/http_codes.png
 [config]:           readme/config.jpg
 [config.action_dispatch.rescue_responses]: readme/config.action_dispatch.rescue_responses.jpg
