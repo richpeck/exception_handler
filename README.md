@@ -41,6 +41,8 @@
   <img src="readme/rails.jpg" title="Version 0.7.5 Released Early 2017" />
 </p>
 
+---
+
 <p align="center">
   <br />
   <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="600" />
@@ -247,7 +249,7 @@ If you want to receive emails whenever your application raises an error, you can
       email: "your@email.com"
     }
 
-> **Please Note** this requires [`ActionMailer`](http://guides.rubyonrails.org/action_mailer_basics.html). If you don't have any outbound SMTP server, use [`SendGrid`](http://sendgrid.com) for free.
+> **Please Note** this requires [`ActionMailer`](http://guides.rubyonrails.org/action_mailer_basics.html). If you don't have any outbound SMTP server, [`SendGrid`](http://sendgrid.com) is free.
 
 [Full tutorial here](https://github.com/richpeck/exception_handler/wiki/2-Email)
 
@@ -255,7 +257,7 @@ If you want to receive emails whenever your application raises an error, you can
 
 ## Views
 
-**From [`0.7.0`](#070), we drastically overhauled the view system:**
+**From [`0.7.0`](#070), we overhauled the view system:**
 
 [[ View ]]
 
