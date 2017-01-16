@@ -140,9 +140,9 @@ Once invoked, its `model`, `controller` and `views` work together to serve the b
 
 **From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6), `ExceptionHandler` manages its config from the central Rails `config` hash:**
 
-[[ config ]]
+![config][config]
 
-[Options](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb#L45) are as follows:
+As follows:
 
     #config/application.rb
     ...
@@ -209,7 +209,7 @@ If you're using a [`Rails` Engine](http://guides.rubyonrails.org/engines.html), 
 
     end
 
-**The above is default.** You **only** need to provide the inputs you want, for example:
+**The above is *default*.** You only need to provide the inputs you want, for example:
 
     # config/application.rb
     config.exception_handler = {
@@ -476,7 +476,7 @@ To rollback, use the following:
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
-[http_codes]:       readme/http_codes.png
+[config]:           readme/config.jpg
 [config.action_dispatch.rescue_responses]: readme/config.action_dispatch.rescue_responses.jpg
 [banner]:           readme/banner.jpg
 [gem]:              readme/gem.jpg
