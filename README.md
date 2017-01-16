@@ -172,7 +172,7 @@ As follows:
       }
     }
 
-If you're using an [`Engine`](http://guides.rubyonrails.org/engines.html), you **don't** need to include it in an `initializer`:
+If you're using an [`engine`](http://guides.rubyonrails.org/engines.html), you **don't** need to use an `initializer`:
 
     # lib/engine.rb
     module YourModule
