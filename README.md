@@ -190,7 +190,7 @@ If you're using an [`engine`](http://guides.rubyonrails.org/engines.html), you *
 
     end
 
-**The above is *default*.** You only need to provide the inputs you want, for example:
+**The above is default.** You only need to provide the inputs you want, for example:
 
     # config/application.rb
     config.exception_handler = {
