@@ -140,7 +140,7 @@ Once invoked, its `model`, `controller` and `views` work together to serve the b
 
 **From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6), `ExceptionHandler` manages its config from the central Rails `config` hash:**
 
-![config][config]
+[![config][config]](lib/exception_handler/config.rb#L45)
 
 As follows:
 
