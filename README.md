@@ -83,11 +83,9 @@ Now you can try for yourself ...
 
 The secret lies in [**`config.exceptions_app`**][exception_app] ↴
 
-![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
-
-All Rails exceptions are handled by `config.exceptions_app`:
-
 > **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**
+
+![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
 Each time an exception is raised, [`ShowExceptions`][show_exception] takes the request and forwards it to `config.exceptions_app`. This is expected to return a response - allowing us to inject a [`controller`](app/controllers/exception_handler/exceptions_controller.rb):
 
@@ -95,7 +93,7 @@ Each time an exception is raised, [`ShowExceptions`][show_exception] takes the r
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
-Because our callback handles the entire request, we are able to do whatever we need before serving a response. This is a **major** advantage over the "default" (routes). The routes invokes Rails twice and does not persist the request.
+Because our callback maintains the request, we are able to do whatever we need before serving a response. This is a **major** advantage over the "default" (routes). The routes invokes Rails twice and does not persist the request.
 
  **`ExceptionHandler` is the only gem to provide middleware-powered exception handling.**  It populates our custom `view` with details, giving us the ability to **maintain branding** when exceptions are raised:
 
