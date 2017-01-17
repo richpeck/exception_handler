@@ -171,14 +171,13 @@ You only need to provide the inputs you want, for example:
 
 **To enable `ExceptionHandler` in dev, enable the [`dev`](lib/exception_handler/config.rb#L38) option:**
 
-    # config/application.rb
-    config.exception_handler = { dev: true }
-
 ![Dev][dev_mode]
 
 This disables [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), making Rails behave as it would in production:
 
 ![Dev][dev_img]
+
+This should be used temporarily.
 
 ----
 

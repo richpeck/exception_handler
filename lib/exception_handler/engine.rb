@@ -21,7 +21,7 @@ module ExceptionHandler
 
       # => Assets
       # => For Sprockets 4, had to include link_tree in exception_handler.css
-      config.assets.precompile << %w(exception_handler.css)
+      config.assets.precompile << "exception_handler.css"
 
     #########################################################
     #########################################################
