@@ -88,8 +88,6 @@ The secret lies in [**`config.exceptions_app`**][exception_app] ↴
 
 Each time an exception is raised, [`ShowExceptions`][show_exception] takes the request and forwards it to `config.exceptions_app`. This is expected to return a response - allowing us to inject a [`controller`](app/controllers/exception_handler/exceptions_controller.rb):
 
-> ```app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionsController.action(:show).call(env) }```
-
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
 Because our callback maintains the request, we are able to do whatever we need before serving a response. This is a **major** advantage over the "default" (routes). The routes invokes Rails twice and does not persist the request.
@@ -176,8 +174,6 @@ You only need to provide the inputs you want, for example:
 This disables [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), making Rails behave as it would in production:
 
 ![Dev][dev_img]
-
-This should be used temporarily.
 
 ----
 
