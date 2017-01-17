@@ -178,7 +178,7 @@ If you want to enable it in dev, enable the [`dev`](lib/exception_handler/config
 
 This disables [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), making Rails behave as it would in production. This gives you the ability to edit the exception flow, either creating your own interface or ensuring it works correctly:
 
-[[ two screens showing the transition ]]
+![Dev][dev_img]
 
 ----
 
@@ -399,6 +399,7 @@ To rollback, use the following:
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
+[dev_img]:         readme/dev.png
 [layouts_img]:      readme/layouts.jpg
 [layout_img]:       readme/layout.png
 [view_img]:         readme/view.jpg
