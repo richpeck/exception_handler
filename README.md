@@ -169,14 +169,14 @@ You only need to provide the inputs you want, for example:
 
 ## Dev Mode
 
-**By default, `ExceptionHandler` only works in production.**
-
-If you want to enable it in dev, enable the [`dev`](lib/exception_handler/config.rb#L38) option:
+**To enable `ExceptionHandler` in dev, enable the [`dev`](lib/exception_handler/config.rb#L38) option:**
 
     # config/application.rb
     config.exception_handler = { dev: true }
 
-This disables [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), making Rails behave as it would in production. This gives you the ability to edit the exception flow, either creating your own interface or ensuring it works correctly:
+![Dev][dev_mode]
+
+This disables [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), making Rails behave as it would in production:
 
 ![Dev][dev_img]
 
@@ -399,7 +399,8 @@ To rollback, use the following:
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
-[dev_img]:         readme/dev.png
+[dev_mode]:         readme/dev_mode.jpg
+[dev_img]:          readme/dev.png
 [layouts_img]:      readme/layouts.jpg
 [layout_img]:       readme/layout.png
 [view_img]:         readme/view.jpg
