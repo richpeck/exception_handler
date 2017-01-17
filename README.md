@@ -264,12 +264,6 @@ We now assign layouts to the **status code** of the response:
 
 By default, `5xx` errors are shown with our [`exception` layout][layout] - this can be overridden by changing the `config` to use a layout of your choice. If you want to inherit the `ApplicationController` layout, assign the codes to `nil`.
 
-[[ layout ]]
-
-The *majority* our `layout` is handled with the CSS. This allows the view to be completely modular:
-
-[[ CSS ]]
-
 ---
 
 
