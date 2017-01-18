@@ -41,14 +41,9 @@
   <img src="readme/rails.jpg" title="Version 0.7.5 Released Early 2017" />
 </p>
 
-<p align="center">
-  <strong>At version <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/0.7.5">0.7.5</a></strong>, ExceptionHandler is now the <i>leader</i> in custom Rails error pages:</strong>
-</p>
-
 ---
 
 <p align="center">
-  <br />
   <img src="readme/titles/rails5.png" title="Fully Rails 5 Compatible" width="625" />
 </p>
 
@@ -71,7 +66,7 @@ Brand new `controller` & `middleware` have made **`ExceptionHandler`** even more
 
 ![HTTP Error Codes][http_codes]
 
-Since browsers only read `4xx` & `5xx` error codes, any exceptions raised by Rails have to be inferred. Thus, `ExceptionHandler` simply has to manage how the `4xx` / `5xx` errors are passed to the browser.
+Since **browsers only read `4xx` & `5xx` error codes**, all Rails exceptions have to be inferred. Thus, `ExceptionHandler` simply has to manage how the `4xx` / `5xx` errors are passed to the browser.
 
 Unlike other gems, **`ExceptionHandler` uses a custom [`controller`](app/controllers/exception_handler/exceptions_controller.rb) to build an [`@exception`](app/models/exception_handler/exception.rb) object**. This allows us to save the exception, email it or do anything else we may need. The gem has already been a massive success and we continue to actively maintain it.
 
@@ -87,37 +82,23 @@ Now you can try for yourself ...
 
 The secret lies in [**`config.exceptions_app`**][exception_app] ↴
 
-![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
-
-All Rails exceptions are handled with the `config.exceptions_app` callback, assigned in `config/application.rb` or `config/environments/*.rb` ↓
-
 > **`config.exceptions_app`** sets the exceptions application invoked by the **`ShowException`** middleware when an exception happens. Defaults to **`ActionDispatch::PublicExceptions.new(Rails.public_path)`**
 
-![config.exceptions_app][config.exceptions_app]
+![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-Each time Rails raises an exception, the [`ShowExceptions`][show_exception] middleware takes the request and forwards it to `config.exceptions_app`. This hook is expected to return a response - this is where we can inject our own callback (in our case a [`controller`](app/controllers/exception_handler/exceptions_controller.rb)):
-
-> ```app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionsController.action(:show).call(env) }```
+Each time an exception is raised, [`ShowExceptions`][show_exception] takes the request and forwards it to `config.exceptions_app`. This is expected to return a response - allowing us to inject a [`controller`](app/controllers/exception_handler/exceptions_controller.rb):
 
 ![config.exceptions_app - The key to all Rails exceptions][exceptions_app]
 
-Because our callback passes the request, we are able to do whatever we need before serving a response. This is a major advantage over the "default" way of handling `Rails` exceptions (routes). The routes invokes Rails twice and does not persist the request (exception lost).
+Because our callback maintains the request, we are able to do whatever we need before serving a response. This is a **major** advantage over the "default" (routes). The routes invokes Rails twice and does not persist the request.
 
- `ExceptionHandler` is the **only** gem to provide middleware-powered exception handling.  It populates our custom `view` with any details required, giving us the ability to **maintain branding** when exceptions are raised:
+ **`ExceptionHandler` is the only gem to provide middleware-powered exception handling.**  It populates our custom `view` with details, giving us the ability to **maintain branding** when exceptions are raised:
 
 ![Exceptions handled by the ActiveDispatch::ShowExceptions Middleware][middleware]
 
-**This makes `ExceptionHandler` the MOST EFFECTIVE and EFFICIENT gem to handle exceptions in Rails**. Once invoked, its `model`, `controller` and `views` work together to serve the most efficient responses to Rails errors.
+**`ExceptionHandler` is the most EFFECTIVE and EFFICIENT gem to handle exceptions in Rails**.
 
-<p align="center">
-  <strong>The ONLY professional solution to manage Rails exceptions WITHOUT BLOAT:</strong>
-</p>
-
-<p align="center">
-  <img src="readme/controller_middleware.jpg" title="ExceptionsController compiles the exception & delivers to the front-end" />
-</p>
-
-Even better, **you can install `ExceptionHandler` with a single click:**
+Once invoked, its `model`, `controller` and `views` work together to serve the best responses to Rails errors ...
 
 ----------
 
@@ -135,7 +116,7 @@ Even better, **you can install `ExceptionHandler` with a single click:**
 
 
 <p align="center">
-  You just need to install it from the <strong>CLI</strong> or <strong>Gemfile</strong>, and it will automatically run in <strong>production</strong>.
+  You can install it from the <strong>CLI</strong> or <strong>Gemfile</strong> - it will AUTOMATICALLY run in <strong>production</strong>.
   <br />
   <strong>↓ To run in development, use <a href="#dev-mode">dev mode</a> ↓</strong>
 </p>
@@ -143,224 +124,165 @@ Even better, **you can install `ExceptionHandler` with a single click:**
 ---
 
 <p align="center">
-  <a href="#config"><img src="readme/titles/icons/config.png" alt="Cinfiguration Options" align="absmiddle" /> Config</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#dev-mode" title="Dev Mode"><img src="readme/titles/icons/dev.png" alt="Dev" align="absmiddle" /> Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#database"><img src="readme/titles/icons/database.png" alt="Database" align="absmiddle" />  Database</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#email"><img src="readme/titles/icons/email.png" alt="Email" align="absmiddle" />  Email</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#views"><img src="readme/titles/icons/views.png" alt="Views" align="absmiddle" />  Views</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#locales"><img src="readme/titles/icons/locales.png" alt="Locales" align="absmiddle" />  Locales</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#custom-exceptions"><img src="readme/titles/icons/custom.png" alt="Custom Exceptions" align="absmiddle" />  Custom Exceptions</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#generators"><img src="readme/titles/icons/generators.png" alt="Generators" align="absmiddle" />  Generators</a>
+  If you want to set it up your way, you can use these features...
+</p>
+
+<p align="center">
+  <a href="#config"><img src="readme/titles/icons/config.png" alt="Cinfiguration Options" align="absmiddle" height="24" /> Config</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#dev-mode" title="Dev Mode"><img src="readme/titles/icons/dev.png" alt="Dev" align="absmiddle" height="24" /> Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#database"><img src="readme/titles/icons/database.png" alt="Database" align="absmiddle" height="24" />  Database</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#email"><img src="readme/titles/icons/email.png" alt="Email" align="absmiddle" height="24" />  Email</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#views"><img src="readme/titles/icons/views.png" alt="Views" align="absmiddle" height="24" />  Views</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#locales"><img src="readme/titles/icons/locales.png" alt="Locales" align="absmiddle" height="20" />  Locales</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#custom-exceptions"><img src="readme/titles/icons/custom.png" alt="Custom Exceptions" align="absmiddle" height="18" />  Custom Exceptions</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#generators"><img src="readme/titles/icons/generators.png" alt="Generators" align="absmiddle" height="24" />  Generators</a>
 </p>
 
 ----
 
-## <img src="readme/titles/icons/config.png" align="absmiddle" /> Config
+## Config
 
-From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6), **`ExceptionHandler`** manages its config from the central Rails config:
+**From [`0.4.7`](https://github.com/richpeck/exception_handler/releases/tag/0.4.6), `ExceptionHandler` manages its [config](lib/exception_handler/config.rb#L45) from the central Rails `config` hash:**
 
-[[ config ]]
+[![config][config]](lib/exception_handler/config.rb#L45)
 
-This gives us flexibility (environment-dependent development etc).
-
-Config options are as follows:
-
-    #config/application.rb
-    ...
-    config.exception_handler = {
-      dev:    false, # => set to "true" for dev mode
-      db:     false, # => defaults to :errors if true, else use "table_name" / :table_name
-      email:  false, # => requires string email and ActionMailer
-      social: {
-        facebook: nil, # => this has changed from previous versions (it is now just the username)
-        twitter:  nil,
-        youtube:  nil,
-        linkedin: nil,
-        fusion:   nil,
-      },
-      layouts: {
-        # => nil inherits from ApplicationController
-        # => 4xx errors default to nil
-        # => 5xx errors should be "exception" but can be nil if explicitly defined
-        500 => "exception",
-        501 => "exception",
-        502 => "exception",
-        503 => "exception",
-        504 => "exception",
-        505 => "exception",
-        507 => "exception",
-        510 => "exception"
-      }
-    }
-
-If you're using a [`Rails` Engine](http://guides.rubyonrails.org/engines.html), you will have to wrap the config in an initializer block:
+If you're using an [`engine`](http://guides.rubyonrails.org/engines.html), you don't need to use an `initializer`:
 
     # lib/engine.rb
     module YourModule
       class Engine < Rails::Engine
 
-        initializer :config, before: :exception_handler do |app|
-
-          # => ExceptionHandler
-          app.config.exception_handler = {
-            dev:    false,
-            db:     false,
-            email: 	false,
-            social: {
-              facebook: nil,
-              twitter:  nil,
-              youtube:  nil,
-              linkedin: nil,
-              fusion:   nil,
-            },
-            layouts: {
-              # => nil inherits from ApplicationController
-              # => 4xx default to nil
-              # => 5xx errors should be "exception" but can be nil if explicitly defined
-              500 => "exception",
-              501 => "exception",
-              502 => "exception",
-              503 => "exception",
-              504 => "exception",
-              505 => "exception",
-              507 => "exception",
-              510 => "exception"
-            }
-          }
-        end
-
+        # => ExceptionHandler
+        # => Works in and out of an initializer
+        config.exception_handler = {
+          dev: false,
+          db:  true
+        }
       end
+
     end
 
-**The above config is *default*.** You *only* need to provide the inputs you want, for example:
+You only need to provide the inputs you want, for example:
 
     # config/application.rb
     config.exception_handler = { dev: true }
 
     # config/environments/production.rb
-    config.exception_handler = {
-      social: {
-        fusion: "flutils"
-      }
-    }
-
-This ruthlessly simple and effective config system works on `Rails 4.2+`... enjoy.
+    config.exception_handler = { social: { fusion: "flutils" }}
 
 ----
 
-## <img src="readme/titles/icons/dev.png" align="absmiddle" /> Dev Mode
+## Dev Mode
 
-By default, `ExceptionHandler` only works in production.
+**To enable `ExceptionHandler` in dev, enable the [`dev`](lib/exception_handler/config.rb#L38) option:**
 
-If you want to enable it in dev, enable the [`dev`](lib/exception_handler/config.rb#L38) option:
+![Dev][dev_mode]
+
+This disables [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), making Rails behave as it would in production:
+
+![Dev][dev_img]
+
+----
+
+## Database
+
+**We also have `ActiveRecord` integration.**
+
+If you want to save your exceptions to `db`, you need to enable the `db` config option:
 
     # config/application.rb
-    config.exception_handler = { dev: true }
+    config.exception_handler = {
+      db: true
+    }
 
-This disables [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), making Rails behave as it would in production. This gives you the ability to edit the exception flow, either creating your own interface or ensuring it works correctly:
+This enables `ActiveRecord::Base` on the [`Exception`](app/models/exception_handler/exception.rb) class, allowing us to save to the database.
 
-[[ dev mode ]]
+In order for this to work, your db needs the correct table.
 
---
-
-In `development`, Rails has a robust error management system, not to mention [`better_errors`][better_errors] being *very* good:
-
-[![Better Errors - Great for development rails error testing](https://camo.githubusercontent.com/3fa6840d5e20236b4f768d6ed4b42421ba7c2f21/68747470733a2f2f692e696d6775722e636f6d2f367a42474141622e706e67)](https://github.com/charliesome/better_errors)
-
-This negates the need for [`exception_handler`](http://github.com/richpeck/excption_handler) in `development`. However, if you want to see how it works - or change the flow - use `config.exception_handler = { dev:true }` from the Rails config.
-
-----
-
-## <img src="readme/titles/icons/database.png" align="absmiddle" /> Database
-
-The `Exception` model creates the `@exception` object for us, allowing us to store in the `db`.
+To do this, once you've enabled the option, run `rails db:migrate` from your console. Our new [`migration system`](https://github.com/richpeck/exception_handler/tree/readme#migrations) will automatically run the migration.
 
 ---
 
-## <img src="readme/titles/icons/email.png" align="absmiddle" /> Email
+## Email
 
-You can also send emails with `ExceptionHandler` (requires [`ActionMailer`](http://guides.rubyonrails.org/action_mailer_basics.html)).
+**`ExceptionHandler` also now sends email notifications.**
 
-See the [full tutorial here](https://github.com/richpeck/exception_handler/wiki/2-Email).
+If you want to receive emails whenever your application raises an error, you can do so by adding your email to the config:
 
----
+    # config/application.rb
+    config.exception_handler = {
+      email: "your@email.com"
+    }
 
-## <img src="readme/titles/icons/views.png" align="absmiddle" /> Views
+> **Please Note** this requires [`ActionMailer`](http://guides.rubyonrails.org/action_mailer_basics.html). If you don't have any outbound SMTP server, [`SendGrid`](http://sendgrid.com) is free.
 
-From [`0.7.0`](#070), we drastically overhauled the view system:
-
-[[ View ]]
-
-Now, the [view](app/views/exception_handler/exceptions/show.html.erb) is 100% modular - using the `@exception` object, and populating with `locales`.
-
-The view works very simply:
-
-    <%= content_tag :div, class: "exception" do %>
-      <%= content_tag :span, @exception.description.html_safe %>
-    <% end %>
-
-The view is invoked by `ExceptionHandler` each time an error is raised.
-
-The way the view *looks* will depend on the [`layout`](#layout),
+[Full tutorial here](https://github.com/richpeck/exception_handler/wiki/2-Email)
 
 ---
 
-## <img src="readme/titles/icons/locales.png" align="absmiddle" /> Locales
+## Views
 
-[`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5) introduced flexible locales:
+**From [`0.7.0`](#070), we overhauled the view system:**
+
+![View][view_img]
+
+[Wiew](app/views/exception_handler/exceptions/show.html.erb) is modular - `@exception` populated with [`locales`](#locales).
+
+---
+
+## Locales
+
+**[`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5) introduced [locales](config/locales/exception_handler.yml) ...**
 
 [[ locales ]]
 
-`ExceptionHandler` now populates the view by accessing `exception - [status_name]` from the locales. If no value exists, the default will be the `status name`, as defined by [`Rack::Utils::HTTP_STATUS_CODES`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L544):
+The `ExceptionHandler` view is populated by [`@exception.description`](app/models/exception_handler/exception.rb#L121), which pulls from the `locales`.
 
-You also get access to `%{message}` and `%{status}`, both inferring data from the `@exception` object.
+If you want custom messages, you need the following. The key is defined by the HTTP [`status_code`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L544)
+
+    # config/locales/en.yml
+    en:
+      exception_handler:
+        not_found: "Your message here"
+        unauthorized: "You need to login to continue"
+        internal_server_error: "This is a test to show the %{status} of the error"
+
+You get access to `%{message}` and `%{status}`, both inferring from `@exception`.
 
 ---
 
-## <img src="readme/titles/icons/layout.png" align="absmiddle" /> Layout
+## Layout
 
-The `layout` has been improved dramatically:
+**The `layout` has also been improved ↴**
 
-[[ layout screenshot ]]
+![Layout][layout_img]
 
-You can now assign layouts to the *status code* of the response:
+We now assign layouts to the **status code** of the response:
 
-[[ status codes ]]
+![Layout][layouts_img]
 
-By default, `5xx` errors are shown with our [`exception` layout][layout] - this can be overridden by changing the `config` to use a layout of your choice. If you want to inherit the `ApplicationController` layout, keep the various status codes to `nil`.
-
-[[ layout ]]
-
-The *majority* our `layout` is handled with the CSS. This allows the view to be completely modular:
-
-[[ CSS ]]
+By default, `5xx` errors are shown with our [`exception` layout][layout] - this can be overridden by changing the `config` to use a layout of your choice. If you want to inherit the `ApplicationController` layout, assign the codes to `nil`.
 
 ---
 
 
 ## Custom Exceptions
 
-**We investigated custom exceptions for [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5).**
+**Custom Exceptions also supported in [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)**
 
-Since the functionality is built into Rails, we didn't feel it necessary to include it...
-
-[`config.action_dispatch.rescue_responses`][rescue_responses]  ↴
+Rails handles this for us - [**`config.action_dispatch.rescue_responses`**][rescue_responses]  ↴
 
 ![ActionDispatch][config.action_dispatch.rescue_responses]
+
+You need to add to the `rescue_responses` hash in your app's config (mapped to [`status codes`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L544)):
 
     # config/application.rb
     config.action_dispatch.rescue_responses["ActionController::YourError"] = :bad_request
 
-The above deals with the inference of a `Rails` exception into an `HTTP` one.
-
-Because `HTTP` can only process `4xx` / `5xx` errors, it does not matter how Rails deals with the exceptions. The only thing which counts is how they're sent back to the client.
-
-If you have custom exceptions, you'll need to register them with Rails by using the code above. The default is `500` / `:internal_server_error` - meaning if you'd prefer your app to just return `500` errors for your custom exception, you don't need to explicitly declare them.
+Because `HTTP` can only process `4xx` / `5xx` errors, if `Rails` raises an exception, it needs to assign one of the error status codes. **Default** is [`internal_server_error`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L595) - if you'd prefer your app to just return `500` errors for your custom exception, you don't need to explicitly declare them.
 
 ---
 
 ## Generators
 
-#### Files
-
-If you want to take control over the entire `ExceptionHandler` flow, you'll want to `generate` the views into your own application:
+**You can generate `ExceptionHandler` into your own application.**
 
 [[ Generator ]]
 
-You can use the following commands:
+The following commands will copy the directories...
 
     rails g exception_handler:views
     rails g exception_handler:views -v views
@@ -369,39 +291,38 @@ You can use the following commands:
     rails g exception_handler:views -v assets
     rails g exception_handler:views -v views controllers models assets
 
-If you don't include any switches, you'll have **all** the folders put into your app.
+If you don't include any switches, this will copy **all** the folders put into your app.
 
-Each switch defines which folders you want (`-v views` will only copy `views` from `exception_handler` to your app).
+Each switch defines which folders you want (EG `-v views` will only copy `views` dir).
 
---
+---
 
-#### Migrations
+### Migrations (deprecated)
 
-From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own [migration system](lib/exception_handler/engine.rb#L58).
+**From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own [migration system](lib/exception_handler/engine.rb#L58)**
 
-If you set the [`db`](#db) option in the `config`, you will need to run `rails db:migrate` to populate the `ExceptionHandler` table in your db. This is handled automatically - you don't need to generate a migration any more.
+You don't need to generate a migration any more.
 
-To rollback the `ExceptionHandler` migration, you will need to use the following command:
+If you set the `db` option in config, run `rails db:migrate` and the migration will be run.
+
+To rollback, use the following:
 
     rails db:migrate:down VERSION=000000
 
-The drawback to this is that if you remove the `ExceptionHandler` gem before you rollback the migration, it won't exist anymore. You can only fire the above command if you have `ExceptionHandler` installed.
+> The drawback to this is that if you remove `ExceptionHandler` before you rollback the migration, it won't exist anymore. You can **only** fire the `rollback` when you have `ExceptionHandler` installed.
 
 ---
 
 ## Support
 
-<p align="center">
-  <a href="http://stackoverflow.com/questions/ask?tags=ruby-on-rails+exception-handler">Stackoverflow</a>
-  <a href="https://github.com/richpeck/exception_handler/issues">Github</a>
-</p>
+[Issues](https://github.com/richpeck/exception_handler/issues)
 
 ---
 
 ## Changelog
 
 ### [0.7.5](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
- - [x] [HTTP status integration](#layouts)
+ - [x] [HTTP status layouts](#layouts)
 
 ### [0.7.0](https://github.com/richpeck/exception_handler/releases/tag/0.7.0)
  - [x] Wildcard mime types
@@ -473,8 +394,13 @@ The drawback to this is that if you remove the `ExceptionHandler` gem before you
 <!-- Images   https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images -->
 
 <!-- Images -->
+[dev_mode]:         readme/dev_mode.jpg
+[dev_img]:          readme/dev.png
+[layouts_img]:      readme/layouts.jpg
+[layout_img]:       readme/layout.png
+[view_img]:         readme/view.jpg
 [http_codes]:       readme/http_codes.png
-[config.exceptions_app]: readme/config.exceptions_app.jpg
+[config]:           readme/config.jpg
 [config.action_dispatch.rescue_responses]: readme/config.action_dispatch.rescue_responses.jpg
 [banner]:           readme/banner.jpg
 [gem]:              readme/gem.jpg
