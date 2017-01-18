@@ -8,6 +8,10 @@ module ExceptionHandler
     # => CSRF
     protect_from_forgery
 
+    # => Devise
+    # => http://stackoverflow.com/a/38531245/1143732
+    skip_before_action :authenticate_user!, raise: false
+
     ##################################
     ##################################
 
