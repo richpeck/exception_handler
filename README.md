@@ -70,7 +70,7 @@ Since **browsers only read `4xx` & `5xx` error codes**, all Rails exceptions hav
 
 Unlike other gems, **`ExceptionHandler` uses a custom [`controller`](app/controllers/exception_handler/exceptions_controller.rb) to build an [`@exception`](app/models/exception_handler/exception.rb) object**. This allows us to save the exception, email it or do anything else we may need. The gem has already been a massive success and we continue to actively maintain it.
 
-Now you can try for yourself ...
+Now you can try for yourself...
 
 
 ----
@@ -322,42 +322,43 @@ To rollback, use the following:
 ## Changelog
 
 ### [0.7.5](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)
- - [x] [HTTP status layouts](#layouts)
+  - [ ] Layout changes so `400` / `500` general layouts applied
+  - [x] [Status-based layouts](#layouts)
 
 ### [0.7.0](https://github.com/richpeck/exception_handler/releases/tag/0.7.0)
- - [x] Wildcard mime types
- - [x] [Custom exceptions](#custom_exceptions)
- - [x] Test suite integration
- - [x] [Email](#email)
- - [x] [Model backend](#database)
- - [x] Sprockets 4+
- - [x] New layout
- - [x] Readme / wiki overhaul
+   - [x] Wildcard mime types
+   - [x] [Custom exceptions](#custom_exceptions)
+   - [x] Test suite integration
+   - [x] [Email](#email)
+   - [x] [Model backend](#database)
+   - [x] Sprockets 4+
+   - [x] New layout
+   - [x] Readme / wiki overhaul
 
 ### [0.6.5](https://github.com/richpeck/exception_handler/releases/tag/0.6.5)
- - [x] Streamlined interface
- - [x] ActiveRecord / Middleware overhaul
- - [x] Supports Sprockets 4+ ([`manifest.js`](http://eileencodes.com/posts/the-sprockets-4-manifest/))
- - [x] Email integration
- - [x] Asset overhaul & improvement
- - [x] Removed dependencies
+   - [x] Streamlined interface
+   - [x] ActiveRecord / Middleware overhaul
+   - [x] Supports Sprockets 4+ ([`manifest.js`](http://eileencodes.com/posts/the-sprockets-4-manifest/))
+   - [x] Email integration
+   - [x] Asset overhaul & improvement
+   - [x] Removed dependencies
 
 ### [0.5.0](https://github.com/richpeck/exception_handler/releases/tag/0.5.0)
- - [x] Locales
- - [x] Email notifications
- - [x] Full test suite
- - [x] Rails 4.2 & Rails 5.0 native ([`request.env`](https://github.com/rails/rails/commit/05934d24aff62d66fc62621aa38dae6456e276be) fix)
- - [x] Controller fixed
- - [x] `DB` fixed
- - [x] Legacy initializer support ([more](https://github.com/richpeck/exception_handler/wiki/1-Setup))
- - [x] Rails asset management improvement
- - [x] Reduced gem file size
+   - [x] Locales
+   - [x] Email notifications
+   - [x] Full test suite
+   - [x] Rails 4.2 & Rails 5.0 native ([`request.env`](https://github.com/rails/rails/commit/05934d24aff62d66fc62621aa38dae6456e276be) fix)
+   - [x] Controller fixed
+   - [x] `DB` fixed
+   - [x] Legacy initializer support ([more](https://github.com/richpeck/exception_handler/wiki/1-Setup))
+   - [x] Rails asset management improvement
+   - [x] Reduced gem file size
 
 ### [0.4.7](https://github.com/richpeck/exception_handler/releases/tag/0.4.6)
- - [x] New config system
- - [x] Fixed controller layout issues
- - [x] Streamlined middleware
- - [x] New layout & interface
+   - [x] New config system
+   - [x] Fixed controller layout issues
+   - [x] Streamlined middleware
+   - [x] New layout & interface
 
 ----
 

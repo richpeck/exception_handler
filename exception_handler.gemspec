@@ -12,7 +12,7 @@ module ExceptionHandler
     MAJOR = 0
     MINOR = 7
     TINY  = 5
-    PRE   = nil # "alpha"
+    PRE   = 1 # "alpha"
 
     STRING = [MAJOR, MINOR, TINY, PRE].compact.join(".")
   end
@@ -60,7 +60,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = ">= 2.1.0"
 
   # => Runtime
-  s.add_dependency "bundler",    "~> 1.6"
+  s.add_dependency "bundler"
   s.add_dependency "rails",      ">= 4.2.0"
   s.add_dependency "responders"
 
