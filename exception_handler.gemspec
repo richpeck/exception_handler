@@ -12,11 +12,7 @@ module ExceptionHandler
     MAJOR = 0
     MINOR = 7
     TINY  = 5
-<<<<<<< HEAD
-    PRE   = nil # "alpha"
-=======
     PRE   = 1 # "alpha"
->>>>>>> readme
 
     STRING = [MAJOR, MINOR, TINY, PRE].compact.join(".")
   end
