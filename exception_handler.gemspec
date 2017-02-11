@@ -12,7 +12,7 @@ module ExceptionHandler
     MAJOR = 0
     MINOR = 7
     TINY  = 5
-    PRE   = 1 # "alpha"
+    PRE   = 15 # "alpha"
 
     STRING = [MAJOR, MINOR, TINY, PRE].compact.join(".")
   end
