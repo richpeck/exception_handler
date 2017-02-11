@@ -22,7 +22,6 @@
 
 en:
   exception_handler:
-    not_found:              "Page missing"
     internal_server_error:  "<strong>%{status} Error</strong>  %{message} <p>Return home</p>"
 
 #######################################################################################
