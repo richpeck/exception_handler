@@ -96,7 +96,7 @@ module ExceptionHandler
         attr_accessor *ATTRS unless ExceptionHandler.config.try(:db)
 
         # => Validations
-        validates :klass, exclusion:    { in: [ActionController::RoutingError, AbstractController::ActionNotFound, ActiveRecord::RecordNotFound], message: "%{value}" }, if: "referer.blank?"
+        validates :klass, exclusion:    { in: [ActionController::RoutingError, AbstractController::ActionNotFound, ActiveRecord::RecordNotFound], message: "%{value}" }, if: -> { referer.blank? } # => might need full Proc syntax
         validates :user_agent, format:  { without: Regexp.new( BOTS.join("|"), Regexp::IGNORECASE ) }
 
       ##################################
