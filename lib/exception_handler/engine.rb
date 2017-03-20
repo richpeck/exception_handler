@@ -28,7 +28,8 @@ module ExceptionHandler
 
       # => Config
       # => Builds lib/exception_handler/config.rb
-      config.before_initialize do |app|
+      # config.before_initialize do |app| => Needs to be fixed for ActiveRecord::Base
+      initializer :exception_handler_config, before: "better_errors.configure_rails_initialization" do |app|
         ExceptionHandler.config ||= ExceptionHandler::Config.new config.try(:exception_handler)
       end
 
