@@ -10,12 +10,20 @@ module ExceptionHandler
     # => Attributes
     # => Determine schema etc
     ATTRS = %i(class_name status message trace target referrer params user_agent)
+  
+    # => Exceptions to be rescued by ExceptionHandler
+    EXCEPTIONS_TO_BE_RESCUED = [ActionController::RoutingError, AbstractController::ActionNotFound].tap do |list|
+      list << ActiveRecord::RecordNotFound if defined?(ActiveRecord)
+      list << Mongoid::Errors::DocumentNotFound if defined?(Mongoid)
+    end
 
   ############################################################
   ############################################################
 
     # => Class (inheritance dependent on whether db option is available)
-    self::Exception = Class.new (ExceptionHandler.config.try(:db) ? ActiveRecord::Base : Object) do
+    self::Exception = Class.new(
+      (ExceptionHandler.config.try(:db) && defined?(ActiveRecord)) ? ActiveRecord::Base : Object
+    ) do
 
       # => Include individual elements
       # => Only required if no db present (no ActiveRecord)
@@ -31,7 +39,7 @@ module ExceptionHandler
 
       else
 
-        # => AciveModel
+        # => ActiveModel
         include ActiveModel::Model
         include ActiveModel::Validations
 
@@ -96,7 +104,7 @@ module ExceptionHandler
         attr_accessor *ATTRS unless ExceptionHandler.config.try(:db)
 
         # => Validations
-        validates :klass, exclusion:    { in: [ActionController::RoutingError, AbstractController::ActionNotFound, ActiveRecord::RecordNotFound], message: "%{value}" }, if: -> { referer.blank? } # => might need full Proc syntax
+        validates :klass, exclusion:    { in: EXCEPTIONS_TO_BE_RESCUED, message: "%{value}" }, if: -> { referer.blank? } # => might need full Proc syntax
         validates :user_agent, format:  { without: Regexp.new( BOTS.join("|"), Regexp::IGNORECASE ) }
 
       ##################################
