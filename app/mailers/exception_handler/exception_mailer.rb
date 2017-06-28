@@ -2,7 +2,7 @@ module ExceptionHandler
   class ExceptionMailer < ActionMailer::Base
 
       # Layout
-      layout "mailers/layouts/mailer"
+      layout "mailer"
 
       # Defaults
       default from: 			    ExceptionHandler.config.email
