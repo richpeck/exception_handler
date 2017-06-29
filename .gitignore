@@ -21,6 +21,7 @@ tmp
 *.a
 mkmf.log
 *.tmp
+.git.bfg-report
 
 # http://stackoverflow.com/questions/8865848/comments-in-gitignore
 # https://gist.github.com/danielpcox/4636520
@@ -30,4 +31,4 @@ pkg/
 spec/dummy/db/*.sqlite3
 spec/dummy/log/*.log
 spec/dummy/tmp/
-spec/dummy/.sass-cache  
+spec/dummy/.sass-cache
