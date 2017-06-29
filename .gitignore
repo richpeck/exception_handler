@@ -22,19 +22,25 @@ tmp
 mkmf.log
 *.tmp
 
+##########################################################
+##########################################################
+
+# http://stackoverflow.com/questions/8865848/comments-in-gitignore
+
+##########################################################
+##########################################################
+
 # Desktop INI (Windows)
 desktop.ini
 
-# Readme Source
+# Readme Source (PSD's)
 readme/source
 
 # Git BFG
 .git.bfg-report
 .git.bfg-report/2017-06-29/07-53-00
 
-# http://stackoverflow.com/questions/8865848/comments-in-gitignore
-# https://gist.github.com/danielpcox/4636520
-
+# Specs
 log/*.log
 pkg/
 spec/dummy/db/*.sqlite3
