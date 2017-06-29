@@ -26,7 +26,7 @@ mkmf.log
 desktop.ini
 
 # Readme Source
-/readme/source
+readme/source
 
 # Git BFG
 .git.bfg-report
