@@ -25,6 +25,9 @@ mkmf.log
 # Desktop INI (Windows)
 desktop.ini
 
+# Readme Source
+/readme/source
+
 # Git BFG
 .git.bfg-report
 .git.bfg-report/2017-06-29/07-53-00
