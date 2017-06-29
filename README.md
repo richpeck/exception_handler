@@ -1,8 +1,8 @@
-In light of re-working the repo to remove the 100mb's of redundant files, I will be updating the Readme and gem proper over the next few weeks.
+<p align="center">
+  <strong>After re-working the repo to remove 100mb's of redundant files, we will update the Readme and gem over the next few weeks.</strong>
+</p>
 
 ![Exception Handler](readme/title.jpg "Exception Handler Logo")
-
----
 
 <p align="center">
   <font size="4"><strong>Custom 404 & 500 production error pages for Rails 4 & 5.</font></strong>
