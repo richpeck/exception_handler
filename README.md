@@ -1,5 +1,5 @@
 <p align="center">
-  <strong>After re-working the repo to remove 100mb's of redundant files, we will update the Readme and gem over the next few weeks.</strong>
+  <strong>After removing 100mb's from the repo, we will update the README and gem over the next few weeks.</strong>
 </p>
 
 ![Exception Handler](readme/title.jpg "Exception Handler Logo")
