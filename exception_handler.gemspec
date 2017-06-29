@@ -1,52 +1,44 @@
-# Dependencies
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-
-##############################################################
-##############################################################
+########################################################################################
+########################################################################################
+##   _____                   _   _               _   _                 _ _            ##
+##  |  ___|                 | | (_)             | | | |               | | |           ##
+##  | |____  _____ ___ _ __ | |_ _  ___  _ __   | |_| | __ _ _ __   __| | | ___ _ __  ##
+##  |  __\ \/ / __/ _ \ '_ \| __| |/ _ \| '_ \  |  _  |/ _` | '_ \ / _` | |/ _ \ '__| ##
+##  | |___>  < (_|  __/ |_) | |_| | (_) | | | | | | | | (_| | | | | (_| | |  __/ |    ##
+##  \____/_/\_\___\___| .__/ \__|_|\___/|_| |_| \_| |_/\__,_|_| |_|\__,_|_|\___|_|    ##
+##                   | |                                                              ##
+##                   |_|                                                              ##
+########################################################################################
+########################################################################################
 
 # => Version
-# => https://github.com/rails/rails/blob/master/version.rb
-module ExceptionHandler
-  module VERSION
-    MAJOR = 0
-    MINOR = 7
-    TINY  = 6
-    PRE   = 0 # "alpha"
-
-    STRING = [MAJOR, MINOR, TINY, PRE].compact.join(".")
-  end
-end
+require_relative 'lib/exception_handler/version'
 
 ##############################################################
 ##############################################################
 
-# => Gem
+## Specs ##
 Gem::Specification.new do |s|
 
-  ##############################################################
-
-  # => General
-  s.platform      = Gem::Platform::RUBY
+  ## General ##
   s.name          = "exception_handler"
+  s.authors       = ["R.Peck"]
+  s.email         = ["rpeck@fl.co.uk"]
   s.version       = ExceptionHandler::VERSION::STRING
+  s.platform      = Gem::Platform::RUBY
 
-  # => Author
-  s.authors       = ["Richard Peck"]
-  s.email         = ["rpeck@frontlineutilities.co.uk"]
-
-  # => Details
+  ## Details ##
   s.summary       = %q{Rails gem to show custom error pages in production. Also logs errors in db & sends notification emails}
   s.description   = %q{Rails gem to create custom error pages. Captures exceptions using "exception_app" callback, routing to "Exception" controller, rendering the view as required.}
-  s.homepage      = "http://github.com/richpeck/exception_handler"
+  s.homepage      = "https://github.com/richpeck/exception_handler"
 
-  # => License
+  ## License ##
   s.license       = "MIT"
 
   ##############################################################
+  ##############################################################
 
-  # => Files
-  # => Remove "readme" dir from gem
+  ## Files ##
   s.files         = `git ls-files -z`.split("\x0")
   s.files.reject! { |fn| fn.include? "readme" } #-> https://github.com/gauntlt/gauntlt/blob/master/gauntlt.gemspec#L16
 
@@ -55,20 +47,20 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   ##############################################################
+  ##############################################################
 
-  # => Ruby
+  ## Ruby ##
   s.required_ruby_version = ">= 2.1.0"
 
-  # => Runtime
+  ## Runtime
   s.add_dependency "bundler"
   s.add_dependency "rails",      ">= 4.2.0"
   s.add_dependency "responders"
 
-  # => Extras
+  ## Extras ##
   s.add_development_dependency "autoprefixer-rails"
 
-  # => Dev
-  # => For testing etc
+  ## Dev ##
   s.add_development_dependency "rake"
   s.add_development_dependency "rspec"
   s.add_development_dependency "rspec-rails"
