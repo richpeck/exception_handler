@@ -1,5 +1,5 @@
 <p align="center">
-  <strong>After removing 100mb's from the repo, we will update the README and gem over the next few weeks.</strong>
+  <strong>New README coming soon (with upgrade to underlying codebase).</strong>
 </p>
 
 ![Exception Handler](readme/title.jpg "Exception Handler Logo")
