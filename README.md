@@ -4,10 +4,12 @@
 
 ![Exception Handler](readme/title.jpg "Exception Handler Logo")
 
-<h3 align="center"><code>40x</code> & <code>50x</code> Rails Error Pages</h3>
 <p align="center">
-  <span><b><code>ExceptionHandler</code></b> overrides <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration"><code>exceptions_app</code></a> to provide <code>ActionDispatch</code> views/layouts for error pages in Rails...</span>
+  <strong><code>40x</code> & <code>50x</code> Error Pages In Rails</strong><br />
+  <span><b><code>ExceptionHandler</code></b> overrides <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration"><code>exceptions_app</code></a> to provide <code>ActionDispatch</code> views/layouts for error pages in Rails</span>
 </p>
+
+---
 
 <p align="center">
   <a href="http://badge.fury.io/rb/exception_handler"><img src="https://badge.fury.io/rb/exception_handler.svg" align="absmiddle"></a>
@@ -18,17 +20,31 @@
   <a href="https://travis-ci.org/richpeck/exception_handler"><img src="https://travis-ci.org/richpeck/exception_handler.svg?branch=master" align="absmiddle"></a>
 </p>
 
+---
+
 <p align="center">
   With the release of <b><a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">version  0.8.0.0</a></b>, it is now the <b>simplest</b>, <b>most popular</b> and <b>easiest-to-use</b> "error pages" gem for Rails 4+. <br />And whilst <a href="https://github.com/mirego/gaffe"><code>Gaffe</code></a> and <a href="https://github.com/smartinez87/exception_notification"><code>ExceptionNotification</code></a> provide excellent functionality, neither create as <b>easy-to-use</b> <b>plug-and-play</b> system for showing error pages using your application's own layouts & views...
 </p>
 
----
+<p align="center">
+ --
+</p>
 
 <p align="center">
   <img src="./readme/version.jpg" />
 </p>
 
+<p align="center">
+  <img src="readme/check.png" height="22" title="Fully Responsive"               align="absmiddle" />&nbsp; <strong>Responsive</strong> &nbsp;
+  <img src="readme/check.png" height="22" title="Branded Error Pages"            align="absmiddle" />&nbsp; <strong>Branded Error Pages</strong> &nbsp;
+  <img src="readme/check.png" height="22" title="Middleware Exception Handling"  align="absmiddle" />&nbsp; <strong>Middleware Exception Handling</strong> &nbsp;
+  <img src="readme/check.png" height="22" title="Keep Users Informed"            align="absmiddle" />&nbsp; <strong>Fully Customizable</strong> &nbsp;
+</p>
 
+<p align="center">
+  <img src="readme/branded/1.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/2.jpg" width="425" title="Fully Branded Error Pages" />
+  <img src="readme/branded/3.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/4.jpg" width="425" title="Fully Branded Error Pages" />
+</p>
 
 
 
@@ -37,7 +53,7 @@
 </p>
 
 <p align="center">
-  This <b>README</b> explains how it works <br /> If further support is required, please email ✉️ <a href="mailto:rpeck@frontlineutilities.co.uk">rpeck@fl.co.uk</a> ✉️
+  If further support is required, please email ✉️ <a href="mailto:rpeck@frontlineutilities.co.uk">rpeck@fl.co.uk</a> ✉️ - thanks!
 </p>
 
 ---
