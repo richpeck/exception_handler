@@ -29,6 +29,10 @@
   <strong>⌚️ <a href="#introduction">Introduction</a> ⌚️</strong> | <strong>✔️ <a href="#install">Installation</a> ✔️</strong> | <strong>🔨 <a href="#config">Setup</a> 🔨</strong> | <strong>☎️ <a href="#support">Support</a> ☎️</strong> | <strong>⭐ <a href="#roadmap">Changelog</a> ⭐</strong>
 </p>
 
+<p align="center">
+  If further support is required, please email <a href="mailto:rpeck@frontlineutilities.co.uk">rpeck@fl.co.uk</a>
+</p>
+
 ---
 
 <p align="center">
