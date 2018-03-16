@@ -1,13 +1,15 @@
 <p align="center">
-  <strong><u>The README is now updated</u>. We've also incorporated it into our 💀 <a href="http://www.vpsdeploy.com"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/><u>Custom Rails Tutorials</u> + <u>Endpoint Deployment Infrastructure</u> For Cloud VPS Servers...</strong><hr />
+  <strong><u>The README is now updated</u>. We've also incorporated it into our 💀 <a href="http://www.vpsdeploy.com"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/>[Custom Rails Tutorials] + [Endpoint Deployment Infrastructure] For Cloud VPS Servers...</strong><hr />
 </p>
 
 ![Exception Handler](readme/title.jpg "Exception Handler Logo")
 
-<h4 align="center"><a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors">`40x`</a> & <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors">`50x`</a> Error Pages For Ruby On Rails...</h4>
+<h3 align="center">40x & 50x Error Pages For Ruby On Rails</h3>
 <p align="center">
-  <span><b>`ExceptionHandler`</b> overrides <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration">`exceptions_app`</a> to provide ActionDispatch views/layouts for error pages in Rails</span>
+  <span><b><code>ExceptionHandler</code></b> overrides <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration"><code>exceptions_app</code></a> to provide ActionDispatch views/layouts for error pages in Rails</span>
 </p>
+
+---
 
 <p align="center">
   <a href="http://badge.fury.io/rb/exception_handler"><img src="https://badge.fury.io/rb/exception_handler.svg" align="absmiddle"></a>
@@ -18,8 +20,11 @@
   <a href="https://travis-ci.org/richpeck/exception_handler"><img src="https://travis-ci.org/richpeck/exception_handler.svg?branch=master" align="absmiddle"></a>
 </p>
 
+---
+
+
 <p align="center">
-  With the release of <b><a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">version  0.8.0.0</a></b>, it is now the <b>simplest</b>, <b>most popular</b> and <b>easiest-to-use</b> "error pages" gem for Rails 4+. <br />And whilst <a href="https://github.com/mirego/gaffe">`Gaffe`</a> and <a href="https://github.com/smartinez87/exception_notification">`ExceptionNotification`</a> provide excellent functionality, neither create as <b>easy-to-use</b> <b>plug-and-play</b> system for showing error pages using your application's own layouts & views...
+  With the release of <b><a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">version  0.8.0.0</a></b>, it is now the <b>simplest</b>, <b>most popular</b> and <b>easiest-to-use</b> "error pages" gem for Rails 4+. <br />And whilst <a href="https://github.com/mirego/gaffe"><code>Gaffe</code></a> and <a href="https://github.com/smartinez87/exception_notification"><code>ExceptionNotification</code></a> provide excellent functionality, neither create as <b>easy-to-use</b> <b>plug-and-play</b> system for showing error pages using your application's own layouts & views...
 </p>
 
 <p align="center">
@@ -27,7 +32,7 @@
 </p>
 
 <p align="center">
-  This <b>README</b> explains how it works <br /> If further support is required, please email ✉️ <a href="mailto:rpeck@frontlineutilities.co.uk">rpeck@fl.co.uk</a> ✉️ thanks!
+  This <b>README</b> explains how it works <br /> If further support is required, please email ✉️ <a href="mailto:rpeck@frontlineutilities.co.uk">rpeck@fl.co.uk</a> ✉️
 </p>
 
 ---
@@ -332,7 +337,7 @@ You're welcome to access our [Issues](https://github.com/richpeck/exception_hand
 </p>
 
 <p align="center">
-  <strong>➡️ <a href="https://rubygems.org/gems/exception_handler">Download Here</a> ⬅️ </strong>
+  <strong>➡️ <a href="https://rubygems.org/gems/exception_handler">Download</a> ⬅️ </strong>
 </p>
 
 ----------
