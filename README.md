@@ -10,7 +10,7 @@
 
 <p align="center">
   <strong>
-    ⬇️ <b><code>ExceptionHandler</code></b> Overrides <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration"><code>exceptions_app</code></a> to create <a href="https://www.google.com">custom 40x/50x error pages</a> with your layouts/views... ⬇️
+    ⬇️ <b><code>ExceptionHandler</code></b> Overrides <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration"><code>exceptions_app</code></a> to create <a href="https://www.google.com">custom 40x/50x error pages</a> with your layouts/views ⬇️
   </strong>
 </p>
 
@@ -24,7 +24,7 @@
 </p>
 
 <p align="center">
-  At version <b><a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">0.8.0.0</a></b> - it is now the <b>most popular</b> and <b>easiest-to-use</b> "error pages" gem for Rails 4 & 5:
+  At version <b><a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">0.8.0.0</a></b> - it is now the <b>most popular</b> and <b>easiest-to-use</b> "error pages" gem for Rails 4 & 5...
 </p>
 
 <p align="center">
@@ -33,7 +33,7 @@
 </p>
 
 <p align="center">
-  This <b>README</b> explains how it works
+  This <b>README</b> explains how it works...
   <br />If you need <b>further support</b>, please email <a href="mailto: rpeck@frontlineutilities.co.uk">rpeck@fl.co.uk</a>...
 </p>
 
@@ -46,6 +46,7 @@
 ---
 
 <p align="center">
+  <br />
   <img src="./readme/version.jpg" />
 </p>
 
@@ -61,38 +62,22 @@
   <img src="readme/branded/3.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/4.jpg" width="425" title="Fully Branded Error Pages" />
 </p>
 
+## Introduction
+**There are TWO types of HTTP error** → <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors">`40x`</a> & <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors">`50x`</a>.
 
-<!-- Introduction -->
-<p align="center">
-  [[ image - schematic ]]
-</p>
+ **ANY** time you see an "error" in a web browser, it's ***either*** of these that have been triggered. What's interesting is that they're not actually "errors", but [***status codes***](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) - sent with **HTTP** responses...   
 
-<p align="center">
-  There are <b>TWO</b> types of <b>HTTP</b> error - <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors">`40x`</a> & <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors">`50x`</a>. Your browser doesn't care about which ones are raised, it only cares about the http "body" response that's served with them. This <a href="https://en.wikipedia.org/wiki/HTTP_message_body">HTTP body</a> is what gets displayed on the screen of your browser...
-</p>
+[[ image - schematic ]]
 
-<p align="center">
-  [[ image - static pages ]]
-</p>
+Each time you send an HTTP request (which is how "web browsers" work), a "web" server will send an HTTP response. The important thing to note is that whilst HTTP just exists on top of TCP/IP, and you could certainly just ping
 
-<p align="center">
-  Normally, web server software will provide <b><i>static</i></b> HTML pages for these errors. This is meant as a fallback - allowing users to see "something" (rather than just a blank screen). The problem is that if you're using a <b><i>dynamic</i></b> framework (Rails etc), it's difficult to show a "branded" page for your errors (mainly because it's likely a server fault, which prevents the framework from rendering views/layouts)...
-</p>
+The <a href="https://en.wikipedia.org/wiki/HTTP_message_body">http body</a> is what gets displayed on the screen of your browser. EVERY time you send an HTTP request, the response is to have
 
-<p align="center">
- -- <br />
- <b>`ExceptionHandler`</b> provides Rails with the ability to serve ***dynamic*** exception pages, built with your own layouts/views. By overriding the <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration">`exceptions_app`</a> hook, it provides a custom `controller`, `model` and `views` to display custom error pages. The system is 100% compatible with Rails 4 & 5...
-</p>
+[[ image - static pages ]]
 
-<!-- Install -->
-<p align="center" id="install">
-  -- <br />
-  [[ title ]]
-</p>  
+Normally, web server software will provide <b><i>static</i></b> HTML pages for these errors. This is meant as a fallback - allowing users to see "something" (rather than just a blank screen). The problem is that if you're using a <b><i>dynamic</i></b> framework (Rails etc), it's difficult to show a "branded" page for your errors (mainly because it's likely a server fault, which prevents the framework from rendering views/layouts)...
 
-<p align="center">
-  For over 4 years, it has provided production-level <strong>Rails</strong> exception handling for <strong>4xx</strong> and <strong>5xx</strong> errors...
-</p>
+**`ExceptionHandler`** provides Rails with the ability to serve ***dynamic*** exception pages, built with your own layouts/views. By overriding the <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration">`exceptions_app`</a> hook, it provides a custom `controller`, `model` and `views` to display custom error pages. The system is 100% compatible with Rails 4 & 5...
 
 ----------
 
