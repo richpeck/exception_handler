@@ -46,7 +46,6 @@
 ---
 
 <p align="center">
-  <br />
   <img src="./readme/version.jpg" />
 </p>
 
