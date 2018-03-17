@@ -10,7 +10,7 @@
 
 <p align="center">
   <strong>
-    ⬇️ <b><code>ExceptionHandler</code></b> Overrides <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration"><code>exceptions_app</code></a> to create <a href="https://www.google.com">custom 40x/50x error pages</a> with your layouts/views ⬇️
+    ⬇️ <b><code>ExceptionHandler</code></b> overrides <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration"><code>exceptions_app</code></a> to create <a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">custom 40x/50x error pages</a> with your layouts/views ⬇️
   </strong>
 </p>
 
@@ -81,13 +81,18 @@ Normally, web server software will provide <b><i>static</i></b> HTML pages for t
 
 ----------
 
+<p align="center">
+  [[ Image ]]
+</p>
 
 <p align="center">
-  [[ Image ]] <br />
   <a href="#config"><img src="readme/titles/icons/config.png" alt="Cinfiguration Options" align="absmiddle" height="24" /> Config</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#dev-mode" title="Dev Mode"><img src="readme/titles/icons/dev.png" alt="Dev" align="absmiddle" height="24" /> Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#database"><img src="readme/titles/icons/database.png" alt="Database" align="absmiddle" height="24" />  Database</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#email"><img src="readme/titles/icons/email.png" alt="Email" align="absmiddle" height="24" />  Email</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#views"><img src="readme/titles/icons/views.png" alt="Views" align="absmiddle" height="24" />  Views</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#locales"><img src="readme/titles/icons/locales.png" alt="Locales" align="absmiddle" height="20" />  Locales</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#custom-exceptions"><img src="readme/titles/icons/custom.png" alt="Custom Exceptions" align="absmiddle" height="18" />  Custom Exceptions</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#generators"><img src="readme/titles/icons/generators.png" alt="Generators" align="absmiddle" height="24" />  Generators</a>
 </p>
 
-As mentioned, the core benefit of using `ExceptionHandler` is the way in which it's able to
+<p align="center">
+  -- <br />
+  `ExceptionHandler` works by adding a custom
+</p>
 
 ----
 
