@@ -1,14 +1,18 @@
 <p align="center">
-  <strong><u>The README is now updated</u>. We've also incorporated it into our 💀 <a href="http://www.vpsdeploy.com"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/>[Custom Rails Tutorials] + [Endpoint Deployment Infrastructure] For Cloud VPS Servers...</strong><hr />
+  <strong>README updated. We've also incorporated it into 💀 <a href="https://www.vpsdeploy.com" title="Custom VPS Deployment For Rails"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/>Custom Rails Tutorials + Deployment Infrastructure For Cloud VPS Servers...</strong><hr />
 </p>
 
 ![Exception Handler](readme/title.jpg "Exception Handler Logo")
 
-<h3 align="center">Custom <code>40x</code> & <code>50x</code> Error Pages For Ruby on Rails</h3>
-<p align="center">
-  <strong><b><code>ExceptionHandler</code></b> overrides <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration"><code>exceptions_app</code></a> to provide <code>ActionDispatch</code> views/layouts for error pages in Rails</strong>
-</p>
+<h3 align="center">
+  Custom <code>40x</code> / <code>50x</code> Error Pages In Ruby on Rails
+</h3>
 
+<p align="center">
+  <strong>
+    ⬇️ <b><code>ExceptionHandler</code></b> Overrides <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration"><code>exceptions_app</code></a> to create <a href="https://www.google.com">custom 40x/50x error pages</a> with your layouts/views... ⬇️
+  </strong>
+</p>
 
 <p align="center">
   <a href="http://badge.fury.io/rb/exception_handler"><img src="https://badge.fury.io/rb/exception_handler.svg" align="absmiddle"></a>
@@ -20,17 +24,23 @@
 </p>
 
 <p align="center">
-  With the release of <b><a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">version  0.8.0.0</a></b>, it is now the <b>simplest</b>, <b>most popular</b> and <b>easiest-to-use</b> "error pages" gem for Rails 4+. <br />And whilst <a href="https://github.com/mirego/gaffe"><code>Gaffe</code></a> and <a href="https://github.com/smartinez87/exception_notification"><code>ExceptionNotification</code></a> provide excellent functionality, neither create as <b>easy-to-use</b> <b>plug-and-play</b> system for showing error pages using your application's own layouts & views
+  At version <b><a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">0.8.0.0</a></b> - it is now the <b>most popular</b> and <b>easiest-to-use</b> "error pages" gem for Rails 4 & 5:
+</p>
+
+<p align="center">
+  <img src="readme/branded/1.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/2.jpg" width="425" title="Fully Branded Error Pages" />
+  <img src="readme/branded/3.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/4.jpg" width="425" title="Fully Branded Error Pages" />
+</p>
+
+<p align="center">
+  This <b>README</b> explains how it works
+  <br />If you need <b>further support</b>, please email <a href="mailto: rpeck@frontlineutilities.co.uk">rpeck@fl.co.uk</a>...
 </p>
 
 ---
 
 <p align="center">
   <strong>⌚️ <a href="#introduction">Introduction</a> ⌚️</strong> | <strong>✔️ <a href="#install">Installation</a> ✔️</strong> | <strong>🔨 <a href="#config">Setup</a> 🔨</strong> | <strong>☎️ <a href="#support">Support</a> ☎️</strong> | <strong>⭐ <a href="#roadmap">Changelog</a> ⭐</strong>
-</p>
-
-<p align="center">
-  If further support is required, please email <a href="mailto:rpeck@frontlineutilities.co.uk">rpeck@fl.co.uk</a>
 </p>
 
 ---
@@ -51,7 +61,6 @@
   <img src="readme/branded/3.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/4.jpg" width="425" title="Fully Branded Error Pages" />
 </p>
 
---
 
 <!-- Introduction -->
 <p align="center">
