@@ -103,12 +103,15 @@ These responses may differ depending on the web server software. Everything
 
 `ExceptionHandler` works straight out of the box in **production/staging (NON development)** environments...
 
-[[ image ]]
+<p align="center">
+  <img src="./readme/dev.png" />
+</p>
 
 In `development`, Rails uses its own "error" handling process, and thus `ExceptionHandler` is not required (unless you override the [`consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) option - which we've already done with [`dev`](#dev-mode)).
 
-<h3 align="center">
-  **There are 5️⃣ options within `ExceptionHandler`** → [`dev`](#dev-mode), [`db`](#database), [`email`](#email), [`social`](views), [`layouts`](#layouts)
+<h4 align="center">
+  <b>There are 5️⃣ options within <code>ExceptionHandler</code></b> → <a href="#dev-mode"><code>dev</code></a>, <a href="#database"><code>db</code></a>, <a href="#email"><code>email</code></a>, <a href="'#views'"><code>views</code></a>, <a href="#locales"><code>locales</code></a>
+  <br /> <br />
 </h4>  
 
 If you want to change *any* of them - you need to create an options block in your app's config files (`/config/application.rb` / `/config/environments/[env].rb`).
@@ -176,17 +179,19 @@ The best thing about using a `config` options block is that you are able to only
 
 ## 💻 Development Mode 💻
 
-As explained, `ExceptionHandler` does not work in `development` by default.
+As explained, `ExceptionHandler` does not work in `development` mode by default. This is because it overrides the `exceptions_app` middleware hook - which is only invoked in `production` or `staging`...
 
-This is because it overrides the `exceptions_app` middleware hook - which is only invoked in the `production` or `staging` environments.
+<p align="center">
+  <img src="./readme/dev.png" />
+</p>
 
-To get it working in `development`, you will need to override the [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) setting (which is a standard component of Rails) - setting it to "false" ↴
+To get it working in `development`, you need to override the [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) setting (a standard component of Rails) - setting it to "false" ↴
 
 <p align="center">
   <img src="./readme/local_requests.jpg" />
 </p>
 
-This is normally done by just changing the setting in your Rails config files. However, to make the process simpler for `ExceptionHandler`- we've added a `dev` option which allows you to override the hook through the context of the gem...
+This is normally done by changing the setting in your Rails config files. However, to make the process simpler for `ExceptionHandler`- we've added a `dev` option which allows you to override the hook through the context of the gem...
 
 ```
 # config/application.rb
@@ -336,7 +341,7 @@ To rollback, use the following:
 
 ---
 
-## Support
+## ☎️ Support ☎️
 
 You're welcome to access our [Issues](https://github.com/richpeck/exception_handler/issues) page to contact us directly. Alternatively, you could use [StackOverflow](https://github.com/richpeck/exception_handler/issues):
 
@@ -346,7 +351,7 @@ You're welcome to access our [Issues](https://github.com/richpeck/exception_hand
 
 ---
 
-## Changelog
+## ⭐️ Changelog ⭐️
 
 ### 🏹 0.8.0.0
  - [x] README
