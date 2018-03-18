@@ -364,7 +364,11 @@ You're welcome to access our [Issues](https://github.com/richpeck/exception_hand
 
  - [Issues](https://github.com/richpeck/exception_handler/issues)
  - [StackOverflow](https://github.com/richpeck/exception_handler/issues)
- - [Email](mailto:rpeck@fl.co.uk)
+ - [Email](mailto:rpeck@frontlineutilities.co.uk)
+
+Also going to get a YouTube video sorted for the entire system...
+
+
 
 ---
 
@@ -419,7 +423,7 @@ You're welcome to access our [Issues](https://github.com/richpeck/exception_hand
 [![404 + 500 Errors][banner]][rubygems]
 
 <p align="center">
-  <strong><a href="#">`ExceptionHandler`</a> is now the LEADING error pages gem for Rails 4 & 5</strong>
+  <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677"><code>ExceptionHandler</code></a> is now the LEADING error pages gem for Rails 4 & 5</strong>
   <br />
   No other gem is as simple or effective at providing beautiful exception pages in production...
 </p>
