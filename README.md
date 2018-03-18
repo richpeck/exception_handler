@@ -109,10 +109,10 @@ These responses may differ depending on the web server software. Everything
 
 In `development`, Rails uses its own "error" handling process, and thus `ExceptionHandler` is not required (unless you override the [`consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) option - which we've already done with [`dev`](#dev-mode)).
 
-<h4 align="center">
+<h3 align="center">
   <b>There are 5️⃣ options within <code>ExceptionHandler</code></b> → <a href="#dev-mode"><code>dev</code></a>, <a href="#database"><code>db</code></a>, <a href="#email"><code>email</code></a>, <a href="'#views'"><code>views</code></a>, <a href="#locales"><code>locales</code></a>
   <br /> <br />
-</h4>  
+</h3>  
 
 If you want to change *any* of them - you need to create an options block in your app's config files (`/config/application.rb` / `/config/environments/[env].rb`).
 
