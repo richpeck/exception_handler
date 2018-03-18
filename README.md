@@ -62,28 +62,30 @@
 </p>
 
 ## ⌚️ Introduction ⌚️
-**There are two types of HTTP "error"** → [`40x`][40x] (Client) & [`50x`][50x] (Server) ↴
+**There are 2️⃣ types of HTTP "error"** → [`40x`][40x] (Client Error) & [`50x`][50x] (Server Error) ↴
 
 <p align="center">
   <img src="./readme/status_codes.png" />
 </p>
 
 
-The important thing to note is **they are not "errors"** but **[status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)** - attached to [HTTP responses](https://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)...
+The important thing to note is **they are NOT "errors"** but **[status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)** - attached to [*HTTP responses*](https://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)...
 
-[[ image ]]
+<p align="center">
+  <img src="./readme/http_response.gif" />
+</p>
 
-Whilst a status code may ***denote*** an error, it's not actually an error in of itself. It's a *description* of an error (a "warning" if you will), which is meant to provide your web browser with a standardized way to handle *all* types of response (successful or erroneous)...
+This is important because you have to understand how the "web" actually works, and how "errors" are handled on it. Particularly,    
 
 <p align="center">
   <img src="./readme/http_codes.png" />
 </p>
 
-There are **5 types of HTTP status code** - [`10x`][10x], [`20x`][20x], [`30x`][30x], [`40x`][40x], & [`50x`][50x]. Each has their own reason for existing. What's important, however, is that they are ALL used to describe different "responses" that your web browser will have to deal with...  
+There are **5 types of HTTP status code** - [`10x`][10x], [`20x`][20x], [`30x`][30x], [`40x`][40x], & [`50x`][50x]. Each has their own reason for existing. What's important is they are ALL used to describe different "responses" that your web browser will have to deal with...  
 
 [[ image - static pages ]]
 
-Normally, web server software will provide <b><i>static</i></b> HTML pages for these errors. This is meant as a fallback - allowing users to see "something" (rather than just a blank screen). The problem is that if you're using a <b><i>dynamic</i></b> framework (Rails etc), it's difficult to show a "branded" page for your errors (mainly because it's likely a server fault, which prevents the framework from rendering views/layouts)...
+These responses may differ depending on the web server software
 
 **`ExceptionHandler`** provides Rails with the ability to serve ***dynamic*** exception pages, built with your own layouts/views. By overriding the <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration">`exceptions_app`</a> hook, it provides a custom `controller`, `model` and `views` to display custom error pages. The system is 100% compatible with Rails 4 & 5...
 
