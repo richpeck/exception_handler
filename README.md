@@ -40,7 +40,7 @@
 ---
 
 <p align="center">
-  <strong>⌚️ <a href="#introduction">Introduction</a> ⌚️</strong> | <strong>✔️ <a href="#install">Installation</a> ✔️</strong> | <strong>🔨 <a href="#config">Setup</a> 🔨</strong> | <strong>☎️ <a href="#support">Support</a> ☎️</strong> | <strong>⭐ <a href="#roadmap">Changelog</a> ⭐</strong>
+  <strong>⌚️ <a href="#-introduction-">Introduction</a> ⌚️</strong> | <strong>✔️ <a href="#install">Installation</a> ✔️</strong> | <strong>🔨 <a href="#config">Setup</a> 🔨</strong> | <strong>☎️ <a href="#support">Support</a> ☎️</strong> | <strong>⭐ <a href="#roadmap">Changelog</a> ⭐</strong>
 </p>
 
 ---
@@ -62,20 +62,24 @@
 </p>
 
 ## ⌚️ Introduction ⌚️
-**There are two types of HTTP "error"** → <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors">`40x`</a> (Client)) & <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors">`50x`</a> (Server) ↴
+**There are two types of HTTP "error"** → [`40x`][40x] (Client) & [`50x`][50x] (Server) ↴
+
+<p align="center">
+  <img src="./readme/status_codes.png" />
+</p>
+
+
+The important thing to note is **they are not "errors"** but **[status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)** - attached to [HTTP responses](https://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)...
+
+[[ image ]]
+
+Whilst a status code may ***denote*** an error, it's not actually an error in of itself. It's a *description* of an error (a "warning" if you will), which is meant to provide your web browser with a standardized way to handle *all* types of response (successful or erroneous)...
 
 <p align="center">
   <img src="./readme/http_codes.png" />
 </p>
 
-
-The most important thing to note is they are not "errors" but [status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) - attached to [HTTP responses](https://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177). Whilst a status code may *denote* an error, it's not actually the error itself. It's just a description of an error (a "warning" if you will), which is meant to provide your web browser with a standard way to handle *all* types of response (successful or erroneous)...
-
-<p align="center">
-  <img src="./readme/http_codes.png" />
-</p>
-
-There are **5 types of HTTP status code** - `10x`, `20x`, `30x`, `40x`, & `50x`. Each has their own reason for existing. What's important, however, is that they are ALL used
+There are **5 types of HTTP status code** - [`10x`][10x], [`20x`][20x], [`30x`][30x], [`40x`][40x], & [`50x`][50x]. Each has their own reason for existing. What's important, however, is that they are ALL used to describe different "responses" that your web browser will have to deal with...  
 
 [[ image - static pages ]]
 
@@ -408,6 +412,12 @@ You're welcome to access our [Issues](https://github.com/richpeck/exception_hand
 [fork]: #fork-destination-box
 [pull]:  http://github.com/richpeck/exception_handler/pulls
 [issues]: http://github.com/richpeck/exception_handler/issues
+
+[10x]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#1xx_Informational_responses
+[20x]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#2xx_Success
+[30x]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#3xx_Redirection
+[40x]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors
+[50x]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors
 
 <!-- ################################### -->
 <!-- ################################### -->
