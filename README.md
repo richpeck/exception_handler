@@ -88,18 +88,20 @@ These responses may differ depending on the web server software. Everything
   [[ Image ]]
 </p>
 
+<h3 align="center">Setup</h3>
+
 <p align="center">
   <a href="#config"><img src="readme/titles/icons/config.png" alt="Cinfiguration Options" align="absmiddle" height="24" /> Config</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#dev-mode" title="Dev Mode"><img src="readme/titles/icons/dev.png" alt="Dev" align="absmiddle" height="24" /> Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#database"><img src="readme/titles/icons/database.png" alt="Database" align="absmiddle" height="24" />  Database</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#email"><img src="readme/titles/icons/email.png" alt="Email" align="absmiddle" height="24" />  Email</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#views"><img src="readme/titles/icons/views.png" alt="Views" align="absmiddle" height="24" />  Views</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#locales"><img src="readme/titles/icons/locales.png" alt="Locales" align="absmiddle" height="20" />  Locales</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#custom-exceptions"><img src="readme/titles/icons/custom.png" alt="Custom Exceptions" align="absmiddle" height="18" />  Custom Exceptions</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#generators"><img src="readme/titles/icons/generators.png" alt="Generators" align="absmiddle" height="24" />  Generators</a>
 </p>
 
 <p align="center">
   -- <br />
-  <code>ExceptionHandler</code> works by adding a <code>controller</code> to your app.<br />This controller is called each time an "error" is raised inside your application.
+  <code>ExceptionHandler</code> works by adding a <b>custom <code>controller</code></b> to your app. This controller is called each time an "error" is raised inside your application, by the `ExceptionHandler`
 </p>
 
 ----
 
-## 🚧 Config 🚧
+### 🚧 Config 🚧
 
 `ExceptionHandler` works straight out of the box in **production/staging (NON development)** environments...
 
@@ -177,7 +179,7 @@ The best thing about using a `config` options block is that you are able to only
 
 ----
 
-## 💻 Development Mode 💻
+### 💻 Development Mode 💻
 
 As explained, `ExceptionHandler` does not work in `development` mode by default. This is because it overrides the `exceptions_app` middleware hook - which is only invoked in `production` or `staging`...
 
@@ -207,7 +209,7 @@ Obviously, this has other connotations including the likes of making your reques
 
 ----
 
-## 💾 Database 💾
+### 💾 Database 💾
 
 If you want to save exceptions to your database, you will need to migrate a new
 
@@ -224,7 +226,7 @@ To do this, once you've enabled the option, run `rails db:migrate` from your con
 
 ---
 
-## Email
+### ✉️ Email ✉️
 
 **`ExceptionHandler` also now sends email notifications.**
 
@@ -241,21 +243,36 @@ If you want to receive emails whenever your application raises an error, you can
 
 ---
 
-## Views
+### 👓 Views 👓
 
-**From [`0.7.0`](#070), we overhauled the view system:**
+The **views** system in `ExceptionHandler` is modular.
 
-![View][view_img]
+This means that what *most* people want out of the view is to change the way it ***looks***. This can be done without actually changing the "view" itself...
 
-[Wiew](app/views/exception_handler/exceptions/show.html.erb) is modular - `@exception` populated with [`locales`](#locales).
+[[ image ]]
+
+To better explain, if [`ExceptionsController`](https://github.com/richpeck/exception_handler/blob/0.8/app/controllers/exception_handler/exceptions_controller.rb) is invoked (by `exceptions_app`), it has **ONE** method ([`show`](https://github.com/richpeck/exception_handler/blob/0.8/app/controllers/exception_handler/exceptions_controller.rb#L42)). This method calls the [`show` view](https://github.com/richpeck/exception_handler/blob/0.8/app/views/exception_handler/exceptions/show.html.erb), which is *entirely* dependent on the locales for content & the layout for the look.
+
+This means that if you wish to change how the view "looks" - you're *either* going to want to change your *layouts* or the [*locales*](#locales). There is NO reason to change the `show` view itself - it's succinct and entirely modular. Whilst you're definitely at liberty to change it, you'll just be making the issue more complicated than it needs to be.
+
+-
+
+If you wish to change the "layout" / "look", there are **two** options...
+
+ * Firstly, if you want to change the way in which the system works
+ * Secondly,
+
 
 ---
 
-## Locales
+### 💬 Locales 💬
 
-**[`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5) introduced [locales](config/locales/exception_handler.yml) ...**
+Locales are used to denote interchangeable text (for different languages).
+
+We've used it for a different purpose - to provide text for our "show" view. The beauty of this is that 1) It's entirely modular & 2) It's extensible (we are able to use as many locales as required)...
 
 [[ locales ]]
+
 
 The `ExceptionHandler` view is populated by [`@exception.description`](app/models/exception_handler/exception.rb#L121), which pulls from the `locales`.
 
@@ -272,7 +289,7 @@ You get access to `%{message}` and `%{status}`, both inferring from `@exception`
 
 ---
 
-## Layout
+### 📓 Layout 📓
 
 **The `layout` has also been improved ↴**
 
@@ -287,7 +304,7 @@ By default, `5xx` errors are shown with our [`exception` layout][layout] - this 
 ---
 
 
-## Custom Exceptions
+### ⚠️ Exceptions ⚠️
 
 **Custom Exceptions also supported in [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)**
 
@@ -304,7 +321,7 @@ Because `HTTP` can only process `4xx` / `5xx` errors, if `Rails` raises an excep
 
 ---
 
-## Generators
+### 🔑 Generators 🔑
 
 **You can generate `ExceptionHandler` into your own application.**
 
@@ -325,7 +342,7 @@ Each switch defines which folders you want (EG `-v views` will only copy `views`
 
 ---
 
-### Migrations (deprecated)
+### ✔️ Migrations ✔️ (deprecated)
 
 **From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own [migration system](lib/exception_handler/engine.rb#L58)**
 
