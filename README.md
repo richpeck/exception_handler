@@ -5,7 +5,7 @@
 ![Exception Handler](readme/title.jpg "Exception Handler Logo")
 
 <h3 align="center">
-  Custom <code>40x</code> / <code>50x</code> Error Pages In Ruby on Rails
+  Custom <code>40x</code> / <code>50x</code> Error Pages For Ruby on Rails
 </h3>
 
 <p align="center">
@@ -33,7 +33,7 @@
 </p>
 
 <p align="center">
-  This <b>README</b> explains how it works...
+  This <b>README</b> explains how it works
   <br />If you need <b>further support</b>, please email <a href="mailto: rpeck@frontlineutilities.co.uk">rpeck@fl.co.uk</a>...
 </p>
 
@@ -61,16 +61,21 @@
   <img src="readme/branded/3.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/4.jpg" width="425" title="Fully Branded Error Pages" />
 </p>
 
-## Introduction
-**There are TWO types of HTTP error** → <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors">`40x`</a> & <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors">`50x`</a>.
+## ⌚️ Introduction ⌚️
+**There are two types of HTTP "error"** → <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors">`40x`</a> (Client)) & <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors">`50x`</a> (Server) ↴
 
- **ANY** time you see an "error" in a web browser, it's ***either*** of these that have been triggered. What's interesting is that they're not actually "errors", but [***status codes***](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) - sent with **HTTP** responses...   
+<p align="center">
+  <img src="./readme/http_codes.png" />
+</p>
 
-[[ image - schematic ]]
 
-Each time you send an HTTP request (which is how "web browsers" work), a "web" server will send an HTTP response. The important thing to note is that whilst HTTP just exists on top of TCP/IP, and you could certainly just ping
+The most important thing to note is they are not "errors" but [status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) - attached to [HTTP responses](https://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177). Whilst a status code may *denote* an error, it's not actually the error itself. It's just a description of an error (a "warning" if you will), which is meant to provide your web browser with a standard way to handle *all* types of response (successful or erroneous)...
 
-The <a href="https://en.wikipedia.org/wiki/HTTP_message_body">http body</a> is what gets displayed on the screen of your browser. EVERY time you send an HTTP request, the response is to have
+<p align="center">
+  <img src="./readme/http_codes.png" />
+</p>
+
+There are **5 types of HTTP status code** - `10x`, `20x`, `30x`, `40x`, & `50x`. Each has their own reason for existing. What's important, however, is that they are ALL used
 
 [[ image - static pages ]]
 
@@ -90,7 +95,7 @@ Normally, web server software will provide <b><i>static</i></b> HTML pages for t
 
 <p align="center">
   -- <br />
-  `ExceptionHandler` works by adding a custom
+  <code>ExceptionHandler</code> works by adding a <code>controller</code> to your app.<br />This controller is called each time an "error" is raised inside your application.
 </p>
 
 ----
