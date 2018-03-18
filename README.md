@@ -65,13 +65,13 @@
 **There are 2️⃣ types of HTTP "error"** → [`40x`][40x] (Client Error) & [`50x`][50x] (Server Error) ↴
 
 <p align="center">
-  <img src="./readme/status_codes.png" />
+  <img src="./readme/http_codes.png" />
 </p>
 
 Each time you send a "request" to an Internet-connected computer via HTTP (which is basically how the "web" works), your browser is expecting a *response* to be delivered. This response has a standardized set of attributes, from the ["body"](https://en.wikipedia.org/wiki/HTTP_message_body) to the "status code"
 
 <p align="center">
-  <img src="./readme/http_codes.png" />
+  <img src="./readme/middleware.jpg" />
 </p>
 
 Whilst only 2 are erroneous, there are **5 types of HTTP status code** - [`10x`][10x], [`20x`][20x], [`30x`][30x], [`40x`][40x], & [`50x`][50x]. Each has their own reason for existing, but what's important is they are ALL used to describe different "responses" that your web browser will have to deal with...  
@@ -247,9 +247,11 @@ If you want to receive emails whenever your application raises an error, you can
 
 The **views** system in `ExceptionHandler` is modular.
 
-This means that what *most* people want out of the view is to change the way it ***looks***. This can be done without actually changing the "view" itself...
+What *most* people want out of the view is to change the way it ***looks***. This can be done without changing the exception "view" itself...
 
-[[ image ]]
+<p align="center">
+  <img src="./readme/dev.png" />
+</p>
 
 To better explain, if [`ExceptionsController`](https://github.com/richpeck/exception_handler/blob/0.8/app/controllers/exception_handler/exceptions_controller.rb) is invoked (by `exceptions_app`), it has **ONE** method ([`show`](https://github.com/richpeck/exception_handler/blob/0.8/app/controllers/exception_handler/exceptions_controller.rb#L42)). This method calls the [`show` view](https://github.com/richpeck/exception_handler/blob/0.8/app/views/exception_handler/exceptions/show.html.erb), which is *entirely* dependent on the locales for content & the layout for the look.
 
@@ -259,7 +261,8 @@ This means that if you wish to change how the view "looks" - you're *either* goi
 
 If you wish to change the "layout" / "look", there are **two** options...
 
- * Firstly, if you want to change the way in which the system works
+ * Firstly, you can create your own layout. This is done by changing the
+
  * Secondly,
 
 
@@ -360,15 +363,19 @@ To rollback, use the following:
 
 ## ☎️ Support ☎️
 
-You're welcome to access our [Issues](https://github.com/richpeck/exception_handler/issues) page to contact us directly. Alternatively, you could use [StackOverflow](https://github.com/richpeck/exception_handler/issues):
+You're welcome to access our [Issues](https://github.com/richpeck/exception_handler/issues) page to contact us directly. Alternatively, you could use [StackOverflow](https://github.com/richpeck/exception_handler/issues)...
 
  - [Issues](https://github.com/richpeck/exception_handler/issues)
- - [StackOverflow](https://github.com/richpeck/exception_handler/issues)
+ - [StackOverflow](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler)
  - [Email](mailto:rpeck@frontlineutilities.co.uk)
+ - [Medium](https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677)
+ - [YouTube](https://www.youtube.com/channel/UCsPIR2s7iPdB7LrWHvaBgVg)
 
-Also going to get a YouTube video sorted for the entire system...
+In the process of getting [**YouTube tutorials**](https://www.youtube.com/channel/UCsPIR2s7iPdB7LrWHvaBgVg) sorted (for multiple services)...
 
-
+<p align="center">
+  <img src="./readme/youtube.png" />
+</p>
 
 ---
 
@@ -423,7 +430,7 @@ Also going to get a YouTube video sorted for the entire system...
 [![404 + 500 Errors][banner]][rubygems]
 
 <p align="center">
-  <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677"><code>ExceptionHandler</code></a> is now the LEADING error pages gem for Rails 4 & 5</strong>
+  <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677"><code>ExceptionHandler</code></a> is now the LEADING error pages gem for Rails 4 & 5...</strong>
   <br />
   No other gem is as simple or effective at providing beautiful exception pages in production...
 </p>
@@ -438,7 +445,7 @@ Also going to get a YouTube video sorted for the entire system...
 </p>
 
 <p align="center">
-  <strong>➡️ <a href="https://rubygems.org/gems/exception_handler">Download</a> ⬅️ </strong>
+  <strong>➡️ <a href="https://rubygems.org/gems/exception_handler">You Can Download It Here</a> ⬅️ </strong>
 </p>
 
 ----------
