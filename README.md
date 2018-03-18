@@ -68,24 +68,17 @@
   <img src="./readme/status_codes.png" />
 </p>
 
-
-The important thing to note is **they are NOT "errors"** but **[status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)** - attached to [*HTTP responses*](https://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)...
-
-<p align="center">
-  <img src="./readme/http_response.gif" />
-</p>
-
-This is important because you have to understand how the "web" actually works, and how "errors" are handled on it. Particularly,    
+Each time you send a "request" to an Internet-connected computer via HTTP (which is basically how the "web" works), your browser is expecting a *response* to be delivered. This response has a standardized set of attributes, from the ["body"](https://en.wikipedia.org/wiki/HTTP_message_body) to the "status code"
 
 <p align="center">
   <img src="./readme/http_codes.png" />
 </p>
 
-There are **5 types of HTTP status code** - [`10x`][10x], [`20x`][20x], [`30x`][30x], [`40x`][40x], & [`50x`][50x]. Each has their own reason for existing. What's important is they are ALL used to describe different "responses" that your web browser will have to deal with...  
+Whilst only 2 are erroneous, there are **5 types of HTTP status code** - [`10x`][10x], [`20x`][20x], [`30x`][30x], [`40x`][40x], & [`50x`][50x]. Each has their own reason for existing, but what's important is they are ALL used to describe different "responses" that your web browser will have to deal with...  
 
 [[ image - static pages ]]
 
-These responses may differ depending on the web server software
+These responses may differ depending on the web server software. Everything
 
 **`ExceptionHandler`** provides Rails with the ability to serve ***dynamic*** exception pages, built with your own layouts/views. By overriding the <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration">`exceptions_app`</a> hook, it provides a custom `controller`, `model` and `views` to display custom error pages. The system is 100% compatible with Rails 4 & 5...
 
@@ -106,11 +99,44 @@ These responses may differ depending on the web server software
 
 ----
 
-## Config
+## 🚧 Config 🚧
 
-`ExceptionHandler` runs <b>AUTOMATICALLY</b> in production. By default, `excaptions_app` only works in production anyway.`
+`ExceptionHandler` works straight out of the box in **NON DEVELOPMENT** environments (`exceptions_app` only invoked in production/staging etc)...
 
-[![config][config]](lib/exception_handler/config.rb#L45)
+[[ image ]]
+
+In development, Rails uses its own "error" handling process, and thus `ExceptionHandler` is not required (unless you override the [`consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) option - which we've already done with [`dev`](#dev-mode)).
+
+**There are 5 options within `ExceptionHandler`** → [`dev`](#dev-mode), [`db`](#database), [`email`](#email), `social`, [`layouts`](#layouts).
+
+If you want to change them - you need to provide an options block in your Rails config files (`/config/application.rb` / `/config/environments/[env].rb`).
+
+Your config block is *merged* with the gem's defaults at boot, meaning that it does not matter how you define the options - they'll always be added to the gem's internal configuration (as long as they're valid).
+
+Whilst you could use an initializer, we felt it more efficient to just use a "config" block, just like 99% of other Rails integrations. It also means you're able to easily migrate the gem to other apps without having to copy your entire config file stack...
+
+```
+###########################
+# => config/application.rb
+###########################
+
+config.exception_handler = {
+  dev:   nil, # => allows you to turn ExceptionHandler "on" in development
+  db:    nil, # => allocates a "table name" into which exceptions are saved (defaults to :errors)
+  email: nil, # => sends exception emails to a listed email (string // "you@email.com"),
+  social: {   # => on the 50x error page, we've included social media links
+    facebook: nil, # => Facebook page name   
+    twitter:  nil,
+    youtube:  nil,
+    linkedin: nil,
+    fusion:   nil
+  },  
+  layouts: {
+
+  }
+}
+
+```  
 
 If you're using an [`engine`](http://guides.rubyonrails.org/engines.html), you don't need to use an `initializer`:
 
@@ -128,13 +154,15 @@ If you're using an [`engine`](http://guides.rubyonrails.org/engines.html), you d
 
     end
 
-You only need to provide the inputs you want, for example:
+The best thing about using a `config` options block is that you are able to only define the options that you require. This means that if you have particular options you *only* wish to run in `staging`, or have single options for `production` etc...  
 
     # config/application.rb
     config.exception_handler = { dev: true }
 
     # config/environments/production.rb
     config.exception_handler = { social: { fusion: "flutils" }}
+
+This gives maximum scope for the gem & its utility.
 
 ----
 
