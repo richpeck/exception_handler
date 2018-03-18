@@ -101,19 +101,19 @@ These responses may differ depending on the web server software. Everything
 
 ## 🚧 Config 🚧
 
-`ExceptionHandler` works straight out of the box in **NON DEVELOPMENT** environments (`exceptions_app` only invoked in production/staging etc)...
+`ExceptionHandler` works straight out of the box in **Production/Staging (NON development)** environments...
 
 [[ image ]]
 
 In development, Rails uses its own "error" handling process, and thus `ExceptionHandler` is not required (unless you override the [`consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) option - which we've already done with [`dev`](#dev-mode)).
 
-**There are 5 options within `ExceptionHandler`** → [`dev`](#dev-mode), [`db`](#database), [`email`](#email), `social`, [`layouts`](#layouts).
+**There are 5️⃣ options within `ExceptionHandler`** → [`dev`](#dev-mode), [`db`](#database), [`email`](#email), [`social`](views), [`layouts`](#layouts).
 
-If you want to change them - you need to provide an options block in your Rails config files (`/config/application.rb` / `/config/environments/[env].rb`).
+If you want to change any of them - you need to provide an options block in your Rails config files (`/config/application.rb` / `/config/environments/[env].rb`).
 
-Your config block is *merged* with the gem's defaults at boot, meaning that it does not matter how you define the options - they'll always be added to the gem's internal configuration (as long as they're valid).
+Your config block is then *merged* with the gem's defaults at boot, meaning that it does not matter how you define the options - they'll always be added to the gem's internal configuration (if they're valid).
 
-Whilst you could use an initializer, we felt it more efficient to just use a "config" block, just like 99% of other Rails integrations. It also means you're able to easily migrate the gem to other apps without having to copy your entire config file stack...
+Whilst you could use an initializer, we felt it more efficient to just use a "config" block, like 99% of other Rails integrations. It also means you're able to easily migrate the gem to other apps without having to copy your entire config file stack...
 
 ```
 ###########################
@@ -126,13 +126,21 @@ config.exception_handler = {
   email: nil, # => sends exception emails to a listed email (string // "you@email.com"),
   social: {   # => on the 50x error page, we've included social media links
     facebook: nil, # => Facebook page name   
-    twitter:  nil,
-    youtube:  nil,
-    linkedin: nil,
-    fusion:   nil
+    twitter:  nil, # => Twitter handle  
+    youtube:  nil, # => Youtube channel name / ID
+    linkedin: nil, # => LinkedIn name
+    fusion:   nil  # => FrontlineFusion handle
   },  
-  layouts: {
-
+  layouts: {  # => There are two layouts - 40x & 50x
+    # => whenever you define the
+    500 => "exception",
+    501 => "exception",
+    502 => "exception",
+    503 => "exception",
+    504 => "exception",
+    505 => "exception",
+    507 => "exception",
+    510 => "exception"
   }
 }
 
@@ -147,8 +155,8 @@ If you're using an [`engine`](http://guides.rubyonrails.org/engines.html), you d
         # => ExceptionHandler
         # => Works in and out of an initializer
         config.exception_handler = {
-          dev: false,
-          db:  true
+          dev: nil, # => this will not load the gem in development
+          db:  true # => this will use the :errors table to store exceptions
         }
       end
 
@@ -162,19 +170,33 @@ The best thing about using a `config` options block is that you are able to only
     # config/environments/production.rb
     config.exception_handler = { social: { fusion: "flutils" }}
 
-This gives maximum scope for the gem & its utility.
-
 ----
 
-## Dev Mode
+## 💻 Dev Mode 💻
 
-**To enable `ExceptionHandler` in dev, enable the [`dev`](lib/exception_handler/config.rb#L38) option:**
+As explained, `ExceptionHandler` does not work in `development` by default.
 
-![Dev][dev_mode]
+This is because it overrides the `exceptions_app` middleware hook - which is only invoked in the `production` or `staging` environments.
+
+To get it working in `development`, you will need to override the [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) setting (which is a standard component of Rails) ↴
+
+<p align="center">
+  <img src="./readme/local_requests.jpg" />
+</p>
+
+This is normally done by just changing the setting in your Rails config files. However, to make the process simpler for `ExceptionHandler`- we've added a `dev` option which allows you to essentially override the hook through the context of ExceptionHandler...
+
+```
+# config/application.rb
+config.exception_handler = { dev: true }
+
+```
 
 This disables [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), making Rails behave as it would in production:
 
 ![Dev][dev_img]
+
+Obviusly, this has other connotations including the likes of making your requests g thrugh yur prduction server etc. For the time being, it's the most effective way to get `ExceptionHandler` working
 
 ----
 
