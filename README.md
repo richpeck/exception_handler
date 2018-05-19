@@ -1,5 +1,5 @@
 <p align="center">
-  <strong>README updated. We've also incorporated it into 💀 <a href="https://www.vpsdeploy.com" title="Custom VPS Deployment For Rails"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/>Custom Rails Tutorials + Deployment Infrastructure For Cloud VPS Servers...</strong><hr />
+  <strong>README updated. Also incorporated into 💀 <a href="https://www.vpsdeploy.com" title="Custom VPS Deployment For Rails"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/>Custom Rails Tutorials + Deployment Infrastructure For *ALL* Cloud VPS Providers...</strong><hr />
 </p>
 
 ![Exception Handler](readme/title.jpg "Exception Handler Logo")
@@ -9,9 +9,7 @@
 </h3>
 
 <p align="center">
-  <strong>
-    ⬇️ <b><code>ExceptionHandler</code></b> overrides <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration"><code>exceptions_app</code></a> to create <a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">custom 40x/50x error pages</a> with your layouts/views ⬇️
-  </strong>
+  ➡️ <strong>100% Authentic <a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677"><code>Custom Error Pages Gem</code></a> For Ruby on Rails </strong> ⬅️ - <a href="https://rubygems.org/gems/exception_handler"><strong><code>ExceptionHandler</code></strong></a> is the the most <br /> <strong>POPULAR</strong>, <strong>ROBUST</strong> & <strong>EXTENSIBLE</strong> exception management gem for <strong>Ruby on Rails 4 & 5+</strong>... 
 </p>
 
 <p align="center">
@@ -24,7 +22,7 @@
 </p>
 
 <p align="center">
-  At version <b><a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">0.8.0.0</a></b> - it is now the <b>most popular</b> and <b>easiest-to-use</b> "error pages" gem for Rails 4 & 5...
+  <b>Now at version <a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0"><code>0.8.0.0</code></a></b> - its <b>*15* SIGNIFICANT upgrades</b> have made it the <b>easiest-to-use</b> and <b>simplest way</b> to provide <br/> <b><code>40x</code> & <code>50x</code> error pages</b> for Rails applications...
 </p>
 
 <p align="center">
@@ -34,13 +32,13 @@
 
 <p align="center">
   This <b>README</b> explains how it works
-  <br />If you need <b>further support</b>, please email <a href="mailto: rpeck@frontlineutilities.co.uk">rpeck@fl.co.uk</a>...
+  <br />If <b>further support</b> is needed, please <a href="mailto: rpeck@frontlineutilities.co.uk" title="Email: rpeck@frontlineutilities.co.uk">✉️</a> or <a href="https://github.com/richpeck/exception_handler/issues" title="Create an Issue">📝</a>...
 </p>
 
 ---
 
 <p align="center">
-  <strong>⌚️ <a href="#-introduction-">Introduction</a> ⌚️</strong> | <strong>✔️ <a href="#install">Installation</a> ✔️</strong> | <strong>🔨 <a href="#config">Setup</a> 🔨</strong> | <strong>☎️ <a href="#support">Support</a> ☎️</strong> | <strong>⭐ <a href="#roadmap">Changelog</a> ⭐</strong>
+  <strong>⌚️ <a href="#introduction">Introduction</a> ⌚️</strong> | <strong>✔️ <a href="#install">Installation</a> ✔️</strong> | <strong>🔨 <a href="#config">Setup</a> 🔨</strong> | <strong>☎️ <a href="#support">Support</a> ☎️</strong> | <strong>⭐ <a href="#roadmap">Changelog</a> ⭐</strong>
 </p>
 
 ---
@@ -62,23 +60,31 @@
 </p>
 
 ## ⌚️ Introduction ⌚️
-**There are 2️⃣ types of HTTP "error"** → [`40x`][40x] (Client Error) & [`50x`][50x] (Server Error) ↴
+**There are 2️⃣ types of HTTP "error"** → **[`4xx`][40x] (Client Error)** & **[`5xx`][50x] (Server Error)** ↴
 
 <p align="center">
   <img src="./readme/http_codes.png" />
 </p>
 
-Each time you send a "request" to an Internet-connected computer via HTTP (which is basically how the "web" works), your browser is expecting a *response* to be delivered. This response has a standardized set of attributes, from the ["body"](https://en.wikipedia.org/wiki/HTTP_message_body) to the "status code"
+Each time you send a "request" to an Internet-connected computer, <b>the OS uses <a href="https://en.wikipedia.org/wiki/Internet_protocol_suite">TCP/IP</a></b>.
+
+This allows systems to "route" connections to each other via a public <a href="https://en.wikipedia.org/wiki/Internet_Protocol"><b>IP address</b></a>.
+
+Whilst this works, the main problem is not many systems *want* you to connect to them. This lead to the development of <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"><b>HTTP (Hyper Text Transfer Protocol)</b></a> - through which *public* Internet traffic could be channeled.  
+
+EVERY time you access a "website", you're really using HTTP to access the PUBLIC 
+
+is expecting an **HTTP *response*** to be delivered. This response is a *standardized* set of attributes, from the ["body"](https://en.wikipedia.org/wiki/HTTP_message_body) to the "status code"
 
 <p align="center">
   <img src="./readme/middleware.jpg" />
 </p>
 
-Whilst only 2 are erroneous, there are **5 types of HTTP status code** - [`10x`][10x], [`20x`][20x], [`30x`][30x], [`40x`][40x], & [`50x`][50x]. Each has their own reason for existing, but what's important is they are ALL used to describe different "responses" that your web browser will have to deal with...  
+Whilst <b>only 2 are erroneous</b>, there are **5️⃣ types of <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status code</a>** - [`10x`][10x], [`20x`][20x], [`30x`][30x], [`40x`][40x], & [`50x`][50x]. Each has their own reason for existing, but what's important is they are <b>ALL</b> used to describe different "responses" that your web browser will receive...  
 
 [[ image - static pages ]]
 
-These responses may differ depending on the web server software. Everything
+The point is that when you're dealing with "errors" online, you're *actually* dealing with erroneous **STATUS CODES**. The *response* delivered by these codes is still exactly the same as the successful responses.
 
 **`ExceptionHandler`** provides Rails with the ability to serve ***dynamic*** exception pages, built with your own layouts/views. By overriding the <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration">`exceptions_app`</a> hook, it provides a custom `controller`, `model` and `views` to display custom error pages. The system is 100% compatible with Rails 4 & 5...
 
