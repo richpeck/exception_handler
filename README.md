@@ -415,27 +415,34 @@ Each switch defines which folders you want (EG `-v views` will only copy `views`
   <h4>✔️ Migrations (deprecated) ✔️</h4>
 </p> 
 
-**From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own [migration system](lib/exception_handler/engine.rb#L58)**
+**You *DON'T* need to generate a migration any more**.
 
-You don't need to generate a migration any more.
+From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own [migration system](lib/exception_handler/engine.rb#L58).
 
-If you set the `db` option in config, run `rails db:migrate` and the migration will be run.
+The reason we did this was so not to pollute your migrations folder with a worthless file. Our migration doesn't need to be changed - we only have to get it into the database and the gem takes care of the rest...
+
+> If you set the `db` option in config, run `rails db:migrate` and the migration will be run.
 
 To rollback, use the following:
 
     rails db:migrate:down VERSION=000000
 
-> The drawback to this is that if you remove `ExceptionHandler` before you rollback the migration, it won't exist anymore. You can **only** fire the `rollback` when you have `ExceptionHandler` installed.
+The drawback to this is that if you remove `ExceptionHandler` before you rollback the migration, it won't exist anymore. You can **only** fire the `rollback` when you have `ExceptionHandler` installed.
 
 <!-- Support -->
 <div id="support">
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
-  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*Z9AQMX2GRrtV9tTH7gAuHw.png" /></p>
-  <p>asdfasdf</p> 
-  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
+  <p align="center">
+    <img src="https://cdn-images-1.medium.com/max/800/1*Z9AQMX2GRrtV9tTH7gAuHw.png" />
+    <br />---
+  </p>
 </div>
 
-You're welcome to access our [**Issues**](https://github.com/richpeck/exception_handler/issues) page to contact us directly. Alternatively, you could use [**StackOverflow**](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler)...
+***Obviously*, if you've taken the time to use the gem, it makes sense to SUPPORT it**. 
+
+The fastest way to get a direct response is via [email](mailto:rpeck@frontlineutilities.co.uk).
+
+You're also welcome to access our [**Issues**](https://github.com/richpeck/exception_handler/issues) page to contact us directly. You could also use [**StackOverflow**](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler)...
 
  - ⚠️ [**Issues**](https://github.com/richpeck/exception_handler/issues)
  - 📤 [**StackOverflow**](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler)
@@ -443,7 +450,7 @@ You're welcome to access our [**Issues**](https://github.com/richpeck/exception_
  - ✏️ [**Medium**](https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677)
  - 🎥 [**YouTube**](https://www.youtube.com/channel/UCsPIR2s7iPdB7LrWHvaBgVg)
 
-In the process of posting [**YouTube tutorials**](https://www.youtube.com/channel/UC5EMCOwsMbqvdTVGjMTDgPQ)...
+➡️ Presently in the process of posting [**YouTube tutorials**](https://www.youtube.com/channel/UC5EMCOwsMbqvdTVGjMTDgPQ)...
 
 <p align="center">
   <a href="https://www.youtube.com/channel/UC5EMCOwsMbqvdTVGjMTDgPQ"><img src="./readme/youtube.png" /></a>
