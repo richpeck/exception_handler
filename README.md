@@ -36,7 +36,7 @@
 </p>
 
 <p align="center">
-  <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">🏹 <code>0.8.0.0</code> 🏹</a></strong> → <strong><A href="#config">🚧 CONFIG SETTINGS 🚧</a></strong> now <strong>*EVEN STRONGER*</strong> and more powerful than before ▪️ <strong>💻 CUSTOM Views Options 💻</strong> ▪️ <strong>💬 <code>4xx</code>/<code>5xx</code> LOCALES Fix 💬</strong> + <strong>more</strong>...  
+  <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">🏹 <code>0.8.0.0</code> 🏹</a></strong> → <strong><A href="#config">🚧 CONFIG SETTINGS 🚧</a></strong> now <strong>*EVEN STRONGER*</strong> and more powerful than before ▪️ <br /> <strong>💻 CUSTOM Views Options 💻</strong> ▪️ <strong>💬 <code>4xx</code>/<code>5xx</code> LOCALES 💬</strong> + <strong>more</strong>...  
 </p>
 
 <p align="center">
@@ -430,9 +430,8 @@ To rollback, use the following:
 <!-- Support -->
 <div id="support">
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
-  <p>
-    <h3>☎️ Support ☎️</h3>
-  </p>
+  <h3>☎️ Support ☎️</h3>
+  <span>You</span>
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
 </div>
 
@@ -452,8 +451,10 @@ In the process of posting [**YouTube tutorials**](https://www.youtube.com/channe
 
 <!-- Changelog -->
 <div id="changelog">
-  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
-  <h3>⭐ <a href="https://www.github.com/richpeck/exception_handler/releases">Changelog</a> ⭐</h3>
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p> 
+  <h3 align="center"><img src="https://cdn-images-1.medium.com/max/800/1*Z9AQMX2GRrtV9tTH7gAuHw.png" /></h3>
+  <p>--<br /><code>ExceptionHandler</code> is designed to provide <strong>CUSTOM ERROR PAGES</strong> for Ruby on Rails → not much more than that. If you're looking at adding <em>extra</em> functionality, such as a debugger or something, you'll probably be better looking at the likes of <code><a href="https://rubygems.org/gems/better_errors">better_errors</a></code> or <code><a href="https://rubygems.org/gems/gaffe">gaffe</a></code>.</p>
+  <p>Below shows what we've built...</p>
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
 </div>
 
@@ -513,9 +514,9 @@ In the process of posting [**YouTube tutorials**](https://www.youtube.com/channe
 [![404 + 500 Errors][banner]][rubygems]
 
 <p align="center">
-  <strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a> is now the ▪️ LEADING ▪️ error pages gem for Rails 4 & 5...</strong>
+  <strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a> is now the • LEADING • custom error pages gem for Rails 4 & 5...</strong>
   <br />
-  No other gem is as simple or effective at providing beautiful exception pages in production...
+  No other gem is as simple or effective at providing branded exception pages in production...
 </p>
 
 <p align="center">
