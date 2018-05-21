@@ -452,8 +452,8 @@ In the process of posting [**YouTube tutorials**](https://www.youtube.com/channe
 <!-- Changelog -->
 <div id="changelog">
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p> 
-  <h3 align="center"><img src="https://cdn-images-1.medium.com/max/800/1*Z9AQMX2GRrtV9tTH7gAuHw.png" /></h3>
-  <p>--<br /><code>ExceptionHandler</code> is designed to provide <strong>CUSTOM ERROR PAGES</strong> for Ruby on Rails → not much more than that. If you're looking at adding <em>extra</em> functionality, such as a debugger or something, you'll probably be better looking at the likes of <code><a href="https://rubygems.org/gems/better_errors">better_errors</a></code> or <code><a href="https://rubygems.org/gems/gaffe">gaffe</a></code>.</p>
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*Z9AQMX2GRrtV9tTH7gAuHw.png" /></p>
+  <p><code>ExceptionHandler</code> is designed to provide <strong>CUSTOM ERROR PAGES</strong> for Ruby on Rails → not much more than that. If you're looking at adding <em>extra</em> functionality, such as a debugger or something, you'll probably be better looking at the likes of <code><a href="https://rubygems.org/gems/better_errors">better_errors</a></code> or <code><a href="https://rubygems.org/gems/gaffe">gaffe</a></code>.</p>
   <p>Below shows what we've built...</p>
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
 </div>
