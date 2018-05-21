@@ -36,7 +36,7 @@
 </p>
 
 <p align="center">
-  <b>5️⃣ *SIGNIFICANT* upgrades</b>, have now made <code>0.8.0.0</code> the <b>✔️ EASIEST ✔️</b> and <b>⭐ SIMPLEST ⭐ way</b> to provide <b>CUSTOMIZED <code>40x</code> & <code>50x</code> error pages</b> for Rails applications. By adding the Gem to your <code>Gemfile</code>, you're <b>INSTANTLY</b> able to turn your app's plain & static error pages into dynamic & <b>BRANDED EXPERIENCES</b> for your visitors...
+  <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">🏹<code>0.8.0.0</code>🏹</a></strong> → <strong><A href="#config">CONFIG</a></strong> settings now <strong>*EVEN STRONGER*</strong> and more powerful than before ▪️ CUSTOM. 
 </p>
 
 <p align="center">
@@ -45,8 +45,7 @@
 </p>
 
 <p align="center">
-  <strong>⚠️ README explains how it works ⚠️</strong> 
-  <br /><strong><a href="mailto: rpeck@frontlineutilities.co.uk" title="rpeck@fl.co.uk">✉️ Support ✉️</a></strong>
+  <strong><a href="mailto: rpeck@frontlineutilities.co.uk" title="rpeck@fl.co.uk">✉️ Support Email ✉️</a></strong>
 </p>
 
 ---
@@ -397,7 +396,9 @@ To rollback, use the following:
 
 ------
 
-## Support
+<p id="support" align="center">
+  <h3>☎️ Support ☎️</h3>
+</p>
 
 You're welcome to access our [Issues](https://github.com/richpeck/exception_handler/issues) page to contact us directly. Alternatively, you could use [StackOverflow](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler)...
 
