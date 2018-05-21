@@ -432,11 +432,10 @@ The drawback to this is that if you remove `ExceptionHandler` before you rollbac
 <!-- Support -->
 <div id="support">
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
-  <p align="center"><br /><img src="https://cdn-images-1.medium.com/max/800/1*Z9AQMX2GRrtV9tTH7gAuHw.png" /></p>
-  <p align="center">---</p>  
+  <h3>☎️ Support ☎️</h3>
 </div>
 
-***Obviously*, if you've taken the time to use the gem, it makes sense to SUPPORT it**. 
+***Obviously*, if you've taken the time to use the gem, it makes sense to <a href="https://github.com/richpeck/exception_handler/issues">SUPPORT</a> it**. 
 
 The fastest way to get a **DIRECT RESPONSE** is via [email](mailto:rpeck@frontlineutilities.co.uk).
 
@@ -448,8 +447,6 @@ You're also welcome to access our [**Issues**](https://github.com/richpeck/excep
  - ✏️ [**Medium**](https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677) ✏️
  - 🎥 [**YouTube**](https://www.youtube.com/channel/UCsPIR2s7iPdB7LrWHvaBgVg) 🎥
 
----
-
 ⬇️ **Presently in the process of posting a [YouTube tutorial](https://www.youtube.com/channel/UC5EMCOwsMbqvdTVGjMTDgPQ)...** ⬇️
 
 <p align="center">
@@ -460,8 +457,9 @@ You're also welcome to access our [**Issues**](https://github.com/richpeck/excep
 <div id="changelog">
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p> 
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*Z9AQMX2GRrtV9tTH7gAuHw.png" /><br />---</p>
-  <p><code><a href="https://www.rubygems.org/gems/exception_handler">ExceptionHandler</a></code> is designed to provide <strong>CUSTOM ERROR PAGES</strong> for Ruby on Rails → not much more than that.</p>
+  <p align="center"><b>➡️ <code><a href="https://www.rubygems.org/gems/exception_handler">ExceptionHandler</a></code> is designed to provide <strong>CUSTOM ERROR PAGES</strong> for Ruby on Rails. ⬅️</b></p>
   <p>If you're looking at adding <em>extra</em> functionality, such as a debugger, you'll probably be better looking at the likes of <code><a href="https://rubygems.org/gems/better_errors">better_errors</a></code> or <code><a href="https://rubygems.org/gems/gaffe">gaffe</a></code>.</p>
+  <hr />
   <p>Below shows what we've built...</p>  
 </div>
 
