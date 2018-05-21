@@ -460,15 +460,15 @@ You're also welcome to access our [**Issues**](https://github.com/richpeck/excep
 
 <!-- Changelog -->
 <div id="changelog">
-  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p> 
-  <h3>⭐ Changelog ⭐</h3>
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
+  <h3>⭐ Changelog ⭐</h3>
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>   
 </div>
 
 <p><b>➡️ <code><a href="https://www.rubygems.org/gems/exception_handler">ExceptionHandler</a></code> is designed to provide <strong>CUSTOM ERROR PAGES</strong> for Ruby on Rails. ⬅️</b></p>
 <p>If you're looking at adding <em><b>extra</b></em> functionality (such as a debugger), you'll probably be better looking at the likes of <code><a href="https://rubygems.org/gems/better_errors">better_errors</a></code> or <code><a href="https://rubygems.org/gems/gaffe">gaffe</a></code>.</p>
-<hr />
 <p>Below shows what we've built...</p> 
+<hr />
 
 ### 👻 [1.0.0.0](https://github.com/richpeck/exception_handler/releases/tag/v1.0.0.0)
   - [ ] TBA
