@@ -513,7 +513,7 @@ In the process of posting [**YouTube tutorials**](https://www.youtube.com/channe
 [![404 + 500 Errors][banner]][rubygems]
 
 <p align="center">
-  <strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a> is now the LEADING error pages gem for Rails 4 & 5...</strong>
+  <strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a> is now the ▪️ LEADING ▪️ error pages gem for Rails 4 & 5...</strong>
   <br />
   No other gem is as simple or effective at providing beautiful exception pages in production...
 </p>
