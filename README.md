@@ -53,20 +53,16 @@
   <br /><strong><a href="mailto: rpeck@frontlineutilities.co.uk" title="rpeck@fl.co.uk">✉️ Support Email ✉️</a></strong>
 </p>
 
-<!-- Sep --> 
-<p align="center">
-  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
-</p>
+<!-- Navigation -->
+<div id="navigation">
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
+  <p align="center">
+    <b>⌚️ <a href="#introduction">Introduction</a> ⌚️</b> ▪️ <strong>✔️ <a href="#installation">Installation</a> ✔️</strong> ▪️ <strong>🔨 <a href="#setup">Setup</a> 🔨</strong> ▪️ <strong>☎️ <a href="#support">Support</a> ☎️</strong> ▪️ <strong>⭐ <a href="#changelog">Changelog</a> ⭐</strong>
+  </p>
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
+</div>
 
-<p align="center">
-  <b>⌚️ <a href="#introduction">Introduction</a> ⌚️</b> ▪️ <strong>✔️ <a href="#installation">Installation</a> ✔️</strong> ▪️ <strong>🔨 <a href="#setup">Setup</a> 🔨</strong> ▪️ <strong>☎️ <a href="#support">Support</a> ☎️</strong> ▪️ <strong>⭐ <a href="#changelog">Changelog</a> ⭐</strong>
-</p>
-
-<!-- Sep --> 
-<p align="center">
-  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
-</p>
-
+<!-- Version -->
 <p align="center">
   <img src="./readme/version.jpg" />
 </p>
@@ -83,19 +79,14 @@
   <img src="readme/branded/3.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/4.jpg" width="425" title="Fully Branded Error Pages" />
 </p>
 
-<!-- Sep --> 
-<p align="center">
-  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
-</p>
-
-<p id="introduction">
-  <h3>⌚️ Introduction ⌚️</h3>  
-</p>
-
-<!-- Sep --> 
-<p align="center">
-  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
-</p>
+<!-- Introduction -->
+<div id="introduction">
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
+  <p>
+    <h3>⌚️ Introduction ⌚️</h3>
+  </p>
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
+</div>
 
 **There are 2️⃣ types of HTTP "error"** → **[`4xx (Client Error)`][40x]** & **[`5xx  (Server Error)`][50x]** ↴
 
@@ -132,29 +123,18 @@ The point is that when you're dealing with "errors" online, you're *actually* de
   <img src="readme/branded/3.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/4.jpg" width="425" title="Fully Branded Error Pages" />
 </p>
 
-<!-- Sep --> 
-<p align="center">
-  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
-</p>
-
-<p id="setup">
+<!-- Setup -->
+<div id="setup">
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
   <h3 align="center">🔨 Setup 🔨</h3>
-</p>  
+  <p align="center">
+    <a href="#config"><img src="readme/titles/icons/config.png" alt="Configuration Options" align="absmiddle" height="24" /> Config</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#dev" title="Dev Mode"><img src="readme/titles/icons/dev.png" alt="Dev" align="absmiddle" height="24" /> Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#database"><img src="readme/titles/icons/database.png" alt="Database" align="absmiddle" height="24" />  Database</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#email"><img src="readme/titles/icons/email.png" alt="Email" align="absmiddle" height="24" />  Email</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#views"><img src="readme/titles/icons/views.png" alt="Views" align="absmiddle" height="24" />  Views</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#locales"><img src="readme/titles/icons/locales.png" alt="Locales" align="absmiddle" height="20" />  Locales</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#custom-exceptions"><img src="readme/titles/icons/custom.png" alt="Custom Exceptions" align="absmiddle" height="18" />  Custom Exceptions</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#generators"><img src="readme/titles/icons/generators.png" alt="Generators" align="absmiddle" height="24" />  Generators</a>
+  </p>
+  <p align="center">-- <br />The <i>most</i> important thing to apprecaite about the gem is that</p>
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
+</div>
 
-<p align="center">
-  <a href="#config"><img src="readme/titles/icons/config.png" alt="Configuration Options" align="absmiddle" height="24" /> Config</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#dev" title="Dev Mode"><img src="readme/titles/icons/dev.png" alt="Dev" align="absmiddle" height="24" /> Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#database"><img src="readme/titles/icons/database.png" alt="Database" align="absmiddle" height="24" />  Database</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#email"><img src="readme/titles/icons/email.png" alt="Email" align="absmiddle" height="24" />  Email</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#views"><img src="readme/titles/icons/views.png" alt="Views" align="absmiddle" height="24" />  Views</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#locales"><img src="readme/titles/icons/locales.png" alt="Locales" align="absmiddle" height="20" />  Locales</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#custom-exceptions"><img src="readme/titles/icons/custom.png" alt="Custom Exceptions" align="absmiddle" height="18" />  Custom Exceptions</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#generators"><img src="readme/titles/icons/generators.png" alt="Generators" align="absmiddle" height="24" />  Generators</a>
-</p>
-
-<p align="center">
-  -- <br />
-  The <i>most</i> important thing to apprecaite about the gem is that  
-</p>
-
-<!-- Sep --> 
-<p align="center">
-  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
-</p>
-
+<!-- Config -->
 <p id="config">
   <h4>🚧 Config 🚧</h4>
 </p>  
