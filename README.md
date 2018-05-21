@@ -432,10 +432,8 @@ The drawback to this is that if you remove `ExceptionHandler` before you rollbac
 <!-- Support -->
 <div id="support">
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
-  <p align="center">
-    <img src="https://cdn-images-1.medium.com/max/800/1*Z9AQMX2GRrtV9tTH7gAuHw.png" />
-    <br />---
-  </p>
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*Z9AQMX2GRrtV9tTH7gAuHw.png" /></p>
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>  
 </div>
 
 ***Obviously*, if you've taken the time to use the gem, it makes sense to SUPPORT it**. 
@@ -450,7 +448,7 @@ You're also welcome to access our [**Issues**](https://github.com/richpeck/excep
  - ✏️ [**Medium**](https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677)
  - 🎥 [**YouTube**](https://www.youtube.com/channel/UCsPIR2s7iPdB7LrWHvaBgVg)
 
-➡️ Presently in the process of posting [**YouTube tutorials**](https://www.youtube.com/channel/UC5EMCOwsMbqvdTVGjMTDgPQ)...
+⬇️ **Presently in the process of posting a [YouTube tutorial](https://www.youtube.com/channel/UC5EMCOwsMbqvdTVGjMTDgPQ)...** ⬇️
 
 <p align="center">
   <a href="https://www.youtube.com/channel/UC5EMCOwsMbqvdTVGjMTDgPQ"><img src="./readme/youtube.png" /></a>
