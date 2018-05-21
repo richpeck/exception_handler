@@ -49,7 +49,7 @@
 </p>
 
 <p align="center">
-  <strong>⚠️ This *README* explains how it works... ⚠️</strong>
+  <strong>⚠️ *README* explains how it works... ⚠️</strong>
   <br /><strong><a href="mailto: rpeck@frontlineutilities.co.uk" title="rpeck@fl.co.uk">✉️ Support Email ✉️</a></strong>
 </p>
 
