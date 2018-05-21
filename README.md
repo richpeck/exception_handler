@@ -36,7 +36,11 @@
 </p>
 
 <p align="center">
-  <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">🏹<code>0.8.0.0</code>🏹</a></strong> → <strong><A href="#config">CONFIG</a></strong> settings now <strong>*EVEN STRONGER*</strong> and more powerful than before ▪️ CUSTOM. 
+  <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">🏹 <code>0.8.0.0</code> 🏹</a></strong> → <strong><A href="#config">🚧 CONFIG SETTINGS 🚧</a></strong> now <strong>*EVEN STRONGER*</strong> and more powerful than before ▪️ <strong>💻 CUSTOM Views Options 💻</strong> ▪️ <strong>💬 <code>4xx</code>/<code>5xx</code> LOCALES Fix 💬</strong> + <strong>more</strong>...  
+</p>
+
+<p align="center">
+  With its <strong>NEW infrastructure</strong>, <code>ExceptionHandler</code> is now the <strong>LEADING CUSTOM ERROR PAGES GEM</strong> for Ruby on Rails. No other rivals its ease-of-use, extensibility, effectiveness or power...  
 </p>
 
 <p align="center">
@@ -45,7 +49,8 @@
 </p>
 
 <p align="center">
-  <strong><a href="mailto: rpeck@frontlineutilities.co.uk" title="rpeck@fl.co.uk">✉️ Support Email ✉️</a></strong>
+  <strong>⚠️ This *README* explains how it works... ⚠️</strong>
+  <br /><strong><a href="mailto: rpeck@frontlineutilities.co.uk" title="rpeck@fl.co.uk">✉️ Support Email ✉️</a></strong>
 </p>
 
 <!-- Sep --> 
@@ -54,7 +59,7 @@
 </p>
 
 <p align="center">
-  <b>⌚️ <a href="#introduction">Introduction</a> ⌚️</b> | <strong>✔️ <a href="#installation">Installation</a> ✔️</strong> | <strong>🔨 <a href="#setup">Setup</a> 🔨</strong> | <strong>☎️ <a href="#support">Support</a> ☎️</strong> | <strong>⭐ <a href="#changelog">Changelog</a> ⭐</strong>
+  <b>⌚️ <a href="#introduction">Introduction</a> ⌚️</b> ▪️ <strong>✔️ <a href="#installation">Installation</a> ✔️</strong> ▪️ <strong>🔨 <a href="#setup">Setup</a> 🔨</strong> ▪️ <strong>☎️ <a href="#support">Support</a> ☎️</strong> ▪️ <strong>⭐ <a href="#changelog">Changelog</a> ⭐</strong>
 </p>
 
 <!-- Sep --> 
@@ -76,6 +81,20 @@
 <p align="center">
   <img src="readme/branded/1.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/2.jpg" width="425" title="Fully Branded Error Pages" />
   <img src="readme/branded/3.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/4.jpg" width="425" title="Fully Branded Error Pages" />
+</p>
+
+<!-- Sep --> 
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
+</p>
+
+<p id="introduction">
+  <h3>⌚️ Introduction ⌚️</h3>  
+</p>
+
+<!-- Sep --> 
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
 </p>
 
 **There are 2️⃣ types of HTTP "error"** → **[`4xx (Client Error)`][40x]** & **[`5xx  (Server Error)`][50x]** ↴
@@ -136,7 +155,9 @@ The point is that when you're dealing with "errors" online, you're *actually* de
   <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
 </p>
 
-#### Config
+<p id="config">
+  <h4>Config</h4>
+</p>  
 
 The **ONLY** thing you need to get `ExceptionHandler` working is the [`config`](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb).
 
