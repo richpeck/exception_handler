@@ -3,7 +3,7 @@
 </a>
 <hr />
 <p align="center">
-  <strong>README updated. Also incorporated into 💀 <a href="https://www.vpsdeploy.com" title="Custom VPS Deployment For Rails"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/><code>Custom Programming Tutorials</code> + <code>Deployment Infrastructure</code> For Cloud VPS Providers...</strong>
+  <strong>💣 README Updated 💣 - Also incorporated into 💀 <a href="https://www.vpsdeploy.com" title="Custom VPS Deployment For Rails"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/><code>Custom Programming Tutorials</code> + <code>Deployment Infrastructure</code> For Cloud VPS Providers...</strong>
 </p>
 <hr />
 
@@ -156,12 +156,12 @@ The point is that when you're dealing with "errors" online, you're *actually* de
 </p>
 
 <p id="config">
-  <h4>Config</h4>
+  <h4>🚧 Config 🚧</h4>
 </p>  
 
-The **ONLY** thing you need to get `ExceptionHandler` working is the [`config`](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb).
+**ONLY thing you need to get `ExceptionHandler` working is the [`config`](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb)**.
 
-Whilst it works without the need for **ANY** configuration, if you want to manage the `layouts`, `email`, `dev mode` or `database`, you'll need to set the appropriate values in the config hash ([invoked at init](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/engine.rb#L44)).
+Whilst it works without the need for **ANY** configuration, if you want to manage the `layouts`, `email`, `dev` or `database`, you'll need to set the appropriate values in the config hash ([invoked at init](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/engine.rb#L44)).
 
 This can be done with `config/application.rb`, `config/environments/[env].rb` or an `initializer`... 
 
@@ -249,7 +249,9 @@ The best thing about using a `config` options block is that you are able to only
 
 ---
 
-#### Dev 
+<p id="dev">
+  <h4>💻 Dev 💻</h4>
+</p>  
 
 As explained, `ExceptionHandler` does not work in `development` mode by default. This is because it overrides the `exceptions_app` middleware hook - which is only invoked in `production` or `staging`...
 
@@ -279,7 +281,9 @@ Obviously, this has other connotations including the likes of making your reques
 
 ----
 
-#### Database
+<p id="database">
+  <h4>💾 Database 💾</h4>
+</p>  
 
 If you want to save exceptions to your database, you will need to migrate a new
 
@@ -296,7 +300,9 @@ To do this, once you've enabled the option, run `rails db:migrate` from your con
 
 ---
 
-#### Email
+<p id="email">
+  <h4>✉️ Email ✉️</h4>
+</p>  
 
 **`ExceptionHandler` also now sends email notifications.**
 
@@ -313,7 +319,9 @@ If you want to receive emails whenever your application raises an error, you can
 
 ---
 
-#### Views
+<p id="views">
+  <h4>👓 Views 👓</h4>
+</p>
 
 The **views** system in `ExceptionHandler` is modular.
 
@@ -338,7 +346,9 @@ If you wish to change the "layout" / "look", there are **two** options...
 
 ---
 
-#### Locales
+<p id="locales">
+  <h4>💬 Locales 💬</h4>
+</p>  
 
 Locales are used to denote interchangeable text (for different languages).
 
@@ -362,7 +372,9 @@ You get access to `%{message}` and `%{status}`, both inferring from `@exception`
 
 ---
 
-#### Layout
+<p id="layouts">
+  <h4>📋 Layouts 📋</h4>
+</p>  
 
 **The `layout` has also been improved ↴**
 
@@ -377,7 +389,9 @@ By default, `5xx` errors are shown with our [`exception` layout][layout] - this 
 ---
 
 
-#### Exceptions
+<p id="custom-exceptions">
+  <h4>⛔️ Custom Exceptions ⛔️</h4>
+</p> 
 
 **Custom Exceptions also supported in [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)**
 
@@ -394,7 +408,9 @@ Because `HTTP` can only process `4xx` / `5xx` errors, if `Rails` raises an excep
 
 ---
 
-#### Generators
+<p id="generators">
+  <h4>💼 Generators 💼</h4>
+</p> 
 
 **You can generate `ExceptionHandler` into your own application.**
 
@@ -415,7 +431,9 @@ Each switch defines which folders you want (EG `-v views` will only copy `views`
 
 ---
 
-#### Migrations (deprecated)
+<p id="migrations">
+  <h4>✔️ Migrations (deprecated) ✔️</h4>
+</p> 
 
 **From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own [migration system](lib/exception_handler/engine.rb#L58)**
 
@@ -436,6 +454,7 @@ To rollback, use the following:
 
 <p id="support">
   <h3>☎️ Support ☎️</h3>
+  <span>The most important thing to realize</span 
 </p>
 
 <!-- Sep --> 
@@ -443,13 +462,13 @@ To rollback, use the following:
   <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
 </p>
 
-You're welcome to access our [Issues](https://github.com/richpeck/exception_handler/issues) page to contact us directly. Alternatively, you could use [StackOverflow](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler)...
+You're welcome to access our [**Issues**](https://github.com/richpeck/exception_handler/issues) page to contact us directly. Alternatively, you could use [**StackOverflow**](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler)...
 
- - ⚠️ [Issues](https://github.com/richpeck/exception_handler/issues)
- - 📤 [StackOverflow](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler)
- - ✉️ [Email](mailto:rpeck@frontlineutilities.co.uk)
- - ✏️ [Medium](https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677)
- - 🎥 [YouTube](https://www.youtube.com/channel/UCsPIR2s7iPdB7LrWHvaBgVg)
+ - ⚠️ [**Issues**](https://github.com/richpeck/exception_handler/issues)
+ - 📤 [**StackOverflow**](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler)
+ - ✉️ [**Email**](mailto:rpeck@frontlineutilities.co.uk)
+ - ✏️ [**Medium**](https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677)
+ - 🎥 [**YouTube**](https://www.youtube.com/channel/UCsPIR2s7iPdB7LrWHvaBgVg)
 
 In the process of posting [**YouTube tutorials**](https://www.youtube.com/channel/UC5EMCOwsMbqvdTVGjMTDgPQ)...
 
@@ -463,7 +482,8 @@ In the process of posting [**YouTube tutorials**](https://www.youtube.com/channe
 </p>
 
 <p id="changelog">
-  <h3>⭐ Changelog ⭐</h3>
+  <h3>⭐ <a href="https://www.github.com/richpeck/exception_handler/releases">Changelog</a> ⭐</h3>
+  <span>Current progress is swift; the system itself has been designed to provide <strong>customizable error pages</strong> for Ruby on Rails.</span>
 </p>
 
 <!-- Sep --> 
