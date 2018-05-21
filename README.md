@@ -433,12 +433,12 @@ The drawback to this is that if you remove `ExceptionHandler` before you rollbac
 <div id="support">
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
   <p align="center"><br /><img src="https://cdn-images-1.medium.com/max/800/1*Z9AQMX2GRrtV9tTH7gAuHw.png" /></p>
-  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>  
+  <p align="center">---</p>  
 </div>
 
 ***Obviously*, if you've taken the time to use the gem, it makes sense to SUPPORT it**. 
 
-The fastest way to **get a DIRECT RESPONSE** is via [email](mailto:rpeck@frontlineutilities.co.uk).
+The fastest way to get a **DIRECT RESPONSE** is via [email](mailto:rpeck@frontlineutilities.co.uk).
 
 You're also welcome to access our [**Issues**](https://github.com/richpeck/exception_handler/issues) page to contact us directly. You could also use [**StackOverflow**](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler)...
 
@@ -459,11 +459,10 @@ You're also welcome to access our [**Issues**](https://github.com/richpeck/excep
 <!-- Changelog -->
 <div id="changelog">
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p> 
-  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*Z9AQMX2GRrtV9tTH7gAuHw.png" /></p>
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*Z9AQMX2GRrtV9tTH7gAuHw.png" /><br />---</p>
   <p><code><a href="https://www.rubygems.org/gems/exception_handler">ExceptionHandler</a></code> is designed to provide <strong>CUSTOM ERROR PAGES</strong> for Ruby on Rails → not much more than that.</p>
   <p>If you're looking at adding <em>extra</em> functionality, such as a debugger, you'll probably be better looking at the likes of <code><a href="https://rubygems.org/gems/better_errors">better_errors</a></code> or <code><a href="https://rubygems.org/gems/gaffe">gaffe</a></code>.</p>
-  <p>Below shows what we've built...</p>
-  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
+  <p>Below shows what we've built...</p>  
 </div>
 
 ### 👻 [1.0.0.0](https://github.com/richpeck/exception_handler/releases/tag/v1.0.0.0)
