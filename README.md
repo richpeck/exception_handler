@@ -427,20 +427,14 @@ To rollback, use the following:
 
 > The drawback to this is that if you remove `ExceptionHandler` before you rollback the migration, it won't exist anymore. You can **only** fire the `rollback` when you have `ExceptionHandler` installed.
 
-<!-- Sep --> 
-<p align="center">
-  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
-</p>
-
-<p id="support">
-  <h3>☎️ Support ☎️</h3>
-  <span>The most important thing to realize</span 
-</p>
-
-<!-- Sep --> 
-<p align="center">
-  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
-</p>
+<!-- Support -->
+<div id="support">
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
+  <p>
+    <h3>☎️ Support ☎️</h3>
+  </p>
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
+</div>
 
 You're welcome to access our [**Issues**](https://github.com/richpeck/exception_handler/issues) page to contact us directly. Alternatively, you could use [**StackOverflow**](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler)...
 
@@ -456,20 +450,12 @@ In the process of posting [**YouTube tutorials**](https://www.youtube.com/channe
   <a href="https://www.youtube.com/channel/UC5EMCOwsMbqvdTVGjMTDgPQ"><img src="./readme/youtube.png" /></a>
 </p>
 
-<!-- Sep --> 
-<p align="center">
-  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
-</p>
-
-<p id="changelog">
+<!-- Changelog -->
+<div id="changelog">
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
   <h3>⭐ <a href="https://www.github.com/richpeck/exception_handler/releases">Changelog</a> ⭐</h3>
-  <span>Current progress is swift; the system itself has been designed to provide <strong>customizable error pages</strong> for Ruby on Rails.</span>
-</p>
-
-<!-- Sep --> 
-<p align="center">
-  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
-</p>
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
+</div>
 
 ### 👻 [1.0.0.0](https://github.com/richpeck/exception_handler/releases/tag/v1.0.0.0)
   - [ ] TBA
