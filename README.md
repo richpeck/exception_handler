@@ -209,7 +209,7 @@ config.exception_handler = {}
 
 --
 
-If using an [`engine`](http://guides.rubyonrails.org/engines.html), you **DON'T** need an `initializer`:
+If using an [`engine`](http://guides.rubyonrails.org/engines.html), **DON'T need an `initializer`**:
 
     # lib/engine.rb
     module YourModule
