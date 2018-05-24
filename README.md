@@ -40,17 +40,12 @@
 </p>
 
 <p align="center">
-  With its <strong>NEW infrastructure</strong>, <code>ExceptionHandler</code> is now the <strong>LEADING CUSTOM ERROR PAGES GEM</strong> for Ruby on Rails. No other rivals its ease-of-use, extensibility, effectiveness or power...  
-</p>
-
-<p align="center">
   <img src="readme/branded/1.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/2.jpg" width="425" title="Fully Branded Error Pages" />
   <img src="readme/branded/3.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/4.jpg" width="425" title="Fully Branded Error Pages" />
 </p>
 
 <p align="center">
-  <strong>⚠️ *README* explains how it works... ⚠️</strong>
-  <br /><strong><a href="mailto: rpeck@frontlineutilities.co.uk" title="rpeck@fl.co.uk">✉️ Support Email ✉️</a></strong>
+  <strong><a href="mailto: rpeck@frontlineutilities.co.uk" title="rpeck@fl.co.uk">✉️ Support Email ✉️</a></strong>
 </p>
 
 <!-- Navigation -->
