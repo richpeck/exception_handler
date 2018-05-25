@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <strong>➡️ <code>ExceptionHandler</code> is a <a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677"><code>Custom Error Pages Gem</code></a> For Ruby on Rails ⬅️</strong> - With <strong>160,000+ downloads</strong>, it is now one of the most <strong>POPULAR</strong>, <strong>ROBUST</strong> & <strong>EXTENSIBLE</strong> exceptions management gems for <strong><a href="https://rubygems.org/gems/exception_handler">Ruby on Rails 4 & 5+</a></strong>... 
+  <strong>➡️ <code>ExceptionHandler</code> is a <a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677"><code>Custom Error Pages Gem</code></a> For Ruby on Rails ⬅️</strong> - With <strong>160,000+ downloads</strong>, it is one of the most <br /> <strong>POPULAR</strong>, <strong>ROBUST</strong> & <strong>EXTENSIBLE</strong> exceptions management gems for <strong><a href="https://rubygems.org/gems/exception_handler">Ruby on Rails 4 & 5+</a></strong>...
 </p>
 
 <p align="center">
@@ -36,7 +36,7 @@
 </p>
 
 <p align="center">
-  <strong><a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">🏹 <code>0.8.0.0</code> 🏹</a></strong> → <strong><A href="#config">🚧 CONFIG SETTINGS 🚧</a></strong> now <strong>*EVEN STRONGER*</strong> and more powerful than before ▪️ <br /> <strong>💻 CUSTOM Views Options 💻</strong> ▪️ <strong>💬 <code>4xx</code>/<code>5xx</code> LOCALES 💬</strong> + <strong>more</strong>...  
+  Version <a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">🏹 <code>0.8.0.0</code> 🏹</a> has now introduced a number of **KEY UPGRADES**, including... <br /> 🚧 <strong><A href="#config">CONFIG SETTINGS</a></strong> 🚧 <strong>*EVEN STRONGER*</strong> than before ▪️ <strong>💻 <strong><A href="#views">CUSTOM Views Options</a></strong> 💻</strong> ▪️ <strong>💬 <a href="#locales"><code>4xx</code>/<code>5xx</code> LOCALES</a> 💬</strong>...  
 </p>
 
 <p align="center">
@@ -45,7 +45,10 @@
 </p>
 
 <p align="center">
-  <strong><a href="mailto: rpeck@frontlineutilities.co.uk" title="rpeck@fl.co.uk">✉️ Support Email ✉️</a></strong>
+  <strong>
+    ⚠️ Tutorial shows how it works ⚠️
+    <br /><a href="mailto: rpeck@frontlineutilities.co.uk" title="rpeck@fl.co.uk">✉️ Support Email ✉️</a>
+  </strong>
 </p>
 
 <!-- Navigation -->
@@ -83,15 +86,15 @@
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
 </div>
 
-**There are 2️⃣ types of HTTP "error"** → **[`4xx (Client Error)`][40x]** & **[`5xx  (Server Error)`][50x]** ↴
+`ExceptionHandler` has been designed to replace Rails' *static* error pages with **DYNAMIC** views (utilizing the views/layouts/assets in your app). The secret is to **understand how HTTP works** (from an "errors" perspective)...
 
 <p align="center">
   <img src="./readme/http_codes.png" />
 </p>
 
-**HTTP errors don't mean anything - they're [**`STATUS CODES`**](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)**. If you're seeing an "error" from a website / app, you're basically seeing the result of an ***erroneous* HTTP status code** ([`4xx`][40x] or [`5xx`][50x]).
+**HTTP errors don't mean *anything* on their own**. They are **STATUS CODES** designed to provide the client (typically a "browser") with a *message* as to why the page didn't load correctly. This message is NOT the error - it's simply a "warning" message as to why the server could not complete your request.
 
-This means it ***doesn't matter*** what is shown in the browser. **ALL HTTP status codes behave in the same way** - they deliver  a "payload" ([HTML Message Body](https://en.wikipedia.org/wiki/HTTP_message_body)) which is shown to the client. Successful HTTP requests have a `200` status code; `Missing Page` requests have a `404` status code. In *BOTH* cases (despite one being erroneous), the browser displays the response from the server. 
+
 
 This payload is typically created by the website / app, but if no response is provided (for example, in the case of a `500` error), most web servers will provide its own "static" error page (to provide *something* by way of a response)...
 
@@ -138,14 +141,14 @@ The point is that when you're dealing with "errors" online, you're *actually* de
 
 Whilst it works without the need for **ANY** configuration, if you want to manage the `layouts`, `email`, `dev` or `database`, you'll need to set the appropriate values in the config hash ([invoked at init](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/engine.rb#L44)).
 
-This can be done with `config/application.rb`, `config/environments/[env].rb` or an `initializer`... 
+This can be done with `config/application.rb`, `config/environments/[env].rb` or an `initializer`...
 
 ```
 # config/application.rb
 
 module YourApp
   class Application < Rails::Application
-  
+
     config.exception_handler = {
       dev:        nil, # allows you to turn ExceptionHandler "on" in development
       db:         nil, # allocates a "table name" into which exceptions are saved (defaults to :errors)
@@ -157,24 +160,24 @@ module YourApp
         linkedin: nil, # LinkedIn name
         fusion:   nil  # FL Fusion handle
       },  
-      exceptions: { 
-        :all => { 
-          layout: "exception", # define layout 
+      exceptions: {
+        :all => {
+          layout: "exception", # define layout
           notification: true, # (false by default)
           deliver: #something here to control the type of response
         },
         :4xx => {
-          layout: "application", # define layout 
+          layout: "application", # define layout
           notification: true, # (false by default)
           deliver: #something here to control the type of response    
         },    
         :5xx => {
-          layout: "exception", # define layout 
+          layout: "exception", # define layout
           notification: true, # (false by default)
           deliver: #something here to control the type of response    
         },
         :500 => {
-          layout: "exception", # define layout 
+          layout: "exception", # define layout
           notification: true, # (false by default)
           deliver: #something here to control the type of response    
         },
@@ -187,7 +190,7 @@ module YourApp
         :510 => "exception"
       }
     }
-    
+
   end
 end
 ```  
@@ -351,11 +354,9 @@ You get access to `%{message}` and `%{status}`, both inferring from `@exception`
   <h4>📋 Layouts 📋</h4>
 </p>  
 
-**The `layout` has also been improved ↴**
-
 ![Layout][layout_img]
 
-We now assign layouts to the **status code** of the response:
+If you want to change the various layouts, you need to use the [`config`](#config) to set them.
 
 ![Layout][layouts_img]
 
@@ -366,7 +367,7 @@ By default, `5xx` errors are shown with our [`exception` layout][layout] - this 
 
 <p id="custom-exceptions">
   <h4>⛔️ Custom Exceptions ⛔️</h4>
-</p> 
+</p>
 
 **Custom Exceptions also supported in [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)**
 
@@ -385,7 +386,7 @@ Because `HTTP` can only process `4xx` / `5xx` errors, if `Rails` raises an excep
 
 <p id="generators">
   <h4>💼 Generators 💼</h4>
-</p> 
+</p>
 
 **You can generate `ExceptionHandler` into your own application.**
 
@@ -408,7 +409,7 @@ Each switch defines which folders you want (EG `-v views` will only copy `views`
 
 <p id="migrations">
   <h4>✔️ Migrations (deprecated) ✔️</h4>
-</p> 
+</p>
 
 **You *DON'T* need to generate a migration any more**.
 
@@ -431,14 +432,14 @@ The drawback to this is that if you remove `ExceptionHandler` before you rollbac
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>  
 </div>
 
-***Obviously*, if you've taken the time to use the gem, it makes sense to <a href="https://github.com/richpeck/exception_handler/issues">SUPPORT</a> it**. 
+***Obviously*, if you've taken the time to use the gem, it makes sense to <a href="https://github.com/richpeck/exception_handler/issues">SUPPORT</a> it**.
 
 The fastest way to get a **DIRECT RESPONSE** is via [email](mailto:rpeck@frontlineutilities.co.uk).
 
 You're also welcome to access our [**Issues**](https://github.com/richpeck/exception_handler/issues) page to contact us directly. You could also use [**StackOverflow**](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler)...
 
  - ⚠️ [**Issues**](https://github.com/richpeck/exception_handler/issues) ⚠️
- - 🚩 [**StackOverflow**](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler) 🚩 
+ - 🚩 [**StackOverflow**](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler) 🚩
  - ✉️ [**Email**](mailto:rpeck@frontlineutilities.co.uk) ✉️
  - ✏️ [**Medium**](https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677) ✏️
  - 🎥 [**YouTube**](https://www.youtube.com/channel/UCsPIR2s7iPdB7LrWHvaBgVg) 🎥
@@ -462,7 +463,7 @@ You're also welcome to access our [**Issues**](https://github.com/richpeck/excep
 
 <p><b>➡️ <code><a href="https://www.rubygems.org/gems/exception_handler">ExceptionHandler</a></code> is designed to provide <strong>CUSTOM ERROR PAGES</strong> for Ruby on Rails. ⬅️</b></p>
 <p>If you're looking at adding <em><b>extra</b></em> functionality (such as a debugger), you'll probably be better looking at the likes of <code><a href="https://rubygems.org/gems/better_errors">better_errors</a></code> or <code><a href="https://rubygems.org/gems/gaffe">gaffe</a></code>.</p>
-<p>Below shows what we've built...</p> 
+<p>Below shows what we've built...</p>
 
 ### 👻 [1.0.0.0](https://github.com/richpeck/exception_handler/releases/tag/v1.0.0.0)
   - [ ] TBA
@@ -512,7 +513,7 @@ You're also welcome to access our [**Issues**](https://github.com/richpeck/excep
  - [x] Streamlined middleware
  - [x] New layout & interface
 
-<!-- Sep --> 
+<!-- Sep -->
 <p align="center">
   <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
 </p>
@@ -538,14 +539,14 @@ You're also welcome to access our [**Issues**](https://github.com/richpeck/excep
   <strong>➡️ <a href="https://rubygems.org/gems/exception_handler">Download & Info</a> ⬅️ </strong>
 </p>
 
-<!-- Sep --> 
+<!-- Sep -->
 <p align="center">
   <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
 </p>
 
-:copyright: <a href="http://www.fl.co.uk" align="absmiddle" ><img src="readme/fl.jpg" height="22" align="absmiddle" /></a> <a href="http://stackoverflow.com/users/1143732/richard-peck?tab=profile" align="absmiddle" ><img src="https://avatars0.githubusercontent.com/u/1104431" height="22" align="absmiddle" /></a> <a href="https://github.com/joehilton" align="absmiddle" ><img src="https://avatars2.githubusercontent.com/u/5063592?s=460&v=4" height="22" align="absmiddle" /></a> <a href="https://github.com/toymachiner62" align="absmiddle" ><img src="https://avatars3.githubusercontent.com/u/485782" height="22" align="absmiddle" /></a> <a href="https://github.com/andrewclink" align="absmiddle" ><img src="https://avatars0.githubusercontent.com/u/688916" height="22" align="absmiddle" /></a> <a href="https://github.com/Startouf" align="absmiddle" ><img src="https://avatars2.githubusercontent.com/u/7388889" height="22" align="absmiddle" /></a> <a href="https://github.com/Tonkonozhenko" align="absmiddle" ><img src="https://avatars0.githubusercontent.com/u/1307646" height="22" align="absmiddle" /></a> <a href="https://github.com/mabako" align="absmiddle" ><img src="https://avatars3.githubusercontent.com/u/125113" height="22" align="absmiddle" /></a> <a href="https://github.com/frankzhao" align="absmiddle" ><img src="https://avatars3.githubusercontent.com/u/555499" height="22" align="absmiddle" /></a> 
- 
- 
+:copyright: <a href="http://www.fl.co.uk" align="absmiddle" ><img src="readme/fl.jpg" height="22" align="absmiddle" /></a> <a href="http://stackoverflow.com/users/1143732/richard-peck?tab=profile" align="absmiddle" ><img src="https://avatars0.githubusercontent.com/u/1104431" height="22" align="absmiddle" /></a> <a href="https://github.com/joehilton" align="absmiddle" ><img src="https://avatars2.githubusercontent.com/u/5063592?s=460&v=4" height="22" align="absmiddle" /></a> <a href="https://github.com/toymachiner62" align="absmiddle" ><img src="https://avatars3.githubusercontent.com/u/485782" height="22" align="absmiddle" /></a> <a href="https://github.com/andrewclink" align="absmiddle" ><img src="https://avatars0.githubusercontent.com/u/688916" height="22" align="absmiddle" /></a> <a href="https://github.com/Startouf" align="absmiddle" ><img src="https://avatars2.githubusercontent.com/u/7388889" height="22" align="absmiddle" /></a> <a href="https://github.com/Tonkonozhenko" align="absmiddle" ><img src="https://avatars0.githubusercontent.com/u/1307646" height="22" align="absmiddle" /></a> <a href="https://github.com/mabako" align="absmiddle" ><img src="https://avatars3.githubusercontent.com/u/125113" height="22" align="absmiddle" /></a> <a href="https://github.com/frankzhao" align="absmiddle" ><img src="https://avatars3.githubusercontent.com/u/555499" height="22" align="absmiddle" /></a>
+
+
 <!-- ################################### -->
 <!-- ################################### -->
 
