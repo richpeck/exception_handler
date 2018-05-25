@@ -248,15 +248,31 @@ You get access to `%{message}` and `%{status}`, both inferring from `@exception`
 
 ---
 
-## Layout
+## Exception Handling Options
 
-**The `layout` has also been improved ↴**
+Exception options can be controlled using the `exceptions` hash in the config. Each status code can be assigned a set of options. If options are left unassigned,
+they will default to the `all` entry.
 
-![Layout][layout_img]
 
-We now assign layouts to the **status code** of the response:
-
-![Layout][layouts_img]
+    # config/application.rb
+    config.exception_handler = {
+      email: "your@email.com",
+      exceptions: {
+        :all=> {
+          layout: 'my_custom_layout'
+        },
+        404  => { 
+          deliver: proc {|e| e.request.original_fullpath =~ /jpg|png/ }
+        },
+      }
+    }
+    
+#### Options
+- `layout`:
+  The name of the layout used for this status code. Accepts `nil`, `String`, or `Proc` with the exception as the argumen
+- `deliver`:
+  If an email address is provided in the config, whether an email should be delivered for this status code. Accepts `true`, `false`, or `Proc` with the exception as the argument
+  
 
 By default, `5xx` errors are shown with our [`exception` layout][layout] - this can be overridden by changing the `config` to use a layout of your choice. If you want to inherit the `ApplicationController` layout, assign the codes to `nil`.
 

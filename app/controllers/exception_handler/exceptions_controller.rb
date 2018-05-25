@@ -49,7 +49,12 @@ module ExceptionHandler
     private
 
     def layout
-      ExceptionHandler.config.layouts[@exception.status]
+      status = @exception.status
+      opts = ExceptionHandler.config.exceptions[status] || ExceptionHandler.config.exceptions[:all]
+      case opts[:layout]
+      when Proc then opts[:layout].call(@exception)
+      else opts[:layout]
+      end
     end
 
     ##################################
