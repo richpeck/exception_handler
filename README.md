@@ -86,27 +86,27 @@
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
 </div>
 
-`ExceptionHandler` has been designed to replace Rails' *static* error pages with **DYNAMIC** views (utilizing the views/layouts/assets in your app). The secret is to **understand how HTTP works** (from an "errors" perspective)...
+➡️ **`ExceptionHandler`** ⬅️ was designed to replace Rails' *static* error pages with **DYNAMIC** views (utilizing the views/layouts/assets in your app). The secret is to **understand how HTTP works** (from an "errors" perspective)...
 
 <p align="center">
   <img src="./readme/http_codes.png" />
 </p>
 
-**HTTP errors don't mean *anything* on their own**. They are **STATUS CODES** designed to provide the client (typically a "browser") with a *message* as to why the page didn't load correctly. This message is NOT the error - it's simply a "warning" message as to why the server could not complete your request.
+**⛔ HTTP errors don't mean *anything* on their own ⛔** - they are [**STATUS CODES**](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) - designed to provide the client (typically a "browser") with a ***message*** as to why the page didn't load correctly. What you see is **NOT** the error - but the "message" as to why the server could not complete your request. *How* that message is displayed has very little to do with HTTP, or even your backend software.
 
+When managing potential HTTP "error messages", most people are missing the point. **HTTP is just a means of *communication*** - meaning that your browser sends a *request* and the HTTP server provides a *response*. Known as a [`stateless protocol`](https://en.wikipedia.org/wiki/Stateless_protocol), the "HTTP" element of the transaction is a means of transferring data between two Internet-connected systems.
 
-
-This payload is typically created by the website / app, but if no response is provided (for example, in the case of a `500` error), most web servers will provide its own "static" error page (to provide *something* by way of a response)...
+Just because your app experienced an error *doesn't* mean that you cannot still use your views / controllers to display **BRANDED** error pages. The trick is understanding how to popular the `message_body` of the HTTP response with the appropriate data:
 
 <img src="https://mediatemple.zendesk.com/hc/article_attachments/202382660/500ise.jpg" />
 
-In the case of Rails, this functionality is provided by the `400.html` and `500.html` *static* error pages in the `/public` folder...
+In the case of Rails, this functionality is provided by the `400.html` and `500.html` pages in the `/public` folder...
 
 <p align="center">
   <img src="./readme/middleware.jpg" />
 </p>
 
-Whilst <b>only 2️⃣ are erroneous</b>, there are **5️⃣ types of <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status code</a>** - [`10x`][10x], [`20x`][20x], [`30x`][30x], [`40x`][40x], & [`50x`][50x].
+There are **5️⃣ types of <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status code</a>** - [`10x`][10x], [`20x`][20x], [`30x`][30x], [`40x`][40x], & [`50x`][50x].
 
 Each has their own reason for existing, but what's important is <b>they *ALL* describe "responses" that your web browser will receive for HTTP requests</b>...  
 
