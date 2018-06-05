@@ -1,10 +1,10 @@
-<a href="https://www.vpsdeploy.com">
-  <img src="https://cdn-images-1.medium.com/max/1000/1*vgHW2hcnbHHaAYR44vU7Gw.jpeg" />
-</a>
 <hr />
 <p align="center">
   <strong>💣 README Updated 💣 - Also incorporated into 💀 <a href="https://www.vpsdeploy.com" title="Custom VPS Deployment For Rails"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/><code>Custom Programming Tutorials</code> + <code>Deployment Infrastructure</code> For Cloud VPS Providers...</strong>
 </p>
+<a href="https://www.vpsdeploy.com">
+  <img src="https://cdn-images-1.medium.com/max/1000/1*vgHW2hcnbHHaAYR44vU7Gw.jpeg" />
+</a>
 <hr />
 
 ![Exception Handler](readme/title.jpg "Exception Handler Logo")
