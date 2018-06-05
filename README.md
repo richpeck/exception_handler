@@ -6,7 +6,7 @@
 <a href="https://www.vpsdeploy.com">
   <img src="https://cdn-images-1.medium.com/max/1000/1*vgHW2hcnbHHaAYR44vU7Gw.jpeg" />
 </a>
-
+<hr />
 
 ![Exception Handler](readme/title.jpg "Exception Handler Logo")
 
