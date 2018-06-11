@@ -56,7 +56,7 @@
 <div id="navigation">
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
   <p align="center">
-    <b>⌚️ <a href="#introduction">Introduction</a> ⌚️</b> ▪️ <strong>✔️ <a href="#installation">Installation</a> ✔️</strong> ▪️ <strong>🔨 <a href="#setup">Setup</a> 🔨</strong> ▪️ <strong>☎️ <a href="#support">Support</a> ☎️</strong> ▪️ <strong>⭐ <a href="#changelog">Changelog</a> ⭐</strong>
+    <b>⌚️ <a href="#introduction">Introduction</a> ⌚️</b> ❙ <strong>✔️ <a href="#installation">Installation</a> ✔️</strong> ❙ <strong>🔨 <a href="#setup">Setup</a> 🔨</strong> ❙ <strong>☎️ <a href="#support">Support</a> ☎️</strong> ❙ <strong>⭐ <a href="#changelog">Changelog</a> ⭐</strong>
   </p>
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
 </div>
