@@ -1,11 +1,11 @@
 <hr />
-<p align="center">
-  <strong>💣 README Updated 💣 - Incorporated into 💀 <a href="https://www.vpsdeploy.com" title="Custom VPS Deployment For Rails"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/><code>Custom Programming Tutorials</code> + <code>Deployment Infrastructure</code> For Cloud VPS Providers...</strong>
-</p>
-<hr />
 <a href="https://www.vpsdeploy.com">
   <img src="https://cdn-images-1.medium.com/max/1000/1*vgHW2hcnbHHaAYR44vU7Gw.jpeg" />
 </a>
+<hr />
+<p align="center">
+  <strong>💣 README Updated 💣 - Incorporated into 💀 <a href="https://www.vpsdeploy.com" title="Custom VPS Deployment For Rails"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/><code>Custom Programming Tutorials</code> + <code>Deployment Infrastructure</code> For Cloud VPS Providers...</strong>
+</p>
 <hr />
 
 ![Exception Handler](readme/title.jpg "Exception Handler Logo")
@@ -462,7 +462,7 @@ You're also welcome to access our [**Issues**](https://github.com/richpeck/excep
 </div>
 
 <p><b>➡️ <code><a href="https://www.rubygems.org/gems/exception_handler">ExceptionHandler</a></code> is designed to provide <strong>CUSTOM ERROR PAGES</strong> for Ruby on Rails. ⬅️</b></p>
-<p>If you're looking at adding <em><b>extra</b></em> functionality (such as a debugger), you'll probably be better looking at the likes of <code><a href="https://rubygems.org/gems/better_errors">better_errors</a></code> or <code><a href="https://rubygems.org/gems/gaffe">gaffe</a></code>.</p>
+<p>If you're looking at adding <em><b>extra</b></em> functionality (such as a debugger), you'll probably be better looking at the likes of <code><a href="https://rubygems.org/gems/better_errors">better_errors</a></code> or <code><a href="https://rubygems.org/gems/gaffe">gaffe</a></code>. In the pursuit of developing a SIMPLE & EFFECTIVE</p>
 <p>Below shows what we've built...</p>
 
 ### 👻 [1.0.0.0](https://github.com/richpeck/exception_handler/releases/tag/v1.0.0.0)
