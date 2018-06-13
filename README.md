@@ -3,7 +3,7 @@
 </a>
 <hr />
 <p align="center">
-  <strong>💣 README Updated 💣 - Incorporated into 💀 <a href="https://www.vpsdeploy.com" title="Custom VPS Deployment For Rails"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/><code>Custom Programming Tutorials</code> + <code>Deployment Infrastructure</code> For Cloud VPS Providers...</strong>
+  <strong>💣 README Updated 💣 - Gem Incorporated into 💀 <a href="https://www.vpsdeploy.com" title="Custom VPS Deployment For Rails"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/><code>Custom Programming Tutorials</code> + <code>Deployment Infrastructure</code> For Cloud VPS Providers...</strong>
 </p>
 <hr />
 
