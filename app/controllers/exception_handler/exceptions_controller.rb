@@ -48,8 +48,34 @@ module ExceptionHandler
 
     private
 
+    # => Shows different layouts
+    # => New setup takes
     def layout
-      ExceptionHandler.config.layouts[@exception.status]
+
+      # specific first
+      # all second
+      # 4xx/5xx last
+
+      # => Has to cover older version { "x" }
+      # => Has to cover newer version { layout: "x" }
+      config =
+        ExceptionHandler.config.try(:[], :layouts).try(   :[], @exception.status)
+        ExceptionHandler.config.try(:[], :layouts).try(   :[], @exception.status.to_s) ||
+        ExceptionHandler.config.try(:[], :exceptions).try(:[], @exception.status) ||
+        ExceptionHandler.config.try(:[], :exceptions).try(:[], @exception.status.to_s) ||
+        ExceptionHandler.config.try(:[], :exceptions).try(:[], 'all') ||
+        ExceptionHandler.config.try(:[], :exceptions).try(:[], @exception.status.to_s.first + 'xx')
+
+      # expected result either STRING or HASH
+      case true
+        when config.is_a?(String)
+          config  # => Old
+        when config.is_a?(Hash)
+          config.try(:[], :layout) # => New
+        else
+          "exception" # => Failsafe
+      end
+
     end
 
     ##################################
