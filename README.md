@@ -3,7 +3,7 @@
 </a>
 <hr />
 <p align="center">
-  <strong>💣 README Updated 💣 - Also incorporated into 💀 <a href="https://www.vpsdeploy.com" title="Custom VPS Deployment For Rails"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/><code>Custom Programming Tutorials</code> + <code>Deployment Infrastructure</code> For Cloud VPS Providers...</strong>
+  <strong>💣 README Updated 💣 - Gem Incorporated into 💀 <a href="https://www.vpsdeploy.com" title="Custom VPS Deployment For Rails"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/><code>Custom Programming Tutorials</code> + <code>Deployment Infrastructure</code> For Cloud VPS Providers...</strong>
 </p>
 <hr />
 
@@ -55,7 +55,7 @@
 <div id="navigation">
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
   <p align="center">
-    <b>⌚️ <a href="#introduction">Introduction</a> ⌚️</b> ▪️ <strong>✔️ <a href="#installation">Installation</a> ✔️</strong> ▪️ <strong>🔨 <a href="#setup">Setup</a> 🔨</strong> ▪️ <strong>☎️ <a href="#support">Support</a> ☎️</strong> ▪️ <strong>⭐ <a href="#changelog">Changelog</a> ⭐</strong>
+    <b>⌚️ <a href="#introduction">Introduction</a> ⌚️</b> ❙ <strong>✔️ <a href="#installation">Installation</a> ✔️</strong> ❙ <strong>🔨 <a href="#setup">Setup</a> 🔨</strong> ❙ <strong>☎️ <a href="#support">Support</a> ☎️</strong> ❙ <strong>⭐ <a href="#changelog">Changelog</a> ⭐</strong>
   </p>
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
 </div>
@@ -461,7 +461,7 @@ You're also welcome to access our [**Issues**](https://github.com/richpeck/excep
 </div>
 
 <p><b>➡️ <code><a href="https://www.rubygems.org/gems/exception_handler">ExceptionHandler</a></code> is designed to provide <strong>CUSTOM ERROR PAGES</strong> for Ruby on Rails. ⬅️</b></p>
-<p>If you're looking at adding <em><b>extra</b></em> functionality (such as a debugger), you'll probably be better looking at the likes of <code><a href="https://rubygems.org/gems/better_errors">better_errors</a></code> or <code><a href="https://rubygems.org/gems/gaffe">gaffe</a></code>.</p>
+<p>If you're looking at adding <em><b>extra</b></em> functionality (such as a debugger), you'll probably be better looking at the likes of <code><a href="https://rubygems.org/gems/better_errors">better_errors</a></code> or <code><a href="https://rubygems.org/gems/gaffe">gaffe</a></code>. In the pursuit of developing a SIMPLE & EFFECTIVE</p>
 <p>Below shows what we've built...</p>
 
 ### 👻 [1.0.0.0](https://github.com/richpeck/exception_handler/releases/tag/v1.0.0.0)
