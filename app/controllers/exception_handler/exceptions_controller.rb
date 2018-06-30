@@ -20,6 +20,11 @@ module ExceptionHandler
     before_action { |e| @exception = ExceptionHandler::Exception.new request: e.request }
     before_action { @exception.save if @exception.valid? && ExceptionHandler.config.try(:db) }
 
+    # => Routes
+    # => This only exists if EH is in development mode (not in production) 
+    # => https://github.com/rails/rails/issues/22613 (custom error responses)
+    before_action Proc.new { raise (ActionDispatch::ExceptionWrapper.rescue_responses.key(params[:code].to_sym) || 'Exception').classify }, if: proc { params[:code] && ExceptionHandler.config.try(:dev) }
+
     # => Response format (required for non-standard formats (.css / .gz etc))
     # => request.format required until responders updates with wildcard / failsafe (:all)
     before_action { |e| e.request.format = :html unless self.class.respond_to.include? e.request.format }
