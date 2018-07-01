@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <strong>➡️ <code>ExceptionHandler</code> is a <a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677"><code>Custom Error Pages Gem</code></a> For Ruby on Rails ⬅️</strong> - With <strong>160,000+ downloads</strong>, it is one of the most <br /> <strong>POPULAR</strong>, <strong>ROBUST</strong> & <strong>EXTENSIBLE</strong> exceptions management gems for <strong><a href="https://rubygems.org/gems/exception_handler">Ruby on Rails 4 & 5+</a></strong>...
+  <strong>➡️ <code>ExceptionHandler</code> is a <a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677"><code>Custom Error Pages Gem</code></a> For Ruby on Rails ⬅️</strong> - With <strong>160,000+ downloads</strong>, it is one of the most <br /> <strong>popular</strong>, <strong>robust</strong> & <strong>extensible</strong> exceptions management gems for <strong><a href="https://rubygems.org/gems/exception_handler">Ruby on Rails 4 & 5+</a></strong>...
 </p>
 
 <p align="center">
@@ -36,7 +36,7 @@
 </p>
 
 <p align="center">
-  <b>Version <a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">🏹 <code>0.8.0.0</code> 🏹</a> has now introduced a number of <b>⭐️ KEY UPGRADES ⭐️</b> including...</b> <br /> 🚧 <strong><A href="#config">CONFIG SETTINGS</a></strong> 🚧 ▪️ <strong>💻 <strong><A href="#views">CUSTOM Views Options</a></strong> 💻</strong> ▪️ <strong>💬 <a href="#locales"><code>4xx</code>/<code>5xx</code> LOCALES</a> 💬</strong>...  
+  <b>Version <a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">🏹 <code>0.8.0.0</code> 🏹</a> has now introduced a number of <b>⭐️ KEY UPGRADES ⭐️</b> including...</b> <br /> 🚧 <strong><A href="#config">Config Settings</a></strong> 🚧 ▪️ <strong>💻 <strong><A href="#views">Custom Views Options</a></strong> 💻</strong> ▪️ <strong>💬 <a href="#locales"><code>4xx</code>/<code>5xx</code> Locales</a> 💬</strong>...  
 </p>
 
 <p align="center">
@@ -85,16 +85,15 @@
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
 </div>
 
-➡️ [**`ExceptionHandler`**](https://rubygems.org/gems/exception_handler) ⬅️ was designed to replace Rails' static error pages (`400.html`, `422.html`, `500.html`) with dynamic views...
+➡️ [**`ExceptionHandler`**](https://rubygems.org/gems/exception_handler) ⬅️ was designed to replace Rails' error pages ([`400.html`, `422.html`, `500.html`](https://github.com/rails/rails/tree/ef0b05e78fb0b928c7ef48d3c365dc849af50305/railties/lib/rails/generators/rails/app/templates/public)) with dynamic views...
 
 <p align="center">
   <img src="./readme/http_codes.png" />
 </p>
 
-It works by injecting `exceptions_app` with our own [custom controller](app/controllers/exception_handler/exceptions_controller.rb).
+It works by injecting [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) with our own [custom controller](app/controllers/exception_handler/exceptions_controller.rb).
 
-The controller uses a *single* view to build a *dynamic* response to errors raised by Rails.
-
+The controller then uses a *single* view to build a *dynamic* response to errors raised by Rails. 
 The view provides access to an `@exception` object (allowing us to display error messages etc) - but most importantly, allows us to change its appearance via the layout.
 
 The most important thing to remember is that `exception_handler` is designed to provide a custom "exceptions" controller which is invoked any time Rails experiences an error. The controller calls a view and layout to provide a completely custom error pages gem for Rails.
