@@ -438,7 +438,7 @@ The drawback to this is that if you remove `ExceptionHandler` before you rollbac
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>  
 </div>
 
-**🚨 *Obviously*, if you've taken the time to use the gem, it makes sense to <a href="https://github.com/richpeck/exception_handler/issues">support</a> it 🚨.**
+<p align="center"><b>🚨 <em>Obviously</em>, if you've taken the time to use the gem, it makes sense to <a href="https://github.com/richpeck/exception_handler/issues">support</a> it 🚨</b></p>
 
 The fastest way to get a **direct response** is via [email](mailto:rpeck@frontlineutilities.co.uk).
 
@@ -463,7 +463,7 @@ You're also welcome to access our [**Issues**](https://github.com/richpeck/excep
 
 The most important thing to appreciate is...
 
-<p><b>➡️ <code><a href="https://www.rubygems.org/gems/exception_handler">ExceptionHandler</a></code> is designed to provide <strong><A href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">custom error pages</a></strong> for Ruby on Rails. ⬅️</b></p>
+<p align="center"><b>➡️ <code><a href="https://www.rubygems.org/gems/exception_handler">ExceptionHandler</a></code> is designed to provide <strong><A href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">custom error pages</a></strong> for Ruby on Rails. ⬅️</b></p>
 
 <p>If you're looking at adding <em><b>extra</b></em> functionality (such as a debugger), you'll probably be better looking at the likes of <code><a href="https://rubygems.org/gems/better_errors">better_errors</a></code> or <code><a href="https://rubygems.org/gems/gaffe">gaffe</a></code>. Whilst we'll certainly look at adding - or integrating - other features if they're requested, our core intention has always been to provide an exception handling stack that was both simple and customizable.</p>
 
