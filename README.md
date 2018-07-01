@@ -91,9 +91,9 @@
   <img src="./readme/http_codes.png" />
 </p>
 
-It works by injecting [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) with our own custom [ `controller`](app/controllers/exception_handler/exceptions_controller.rb).
+The system inserts our custom [ `controller`](app/controllers/exception_handler/exceptions_controller.rb) into [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), allowing us to render custom HTML for erroneous requests. It also means we're able to save the errors in their own database table, send emails and completely customize the response  
 
-The controller uses a *single* method/view to build a response to errors. This view remains the same for *every* exception; ONLY change is the *[layout](/app/views/layouts/exception.html.erb)* - which changes depending on the HTTP response to be returned (`4xx` or `5xx`).
+The controller uses a *single* method/view to build a response to errors. This view remains the same for *every* exception; ONLY change is the *[layout](/app/views/layouts/exception.html.erb)* - which depends on the HTTP response to be returned (`4xx` or `5xx`).
 
 The beauty lies in the *simplicity* through which this is achieved. Rather than having many different elements, the SOLE focus is to provide different HTML responses via differing *layouts*. `ExceptionHandler` does this within the scope of `ActionView`, allowing for the use of `views`, `helpers` and `data` from the database (if necessary).
 
@@ -107,8 +107,8 @@ This means that all you're really doing is taking "Ruby" errors and giving them 
 
 What confuses most is the way in which Rails does this. The process is handled by [`ActionDispatch::ShowExceptions`](https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/show_exceptions.rb#L44) - which builds a new response out of the one passed to it by the exception generator. Through this process, it calls whichever class is present in `exceptions_app` to obtain the HTML.
 
-In other words, what a user *sees* has very little to do with the fact Rails experienced an error. Whilst the default behaviour entails static HTML files - we've been able to inject a controller instead - providing *dynamic* views for erroneous requests.
-  
+In other words, what a user *sees* has very little to do with the fact Rails experienced an error. Whilst the default behaviour entails static HTML files - we've been able to inject a controller instead - providing *dynamic* views for erroneous requests...
+
 <p align="center">
   <img src="./readme/middleware.jpg" />
 </p>
