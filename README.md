@@ -91,13 +91,13 @@
   <img src="./readme/http_codes.png" />
 </p>
 
-It works by injecting [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) with a custom [ `controller`](app/controllers/exception_handler/exceptions_controller.rb).
+It works by injecting [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) with our custom [ `controller`](app/controllers/exception_handler/exceptions_controller.rb).
 
-The controller uses a single *[view](app/views/exception_handler/show.html.erb)* to build a *dynamic* response to errors raised. The view remains constant; the ONLY moving part is the *[layout](/app/views/layouts/exception.html.erb)* - which changes depending on the HTTP response to be returned.
+The controller uses a *single* method/view to build a response to errors raised. The view remains the same for EVERY exception; the ONLY thing that changes is the *[layout](/app/views/layouts/exception.html.erb)* - which changes depending on the HTTP response to be returned (typically `4xx` or `5xx`).
 
-The real beauty lies in the *simplicity* through which this is achieved. Rather than having many different elements, the SOLE focus is to provide a dynamic HTML response through `exceptions_app`. `ExceptionHandler` does this within the scope of `ActionView`, allowing you to use your own layouts etc.
+The beauty lies in the *simplicity* through which this is achieved. Rather than having many different elements, the SOLE focus is to provide different HTML responses via differing layouts. `ExceptionHandler` does this within the scope of `ActionView`, allowing for the use of views, helpers and other data from the database.
 
-The controller builds an `@exception` object, which can then be referenced in the view. The magic comes from the layouts, which determine the look & feel of the erroneous page. Since `500` errors typically dente  
+Its controller builds an `@exception` object, which can then be referenced in the view. The magic comes from the layouts, which determine the look & feel of the erroneous page. Since `500` errors typically denote server errors, we have included a custom "exceptions" layout which we invoke for `5xx` errors by default.    
 
 --
 
@@ -107,7 +107,7 @@ The most important thing to understand is that *it doesn't matter* which errors 
 
 This means that all you're really doing is taking "Ruby" errors and giving them an appropriate HTTP status code & message body (HTML). Rails handles the process for you - the only thing we need to worry about is how the HTML is generated.  
 
-What confuses most is the way in which Rails does this - *translating* application errors into valid HTTP responses. The whole process is handled by [`ActionDispatch::ShowExceptions`](https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/show_exceptions.rb#L44) - 
+What confuses most is the way in which Rails does this - *translating* application errors into valid HTTP responses. The whole process is handled by [`ActionDispatch::ShowExceptions`](https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/show_exceptions.rb#L44) -
 
 In other words,
 
