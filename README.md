@@ -93,11 +93,11 @@
 
 It works by injecting [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) with our custom [ `controller`](app/controllers/exception_handler/exceptions_controller.rb).
 
-The controller uses a *single* method/view to build a response to errors raised. The view remains the same for EVERY exception; the ONLY thing that changes is the *[layout](/app/views/layouts/exception.html.erb)* - which changes depending on the HTTP response to be returned (typically `4xx` or `5xx`).
+The controller uses a *single* method/view to build a response to errors raised. This view remains the same for EVERY exception; the ONLY thing that changes is the *[layout](/app/views/layouts/exception.html.erb)* - which changes depending on the HTTP response to be returned (`4xx` or `5xx`).
 
-The beauty lies in the *simplicity* through which this is achieved. Rather than having many different elements, the SOLE focus is to provide different HTML responses via differing layouts. `ExceptionHandler` does this within the scope of `ActionView`, allowing for the use of views, helpers and other data from the database.
+The beauty lies in the *simplicity* through which this is achieved. Rather than having many different elements, the SOLE focus is to provide different HTML responses via differing *layouts*. `ExceptionHandler` does this within the scope of `ActionView`, allowing for the use of views, helpers and data from the database (if necessary).
 
-Its controller builds an `@exception` object, which can then be referenced in the view. The magic comes from the layouts, which determine the look & feel of the erroneous page. Since `500` errors typically denote server errors, we have included a custom "exceptions" layout which we invoke for `5xx` errors by default.    
+  
 
 --
 
