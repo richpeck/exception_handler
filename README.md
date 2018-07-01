@@ -91,22 +91,25 @@
   <img src="./readme/http_codes.png" />
 </p>
 
-It works by injecting [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) with our own [ `controller`](app/controllers/exception_handler/exceptions_controller.rb).
+It works by injecting [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) with a custom [ `controller`](app/controllers/exception_handler/exceptions_controller.rb).
 
-The controller uses a *single* [view](app/views/exception_handler/show.html.erb) to build a *dynamic* response to errors raised by Rails.
-The view has access to an `@exception` object (set by the controller) - allowing us to show the error's message etc.
+The controller uses a single *[view](app/views/exception_handler/show.html.erb)* to build a *dynamic* response to errors raised. The view remains constant; the ONLY moving part is the *[layout](/app/views/layouts/exception.html.erb)* - which changes depending on the HTTP response to be returned.
 
-The most important thing to remember is that `exception_handler` is designed to provide a custom "exceptions" controller which is invoked any time Rails experiences an error. The controller calls a view and layout to provide a completely custom error pages gem for Rails.
+The real beauty lies in the *simplicity* through which this is achieved. Rather than having many different elements, the SOLE focus is to provide a dynamic HTML response through `exceptions_app`. `ExceptionHandler` does this within the scope of `ActionView`, allowing you to use your own layouts etc.
+
+The controller builds an `@exception` object, which can then be referenced in the view. The magic comes from the layouts, which determine the look & feel of the erroneous page. Since `500` errors typically dente  
 
 --
 
 ### 📑 HTTP
 
-The most important thing to understand is that *it doesn't matter* which errors Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).  Due to the nature of HTTP, you only need to facilitate responses for [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) + [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors) status codes.
+The most important thing to understand is that *it doesn't matter* which errors Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).  Due to the nature of HTTP, you only need to facilitate responses for its [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) + [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors) status codes.
 
-What confuses most people is the way in which Rails translates *application* errors into *HTTP* errors. It does this via the `ActionDispatch::ExceptionWrapper.rescue_responses` hash, which is used by ____ to
+This means that all you're really doing is taking "Ruby" errors and giving them an appropriate HTTP status code & message body (HTML). Rails handles the process for you - the only thing we need to worry about is how the HTML is generated.  
 
-The ExceptionWrapper middleware translates
+What confuses most is the way in which Rails does this - *translating* application errors into valid HTTP responses. The whole process is handled by [`ActionDispatch::ShowExceptions`](https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/show_exceptions.rb#L44) - 
+
+In other words,
 
 <p align="center">
   <img src="./readme/middleware.jpg" />
@@ -448,10 +451,10 @@ You're also welcome to access our [**Issues**](https://github.com/richpeck/excep
  - 🚩 [**StackOverflow**](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler) 🚩
  - ✉️ [**Email**](mailto:rpeck@frontlineutilities.co.uk) ✉️
  - ✏️ [**Medium**](https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677) ✏️
- - 🎥 [**YouTube**](https://www.youtube.com/channel/UCsPIR2s7iPdB7LrWHvaBgVg) 🎥 ↴
+ - 🎥 [**YouTube**](https://www.youtube.com/channel/UC247lm76ECX1aSvVuhXxe6g) 🎥 ↴
 
 <p align="center">
-  <a href="https://www.youtube.com/channel/UC5EMCOwsMbqvdTVGjMTDgPQ"><img src="./readme/youtube.png" /></a>
+  <a href="https://www.youtube.com/channel/UC247lm76ECX1aSvVuhXxe6g"><img src="./readme/youtube.png" /></a>
 </p>
 
 <!-- Changelog -->
@@ -467,7 +470,9 @@ The most important thing to appreciate is...
 
 <p>If you're looking at adding <em><b>extra</b></em> functionality (such as a debugger), you'll probably be better looking at the likes of <code><a href="https://rubygems.org/gems/better_errors">better_errors</a></code> or <code><a href="https://rubygems.org/gems/gaffe">gaffe</a></code>. Whilst we'll certainly look at adding - or integrating - other features if they're requested, our core intention has always been to provide an exception handling stack that was both simple and customizable.</p>
 
-Below shows what we've built so far...
+--
+
+What we've built so far...
 
 ### 👻 [1.0.0.0](https://github.com/richpeck/exception_handler/releases/tag/v1.0.0.0)
   - [ ] TBA
