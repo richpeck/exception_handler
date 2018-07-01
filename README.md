@@ -91,10 +91,10 @@
   <img src="./readme/http_codes.png" />
 </p>
 
-It works by injecting [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) with our own [custom controller](app/controllers/exception_handler/exceptions_controller.rb).
+It works by injecting [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) with our own [ `controller`](app/controllers/exception_handler/exceptions_controller.rb).
 
-The controller then uses a *single* view to build a *dynamic* response to errors raised by Rails.
-The view provides access to an `@exception` object (allowing us to display error messages etc) - but most importantly, allows us to change its appearance via the layout.
+The controller uses a *single* [view](app/views/exception_handler/show.html.erb) to build a *dynamic* response to errors raised by Rails.
+The view has access to an `@exception` object (set by the controller) - allowing us to show the error's message etc.
 
 The most important thing to remember is that `exception_handler` is designed to provide a custom "exceptions" controller which is invoked any time Rails experiences an error. The controller calls a view and layout to provide a completely custom error pages gem for Rails.
 
@@ -102,11 +102,9 @@ The most important thing to remember is that `exception_handler` is designed to 
 
 ### 📑 HTTP
 
-The most important thing to understand is that *it doesn't matter* which errors Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).  
+The most important thing to understand is that *it doesn't matter* which errors Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).  Due to the nature of HTTP, you only need to facilitate responses for [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) + [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors) status codes.
 
-Due to the nature of [HTTP errors](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes), you *only* need to provide responses for [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) + [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors) errors.
-
-What confuses most people is the way in which Rails translates these *application* errors into HTTP errors. It does this via the `ActionDispatch::ExceptionWrapper.rescue_responses` hash, which translates common Rails errors into valid HTTP status codes.
+What confuses most people is the way in which Rails translates *application* errors into *HTTP* errors. It does this via the `ActionDispatch::ExceptionWrapper.rescue_responses` hash, which is used by ____ to
 
 The ExceptionWrapper middleware translates
 
@@ -440,9 +438,9 @@ The drawback to this is that if you remove `ExceptionHandler` before you rollbac
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>  
 </div>
 
-***Obviously*, if you've taken the time to use the gem, it makes sense to <a href="https://github.com/richpeck/exception_handler/issues">SUPPORT</a> it**.
+** 🚨 *Obviously*, if you've taken the time to use the gem, it makes sense to <a href="https://github.com/richpeck/exception_handler/issues">support</a> it 🚨 **.
 
-The fastest way to get a **DIRECT RESPONSE** is via [email](mailto:rpeck@frontlineutilities.co.uk).
+The fastest way to get a **direct response** is via [email](mailto:rpeck@frontlineutilities.co.uk).
 
 You're also welcome to access our [**Issues**](https://github.com/richpeck/exception_handler/issues) page to contact us directly. You could also use [**StackOverflow**](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler)...
 
@@ -455,7 +453,7 @@ You're also welcome to access our [**Issues**](https://github.com/richpeck/excep
 --
 
 <p align="center">
-  ⬇️ <b>Presently in the process of posting a <a href="https://www.youtube.com/channel/UC5EMCOwsMbqvdTVGjMTDgPQ">YouTube tutorial</a>...</b> ⬇️
+  ⬇️ <b>Presently in the process of creating a <a href="https://www.youtube.com/channel/UC5EMCOwsMbqvdTVGjMTDgPQ">YouTube tutorial</a>...</b> ⬇️
 </p>
 
 <p align="center">
@@ -469,19 +467,22 @@ You're also welcome to access our [**Issues**](https://github.com/richpeck/excep
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>   
 </div>
 
-<p><b>➡️ <code><a href="https://www.rubygems.org/gems/exception_handler">ExceptionHandler</a></code> is designed to provide <strong>CUSTOM ERROR PAGES</strong> for Ruby on Rails. ⬅️</b></p>
-<p>If you're looking at adding <em><b>extra</b></em> functionality (such as a debugger), you'll probably be better looking at the likes of <code><a href="https://rubygems.org/gems/better_errors">better_errors</a></code> or <code><a href="https://rubygems.org/gems/gaffe">gaffe</a></code>. In the pursuit of developing a SIMPLE & EFFECTIVE</p>
-<p>Below shows what we've built...</p>
+<p>The most important thing to appreciate is...</p><p><b>➡️ <code><a href="https://www.rubygems.org/gems/exception_handler">ExceptionHandler</a></code> is designed to provide <strong>custom error pages</strong> for Ruby on Rails. ⬅️</b></p>
+
+<p>If you're looking at adding <em><b>extra</b></em> functionality (such as a debugger), you'll probably be better looking at the likes of <code><a href="https://rubygems.org/gems/better_errors">better_errors</a></code> or <code><a href="https://rubygems.org/gems/gaffe">gaffe</a></code>. Whilst we'll certainly look at adding - or integrating - other features if they're requested, our core intention has always been to provide an exception handling stack that was both simple and customizable.</p>
+
+Below shows what we've built so far...
 
 ### 👻 [1.0.0.0](https://github.com/richpeck/exception_handler/releases/tag/v1.0.0.0)
   - [ ] TBA
 
 ### 🏹 [0.8.0.0](https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0)
  - [x] [README](https://github.com/richpeck/exception_handler/issues/52) (focus on utility)
- - [x] Locales for `4xx`/`5xx` errors  
+ - [x] Introduction of `4xx`,`5xx`,`:all` for layouts config
+ - [x] Changed `layouts` to `exceptions` in config    
  - [x] Email improvement
- - [x] Streamlined migration etc
- - [x] Updated "exceptions" config options ([per](https://github.com/richpeck/exception_handler/pull/63))
+ - [x] Streamlined migration
+ - [x] Updated model
 
 ### 👽 [0.7.7.0](https://github.com/richpeck/exception_handler/releases/tag/v0.7.7.0)
  - [x] [HTTP status layouts](#layouts)
