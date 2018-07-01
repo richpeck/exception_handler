@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
       # => Items
       Rack::Utils::HTTP_STATUS_CODES.select{ |key, value| key.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |status,code|
-        get status.to_s, to: 'exception_handler/exceptions#show', as: code.underscore.gsub(' ', '_'), code: code.underscore.gsub(' ', '_')
+        get status.to_s, to: 'exception_handler/exceptions#dev', as: code.underscore.gsub(' ', '_'), code: code.underscore.gsub(' ', '_')
       end
 
     end
