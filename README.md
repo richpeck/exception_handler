@@ -93,7 +93,7 @@
 
 It works by injecting [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) with our own [custom controller](app/controllers/exception_handler/exceptions_controller.rb).
 
-The controller then uses a *single* view to build a *dynamic* response to errors raised by Rails. 
+The controller then uses a *single* view to build a *dynamic* response to errors raised by Rails.
 The view provides access to an `@exception` object (allowing us to display error messages etc) - but most importantly, allows us to change its appearance via the layout.
 
 The most important thing to remember is that `exception_handler` is designed to provide a custom "exceptions" controller which is invoked any time Rails experiences an error. The controller calls a view and layout to provide a completely custom error pages gem for Rails.
@@ -102,7 +102,7 @@ The most important thing to remember is that `exception_handler` is designed to 
 
 ### 📑 HTTP
 
-What most people don't understand is that it doesn't matter which errors Rails raises - they *all* need to be wrapped in a valid HTTP response.  
+The most important thing to understand is that *it doesn't matter* which errors Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).  
 
 Due to the nature of [HTTP errors](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes), you *only* need to provide responses for [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) + [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors) errors.
 
