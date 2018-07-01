@@ -79,6 +79,7 @@
 
 <!-- Introduction -->
 <div id="introduction">
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
   <p>
     <h3>⌚️ Introduction ⌚️</h3>
   </p>
@@ -91,9 +92,9 @@
   <img src="./readme/http_codes.png" />
 </p>
 
-The system inserts our custom [ `controller`](app/controllers/exception_handler/exceptions_controller.rb) into [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), allowing us to render custom HTML for erroneous requests. It also means we're able to save the errors in their own database table, send emails and completely customize the response  
+The gem inserts our custom [ `controller`](app/controllers/exception_handler/exceptions_controller.rb) into [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), allowing us to render custom HTML for erroneous requests. It also means we're able to save the errors in their own database table, send emails and completely customize the response.  
 
-The controller uses a *single* method/view to build a response to errors. This view remains the same for *every* exception; ONLY change is the *[layout](/app/views/layouts/exception.html.erb)* - which depends on the HTTP response to be returned (`4xx` or `5xx`).
+The controller uses a *single* method/view to build a response to errors. This view remains the same for *every* exception; the ONLY change is the *[layout](/app/views/layouts/exception.html.erb)* - which depends on the HTTP response being returned (`4xx` or `5xx`).
 
 The beauty lies in the *simplicity* through which this is achieved. Rather than having many different elements, the SOLE focus is to provide different HTML responses via differing *layouts*. `ExceptionHandler` does this within the scope of `ActionView`, allowing for the use of `views`, `helpers` and `data` from the database (if necessary).
 
@@ -107,7 +108,7 @@ The most important thing to understand is that *it doesn't matter* which errors 
 
 This means that all you're really doing is taking "Ruby" errors and giving them an appropriate HTTP status code & message body (HTML). Rails handles the process for you - the *only* thing we need to worry about is how the HTML is generated.  
 
-What confuses most is the way in which Rails does this. The process is handled by [`ActionDispatch::ShowExceptions`](https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/show_exceptions.rb#L44) - which builds a new response out of the one passed to it by the exception generator. Through this process, it calls whichever class is present in [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) to obtain the HTML...
+What confuses most is the way in which Rails does this. The process is handled by [`ActionDispatch::ShowExceptions`](https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/show_exceptions.rb#L44) - which builds a new response out of the one passed to it by the exception generator. Through this process, it calls whichever class is present in [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration)...
 
     # show_exceptions.rb
     def render_exception(request, exception)
@@ -124,7 +125,7 @@ What confuses most is the way in which Rails does this. The process is handled b
       FAILSAFE_RESPONSE
     end
 
-In other words, what a user *sees* has very little to do with the fact Rails experienced an error. Whilst the default behaviour uses static HTML files - we've been able to use a controller instead - providing *dynamic* views for erroneous requests...
+In other words, what a user *sees* has very little to do with the fact Rails experienced an error. `ExceptionHandler` doesn't change this behaviour - it simply adds our own controller/views setup to provide the HTML...
 
 <p align="center">
   <img src="./readme/middleware.jpg" />
