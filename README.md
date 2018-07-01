@@ -92,13 +92,13 @@
   <img src="./readme/http_codes.png" />
 </p>
 
-The gem inserts our custom [ `controller`](app/controllers/exception_handler/exceptions_controller.rb) into [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), allowing us to render custom HTML for erroneous requests. 
+The gem inserts our custom [ `controller`](app/controllers/exception_handler/exceptions_controller.rb) into [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), allowing us to render custom HTML for erroneous requests.
 
-The controller uses a *single* method/view to build a response to errors. This view remains the same for *every* exception; the ONLY change is the *[layout](/app/views/layouts/exception.html.erb)* - which depends on the HTTP response being returned (`4xx` or `5xx`).
+The controller uses a *single* method/view to build a response to errors. This view remains the same for *every* exception; the ONLY change is the *[layout](/app/views/layouts/exception.html.erb)* - which changes depending on the HTTP response being returned (`4xx`/`5xx`).
 
-The beauty lies in the *simplicity* through which this is achieved. Rather than having many different elements, the SOLE focus is to provide different HTML responses via differing *layouts*. `ExceptionHandler` does this within the scope of `ActionView`, allowing for the use of `views`, `helpers` and `data` from the database (if necessary).
+The beauty lies in the *simplicity* through which this is achieved. Rather than having many different elements, the SOLE focus is to provide different HTML responses via differing *layouts*. `ExceptionHandler` does this within the scope of `ActionView`, allowing for the use of `views`, `helpers` and `data` from the database.
 
-The gem works 100% out of the box in production.
+The gem **works 100% out of the box in production**, and has the option to be called in [dev](#dev) if necessary.
 
 --
 
