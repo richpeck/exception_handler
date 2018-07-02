@@ -7,7 +7,7 @@
 ##    | |__| | | | (_| | | | | |  __/    ##
 ##    \____/_| |_|\__, |_|_| |_|\___|    ##
 ##                 __/ |                 ##
-##                |___/                  ##                     
+##                |___/                  ##
 ###########################################
 ###########################################
 
@@ -52,6 +52,13 @@ module ExceptionHandler
       initializer :exception_handler, before: "better_errors.configure_rails_initialization" do |app|
         app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionsController.action(:show).call(env) }
         app.config.consider_all_requests_local = !ExceptionHandler.config.try(:dev) if Rails.env.development?
+      end
+
+      # => Custom Exceptions
+      # => This just mimicks standard Rails behaviour
+      # => Look for "config.action_dispatch.rescue_responses" for more info)
+      initializer :custom_exceptions do |app|
+        app.config.action_dispatch.rescue_responses.merge! ExceptionHandler.config.custom_exceptions if ExceptionHandler.config.custom_exceptions
       end
 
       # => Migrations

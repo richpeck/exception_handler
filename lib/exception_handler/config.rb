@@ -7,7 +7,7 @@
 ##    | \__/\ (_) | | | | | | | (_| |    ##
 ##    \____/\___/|_| |_|_| |_|\__,  |    ##
 ##                             __/  |    ##
-##                             |___/     ##                             
+##                             |___/     ##
 ###########################################
 ###########################################
 
@@ -26,9 +26,10 @@ module ExceptionHandler
     # => ExceptionHandler.config.db
     # => ExceptionHandler.config.email
     # => ExceptionHandler.config.social
-    # => ExceptionHandler.config.layouts
+    # => ExceptionHandler.config.layouts -> will need to be deprecated
+    # => ExceptionHandler.config.exceptions
     # => ExceptionHandler.config.custom_exceptions
-    attr_accessor :dev, :db, :email, :social, :layouts, :custom_exceptions
+    attr_accessor :dev, :db, :email, :social, :layouts, :exceptions, :custom_exceptions
 
     ###########################################
     ###########################################
@@ -39,14 +40,17 @@ module ExceptionHandler
       # => Has to be "errors" because "exceptions" is a reserved word
       TABLE = :errors
 
+    ###########################################
+    ###########################################
+
       # => Social URLs
       # => Extracted from "social" block
       SOCIAL = {
-        facebook: "https://facebook.com",
-        twitter:  "https://twitter.com",
-        youtube:  "https://youtube.com/user",
-        linkedin: "https://linkedin.com/company",
-        fusion:   "https://frontlinefusion.com"
+        facebook: "https://www.facebook.com",
+        twitter:  "https://www.twitter.com",
+        youtube:  "https://www.youtube.com/user",
+        linkedin: "https://www.linkedin.com/company",
+        fusion:   "https://www.frontlinefusion.com"
       }
 
     ###########################################
@@ -55,9 +59,13 @@ module ExceptionHandler
       # => Defaults
       # => http://stackoverflow.com/a/8917301/1143732
       DEFAULTS = {
+
+        # => General options
         dev:    nil, # => defaults to "false" for dev mode
         db:     nil, # => defaults to :errors if true, else use "table_name" / :table_name
         email: 	nil, # => requires string email and ActionMailer
+
+        # => Used in "exception" layout
         social: {
           facebook: nil,
           twitter:  nil,
@@ -65,19 +73,54 @@ module ExceptionHandler
           linkedin: nil,
           fusion:   nil,
         },
-        layouts: {
+
+        # => Defaults for exceptions. Override with specific status codes
+        # => Please note these are all STRINGS
+        exceptions: {
+
+          # => 4xx/5xx base standard
+          # => :all provide block customization (overrides 4xx/5xx)
+          # => specific provides individual (overrides all)
+
+          # => 4xx Errors (resource not found)
+          # => https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors
+          '4xx' => {
+            layout: nil
+            # notification: true (this is for emails - it's true by default - only if you have email inputted)
+            # deliver: (this is general)
+          },
+
+          # => 5xx Errors (server error)
+          # => https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors
+          '5xx' => {
+            layout: "exception"
+            # notification: true (this is for emails - it's true by default - only if you have email inputted)
+            # deliver: (this is general)
+          }
+
+        },
+
+        # Deprecated
+        #layouts: {
           # => nil inherits from ApplicationController
           # => 4xx errors should be nil
           # => 5xx errors should be "exception" but can be nil if explicitly defined
-          500 => "exception",
-          501 => "exception",
-          502 => "exception",
-          503 => "exception",
-          504 => "exception",
-          505 => "exception",
-          507 => "exception",
-          510 => "exception"
+          #500 => "exception",
+          #501 => "exception",
+          #502 => "exception",
+          #503 => "exception",
+          #504 => "exception",
+          #505 => "exception",
+          #507 => "exception",
+          #510 => "exception"
+        #},
+
+        # => If you want to map your own classes to HTTP errors
+        # => use this...
+        custom_exceptions: {
+          #'ActionController::RoutingError' => :not_found # => example
         }
+
       }
 
     ###########################################

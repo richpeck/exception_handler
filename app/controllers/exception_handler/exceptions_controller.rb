@@ -36,11 +36,19 @@ module ExceptionHandler
     layout :layout
 
     ####################
-    #      Action      #
+    #     Actions      #
     ####################
 
+    # => General Show Functionality
     def show
       respond_with @exception, status: @exception.status
+    end
+
+    # => Routes
+    # => This only exists if EH is in development mode (not in production)
+    # => https://github.com/rails/rails/issues/22613 (custom error responses)
+    def dev
+      raise (ActionDispatch::ExceptionWrapper.rescue_responses.key(params[:code].to_sym) || 'Exception').classify 
     end
 
     ##################################
@@ -48,8 +56,34 @@ module ExceptionHandler
 
     private
 
+    # => Shows different layouts
+    # => New setup takes
     def layout
-      ExceptionHandler.config.layouts[@exception.status]
+
+      # specific first
+      # all second
+      # 4xx/5xx last
+
+      # => Has to cover older version { "x" }
+      # => Has to cover newer version { layout: "x" }
+      config =
+        ExceptionHandler.config.try(:layouts).try(   :[], @exception.status) ||
+        ExceptionHandler.config.try(:layouts).try(   :[], @exception.status.to_s) ||
+        ExceptionHandler.config.try(:exceptions).try(:[], @exception.status) ||
+        ExceptionHandler.config.try(:exceptions).try(:[], @exception.status.to_s) ||
+        ExceptionHandler.config.try(:exceptions).try(:[], 'all') ||
+        ExceptionHandler.config.try(:exceptions).try(:[], @exception.status.to_s.first + 'xx')
+
+      # expected result either STRING or HASH
+      case true
+        when config.is_a?(String)
+          config  # => Old
+        when config.is_a?(Hash)
+          config.try(:[], :layout) # => New
+        else
+          'exception' #=> Failsafe
+      end
+
     end
 
     ##################################
