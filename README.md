@@ -36,7 +36,7 @@
 </p>
 
 <p align="center">
-  <b>Version <a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">🏹 <code>0.8.0.0</code> 🏹</a> has now introduced a number of <b>⭐️ KEY UPGRADES ⭐️</b> including...</b> <br /> 🚧 <strong><A href="#config">Config Settings</a></strong> 🚧 ▪️ <strong>💻 <strong><A href="#views">Custom Views Options</a></strong> 💻</strong> ▪️ <strong>💬 <a href="#locales"><code>4xx</code>/<code>5xx</code> Locales</a> 💬</strong>...  
+  <b>Version <a href="https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0">🏹 <code>0.8.0.0</code> 🏹</a> has now introduced a number of <b>⭐️ KEY UPGRADES ⭐️</b> including...</b> <br /> 🚧 <strong><A href="#config">New Config Settings</a></strong> 🚧 ▪️ <strong>💻 <strong><A href="#views">Custom Views Options</a></strong> 💻</strong> ▪️ <strong>💬 <a href="#locales"><code>4xx</code>/<code>5xx</code> Locales</a> 💬</strong>...  
 </p>
 
 <p align="center">
@@ -79,7 +79,6 @@
 
 <!-- Introduction -->
 <div id="introduction">
-  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
   <p>
     <h3>⌚️ Introduction ⌚️</h3>
   </p>
@@ -94,9 +93,11 @@
 
 The gem inserts our custom [ `controller`](app/controllers/exception_handler/exceptions_controller.rb) into [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), allowing us to render custom HTML for erroneous requests.
 
-The controller uses a *single* method/view to build a response to errors. This view remains the same for *every* exception; the ONLY change is the *[layout](/app/views/layouts/exception.html.erb)* - which changes depending on the HTTP response being returned (`4xx`/`5xx`).
+The controller uses a *single* method/view to build a response to errors. This view remains the same for *every* exception; the ONLY change is the *[layout](/app/views/layouts/exception.html.erb)* - depending on the HTTP response being returned (`4xx`/`5xx`).
 
-The beauty lies in the *simplicity* through which this is achieved. Rather than having many different elements, the SOLE focus is to provide different HTML responses via differing *layouts*. `ExceptionHandler` does this within the scope of `ActionView`, allowing for the use of `views`, `helpers` and `data` from the database.
+The beauty lies in the *simplicity* through which this is achieved.
+
+Rather than having many different elements, its SOLE focus is to provide different HTML responses via differing *layouts*. `ExceptionHandler` does this within the scope of [`ActionView`](http://guides.rubyonrails.org/action_view_overview.html), allowing for the use of `views`, `helpers` and `data` from the database.
 
 The gem works 100% out of the box in `production`, and has the option to be called in [`dev`](#dev) if necessary.
 
@@ -104,7 +105,7 @@ The gem works 100% out of the box in `production`, and has the option to be call
 
 ### 📑 HTTP
 
-The most important thing to understand is that *it doesn't matter* which errors Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).  Due to the nature of HTTP, you only need to facilitate responses for [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) - [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors).
+The most important thing to understand is that *it doesn't matter* which errors Ruby/Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).  Due to the nature of HTTP, you only need to facilitate responses for [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) - [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors).
 
 This means that all you're really doing is taking "Ruby" errors and giving them an appropriate [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) & [message body](https://en.wikipedia.org/wiki/HTTP_message_body) (HTML). Rails handles the process for you - the *only* thing we need to worry about is how the HTML is generated.  
 
@@ -133,9 +134,13 @@ In other words, what a user *sees* has very little to do with the fact Rails exp
 
 To better explain, there are **5️⃣ types of <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status code</a>** - [`10x`][10x], [`20x`][20x], [`30x`][30x], [`40x`][40x], & [`50x`][50x].
 
-Each does their own thing, but what's important is they *ALL* describe "responses" that your web browser will receive for HTTP requests...  
+Each does its own thing, but what's important is they *ALL* describe "responses" that your web browser will receive for HTTP requests. The only *erroneous* status codes are `4xx` (client error) or `5xx` (server error).
 
-[[ image - static pages ]]
+<p align="center">
+  <img src="./readme/HTTP.png" />
+</p>
+
+[Excellent resource (HTTP Status Codes) - tzamtzis.gr](https://tzamtzis.gr/2017/digital-analytics/http-status-codes/)
 
 The point is that when you're dealing with "errors" online, you're *actually* dealing with erroneous **STATUS CODES**. The *response* delivered by these codes is still exactly the same as the successful responses.
 
