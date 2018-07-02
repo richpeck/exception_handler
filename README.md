@@ -95,9 +95,7 @@ The gem inserts our custom [ `controller`](app/controllers/exception_handler/exc
 
 The controller uses a *single* method/view to build a response to errors. This view remains the same for *every* exception; the ONLY change is the *[layout](/app/views/layouts/exception.html.erb)* - depending on the HTTP response being returned (`4xx`/`5xx`).
 
-The beauty lies in the *simplicity* through which this is achieved.
-
-Rather than having many different elements, its SOLE focus is to provide different HTML responses via differing *layouts*. `ExceptionHandler` does this within the scope of [`ActionView`](http://guides.rubyonrails.org/action_view_overview.html), allowing for the use of `views`, `helpers` and `data` from the database.
+The beauty lies in the *simplicity* through which this is achieved → rather than having many different elements, its SOLE focus is to provide different HTML responses via differing *layouts*. `ExceptionHandler` does this within the scope of [`ActionView`](http://guides.rubyonrails.org/action_view_overview.html), allowing for the use of `views`, `helpers` and `data` from the database.
 
 The gem works 100% out of the box in `production`, and has the option to be called in [`dev`](#dev) if necessary.
 
