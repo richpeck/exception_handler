@@ -130,19 +130,21 @@ In other words, what a user *sees* has very little to do with the fact Rails exp
   <img src="./readme/middleware.jpg" />
 </p>
 
-To better explain, there are **5️⃣ types of <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status code</a>** - [`10x`][10x], [`20x`][20x], [`30x`][30x], [`40x`][40x], & [`50x`][50x].
+To better explain, there are **<a href="https://tzamtzis.gr/2017/digital-analytics/http-status-codes/">5️⃣ types of HTTP status code</a>** - [`10x`][10x], [`20x`][20x], [`30x`][30x], [`40x`][40x], & [`50x`][50x].
 
-Each does its own thing, but what's important is they *ALL* describe "responses" that your web browser will receive for HTTP requests. The only *erroneous* status codes are `4xx` (client error) or `5xx` (server error).
+Each does its own thing, but what's important is they *ALL* describe "responses" that your web browser will receive for HTTP requests. The only *erroneous* status codes are `4xx` (client error) or `5xx` (server error)...
 
 <p align="center">
   <img src="./readme/HTTP.png" />
 </p>
 
-[Excellent resource (HTTP Status Codes) - tzamtzis.gr](https://tzamtzis.gr/2017/digital-analytics/http-status-codes/)
+The point is that when you're dealing with "errors" online, you're *actually* dealing with erroneous **HTTP STATUS CODES**. The response delivered with these codes is *ALWAYS* going to remain the same; difference lying in how they're built (on the server).
 
-The point is that when you're dealing with "errors" online, you're *actually* dealing with erroneous **STATUS CODES**. The *response* delivered by these codes is still exactly the same as the successful responses.
+By default, `NGinx` + `Apache` use "static" HTML pages to show the errors - if we're using Rails, we have the ability to create *our own* pages. This is exactly what our gem has been designed to do.
 
-**`ExceptionHandler`** provides Rails with the ability to serve ***dynamic*** exception pages, built with **your *own*** layouts/views. By overriding the <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration">`exceptions_app`</a> hook, it provides a custom `controller`, `model` and `views` to display custom error pages. The system is 100% compatible with Rails 4 & 5...
+**`ExceptionHandler`** provides Rails with the ability to serve ***dynamic*** exception pages, built with **your *own*** layouts/views. By overriding the <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration">`exceptions_app`</a> hook, it provides a custom `controller`, `model` and `views` to display custom error pages.
+
+The system is 100% compatible with Rails 4 & 5 and has already been downloaded **180,000+** times...
 
 <p align="center">
   <img src="readme/branded/1.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/2.jpg" width="425" title="Fully Branded Error Pages" />
@@ -152,6 +154,7 @@ The point is that when you're dealing with "errors" online, you're *actually* de
 <!-- Setup -->
 <div id="setup">
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
+  <p align="center"><img src="./readme/dev.png" /></p>
   <h3 align="center">🔨 Setup 🔨</h3>
   <p align="center">
     <a href="#config"><img src="readme/titles/icons/config.png" alt="Configuration Options" align="absmiddle" height="24" /> Config</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#dev" title="Dev Mode"><img src="readme/titles/icons/dev.png" alt="Dev" align="absmiddle" height="24" /> Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#database"><img src="readme/titles/icons/database.png" alt="Database" align="absmiddle" height="24" />  Database</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#email"><img src="readme/titles/icons/email.png" alt="Email" align="absmiddle" height="24" />  Email</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#views"><img src="readme/titles/icons/views.png" alt="Views" align="absmiddle" height="24" />  Views</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#locales"><img src="readme/titles/icons/locales.png" alt="Locales" align="absmiddle" height="20" />  Locales</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#custom-exceptions"><img src="readme/titles/icons/custom.png" alt="Custom Exceptions" align="absmiddle" height="18" />  Custom Exceptions</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#generators"><img src="readme/titles/icons/generators.png" alt="Generators" align="absmiddle" height="24" />  Generators</a>
