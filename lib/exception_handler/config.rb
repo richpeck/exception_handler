@@ -87,7 +87,7 @@ module ExceptionHandler
             # => 4xx Errors (resource not found)
             # => https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors
             '4xx' => {
-              layout: 'exception'
+              layout: nil
               #notification: true #(this is for emails - it's true by default - only if you have email inputted)
               # deliver: ____, (this is general)
               # background: (can define custom background for exceptions layout if required)
