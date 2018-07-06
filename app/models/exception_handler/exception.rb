@@ -190,7 +190,7 @@ module ExceptionHandler
         # => Email
         # => should be on the same line as after_initialize but too long
         def email?
-          ExceptionHandler.config.try(:email).try(:is_a?, String) && ExceptionHandler.config.layout(status).try(:[], :notification) != false
+          ExceptionHandler.config.try(:email).try(:is_a?, String) && ExceptionHandler.config.notification != false
         end
 
     end

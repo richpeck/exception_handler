@@ -154,15 +154,35 @@ module ExceptionHandler
         @db == true ? TABLE : @db.try(:parameterize, separator: "_")
       end
 
+    ###########################################
+    ###########################################
+
       # => Layout
-      # => Requires argument
       def layout status
-        ExceptionHandler.config.try(:layouts).try(   :[], status) ||
-        ExceptionHandler.config.try(:layouts).try(   :[], status.to_s) ||
-        ExceptionHandler.config.try(:exceptions).try(:[], status) ||
-        ExceptionHandler.config.try(:exceptions).try(:[], status.to_s) ||
-        ExceptionHandler.config.try(:exceptions).try(:[], 'all') ||
-        ExceptionHandler.config.try(:exceptions).try(:[], status.to_s.first + 'xx')
+        return nil unless defined?(status)
+        options(status).is_a?(Hash) ? ActiveSupport::HashWithIndifferentAccess.new(options(status)).try(:[], :layout) : options(status)
+      end
+
+      # => Notification
+      def notification
+        return nil unless defined?(status)
+        options(status).try(:notification)
+      end
+
+    ###########################################
+    ###########################################
+
+    private
+
+      # => Options
+      # => Requires argument
+      def options status
+        self.try(:layouts).try(   :[], status) ||
+        self.try(:layouts).try(   :[], status.to_s) ||
+        self.try(:exceptions).try(:[], status) ||
+        self.try(:exceptions).try(:[], status.to_s) ||
+        self.try(:exceptions).try(:[], 'all') ||
+        self.try(:exceptions).try(:[], status.to_s.first + 'xx')
       end
 
     ###########################################
