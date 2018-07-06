@@ -87,7 +87,7 @@ module ExceptionHandler
             # => 4xx Errors (resource not found)
             # => https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors
             '4xx' => {
-              layout: nil
+              layout: 'exception'
               #notification: true #(this is for emails - it's true by default - only if you have email inputted)
               # deliver: ____, (this is general)
               # background: (can define custom background for exceptions layout if required)
@@ -159,14 +159,17 @@ module ExceptionHandler
 
       # => Layout
       def layout status
-        return nil unless defined?(status)
         options(status).is_a?(Hash) ? ActiveSupport::HashWithIndifferentAccess.new(options(status)).try(:[], :layout) : options(status)
       end
 
       # => Notification
-      def notification
-        return nil unless defined?(status)
-        options(status).try(:notification)
+      def notification status
+        ActiveSupport::HashWithIndifferentAccess.new(options(status)).try(:[], :notification)
+      end
+
+      # => Background
+      def background status
+        ActiveSupport::HashWithIndifferentAccess.new(options(status)).try(:[], :background)
       end
 
     ###########################################
