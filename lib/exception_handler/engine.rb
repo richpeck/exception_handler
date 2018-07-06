@@ -39,7 +39,8 @@ module ExceptionHandler
 
       # => Config
       # => Builds lib/exception_handler/config.rb
-      # config.before_initialize do |app| => Needs to be fixed for ActiveRecord::Base
+      # => config.before_initialize do |app| => Needs to be fixed for ActiveRecord::Base
+      # => to support later version of config, "with_indifferent_access" used in config.rb 
       initializer :exception_handler_config, before: "better_errors.configure_rails_initialization" do |app|
         ExceptionHandler.config ||= ExceptionHandler::Config.new config.try(:exception_handler)
       end

@@ -44,13 +44,6 @@ module ExceptionHandler
       respond_with @exception, status: @exception.status
     end
 
-    # => Routes
-    # => This only exists if EH is in development mode (not in production)
-    # => https://github.com/rails/rails/issues/22613 (custom error responses)
-    def dev
-      raise (ActionDispatch::ExceptionWrapper.rescue_responses.key(params[:code].to_sym) || 'Exception').classify 
-    end
-
     ##################################
     ##################################
 
@@ -60,29 +53,23 @@ module ExceptionHandler
     # => New setup takes
     def layout
 
-      # specific first
-      # all second
-      # 4xx/5xx last
+      # 1) specific
+      # 2) all
+      # 3) 4xx/5xx
 
       # => Has to cover older version { "x" }
       # => Has to cover newer version { layout: "x" }
-      config =
-        ExceptionHandler.config.try(:layouts).try(   :[], @exception.status) ||
-        ExceptionHandler.config.try(:layouts).try(   :[], @exception.status.to_s) ||
-        ExceptionHandler.config.try(:exceptions).try(:[], @exception.status) ||
-        ExceptionHandler.config.try(:exceptions).try(:[], @exception.status.to_s) ||
-        ExceptionHandler.config.try(:exceptions).try(:[], 'all') ||
-        ExceptionHandler.config.try(:exceptions).try(:[], @exception.status.to_s.first + 'xx')
+      config = ExceptionHandler.config.layout(@exception.status)
 
-      # expected result either STRING or HASH
-      case true
-        when config.is_a?(String)
-          config  # => Old
-        when config.is_a?(Hash)
-          config.try(:[], :layout) # => New
-        else
-          'exception' #=> Failsafe
-      end
+      # => Expected result either STRING or HASH
+      # => Indifferent access used for HASH to allow for strings & symbols
+      config = ActiveSupport::HashWithIndifferentAccess.new(config).try(:[], :layout) if config.is_a?(Hash)
+
+      # => Return
+      # => Should have been config || 'exception'
+      # => However, this would have precluded nil responses (which we need)
+      # => The present basically just tests for empty strings (which we don't want)
+      config == '' ? 'exception' : config
 
     end
 
