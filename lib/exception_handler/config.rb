@@ -157,8 +157,8 @@ module ExceptionHandler
     ###########################################
 
       # => Layout
-      def layout status
-        options(status).is_a?(Hash) ? ActiveSupport::HashWithIndifferentAccess.new(options(status)).try(:[], :layout) : options(status)
+      def layout status, option=:layout
+        options(status).is_a?(Hash) ? ActiveSupport::HashWithIndifferentAccess.new(options(status)).try(:[], option) : options(status)
       end
 
       # => Notification
@@ -174,7 +174,7 @@ module ExceptionHandler
     ###########################################
     ###########################################
 
-    private
+    #private
 
       # => Options
       # => Requires argument
@@ -183,21 +183,12 @@ module ExceptionHandler
         # => Structure from old + new setup
         # => 1. layouts    => [500, '500']
         # => 2. exceptions => [500, '500' 'all', '4xx'/'5xx']
-        levels = {
-          layouts:    [status, status.to_s],                                  # => old
-          exceptions: [status, status.to_s, 'all', status.to_s.first + 'xx']  # => new
-        }
+        { layouts:    [status, status.to_s], # old + new
+          exceptions: [status, status.to_s, 'all', status.to_s.first + 'xx'] }.each do |key,array|
 
-        # => Cycle through top level
-        # => layouts/exceptions
-        levels.each do |key,array|
-
-          # => Cycle through array
-          # => Validation uses this table: https://stackoverflow.com/a/26877095/1143732
+          # => Array
           array.each do |specific|
-            # need to figure out
-            puts key
-            return x = self.send(key).try(:[], specific) if x.present? || x.nil? #if result exists and it has a value
+            return self.send(key).try(:[], specific) if self.send(key).try(:[], specific).present? || (self.send(key).try(:[], specific).present? && self.send(key).try(:[], specific).nil?) #if result exists and it has a value
           end
 
         end
