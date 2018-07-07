@@ -156,29 +156,9 @@ module ExceptionHandler
     ###########################################
     ###########################################
 
-      # => Layout
-      def layout status, option=:layout
-        options(status).is_a?(Hash) ? ActiveSupport::HashWithIndifferentAccess.new(options(status)).try(:[], option) : options(status)
-      end
-
-      # => Notification
-      def notification status
-        ActiveSupport::HashWithIndifferentAccess.new(options(status)).try(:[], :notification)
-      end
-
-      # => Background
-      def background status
-        ActiveSupport::HashWithIndifferentAccess.new(options(status)).try(:[], :background)
-      end
-
-    ###########################################
-    ###########################################
-
-    #private
-
       # => Options
       # => Requires argument
-      def options status
+      def option status, pluck=nil
 
         # => Structure from old + new setup
         # => 1. layouts    => [500, '500']
@@ -188,7 +168,8 @@ module ExceptionHandler
 
           # => Array
           array.each do |specific|
-            return self.send(key).try(:[], specific) if self.send(key).try(:[], specific).present? || (self.send(key).try(:[], specific).present? && self.send(key).try(:[], specific).nil?) #if result exists and it has a value
+            item = self.send(key).try(:[], specific)
+            return (item.is_a?(Hash) ? ActiveSupport::HashWithIndifferentAccess.new(item).try(:[], pluck) : item) if item.present? || (item.present? && item.nil?) #if result exists and it has a value (including nil)
           end
 
         end

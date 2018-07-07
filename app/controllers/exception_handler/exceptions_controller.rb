@@ -54,8 +54,8 @@ module ExceptionHandler
     # => .present? validates against empty strings (IE a string is present)
     # => .nil? validates to see if the returned data is "nil"
     # => nil required to facilitate inheritance of the layout w/ ApplicationController
-    def layout
-      (ExceptionHandler.config.layout(@exception.status).present? || ExceptionHandler.config.layout(@exception.status).nil?) ? ExceptionHandler.config.layout(@exception.status) : 'exception'
+    def layout option = ExceptionHandler.config.option(@exception.status, :layout)
+      (option.present? || option.nil?) ? option : 'exception'
     end
 
     ##################################

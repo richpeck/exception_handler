@@ -9,8 +9,8 @@
     <%= stylesheet_link_tag :exception_handler %>
     <%= favicon_link_tag "exception_handler/favicon.ico" %>
 
-    <% if ExceptionHandler.config.background(@exception.status) %>
-      <style>body { background: url("<%= asset_path ExceptionHandler.config.background(@exception.status) %>") center center no-repeat !important; background-size: cover !important; }</style>
+    <% if x = ExceptionHandler.config.option(@exception.status, :background) %>
+      <style>body { background: url("<%= asset_path x %>") center center no-repeat !important; background-size: cover !important; }</style>
     <% end %>
 
     <!-- Auth -->
