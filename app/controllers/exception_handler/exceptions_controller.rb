@@ -50,8 +50,12 @@ module ExceptionHandler
     private
 
     # => Pulls from Exception class
+    # => Spanner in the works is nil
+    # => .present? validates against empty strings (IE a string is present)
+    # => .nil? validates to see if the returned data is "nil"
+    # => nil required to facilitate inheritance of the layout w/ ApplicationController
     def layout
-      ExceptionHandler.config.layout(@exception.status) == '' ? 'exception' : ExceptionHandler.config.layout(@exception.status)
+      (ExceptionHandler.config.layout(@exception.status).present? || ExceptionHandler.config.layout(@exception.status).nil?) ? ExceptionHandler.config.layout(@exception.status) : 'exception'
     end
 
     ##################################

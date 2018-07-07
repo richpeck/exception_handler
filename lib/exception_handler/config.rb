@@ -101,7 +101,6 @@ module ExceptionHandler
               # deliver: _____, (this is general)
               # background: (can define custom background for exceptions layout if required)
             }
-
           },
 
           # Deprecated
@@ -180,12 +179,28 @@ module ExceptionHandler
       # => Options
       # => Requires argument
       def options status
-        self.try(:layouts).try(   :[], status) ||
-        self.try(:layouts).try(   :[], status.to_s) ||
-        self.try(:exceptions).try(:[], status) ||
-        self.try(:exceptions).try(:[], status.to_s) ||
-        self.try(:exceptions).try(:[], 'all') ||
-        self.try(:exceptions).try(:[], status.to_s.first + 'xx')
+
+        # => Structure from old + new setup
+        # => 1. layouts    => [500, '500']
+        # => 2. exceptions => [500, '500' 'all', '4xx'/'5xx']
+        levels = {
+          layouts:    [status, status.to_s],                                  # => old
+          exceptions: [status, status.to_s, 'all', status.to_s.first + 'xx']  # => new
+        }
+
+        # => Cycle through top level
+        # => layouts/exceptions
+        levels.each do |key,array|
+
+          # => Cycle through array
+          # => Validation uses this table: https://stackoverflow.com/a/26877095/1143732
+          array.each do |specific|
+            # need to figure out
+            puts key
+            return x = self.send(key).try(:[], specific) if x.present? || x.nil? #if result exists and it has a value
+          end
+
+        end
       end
 
     ###########################################
