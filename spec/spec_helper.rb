@@ -12,21 +12,24 @@
 ###############################################
 
 require 'bundler/setup'
-require 'rails'
-require 'exception_handler'
-require 'rails/test_help'
 
-###############################################
-###############################################
-
-require_relative './dummy/config/environment'
-ActiveRecord::Migrator.migrations_paths = [File.expand_path("./dummy/db/migrate", __dir__)]
-
-###############################################
-###############################################
+require 'active_support'
+require 'active_model'
+require 'rails/engine'
+require 'rails/railtie'
 
 # => ENV
 ENV["RAILS_ENV"] ||= "test"
+
+# => Environment
+require_relative './dummy/config/environment'
+ActiveRecord::Migrator.migrations_paths = [File.expand_path("./dummy/db/migrate", __dir__)]
+
+# => Gem
+require 'exception_handler'
+
+###############################################
+###############################################
 
 # => Production Only
 abort("The Rails environment is running in production mode!") if Rails.env.production?
@@ -63,7 +66,7 @@ RSpec.configure do |config|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
 
     # => Default Syntax
-    c.syntax = :expect
+    expectations.syntax = :expect
   end
 
   # Enable flags like --only-failures and --next-failure
@@ -73,9 +76,9 @@ RSpec.configure do |config|
   config.disable_monkey_patching!
 
   # => Rails (Fixtures etc)
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
-  config.use_transactional_fixtures = true
-  config.infer_spec_type_from_file_location!
-  config.filter_rails_from_backtrace!
+  #config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  #config.use_transactional_fixtures = true
+  #config.infer_spec_type_from_file_location!
+  #config.filter_rails_from_backtrace!
 
 end
