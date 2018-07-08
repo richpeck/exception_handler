@@ -3,7 +3,7 @@ require_relative 'boot'
 require 'rails/all'
 
 Bundler.require(*Rails.groups)
-require "test_plugin"
+require 'exception_handler'
 
 module Dummy
   class Application < Rails::Application
@@ -16,4 +16,3 @@ module Dummy
     # the framework and any gems in your application.
   end
 end
-

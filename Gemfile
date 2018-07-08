@@ -10,4 +10,7 @@ group :test do
 	gem 'coveralls', require: false
 end
 
+# => Required for Windows
+gem 'tzinfo-data' if Gem.win_platform? # => TZInfo For Windows
+
 ###########################################
