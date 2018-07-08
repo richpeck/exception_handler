@@ -25,6 +25,11 @@ RSpec.describe ExceptionHandler do
     expect(ExceptionHandler::VERSION::STRING).not_to be nil
   end
 
+  # => Present version
+  it "is version 0.8.0.0" do
+    expect(ExceptionHandler::VERSION::STRING).to eq '0.8.0.0'
+  end
+
 end
 
 ###############################################

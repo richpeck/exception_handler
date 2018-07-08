@@ -1,3 +1,4 @@
 example_id                            | status | run_time        |
 ------------------------------------- | ------ | --------------- |
-./spec/exception_handler_spec.rb[1:1] | passed | 0.00292 seconds |
+./spec/exception_handler_spec.rb[1:1] | passed | 0.00299 seconds |
+./spec/exception_handler_spec.rb[1:2] | passed | 0.00191 seconds |
