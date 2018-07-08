@@ -87,20 +87,18 @@ module ExceptionHandler
             # => 4xx Errors (resource not found)
             # => https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors
             '4xx' => {
-              layout: nil,
-              background: 'test.png'
+              layout: nil
               # notification: true #(this is for emails - it's true by default - only if you have email inputted)
-              # deliver: ____, (this is general)
+              # action: ____, (this is general)
               # background: (can define custom background for exceptions layout if required)
             },
 
             # => 5xx Errors (server error)
             # => https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors
             '5xx' => {
-              layout: 'exception',
-              background: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/88fab833548161.56af7a71bd712.jpg'
+              layout: 'exception'
               # notification: true (this is for emails - it's true by default - only if you have email inputted)
-              # deliver: _____, (this is general)
+              # action: _____, (this is general)
               # background: (can define custom background for exceptions layout if required)
             }
           },

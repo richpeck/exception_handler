@@ -40,6 +40,7 @@ module ExceptionHandler
     ####################
 
     # => General Show Functionality
+    # => Introduced new "action" config option in 0.8.0.0
     def show
       respond_with @exception, status: @exception.status
     end
