@@ -141,26 +141,32 @@ RSpec.describe 'ExceptionHandler' do
   #############################################
 
     # => Routes
-    describe "Routes" do
+    describe "Routes", type: :routing do
 
       # => Options
       let(:routes) { Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b')} }
-      let(:dev)    { ExceptionHandler.config.dev }
+      let(:config) { ExceptionHandler.config }
 
       # => Dev mode enabled
       # => First check dev mode enabled
       # => Second check for presence of routes
       context "with dev enabled" do
-        subject { dev }
-        it      { is_expected.not_to eq(true) }
-        it      { }
+        subject { config.dev = true }
+        it      { is_expected.to eq(true) }
+        #Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b')}.each do |code,status|
+        #  it { expect(get: "/" + status.to_s).to route_to(controller: "exception_handler/exceptions", action: "show", code: code) }
+        #end
       end
 
       # => Dev mode disabled
       # => First check if dev mode disabled
       # => Second check for routes being not_routable
       context "without dev" do
-        #it { expect(dev).to eq(true) }
+        subject { config.dev = false }
+        it      { is_expected.not_to eq(true) }
+        #Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b')}.each do |code,status|
+        #  it { expect(get: "/" + status.to_s).not_to be_routable }
+        #end
       end
 
     end
