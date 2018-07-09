@@ -21,6 +21,16 @@ require 'spec_helper'
 # => Test layout, show action, @exception object and different config options
 RSpec.describe "ExceptionHandler::ExceptionsController" do
 
+  # => Check controller exists
+
+  # => Check show exists
+
+  # => Check layout method
+
+  # => Check befre_action filters
+
+  # => Check respond_with
+
 end
 
 ###############################################

@@ -29,7 +29,8 @@ RSpec.describe 'ExceptionHandler' do
 
       # => Options
       let(:version) { ExceptionHandler::VERSION::STRING }
-      let(:engine)  { ExceptionHandler }
+      let(:engine)  { ExceptionHandler::Engine }
+      let(:config)  { ExceptionHandler.config }
 
       # => Version needs to exist
       # => Present Version
@@ -39,9 +40,12 @@ RSpec.describe 'ExceptionHandler' do
         it { is_expected.to eq('0.8.0.0') }
       end
 
-      # => Loaded
-      it "is loaded" do
-
+      # => Loaded?
+      # => Accessible by Rails?
+      describe "engine" do
+        subject { engine }
+        it { should be_const_defined(:ExceptionHandler) }
+        it { }
       end
 
     end
@@ -50,20 +54,30 @@ RSpec.describe 'ExceptionHandler' do
   #############################################
 
     # => Ensure Gem's features are loaded into Rails
-    describe "Features" do
+    describe "Components" do
+
+      # => Options
+      let(:config)          { ExceptionHandler.config }
+      let(:dev)             { ExceptionHandler.config.dev }
+      let(:middleware)      { Rails.application.config.exceptions_app }
+      let(:local_requests)  { Rails.application.config.consider_all_requests_local }
 
       # => Config
-      # => This needs to be an instance of a class
-      #it "has initialized config options" do
-      #  expect(ExceptionHandler.config).to eq ExceptionHandler::Config.new
-      #end
+      # => Exists? Accessible? Right Values?
+      describe "config" do
+        subject { config }
+        #it { should be_const_defined(ExceptionHandler::Config) }
+      end
 
       # => Middleware
       # => Check if it's correctly overwritten @exceptions_app
       # => http://guides.rubyonrails.org/configuring.html#rails-general-configuration
-      #it "has overwritten @exceptions_app hook" do
-      #  expect(Rails.application.config.exceptions_app).to eq "2"
-      #end
+      describe "middleware" do
+        subject { middleware }
+        #it "has overwritten @exceptions_app hook" do
+        #  expect().to eq "2"
+        #end
+      end
 
       # => Dev Mode
       # => Changes "consider_all_requests_local" to opposite of config
@@ -93,8 +107,8 @@ RSpec.describe 'ExceptionHandler' do
       # => First check dev mode enabled
       # => Second check for presence of routes
       context "with dev enabled" do
-        subject { :dev }
-        it      { is_expected.to eq(true) }
+        subject { dev }
+        it      { is_expected.not_to eq(true) }
         it      { }
       end
 

@@ -8,11 +8,12 @@ example_id                     | status | run_time        |
 ./spec/controller_spec.rb[1:2] | passed | 0.0002 seconds  |
 ./spec/controller_spec.rb[1:3] | passed | 0.00013 seconds |
 ./spec/controller_spec.rb[1:4] | failed | 0.00177 seconds |
-./spec/engine_spec.rb[1:1:1:1] | passed | 0.00033 seconds |
-./spec/engine_spec.rb[1:1:1:2] | passed | 0.00209 seconds |
-./spec/engine_spec.rb[1:1:2]   | passed | 0.00035 seconds |
-./spec/engine_spec.rb[1:3:1:1] | failed | 0.02928 seconds |
-./spec/engine_spec.rb[1:3:1:2] | passed | 0.00026 seconds |
+./spec/engine_spec.rb[1:1:1:1] | passed | 0.00075 seconds |
+./spec/engine_spec.rb[1:1:1:2] | passed | 0.00226 seconds |
+./spec/engine_spec.rb[1:1:2:1] | passed | 0.00054 seconds |
+./spec/engine_spec.rb[1:1:2:2] | passed | 0.00041 seconds |
+./spec/engine_spec.rb[1:3:1:1] | passed | 0.00038 seconds |
+./spec/engine_spec.rb[1:3:1:2] | passed | 0.00018 seconds |
 ./spec/views_spec.rb[1:1]      | passed | 0.00017 seconds |
 ./spec/views_spec.rb[1:2]      | passed | 0.00056 seconds |
 ./spec/views_spec.rb[1:3]      | passed | 0.00022 seconds |
