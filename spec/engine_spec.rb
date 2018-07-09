@@ -30,7 +30,6 @@ RSpec.describe 'ExceptionHandler' do
       # => Options
       let(:version) { ExceptionHandler::VERSION::STRING }
       let(:engine)  { ExceptionHandler::Engine }
-      let(:config)  { ExceptionHandler.config }
 
       # => Version needs to exist
       # => Present Version
@@ -42,9 +41,9 @@ RSpec.describe 'ExceptionHandler' do
 
       # => Loaded?
       # => Accessible by Rails?
-      describe "engine" do
+      describe "class" do
         subject { engine }
-        it { should be_const_defined(:ExceptionHandler) }
+        it { should be_const_defined('ExceptionHandler') }
         it { }
       end
 
@@ -54,44 +53,89 @@ RSpec.describe 'ExceptionHandler' do
   #############################################
 
     # => Ensure Gem's features are loaded into Rails
-    describe "Components" do
+    describe "Engine" do
 
-      # => Options
-      let(:config)          { ExceptionHandler.config }
-      let(:dev)             { ExceptionHandler.config.dev }
-      let(:middleware)      { Rails.application.config.exceptions_app }
-      let(:local_requests)  { Rails.application.config.consider_all_requests_local }
+      #########################
+      #########################
 
-      # => Config
-      # => Exists? Accessible? Right Values?
-      describe "config" do
-        subject { config }
-        #it { should be_const_defined(ExceptionHandler::Config) }
+        # => Options
+        let(:config) { ExceptionHandler.config }
+        let(:rails)  { Rails.application.config}
+
+      #########################
+      #########################
+
+        # => Config
+        # => Exists? Accessible? Right Values?
+        describe "config" do
+          subject { config }
+          it { should be_a ExceptionHandler::Config }
+          # => accessible
+          # => values
+        end
+
+      #########################
+      #########################
+
+        # => Middleware
+        # => Check if it's correctly overwritten @exceptions_app
+        # => http://guides.rubyonrails.org/configuring.html#rails-general-configuration
+        describe "middleware" do
+          subject { rails.exceptions_app }
+          #it      { should eq(ExceptionHandler) }
+          # => accessible?
+        end
+
+      #########################
+      #########################
+
+        # => Dev Mode
+        # => Changes "consider_all_requests_local" to opposite of config
+        describe "dev" do
+
+          # => Access dev mode
+          # => Ensure the config is present & accessible
+          context "config" do
+            subject { config.dev }
+            it { should_not be true }
+          end
+
+          # => Local Requests
+          # => Should be the opposite of the dev option
+          context "local requests" do
+            subject { rails.consider_all_requests_local }
+            it { should_not be ExceptionHandler.config.dev }
+          end
+
+        end
+
+      #########################
+      #########################
+
+        # => Custom Exceptions
+        # => Ensure custom exceptions added to Rails
+        describe "custom exceptions" do
+
+          # => Rescue Response
+          subject { rails.action_dispatch.rescue_responses }
+
+          # => Let
+          let(:config) { ExceptionHandler.config }
+
+          # => Check if present
+          context "present" do
+
+          end
+
+          # => Check if can be accessed
+          context "accessiblity" do
+            before { config.custom_exceptions.merge! 'ActionController::RoutingError' => :not_found }
+            it { should include config.custom_exceptions }
+          end
+
+        end
+
       end
-
-      # => Middleware
-      # => Check if it's correctly overwritten @exceptions_app
-      # => http://guides.rubyonrails.org/configuring.html#rails-general-configuration
-      describe "middleware" do
-        subject { middleware }
-        #it "has overwritten @exceptions_app hook" do
-        #  expect().to eq "2"
-        #end
-      end
-
-      # => Dev Mode
-      # => Changes "consider_all_requests_local" to opposite of config
-      #it "has dev mode" do
-      #  expect(Rails.application.config.consider_all_requests_local).not_to be ExceptionHandler.config.dev
-      #end
-
-      # => Custom Exceptions
-      # => Ensure custom exceptions added to Rails
-      #it "has custom exceptions" do
-      #  expect(Rails.application.config.consider_all_requests_local).not_to be ExceptionHandler.config.dev
-      #end
-
-    end
 
   #############################################
   #############################################
