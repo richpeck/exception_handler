@@ -19,7 +19,7 @@ require 'spec_helper'
 # => Test erroneous requests under different circumstances
 # => Expect the return of 404, 500 (etc) Error Pages
 # => Test layout, show action, @exception object and different config options
-RSpec.describe ExceptionHandler::ExceptionsController do
+RSpec.describe "ExceptionHandler::ExceptionsController" do
 
 end
 
