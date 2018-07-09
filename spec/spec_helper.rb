@@ -11,28 +11,27 @@
 ###############################################
 ###############################################
 
-require 'bundler/setup'
-
-require 'active_support'
-require 'active_model'
-require 'rails/engine'
-require 'rails/railtie'
+# => Helper
+require 'spec_helper'
 
 # => ENV
 ENV["RAILS_ENV"] ||= "test"
 
-# => Environment
+# => Rails
 require_relative './dummy/config/environment'
+abort("The Rails environment is running in production mode!") if Rails.env.production?
+
+# => RSpec
+require 'rspec/rails'
+
+# => Environment
 ActiveRecord::Migrator.migrations_paths = [File.expand_path("./dummy/db/migrate", __dir__)]
 
-# => Gem
+# => Gem (to test)
 require 'exception_handler'
 
 ###############################################
 ###############################################
-
-# => Production Only
-abort("The Rails environment is running in production mode!") if Rails.env.production?
 
 # => ActiveRecord
 ActiveRecord::Migration.maintain_test_schema!

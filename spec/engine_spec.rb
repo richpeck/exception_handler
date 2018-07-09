@@ -17,6 +17,8 @@ require 'spec_helper'
 ###############################################
 
 # => ExceptionHandler (base)
+# => Test underlying engine (loading, initializers, etc)
+# => Ensure that all elements are correctly integrated into Rails core
 RSpec.describe ExceptionHandler do
 
   #############################################
@@ -51,18 +53,21 @@ RSpec.describe ExceptionHandler do
 
     # => Dev Mode
     # => Changes "consider_all_requests_local" to opposite of config
-    it "has dev mode" do
-      expect(Rails.application.config.consider_all_requests_local).not_to be ExceptionHandler.config.dev
-    end
+    #it "has dev mode" do
+    #  expect(Rails.application.config.consider_all_requests_local).not_to be ExceptionHandler.config.dev
+    #end
 
   #############################################
   #############################################
 
     # => Routes
-    # => Dev mode adds routes for 4xx+5xx
+    # => Dev mode adds routes for 4xx/5xx
     #it "adds dev routes" do
-    #  let {:routes}
-    #end
+  #    Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |code, status|
+  #      puts status
+  #      expect(get: status.to_s).to route_to(controller: "exception_handler/exceptions", action: "show")
+  #    end
+  #  end
 
   #############################################
   #############################################
