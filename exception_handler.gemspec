@@ -11,16 +11,17 @@ require_relative 'lib/exception_handler/version'
 Gem::Specification.new do |s|
 
   ## General ##
-  s.name          = "exception_handler"
-  s.authors       = ["R.Peck"]
-  s.email         = ["rpeck@fl.co.uk"]
-  s.version       = ExceptionHandler::VERSION::STRING
-  s.platform      = Gem::Platform::RUBY
+  s.name                  = "exception_handler"
+  s.authors               = ["R.Peck"]
+  s.email                 = ["rpeck@fl.co.uk"]
+  s.version               = ExceptionHandler::VERSION::STRING
+  s.platform              = Gem::Platform::RUBY
 
   ## Details ##
-  s.summary       = %q{Rails gem to show custom error pages in production. Also logs errors in db & sends notification emails}
-  s.description   = %q{Rails gem to create custom error pages. Captures exceptions using "exception_app" callback, routing to "Exception" controller, rendering the view as required.}
-  s.homepage      = "https://github.com/richpeck/exception_handler"
+  s.summary               = %q{Rails gem to show custom error pages in production. Also logs errors in db & sends notification emails}
+  s.description           = %q{Rails gem to create custom error pages. Captures exceptions using "exception_app" callback, routing to "Exception" controller, rendering the view as required.}
+  s.post_install_message  = %q{ExceptionHandler 0.8.0.0 → New "config" (config.exception_handler = {exceptions: {layout: 'x', notification: true, action: {redirect_to root_path} }} ). https://www.github.com/richpeck/exception_handler#config for more info. }
+  s.homepage              = "https://github.com/richpeck/exception_handler"
 
   ## License ##
   s.license       = "MIT"
@@ -54,6 +55,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rake"
   s.add_development_dependency "rspec"
   s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "factory_girl_rails"
   s.add_development_dependency "sqlite3", ">= 1.3.10"
 
 ##############################################################

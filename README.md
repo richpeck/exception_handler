@@ -1,9 +1,5 @@
-<a href="https://www.vpsdeploy.com">
-  <img src="https://cdn-images-1.medium.com/max/1000/1*vgHW2hcnbHHaAYR44vU7Gw.jpeg" />
-</a>
-<hr />
 <p align="center">
-  <strong>💣 README Updated 💣 - Gem Incorporated into 💀 <a href="https://www.vpsdeploy.com" title="Custom VPS Deployment For Rails"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/><code>Custom Programming Tutorials</code> + <code>Deployment Infrastructure</code> For Cloud VPS Providers...</strong>
+  <strong>💣 README Currently Being Updated 💣 - Gem Incorporated into 💀 <a href="https://www.vpsdeploy.com" title="Custom VPS Deployment For Rails"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/><code>Custom Programming Tutorials</code> + <code>Deployment Infrastructure</code> For Cloud VPS Providers...</strong>
 </p>
 <hr />
 
@@ -92,19 +88,19 @@
   <img src="./readme/http_codes.png" />
 </p>
 
-The gem inserts our custom [ `controller`](app/controllers/exception_handler/exceptions_controller.rb) into [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), allowing us to render custom HTML for erroneous requests.
+The gem inserts a custom [ `controller`](app/controllers/exception_handler/exceptions_controller.rb) into [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), allowing us to render custom HTML for erroneous requests.
 
 The controller uses a *single* method/view to build a response to errors. This view remains the same for *every* exception; the ONLY change is the *[layout](/app/views/layouts/exception.html.erb)* - depending on the HTTP response being returned (`4xx`/`5xx`).
 
 The beauty lies in the *simplicity* through which this is achieved → rather than having many different elements, its SOLE focus is to provide different HTML responses via differing *layouts*. `ExceptionHandler` does this within the scope of [`ActionView`](http://guides.rubyonrails.org/action_view_overview.html), allowing for the use of `views`, `helpers` and `data` from the database.
 
-The gem works 100% out of the box in `production`, and has the option to be called in [`dev`](#dev) if necessary.
+Gem works 100% out of the box in `production`, and has the option to be called in [`dev`](#dev) if necessary.
 
 --
 
 ### 📑 HTTP
 
-The most important thing to understand is that *it doesn't matter* which errors Ruby/Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).  Due to the nature of HTTP, you only need to facilitate responses for [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) - [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors).
+The most important thing to understand is that *it doesn't matter* which errors Ruby/Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html). Due to the nature of HTTP, you only need to facilitate responses for [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) - [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors).
 
 This means that all you're really doing is taking "Ruby" errors and giving them an appropriate [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) & [message body](https://en.wikipedia.org/wiki/HTTP_message_body) (HTML). Rails handles the process for you - the *only* thing we need to worry about is how the HTML is generated.  
 
@@ -156,7 +152,8 @@ The system is 100% compatible with Rails 4 & 5 and has already been downloaded *
 <div id="setup">
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
   <h3 align="center">🔨 Setup 🔨</h3>
-  <p align="center">-- <br />The <i>most</i> important thing to apprecaite about the gem is that</p>
+  <p align="center">-- <br />The <i>most</i> important thing to appreciate about the gem is that it's designed to be <b><em>completely</em> unobtrusive</b>.</p>
+  <p align="center">This means that if you're looking at using it, </p>
   <p align="center"><img src="./readme/dev.png" /></p>
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>  
   <p align="center">
@@ -170,11 +167,11 @@ The system is 100% compatible with Rails 4 & 5 and has already been downloaded *
   <h4>🚧 Config 🚧</h4>
 </p>  
 
-**ONLY thing you need to get `ExceptionHandler` working is the [`config`](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb)**.
+**The ONLY thing you need to configure `ExceptionHandler` is the [`config`](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb)**.
 
-Whilst it works without the need for **ANY** configuration, if you want to manage the `layouts`, `email`, `dev` or `database`, you'll need to set the appropriate values in the config hash ([invoked at init](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/engine.rb#L44)).
+Whilst the gem **works out of the box** (without any configuration), if you want to manage the [`layouts`](#layouts), [`email`](#email), [`dev`](#dev) or the [`database`](#db), you'll need to set the appropriate values in the config hash ([invoked at init](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/engine.rb#L44)).
 
-This can be done with `config/application.rb`, `config/environments/[env].rb` or an `initializer`...
+This can be done in `config/application.rb` or `config/environments/[env].rb` ↴
 
 ```
 # config/application.rb
@@ -182,25 +179,38 @@ This can be done with `config/application.rb`, `config/environments/[env].rb` or
 module YourApp
   class Application < Rails::Application
 
+    # => This is an example of ALL available config options
+    # => You're able to see exactly how it works here:
+    # => https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb
+
+    # => Config hash (no initializer required)
     config.exception_handler = {
       dev:        nil, # allows you to turn ExceptionHandler "on" in development
-      db:         nil, # allocates a "table name" into which exceptions are saved (defaults to :errors)
-      email:      nil, # sends exception emails to a listed email (string // "you@email.com"),
-      social: {        # on default 50x error page, social media links included
+      db:         nil, # allocates a "table name" into which exceptions are saved (defaults to nil)
+      email:      nil, # sends exception emails to a listed email (string // "you@email.com")
+
+      # On default 5xx error page, social media links included
+      social: {        
         facebook: nil, # Facebook page name   
         twitter:  nil, # Twitter handle  
         youtube:  nil, # Youtube channel name / ID
         linkedin: nil, # LinkedIn name
         fusion:   nil  # FL Fusion handle
       },  
+
+      # This is an entirely NEW structure for the "layouts" area
+      # You're able to define layouts, notifications etc ↴
+
+      # All keys interpolated as strings, so you can use symbols, strings or integers where necessary
       exceptions: {
+
         :all => {
           layout: "exception", # define layout
           notification: true, # (false by default)
           deliver: #something here to control the type of response
         },
         :4xx => {
-          layout: "application", # define layout
+          layout: nil, # define layout
           notification: true, # (false by default)
           deliver: #something here to control the type of response    
         },    
@@ -209,18 +219,23 @@ module YourApp
           notification: true, # (false by default)
           deliver: #something here to control the type of response    
         },
-        :500 => {
+        500 => {
           layout: "exception", # define layout
           notification: true, # (false by default)
           deliver: #something here to control the type of response    
         },
-        :501 => "exception",
-        :502 => "exception",
-        :503 => "exception",
-        :504 => "exception",
-        :505 => "exception",
-        :507 => "exception",
-        :510 => "exception"
+
+        # This is the old structure
+        # Still works but will be deprecated in future versions
+
+        501 => "exception",
+        502 => "exception",
+        503 => "exception",
+        504 => "exception",
+        505 => "exception",
+        507 => "exception",
+        510 => "exception"
+
       }
     }
 
@@ -229,14 +244,6 @@ end
 ```  
 
 For a full retinue of the available options, you'll be best looking at the [`config`](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb) file itself.
-
-In terms of how the system works,
-
-```
-# config/initializers/exception_handler.rb
-
-config.exception_handler = {}
-```
 
 --
 
@@ -281,10 +288,9 @@ This is normally done by changing the setting in your Rails config files. Howeve
 ```
 # config/application.rb
 config.exception_handler = { dev: true }
-
 ```
 
-This disables [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), making Rails behave as it would in production (showing your exceptions page):
+This disables [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), making Rails behave as it would in production:
 
 ![Dev][dev_img]
 
@@ -353,7 +359,6 @@ If you wish to change the "layout" / "look", there are **two** options...
  * Firstly, you can create your own layout. This is done by changing the
 
  * Secondly,
-
 
 ---
 
@@ -465,7 +470,7 @@ The drawback to this is that if you remove `ExceptionHandler` before you rollbac
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>  
 </div>
 
-<p align="center"><b>🚨 <em>Obviously</em>, if you've taken the time to use the gem, it makes sense to <a href="https://github.com/richpeck/exception_handler/issues">support</a> it 🚨</b></p>
+<p align="center"><b>🚨 <em>Obviously</em>, if you've taken the time to use the gem, it makes sense to <a href="https://github.com/richpeck/exception_handler/issues">support</a> it 🚨!</b></p>
 
 The fastest way to get a **direct response** is via [email](mailto:rpeck@frontlineutilities.co.uk).
 

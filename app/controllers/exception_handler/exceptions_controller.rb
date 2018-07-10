@@ -40,6 +40,7 @@ module ExceptionHandler
     ####################
 
     # => General Show Functionality
+    # => Introduced new "action" config option in 0.8.0.0
     def show
       respond_with @exception, status: @exception.status
     end
@@ -56,34 +57,13 @@ module ExceptionHandler
 
     private
 
-    # => Shows different layouts
-    # => New setup takes
-    def layout
-
-      # specific first
-      # all second
-      # 4xx/5xx last
-
-      # => Has to cover older version { "x" }
-      # => Has to cover newer version { layout: "x" }
-      config =
-        ExceptionHandler.config.try(:layouts).try(   :[], @exception.status) ||
-        ExceptionHandler.config.try(:layouts).try(   :[], @exception.status.to_s) ||
-        ExceptionHandler.config.try(:exceptions).try(:[], @exception.status) ||
-        ExceptionHandler.config.try(:exceptions).try(:[], @exception.status.to_s) ||
-        ExceptionHandler.config.try(:exceptions).try(:[], 'all') ||
-        ExceptionHandler.config.try(:exceptions).try(:[], @exception.status.to_s.first + 'xx')
-
-      # expected result either STRING or HASH
-      case true
-        when config.is_a?(String)
-          config  # => Old
-        when config.is_a?(Hash)
-          config.try(:[], :layout) # => New
-        else
-          'exception' #=> Failsafe
-      end
-
+    # => Pulls from Exception class
+    # => Spanner in the works is nil
+    # => .present? validates against empty strings (IE a string is present)
+    # => .nil? validates to see if the returned data is "nil"
+    # => nil required to facilitate inheritance of the layout w/ ApplicationController
+    def layout option = ExceptionHandler.config.options(@exception.status, :layout)
+      (option.present? || option.nil?) ? option : 'exception'
     end
 
     ##################################
