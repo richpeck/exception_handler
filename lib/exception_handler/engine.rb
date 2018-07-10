@@ -62,6 +62,13 @@ module ExceptionHandler
         app.config.action_dispatch.rescue_responses.merge! ExceptionHandler.config.custom_exceptions if ExceptionHandler.config.custom_exceptions
       end
 
+      # => Custom Exceptions
+      # => This just mimicks standard Rails behaviour
+      # => Look for "config.action_dispatch.rescue_responses" for more info)
+      initializer :custom_exceptions do |app|
+        app.config.action_dispatch.rescue_responses.merge! ExceptionHandler.config.custom_exceptions if ExceptionHandler.config.custom_exceptions
+      end
+
       # => Migrations
       # => This has to be kept in an initializer (to access app)
       # => https://blog.pivotal.io/labs/labs/leave-your-migrations-in-your-rails-engines
