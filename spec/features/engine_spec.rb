@@ -62,6 +62,10 @@ RSpec.describe ExceptionHandler::Engine do
         let(:config) { ExceptionHandler.config }
         let(:rails)  { Rails.configuration }
 
+        # => Before
+        before(:context) { ExceptionHandler.config.dev = false }
+        before(:context) { puts "test" }
+
       #########################
       #########################
 
