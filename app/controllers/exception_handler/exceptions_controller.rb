@@ -45,6 +45,13 @@ module ExceptionHandler
       respond_with @exception, status: @exception.status
     end
 
+    # => Routes
+    # => This only exists if EH is in development mode (not in production)
+    # => https://github.com/rails/rails/issues/22613 (custom error responses)
+    def dev
+      raise (ActionDispatch::ExceptionWrapper.rescue_responses.key(params[:code].to_sym) || 'Exception').classify 
+    end
+
     ##################################
     ##################################
 
