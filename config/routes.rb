@@ -17,18 +17,18 @@
 ########################################
 
 ## Routes ##
-Rails.application.routes.draw do
+ExceptionHandler::Engine.routes.draw do
 
   ########################################
   ########################################
 
     # => ExceptionHandler
     # => Used to provide error page examples in "dev" mode
-    if Object.const_defined?("ExceptionHandler") && ExceptionHandler.config.try(:dev)
+    if Object.const_defined?('ExceptionHandler') #&& ExceptionHandler.config.try(:dev)
 
       # => Items
       Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |code, status|
-        get status.to_s, to: 'exception_handler/exceptions#show', as: code, code: code
+        get status.to_s, to: 'exceptions#show', as: code, code: code
       end
 
     end
