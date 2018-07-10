@@ -1,17 +1,17 @@
 example_id                                | status | run_time        |
 ----------------------------------------- | ------ | --------------- |
-./spec/features/engine_spec.rb[1:1:1:1]   | passed | 0.00047 seconds |
-./spec/features/engine_spec.rb[1:1:1:2]   | passed | 0.00222 seconds |
-./spec/features/engine_spec.rb[1:1:2:1]   | passed | 0.00052 seconds |
-./spec/features/engine_spec.rb[1:1:2:2]   | passed | 0.00033 seconds |
-./spec/features/engine_spec.rb[1:2:1:1]   | passed | 0.00352 seconds |
-./spec/features/engine_spec.rb[1:2:3:1:1] | passed | 0.00235 seconds |
-./spec/features/engine_spec.rb[1:2:3:2:1] | passed | 0.0005 seconds  |
-./spec/routing/routing_spec.rb[1:1:1:1]   | passed | 0.01559 seconds |
-./spec/routing/routing_spec.rb[1:1:1:2]   | passed | 0.03676 seconds |
-./spec/routing/routing_spec.rb[1:1:2:1]   | passed | 0.01445 seconds |
-./spec/routing/routing_spec.rb[1:1:2:2]   | passed | 0.01277 seconds |
-./spec/routing/routing_spec.rb[1:2:1:1]   | passed | 0.00452 seconds |
-./spec/routing/routing_spec.rb[1:2:1:2]   | passed | 0.01418 seconds |
-./spec/routing/routing_spec.rb[1:2:2:1]   | passed | 0.01898 seconds |
-./spec/routing/routing_spec.rb[1:2:2:2]   | passed | 0.00912 seconds |
+./spec/features/engine_spec.rb[1:1:1:1]   | passed | 0.00097 seconds |
+./spec/features/engine_spec.rb[1:1:1:2]   | passed | 0.0025 seconds  |
+./spec/features/engine_spec.rb[1:1:2:1]   | passed | 0.00043 seconds |
+./spec/features/engine_spec.rb[1:1:2:2]   | passed | 0.00035 seconds |
+./spec/features/engine_spec.rb[1:2:1:1]   | passed | 0.00395 seconds |
+./spec/features/engine_spec.rb[1:2:3:1:1] | passed | 0.00231 seconds |
+./spec/features/engine_spec.rb[1:2:3:2:1] | passed | 0.00037 seconds |
+./spec/routing/routing_spec.rb[1:1:1:1]   | passed | 0.01546 seconds |
+./spec/routing/routing_spec.rb[1:1:1:2]   | passed | 0.0466 seconds  |
+./spec/routing/routing_spec.rb[1:1:2:1]   | passed | 0.01425 seconds |
+./spec/routing/routing_spec.rb[1:1:2:2]   | passed | 0.00863 seconds |
+./spec/routing/routing_spec.rb[1:2:1:1]   | passed | 0.0051 seconds  |
+./spec/routing/routing_spec.rb[1:2:1:2]   | passed | 0.01646 seconds |
+./spec/routing/routing_spec.rb[1:2:2:1]   | passed | 0.01439 seconds |
+./spec/routing/routing_spec.rb[1:2:2:2]   | passed | 0.0101 seconds  |

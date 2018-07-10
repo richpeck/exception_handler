@@ -45,8 +45,10 @@ RSpec.describe ExceptionHandler do
       subject { dev }
       it {should eq(true) }
 
-      it "have exception routes" do
-        expect(:get => '500').to route_to(:controller => "exception_handler/exceptions", :action => "show", :code => :internal_server_error)
+      it "has exception routes" do
+        Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |status,code|
+          expect(:get => code.to_s).to route_to(:controller => "exception_handler/exceptions", :action => "show", :code => status.to_sym)
+        end
       end
     end
 
@@ -72,6 +74,8 @@ RSpec.describe ExceptionHandler do
   # => Should not be routable (at all)
   # => Test with + without dev option
   context "ExceptionHandler::Engine.routes" do
+
+    # => Routes
     routes { ExceptionHandler::Engine.routes }
 
     # => Dev mode
@@ -81,7 +85,9 @@ RSpec.describe ExceptionHandler do
       before { ExceptionHandler.config.dev = true }
 
       it "does not have exception routes" do
-        expect(:get => '500').to_not be_routable
+        Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |status,code|
+          expect(:get => code.to_s).not_to be_routable
+        end
       end
     end
 
