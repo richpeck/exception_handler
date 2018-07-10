@@ -22,6 +22,8 @@ require 'spec_helper'
 # => Needs to return specific results per option (dev = true/false, email = string etc)
 RSpec.describe ExceptionHandler.config do
 
+
+
 end
 
 ###############################################

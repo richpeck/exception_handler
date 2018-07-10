@@ -23,7 +23,6 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 
 # => RSpec
 require 'rspec/rails'
-require 'factory_bot'
 
 # => Environment
 ActiveRecord::Migrator.migrations_paths = [File.expand_path("./dummy/db/migrate", __dir__)]
@@ -78,8 +77,6 @@ RSpec.configure do |config|
   # => Rails (Fixtures etc)
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
-
-  # => FactoryBot
-  config.include FactoryBot::Syntax::Methods
+  config.order = :random
 
 end

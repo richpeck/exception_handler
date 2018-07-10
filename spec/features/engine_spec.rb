@@ -19,7 +19,7 @@ require 'spec_helper'
 # => ExceptionHandler (base)
 # => Test underlying engine (loading, initializers, etc)
 # => Ensure that all elements are correctly integrated into Rails core
-RSpec.describe ExceptionHandler do
+RSpec.describe ExceptionHandler::Engine do
 
   #############################################
   #############################################
@@ -53,14 +53,14 @@ RSpec.describe ExceptionHandler do
   #############################################
 
     # => Ensure Gem's features are loaded into Rails
-    describe "Engine" do
+    describe "Setup" do
 
       #########################
       #########################
 
         # => Options
         let(:config) { ExceptionHandler.config }
-        let(:rails)  { Rails.application.config}
+        let(:rails)  { Rails.configuration }
 
       #########################
       #########################

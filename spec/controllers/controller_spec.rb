@@ -19,17 +19,42 @@ require 'spec_helper'
 # => Test erroneous requests under different circumstances
 # => Expect the return of 404, 500 (etc) Error Pages
 # => Test layout, show action, @exception object and different config options
-RSpec.describe "ExceptionHandler::ExceptionsController" do
+RSpec.describe ExceptionHandler::ExceptionsController do
 
-  # => Check controller exists
+  # => General
+  # => Used to describe the actual Controller class
+  describe "class" do
+    subject { controller }
+    it { should respond_to :show }
+  end
 
-  # => Check show exists
+  # => Layout
+  # => Expected results & overall views
+  describe "layout" do
+    #subject { response.layout }
+    #it { should be_a String }
+  end
 
-  # => Check layout method
+  # => Response
+  # => Should deliver 404 / 500 error responses
+  # => Should deliver appropriate headers, layout etc
+  describe "response" do
 
-  # => Check befre_action filters
+    # => Before
+    before(:each) { }
 
-  # => Check respond_with
+    # => 404
+    context "404" do
+      subject { response }
+      it { should have_http_status :ok }
+
+    end
+
+    # => 500
+    context "500" do
+    end
+
+  end
 
 end
 

@@ -129,7 +129,7 @@ module ExceptionHandler
     ###########################################
     ###########################################
 
-      # => Cnstructor
+      # => Constructor
       # => Merges DEFAULTS to values, creates instances vars (for attr_accessor)
       def initialize values
 

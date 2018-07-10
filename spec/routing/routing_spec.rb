@@ -17,7 +17,7 @@ require 'spec_helper'
 
 # => Routes (base)
 # => Test underlying routes + engine routes
-RSpec.describe ExceptionHandler do
+RSpec.describe 'ExceptionHandler::Engine.routes' do
 
     # => Let (config)
     let(:dev) { ExceptionHandler.config.dev }
@@ -26,8 +26,7 @@ RSpec.describe ExceptionHandler do
   #############################################
 
     # => Before (set routes)
-    before(:context) { ExceptionHandler.config.dev = true }
-    before(:each)    { Rails.application.reload_routes! }
+    before(:each) { Rails.application.reload_routes! }
 
   #############################################
   #############################################
@@ -43,8 +42,10 @@ RSpec.describe ExceptionHandler do
     # => Dev mode
     context "dev mode" do
       subject { dev }
-      it {should eq(true) }
+      before { ExceptionHandler.config.dev = true }
+      before { Rails.application.reload_routes! }
 
+      it {should eq(true) }
       it "has exception routes" do
         Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |status,code|
           expect(:get => code.to_s).to route_to(:controller => "exception_handler/exceptions", :action => "show", :code => status.to_sym)
@@ -81,9 +82,9 @@ RSpec.describe ExceptionHandler do
     # => Dev mode
     context "dev mode" do
       subject { dev }
-      it {should eq(true) }
       before { ExceptionHandler.config.dev = true }
 
+      it {should eq(true) }
       it "does not have exception routes" do
         Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |status,code|
           expect(:get => code.to_s).not_to be_routable
