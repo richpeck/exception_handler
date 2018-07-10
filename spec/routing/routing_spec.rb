@@ -1,13 +1,12 @@
 ###############################################
 ###############################################
-##       _____  _____                        ##
-##      | ___ \/  ___|                       ##
-##      | |_/ /\ `--. _ __   ___  ___        ##
-##      |    /  `--. \ '_ \ / _ \/ __|       ##
-##      | |\ \ /\__/ / |_) |  __/ (__        ##
-##      \_| \_|\____/| .__/ \___|\___|       ##
-##                   | |                     ##
-##                   |_|                     ##
+##       _____            _                  ##
+##      | ___ \          | |                 ##
+##      | |_/ /___  _   _| |_ ___  ___       ##
+##      |    // _ \| | | | __/ _ \/ __|      ##
+##      | |\ \ (_) | |_| | ||  __/\__ \      ##
+##      \_| \_\___/ \__,_|\__\___||___/      ##
+##                                           ##
 ###############################################
 ###############################################
 
@@ -16,45 +15,95 @@ require 'spec_helper'
 ###############################################
 ###############################################
 
-# => ExceptionHandler (base)
-# => Test underlying engine (loading, initializers, etc)
-# => Ensure that all elements are correctly integrated into Rails core
-RSpec.describe ExceptionHandler, "Routes" do
+# => Routes (base)
+# => Test underlying routes + engine routes
+RSpec.describe ExceptionHandler do
+
+    # => Let (config)
+    let(:dev) { ExceptionHandler.config.dev }
 
   #############################################
   #############################################
 
+    # => Before (set routes)
+    before(:context) { ExceptionHandler.config.dev = true }
+    before(:each)    { Rails.application.reload_routes! }
+
+  #############################################
+  #############################################
+
+  # => Rails application Routes
+  # => Should be routable WITH dev option
+  # => Should not be routable WITHOUT dev option
+  context "Rails.application.routes" do
 
     # => Routes
-    describe "Routes", type: :routing do
+    routes { Rails.application.routes }
 
-      # => Options
-      let(:routes) { Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b')} }
-      let(:config) { ExceptionHandler.config }
+    # => Dev mode
+    context "dev mode" do
+      subject { dev }
+      it {should eq(true) }
 
-      # => Dev mode enabled
-      # => First check dev mode enabled
-      # => Second check for presence of routes
-      context "with dev enabled" do
-        subject { config.dev = true }
-        it      { is_expected.to eq(true) }
-        #Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b')}.each do |code,status|
-        #  it { expect(get: "/" + status.to_s).to route_to(controller: "exception_handler/exceptions", action: "show", code: code) }
-        #end
+      it "has exception routes" do
+        Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |status,code|
+          expect(:get => code.to_s).to route_to(:controller => "exception_handler/exceptions", :action => "show", :code => status.to_sym)
+        end
       end
-
-      # => Dev mode disabled
-      # => First check if dev mode disabled
-      # => Second check for routes being not_routable
-      context "without dev" do
-        subject { config.dev = false }
-        it      { is_expected.not_to eq(true) }
-        #Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b')}.each do |code,status|
-        #  it { expect(get: "/" + status.to_s).not_to be_routable }
-        #end
-      end
-
     end
+
+    # => Not dev mode
+    context "!dev mode" do
+      subject { dev }
+      before { ExceptionHandler.config.dev = false }
+
+      it { should_not eq(true) }
+      it "does not have exception routes" do
+        Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |status,code|
+          expect(:get => code.to_s).not_to be_routable
+        end
+      end
+    end
+
+  end
+
+  #############################################
+  #############################################
+
+  # => Engine based Routes
+  # => Should not be routable (at all)
+  # => Test with + without dev option
+  context "ExceptionHandler::Engine.routes" do
+
+    # => Routes
+    routes { ExceptionHandler::Engine.routes }
+
+    # => Dev mode
+    context "dev mode" do
+      subject { dev }
+      it {should eq(true) }
+      before { ExceptionHandler.config.dev = true }
+
+      it "does not have exception routes" do
+        Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |status,code|
+          expect(:get => code.to_s).not_to be_routable
+        end
+      end
+    end
+
+    # => Not dev mode
+    context "!dev mode" do
+      subject { dev }
+      before { ExceptionHandler.config.dev = false }
+
+      it { should_not eq(true) }
+      it "does not have exception routes" do
+        Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |status,code|
+          expect(:get => code.to_s).not_to be_routable
+        end
+      end
+    end
+  end
 
   #############################################
   #############################################
