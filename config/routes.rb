@@ -17,7 +17,7 @@
 ########################################
 
 ## Routes ##
-ExceptionHandler::Engine.routes.draw do
+Rails.application.routes.draw do
 
   ########################################
   ########################################
@@ -28,7 +28,7 @@ ExceptionHandler::Engine.routes.draw do
 
       # => Items
       Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |code, status|
-        get status.to_s, to: 'exceptions#show', as: code, code: code
+        get status.to_s, to: 'exception_handler/exceptions#show', as: code, code: code
       end
 
     end

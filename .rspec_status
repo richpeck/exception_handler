@@ -1,10 +1,11 @@
 example_id                                | status | run_time        |
 ----------------------------------------- | ------ | --------------- |
-./spec/features/engine_spec.rb[1:1:1:1]   | passed | 0.00058 seconds |
-./spec/features/engine_spec.rb[1:1:1:2]   | passed | 0.00216 seconds |
-./spec/features/engine_spec.rb[1:1:2:1]   | passed | 0.00046 seconds |
-./spec/features/engine_spec.rb[1:1:2:2]   | passed | 0.00037 seconds |
-./spec/features/engine_spec.rb[1:2:1:1]   | passed | 0.00212 seconds |
-./spec/features/engine_spec.rb[1:2:3:1:1] | passed | 0.00219 seconds |
-./spec/features/engine_spec.rb[1:2:3:2:1] | passed | 0.00038 seconds |
-./spec/routing/routing_spec.rb[1:1]       | passed | 0.01024 seconds |
+./spec/features/engine_spec.rb[1:1:1:1]   | passed | 0.0006 seconds  |
+./spec/features/engine_spec.rb[1:1:1:2]   | passed | 0.00351 seconds |
+./spec/features/engine_spec.rb[1:1:2:1]   | passed | 0.00045 seconds |
+./spec/features/engine_spec.rb[1:1:2:2]   | passed | 0.00019 seconds |
+./spec/features/engine_spec.rb[1:2:1:1]   | passed | 0.0021 seconds  |
+./spec/features/engine_spec.rb[1:2:3:1:1] | passed | 0.00339 seconds |
+./spec/features/engine_spec.rb[1:2:3:2:1] | passed | 0.00062 seconds |
+./spec/routing/routing_spec.rb[1:1:1]     | passed | 0.01749 seconds |
+./spec/routing/routing_spec.rb[1:2:1]     | passed | 0.00041 seconds |
