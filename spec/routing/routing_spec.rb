@@ -41,7 +41,7 @@ RSpec.describe 'ExceptionHandler::Engine.routes' do
       routes { eval item }
 
       # => Dev mode
-      context "dev mode" do
+      context "✔️ dev mode" do
         subject { dev }
         before { ExceptionHandler.config.dev = true }
         before { Rails.application.reload_routes! }
@@ -60,7 +60,7 @@ RSpec.describe 'ExceptionHandler::Engine.routes' do
       end
 
       # => Non Dev mode
-      context "!dev mode" do
+      context "❌ dev mode" do
         subject { dev }
         before { ExceptionHandler.config.dev = false }
         before { Rails.application.reload_routes! }
