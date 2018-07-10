@@ -19,7 +19,7 @@ require 'spec_helper'
 # => ExceptionHandler (base)
 # => Test underlying engine (loading, initializers, etc)
 # => Ensure that all elements are correctly integrated into Rails core
-RSpec.describe 'ExceptionHandler' do
+RSpec.describe ExceptionHandler do
 
   #############################################
   #############################################
