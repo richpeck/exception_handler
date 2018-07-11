@@ -19,7 +19,7 @@ require 'spec_helper'
 # => ExceptionHandler (base)
 # => Test underlying engine (loading, initializers, etc)
 # => Ensure that all elements are correctly integrated into Rails core
-RSpec.describe ExceptionHandler::Engine do
+RSpec.describe 'ExceptionHandler' do
 
   #############################################
   #############################################
@@ -53,17 +53,14 @@ RSpec.describe ExceptionHandler::Engine do
   #############################################
 
     # => Ensure Gem's features are loaded into Rails
-    describe "Setup" do
+    describe "Engine" do
 
       #########################
       #########################
 
         # => Options
         let(:config) { ExceptionHandler.config }
-        let(:rails)  { Rails.configuration }
-
-        # => Before
-        before(:context) { ExceptionHandler.config.dev = false }
+        let(:rails)  { Rails.application.config}
 
       #########################
       #########################
@@ -72,35 +69,9 @@ RSpec.describe ExceptionHandler::Engine do
         # => Exists? Accessible? Right Values?
         describe "config" do
           subject { config }
-
-          # => Initialized
-          it "has an initializer" do
-            expect(Rails.application.initializers.map(&:name)).to include(:exception_handler_config)
-          end
-
-          # => Initialization Queue
-          it "is initialized before better_errors" do
-          end
-
-          # => Accessible?
-          # => Can we access the instance of the class and see which items are available?
           it { should be_a ExceptionHandler::Config }
-          it "is accessible" do
-
-          end
-
-          # => Values
-          # => The returned values need to be tested in the config class
-          it "responds to methods" do
-            %i(dev db email social layouts exceptions custom_exceptions).each do |method|
-              expect(config).to respond_to(method)
-            end
-          end
-
-          # => Basic values
-          it "has basic values" do
-            expect(config.dev).to be_boolean
-          end
+          # => accessible
+          # => values
         end
 
       #########################
@@ -111,7 +82,7 @@ RSpec.describe ExceptionHandler::Engine do
         # => http://guides.rubyonrails.org/configuring.html#rails-general-configuration
         describe "middleware" do
           subject { rails.exceptions_app }
-          #it { should eq(ExceptionHandler) }
+          #it      { should eq(ExceptionHandler) }
           # => accessible?
         end
 
@@ -151,13 +122,9 @@ RSpec.describe ExceptionHandler::Engine do
           # => Let
           let(:config) { ExceptionHandler.config }
 
-          # => Removes
-          it "has an initializer" do
-            expect(Rails.application.initializers.map(&:name)).to include(:exception_handler_custom_exceptions)
-          end
-
           # => Check if present
           context "present" do
+
           end
 
           # => Check if can be accessed

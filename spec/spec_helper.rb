@@ -89,5 +89,4 @@ RSpec.configure do |config|
     Rails.application.load_tasks
     Rake::Task["assets:clobber"].invoke
   end
-
 end

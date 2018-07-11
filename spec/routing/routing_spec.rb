@@ -71,7 +71,6 @@ RSpec.describe 'ExceptionHandler::Engine.routes' do
             expect(:get => code.to_s).not_to be_routable
           end
         end
-
       end
     end
   end
