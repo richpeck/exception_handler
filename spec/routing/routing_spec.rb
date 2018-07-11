@@ -17,17 +17,13 @@ require 'spec_helper'
 
 # => Routes (base)
 # => Test underlying routes + engine routes
-RSpec.describe ExceptionHandler do
-
-    # => Let (config)
-    let(:dev) { ExceptionHandler.config.dev }
+RSpec.describe 'ExceptionHandler::Engine.routes' do
 
   #############################################
   #############################################
 
-    # => Before (set routes)
-    before(:context) { ExceptionHandler.config.dev = true }
-    before(:each)    { Rails.application.reload_routes! }
+  # => Let (config)
+  let(:dev) { ExceptionHandler.config.dev }
 
   #############################################
   #############################################
@@ -35,71 +31,45 @@ RSpec.describe ExceptionHandler do
   # => Rails application Routes
   # => Should be routable WITH dev option
   # => Should not be routable WITHOUT dev option
-  context "Rails.application.routes" do
+  ['Rails.application.routes', 'ExceptionHandler::Engine.routes'].each do |item|
 
-    # => Routes
-    routes { Rails.application.routes }
+    # => Different types of route
+    # => Shouldn't have any routes for engine
+    context item do
 
-    # => Dev mode
-    context "dev mode" do
-      subject { dev }
-      it {should eq(true) }
+      # => Routes
+      routes { eval item }
 
-      it "has exception routes" do
-        Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |status,code|
-          expect(:get => code.to_s).to route_to(:controller => "exception_handler/exceptions", :action => "show", :code => status.to_sym)
+      # => Dev mode
+      context "✔️ dev mode" do
+        subject { dev }
+        before { ExceptionHandler.config.dev = true }
+        before { Rails.application.reload_routes! }
+
+        it { should eq(true) }
+        it "has exception routes" do
+          Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |status,code|
+            if item == 'Rails.application.routes'
+               expect(:get => code.to_s).to route_to(:controller => "exception_handler/exceptions", :action => "show", :code => status.to_sym)
+            else
+              expect(:get => code.to_s).not_to be_routable
+            end
+          end
         end
+
       end
-    end
 
-    # => Not dev mode
-    context "!dev mode" do
-      subject { dev }
-      before { ExceptionHandler.config.dev = false }
+      # => Non Dev mode
+      context "❌ dev mode" do
+        subject { dev }
+        before { ExceptionHandler.config.dev = false }
+        before { Rails.application.reload_routes! }
 
-      it { should_not eq(true) }
-      it "does not have exception routes" do
-        Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |status,code|
-          expect(:get => code.to_s).not_to be_routable
-        end
-      end
-    end
-
-  end
-
-  #############################################
-  #############################################
-
-  # => Engine based Routes
-  # => Should not be routable (at all)
-  # => Test with + without dev option
-  context "ExceptionHandler::Engine.routes" do
-
-    # => Routes
-    routes { ExceptionHandler::Engine.routes }
-
-    # => Dev mode
-    context "dev mode" do
-      subject { dev }
-      it {should eq(true) }
-      before { ExceptionHandler.config.dev = true }
-
-      it "does not have exception routes" do
-        Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |status,code|
-          expect(:get => code.to_s).not_to be_routable
-        end
-      end
-    end
-
-    # => Not dev mode
-    context "!dev mode" do
-      subject { dev }
-      before { ExceptionHandler.config.dev = false }
-
-      it { should_not eq(true) }
-      it "does not have exception routes" do
-        Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |status,code|
-          expect(:get => code.to_s).not_to be_routable
+        it { should_not eq(true) }
+        it "does not have exception routes" do
+          Rack::Utils::SYMBOL_TO_STATUS_CODE.select{ |key, value| value.to_s.match('\b(?:4[0-9]{2}|5[0-9]{2}|599)\b') }.each do |status,code|
+            expect(:get => code.to_s).not_to be_routable
+          end
         end
       end
     end

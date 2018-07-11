@@ -54,6 +54,9 @@
   border-style:  solid
 }
 
+.exception:hover       { cursor: pointer; }
+.exception:hover:after { text-decoration: underline; }
+
 .exception span:before {
   display:         block;
   content:         url(<%= asset_url("exception_handler/alert.png") %>);

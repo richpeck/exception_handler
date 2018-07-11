@@ -23,7 +23,6 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 
 # => RSpec
 require 'rspec/rails'
-require 'factory_bot'
 
 # => Environment
 ActiveRecord::Migrator.migrations_paths = [File.expand_path("./dummy/db/migrate", __dir__)]
@@ -48,6 +47,16 @@ end
 ###############################################
 ###############################################
 
+#=> Custom Matchers
+RSpec::Matchers.define :be_boolean do
+ match do |value|
+   [true, false].include? value
+ end
+end
+
+###############################################
+###############################################
+
 # => http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
 
@@ -55,17 +64,7 @@ RSpec.configure do |config|
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
   config.expect_with :rspec do |expectations|
-
-    # This option will default to `true` in RSpec 4. It makes the `description`
-    # and `failure_message` of custom matchers include text for helper methods
-    # defined using `chain`, e.g.:
-    #     be_bigger_than(2).and_smaller_than(4).description
-    #     # => "be bigger than 2 and smaller than 4"
-    # ...rather than:
-    #     # => "be bigger than 2"
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
-
-    # => Default Syntax
     expectations.syntax = :expect
   end
 
@@ -78,8 +77,16 @@ RSpec.configure do |config|
   # => Rails (Fixtures etc)
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
+  config.order = :random
 
-  # => FactoryBot
-  config.include FactoryBot::Syntax::Methods
+  # => Asset Precompile
+  config.before(:suite) do
+    Rails.application.load_tasks
+    Rake::Task["assets:precompile"].invoke
+  end
 
+  config.after(:suite) do
+    Rails.application.load_tasks
+    Rake::Task["assets:clobber"].invoke
+  end
 end

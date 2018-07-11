@@ -20,7 +20,6 @@ require 'spec_helper'
 # => Needs to explain exactly what users is doing to see (request.status, message etc)
 # => Needs to include 404/500 dev routes
 RSpec.describe "ExceptionHandler Views" do
-
 end
 
 ###############################################
