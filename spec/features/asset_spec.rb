@@ -22,7 +22,7 @@ require 'spec_helper'
 RSpec.describe "ExceptionHandler Assets" do
 
   # => Defs
-  let(:assets) { Rails.configuration.assets }
+  let(:assets)    { Rails.configuration.assets }
   let(:sprockets) { Rails.application.assets }
 
   # => Precompilation
