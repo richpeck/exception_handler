@@ -79,4 +79,10 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   config.order = :random
 
+  # => Asset Precompile
+  config.before(:suite) do
+    Rails.application.load_tasks
+    Rake::Task["assets:precompile"].invoke
+  end
+
 end

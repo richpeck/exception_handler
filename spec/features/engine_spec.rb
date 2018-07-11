@@ -64,7 +64,6 @@ RSpec.describe ExceptionHandler::Engine do
 
         # => Before
         before(:context) { ExceptionHandler.config.dev = false }
-        before(:context) { puts "test" }
 
       #########################
       #########################
