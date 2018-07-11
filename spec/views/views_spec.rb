@@ -21,6 +21,8 @@ require 'spec_helper'
 # => Needs to include 404/500 dev routes
 RSpec.describe "ExceptionHandler Views" do
 
+
+
 end
 
 ###############################################
