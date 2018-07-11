@@ -58,7 +58,7 @@ module ExceptionHandler
       # => Custom Exceptions
       # => This just mimicks standard Rails behaviour
       # => Look for "config.action_dispatch.rescue_responses" for more info)
-      initializer :custom_exceptions do |app|
+      initializer :exception_handler_custom_exceptions do |app|
         app.config.action_dispatch.rescue_responses.merge! ExceptionHandler.config.custom_exceptions if ExceptionHandler.config.custom_exceptions
       end
 

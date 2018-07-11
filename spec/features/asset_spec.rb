@@ -15,21 +15,35 @@ require 'spec_helper'
 ###############################################
 ###############################################
 
-# => ExceptionHandler (Config)
-# => Should explore config has been created/initialized
-# => Needs to identify available options         (dev/db/email/social/layouts/exceptions/custom_exceptions)
-# => Needs to return specific results per option (dev = true/false, email = string etc)
+# => ExceptionHandler (Assets)
+# => Needs to test if exception_handler.css added to precompile queue
+# => Needs to test if exception_handler.css adds /images folder
+# => Needsd to check if all files are precompiled
 RSpec.describe "ExceptionHandler Assets" do
 
   # => Defs
-  let(:assets) { Rails.configuration.assets.precompile }
+  let(:assets) { Rails.configuration.assets }
+  let(:sprockets) { Rails.application.assets }
 
   # => Precompilation
   # => Expects exception_handler.css
   # => Expects contents of /images to be included by file
   describe "precompile" do
-    subject { assets }
+    subject { assets.precompile }
     it { should include('exception_handler.css') }
+  end
+
+  # => Images
+  # => Should be present in Rails.application.assets
+  # => ref: https://stackoverflow.com/a/11005361/1143732
+  describe "images" do
+    it "includes exception_handler/images/*" do
+      #Dir.foreach('../../../app/assets/images') do |item|
+      #  next if item == '.' or item == '..'
+      #  puts item
+      #  expect(sprockets.each_file).to include(item)
+      #end
+    end
   end
 
   # => Assets

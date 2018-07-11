@@ -47,6 +47,16 @@ end
 ###############################################
 ###############################################
 
+#=> Custom Matchers
+RSpec::Matchers.define :be_boolean do
+ match do |value|
+   [true, false].include? value
+ end
+end
+
+###############################################
+###############################################
+
 # => http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
 

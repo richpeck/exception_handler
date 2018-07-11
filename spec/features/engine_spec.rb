@@ -72,9 +72,35 @@ RSpec.describe ExceptionHandler::Engine do
         # => Exists? Accessible? Right Values?
         describe "config" do
           subject { config }
+
+          # => Initialized
+          it "has an initializer" do
+            expect(Rails.application.initializers.map(&:name)).to include(:exception_handler_config)
+          end
+
+          # => Initialization Queue
+          it "is initialized before better_errors" do
+          end
+
+          # => Accessible?
+          # => Can we access the instance of the class and see which items are available?
           it { should be_a ExceptionHandler::Config }
-          # => accessible
-          # => values
+          it "is accessible" do
+
+          end
+
+          # => Values
+          # => The returned values need to be tested in the config class
+          it "responds to methods" do
+            %i(dev db email social layouts exceptions custom_exceptions).each do |method|
+              expect(config).to respond_to(method)
+            end
+          end
+
+          # => Basic values
+          it "has basic values" do
+            expect(config.dev).to be_boolean
+          end
         end
 
       #########################
@@ -85,7 +111,7 @@ RSpec.describe ExceptionHandler::Engine do
         # => http://guides.rubyonrails.org/configuring.html#rails-general-configuration
         describe "middleware" do
           subject { rails.exceptions_app }
-          #it      { should eq(ExceptionHandler) }
+          #it { should eq(ExceptionHandler) }
           # => accessible?
         end
 
@@ -125,14 +151,19 @@ RSpec.describe ExceptionHandler::Engine do
           # => Let
           let(:config) { ExceptionHandler.config }
 
+          # => Removes
+          it "has an initializer" do
+            expect(Rails.application.initializers.map(&:name)).to include(:exception_handler_custom_exceptions)
+          end
+
           # => Check if present
           context "present" do
-
           end
 
           # => Check if can be accessed
           context "accessiblity" do
             before { config.custom_exceptions.merge! 'ActionController::RoutingError' => :not_found }
+
             #it { should include config.custom_exceptions }
           end
 
