@@ -1,8 +1,3 @@
-<p align="center">
-  <strong>💣 README Currently Being Updated 💣 - Gem Incorporated into 💀 <a href="https://www.vpsdeploy.com" title="Custom VPS Deployment For Rails"><u>VPSDeploy.com - VPS Deployment Solution</u></a> 💀 -<br/><code>Custom Programming Tutorials</code> + <code>Deployment Infrastructure</code> For Cloud VPS Providers...</strong>
-</p>
-<hr />
-
 ![Exception Handler](readme/title.jpg "Exception Handler Logo")
 
 <p align="center">
