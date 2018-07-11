@@ -21,17 +21,24 @@ require 'spec_helper'
 # => Needs to return specific results per option (dev = true/false, email = string etc)
 RSpec.describe "ExceptionHandler Assets" do
 
+  # => Defs
   let(:assets) { Rails.configuration.assets.precompile }
 
+  # => Precompilation
+  # => Expects exception_handler.css
+  # => Expects contents of /images to be included by file
   describe "precompile" do
     subject { assets }
     it { should include('exception_handler.css') }
-    #it { should have reference to all other files }
   end
 
-  #describe "assets" do
-  #  it { expect(Rails.application.assets.find_asset(path))}
-  #end
+  # => Assets
+  # => Expects exception_handler.css
+  # => Expects /images
+  # => Expects /images/[specific]
+  describe "assets" do
+    #it { expect(Rails.application.assets.find_asset(path)).to include('exception_handler.css') }
+  end
 
 
 end
