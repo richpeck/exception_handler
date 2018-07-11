@@ -85,4 +85,9 @@ RSpec.configure do |config|
     Rake::Task["assets:precompile"].invoke
   end
 
+  config.after(:suite) do
+    Rails.application.load_tasks
+    Rake::Task["assets:clobber"].invoke
+  end
+
 end
