@@ -36,9 +36,11 @@ module ExceptionHandler
     layout :layout
 
     ####################
-    #      Action      #
+    #     Actions      #
     ####################
 
+    # => General Show Functionality
+    # => Introduced new "action" config option in 0.8.0.0
     def show
       respond_with @exception, status: @exception.status
     end
@@ -48,8 +50,13 @@ module ExceptionHandler
 
     private
 
-    def layout
-      ExceptionHandler.config.layouts[@exception.status]
+    # => Pulls from Exception class
+    # => Spanner in the works is nil
+    # => .present? validates against empty strings (IE a string is present)
+    # => .nil? validates to see if the returned data is "nil"
+    # => nil required to facilitate inheritance of the layout w/ ApplicationController
+    def layout option = ExceptionHandler.config.options(@exception.status, :layout)
+      (option.present? || option.nil?) ? option : 'exception'
     end
 
     ##################################

@@ -7,7 +7,7 @@
 ##    | |__| | | | (_| | | | | |  __/    ##
 ##    \____/_| |_|\__, |_|_| |_|\___|    ##
 ##                 __/ |                 ##
-##                |___/                  ##                     
+##                |___/                  ##
 ###########################################
 ###########################################
 
@@ -39,7 +39,8 @@ module ExceptionHandler
 
       # => Config
       # => Builds lib/exception_handler/config.rb
-      # config.before_initialize do |app| => Needs to be fixed for ActiveRecord::Base
+      # => config.before_initialize do |app| => Needs to be fixed for ActiveRecord::Base
+      # => to support later version of config, "with_indifferent_access" used in config.rb
       initializer :exception_handler_config, before: "better_errors.configure_rails_initialization" do |app|
         ExceptionHandler.config ||= ExceptionHandler::Config.new config.try(:exception_handler)
       end
@@ -51,7 +52,14 @@ module ExceptionHandler
       # => This should be config.before_initialize but because ActiveRecord is not initialized, cannot check for table
       initializer :exception_handler, before: "better_errors.configure_rails_initialization" do |app|
         app.config.exceptions_app = ->(env) { ExceptionHandler::ExceptionsController.action(:show).call(env) }
-        app.config.consider_all_requests_local = !ExceptionHandler.config.try(:dev) if Rails.env.development?
+        app.config.consider_all_requests_local = !ExceptionHandler.config.try(:dev) if Rails.env.development? || Rails.env.test?
+      end
+
+      # => Custom Exceptions
+      # => This just mimicks standard Rails behaviour
+      # => Look for "config.action_dispatch.rescue_responses" for more info)
+      initializer :exception_handler_custom_exceptions do |app|
+        app.config.action_dispatch.rescue_responses.merge! ExceptionHandler.config.custom_exceptions if ExceptionHandler.config.custom_exceptions
       end
 
       # => Migrations

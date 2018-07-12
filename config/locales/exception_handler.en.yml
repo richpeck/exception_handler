@@ -22,7 +22,7 @@
 
 en:
   exception_handler:
-    internal_server_error:  "<strong>%{status} Error</strong>  %{message} <p>Return home</p>"
+    internal_server_error:  "<strong>%{status} Error</strong> %{message}"
 
 #######################################################################################
 #######################################################################################

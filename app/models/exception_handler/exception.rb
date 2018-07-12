@@ -10,20 +10,13 @@ module ExceptionHandler
     # => Attributes
     # => Determine schema etc
     ATTRS = %i(class_name status message trace target referrer params user_agent)
-  
-    # => Exceptions to be rescued by ExceptionHandler
-    EXCEPTIONS_TO_BE_RESCUED = [ActionController::RoutingError, AbstractController::ActionNotFound].tap do |list|
-      list << ActiveRecord::RecordNotFound if defined?(ActiveRecord)
-      list << Mongoid::Errors::DocumentNotFound if defined?(Mongoid)
-    end
 
   ############################################################
   ############################################################
 
     # => Class (inheritance dependent on whether db option is available)
-    self::Exception = Class.new(
-      (ExceptionHandler.config.try(:db) && defined?(ActiveRecord)) ? ActiveRecord::Base : Object
-    ) do
+    self::Exception =
+      Class.new( (ExceptionHandler.config.try(:db) && defined?(ActiveRecord)) ? ActiveRecord::Base : Object ) do
 
       # => Include individual elements
       # => Only required if no db present (no ActiveRecord)
@@ -97,15 +90,14 @@ module ExceptionHandler
         # => Email
         # => after_initialize invoked after .new method called
         # => Should have been after_create but user may not save
-        after_initialize Proc.new { |e| ExceptionHandler::ExceptionMailer.new_exception(e).deliver } if ExceptionHandler.config.try(:email).try(:is_a?, String)
+        after_initialize -> (e) { ExceptionHandler::ExceptionMailer.new_exception(e).deliver }, if: :email? # => see bottom of file
 
         # => Attributes
         attr_accessor :request, :klass, :exception, :description
         attr_accessor *ATTRS unless ExceptionHandler.config.try(:db)
 
         # => Validations
-        validates :klass, exclusion:    { in: EXCEPTIONS_TO_BE_RESCUED, message: "%{value}" }, if: -> { referer.blank? } # => might need full Proc syntax
-        validates :user_agent, format:  { without: Regexp.new( BOTS.join("|"), Regexp::IGNORECASE ) }
+        validates :user_agent, format: { without: Regexp.new( BOTS.join("|"), Regexp::IGNORECASE ) }
 
       ##################################
       ##################################
@@ -114,21 +106,22 @@ module ExceptionHandler
         # Virtual
         ####################################
 
+          # => Exception (virtual)
+          # => Basis on which all the class is built
+          def exception
+            request.env['action_dispatch.exception']
+          end
+
           # => Klass
           # => Used for validation (needs to be cleaned up in 0.7.0)
           def klass
             exception.class
           end
 
-          # => Exception (virtual)
-          def exception
-            request.env['action_dispatch.exception']
-          end
-
           # => Description
           def description
             I18n.with_options scope: [:exception_handler], message: message, status: status do |i18n|
-              i18n.t response, default: Rack::Utils::HTTP_STATUS_CODES[status] || status
+              i18n.t response, default: Rack::Utils::HTTP_STATUS_CODES[status]
             end
           end
 
@@ -143,7 +136,7 @@ module ExceptionHandler
 
           # => Message
           def message
-            exception.message
+            exception ? exception.message : Rack::Utils::HTTP_STATUS_CODES[status]
           end
 
           # => Trace
@@ -181,7 +174,7 @@ module ExceptionHandler
 
           # => Status code (404, 500 etc)
           def status
-            ActionDispatch::ExceptionWrapper.new(request.env, exception).status_code
+            exception ? ActionDispatch::ExceptionWrapper.new(request.env, exception).try(:status_code) : request.env["PATH_INFO"][1..-1].to_i
           end
 
           # => Server Response ("Not Found" etc)
@@ -191,6 +184,14 @@ module ExceptionHandler
 
       ##################################
       ##################################
+
+      private
+
+        # => Email
+        # => should be on the same line as after_initialize but too long
+        def email?
+          ExceptionHandler.config.try(:email).try(:is_a?, String) && ExceptionHandler.config.options(status, :notification) != false
+        end
 
     end
   end

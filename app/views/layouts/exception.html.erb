@@ -9,6 +9,10 @@
     <%= stylesheet_link_tag :exception_handler %>
     <%= favicon_link_tag "exception_handler/favicon.ico" %>
 
+    <% if x = ExceptionHandler.config.options(@exception.status) %>
+      <style>body { background: url("<%= asset_path x %>") center center no-repeat !important; background-size: cover !important; }</style>
+    <% end %>
+
     <!-- Auth -->
     <%= csrf_meta_tags %>
   </head>
@@ -24,4 +28,5 @@
       <% end %>
     <% end %>
   <% end %>
+
 </html>
