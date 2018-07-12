@@ -90,6 +90,7 @@ RSpec.configure do |config|
   # => Asset Precompile
   config.before(:suite) do
     Rails.application.load_tasks
+    puts "test" 
     Rake::Task["assets:precompile"].invoke
   end
 
