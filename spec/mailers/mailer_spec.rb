@@ -18,7 +18,7 @@ require 'spec_helper'
 # => ExceptionHandler (Mailer)
 # => Check veracity of methods / returned results
 # =>
-RSpec.describe ExceptionHandler::Exception do
+RSpec.describe ExceptionHandler::ExceptionMailer do
 
 end
 
