@@ -1,3 +1,30 @@
+<p align="center">
+  <b>💣 README Being Updated 💣</b>
+</p>
+<hr />
+
+![Exception Handler](readme/title.jpg "Exception Handler Logo")
+
+<p align="center">
+  <img src="./readme/dev.png" /><br />
+</p>
+
+<p align="center">
+  <img src="/readme/titles/initial.png" width="90%" />
+</p>
+
+<p align="center">
+  <strong>➡️ <code>ExceptionHandler</code> is a <a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677"><code>Custom Error Pages Gem</code></a> For Ruby on Rails ⬅️</strong> - With <strong>160,000+ downloads</strong>, it is one of the most <br /> <strong>popular</strong>, <strong>robust</strong> & <strong>extensible</strong> exceptions management gems for <strong><a href="https://rubygems.org/gems/exception_handler">Ruby on Rails 4 & 5+</a></strong>...
+</p>
+
+<p align="center">
+  <a href="http://badge.fury.io/rb/exception_handler"><img src="https://badge.fury.io/rb/exception_handler.svg" align="absmiddle"></a>
+  <a href="http://rubygems.org/gems/exception_handler"><img src="http://ruby-gem-downloads-badge.herokuapp.com/exception_handler/0.8.0.0?type=total&color=brightgreen" align="absmiddle" /></a>
+  <a href="https://codeclimate.com/github/richpeck/exception_handler"><img src="https://codeclimate.com/github/richpeck/exception_handler/badges/gpa.svg" align="absmiddle"/></a>
+  <a href='https://coveralls.io/github/richpeck/exception_handler?branch=master'><img src='https://coveralls.io/repos/github/richpeck/exception_handler/badge.svg?branch=0.8' alt='Coverage Status' align="absmiddle" /></a>
+  <a href="https://travis-ci.org/richpeck/exception_handler"><img src="https://travis-ci.org/richpeck/exception_handler.svg?branch=master" align="absmiddle"></a>
+</p>
+
 ![Exception Handler](readme/title.jpg "Exception Handler Logo")
 
 <p align="center">
