@@ -1,3 +1,8 @@
+<p align="center">
+  <b>Readme Being Updated</b>
+</p>
+<hr />
+
 ![Exception Handler](readme/title.jpg "Exception Handler Logo")
 
 <p align="center">
