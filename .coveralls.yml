@@ -1,2 +1,1 @@
 service_name: travis-ci
-repo_token:   <%= ENV.fetch('coveralls') %>
