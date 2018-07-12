@@ -21,6 +21,7 @@
   <a href="http://badge.fury.io/rb/exception_handler"><img src="https://badge.fury.io/rb/exception_handler.svg" align="absmiddle"></a>
     <a href="http://rubygems.org/gems/exception_handler"><img src="http://ruby-gem-downloads-badge.herokuapp.com/exception_handler/0.8.0.0?type=total&color=brightgreen" align="absmiddle" /></a>
   <a href="https://codeclimate.com/github/richpeck/exception_handler"><img src="https://codeclimate.com/github/richpeck/exception_handler.png" align="absmiddle"></a>  
+  <a href="https://app.codeship.com/projects/297737"><img src='https://app.codeship.com/projects/8ef4d070-67ef-0136-94ad-6607b51510b1/status' alt='Coverage Status' align="absmiddle"></a>  
   <a href="https://coveralls.io/github/richpeck/exception_handler"><img src='https://coveralls.io/repos/github/richpeck/exception_handler/badge.svg?branch=0.8' alt='Coverage Status' align="absmiddle"></a>
   <a href="https://travis-ci.org/richpeck/exception_handler"><img src="https://travis-ci.org/richpeck/exception_handler.svg?branch=master" align="absmiddle"></a>
 </p>
@@ -43,6 +44,7 @@
   <a href="http://badge.fury.io/rb/exception_handler"><img src="https://badge.fury.io/rb/exception_handler.svg" align="absmiddle"></a>
     <a href="http://rubygems.org/gems/exception_handler"><img src="http://ruby-gem-downloads-badge.herokuapp.com/exception_handler/0.8.0.0?type=total&color=brightgreen" align="absmiddle" /></a>
   <a href="https://codeclimate.com/github/richpeck/exception_handler"><img src="https://codeclimate.com/github/richpeck/exception_handler.png" align="absmiddle"></a>  
+  <a href="https://app.codeship.com/projects/297737"><img src='https://app.codeship.com/projects/8ef4d070-67ef-0136-94ad-6607b51510b1/status' alt='Coverage Status' align="absmiddle"></a>  
   <a href="https://coveralls.io/github/richpeck/exception_handler"><img src='https://coveralls.io/repos/github/richpeck/exception_handler/badge.svg?branch=0.8' alt='Coverage Status' align="absmiddle"></a>
   <a href="https://travis-ci.org/richpeck/exception_handler"><img src="https://travis-ci.org/richpeck/exception_handler.svg?branch=master" align="absmiddle"></a>
 </p>
