@@ -33,7 +33,7 @@
 
 <p align="center">
   <img src="/readme/titles/initial.png" width="90%" />
-</p>
+</p> 
 
 <p align="center">
   <strong>➡️ <code>ExceptionHandler</code> is a <a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677"><code>Custom Error Pages Gem</code></a> For Ruby on Rails ⬅️</strong> - With <strong>160,000+ downloads</strong>, it is one of the most <br /> <strong>popular</strong>, <strong>robust</strong> & <strong>extensible</strong> exceptions management gems for <strong><a href="https://rubygems.org/gems/exception_handler">Ruby on Rails 4 & 5+</a></strong>...

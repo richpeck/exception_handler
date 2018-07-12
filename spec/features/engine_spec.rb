@@ -28,7 +28,16 @@ RSpec.describe ExceptionHandler::Engine do
     describe "Gem" do
 
       # => Options
+      let(:version) { ExceptionHandler::VERSION::STRING }
       let(:engine)  { ExceptionHandler::Engine }
+
+      # => Version needs to exist
+      # => Present Version
+      describe "version" do
+        subject { version }
+        it { is_expected.not_to be_empty }
+        it { is_expected.to eq('0.8.0.0') }
+      end
 
       # => Loaded?
       # => Accessible by Rails?
