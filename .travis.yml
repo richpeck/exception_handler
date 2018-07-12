@@ -5,3 +5,9 @@ rvm:
  - 2.4.4
  - 2.5.1
  - ruby-head
+notifications:
+    - false
+scripts:
+  - bundle exec rspec
+after_script:
+  - bundle exec rake coveralls:push
