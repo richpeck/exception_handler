@@ -1,9 +1,12 @@
 ![Exception Handler](readme/title.jpg "Exception Handler Logo")
 
-<p align="center">
-  <a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a> is presently the <strong>most popular</strong> exceptions gem for <strong>custom 400/500 Rails error pages</strong><br />
-  With <strong>180,000+ downloads</strong>, it is now one of the most <strong>robust</strong> & <strong>extensible</strong> exceptions gems for <strong><a href="https://rubygems.org/gems/exception_handler">Ruby on Rails 4 & 5+</a></strong>...
-</p>
+<!-- Intro -->
+<div id="intro">
+  <h5 align="center"><strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a></strong> is presently the <strong>most popular exceptions gem</strong> for <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">Rails 400/500 error pages</a></strong>...</h5>
+  <p align="center">
+    With <strong>180,000+ downloads</strong>, it is now one of the most <strong>robust</strong> & <strong>extensible</strong> exceptions gems for <strong>Ruby on Rails 4 & 5+</strong>...
+  </p>
+</div>
 
 <!-- Badges -->
 <p align="center">
@@ -14,6 +17,7 @@
   <a href="https://travis-ci.org/richpeck/exception_handler"><img src="https://travis-ci.org/richpeck/exception_handler.svg?branch=master" align="absmiddle"></a>
 </p>
 
+<!-- Examples -->
 <p align="center">
   <img src="readme/branded/1.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/2.jpg" width="425" title="Fully Branded Error Pages" />
   <img src="readme/branded/3.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/4.jpg" width="425" title="Fully Branded Error Pages" />
@@ -25,10 +29,14 @@ By overriding `exceptions_app`, it is the only gem to be completely congruent wi
 
 [Downloaded 180,000+ times][rubygems], it is widely considered the leading exceptions management gem for Ruby on Rails 4 & 5. The following explains how it works...
 
-<!-- Sep -->
-<p align="center">
-  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
-</p>
+<!-- Navigation -->
+<div id="navigation">
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
+  <p align="center">
+    <b>⌚️ <a href="#introduction">Introduction</a> ⌚️</b> - <strong>⚠️ <a href="#installation">Installation</a> ⚠️</strong> - <strong>⚙️ <a href="#configuration">Configuration</a> ⚙️</strong> - <strong>☎️ <a href="#support">Support</a> ☎️</strong> - <strong>⭐ <a href="#changelog">Changelog</a> ⭐</strong>
+  </p>
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
+</div>
 
 <!-- Introduction -->
 <div id="introduction">
