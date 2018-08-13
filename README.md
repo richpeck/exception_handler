@@ -1,13 +1,25 @@
+![Exception Handler](readme/title.jpg "Exception Handler Logo")
+
 <p align="center">
-  <code>ExceptionHandler</code> is presently the most popular Rails gem for custom 400/500 error pages.
+  <a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a> is presently the <strong>most popular</strong> gem for <strong>custom 400/500 error pages</strong> on Rails.<br />
+  With <strong>180,000+ downloads</strong>, it is one of the most <strong>robust</strong> & <strong>extensible</strong> exceptions gems for <strong><a href="https://rubygems.org/gems/exception_handler">Ruby on Rails 4 & 5+</a></strong>...
+</p>
+
+<!-- Badges -->
+<p align="center">
+  <a href="http://badge.fury.io/rb/exception_handler"><img src="https://badge.fury.io/rb/exception_handler.svg" align="absmiddle"></a>
+  <a href="http://rubygems.org/gems/exception_handler"><img src="http://ruby-gem-downloads-badge.herokuapp.com/exception_handler/0.5.1?type=total&color=brightgreen" align="absmiddle" /></a>
+  <a href="https://codeclimate.com/github/richpeck/exception_handler"><img src="https://codeclimate.com/github/richpeck/exception_handler/badges/gpa.svg" align="absmiddle"/></a>
+  <a href='https://coveralls.io/github/richpeck/exception_handler?branch=master'><img src='https://coveralls.io/repos/github/richpeck/exception_handler/badge.svg?branch=master' alt='Coverage Status' align="absmiddle" /></a>
+  <a href="https://travis-ci.org/richpeck/exception_handler"><img src="https://travis-ci.org/richpeck/exception_handler.svg?branch=master" align="absmiddle"></a>
   <br />--
 </p>
 
-Overriding the `exceptions_app` hook, it is the only gem to be completely congruent with the Rails subsystem.
+By overriding `exceptions_app`, it is the only gem to be completely congruent with the Rails subsystem.
 
  This not only allows us to use our own customized error pages, but also means we can [save exceptions to a database][db], [create email notifications][email] and notify third party services.
 
-[Downloaded 180,000+ times][rubygems], it is widely considered a leading exceptions management gem for Ruby on Rails 4 & 5. The following explains how it works...
+[Downloaded 180,000+ times][rubygems], it is widely considered the leading exceptions management gem for Ruby on Rails 4 & 5. The following explains how it works...
 
 ---
 
@@ -25,7 +37,7 @@ If you're running a production application, the last thing you want is to break 
 
 To fully understand why this is the default flow, you need to appreciate the [HTTP error process](https://www.digitalocean.com/community/tutorials/how-to-troubleshoot-common-http-error-codes):
 
-###### HTTP Error Management
+##### HTTP Error Management
 
 [[ image ]]
 
@@ -35,7 +47,7 @@ Every "error" you see in a web browser is an HTTP response. Because HTTP is stat
 
 There are two types of HTTP error code.
 
-###### Middleware-Powered Exceptions
+##### Middleware-Powered Exceptions
 
 [[ image ]]
 
