@@ -24,7 +24,7 @@
 </p>
 
 <p align="center">
-  The following explains how it works.
+  Following explains how it works.
   <br/>If you need further support, please feel free to email <a href="mailto:rpeck@frontlineutilities.co.uk">rpeck@frontlineutilities.co.uk</a>...
 </p>
 
@@ -54,7 +54,7 @@
 
 The gem inserts a [ `controller`](app/controllers/exception_handler/exceptions_controller.rb) into [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), rendering custom HTML for erroneous requests.
 
-The controller uses a [*single* action](https://github.com/richpeck/exception_handler/blob/0.8/app/controllers/exception_handler/exceptions_controller.rb#L44) to build a response to errors. This view remains the same for *every* exception; the ONLY change is the *[layout](/app/views/layouts/exception.html.erb)* - depending on the HTTP response being returned (`4xx`/`5xx`).
+This controller uses a [*single* action](https://github.com/richpeck/exception_handler/blob/0.8/app/controllers/exception_handler/exceptions_controller.rb#L44) to build a response to errors. This view remains the same for *every* exception; the ONLY change is the *[layout](/app/views/layouts/exception.html.erb)* - depending on the HTTP response being returned (`4xx`/`5xx`).
 
 
 Gem works 100% out of the box in `production`, and has the option to be called in [`dev`](#dev) if necessary.
@@ -154,7 +154,13 @@ To get it working in development, we've included a [`dev`][dev] mode, which over
 
 ----
 
-dfgdf
+<p align="center">
+   <a href="#config">Config</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#dev" title="Dev Mode"> Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#database">  Database</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#email">  Email</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#views">Views</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#locales"><a href="#custom-exceptions">Custom Exceptions</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#generators">Generators</a>
+</p>
+
+----
+
+sdfgsdgsdf
 
 <!-- Sep -->
 <p align="center">
@@ -171,6 +177,8 @@ dfgdf
 You're welcome to contact me directly at <a href="mailto:rpeck@frontlineutilities.co.uk">rpeck@frontlineutilities.co.uk</a>.
 
 Alternatively, you may wish to post on our [Github Issues](https://github.com/richpeck/exception_handler/issues), or [StackOverflow](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler).
+
+Responses typically delivered within several hours.
 
 <!-- Sep -->
 <p align="center">
