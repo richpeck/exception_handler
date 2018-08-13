@@ -55,31 +55,41 @@ The following explains how it works...
 
 ---
 
-By default, Rails' exception pages are **static HTML files** stored in the `/public` folder...
+`ExceptionHandler`  was designed to replace Rails' static / default error pages ([`400.html`, `422.html`, `500.html`](https://github.com/rails/rails/tree/ef0b05e78fb0b928c7ef48d3c365dc849af50305/railties/lib/rails/generators/rails/app/templates/public)) with dynamic views...
 
-[ image ]
+[ image - rails default vs new]
 
-Whilst they work, they're not customizable, and typically make applications look amateur.
+The gem inserts a custom [ `controller`](app/controllers/exception_handler/exceptions_controller.rb) into [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), allowing us to render custom HTML for erroneous requests.
 
-If you're running a production application, the last thing you want is to break your brand by having plain RoR exception pages show to potential customers. It's for this reason why most people use this gem.
+The controller uses a *single* method/view to build a response to errors. This view remains the same for *every* exception; the ONLY change is the *[layout](/app/views/layouts/exception.html.erb)* - depending on the HTTP response being returned (`4xx`/`5xx`).
 
-To fully understand why this is the default flow, you need to appreciate the [HTTP error process](https://www.digitalocean.com/community/tutorials/how-to-troubleshoot-common-http-error-codes):
+The beauty lies in the *simplicity* through which this is achieved → rather than having many different elements, its SOLE focus is to provide different HTML responses via differing *layouts*. `ExceptionHandler` does this within the scope of [`ActionView`](http://guides.rubyonrails.org/action_view_overview.html), allowing for the use of `views`, `helpers` and `data` from the database.
 
-##### HTTP Error Management
+Gem works 100% out of the box in `production`, and has the option to be called in [`dev`](#dev) if necessary.
+To fully understand why this is the default flow, you need to appreciate the [HTTP error process](https://www.digitalocean.com/community/tutorials/how-to-troubleshoot-common-http-error-codes) ↴
 
-[[ image ]]
-
-Contrary to popular belief, Rails exceptions don't matter when it comes to browsers.
-
-Every "error" you see in a web browser is an HTTP response. Because HTTP is stateless, these responses are not considered erroneous - simply informative. It's for this reason that Rails ships with "static" HTML error pages.
-
-There are two types of HTTP error code.
-
-##### Middleware-Powered Exceptions
+##### 📑 HTTP Error Management
 
 [[ image ]]
 
-The big difference with `exception_handler` comes from its middleware functionality.
+Contrary to popular belief, "Rails" exceptions don't matter when it comes to browsers.
+
+Every "error" you see in a web browser is an HTTP response. Because HTTP is stateless, these responses are not considered erroneous - simply informative.
+
+There are two types of HTTP error code [`4xx`][40x] + [`5xx`][50x] →
+
+ - `4xx` errors are *user* errors (wrong URL etc)
+ - `5xx` errors are *server* errors (database malfunction etc)
+
+In *both* cases, the HTTP client only expects an HTML payload
+
+##### ⛔️ Middleware-Powered Exceptions
+
+The big difference with `exception_handler` comes from the fact it's integrated directly into the middleware layer:
+
+<p align="center">
+  <img src="./readme/middleware.jpg" />
+</p>
 
 Unlike other gems, which focus on hacking Rails, ours injects its own controller into the `exceptions_app` hook.
 
