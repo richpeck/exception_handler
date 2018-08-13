@@ -4,7 +4,7 @@
 <div id="intro">
   <h4 align="center"><strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a></strong> is presently the <strong>most popular exception gem</strong> for <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">Rails 400/500 error pages</a></strong></h4>
   <p align="center">
-    With <strong>180,000+ downloads</strong>, it is the *only* gem to provide **plug-and-play custom exception pages for Rails 4 + 5**...
+    With <strong>180,000+ downloads</strong>, it is the *only* gem to provide <strong>plug-and-play custom exception pages for Rails 4 + 5</strong>...
   </p>
 </div>
 
@@ -27,7 +27,9 @@
   --
 </p>
 
-Our system works by overriding the `exceptions_app` hook in the core of Rails. This is called by the [`ActionDispatch::ShowExceptions`](https://github.com/rails/rails/blob/fc5dd0b85189811062c85520fd70de8389b55aeb/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware, and basically provides the HTML for any erroneous requests.
+Our system works by overriding the [`exceptions_app`](https://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook in the core of Rails.
+
+This is called by the [`ActionDispatch::ShowExceptions`](https://github.com/rails/rails/blob/fc5dd0b85189811062c85520fd70de8389b55aeb/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware, and basically provides the HTML for any erroneous requests.
 
 It interjects our own controller/views into this process, allowing for fully customized error pages. The most important thing to realize about it is that it's entirely built with the Rails subsystem - meaning that it doesn't hack and is perfectly fine for production use.
 
