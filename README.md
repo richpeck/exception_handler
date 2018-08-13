@@ -2,9 +2,9 @@
 
 <!-- Intro -->
 <div id="intro">
-  <h3 align="center"><strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a></strong> is presently the <strong>most popular exceptions gem</strong> for <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">Rails 400/500 error pages</a></strong>...</h3>
+  <h4 align="center"><strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a></strong> is presently the <strong>most popular exceptions gem</strong> for <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">Rails 400/500 error pages</a></strong>...</h4>
   <p align="center">
-    With <strong>180,000+ downloads</strong>, it is now one of the most <strong>robust</strong> & <strong>extensible</strong> exceptions gems for <strong>Ruby on Rails 4 & 5+</strong>...
+    With <strong>180,000+ downloads</strong>, it is now one of the most <strong>robust</strong> & <strong>extensible</strong> exceptions gems for <strong>Ruby on Rails 4 & 5+</strong>
   </p>
 </div>
 
@@ -15,6 +15,7 @@
   <a href="https://codeclimate.com/github/richpeck/exception_handler"><img src="https://codeclimate.com/github/richpeck/exception_handler/badges/gpa.svg" align="absmiddle"/></a>
   <a href='https://coveralls.io/github/richpeck/exception_handler?branch=master'><img src='https://coveralls.io/repos/github/richpeck/exception_handler/badge.svg?branch=master' alt='Coverage Status' align="absmiddle" /></a>
   <a href="https://travis-ci.org/richpeck/exception_handler"><img src="https://travis-ci.org/richpeck/exception_handler.svg?branch=master" align="absmiddle"></a>
+  <br />--
 </p>
 
 <!-- Examples -->
@@ -43,7 +44,9 @@ By overriding `exceptions_app`, it is the only gem to be completely congruent wi
   <h4>📝 Introduction</h4>
 </div>
 
-Rails' default exception pages are **static HTML files** stored in the `/public` folder...
+---
+
+By default, Rails' exception pages are **static HTML files** stored in the `/public` folder...
 
 [ image ]
 
