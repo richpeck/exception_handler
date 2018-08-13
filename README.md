@@ -44,7 +44,7 @@
 
 ---
 
-[`ExceptionHandler`][rubygems] was designed to replace Rails' default error pages ([`400.html`, `422.html`, `500.html`](https://github.com/rails/rails/tree/ef0b05e78fb0b928c7ef48d3c365dc849af50305/railties/lib/rails/generators/rails/app/templates/public)) with dynamic views...
+[`ExceptionHandler`][rubygems] was designed to replace Rails' [default error pages](https://github.com/rails/rails/tree/ef0b05e78fb0b928c7ef48d3c365dc849af50305/railties/lib/rails/generators/rails/app/templates/public) with dynamic views...
 
 <p align="center">
   <br />
@@ -52,21 +52,23 @@
   <br />
 </p>
 
-Inserts a [ `controller`](app/controllers/exception_handler/exceptions_controller.rb) into [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), rendering custom HTML for erroneous requests.
+It works by injecting our own controller into the `exceptions_app` middlware hook.
 
-This controller uses a [*single* action](https://github.com/richpeck/exception_handler/blob/0.8/app/controllers/exception_handler/exceptions_controller.rb#L44) to build a response to errors. This view remains the same for *every* exception; the ONLY change is the *[layout](/app/views/layouts/exception.html.erb)* - depending on the HTTP response being returned (`4xx`/`5xx`).
+This hook is called by the `ActionDispatch::ShowExceptions` middleware, which is invoked any time an exception is raised by Rails.
+
+This middleware wraps the erroneous exception in a valid HTTP response, and uses `exceptions_app` to call the HTML. By default, it will pull the static HTML files stored in `/public` - we've made it pull from our own controller.
+
+The important thing to realize about this is that you shouldn't need to change the way the system works. Our code is extremely flexible - you can use [locales][locales] to change text messages etc. Most people will only need to change the [layouts][layouts], which can be 100% customized as you require...
 
 
-Works 100% out of the box in `production`, and has the option to be called in [`dev`](#dev) if necessary.
-To fully understand why Rails works in this way, you need to appreciate the [HTTP error process](https://www.digitalocean.com/community/tutorials/how-to-troubleshoot-common-http-error-codes)...
 
 ---
 
 ##### 📑 HTTP Error Management
 
-The most important thing to understand is that *it doesn't matter* which errors Ruby/Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).
+If you're interested in how the system works, the most important thing is that *it doesn't matter* which errors Ruby/Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html). Since ALL "web" traffic is driven through HTTP, this is universal regardless of which web framework you use.
 
-Due to the nature of HTTP, you only need to facilitate responses for  [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) - [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors)...
+Whilst HTTP has 5 categories of response code, only two are used to denote errors ([`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) + [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors)):
 
 <p align="center">
   <img src="./readme/HTTP.png" width="55%" />
@@ -76,7 +78,7 @@ This means that all you're *really* doing is taking "Ruby" errors and giving the
 
 What confuses most is the way in which Rails does this.
 
-The process is handled by the [`ActionDispatch::ShowExceptions`](https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/show_exceptions.rb#L44) middleware - which builds a new response out of the erroneous one passed to it by Rails. Through this process, it calls whichever class is present in [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration)...
+The process is handled by [`ActionDispatch::ShowExceptions`](https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/show_exceptions.rb#L44) - middleware which builds a new response out of the erroneous one passed to it by Rails. Through this process, it calls whichever class is present in [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration)...
 
     # show_exceptions.rb
     def render_exception(request, exception)
@@ -302,6 +304,7 @@ Responses typically delivered within several hours.
 [email]: #email
 [dev]: #dev
 [layouts]: #layouts
+[locales]: #locales
 [configuration]: #configuration
 
 <!-- ################################### -->
