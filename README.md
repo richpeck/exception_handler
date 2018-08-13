@@ -90,6 +90,8 @@ Whilst `ExceptionHandler` isn't the only exception gem for Rails, it's the first
   <h4>⚠️ Installation</h4>
 </div>
 
+---
+
     # Gem
     gem install exception_handler
 
@@ -115,6 +117,8 @@ To get it working in development, we've included a [`dev`][dev] mode, which over
   <h4>⚙️ Configuration</h4>
 </div>
 
+----
+
 dfgdf
 
 <!-- Sep -->
@@ -126,6 +130,8 @@ dfgdf
 <div id="support">
   <h4>☎️ Support</h4>
 </div>
+
+---
 
 fgfg
 
@@ -139,6 +145,7 @@ fgfg
   <h4>⭐ Changelog</h4>
 </div>
 
+---
 
 [1.0.0.0](https://github.com/richpeck/exception_handler/releases/tag/v1.0.0.0)
   - [ ] TBA
