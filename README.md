@@ -48,19 +48,19 @@
 
 <p align="center">
   <br />
-  <img src="./readme/dev.png" />
+  <img src="./readme/dev.png" width="75%"/>
   <br />
 </p>
 
-The gem inserts a [ `controller`](app/controllers/exception_handler/exceptions_controller.rb) into [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), rendering custom HTML for erroneous requests.
+Inserts a [ `controller`](app/controllers/exception_handler/exceptions_controller.rb) into [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), rendering custom HTML for erroneous requests.
 
 This controller uses a [*single* action](https://github.com/richpeck/exception_handler/blob/0.8/app/controllers/exception_handler/exceptions_controller.rb#L44) to build a response to errors. This view remains the same for *every* exception; the ONLY change is the *[layout](/app/views/layouts/exception.html.erb)* - depending on the HTTP response being returned (`4xx`/`5xx`).
 
 
-Gem works 100% out of the box in `production`, and has the option to be called in [`dev`](#dev) if necessary.
+Works 100% out of the box in `production`, and has the option to be called in [`dev`](#dev) if necessary.
 To fully understand why Rails works in this way, you need to appreciate the [HTTP error process](https://www.digitalocean.com/community/tutorials/how-to-troubleshoot-common-http-error-codes)...
 
---
+---
 
 ##### 📑 HTTP Error Management
 
@@ -69,7 +69,7 @@ The most important thing to understand is that *it doesn't matter* which errors 
 Due to the nature of HTTP, you only need to facilitate responses for  [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) - [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors)...
 
 <p align="center">
-  <img src="./readme/HTTP.png" width="65%" />
+  <img src="./readme/HTTP.png" width="55%" />
 </p>
 
 This means that all you're *really* doing is taking "Ruby" errors and giving them an appropriate [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) & [message body](https://en.wikipedia.org/wiki/HTTP_message_body) (HTML). Rails handles the process for you - the *only* thing we need to worry about is how the HTML is generated.  
@@ -97,23 +97,26 @@ In other words, what a user *sees* (in the browser) has very little to do with t
 
 `ExceptionHandler` doesn't change this behaviour - it simply *adds* our own controller/view to provide the HTML...
 
---
+---
 
 ##### ⛔️ Middleware-Powered Exceptions
 
-To add to this, you also need to appreciate that `exception_handler` integrates into the middleware layer - meaning that we're able to utilize parts of the Rails stack other gems cannot:
+The key with `ExceptionHandler` lies in its integration with the [Rack middleware stack](https://guides.rubyonrails.org/rails_on_rack.html#internal-middleware-stack).
+
+Most other "exception" gems rely on hacking the core Rails system, our gem works *with* Rails to provide a valid set of HTML...
 
 <p align="center">
-  <img src="./readme/middleware.jpg" />
+  <img src="./readme/middleware.jpg" width="80%" />
 </p>
 
-Unlike other gems, which focus on hacking Rails, ours injects its own controller into the `exceptions_app` hook.
 
-This hook is meant to provide HTML code for any exceptions raised by Rails, and is completely customizable. By default, it is set to ping `ActionDispatch::PublicExceptions.new(Rails.public_path)` - which should return the pages in the public folder.
+Point is that by tapping into the `exceptions_app` middleware hook, the application is able to provide users with the ability to manage the way the system works without having to worry about whether the system is going to work with other gems etc.
 
-In short, most people think that because Rails raised an error, the underlying system is unable to render customized HTML. This is incorrect. Because `exceptions_app` is based on the Rack middleware stack, `ExceptionHandler` is able to use the `ActionView` pipeline to render your layouts and perform other tasks.
+The fact that it doesn't change the underlying exception handling process, or use any hacks, makes it extremely potent for production.
 
-Whilst `ExceptionHandler` isn't the only exception gem for Rails, it's the first to use the above method. This makes it perfect for production, highly scalable and completely customizable. The following shows how...
+
+
+The following shows how...
 
 <!-- Sep -->
 <p align="center">
@@ -160,7 +163,9 @@ To get it working in development, we've included a [`dev`][dev] mode, which over
 
 ----
 
-sdfgsdgsdf
+ExceptionHandler uses the "config" file to manage the entire system.
+
+
 
 <!-- Sep -->
 <p align="center">
@@ -297,6 +302,7 @@ Responses typically delivered within several hours.
 [email]: #email
 [dev]: #dev
 [layouts]: #layouts
+[configuration]: #configuration
 
 <!-- ################################### -->
 <!-- ################################### -->
