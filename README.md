@@ -2,7 +2,7 @@
 
 <!-- Intro -->
 <div id="intro">
-  <h5 align="center"><strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a></strong> is presently the <strong>most popular exceptions gem</strong> for <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">Rails 400/500 error pages</a></strong>...</h5>
+  <h3 align="center"><strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a></strong> is presently the <strong>most popular exceptions gem</strong> for <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">Rails 400/500 error pages</a></strong>...</h3>
   <p align="center">
     With <strong>180,000+ downloads</strong>, it is now one of the most <strong>robust</strong> & <strong>extensible</strong> exceptions gems for <strong>Ruby on Rails 4 & 5+</strong>...
   </p>
