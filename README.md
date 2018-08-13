@@ -2,9 +2,9 @@
 
 <!-- Intro -->
 <div id="intro">
-  <h4 align="center"><strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a></strong> is presently the <strong>most popular exceptions gem</strong> for <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">Rails 400/500 error pages</a></strong>...</h4>
+  <h4 align="center"><strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a></strong> is presently the <strong>most popular exception gem</strong> for <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">Rails 400/500 error pages</a></strong></h4>
   <p align="center">
-    With <strong>180,000+ downloads</strong>, it is now one of the most <strong>robust</strong> & <strong>extensible</strong> exceptions gems for <strong>Ruby on Rails 4 & 5+</strong>
+    With <strong>180,000+ downloads</strong>, it is the *only* gem to provide **plug-and-play custom exception pages for Rails 4 + 5**...
   </p>
 </div>
 
@@ -15,7 +15,6 @@
   <a href="https://codeclimate.com/github/richpeck/exception_handler"><img src="https://codeclimate.com/github/richpeck/exception_handler/badges/gpa.svg" align="absmiddle"/></a>
   <a href='https://coveralls.io/github/richpeck/exception_handler?branch=master'><img src='https://coveralls.io/repos/github/richpeck/exception_handler/badge.svg?branch=master' alt='Coverage Status' align="absmiddle" /></a>
   <a href="https://travis-ci.org/richpeck/exception_handler"><img src="https://travis-ci.org/richpeck/exception_handler.svg?branch=master" align="absmiddle"></a>
-  <br />--
 </p>
 
 <!-- Examples -->
@@ -24,11 +23,19 @@
   <img src="readme/branded/3.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/4.jpg" width="425" title="Fully Branded Error Pages" />
 </p>
 
-By overriding `exceptions_app`, it is the only gem to be completely congruent with the Rails subsystem.
+<p align="center">
+  --
+</p>
 
- This not only allows us to use our own customized error pages, but also means we can [save exceptions to a database][db], [create email notifications][email] and notify third party services.
+Our system works by overriding the `exceptions_app` hook in the core of Rails. This is called by the [`ActionDispatch::ShowExceptions`](https://github.com/rails/rails/blob/fc5dd0b85189811062c85520fd70de8389b55aeb/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware, and basically provides the HTML for any erroneous requests.
 
-[Downloaded 180,000+ times][rubygems], it is widely considered the leading exceptions management gem for Ruby on Rails 4 & 5. The following explains how it works...
+It interjects our own controller/views into this process, allowing for fully customized error pages. The most important thing to realize about it is that it's entirely built with the Rails subsystem - meaning that it doesn't hack and is perfectly fine for production use.
+
+ This not only allows us to use our application's layouts + views for errors, but also means we can [save exceptions to a database][db], [create email notifications][email] and integrate into third party services. Because our system takes an erroneous request and simply routes it to our own controller, we're at liberty to manage it however we need.
+
+[Downloaded 180,000+ times][rubygems], it is widely considered the leading exceptions management gem for Ruby on Rails 4 & 5. Not only is it easy to use, but it's the most flexible and extensible system for the ecosystem.
+
+The following explains how it works...
 
 <!-- Navigation -->
 <div id="navigation">
