@@ -1,8 +1,8 @@
 ![Exception Handler](readme/title.jpg "Exception Handler Logo")
 
 <p align="center">
-  <a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a> is presently the <strong>most popular</strong> gem for <strong>custom 400/500 error pages</strong> on Rails.<br />
-  With <strong>180,000+ downloads</strong>, it is one of the most <strong>robust</strong> & <strong>extensible</strong> exceptions gems for <strong><a href="https://rubygems.org/gems/exception_handler">Ruby on Rails 4 & 5+</a></strong>...
+  <a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a> is presently the <strong>most popular</strong> exceptions gem for <strong>custom 400/500 Rails error pages</strong><br />
+  With <strong>180,000+ downloads</strong>, it is now one of the most <strong>robust</strong> & <strong>extensible</strong> exceptions gems for <strong><a href="https://rubygems.org/gems/exception_handler">Ruby on Rails 4 & 5+</a></strong>...
 </p>
 
 <!-- Badges -->
@@ -12,7 +12,11 @@
   <a href="https://codeclimate.com/github/richpeck/exception_handler"><img src="https://codeclimate.com/github/richpeck/exception_handler/badges/gpa.svg" align="absmiddle"/></a>
   <a href='https://coveralls.io/github/richpeck/exception_handler?branch=master'><img src='https://coveralls.io/repos/github/richpeck/exception_handler/badge.svg?branch=master' alt='Coverage Status' align="absmiddle" /></a>
   <a href="https://travis-ci.org/richpeck/exception_handler"><img src="https://travis-ci.org/richpeck/exception_handler.svg?branch=master" align="absmiddle"></a>
-  <br />--
+</p>
+
+<p align="center">
+  <img src="readme/branded/1.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/2.jpg" width="425" title="Fully Branded Error Pages" />
+  <img src="readme/branded/3.jpg" width="425" title="Fully Branded Error Pages" /> <img src="readme/branded/4.jpg" width="425" title="Fully Branded Error Pages" />
 </p>
 
 By overriding `exceptions_app`, it is the only gem to be completely congruent with the Rails subsystem.
@@ -21,17 +25,21 @@ By overriding `exceptions_app`, it is the only gem to be completely congruent wi
 
 [Downloaded 180,000+ times][rubygems], it is widely considered the leading exceptions management gem for Ruby on Rails 4 & 5. The following explains how it works...
 
----
+<!-- Sep -->
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
+</p>
 
+<!-- Introduction -->
 <div id="introduction">
   <h4>📝 Introduction</h4>
 </div>
 
-Rails' default exception pages are static HTML files stored in the `/public` folder...
+Rails' default exception pages are **static HTML files** stored in the `/public` folder...
 
 [ image ]
 
-Whilst they work, they're not very good, and typically make applications look amateur.
+Whilst they work, they're not customizable, and typically make applications look amateur.
 
 If you're running a production application, the last thing you want is to break your brand by having plain RoR exception pages show to potential customers. It's for this reason why most people use this gem.
 
@@ -61,8 +69,12 @@ In short, most people think that because Rails raised an error, the underlying s
 
 Whilst `ExceptionHandler` isn't the only exception gem for Rails, it's the first to use the above method. This makes it perfect for production, highly scalable and completely customizable. The following shows how...
 
----
+<!-- Sep -->
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
+</p>
 
+<!-- Installation -->
 <div id="installation">
   <h4>⚠️ Installation</h4>
 </div>
@@ -82,24 +94,36 @@ You literally have to do nothing to get it working in production. Just install t
 
 To get it working in development, we've included a [`dev`][dev] mode, which overrides the `consider_all_requests_local` option inside Rails. This is consequential; the core of the gem is robust and works on 1,000's of apps which have graciously chosen to run it.
 
----
+<!-- Sep -->
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
+</p>
 
+<!-- configuration -->
 <div id="configuration">
   <h4>⚙️ Configuration</h4>
 </div>
 
 dfgdf
 
----
+<!-- Sep -->
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
+</p>
 
+<!-- Support -->
 <div id="support">
   <h4>☎️ Support</h4>
 </div>
 
 fgfg
 
----
+<!-- Sep -->
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
+</p>
 
+<!-- Changelog -->
 <div id="changelog">
   <h4>⭐ Changelog</h4>
 </div>
