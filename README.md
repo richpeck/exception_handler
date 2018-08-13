@@ -9,13 +9,13 @@ Overriding the `exceptions_app` hook, it is the only gem to be completely congru
 
 [Downloaded 180,000+ times][rubygems], it is widely considered a leading exceptions management gem for Ruby on Rails 4 & 5. The following explains how it works...
 
---
+---
 
 <div id="introduction">
   <h4>📝 Introduction</h4>
 </div>
 
-The default Rails exception pages are static HTML files stored in the `/public` folder...
+Rails' default exception pages are static HTML files stored in the `/public` folder...
 
 [ image ]
 
@@ -49,7 +49,7 @@ In short, most people think that because Rails raised an error, the underlying s
 
 Whilst `ExceptionHandler` isn't the only exception gem for Rails, it's the first to use the above method. This makes it perfect for production, highly scalable and completely customizable. The following shows how...
 
---
+---
 
 <div id="installation">
   <h4>⚠️ Installation</h4>
@@ -70,7 +70,7 @@ You literally have to do nothing to get it working in production. Just install t
 
 To get it working in development, we've included a [`dev`][dev] mode, which overrides the `consider_all_requests_local` option inside Rails. This is consequential; the core of the gem is robust and works on 1,000's of apps which have graciously chosen to run it.
 
---
+---
 
 <div id="configuration">
   <h4>⚙️ Configuration</h4>
@@ -78,7 +78,7 @@ To get it working in development, we've included a [`dev`][dev] mode, which over
 
 dfgdf
 
---
+---
 
 <div id="support">
   <h4>☎️ Support</h4>
@@ -87,6 +87,11 @@ dfgdf
 fgfg
 
 ---
+
+<div id="changelog">
+  <h4>⭐ Changelog</h4>
+</div>
+
 
 [1.0.0.0](https://github.com/richpeck/exception_handler/releases/tag/v1.0.0.0)
   - [ ] TBA
@@ -144,7 +149,7 @@ fgfg
  [![404 + 500 Errors][banner]][rubygems]
 
  <p align="center">
-   <strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a> is a LEADING custom error pages gem for Rails 4 & 5...</strong>
+   <strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a> provides custom error pages gem for Rails 4 & 5...</strong>
    <br />
    No other gem is as simple or effective at providing branded exception pages in production
  </p>
