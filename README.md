@@ -24,18 +24,8 @@
 </p>
 
 <p align="center">
-  --
+  The following explains how it works...
 </p>
-
-Works by overriding the [`exceptions_app`](https://guides.rubyonrails.org/configuring.html#rails-general-configuration) hook in the core of Rails.
-
-This is called by the [`ActionDispatch::ShowExceptions`](https://github.com/rails/rails/blob/fc5dd0b85189811062c85520fd70de8389b55aeb/actionpack/lib/action_dispatch/middleware/show_exceptions.rb) middleware, and basically provides the HTML for erroneous requests.
-
-By interjecting our own controller/views into this process, we can provision fully customized error pages. The most important thing is that it's entirely built within the Rails subsystem - meaning that it doesn't hack and is perfectly fine for production use.
-
-[Downloaded 180,000+ times][rubygems], it is now widely considered the leading exceptions management gem for Ruby on Rails 4 & 5. Not only is it easy to use, but it's the most flexible and extensible system for the ecosystem.
-
-The following explains how it works...
 
 <!-- Navigation -->
 <div id="navigation">
@@ -72,13 +62,13 @@ To fully understand why this is the default flow, you need to appreciate the [HT
 
 ##### 📑 HTTP Error Management
 
-The most important thing to understand is that *it doesn't matter* which errors Ruby/Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html). Due to the nature of HTTP, you only need to facilitate responses for  [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) - [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors).
+The most important thing to understand is that *it doesn't matter* which errors Ruby/Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html). Due to the nature of HTTP, you only need to facilitate responses for  [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) - [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors) codes.
 
 This means that all you're really doing is taking "Ruby" errors and giving them an appropriate [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) & [message body](https://en.wikipedia.org/wiki/HTTP_message_body) (HTML). Rails handles the process for you - the *only* thing we need to worry about is how the HTML is generated.  
 
 What confuses most is the way in which Rails does this.
 
-The process is handled by the [`ActionDispatch::ShowExceptions`](https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/show_exceptions.rb#L44) middleware - which builds a new response out of the one passed to it by Rails. Through this process, it calls whichever class is present in [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration)...
+The process is handled by the [`ActionDispatch::ShowExceptions`](https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/show_exceptions.rb#L44) middleware - which builds a new response out of the erroneous one passed to it by Rails. Through this process, it calls whichever class is present in [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration)...
 
     # show_exceptions.rb
     def render_exception(request, exception)
