@@ -103,7 +103,7 @@ The gem is available on [RubyGems][rubygems] and is fully compatible with Rails 
 
 Installation works by overriding the `exceptions_app` hook - which means that it is *always* present in production.
 
-You literally have to do nothing to get it working in production. Just install the gem and it will provide custom 400/500 exception pages. The `4xx` pages will use your app's standard layout, `5xx` has its own [custom layout][layouts]. Both can be customized.
+**You literally have to do nothing to get it working in production.** Just install the gem and it will provide custom 400/500 exception pages. The `4xx` pages will use your app's standard layout, `5xx` has its own [custom layout][layouts]. Both can be customized.
 
 To get it working in development, we've included a [`dev`][dev] mode, which overrides the `consider_all_requests_local` option inside Rails. This is consequential; the core of the gem is robust and works on 1,000's of apps which have graciously chosen to run it.
 
@@ -147,10 +147,10 @@ fgfg
 
 ---
 
-[1.0.0.0](https://github.com/richpeck/exception_handler/releases/tag/v1.0.0.0)
+[**1.0.0.0**](https://github.com/richpeck/exception_handler/releases/tag/v1.0.0.0)
   - [ ] TBA
 
-[0.8.0.0](https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0)
+[**0.8.0.0**](https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0)
  - [x] [README](https://github.com/richpeck/exception_handler/issues/52) (focus on utility)
  - [x] Introduction of `4xx`,`5xx`,`:all` for layouts config
  - [x] Changed `layouts` to `exceptions` in config    
@@ -158,10 +158,10 @@ fgfg
  - [x] Streamlined migration
  - [x] Updated model
 
-[0.7.7.0](https://github.com/richpeck/exception_handler/releases/tag/v0.7.7.0)
+[**0.7.7.0**](https://github.com/richpeck/exception_handler/releases/tag/v0.7.7.0)
  - [x] [HTTP status layouts](#layouts)
 
-0.7.0.0
+**0.7.0.0**
  - [x] Wildcard mime types
  - [x] [Custom exceptions](#custom_exceptions)
  - [x] Test suite integration
@@ -170,7 +170,7 @@ fgfg
  - [x] New layout
  - [x] Readme / wiki overhaul
 
-0.6.5.0
+**0.6.5.0**
  - [x] Streamlined interface
  - [x] ActiveRecord / Middleware overhaul
  - [x] Supports Sprockets 4+ ([`manifest.js`](http://eileencodes.com/posts/the-sprockets-4-manifest/))
@@ -178,7 +178,7 @@ fgfg
  - [x] Asset overhaul & improvement
  - [x] Removed dependencies
 
-0.5.0.0
+**0.5.0.0**
  - [x] Locales
  - [x] Email notifications
  - [x] Full test suite
@@ -189,7 +189,7 @@ fgfg
  - [x] Rails asset management improvement
  - [x] Reduced gem file size
 
-0.4.7.0
+**0.4.7.0**
  - [x] New config system
  - [x] Fixed controller layout issues
  - [x] Streamlined middleware
