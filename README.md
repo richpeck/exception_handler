@@ -44,7 +44,7 @@
 
 ---
 
-`ExceptionHandler` was designed to replace Rails' default error pages ([`400.html`, `422.html`, `500.html`](https://github.com/rails/rails/tree/ef0b05e78fb0b928c7ef48d3c365dc849af50305/railties/lib/rails/generators/rails/app/templates/public)) with dynamic views...
+[`ExceptionHandler`][rubygems] was designed to replace Rails' default error pages ([`400.html`, `422.html`, `500.html`](https://github.com/rails/rails/tree/ef0b05e78fb0b928c7ef48d3c365dc849af50305/railties/lib/rails/generators/rails/app/templates/public)) with dynamic views...
 
 <p align="center">
   <br />
@@ -138,7 +138,7 @@ The gem is available on [RubyGems][rubygems] and is fully compatible with Rails 
 
 Installation works by overriding the `exceptions_app` hook - which means that it is *always* present in production.
 
-**You literally have to do nothing to get it working in production.** Just install the gem and it will provide custom 400/500 exception pages. The `4xx` pages will use your app's standard layout, `5xx` has its own [custom layout][layouts]. Both can be customized.
+**You literally have to do nothing to get it working in production.** Just install the gem and it will provide custom 400/500 exception pages. The `4xx` pages will use your app's standard layout, `5xx` has its own [custom layout][layouts]. Both can be [customized][configuration].
 
 To get it working in development, we've included a [`dev`][dev] mode, which overrides the `consider_all_requests_local` option inside Rails. This is consequential; the core of the gem is robust and works on 1,000's of apps which have graciously chosen to run it.
 
@@ -168,7 +168,9 @@ dfgdf
 
 ---
 
-fgfg
+You're welcome to contact me directly at <a href="mailto:rpeck@frontlineutilities.co.uk">rpeck@frontlineutilities.co.uk</a>.
+
+Alternatively, you may wish to post on our [Github Issues](https://github.com/richpeck/exception_handler/issues), or [StackOverflow](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler).
 
 <!-- Sep -->
 <p align="center">
