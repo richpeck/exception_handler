@@ -24,7 +24,8 @@
 </p>
 
 <p align="center">
-  The following explains how it works...
+  The following explains how it works.
+  <br/>If you need further support, please feel free to email <a href="mailto:rpeck@frontlineutilities.co.uk">rpeck@frontlineutilities.co.uk</a>...
 </p>
 
 <!-- Navigation -->
@@ -46,25 +47,32 @@
 `ExceptionHandler` was designed to replace Rails' default error pages ([`400.html`, `422.html`, `500.html`](https://github.com/rails/rails/tree/ef0b05e78fb0b928c7ef48d3c365dc849af50305/railties/lib/rails/generators/rails/app/templates/public)) with dynamic views...
 
 <p align="center">
-  <img src="./readme/dev.png" width="75%" />
+  <br />
+  <img src="./readme/dev.png" />
+  <br />
 </p>
 
-The gem inserts our [ `controller`](app/controllers/exception_handler/exceptions_controller.rb) into [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), allowing us to render custom HTML for erroneous requests.
+The gem inserts a [ `controller`](app/controllers/exception_handler/exceptions_controller.rb) into [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), rendering custom HTML for erroneous requests.
 
-The controller uses a *single* method/view to build a response to errors. This view remains the same for *every* exception; the ONLY change is the *[layout](/app/views/layouts/exception.html.erb)* - depending on the HTTP response being returned (`4xx`/`5xx`).
+The controller uses a [*single* action](https://github.com/richpeck/exception_handler/blob/0.8/app/controllers/exception_handler/exceptions_controller.rb#L44) to build a response to errors. This view remains the same for *every* exception; the ONLY change is the *[layout](/app/views/layouts/exception.html.erb)* - depending on the HTTP response being returned (`4xx`/`5xx`).
 
-The beauty lies in the *simplicity* through which this is achieved → rather than having many different elements, its SOLE focus is to provide different HTML responses via differing *layouts*. `ExceptionHandler` does this within the scope of [`ActionView`](http://guides.rubyonrails.org/action_view_overview.html), allowing for the use of `views`, `helpers` and `data` from the database.
 
 Gem works 100% out of the box in `production`, and has the option to be called in [`dev`](#dev) if necessary.
-To fully understand why this is the default flow, you need to appreciate the [HTTP error process](https://www.digitalocean.com/community/tutorials/how-to-troubleshoot-common-http-error-codes)...
+To fully understand why Rails works in this way, you need to appreciate the [HTTP error process](https://www.digitalocean.com/community/tutorials/how-to-troubleshoot-common-http-error-codes)...
 
 --
 
 ##### 📑 HTTP Error Management
 
-The most important thing to understand is that *it doesn't matter* which errors Ruby/Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html). Due to the nature of HTTP, you only need to facilitate responses for  [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) - [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors) codes.
+The most important thing to understand is that *it doesn't matter* which errors Ruby/Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).
 
-This means that all you're really doing is taking "Ruby" errors and giving them an appropriate [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) & [message body](https://en.wikipedia.org/wiki/HTTP_message_body) (HTML). Rails handles the process for you - the *only* thing we need to worry about is how the HTML is generated.  
+Due to the nature of HTTP, you only need to facilitate responses for  [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) - [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors)...
+
+<p align="center">
+  <img src="./readme/HTTP.png" width="65%" />
+</p>
+
+This means that all you're *really* doing is taking "Ruby" errors and giving them an appropriate [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) & [message body](https://en.wikipedia.org/wiki/HTTP_message_body) (HTML). Rails handles the process for you - the *only* thing we need to worry about is how the HTML is generated.  
 
 What confuses most is the way in which Rails does this.
 
@@ -85,25 +93,9 @@ The process is handled by the [`ActionDispatch::ShowExceptions`](https://github.
       FAILSAFE_RESPONSE
     end
 
-In other words, what a user *sees* (in the browser) has very little to do with the fact Rails experienced an error. `ExceptionHandler` doesn't change this behaviour - it simply *adds* our own controller/views setup to provide the HTML...
+In other words, what a user *sees* (in the browser) has very little to do with the error Rails experienced.
 
--
-
-To better explain, there are **<a href="https://tzamtzis.gr/2017/digital-analytics/http-status-codes/">5️⃣ types of HTTP status code</a>** - [`10x`][10x], [`20x`][20x], [`30x`][30x], [`40x`][40x], & [`50x`][50x].
-
-Each does its own thing, but what's important is they *ALL* describe "responses" that your web browser will receive for HTTP requests. The only *erroneous* status codes are `4xx` (client error) or `5xx` (server error)...
-
-<p align="center">
-  <img src="./readme/HTTP.png" width="75%" />
-</p>
-
-The point is that when you're dealing with "errors" online, you're *actually* dealing with erroneous **HTTP STATUS CODES**. The response delivered with these codes is *ALWAYS* going to remain the same; difference lying in how they're built (on the server).
-
-By default, `NGinx` + `Apache` use "static" HTML pages to show the errors - if we're using Rails, we have the ability to create *our own* pages. This is exactly what our gem has been designed to do.
-
-**`ExceptionHandler`** provides Rails with the ability to serve ***dynamic*** exception pages, built with **your *own*** layouts/views. By overriding the <a href="http://guides.rubyonrails.org/configuring.html#rails-general-configuration">`exceptions_app`</a> hook, it provides a custom `controller`, `model` and `views` to display custom error pages.
-
-The system is 100% compatible with Rails 4 & 5 and has already been downloaded **180,000+** times...
+`ExceptionHandler` doesn't change this behaviour - it simply *adds* our own controller/view to provide the HTML...
 
 --
 
