@@ -189,6 +189,11 @@ module YourApp
       db:         nil, # allocates a "table name" into which exceptions are saved (defaults to nil)
       email:      nil, # sends exception emails to a listed email (string // "you@email.com")
 
+      # Custom Exceptions
+      custom_exceptions: {
+        #'ActionController::RoutingError' => :not_found # => example
+      },
+
       # On default 5xx error page, social media links included
       social: {        
         facebook: nil, # Facebook page name   
@@ -345,11 +350,10 @@ From version `0.8.0.0`, you're able to define whether email notifications are se
     config.exception_handlder = {
       exceptions: {
         :all => { notification: true },
+        :50x => { notification: false },
         500 =>  { notification: false }
       }
     }
-
-[Full tutorial here](https://github.com/richpeck/exception_handler/wiki/2-Email)
 
 ---
 
@@ -427,18 +431,26 @@ By default, `5xx` errors are shown with our [`exception` layout][layout] - this 
   <h5>⛔️ Custom Exceptions</h5>
 </div>
 
-**Custom Exceptions also supported in [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)**
+Custom exceptions now supported...
 
-Rails handles this for us - [**`config.action_dispatch.rescue_responses`**][rescue_responses]  ↴
+<p align="center">
+  <img src="./readme/custom_exceptions.png" />
+</p>
 
-![ActionDispatch][config.action_dispatch.rescue_responses]
+As mentioned, Rails' primary role is to convert Ruby exceptions into HTTP errors.
 
-You need to add to the `rescue_responses` hash in your app's config (mapped to [`status codes`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L544)):
+To do this, the `config.action_dispatch.rescue_responses` hash maps out a series of classes to [HTTP status responses](https://github.com/rack/rack/blob/master/lib/rack/utils.rb#L492).
+
+Whilst this works well, it may be the case that you want to map your own custom classes to a custom HTTP status code (default is `500`/`Internal Server Error`).
+
+If you wanted to keep this functionality inside `ExceptionHandler`, you're able to do it as follows:
 
     # config/application.rb
-    config.action_dispatch.rescue_responses["ActionController::YourError"] = :bad_request
-
-Because `HTTP` can only process `4xx` / `5xx` errors, if `Rails` raises an exception, it needs to assign one of the error status codes. **Default** is [`internal_server_error`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L595) - if you'd prefer your app to just return `500` errors for your custom exception, you don't need to explicitly declare them.
+    config.exception_handler = {
+      custom_exceptions: {
+        'ActionController::RoutingError' => :not_found
+      }
+    }
 
 ---
 
@@ -469,14 +481,13 @@ Each switch defines which folders you want (EG `-v views` will only copy `views`
   <h5>✔️ Migrations</h5>
 </div>
 
-
-You **DON'T** need to generate a migration any more.
+You **DON'T** need to generate a migration anymore.
 
 From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own [migration system](lib/exception_handler/engine.rb#L58).
 
 The reason we did this was so not to pollute your migrations folder with a worthless file. Our migration doesn't need to be changed - we only have to get it into the database and the gem takes care of the rest...
 
-> If you set the `db` option in config, run `rails db:migrate` and the migration will be run.
+> If you set the [`db`][db] option in config, run `rails db:migrate` and the migration will be run.
 
 To rollback, use the following:
 
