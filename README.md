@@ -4,7 +4,7 @@
 <div id="intro">
   <h4 align="center"><strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a></strong> is presently the <strong>most popular exception gem</strong> for <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">Rails 400/500 error pages</a></strong></h4>
   <p align="center">
-    With <strong>180,000+ downloads</strong>, it is the *only* gem to provide <strong>plug-and-play custom exception pages for Rails 4 + 5</strong>...
+    With <strong>180,000+ downloads</strong>, it is the *only* gem to provide <strong>custom exception pages for Rails 4 + 5</strong>...
   </p>
 </div>
 
@@ -50,7 +50,7 @@
   <br />
   <img src="./readme/dev.png" width="85%"/>
   <br/>
-  It works by injecting our own [controller](app/controllers/exception_handler/exceptions_controller.rb) into the `exceptions_app` middlware hook.
+  It works by injecting our own [controller](/app/controllers/exception_handler/exceptions_controller.rb) into the `exceptions_app` middlware hook.
   <br />--<br />
 </p>
 
