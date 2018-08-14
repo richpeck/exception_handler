@@ -24,7 +24,7 @@
 </p>
 
 <p align="center">
-  Following explains how it works.
+  Following explains how it works
   <br/>If you need further support, please feel free to email <a href="mailto:rpeck@frontlineutilities.co.uk">rpeck@frontlineutilities.co.uk</a>...
 </p>
 
@@ -72,15 +72,15 @@ The most important thing to note is that *it doesn't matter* which errors Ruby/R
 
 [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) is a protocol built on top of [TCP/IP](https://en.wikipedia.org/wiki/Internet_protocol_suite). It was introduced as a means to manage access to "public" Internet-connected computers - the implication being that certain connected systems did not want to be publicly accessible.
 
-Due to the [stateless](https://en.wikipedia.org/wiki/Stateless_protocol) nature of HTTP, each transaction is treated independently to the others. This means that if any "errors" are raised, all the system is doing
+Due to the [stateless](https://en.wikipedia.org/wiki/Stateless_protocol) nature of HTTP, each transaction is treated independently to the others. This means that each time you send a request over the protocol the recipient system will compile a fresh response each time.
 
-Whilst HTTP has 5 types of status code, only two are used to denote errors → [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) + [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors):
+only two are used to denote errors → [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) + [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors):
 
 <p align="center">
   <img src="./readme/HTTP.png" width="55%" />
 </p>
 
-Thus, all Rails is *really* doing is taking "Ruby" errors and giving them an appropriate [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) & [message body](https://en.wikipedia.org/wiki/HTTP_message_body) (HTML). Rails handles the process for you - the *only* thing we need to worry about which HTML is generated.  
+All Rails is *really* doing is taking "Ruby" errors and giving them an appropriate [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) & [message body](https://en.wikipedia.org/wiki/HTTP_message_body) (HTML). Rails handles the process for you - the *only* thing we need to worry about which HTML is generated.  
 
 What confuses most is the way in which it does this.
 
