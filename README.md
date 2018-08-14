@@ -48,15 +48,15 @@
 
 <p align="center">
   <br />
-  <img src="./readme/dev.png" width="75%"/>
-  <br />
+  <img src="./readme/dev.png" width="85%"/>
+  <br/>
+  It works by injecting our own [controller](app/controllers/exception_handler/exceptions_controller.rb) into the `exceptions_app` middlware hook.
+  <br />--<br />
 </p>
 
-It works by injecting our own controller into the `exceptions_app` middlware hook.
+This hook is called by the `ActionDispatch::ShowExceptions` middleware; invoked any time an exception is raised by Rails.
 
-This hook is called by the `ActionDispatch::ShowExceptions` middleware, which is invoked any time an exception is raised by Rails.
-
-This middleware wraps the erroneous exception in a valid HTTP response, and uses `exceptions_app` to call the HTML. By default, it will pull the static HTML files stored in `/public` - we've made it pull from our own controller.
+This middleware wraps the erroneous exception in a valid HTTP response, and uses `exceptions_app` to populate the [HTML response body](https://en.wikipedia.org/wiki/HTTP_message_body). By default, it will pull the static HTML files stored in `/public` - we've made it pull from our own controller.
 
 The important thing to realize about this is that you shouldn't need to change the way the system works. Our code is extremely flexible - you can use [locales][locales] to change text messages etc. Most people will only need to change the [layouts][layouts], which can be 100% customized as you require...
 
@@ -66,7 +66,7 @@ The important thing to realize about this is that you shouldn't need to change t
 
 ##### 📑 HTTP Error Management
 
-If you're interested in how the system works, the most important thing is that *it doesn't matter* which errors Ruby/Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html). Since ALL "web" traffic is driven through HTTP, this is universal regardless of which web framework you use.
+If you're interested in how the system works, the most important thing is that *it doesn't matter* which errors Ruby/Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).
 
 Whilst HTTP has 5 categories of response code, only two are used to denote errors ([`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) + [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors)):
 
