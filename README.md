@@ -139,7 +139,7 @@ The gem is available on [RubyGems][rubygems] and is fully compatible with Rails 
 
 Installation works by overriding the `exceptions_app` hook - which means that it is *always* present in production.
 
-**You literally have to do nothing to get it working in production.** Just install the gem and it will provide custom 400/500 exception pages. The `4xx` pages will use your app's standard layout, `5xx` has its own [custom layout][layouts]. Both can be [customized][configuration].
+**You have to do NOTHING to get it working in production.** Just install the gem and it will provide custom 400/500 exception pages. The `4xx` pages will use your app's standard layout, `5xx` has its own [custom layout][layouts]. Both can be [customized][configuration].
 
 To get it working in development, we've included a [`dev`][dev] mode, which overrides the `consider_all_requests_local` option inside Rails. This is consequential; the core of the gem is robust and works on 1,000's of apps which have graciously chosen to run it.
 
@@ -162,7 +162,9 @@ To get it working in development, we've included a [`dev`][dev] mode, which over
 ----
 
 <!-- Config -->
-##### Config
+<div id="config">
+  <h5>🚧 Config</h5>
+</div>
 
 The ONLY thing you need to configure `ExceptionHandler` is its [`config`](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb) settings.
 
@@ -266,7 +268,10 @@ If you have particular options you *only* wish to run in `staging`, or have sing
 
 ---
 
-###### Dev
+<!-- Dev -->
+<div id="dev">
+  <h5>🚧 Dev</h5>
+</div>
 
 As explained, `ExceptionHandler` does *not* work in `development` by default.
 
@@ -295,7 +300,10 @@ Whilst simple, it's not recommended for extended use. Very good for testing new 
 
 ---
 
-##### DB
+<!-- DB -->
+<div id="db">
+  <h5>🚧 DB</h5>
+</div>
 
 If you want to save exceptions to your database, you will need to migrate a new table.
 
@@ -314,7 +322,10 @@ In order for this to work, your db needs the correct table.
 
 ---
 
-##### Email
+<!-- Email -->
+<div id="email">
+  <h5>🚧 Email</h5>
+</div>
 
 `ExceptionHandler` also sends email notifications.
 
@@ -341,7 +352,10 @@ From version `0.8.0.0`, you're able to define whether email notifications are se
 
 ---
 
-##### Views
+<!-- Views -->
+<div id="views">
+  <h5>🚧 Views</h5>
+</div>
 
 The **views** system in `ExceptionHandler` is modular.
 
@@ -365,7 +379,10 @@ If you wish to change the "layout" / "look", there are **two** options...
 
 ---
 
-##### Locales
+<!-- Locales -->
+<div id="locales">
+  <h5>🚧 Locales</h5>
+</div>
 
 Locales are used to denote interchangeable text (for different languages).
 
@@ -389,7 +406,10 @@ You get access to `%{message}` and `%{status}`, both inferring from `@exception`
 
 ---
 
-##### Layouts
+<!-- Layouts -->
+<div id="layouts">
+  <h5>🚧 Layouts</h5>
+</div>
 
 ![Layout][layout_img]
 
@@ -401,7 +421,10 @@ By default, `5xx` errors are shown with our [`exception` layout][layout] - this 
 
 ---
 
-##### Custom Exceptions
+<!-- Custom Exceptions -->
+<div id="custom-exceptions">
+  <h5>🚧 Custom Exceptions</h5>
+</div>
 
 **Custom Exceptions also supported in [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)**
 
@@ -418,7 +441,10 @@ Because `HTTP` can only process `4xx` / `5xx` errors, if `Rails` raises an excep
 
 ---
 
-##### Migrations
+<!-- Migrations -->
+<div id="migrations">
+  <h5>🚧 Migrations</h5>
+</div>
 
 **You *DON'T* need to generate a migration any more**.
 
