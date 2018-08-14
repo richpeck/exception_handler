@@ -50,13 +50,13 @@
   <br />
   <img src="./readme/dev.png" />
   <br/>
-  Works by injecting our own <a href="app/controllers/exception_handler/exceptions_controller.rb">controller</a> into the <a href="https://guides.rubyonrails.org/configuring.html#rails-general-configuration"><code>exceptions_app</code></a> middlware hook.
+  <cite>Works by injecting our own <a href="app/controllers/exception_handler/exceptions_controller.rb">controller</a> into the <a href="https://guides.rubyonrails.org/configuring.html#rails-general-configuration"><code>exceptions_app</code></a> middlware hook.</cite>
   <br />--<br />
 </p>
 
 Whilst it's not the only gem to do this, it's the **most effective** and **easy-to-use**.
 
-It works simply - by injecting out own custom controller into the exception management process inside Rails.
+It works by injecting out own custom [controller](app/controllers/exception_handler/exceptions_controller.rb) into the exception management process inside Rails.
 
 This allows us to call any [layout][layouts] we need, as well as providing extra services - such as the ability to create [custom exceptions][custom-exceptions], [send email notifications][email] and more. You also don't need to make any changes for the gem to work in `production`.
 
