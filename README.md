@@ -2,9 +2,9 @@
 
 <!-- Intro -->
 <div id="intro">
-  <h4 align="center"><strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a></strong> is presently the <strong>MOST POPULAR</strong> exceptions gem for <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">Rails CUSTOM error pages</a></strong></h4>
+  <h4 align="center"><strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a></strong> is presently the <strong>MOST POPULAR</strong> exceptions gem for <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">Rails CUSTOM error pages</a></strong>...</h4>
   <p align="center">
-    With <strong>180,000+ downloads</strong>, it is the *only* gem to provide <strong>custom 400/500 exception pages for Rails 4 + 5</strong>
+    With <strong>180,000+ downloads</strong>, it is the *only* gem to provide <strong>custom 400/500 exception pages for Rails 4 + 5</strong>...
   </p>
 </div>
 
@@ -44,23 +44,19 @@
 
 ---
 
-[`ExceptionHandler`][rubygems] was designed to replace Rails' [default error pages](https://github.com/rails/rails/tree/ef0b05e78fb0b928c7ef48d3c365dc849af50305/railties/lib/rails/generators/rails/app/templates/public) with dynamic views...
+[`ExceptionHandler`][rubygems] was replaces Rails' [default error pages](https://github.com/rails/rails/tree/ef0b05e78fb0b928c7ef48d3c365dc849af50305/railties/lib/rails/generators/rails/app/templates/public) with dynamic views...
 
 <p align="center">
   <br />
-  <img src="./readme/dev.png" width="95%"/>
+  <img src="./readme/dev.png" />
   <br/>
-  It works by injecting our own <a href="app/controllers/exception_handler/exceptions_controller.rb">controller</a> into the <code>exceptions_app</code> middlware hook.
+  It works by injecting our own <a href="app/controllers/exception_handler/exceptions_controller.rb">controller</a> into the <a href="https://guides.rubyonrails.org/configuring.html#rails-general-configuration"><code>exceptions_app</code></a> middlware hook.
   <br />--<br />
 </p>
 
-This hook is called by the `ActionDispatch::ShowExceptions` middleware; invoked any time an exception is raised by Rails.
+Rails' default error pages are **static HTML files**.
 
-This middleware wraps the erroneous exception in a valid HTTP response, and uses `exceptions_app` to populate the [HTML response body](https://en.wikipedia.org/wiki/HTTP_message_body). By default, it will pull the static HTML files stored in `/public` - we've made it pull from our own controller.
-
-The important thing to realize about this is that you shouldn't need to change the way the system works. Our code is extremely flexible - you can use [locales][locales] to change text messages etc. Most people will only need to change the [layouts][layouts], which can be 100% customized as you require...
-
-
+Whilst there's nothing wrong with these, they will
 
 ---
 
@@ -160,19 +156,19 @@ To get it working in development, we've included a [`dev`][dev] mode, which over
 ----
 
 <p align="center">
-   1. <a href="#config">Config</a>&nbsp;&nbsp;&nbsp;&nbsp;2. <a href="#dev" title="Dev Mode"> Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;3. <a href="#database">  Database</a>&nbsp;&nbsp;&nbsp;&nbsp;4. <a href="#email">  Email</a>&nbsp;&nbsp;&nbsp;&nbsp;5. <a href="#views">Views</a>&nbsp;&nbsp;&nbsp;&nbsp;6. <a href="#locales"><a href="#custom-exceptions">Custom Exceptions</a>&nbsp;&nbsp;&nbsp;&nbsp;7. <a href="#generators">Generators</a>
+   1. <a href="#config">Config</a>&nbsp;&nbsp;&nbsp;&nbsp;2. <a href="#dev" title="Dev Mode"> Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;3. <a href="#db">  Database</a>&nbsp;&nbsp;&nbsp;&nbsp;4. <a href="#email">  Email</a>&nbsp;&nbsp;&nbsp;&nbsp;5. <a href="#views">Views</a>&nbsp;&nbsp;&nbsp;&nbsp;6. <a href="#locales"><a href="#custom-exceptions">Custom Exceptions</a>&nbsp;&nbsp;&nbsp;&nbsp;7. <a href="#generators">Generators</a>
 </p>
 
 ----
 
 <!-- Config -->
-<div id="config"></div>
+##### Config
 
 The ONLY thing you need to configure `ExceptionHandler` is its [`config`](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb) settings.
 
-Whilst the gem **works out of the box** (without any configuration), if you want to manage the [`layouts`](#layouts), [`email`](#email), [`dev`](#dev) or the [`database`](#db), you'll need to set the appropriate values in the config hash ([invoked at init](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/engine.rb#L44)).
+Whilst the gem **works out of the box** (without any configuration), if you want to manage the [`layouts`](#layouts), [`email`](#email), [`dev`](#dev) or the [`database`](#db), you'll need to set the appropriate values in the config hash.
 
-This can be done in `config/application.rb` or `config/environments/[env].rb` ↴
+This is done in `config/application.rb` or `config/environments/[env].rb` ↴
 
 ```
 # config/application.rb
@@ -248,7 +244,7 @@ For a full retinue of the available options, you'll be best looking at the [`con
 
 --
 
-If using an [`engine`](http://guides.rubyonrails.org/engines.html), **DON'T need an `initializer`**:
+If using an [`engine`](http://guides.rubyonrails.org/engines.html), you **DON'T need an `initializer`**:
 
     # lib/engine.rb
     module YourModule
@@ -264,8 +260,85 @@ If using an [`engine`](http://guides.rubyonrails.org/engines.html), **DON'T need
 
     end
 
-The best thing about using a `config` options block is that you are able to only define the options that you require. This means that if you have particular options you *only* wish to run in `staging`, or have single options for `production` etc...  
+The best thing about using a `config` options block is that you are able to only define the options that you require.
 
+If you have particular options you *only* wish to run in `staging`, or have single options for `production` etc, this setup gives you the ability to manage it properly...
+
+---
+
+###### Dev
+
+As explained, `ExceptionHandler` does *not* work in `development` mode by default.
+
+This is because it overrides the `exceptions_app` middleware hook - which is *only* invoked in `production` or `staging`...
+
+<p align="center">
+  <img src="./readme/dev.png" />
+</p>
+
+To get it working in `development`, you need to override the [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) setting (a standard component of Rails) - setting it to "false" ↴
+
+<p align="center">
+  <img src="./readme/local_requests.jpg" />
+</p>
+
+This is normally done by changing the setting in your Rails config files. However, to make the process simpler for `ExceptionHandler`- we've added a `dev` option which allows you to override the hook through the context of the gem...
+
+```
+# config/application.rb
+config.exception_handler = { dev: true }
+```
+
+This disables [`config.consider_all_requests_local`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration), making Rails behave as it would in production.
+
+Whilst simple, it's not recommended for extended use. Very good for testing new ideas etc.
+
+---
+
+##### DB
+
+If you want to save exceptions to your database, you will need to migrate a new table.
+
+Ths is done automatically with the latest version of `ExceptionHandler`.
+
+To do this, once you've enabled the option, run `rails db:migrate` from your console. Our new [`migration system`](https://github.com/richpeck/exception_handler/tree/readme#migrations) will automatically run the migration.
+
+```
+# config/application.rb
+config.exception_handler = { db: true }
+```
+
+This enables `ActiveRecord::Base` on the [`Exception`](app/models/exception_handler/exception.rb) class, allowing us to save to the database.
+
+In order for this to work, your db needs the correct table.
+
+---
+
+##### Email
+
+`ExceptionHandler` also sends email notifications.
+
+If you want to receive emails whenever your application raises an error, you can do so by adding your email to the config:
+
+    # config/application.rb
+    config.exception_handler = {
+      email: "your@email.com"
+    }
+
+> **Please Note** this requires [`ActionMailer`](http://guides.rubyonrails.org/action_mailer_basics.html). If you don't have any outbound SMTP server, [`SendGrid`](http://sendgrid.com) is free.
+
+From version `0.8.0.0`, you're able to define whether email notifications are sent on a per-error basis:
+
+    # config/application.rb
+    config.exception_handlder = {
+      exceptions: {
+        :all => {
+          notification: true, # (false by default)
+        }
+      }
+    }
+
+[Full tutorial here](https://github.com/richpeck/exception_handler/wiki/2-Email).
 
 <!-- Sep -->
 <p align="center">
