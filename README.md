@@ -56,9 +56,11 @@
 
 Rails' default error pages are **static HTML files**.
 
-Whilst most don't mind this, it bugged the hell out of me - culminating in the development of this gem. Over the past 4 years, I've added to the underlying infrastructure and ensured the system is able to operate with the latest version of Rails.
+Whilst most don't mind this, it bugged the hell out of me - culminating in the development of this gem. Over the past 4 years, we've added to the underlying infrastructure and ensured the system is able to operate with the latest version of Rails.
 
-You're now welcome to enjoy the fruits of our labour - with one of the most popular, robust and versatile exception management gems for the Rails framework. To understand how it works, you need to appreciate how HTTP errors are handled...
+You're now welcome to enjoy the fruits of our labour - with one of the most popular, robust and versatile exception management gems for the Rails framework.
+
+To understand how it works, you need to appreciate how HTTP errors are handled...
 
 ---
 
@@ -66,7 +68,7 @@ You're now welcome to enjoy the fruits of our labour - with one of the most popu
 
 ---
 
-If you're interested in how the system works, the most important thing is that *it doesn't matter* which errors Ruby/Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).
+The most important thing to note is that *it doesn't matter* which errors Ruby/Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html). All transactions online are handled through HTTP, and as such, it pays to understand how it works.
 
 Whilst HTTP has 5 categories of response code, only two are used to denote errors ([`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) + [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors)):
 
@@ -74,9 +76,9 @@ Whilst HTTP has 5 categories of response code, only two are used to denote error
   <img src="./readme/HTTP.png" width="55%" />
 </p>
 
-This means that all you're *really* doing is taking "Ruby" errors and giving them an appropriate [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) & [message body](https://en.wikipedia.org/wiki/HTTP_message_body) (HTML). Rails handles the process for you - the *only* thing we need to worry about is how the HTML is generated.  
+This means that all Rails is *really* doing is taking "Ruby" errors and giving them an appropriate [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) & [message body](https://en.wikipedia.org/wiki/HTTP_message_body) (HTML). Rails handles the process for you - the *only* thing we need to worry about is how the HTML is generated.  
 
-What confuses most is the way in which Rails does this.
+What confuses most is the way in which it does this.
 
 The process is handled by [`ActionDispatch::ShowExceptions`](https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/show_exceptions.rb#L44) - middleware which builds a new response out of the erroneous one passed to it by Rails. Through this process, it calls whichever class is present in [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration)...
 
@@ -95,9 +97,9 @@ The process is handled by [`ActionDispatch::ShowExceptions`](https://github.com/
       FAILSAFE_RESPONSE
     end
 
-In other words, what a user *sees* (in the browser) has very little to do with the error Rails experienced.
+In other words, what a user *sees* (in the browser) has very little to do with the error Ruby/Rails experienced.
 
-`ExceptionHandler` doesn't change this behaviour - it simply *adds* our own controller/view to provide the HTML...
+`ExceptionHandler` doesn't change this behaviour - it simply *adds* our own [controller](app/controllers/exception_handler/exceptions_controller.rb)/[view](app/views/exception_handler/exceptions/show.html.erb) to provide the necessary HTML...
 
 ---
 
@@ -105,20 +107,13 @@ In other words, what a user *sees* (in the browser) has very little to do with t
 
 ---
 
-The key with `ExceptionHandler` lies in its integration with the [Rack middleware stack](https://guides.rubyonrails.org/rails_on_rack.html#internal-middleware-stack).
+The key with `ExceptionHandler` is its integration with the [Rack middleware stack](https://guides.rubyonrails.org/rails_on_rack.html#internal-middleware-stack).
 
-Most other "exception" gems rely on hacking the core Rails system, our gem works *with* Rails to provide a valid set of HTML...
+Most other "exception" gems hack the core Rails system; ours works *with* Rails to provide a valid set of HTML (using `ActionDispatch` and the asset pipeline) without having to compromise the efficiency of the system...
 
 <p align="center">
   <img src="./readme/middleware.jpg" width="80%" />
 </p>
-
-
-Point is that by tapping into the `exceptions_app` middleware hook, the application is able to provide users with the ability to manage the way the system works without having to worry about whether the system is going to work with other gems etc.
-
-The fact that it doesn't change the underlying exception handling process, or use any hacks, makes it extremely potent for production.
-
-
 
 The following shows how...
 
