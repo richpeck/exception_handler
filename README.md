@@ -44,23 +44,27 @@
 
 ---
 
-[`ExceptionHandler`][rubygems] was replaces Rails' [default error pages](https://github.com/rails/rails/tree/ef0b05e78fb0b928c7ef48d3c365dc849af50305/railties/lib/rails/generators/rails/app/templates/public) with dynamic views...
+[`ExceptionHandler`][rubygems] replaces Rails' [default error pages](https://github.com/rails/rails/tree/ef0b05e78fb0b928c7ef48d3c365dc849af50305/railties/lib/rails/generators/rails/app/templates/public) with dynamic views...
 
 <p align="center">
   <br />
   <img src="./readme/dev.png" />
   <br/>
-  It works by injecting our own <a href="app/controllers/exception_handler/exceptions_controller.rb">controller</a> into the <a href="https://guides.rubyonrails.org/configuring.html#rails-general-configuration"><code>exceptions_app</code></a> middlware hook.
+  Works by injecting our own <a href="app/controllers/exception_handler/exceptions_controller.rb">controller</a> into the <a href="https://guides.rubyonrails.org/configuring.html#rails-general-configuration"><code>exceptions_app</code></a> middlware hook.
   <br />--<br />
 </p>
 
 Rails' default error pages are **static HTML files**.
 
-Whilst there's nothing wrong with these, they will
+Whilst most don't mind this, it bugged the hell out of me - culminating in the development of this gem. Over the past 4 years, I've added to the underlying infrastructure and ensured the system is able to operate with the latest version of Rails.
+
+You're now welcome to enjoy the fruits of our labour - with one of the most popular, robust and versatile exception management gems for the Rails framework. To understand how it works, you need to appreciate how HTTP errors are handled...
 
 ---
 
 ##### 📑 HTTP Error Management
+
+---
 
 If you're interested in how the system works, the most important thing is that *it doesn't matter* which errors Ruby/Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).
 
@@ -98,6 +102,8 @@ In other words, what a user *sees* (in the browser) has very little to do with t
 ---
 
 ##### ⛔️ Middleware-Powered Exceptions
+
+---
 
 The key with `ExceptionHandler` lies in its integration with the [Rack middleware stack](https://guides.rubyonrails.org/rails_on_rack.html#internal-middleware-stack).
 
