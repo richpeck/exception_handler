@@ -2,7 +2,7 @@
 
 <!-- Intro -->
 <div id="intro">
-  <h4 align="center"><strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a></strong> is presently the <strong>MOST POPULAR</strong> exceptions gem for <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">Rails CUSTOM error pages</a></strong>...</h4>
+  <h4 align="center"><strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a></strong> is presently the <strong>MOST POPULAR</strong> exceptions gem for <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">CUSTOM Rails error pages</a></strong>...</h4>
   <p align="center">
     With <strong>180,000+ downloads</strong>, it is the *only* gem to provide <strong>custom 400/500 exception pages for Rails 4 + 5</strong>...
   </p>
@@ -54,13 +54,13 @@
   <br />--<br />
 </p>
 
-Rails' default error pages are **static HTML files**.
+Whilst it's not the only gem to do this, it's the **most effective** and **easy-to-use**.
 
-Whilst most don't mind this, it bugged the hell out of me - culminating in the development of this gem. Over the past 4 years, we've added to the underlying infrastructure and ensured the system is able to operate with the latest version of Rails.
+It works simply - by injecting out own custom controller into the exception management process inside Rails.
 
-You're now welcome to enjoy the fruits of our labour - with one of the most popular, robust and versatile exception management gems for the Rails framework.
+This allows us to call any [layout][layouts] we need, as well as providing extra services - such as the ability to create [custom exceptions][custom-exceptions], [send email notifications][email] and more. You also don't need to make any changes for the gem to work in `production`.
 
-To understand how it works, you need to appreciate how HTTP errors are handled...
+The secret lies in the way that Rails exceptions are handled. Regardless of the type of error raised, they are all sent back to the client as HTTP responses. Understanding how this works will give you the best perspective of the gem...
 
 ---
 
@@ -619,6 +619,7 @@ Responses typically delivered within several hours.
 [layouts]: #layouts
 [locales]: #locales
 [configuration]: #configuration
+[custom-exceptions]: #custom-exceptions
 
 <!-- ################################### -->
 <!-- ################################### -->
