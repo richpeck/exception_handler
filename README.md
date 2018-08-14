@@ -507,9 +507,6 @@ Alternatively, you may wish to post on our [GitHub Issues](https://github.com/ri
 Medium: <br />
 [![Medium](./readme/medium.png)](https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677)
 
-YouTube: <br />
-[![YouTube](./readme/youtube.png)](https://www.youtube.com/channel/UC247lm76ECX1aSvVuhXxe6g)
-
 <!-- Sep -->
 <p align="center">
   <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
