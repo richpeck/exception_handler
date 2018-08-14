@@ -70,32 +70,25 @@ To understand how it works, you need to appreciate how HTTP errors are handled..
 
 The most important thing to note is that *it doesn't matter* which errors Ruby/Rails raises - they *all* need to be wrapped in a [valid HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html). All transactions online are handled through HTTP, and as such, it pays to understand how it works.
 
-Whilst HTTP has 5 categories of response code, only two are used to denote errors ([`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) + [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors)):
+[HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) is a protocol built on top of [TCP/IP](https://en.wikipedia.org/wiki/Internet_protocol_suite). It was introduced as a means to manage access to "public" Internet-connected computers - the implication being that certain connected systems did not want to be publicly accessible.
+
+Due to the [stateless](https://en.wikipedia.org/wiki/Stateless_protocol) nature of HTTP, each transaction is treated independently to the others. This means that if any "errors" are raised, all the system is doing
+
+Whilst HTTP has 5 types of status code, only two are used to denote errors → [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) + [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors):
 
 <p align="center">
   <img src="./readme/HTTP.png" width="55%" />
 </p>
 
-This means that all Rails is *really* doing is taking "Ruby" errors and giving them an appropriate [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) & [message body](https://en.wikipedia.org/wiki/HTTP_message_body) (HTML). Rails handles the process for you - the *only* thing we need to worry about is how the HTML is generated.  
+Thus, all Rails is *really* doing is taking "Ruby" errors and giving them an appropriate [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) & [message body](https://en.wikipedia.org/wiki/HTTP_message_body) (HTML). Rails handles the process for you - the *only* thing we need to worry about which HTML is generated.  
 
 What confuses most is the way in which it does this.
 
 The process is handled by [`ActionDispatch::ShowExceptions`](https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/show_exceptions.rb#L44) - middleware which builds a new response out of the erroneous one passed to it by Rails. Through this process, it calls whichever class is present in [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration)...
 
-    # show_exceptions.rb
-    def render_exception(request, exception)
-      backtrace_cleaner = request.get_header "action_dispatch.backtrace_cleaner"
-      wrapper = ExceptionWrapper.new(backtrace_cleaner, exception)
-      status  = wrapper.status_code
-      request.set_header "action_dispatch.exception", wrapper.exception
-      request.set_header "action_dispatch.original_path", request.path_info
-      request.path_info = "/#{status}"
-      response = @exceptions_app.call(request.env) #-> this is where the HTML is generated
-      response[1]["X-Cascade"] == "pass" ? pass_response(status) : response
-    rescue Exception => failsafe_error
-      $stderr.puts "Error during failsafe response: #{failsafe_error}\n  #{failsafe_error.backtrace * "\n  "}"
-      FAILSAFE_RESPONSE
-    end
+<p align="center">
+  <img src="./readme/show_exceptions.png" />
+</p>
 
 In other words, what a user *sees* (in the browser) has very little to do with the error Ruby/Rails experienced.
 
@@ -114,6 +107,10 @@ Most other "exception" gems hack the core Rails system; ours works *with* Rails 
 <p align="center">
   <img src="./readme/middleware.jpg" width="80%" />
 </p>
+
+This is important, because the biggest issue for most "exception management" gems is they are simply unable to interface with Rails' view system (and hence cannot show truly custom error pages). Whilst it may be the case that *some* instances of errors will completely cut off the underlying Rails system, Rack is generally not affected by Rails errors (allowing us to provide the required functionality).
+
+By tapping into the middleware level, the `ExceptionHandler` gem negates the need for manual controller/view management.
 
 The following shows how...
 
