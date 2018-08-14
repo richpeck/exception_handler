@@ -54,13 +54,15 @@
   <br />--<br />
 </p>
 
-Whilst it's not the only gem to do this, it's the **most effective** and **easy-to-use**.
+Rails' default error pages are **static HTML files**.
 
-It works by injecting out own custom [controller](app/controllers/exception_handler/exceptions_controller.rb) into the exception management process inside Rails.
+Whilst most don't mind this, it bugged the hell out of me - culminating in the development of this gem.
 
-This allows us to call any [layout][layouts] we need, as well as providing extra services - such as the ability to create [custom exceptions][custom-exceptions], [send email notifications][email] and more. You also don't need to make any changes for the gem to work in `production`.
+Over the past [**4 years**](https://stackoverflow.com/questions/19103759/rails-4-custom-error-pages-for-404-500-and-where-is-the-default-500-error-mess/19279062#19279062), we've ensured the system is able to operate with the latest version of Rails.
 
-The secret lies in the way that Rails exceptions are handled. Regardless of the type of error raised, they are all sent back to the client as HTTP responses. Understanding how this works will give you the best perspective of the gem...
+You're now welcome to enjoy the fruits of our labour - with one of the most popular, robust and versatile exception management gems for the Rails framework.
+
+To understand how it works, you need to appreciate how **HTTP errors** are handled...
 
 ---
 
@@ -72,17 +74,18 @@ The most important thing to note is that *it doesn't matter* which errors Ruby/R
 
 [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) is a protocol built on top of [TCP/IP](https://en.wikipedia.org/wiki/Internet_protocol_suite). It was introduced as a means to manage access to "public" Internet-connected computers - the implication being that certain connected systems did not want to be publicly accessible.
 
-Due to the [stateless](https://en.wikipedia.org/wiki/Stateless_protocol) nature of HTTP, each transaction is treated independently to the others. This means that each time you send a request over the protocol the recipient system will compile a fresh response each time.
+Due to the [stateless](https://en.wikipedia.org/wiki/Stateless_protocol) nature of HTTP, each transaction is treated independently to the others. This means that each time you send a request over the protocol, the recipient system will compile a fresh response each time.
 
+Rails already has an HTTP wrapper to turn exceptions into HTTP responses.
 only two are used to denote errors → [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) + [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors):
 
 <p align="center">
   <img src="./readme/HTTP.png" width="55%" />
 </p>
 
-All Rails is *really* doing is taking "Ruby" errors and giving them an appropriate [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) & [message body](https://en.wikipedia.org/wiki/HTTP_message_body) (HTML). Rails handles the process for you - the *only* thing we need to worry about which HTML is generated.  
+All Rails is *really* doing is taking "Ruby" errors and giving them an appropriate [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) & [message body](https://en.wikipedia.org/wiki/HTTP_message_body) (HTML).
 
-What confuses most is the way in which it does this.
+What confuses most is the way in which Rails does this.
 
 The process is handled by [`ActionDispatch::ShowExceptions`](https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/show_exceptions.rb#L44) - middleware which builds a new response out of the erroneous one passed to it by Rails. Through this process, it calls whichever class is present in [`exceptions_app`](http://guides.rubyonrails.org/configuring.html#rails-general-configuration)...
 
@@ -102,13 +105,13 @@ In other words, what a user *sees* (in the browser) has very little to do with t
 
 The key with `ExceptionHandler` is its integration with the [Rack middleware stack](https://guides.rubyonrails.org/rails_on_rack.html#internal-middleware-stack).
 
-Most other "exception" gems hack the core Rails system; ours works *with* Rails to provide a valid set of HTML (using `ActionDispatch` and the asset pipeline) without having to compromise the efficiency of the system...
+Most other "exception" gems hack the core Rails system; ours works *with* Rails to provide a valid set of HTML (using `ActionView` and the asset pipeline) without having to compromise the efficiency of the system...
 
 <p align="center">
   <img src="./readme/middleware.jpg" width="80%" />
 </p>
 
-This is important, because the biggest issue for most "exception management" gems is they are simply unable to interface with Rails' view system (and hence cannot show truly custom error pages). Whilst it may be the case that *some* instances of errors will completely cut off the underlying Rails system, Rack is generally not affected by Rails errors (allowing us to provide the required functionality).
+This is important, because the biggest issue for most "exception management" gems is they are simply unable to interface with Rails' view system (and hence cannot show truly custom error pages).
 
 By tapping into the middleware level, the `ExceptionHandler` gem negates the need for manual controller/view management.
 
@@ -444,11 +447,9 @@ Because `HTTP` can only process `4xx` / `5xx` errors, if `Rails` raises an excep
   <h5>💼 Generators</h5>
 </div>
 
-**You can generate `ExceptionHandler` into your own application.**
+If you want to edit the `controller`, `views`, `model` or `assets`, you're able to invoke them in your own application.
 
-[[ Generator ]]
-
-The following commands will copy the directories...
+This is done - as with other gems - with a single [`generator`](https://github.com/richpeck/exception_handler/blob/master/lib/generators/exception_handler/views_generator.rb) which takes a series of arguments:
 
     rails g exception_handler:views
     rails g exception_handler:views -v views
@@ -457,7 +458,7 @@ The following commands will copy the directories...
     rails g exception_handler:views -v assets
     rails g exception_handler:views -v views controllers models assets
 
-If you don't include any switches, this will copy **all** the folders put into your app.
+If you don't include any switches, this will copy **all** `ExceptionHandler`'s folders put into your app.
 
 Each switch defines which folders you want (EG `-v views` will only copy `views` dir).
 
@@ -468,7 +469,8 @@ Each switch defines which folders you want (EG `-v views` will only copy `views`
   <h5>✔️ Migrations</h5>
 </div>
 
-**You *DON'T* need to generate a migration any more**.
+
+You **DON'T** need to generate a migration any more.
 
 From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own [migration system](lib/exception_handler/engine.rb#L58).
 
@@ -480,7 +482,9 @@ To rollback, use the following:
 
     rails db:migrate:down VERSION=000000
 
-The drawback to this is that if you remove `ExceptionHandler` before you rollback the migration, it won't exist anymore. You can **only** fire the `rollback` when you have `ExceptionHandler` installed.
+The drawback to this is that if you remove `ExceptionHandler` before you rollback the migration, it won't exist anymore.
+
+You can **only** fire the `rollback` when you have `ExceptionHandler` installed.
 
 <!-- Sep -->
 <p align="center">
@@ -496,9 +500,15 @@ The drawback to this is that if you remove `ExceptionHandler` before you rollbac
 
 You're welcome to contact me directly at <a href="mailto:rpeck@frontlineutilities.co.uk">rpeck@frontlineutilities.co.uk</a>.
 
-Alternatively, you may wish to post on our [Github Issues](https://github.com/richpeck/exception_handler/issues), or [StackOverflow](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler).
+Alternatively, you may wish to post on our [GitHub Issues](https://github.com/richpeck/exception_handler/issues), or [StackOverflow](https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler).
 
-Responses typically delivered within several hours.
+--
+
+Medium: <br />
+[![Medium](./readme/medium.png)](https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677)
+
+YouTube: <br />
+[![YouTube](./readme/youtube.png)](https://www.youtube.com/channel/UC247lm76ECX1aSvVuhXxe6g)
 
 <!-- Sep -->
 <p align="center">
