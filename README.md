@@ -50,7 +50,7 @@
   <br />
   <img src="./readme/dev.png" width="95%"/>
   <br/>
-  It works by injecting our own [controller](app/controllers/exception_handler/exceptions_controller.rb) into the `exceptions_app` middlware hook.
+  It works by injecting our own <a href="app/controllers/exception_handler/exceptions_controller.rb">controller</a> into the <code>exceptions_app</code> middlware hook.
   <br />--<br />
 </p>
 
