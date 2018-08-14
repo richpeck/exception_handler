@@ -270,7 +270,7 @@ If you have particular options you *only* wish to run in `staging`, or have sing
 
 <!-- Dev -->
 <div id="dev">
-  <h5>🚧 Dev</h5>
+  <h5>💻 Dev</h5>
 </div>
 
 As explained, `ExceptionHandler` does *not* work in `development` by default.
@@ -302,7 +302,7 @@ Whilst simple, it's not recommended for extended use. Very good for testing new 
 
 <!-- DB -->
 <div id="db">
-  <h5>🚧 DB</h5>
+  <h5>💾 DB</h5>
 </div>
 
 If you want to save exceptions to your database, you will need to migrate a new table.
@@ -324,7 +324,7 @@ In order for this to work, your db needs the correct table.
 
 <!-- Email -->
 <div id="email">
-  <h5>🚧 Email</h5>
+  <h5>✉️ Email</h5>
 </div>
 
 `ExceptionHandler` also sends email notifications.
@@ -354,7 +354,7 @@ From version `0.8.0.0`, you're able to define whether email notifications are se
 
 <!-- Views -->
 <div id="views">
-  <h5>🚧 Views</h5>
+  <h5>👓 Views</h5>
 </div>
 
 The **views** system in `ExceptionHandler` is modular.
@@ -381,7 +381,7 @@ If you wish to change the "layout" / "look", there are **two** options...
 
 <!-- Locales -->
 <div id="locales">
-  <h5>🚧 Locales</h5>
+  <h5>💬 Locales</h5>
 </div>
 
 Locales are used to denote interchangeable text (for different languages).
@@ -408,7 +408,7 @@ You get access to `%{message}` and `%{status}`, both inferring from `@exception`
 
 <!-- Layouts -->
 <div id="layouts">
-  <h5>🚧 Layouts</h5>
+  <h5>📋 Layouts</h5>
 </div>
 
 ![Layout][layout_img]
@@ -423,7 +423,7 @@ By default, `5xx` errors are shown with our [`exception` layout][layout] - this 
 
 <!-- Custom Exceptions -->
 <div id="custom-exceptions">
-  <h5>🚧 Custom Exceptions</h5>
+  <h5>⛔️ Custom Exceptions</h5>
 </div>
 
 **Custom Exceptions also supported in [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)**
@@ -441,9 +441,33 @@ Because `HTTP` can only process `4xx` / `5xx` errors, if `Rails` raises an excep
 
 ---
 
+<!-- Generators -->
+<div id="generators">
+  <h5>💼 Generators</h5>
+</div>
+
+**You can generate `ExceptionHandler` into your own application.**
+
+[[ Generator ]]
+
+The following commands will copy the directories...
+
+    rails g exception_handler:views
+    rails g exception_handler:views -v views
+    rails g exception_handler:views -v controllers
+    rails g exception_handler:views -v models
+    rails g exception_handler:views -v assets
+    rails g exception_handler:views -v views controllers models assets
+
+If you don't include any switches, this will copy **all** the folders put into your app.
+
+Each switch defines which folders you want (EG `-v views` will only copy `views` dir).
+
+---
+
 <!-- Migrations -->
 <div id="migrations">
-  <h5>🚧 Migrations</h5>
+  <h5>✔️ Migrations</h5>
 </div>
 
 **You *DON'T* need to generate a migration any more**.
