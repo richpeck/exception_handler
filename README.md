@@ -268,7 +268,7 @@ If you have particular options you *only* wish to run in `staging`, or have sing
 
 ###### Dev
 
-As explained, `ExceptionHandler` does *not* work in `development` mode by default.
+As explained, `ExceptionHandler` does *not* work in `development` by default.
 
 This is because it overrides the `exceptions_app` middleware hook - which is *only* invoked in `production` or `staging`...
 
@@ -332,13 +332,107 @@ From version `0.8.0.0`, you're able to define whether email notifications are se
     # config/application.rb
     config.exception_handlder = {
       exceptions: {
-        :all => {
-          notification: true, # (false by default)
-        }
+        :all => { notification: true },
+        500 =>  { notification: false }
       }
     }
 
-[Full tutorial here](https://github.com/richpeck/exception_handler/wiki/2-Email).
+[Full tutorial here](https://github.com/richpeck/exception_handler/wiki/2-Email)
+
+---
+
+##### Views
+
+The **views** system in `ExceptionHandler` is modular.
+
+What *most* people want out of the view is to change the way it ***looks***. This can be done without changing the exception "view" itself...
+
+<p align="center">
+  <img src="./readme/dev.png" />
+</p>
+
+To better explain, if [`ExceptionsController`](https://github.com/richpeck/exception_handler/blob/0.8/app/controllers/exception_handler/exceptions_controller.rb) is invoked (by `exceptions_app`), it has **ONE** method ([`show`](https://github.com/richpeck/exception_handler/blob/0.8/app/controllers/exception_handler/exceptions_controller.rb#L42)). This method calls the [`show` view](https://github.com/richpeck/exception_handler/blob/0.8/app/views/exception_handler/exceptions/show.html.erb), which is *entirely* dependent on the locales for content & the layout for the look.
+
+This means that if you wish to change how the view "looks" - you're *either* going to want to change your *layouts* or the [*locales*](#locales). There is NO reason to change the `show` view itself - it's succinct and entirely modular. Whilst you're definitely at liberty to change it, you'll just be making the issue more complicated than it needs to be.
+
+-
+
+If you wish to change the "layout" / "look", there are **two** options...
+
+ * Firstly, you can create your own layout. This is done by changing the
+
+ * Secondly,
+
+---
+
+##### Locales
+
+Locales are used to denote interchangeable text (for different languages).
+
+We've used it for a different purpose - to provide text for our "show" view. The beauty of this is that 1) It's entirely modular & 2) It's extensible (we are able to use as many locales as required)...
+
+[[ locales ]]
+
+
+The `ExceptionHandler` view is populated by [`@exception.description`](app/models/exception_handler/exception.rb#L121), which pulls from the `locales`.
+
+If you want custom messages, you need the following. The key is defined by the HTTP [`status_code`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L544)
+
+    # config/locales/en.yml
+    en:
+      exception_handler:
+        not_found: "Your message here"
+        unauthorized: "You need to login to continue"
+        internal_server_error: "This is a test to show the %{status} of the error"
+
+You get access to `%{message}` and `%{status}`, both inferring from `@exception`.
+
+---
+
+##### Layouts
+
+![Layout][layout_img]
+
+If you want to change the various layouts, you need to use the [`config`](#config) to set them.
+
+![Layout][layouts_img]
+
+By default, `5xx` errors are shown with our [`exception` layout][layout] - this can be overridden by changing the `config` to use a layout of your choice. If you want to inherit the `ApplicationController` layout, assign the codes to `nil`.
+
+---
+
+##### Custom Exceptions
+
+**Custom Exceptions also supported in [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5)**
+
+Rails handles this for us - [**`config.action_dispatch.rescue_responses`**][rescue_responses]  ↴
+
+![ActionDispatch][config.action_dispatch.rescue_responses]
+
+You need to add to the `rescue_responses` hash in your app's config (mapped to [`status codes`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L544)):
+
+    # config/application.rb
+    config.action_dispatch.rescue_responses["ActionController::YourError"] = :bad_request
+
+Because `HTTP` can only process `4xx` / `5xx` errors, if `Rails` raises an exception, it needs to assign one of the error status codes. **Default** is [`internal_server_error`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L595) - if you'd prefer your app to just return `500` errors for your custom exception, you don't need to explicitly declare them.
+
+---
+
+##### Migrations
+
+**You *DON'T* need to generate a migration any more**.
+
+From [`0.7.5`](https://github.com/richpeck/exception_handler/releases/tag/0.7.5), the `migration` generator has been removed in favour of our own [migration system](lib/exception_handler/engine.rb#L58).
+
+The reason we did this was so not to pollute your migrations folder with a worthless file. Our migration doesn't need to be changed - we only have to get it into the database and the gem takes care of the rest...
+
+> If you set the `db` option in config, run `rails db:migrate` and the migration will be run.
+
+To rollback, use the following:
+
+    rails db:migrate:down VERSION=000000
+
+The drawback to this is that if you remove `ExceptionHandler` before you rollback the migration, it won't exist anymore. You can **only** fire the `rollback` when you have `ExceptionHandler` installed.
 
 <!-- Sep -->
 <p align="center">
