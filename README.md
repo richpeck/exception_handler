@@ -2,7 +2,7 @@
 
 <!-- Intro -->
 <div id="intro">
-  <h4 align="center"><strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a></strong> is presently the <strong>most popular exception gem</strong> for <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">Rails 400/500 error pages</a></strong></h4>
+  <h4 align="center"><strong><a href="https://rubygems.org/gems/exception_handler"><code>ExceptionHandler</code></a></strong> is presently the <strong>MOST POPULAR</strong> exceptions gem for <strong><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">Rails 400/500 error pages</a></strong>...</h4>
   <p align="center">
     With <strong>180,000+ downloads</strong>, it is the *only* gem to provide <strong>custom exception pages for Rails 4 + 5</strong>...
   </p>
@@ -48,9 +48,9 @@
 
 <p align="center">
   <br />
-  <img src="./readme/dev.png" width="85%"/>
+  <img src="./readme/dev.png" width="95%"/>
   <br/>
-  It works by injecting our own [controller](/app/controllers/exception_handler/exceptions_controller.rb) into the `exceptions_app` middlware hook.
+  It works by injecting our own [controller](app/controllers/exception_handler/exceptions_controller.rb) into the `exceptions_app` middlware hook.
   <br />--<br />
 </p>
 
@@ -160,13 +160,111 @@ To get it working in development, we've included a [`dev`][dev] mode, which over
 ----
 
 <p align="center">
-   <a href="#config">Config</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#dev" title="Dev Mode"> Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#database">  Database</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#email">  Email</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#views">Views</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#locales"><a href="#custom-exceptions">Custom Exceptions</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#generators">Generators</a>
+   1. <a href="#config">Config</a>&nbsp;&nbsp;&nbsp;&nbsp;2. <a href="#dev" title="Dev Mode"> Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;3. <a href="#database">  Database</a>&nbsp;&nbsp;&nbsp;&nbsp;4. <a href="#email">  Email</a>&nbsp;&nbsp;&nbsp;&nbsp;5. <a href="#views">Views</a>&nbsp;&nbsp;&nbsp;&nbsp;6. <a href="#locales"><a href="#custom-exceptions">Custom Exceptions</a>&nbsp;&nbsp;&nbsp;&nbsp;7. <a href="#generators">Generators</a>
 </p>
 
 ----
 
-ExceptionHandler uses the "config" file to manage the entire system.
+<!-- Config -->
+<div id="config"></div>
 
+The ONLY thing you need to configure `ExceptionHandler` is its [`config`](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb) settings.
+
+Whilst the gem **works out of the box** (without any configuration), if you want to manage the [`layouts`](#layouts), [`email`](#email), [`dev`](#dev) or the [`database`](#db), you'll need to set the appropriate values in the config hash ([invoked at init](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/engine.rb#L44)).
+
+This can be done in `config/application.rb` or `config/environments/[env].rb` ↴
+
+```
+# config/application.rb
+
+module YourApp
+  class Application < Rails::Application
+
+    # => This is an example of ALL available config options
+    # => You're able to see exactly how it works here:
+    # => https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb
+
+    # => Config hash (no initializer required)
+    config.exception_handler = {
+      dev:        nil, # allows you to turn ExceptionHandler "on" in development
+      db:         nil, # allocates a "table name" into which exceptions are saved (defaults to nil)
+      email:      nil, # sends exception emails to a listed email (string // "you@email.com")
+
+      # On default 5xx error page, social media links included
+      social: {        
+        facebook: nil, # Facebook page name   
+        twitter:  nil, # Twitter handle  
+        youtube:  nil, # Youtube channel name / ID
+        linkedin: nil, # LinkedIn name
+        fusion:   nil  # FL Fusion handle
+      },  
+
+      # This is an entirely NEW structure for the "layouts" area
+      # You're able to define layouts, notifications etc ↴
+
+      # All keys interpolated as strings, so you can use symbols, strings or integers where necessary
+      exceptions: {
+
+        :all => {
+          layout: "exception", # define layout
+          notification: true, # (false by default)
+          deliver: #something here to control the type of response
+        },
+        :4xx => {
+          layout: nil, # define layout
+          notification: true, # (false by default)
+          deliver: #something here to control the type of response    
+        },    
+        :5xx => {
+          layout: "exception", # define layout
+          notification: true, # (false by default)
+          deliver: #something here to control the type of response    
+        },
+        500 => {
+          layout: "exception", # define layout
+          notification: true, # (false by default)
+          deliver: #something here to control the type of response    
+        },
+
+        # This is the old structure
+        # Still works but will be deprecated in future versions
+
+        501 => "exception",
+        502 => "exception",
+        503 => "exception",
+        504 => "exception",
+        505 => "exception",
+        507 => "exception",
+        510 => "exception"
+
+      }
+    }
+
+  end
+end
+```  
+
+For a full retinue of the available options, you'll be best looking at the [`config`](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb) file itself.
+
+--
+
+If using an [`engine`](http://guides.rubyonrails.org/engines.html), **DON'T need an `initializer`**:
+
+    # lib/engine.rb
+    module YourModule
+      class Engine < Rails::Engine
+
+        # => ExceptionHandler
+        # => Works in and out of an initializer
+        config.exception_handler = {
+          dev: nil, # => this will not load the gem in development
+          db:  true # => this will use the :errors table to store exceptions
+        }
+      end
+
+    end
+
+The best thing about using a `config` options block is that you are able to only define the options that you require. This means that if you have particular options you *only* wish to run in `staging`, or have single options for `production` etc...  
 
 
 <!-- Sep -->
