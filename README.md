@@ -157,7 +157,7 @@ To get it working in development, we've included a [`dev`][dev] mode, which over
 ----
 
 <p align="center">
-   1. 📁 <a href="#config">Config</a>&nbsp;&nbsp;&nbsp;&nbsp;2. 💻 <a href="#dev" title="Dev Mode">Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;3. 💾 <a href="#db">Database</a>&nbsp;&nbsp;&nbsp;&nbsp;4. ✉️   <a href="#email">Email</a>&nbsp;&nbsp;&nbsp;&nbsp;5. 👓 <a href="#views">Views</a>&nbsp;&nbsp;&nbsp;&nbsp;6. 💬 <a href="#locales">Locales</a>&nbsp;&nbsp;&nbsp;&nbsp;7. ⛔️ <a href="#custom-exceptions">Custom Exceptions</a>
+   📁 <a href="#config">Config</a>&nbsp;&nbsp;&nbsp;&nbsp;💻 <a href="#dev" title="Dev Mode">Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;💾 <a href="#db">Database</a>&nbsp;&nbsp;&nbsp;&nbsp;✉️   <a href="#email">Email</a>&nbsp;&nbsp;&nbsp;&nbsp;👓 <a href="#views">Views</a>&nbsp;&nbsp;&nbsp;&nbsp;💬 <a href="#locales">Locales</a>&nbsp;&nbsp;&nbsp;&nbsp;⛔️ <a href="#custom-exceptions">Custom Exceptions</a>
 </p>
 
 ----
@@ -167,7 +167,7 @@ To get it working in development, we've included a [`dev`][dev] mode, which over
   <h5>📁 Config</h5>
 </div>
 
-The ONLY thing you need to configure `ExceptionHandler` is its [`config`](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb) settings.
+The **ONLY** thing you need to configure `ExceptionHandler` is its [`config`](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb) settings.
 
 Whilst the gem **works out of the box** (without any configuration), if you want to manage the [`layouts`](#layouts), [`email`](#email), [`dev`](#dev) or the [`database`](#db), you'll need to set the appropriate values in the config hash.
 
@@ -424,7 +424,7 @@ The most attractive feature of `ExceptionHandler` (for most) is its ability to m
   <br />
 </p>
 
-The reason this is important is due to the way in which Rails works → the "layout" is a "wrapper" for the returned HTML (the "styling" of a page). If you return a `nil` layout, you'll end up with the "view" HTML and nothing else.
+The reason this is important is due to the way in which Rails works → the "layout" is a "wrapper" for the returned HTML (the "styling" of a page). If you have no layout, you'll end up with the "view" HTML and nothing else.
 
 This means that if you want to change the "look" of a Rails action, you simply have to be able to change the `layout`. You should not change the view at all.
 
@@ -448,11 +448,9 @@ config.exception_handler = {
 }
 ````
 
---
-
 The `layout` system has changed between [`0.7.7.0`](releases/tag/v0.7.7.0) and [`0.8.0.0`](releases/tag/v0.8.0.0).
 
-Building on the former's adoption of HTTP status-centric layouts (IE layouts depending on which HTTP status code was issued), it is now the case that we have the `all`, `5xx` and `4xx` options - allowing us to manage the layouts for blocks of HTTP errors respectively:
+Building on the former's adoption of HTTP status-centric layouts, it is now the case that we have the `all`, `5xx` and `4xx` options - allowing us to manage the layouts for blocks of HTTP errors respectively:
 
     # config/application.rb
     config.exception_handler = {
