@@ -430,18 +430,19 @@ This means that if you want to change the "look" of a Rails action, you simply h
 
 To this end, `ExceptionHandler` has been designed around providing a [SINGLE VIEW](app/controllers/exception_handler/exceptions_controller.rb#L44) for exceptions. This view does not need to change (although you're welcome to use a [`generator`][generators] to do so) - the key is the `layout` that's assigned...
 
-- `4xx` errors are given a `nil` layout (by default) (inherits from `ApplicationController` in your main app).
+- `4xx` errors are given a `nil` layout (by default) (inherits from `ApplicationController` in your main app)
 - `5xx` errors are assigned our own [`exception`](app/views/layouts/exception.html.erb) layout:
 
-
-    # config/application.rb
-    config.exception_handler = {
-      exceptions: {
-        :all => {
-          layout: nil #-> this will inherit from ApplicationController's layout
-        }
-      }
+````
+# config/application.rb
+config.exception_handler = {
+  exceptions: {
+    :all => {
+      layout: nil #-> this will inherit from ApplicationController's layout
     }
+  }
+}
+````
 
 -
 
@@ -466,7 +467,7 @@ Building on the former's adoption of HTTP status-centric layouts (IE layouts dep
         '5xx' => { layout: 'exception' }, # -> this overrides the :all declaration
         500   => { layout: nil } # -> this overrides the 5xx declaration
       }
-      
+
     }
 
 We've bundled the [`exception`](app/views/layouts/exception.html.erb) layout for `5xx` errors because since these denote internal server errors, it's best to isolate the view system as much as possible. Whilst you're at liberty to change it, we've found it sufficient for most use-cases.
