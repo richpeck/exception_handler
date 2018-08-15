@@ -416,17 +416,23 @@ You get access to `%{message}` and `%{status}`, both inferring from `@exception`
   <h5>📋 Layouts</h5>
 </div>
 
-The most important element of `ExceptionHandler` is its ability to manage [`layouts`](https://guides.rubyonrails.org/layouts_and_rendering.html#structuring-layouts) depending on different HTTP errors...
+The most important element of `ExceptionHandler` (for most) is its ability to manage [`layouts`](https://guides.rubyonrails.org/layouts_and_rendering.html#structuring-layouts) depending on different HTTP statuses...
 
-[[ image ]]
+<p align="center">
+  <br />
+  <img src="./readme/dev.png" />
+  <br />
+</p>
 
-The reason this is important is due to the way in which Rails works - the "layout" is the "wrapper" for the returned HTML (the "styling" of a page). If you return a `nil` layout, you'll end up with the "view" HTML and nothing else.
+The reason this is important is due to the way in which Rails works → the "layout" is a "wrapper" for the returned HTML (the "styling" of a page). If you return a `nil` layout, you'll end up with the "view" HTML and nothing else.
 
-This means that if you want to change the "look" of a Rails action, you simply have to be able to change the `layout` that it's using. You should not have to change the view at all.
+This means that if you want to change the "look" of a Rails action, you simply have to be able to change the `layout`. You should not change the view at all.
 
-To this end, `ExceptionHandler` has been designed around providing a [SINGLE](app/controllers/exception_handler/exceptions_controller.rb#L44) view for exceptions. This view should not need to change (although you're welcome to use a [`generator`][generators] to do this) - the key is the `layout` that's assigned.
+To this end, `ExceptionHandler` has been designed around providing a [SINGLE VIEW](app/controllers/exception_handler/exceptions_controller.rb#L44) for exceptions. This view does not need to change (although you're welcome to use a [`generator`][generators] to do so) - the key is the `layout` that's assigned...
 
-By default, `4xx` errors are given a `nil` layout (which inherits from `ApplicationController` in your main app). `5xx` errors are assigned our own [`exception` layout](app/views/layouts/exception.html.erb):
+- `4xx` errors are given a `nil` layout (by default) (inherits from `ApplicationController` in your main app).
+- `5xx` errors are assigned our own [`exception`](app/views/layouts/exception.html.erb) layout:
+
 
     # config/application.rb
     config.exception_handler = {
@@ -437,11 +443,11 @@ By default, `4xx` errors are given a `nil` layout (which inherits from `Applicat
       }
     }
 
+-
+
 The `layout` system has changed significantly between [`0.7.7.0`](releases/tag/v0.7.7.0) and [`0.8.0.0`](releases/tag/v0.8.0.0).
 
-Building on the former's adoption of HTTP status-centric layouts (IE layouts depending on which HTTP status code was issued), it is now the case that each of the erroneous HTTP status codes can be assigned a layout.
-
-On top of this, we have the `all`, `5xx` and `4xx` options - which allow us to manage the layouts for blocks of HTTP errors respectively:
+Building on the former's adoption of HTTP status-centric layouts (IE layouts depending on which HTTP status code was issued), it is now the case that on top of status-specific declarations, we have the `all`, `5xx` and `4xx` options - allowing us to manage the layouts for blocks of HTTP errors respectively:
 
     # config/application.rb
     config.exception_handler = {
@@ -457,9 +463,13 @@ On top of this, we have the `all`, `5xx` and `4xx` options - which allow us to m
       exceptions: {
         :all  => { layout: 'exception' },
         '4xx' => { layout: 'exception' },
-        500   => { layout: nil }
+        '5xx' => { layout: 'exception' }, # -> this overrides the :all declaration
+        500   => { layout: nil } # -> this overrides the 5xx declaration
       }
+      
     }
+
+We've bundled the [`exception`](app/views/layouts/exception.html.erb) layout for `5xx` errors because since these denote internal server errors, it's best to isolate the view system as much as possible. Whilst you're at liberty to change it, we've found it sufficient for most use-cases.
 
 ---
 
