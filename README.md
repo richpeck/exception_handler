@@ -389,11 +389,11 @@ If you wish to change the "layout" / "look", there are **two** options...
   <h5>💬 Locales</h5>
 </div>
 
-[Locales](https://github.com/richpeck/exception_handler/blob/Readme/config/locales/exception_handler.en.yml) are used to create interchangeable text (translations/internationalization).
+[Locales](https://github.com/richpeck/exception_handler/blob/Readme/config/locales/exception_handler.en.yml) are used to create interchangeable text (translations/internationalization)...
 
-In `ExceptionHandler`, we use it to provide the wording for each error which may be shown to users...
+[[ image ]]
 
-[[ locales ]]
+In `ExceptionHandler`, we use it to provide the wording for each error which may be shown to users.
 
 By default, the English name of the error is used ("404" will appear as "Not Found") - if you want to create custom messages, you're able to do so by referencing the error's ["status_code"](https://github.com/rack/rack/blob/master/lib/rack/utils.rb#L492) within your locales file:
 
@@ -408,6 +408,15 @@ You get access to `%{message}` and `%{status}`, both inferring from an [`@except
 
  - `%{message}` is the error's actual message ("XYZ file could not be shown")
  - `%{status}` is the error's status code ("Internal Server Error")
+
+--
+
+By default, the translation is as follows:
+
+    # config/locales/en.yml
+    en:
+      exception_handler:
+        internal_server_error:  "<strong>%{status} Error</strong> %{message}"
 
 ---
 
