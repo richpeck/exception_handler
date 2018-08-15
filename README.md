@@ -389,25 +389,25 @@ If you wish to change the "layout" / "look", there are **two** options...
   <h5>💬 Locales</h5>
 </div>
 
-Locales are used to denote interchangeable text.
+[Locales](https://github.com/richpeck/exception_handler/blob/Readme/config/locales/exception_handler.en.yml) are used to create interchangeable text (translations/internationalization).
 
-We've used it for a different purpose - to provide text for our "show" view. The beauty of this is that 1) It's entirely modular & 2) It's extensible (we are able to use as many locales as required)...
+In `ExceptionHandler`, we use it to provide the wording for each error which may be shown to users...
 
 [[ locales ]]
 
-
-The `ExceptionHandler` view is populated by [`@exception.description`](app/models/exception_handler/exception.rb#L121), which pulls from the `locales`.
-
-If you want custom messages, you need the following. The key is defined by the HTTP [`status_code`](https://github.com/rack/rack/blob/1.5.2/lib/rack/utils.rb#L544)
+By default, the English name of the error is used ("404" will appear as "Not Found") - if you want to create custom messages, you're able to do so by referencing the error's ["status_code"](https://github.com/rack/rack/blob/master/lib/rack/utils.rb#L492) within your locales file:
 
     # config/locales/en.yml
     en:
       exception_handler:
-        not_found: "Your message here"
-        unauthorized: "You need to login to continue"
-        internal_server_error: "This is a test to show the %{status} of the error"
+        not_found:              "Your message here" # -> 404 page
+        unauthorized:           "You need to login to continue"
+        internal_server_error:  "This is a test to show the %{status} of the error"
 
-You get access to `%{message}` and `%{status}`, both inferring from `@exception`.
+You get access to `%{message}` and `%{status}`, both inferring from an [`@exception`](https://github.com/richpeck/exception_handler/blob/master/app/controllers/exception_handler/exceptions_controller.rb#L20) object we invoke in the controller...
+
+ - `%{message}` is the error's actual message ("XYZ file could not be shown")
+ - `%{status}` is the error's status code ("Internal Server Error")
 
 ---
 
@@ -516,7 +516,7 @@ Alternatively, you're able to still do it with the default Rails behaviour:
 
 If you want to edit the `controller`, `views`, `model` or `assets`, you're able to invoke them in your own application.
 
-This is done - as with other gems - with a single [`generator`](/generators/exception_handler/views_generator.rb) which takes a series of arguments:
+This is done - as with other gems - with a single [`generator`](https://github.com/richpeck/exception_handler/blob/master/lib/generators/exception_handler/views_generator.rb) which takes a series of arguments:
 
     rails g exception_handler:views
     rails g exception_handler:views -v views
