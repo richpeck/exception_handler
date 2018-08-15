@@ -389,7 +389,7 @@ If you wish to change the "layout" / "look", there are **two** options...
   <h5>💬 Locales</h5>
 </div>
 
-Locales are used to denote interchangeable text (for different languages).
+Locales are used to denote interchangeable text.
 
 We've used it for a different purpose - to provide text for our "show" view. The beauty of this is that 1) It's entirely modular & 2) It's extensible (we are able to use as many locales as required)...
 
@@ -416,7 +416,7 @@ You get access to `%{message}` and `%{status}`, both inferring from `@exception`
   <h5>📋 Layouts</h5>
 </div>
 
-The most important element of `ExceptionHandler` (for most) is its ability to manage [`layouts`](https://guides.rubyonrails.org/layouts_and_rendering.html#structuring-layouts) depending on different HTTP statuses...
+The most attractive feature of `ExceptionHandler` (for most) is its ability to manage [`layouts`](https://guides.rubyonrails.org/layouts_and_rendering.html#structuring-layouts) depending on different HTTP statuses...
 
 <p align="center">
   <br />
@@ -436,19 +436,23 @@ To this end, `ExceptionHandler` has been designed around providing a [SINGLE VIE
 ````
 # config/application.rb
 config.exception_handler = {
+
+  # The new syntax allows us to assign different values to each HTTP status code
+  # At the moment, only 'layout' & 'notification' are supported
+  # We plan to include several more in the future...
+
   exceptions: {
-    :all => {
-      layout: nil #-> this will inherit from ApplicationController's layout
-    }
+    :all => { layout: nil } #-> this will inherit from ApplicationController's layout
   }
+
 }
 ````
 
--
+--
 
-The `layout` system has changed significantly between [`0.7.7.0`](releases/tag/v0.7.7.0) and [`0.8.0.0`](releases/tag/v0.8.0.0).
+The `layout` system has changed between [`0.7.7.0`](releases/tag/v0.7.7.0) and [`0.8.0.0`](releases/tag/v0.8.0.0).
 
-Building on the former's adoption of HTTP status-centric layouts (IE layouts depending on which HTTP status code was issued), it is now the case that on top of status-specific declarations, we have the `all`, `5xx` and `4xx` options - allowing us to manage the layouts for blocks of HTTP errors respectively:
+Building on the former's adoption of HTTP status-centric layouts (IE layouts depending on which HTTP status code was issued), it is now the case that we have the `all`, `5xx` and `4xx` options - allowing us to manage the layouts for blocks of HTTP errors respectively:
 
     # config/application.rb
     config.exception_handler = {
@@ -489,7 +493,7 @@ This is done with [`config.action_dispatch.rescue_responses`](https://github.com
   <img src="./readme/custom_exceptions.png" />
 </p>
 
-Whilst this works well, it may be the case that you want to map your own classes to an HTTP status code (default is `500`/`Internal Server Error`).
+Whilst this works well, it may be the case that you want to map your own classes to an HTTP status code (default is `Internal Server Error`).
 
 If you wanted to keep this functionality inside `ExceptionHandler`, you're able to do it as follows:
 
