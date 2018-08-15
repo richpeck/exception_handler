@@ -416,13 +416,30 @@ You get access to `%{message}` and `%{status}`, both inferring from `@exception`
   <h5>📋 Layouts</h5>
 </div>
 
-![Layout][layout_img]
+The most important element of `ExceptionHandler` is its ability to manage `layouts` depending on different HTTP errors...
 
-If you want to change the various layouts, you need to use the [`config`](#config) to set them.
+[[ image ]]
 
-![Layout][layouts_img]
+The reason this is important is due to the way in which Rails works - the "layout" is the "wrapper" for the returned HTML (the "styling" of a page). If you return a `nil` layout, you'll end up with the "view" HTML and nothing else.
 
-By default, `5xx` errors are shown with our [`exception` layout][layout] - this can be overridden by changing the `config` to use a layout of your choice. If you want to inherit the `ApplicationController` layout, assign the codes to `nil`.
+This means that if you want to change the "look" of a Rails action, you simply have to be able to change the `layout` that it's using. You should not have to change the view at all.
+
+To this end, `ExceptionHandler` has been designed around providing a [SINGLE](app/controllers/exception_handler/exceptions_controller.rb#L44) view for exceptions. This view should not need to change (although you're welcome to use a [`generator`][generators] to do this) - the key is the `layout` that's assigned.
+
+By default, `4xx` errors are given a `nil` layout (which inherits from `ApplicationController` in your main app). `5xx` errors are assigned our own [`exception` layout](app/views/layouts/exception.html.erb):
+
+    # config/application.rb
+    config.exception_handler = {
+      exceptions: {
+        :all => {
+          layout: nil #-> this will inherit from ApplicationController's layout
+        }
+      }
+    }
+
+The `layout` system has changed significantly between `0.7.7.0` and `0.8.0.0`.
+
+Whilst both are directly editable from [`config`][configuration],
 
 ---
 
@@ -431,26 +448,31 @@ By default, `5xx` errors are shown with our [`exception` layout][layout] - this 
   <h5>⛔️ Custom Exceptions</h5>
 </div>
 
-Custom exceptions now supported...
+As mentioned, Rails' primary role is to convert Ruby exceptions into HTTP errors.
+
+Part of this process involves mapping Ruby/Rails exceptions to the equivalent HTTP status code.
+
+This is done with [`config.action_dispatch.rescue_responses`](https://github.com/rack/rack/blob/master/lib/rack/utils.rb#L492)...
 
 <p align="center">
   <img src="./readme/custom_exceptions.png" />
 </p>
 
-As mentioned, Rails' primary role is to convert Ruby exceptions into HTTP errors.
-
-To do this, the `config.action_dispatch.rescue_responses` hash maps out a series of classes to [HTTP status responses](https://github.com/rack/rack/blob/master/lib/rack/utils.rb#L492).
-
-Whilst this works well, it may be the case that you want to map your own custom classes to a custom HTTP status code (default is `500`/`Internal Server Error`).
+Whilst this works well, it may be the case that you want to map your own classes to an HTTP status code (default is `500`/`Internal Server Error`).
 
 If you wanted to keep this functionality inside `ExceptionHandler`, you're able to do it as follows:
 
     # config/application.rb
     config.exception_handler = {
       custom_exceptions: {
-        'ActionController::RoutingError' => :not_found
+        'CustomClass::Exception' => :not_found
       }
     }
+
+Alternatively, you're able to still do it with the default Rails behaviour:
+
+    # config/application.rb
+    config.action_dispatch.rescue_responses = { 'CustomClass::Exception' => :not_found }
 
 ---
 
@@ -637,6 +659,7 @@ Alternatively, you may wish to post on our [GitHub Issues](https://github.com/ri
 [layouts]: #layouts
 [locales]: #locales
 [configuration]: #configuration
+[generators]: #generators
 [custom-exceptions]: #custom-exceptions
 
 <!-- ################################### -->
