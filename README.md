@@ -516,7 +516,7 @@ Alternatively, you're able to still do it with the default Rails behaviour:
 
 If you want to edit the `controller`, `views`, `model` or `assets`, you're able to invoke them in your own application.
 
-This is done - as with other gems - with a single [`generator`](https://github.com/richpeck/exception_handler/blob/master/lib/generators/exception_handler/views_generator.rb) which takes a series of arguments:
+This is done - as with other gems - with a single [`generator`](/generators/exception_handler/views_generator.rb) which takes a series of arguments:
 
     rails g exception_handler:views
     rails g exception_handler:views -v views
