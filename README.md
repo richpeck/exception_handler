@@ -157,7 +157,7 @@ To get it working in development, we've included a [`dev`][dev] mode, which over
 ----
 
 <p align="center">
-   📁 <a href="#config">Config</a>&nbsp;&nbsp;&nbsp;&nbsp;💻 <a href="#dev" title="Dev Mode">Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;💾 <a href="#db">Database</a>&nbsp;&nbsp;&nbsp;&nbsp;✉️   <a href="#email">Email</a>&nbsp;&nbsp;&nbsp;&nbsp;👓 <a href="#views">Views</a>&nbsp;&nbsp;&nbsp;&nbsp;💬 <a href="#locales">Locales</a>&nbsp;&nbsp;&nbsp;&nbsp;⛔️ <a href="#custom-exceptions">Custom Exceptions</a>
+   📁 <a href="#config">Config</a>&nbsp;&nbsp;&nbsp;&nbsp;💻 <a href="#dev" title="Dev Mode">Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;💾 <a href="#db">Database</a>&nbsp;&nbsp;&nbsp;&nbsp;✉️   <a href="#email">Email</a>&nbsp;&nbsp;&nbsp;&nbsp;👓 <a href="#views">Views</a>&nbsp;&nbsp;&nbsp;&nbsp;💬 <a href="#locales">Locales</a>&nbsp;&nbsp;&nbsp;&nbsp;📋 <a href="#layouts">Layouts</a>&nbsp;&nbsp;&nbsp;&nbsp;⛔️ <a href="#custom-exceptions">Custom Exceptions</a>
 </p>
 
 ----
