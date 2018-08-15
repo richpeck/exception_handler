@@ -366,9 +366,7 @@ The **views** system in `ExceptionHandler` is modular.
 
 What *most* people want out of the view is to change the way it ***looks***. This can be done without changing the exception "view" itself...
 
-<p align="center">
-  <img src="./readme/dev.png" />
-</p>
+[[ image ]]
 
 To better explain, if [`ExceptionsController`](https://github.com/richpeck/exception_handler/blob/0.8/app/controllers/exception_handler/exceptions_controller.rb) is invoked (by `exceptions_app`), it has **ONE** method ([`show`](https://github.com/richpeck/exception_handler/blob/0.8/app/controllers/exception_handler/exceptions_controller.rb#L42)). This method calls the [`show` view](https://github.com/richpeck/exception_handler/blob/0.8/app/views/exception_handler/exceptions/show.html.erb), which is *entirely* dependent on the locales for content & the layout for the look.
 
@@ -395,7 +393,7 @@ If you wish to change the "layout" / "look", there are **two** options...
 
 In `ExceptionHandler`, we use it to provide the wording for each error which may be shown to users.
 
-By default, the English name of the error is used ("404" will appear as "Not Found") - if you want to create custom messages, you're able to do so by referencing the error's ["status_code"](https://github.com/rack/rack/blob/master/lib/rack/utils.rb#L492) within your locales file:
+By default, the English name of the error is used (`"404"` will appear as `"Not Found"`) - if you want to create custom messages, you're able to do so by referencing the error's ["status_code"](https://github.com/rack/rack/blob/master/lib/rack/utils.rb#L492) within your locales file:
 
     # config/locales/en.yml
     en:
@@ -404,19 +402,19 @@ By default, the English name of the error is used ("404" will appear as "Not Fou
         unauthorized:           "You need to login to continue"
         internal_server_error:  "This is a test to show the %{status} of the error"
 
-You get access to `%{message}` and `%{status}`, both inferring from an [`@exception`](https://github.com/richpeck/exception_handler/blob/master/app/controllers/exception_handler/exceptions_controller.rb#L20) object we invoke in the controller...
+You get access to [`%{message}` and `%{status}`](https://github.com/richpeck/exception_handler/blob/Readme/app/views/exception_handler/exceptions/show.html.erb#L1), both inferring from an [`@exception`](https://github.com/richpeck/exception_handler/blob/master/app/controllers/exception_handler/exceptions_controller.rb#L20) object we invoke in the controller...
 
  - `%{message}` is the error's actual message ("XYZ file could not be shown")
  - `%{status}` is the error's status code ("Internal Server Error")
 
 --
 
-By default, the translation is as follows:
+By default, the provided translation file is as follows:
 
     # config/locales/en.yml
     en:
       exception_handler:
-        internal_server_error:  "<strong>%{status} Error</strong> %{message}"
+        internal_server_error: "<strong>%{status} Error</strong> %{message}"
 
 ---
 
@@ -425,13 +423,9 @@ By default, the translation is as follows:
   <h5>📋 Layouts</h5>
 </div>
 
-The most attractive feature of `ExceptionHandler` (for most) is its ability to manage [`layouts`](https://guides.rubyonrails.org/layouts_and_rendering.html#structuring-layouts) depending on different HTTP statuses...
+The most attractive feature of `ExceptionHandler` (for most) is its ability to manage [`layouts`](https://guides.rubyonrails.org/layouts_and_rendering.html#structuring-layouts) dependent on HTTP status...
 
-<p align="center">
-  <br />
-  <img src="./readme/dev.png" />
-  <br />
-</p>
+[[ image ]]
 
 The reason this is important is due to the way in which Rails works → the "layout" is a "wrapper" for the returned HTML (the "styling" of a page). If you have no layout, you'll end up with the "view" HTML and nothing else.
 
@@ -439,8 +433,8 @@ This means that if you want to change the "look" of a Rails action, you simply h
 
 To this end, `ExceptionHandler` has been designed around providing a [SINGLE VIEW](app/controllers/exception_handler/exceptions_controller.rb#L44) for exceptions. This view does not need to change (although you're welcome to use a [`generator`][generators] to do so) - the key is the `layout` that's assigned...
 
-- `4xx` errors are given a `nil` layout (by default) (inherits from `ApplicationController` in your main app)
-- `5xx` errors are assigned our own [`exception`](app/views/layouts/exception.html.erb) layout:
+- [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) errors are given a `nil` layout (by default) (inherits from `ApplicationController` in your main app)
+- [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors) errors are assigned our own [`exception`](app/views/layouts/exception.html.erb) layout:
 
 ````
 # config/application.rb
