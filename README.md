@@ -416,7 +416,7 @@ You get access to `%{message}` and `%{status}`, both inferring from `@exception`
   <h5>📋 Layouts</h5>
 </div>
 
-The most important element of `ExceptionHandler` is its ability to manage `layouts` depending on different HTTP errors...
+The most important element of `ExceptionHandler` is its ability to manage [`layouts`](https://guides.rubyonrails.org/layouts_and_rendering.html#structuring-layouts) depending on different HTTP errors...
 
 [[ image ]]
 
@@ -437,9 +437,29 @@ By default, `4xx` errors are given a `nil` layout (which inherits from `Applicat
       }
     }
 
-The `layout` system has changed significantly between `0.7.7.0` and `0.8.0.0`.
+The `layout` system has changed significantly between [`0.7.7.0`](releases/tag/v0.7.7.0) and [`0.8.0.0`](releases/tag/v0.8.0.0).
 
-Whilst both are directly editable from [`config`][configuration],
+Building on the former's adoption of HTTP status-centric layouts (IE layouts depending on which HTTP status code was issued), it is now the case that each of the erroneous HTTP status codes can be assigned a layout.
+
+On top of this, we have the `all`, `5xx` and `4xx` options - which allow us to manage the layouts for blocks of HTTP errors respectively:
+
+    # config/application.rb
+    config.exception_handler = {
+
+      # Old (still works)
+      # No "all" / "4xx"/"5xx" options
+      layouts: {
+        500 => 'exception',
+        501 => 'exception'
+      },
+
+      # New
+      exceptions: {
+        :all  => { layout: 'exception' },
+        '4xx' => { layout: 'exception' },
+        500   => { layout: nil }
+      }
+    }
 
 ---
 
