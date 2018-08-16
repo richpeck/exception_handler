@@ -387,15 +387,13 @@ This method calls the [`show` view](https://github.com/richpeck/exception_handle
 
 This means that if you wish to change how the view "looks" - you're *either* going to want to change your [layout][layouts] or the [*locales*](#locales). There is NO reason to change the `show` view itself - it's succinct and entirely modular. Whilst you're definitely at liberty to change it, you'll just be making the issue more complicated than it needs to be.
 
--
+--
 
 We've also included a number of routes which shows in [`dev`](dev) mode:
 
 <p align="center">
   <img src="./readme/routes.jpg" />
 </p>
-
-This allows you to test any of the views by typing the status into the address bar.
 
 ---
 
