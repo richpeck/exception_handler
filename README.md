@@ -24,7 +24,7 @@
 </p>
 
 <p align="center">
-  Following explains how it works
+  Following explains how it works.
   <br/>If you need further support, please feel free to email <a href="mailto:rpeck@frontlineutilities.co.uk">rpeck@frontlineutilities.co.uk</a>...
 </p>
 
@@ -311,11 +311,17 @@ Whilst simple, it's not recommended for extended use. Very good for testing new 
   <h5>💾 DB</h5>
 </div>
 
-If you want to save exceptions to your database, you will need to migrate a new table.
+To save exceptions to your database, you're able to set the `db` option...
+
+[[ image ]]
+
+Because we use a `controller` to manage the underlying way the system works, we're able to invoke the likes of a [`model`](https://github.com/richpeck/exception_handler/blob/master/app/models/exception_handler/exception.rb) with other functionality.
 
 Ths is done automatically with the latest version of `ExceptionHandler`.
 
-To do this, once you've enabled the option, run `rails db:migrate` from your console. Our new [`migration system`](https://github.com/richpeck/exception_handler/tree/readme#migrations) will automatically run the migration.
+To do this, once you've populated the option with either `true` or a `string`, run `rails db:migrate` from your console.
+
+Our new [`migration system`](https://github.com/richpeck/exception_handler/tree/readme#migrations) will automatically run the migration.
 
 ```
 # config/application.rb
@@ -333,7 +339,7 @@ In order for this to work, your db needs the correct table.
   <h5>✉️ Email</h5>
 </div>
 
-`ExceptionHandler` also sends email notifications.
+`ExceptionHandler` also sends **email notifications**.
 
 If you want to receive emails whenever your application raises an error, you can do so by adding your email to the config:
 
@@ -344,15 +350,22 @@ If you want to receive emails whenever your application raises an error, you can
 
 > **Please Note** this requires [`ActionMailer`](http://guides.rubyonrails.org/action_mailer_basics.html). If you don't have any outbound SMTP server, [`SendGrid`](http://sendgrid.com) is free.
 
-From version `0.8.0.0`, you're able to define whether email notifications are sent on a per-error basis:
+From version [`0.8.0.0`](https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0), you're able to define whether email notifications are sent on a per-error basis:
 
     # config/application.rb
     config.exception_handlder = {
+
+      # This has to be present for any "notification" declarations to work
+      # Defaults to 'false'
+      email: "test@test.com",
+
+      # Each status code in the new "exceptions" block allows us to define whether email notifications are sent
       exceptions: {
         :all => { notification: true },
         :50x => { notification: false },
         500 =>  { notification: false }
       }
+
     }
 
 ---
@@ -368,17 +381,19 @@ What *most* people want out of the view is to change the way it ***looks***. Thi
 
 [[ image ]]
 
-To better explain, if [`ExceptionsController`](https://github.com/richpeck/exception_handler/blob/0.8/app/controllers/exception_handler/exceptions_controller.rb) is invoked (by `exceptions_app`), it has **ONE** method ([`show`](https://github.com/richpeck/exception_handler/blob/0.8/app/controllers/exception_handler/exceptions_controller.rb#L42)). This method calls the [`show` view](https://github.com/richpeck/exception_handler/blob/0.8/app/views/exception_handler/exceptions/show.html.erb), which is *entirely* dependent on the locales for content & the layout for the look.
+To better explain, if [`ExceptionsController`](https://github.com/richpeck/exception_handler/blob/master/app/controllers/exception_handler/exceptions_controller.rb) is invoked (by `exceptions_app`), it has **ONE** method ([`show`](https://github.com/richpeck/exception_handler/blob/master/app/controllers/exception_handler/exceptions_controller.rb#L42)).
 
-This means that if you wish to change how the view "looks" - you're *either* going to want to change your *layouts* or the [*locales*](#locales). There is NO reason to change the `show` view itself - it's succinct and entirely modular. Whilst you're definitely at liberty to change it, you'll just be making the issue more complicated than it needs to be.
+This method calls the [`show` view](https://github.com/richpeck/exception_handler/blob/master/app/views/exception_handler/exceptions/show.html.erb), which is *entirely* dependent on the locales for content & the layout for the look.
 
--
+This means that if you wish to change how the view "looks" - you're *either* going to want to change your [layout][layouts] or the [*locales*](#locales). There is NO reason to change the `show` view itself - it's succinct and entirely modular. Whilst you're definitely at liberty to change it, you'll just be making the issue more complicated than it needs to be.
 
-If you wish to change the "layout" / "look", there are **two** options...
+--
 
- * Firstly, you can create your own layout. This is done by changing the
+We've also included a number of routes which shows in [`dev`](dev) mode:
 
- * Secondly,
+<p align="center">
+  <img src="./readme/routes.jpg" />
+</p>
 
 ---
 
@@ -402,14 +417,14 @@ By default, the English name of the error is used (`"404"` will appear as `"Not 
         unauthorized:           "You need to login to continue"
         internal_server_error:  "This is a test to show the %{status} of the error"
 
-You get access to [`%{message}` and `%{status}`](https://github.com/richpeck/exception_handler/blob/Readme/app/views/exception_handler/exceptions/show.html.erb#L1), both inferring from an [`@exception`](https://github.com/richpeck/exception_handler/blob/master/app/controllers/exception_handler/exceptions_controller.rb#L20) object we invoke in the controller...
+You get access to [`%{message}` and `%{status}`](https://github.com/richpeck/exception_handler/blob/master/app/views/exception_handler/exceptions/show.html.erb#L1), both inferring from an [`@exception`](https://github.com/richpeck/exception_handler/blob/master/app/controllers/exception_handler/exceptions_controller.rb#L20) object we invoke in the controller...
 
  - `%{message}` is the error's actual message ("XYZ file could not be shown")
  - `%{status}` is the error's status code ("Internal Server Error")
 
 --
 
-By default, the provided translation file is as follows:
+By default, only `internal_server_error` is customized by the gem:
 
     # config/locales/en.yml
     en:
