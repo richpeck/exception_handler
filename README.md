@@ -173,7 +173,7 @@ Whilst the gem **works out of the box** (without any configuration), if you want
 
 This is done in `config/application.rb` or `config/environments/[env].rb` ↴
 
-```
+```rb
 # config/application.rb
 
 module YourApp
@@ -243,7 +243,6 @@ module YourApp
 
       }
     }
-
   end
 end
 ```  
@@ -253,20 +252,20 @@ For a full retinue of the available options, you'll be best looking at the [`con
 --
 
 If using an [`engine`](http://guides.rubyonrails.org/engines.html), you **DON'T need an `initializer`**:
+```rb
+# lib/engine.rb
+module YourModule
+  class Engine < Rails::Engine
 
-    # lib/engine.rb
-    module YourModule
-      class Engine < Rails::Engine
-
-        # => ExceptionHandler
-        # => Works in and out of an initializer
-        config.exception_handler = {
-          dev: nil, # => this will not load the gem in development
-          db:  true # => this will use the :errors table to store exceptions
-        }
-      end
-
-    end
+    # => ExceptionHandler
+    # => Works in and out of an initializer
+    config.exception_handler = {
+      dev: nil, # => this will not load the gem in development
+      db:  true # => this will use the :errors table to store exceptions
+    }
+  end
+end
+```
 
 The best thing about using a `config` options block is that you are able to only define the options that you require.
 
@@ -295,7 +294,7 @@ To get it working in `development`, you need to override the [`config.consider_a
 
 This is normally done by changing the setting in your Rails config files. However, to make the process simpler for `ExceptionHandler`- we've added a `dev` option which allows you to override the hook through the context of the gem...
 
-```
+```rb
 # config/application.rb
 config.exception_handler = { dev: true }
 ```
@@ -323,7 +322,7 @@ To do this, once you've populated the option with either `true` or a `string`, r
 
 Our new [`migration system`](https://github.com/richpeck/exception_handler/tree/readme#migrations) will automatically run the migration.
 
-```
+```rb
 # config/application.rb
 config.exception_handler = { db: true }
 ```
@@ -343,31 +342,33 @@ In order for this to work, your db needs the correct table.
 
 If you want to receive emails whenever your application raises an error, you can do so by adding your email to the config:
 
-    # config/application.rb
-    config.exception_handler = {
-      email: "your@email.com"
-    }
+```rb
+# config/application.rb
+config.exception_handler = {
+  email: "your@email.com"
+}
+```
 
 > **Please Note** this requires [`ActionMailer`](http://guides.rubyonrails.org/action_mailer_basics.html). If you don't have any outbound SMTP server, [`SendGrid`](http://sendgrid.com) is free.
 
 From version [`0.8.0.0`](https://github.com/richpeck/exception_handler/releases/tag/v0.8.0.0), you're able to define whether email notifications are sent on a per-error basis:
 
-    # config/application.rb
-    config.exception_handlder = {
+```rb
+# config/application.rb
+config.exception_handlder = {
 
-      # This has to be present for any "notification" declarations to work
-      # Defaults to 'false'
-      email: "test@test.com",
+  # This has to be present for any "notification" declarations to work
+  # Defaults to 'false'
+  email: "test@test.com",
 
-      # Each status code in the new "exceptions" block allows us to define whether email notifications are sent
-      exceptions: {
-        :all => { notification: true },
-        :50x => { notification: false },
-        500 =>  { notification: false }
-      }
-
-    }
-
+  # Each status code in the new "exceptions" block allows us to define whether email notifications are sent
+  exceptions: {
+    :all => { notification: true },
+    :50x => { notification: false },
+    500 =>  { notification: false }
+  }
+}
+```
 ---
 
 <!-- Views -->
@@ -410,12 +411,14 @@ In `ExceptionHandler`, we use it to provide the wording for each error which may
 
 By default, the English name of the error is used (`"404"` will appear as `"Not Found"`) - if you want to create custom messages, you're able to do so by referencing the error's ["status_code"](https://github.com/rack/rack/blob/master/lib/rack/utils.rb#L492) within your locales file:
 
-    # config/locales/en.yml
-    en:
-      exception_handler:
-        not_found:              "Your message here" # -> 404 page
-        unauthorized:           "You need to login to continue"
-        internal_server_error:  "This is a test to show the %{status} of the error"
+```yml
+# config/locales/en.yml
+en:
+  exception_handler:
+    not_found:              "Your message here" # -> 404 page
+    unauthorized:           "You need to login to continue"
+    internal_server_error:  "This is a test to show the %{status} of the error"
+```
 
 You get access to [`%{message}` and `%{status}`](https://github.com/richpeck/exception_handler/blob/master/app/views/exception_handler/exceptions/show.html.erb#L1), both inferring from an [`@exception`](https://github.com/richpeck/exception_handler/blob/master/app/controllers/exception_handler/exceptions_controller.rb#L20) object we invoke in the controller...
 
@@ -426,11 +429,12 @@ You get access to [`%{message}` and `%{status}`](https://github.com/richpeck/exc
 
 By default, only `internal_server_error` is customized by the gem:
 
-    # config/locales/en.yml
-    en:
-      exception_handler:
-        internal_server_error: "<strong>%{status} Error</strong> %{message}"
-
+```yml
+# config/locales/en.yml
+en:
+  exception_handler:
+    internal_server_error: "<strong>%{status} Error</strong> %{message}"
+```
 ---
 
 <!-- Layouts -->
@@ -451,7 +455,7 @@ To this end, `ExceptionHandler` has been designed around providing a [SINGLE VIE
 - [`4xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) errors are given a `nil` layout (by default) (inherits from `ApplicationController` in your main app)
 - [`5xx`](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors) errors are assigned our own [`exception`](app/views/layouts/exception.html.erb) layout:
 
-````
+```rb
 # config/application.rb
 config.exception_handler = {
 
@@ -460,35 +464,35 @@ config.exception_handler = {
   # We plan to include several more in the future...
 
   exceptions: {
-    :all => { layout: nil } #-> this will inherit from ApplicationController's layout
+    all: { layout: nil } # -> this will inherit from ApplicationController's layout
   }
-
 }
-````
+```
 
 The `layout` system has changed between [`0.7.7.0`](releases/tag/v0.7.7.0) and [`0.8.0.0`](releases/tag/v0.8.0.0).
 
 Building on the former's adoption of HTTP status-centric layouts, it is now the case that we have the `all`, `5xx` and `4xx` options - allowing us to manage the layouts for blocks of HTTP errors respectively:
 
-    # config/application.rb
-    config.exception_handler = {
+```rb
+# config/application.rb
+config.exception_handler = {
 
-      # Old (still works)
-      # No "all" / "4xx"/"5xx" options
-      layouts: {
-        500 => 'exception',
-        501 => 'exception'
-      },
+  # Old (still works)
+  # No "all" / "4xx"/"5xx" options
+  layouts: {
+    500 => 'exception',
+    501 => 'exception'
+  },
 
-      # New
-      exceptions: {
-        :all  => { layout: 'exception' },
-        '4xx' => { layout: 'exception' },
-        '5xx' => { layout: 'exception' }, # -> this overrides the :all declaration
-        500   => { layout: nil } # -> this overrides the 5xx declaration
-      }
-
-    }
+  # New
+  exceptions: {
+    :all => { layout: 'exception' },
+    :4xx => { layout: 'exception' },
+    :5xx => { layout: 'exception' }, # -> this overrides the :all declaration
+    500  => { layout: nil } # -> this overrides the 5xx declaration
+  }
+}
+```
 
 We've bundled the [`exception`](app/views/layouts/exception.html.erb) layout for `5xx` errors because since these denote internal server errors, it's best to isolate the view system as much as possible. Whilst you're at liberty to change it, we've found it sufficient for most use-cases.
 
@@ -513,18 +517,21 @@ Whilst this works well, it may be the case that you want to map your own classes
 
 If you wanted to keep this functionality inside `ExceptionHandler`, you're able to do it as follows:
 
-    # config/application.rb
-    config.exception_handler = {
-      custom_exceptions: {
-        'CustomClass::Exception' => :not_found
-      }
-    }
+```rb
+# config/application.rb
+config.exception_handler = {
+  custom_exceptions: {
+    'CustomClass::Exception' => :not_found
+  }
+}
+```
 
 Alternatively, you're able to still do it with the default Rails behaviour:
 
-    # config/application.rb
-    config.action_dispatch.rescue_responses = { 'CustomClass::Exception' => :not_found }
-
+```rb
+# config/application.rb
+config.action_dispatch.rescue_responses = { 'CustomClass::Exception' => :not_found }
+```
 ---
 
 <!-- Generators -->
