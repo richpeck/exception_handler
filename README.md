@@ -134,7 +134,7 @@ The following shows how...
 
 
     # Gemfile
-    gem `exception_handler`, '~> 0.8.0.0'
+    gem 'exception_handler', '~> 0.8.0.0'
 
 The gem is available on [RubyGems][rubygems] and is fully compatible with Rails 4 + 5.
 
