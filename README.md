@@ -4,10 +4,10 @@
 <div id="intro">
   <h4 align="center"><code><strong><a href="https://www.github.com/richpeck/exception_handler">ExceptionHandler</a></strong></code> is presently the MOST POPULAR exceptions gem for CUSTOM Rails error pages.</h4>
   <p align="center">
-    With <strong>180,000+ downloads</strong>, it is the *only* gem to provide <strong>custom 400/500 exception pages for Rails 5 & 6</strong>
+    With <strong>240,000+ downloads</strong>, it is the *only* gem to provide <strong>custom 400/500 exception pages for Rails 5 & 6</strong>
   </p>
   <p><img src="./readme/dev.png" /></p>
-  <h5 align="center"><a href="https://github.com/richpeck/exception_handler/releases"><u>0.8.0.0</u></a> (August 2018)</h5>
+  <h4 align="center">Current <a href="https://github.com/richpeck/exception_handler/releases"><u>0.8.0.0</u></a> (August 2018)</h4>
 </div>
 
 <!-- Badges -->
@@ -78,13 +78,6 @@ gem 'exception_handler', '~> 0.8.0.0'</code></pre>
 <!-- configuration -->
 <div id="configuration">
   <h4>🔧 Configuration</h4>
-</div>
-
----
-
-<div>
-  <p>Due to the nature of the gem, we've integrated a number of configuration options.</p>
-  <p>These allow most users to customize it to their requirements - if you have any problems, or requests, you're welcome to <a href="#support"><u>post an issue</u> or <u>ask directly</u></a>.</p>
 </div>
 
 ---
