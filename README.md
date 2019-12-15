@@ -2,7 +2,7 @@
 
 <!-- Intro -->
 <div id="intro">
-  <h4 align="center"><code><strong><a href="https://www.github.com/richpeck/exception_handler">ExceptionHandler</a></strong></code> is presently the MOST POPULAR exceptions gem for CUSTOM Rails error pages.</h4>
+  <h4 align="center"><code><strong><a href="https://www.github.com/richpeck/exception_handler">ExceptionHandler</a></strong></code> is presently the MOST POPULAR exceptions gem for <a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">CUSTOM Rails error pages</a>.</h4>
   <p align="center">
     With <strong>240,000+ downloads</strong>, it is the *only* gem to provide <strong>custom 400/500 exception pages for Rails 5 & 6</strong>
   </p>
@@ -66,8 +66,9 @@
   </p>
   <pre><code># Gemfile
 gem 'exception_handler', '~> 0.8.0.0'</code></pre>
-  <p>Because <u>ExceptionHandler</u> is built around a Rails engine, there is <u>nothing</u> to be done to get it working in production. Installing the Gem <u><i>should</i></u> translate your production 4xx/5xx error pages into dynamic views.</p>
-  <p>For environments <u>other</u> than production (development/staging), you will need to set the <code>dev</code> configuration variable to true. This is explained <a href="#dev"><u>further down the page</u></a>.</p>
+  <p>Because <b>ExceptionHandler</b> is built around a Rails engine, there is <b>nothing</b> to be done to get it working in production. Installing the Gem <b><i>should</i></b> translate your production 4xx/5xx error pages into dynamic views.</p>
+  <p>Environments <u>other</u> than production (development/staging) required the <a href="#dev"><code>dev</code></a> variable to be <code>true</code>.</p>
+  <p><a href="#dev"><u>Explained below</u></a> ↴</p>
 </div>
 
 <!-- Sep -->
@@ -300,9 +301,7 @@ config.exception_handlder = {
   <h5>👓 Views</h5>
 </div>
 
-The **views** system in `ExceptionHandler` is modular.
-
-What *most* people want out of the view is to change the way it ***looks***. This can be done without changing the exception "view" itself.
+What *most* people want out of the view is to change the way it ***looks***. This can be done without changing the "view" itself.
 
 To better explain, if [`ExceptionsController`](https://github.com/richpeck/exception_handler/blob/master/app/controllers/exception_handler/exceptions_controller.rb) is invoked (by `exceptions_app`), it has **ONE** method ([`show`](https://github.com/richpeck/exception_handler/blob/master/app/controllers/exception_handler/exceptions_controller.rb#L42)).
 
