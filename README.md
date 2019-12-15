@@ -2,8 +2,10 @@
 
 <!-- Intro -->
 <div id="intro">
-  <h2 align="center"><b><u>Custom Error Pages (4xx/5xx) for Ruby on Rails</u></b></h2>
-  <h4 align="center"><b>Maintain Branding Across <u>All</u> Aspects Of Your Rails Applications -<br/>ExceptionHandler Populates Custom Error Pages With Your <u>OWN</u> Layouts, Views & Assets</b></h4>
+  <h4 align="center"><code><strong><a href="https://www.github.com/richpeck/exception_handler">ExceptionHandler</a></strong></code> is presently the MOST POPULAR exceptions gem for CUSTOM Rails error pages.</h4>
+  <p align="center">
+    With <strong>180,000+ downloads</strong>, it is the *only* gem to provide <strong>custom 400/500 exception pages for Rails 5+.</strong>
+  </p>
   <br /><p><img src="./readme/dev.png" /></p>
   <h5 align="center">Current <a href="https://github.com/richpeck/exception_handler/releases"><u>0.8.0.0</u></a> (August 2018)</h3>
 </div>
@@ -81,9 +83,15 @@ gem 'exception_handler', '~> 0.8.0.0'</code></pre>
 ---
 
 <div>
-  <p>Due to the expansive nature of the gem, we've integrated a number of configuration options into it.</p>
-  <p>These allow the majority of users to customize the sytem to their requirements - if you have any problems, or requests, you're welcome to <u><a href="https://github.com/richpeck/exception_handler/issues">post an issue</a></u> or <u><a href="https://www.github.com/richpeck">ask directly</a></u>.</p>
+  <p>Due to the nature of the gem, we've integrated a number of configuration options.</p>
+  <p>These allow most users to customize it to their requirements - if you have any problems, or requests, you're welcome to <a href="#support"><u>post an issue</u> or <u>ask directly</u></a>.</p>
 </div>
+
+---
+
+<p align="center">
+   <g-emoji class="g-emoji" alias="file_folder" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c1.png">📁</g-emoji> <a href="#config">Config</a>&nbsp;&nbsp;&nbsp;&nbsp;<g-emoji class="g-emoji" alias="computer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png">💻</g-emoji> <a href="#dev" title="Dev Mode">Dev</a>&nbsp;&nbsp;&nbsp;&nbsp;<g-emoji class="g-emoji" alias="floppy_disk" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4be.png">💾</g-emoji> <a href="#db">Database</a>&nbsp;&nbsp;&nbsp;&nbsp;<g-emoji class="g-emoji" alias="email" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2709.png">✉️</g-emoji>   <a href="#email">Email</a>&nbsp;&nbsp;&nbsp;&nbsp;<g-emoji class="g-emoji" alias="eyeglasses" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f453.png">👓</g-emoji> <a href="#views">Views</a>&nbsp;&nbsp;&nbsp;&nbsp;<g-emoji class="g-emoji" alias="speech_balloon" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ac.png">💬</g-emoji> <a href="#locales">Locales</a>&nbsp;&nbsp;&nbsp;&nbsp;<g-emoji class="g-emoji" alias="clipboard" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png">📋</g-emoji> <a href="#layouts">Layouts</a>&nbsp;&nbsp;&nbsp;&nbsp;<g-emoji class="g-emoji" alias="no_entry" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/26d4.png">⛔️</g-emoji> <a href="#custom-exceptions">Custom Exceptions</a>
+</p>
 
 ---
 
@@ -92,7 +100,7 @@ gem 'exception_handler', '~> 0.8.0.0'</code></pre>
   <h5>📁 Config</h5>
 </div>
 
-The **ONLY** thing you need to configure `ExceptionHandler` is its [`config`](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb) settings.
+The **ONLY** thing you need to manage `ExceptionHandler` is its [`config`](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb) settings.
 
 Whilst the gem **works out of the box** (without any configuration), if you want to manage the [`layouts`](#layouts), [`email`](#email), [`dev`](#dev) or the [`database`](#db), you'll need to set the appropriate values in the config hash.
 
@@ -235,9 +243,7 @@ Whilst simple, it's not recommended for extended use. Very good for testing new 
   <h5>💾 DB</h5>
 </div>
 
-To save exceptions to your database, you're able to set the `db` option...
-
-[[ image ]]
+To save exceptions to your database, you're able to set the `db` option.
 
 Because we use a `controller` to manage the underlying way the system works, we're able to invoke the likes of a [`model`](https://github.com/richpeck/exception_handler/blob/master/app/models/exception_handler/exception.rb) with other functionality.
 
@@ -303,9 +309,7 @@ config.exception_handlder = {
 
 The **views** system in `ExceptionHandler` is modular.
 
-What *most* people want out of the view is to change the way it ***looks***. This can be done without changing the exception "view" itself...
-
-[[ image ]]
+What *most* people want out of the view is to change the way it ***looks***. This can be done without changing the exception "view" itself.
 
 To better explain, if [`ExceptionsController`](https://github.com/richpeck/exception_handler/blob/master/app/controllers/exception_handler/exceptions_controller.rb) is invoked (by `exceptions_app`), it has **ONE** method ([`show`](https://github.com/richpeck/exception_handler/blob/master/app/controllers/exception_handler/exceptions_controller.rb#L42)).
 
@@ -315,7 +319,7 @@ This means that if you wish to change how the view "looks" - you're *either* goi
 
 --
 
-We've also included a number of routes which shows in [`dev`](dev) mode:
+We've also included a number of routes which shows in [`dev`](dev) mode (allowing you to test):
 
 <p align="center">
   <img src="./readme/routes.jpg" />
@@ -328,11 +332,11 @@ We've also included a number of routes which shows in [`dev`](dev) mode:
   <h5>💬 Locales</h5>
 </div>
 
-[Locales](https://github.com/richpeck/exception_handler/blob/Readme/config/locales/exception_handler.en.yml) are used to create interchangeable text (translations/internationalization)...
+[Locales](https://github.com/richpeck/exception_handler/blob/Readme/config/locales/exception_handler.en.yml) are used to create interchangeable text (translations/internationalization).
 
-[[ image ]]
+-
 
-In `ExceptionHandler`, we use it to provide the wording for each error which may be shown to users.
+In `ExceptionHandler`, it provides the wording for each type of error code.
 
 By default, the English name of the error is used (`"404"` will appear as `"Not Found"`) - if you want to create custom messages, you're able to do so by referencing the error's ["status_code"](https://github.com/rack/rack/blob/master/lib/rack/utils.rb#L492) within your locales file:
 
@@ -367,13 +371,13 @@ en:
   <h5>📋 Layouts</h5>
 </div>
 
-The most attractive feature of `ExceptionHandler` (for most) is its ability to manage [`layouts`](https://guides.rubyonrails.org/layouts_and_rendering.html#structuring-layouts) dependent on HTTP status...
+The most attractive feature of `ExceptionHandler` (for most) is its ability to manage [`layouts`](https://guides.rubyonrails.org/layouts_and_rendering.html#structuring-layouts) for HTTP status.
 
-[[ image ]]
+-
 
-The reason this is important is due to the way in which Rails works → the "layout" is a "wrapper" for the returned HTML (the "styling" of a page). If you have no layout, you'll end up with the "view" HTML and nothing else.
+The reason for this is due to the way in which Rails works → the "layout" is a "wrapper" for the returned HTML (the "styling" of a page). If you have no layout, it will render the "view" HTML and nothing else.
 
-This means that if you want to change the "look" of a Rails action, you simply have to be able to change the `layout`. You should not change the view at all.
+This means if you want to change the "look" of a Rails action, you simply have to be able to change the `layout`. You should not change the view at all.
 
 To this end, `ExceptionHandler` has been designed around providing a [SINGLE VIEW](app/controllers/exception_handler/exceptions_controller.rb#L44) for exceptions. This view does not need to change (although you're welcome to use a [`generator`][generators] to do so) - the key is the `layout` that's assigned...
 
@@ -432,7 +436,7 @@ As mentioned, Rails' primary role is to convert Ruby exceptions into HTTP errors
 
 Part of this process involves mapping Ruby/Rails exceptions to the equivalent HTTP status code.
 
-This is done with [`config.action_dispatch.rescue_responses`](https://github.com/rack/rack/blob/master/lib/rack/utils.rb#L492)...
+This is done with [`config.action_dispatch.rescue_responses`](https://github.com/rack/rack/blob/master/lib/rack/utils.rb#L492).
 
 <p align="center">
   <img src="./readme/custom_exceptions.png" />
