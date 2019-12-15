@@ -4,7 +4,7 @@
 <div id="intro">
   <h4 align="center"><code><strong><a href="https://www.github.com/richpeck/exception_handler">ExceptionHandler</a></strong></code> is presently the MOST POPULAR exceptions gem for <a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">CUSTOM Rails error pages</a>.</h4>
   <p align="center">
-    With <strong>240,000+ downloads</strong>, it is the *only* gem to provide <strong>custom 400/500 exception pages for Rails 5 & 6</strong>
+    With <strong>290,000+ downloads</strong>, it is the *only* gem to provide <strong>custom 400/500 exception pages for Rails 5 & 6</strong>
   </p>
   <p><img src="./readme/dev.png" /></p>
   <h4 align="center">Current <a href="https://github.com/richpeck/exception_handler/releases"><u>0.8.0.0</u></a> (August 2018)</h4>
@@ -68,7 +68,7 @@
 gem 'exception_handler', '~> 0.8.0.0'</code></pre>
   <p>Because <b>ExceptionHandler</b> is built around a Rails engine, there is <b>nothing</b> to be done to get it working in production. Installing the Gem <b><i>should</i></b> translate your production 4xx/5xx error pages into dynamic views.</p>
   <p>Environments <u>other</u> than production (development/staging) required the <a href="#dev"><code>dev</code></a> variable to be <code>true</code>.</p>
-  <p><a href="#dev"><u>Explained below</u></a> ↴</p>
+  <p>Explained below ↴</p>
 </div>
 
 <!-- Sep -->
@@ -90,9 +90,7 @@ gem 'exception_handler', '~> 0.8.0.0'</code></pre>
 ---
 
 <!-- Config -->
-<div id="config">
-  <h5>📁 Config</h5>
-</div>
+<div id="config">&nbsp;</div>
 
 The **ONLY** thing you need to manage `ExceptionHandler` is its [`config`](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb) settings.
 
