@@ -327,7 +327,7 @@ We've also included a number of routes which shows in [`dev`](dev) mode (allowin
 
 [Locales](https://github.com/richpeck/exception_handler/blob/Readme/config/locales/exception_handler.en.yml) are used to create interchangeable text (translations/internationalization).
 
--
+--
 
 In `ExceptionHandler`, it provides the wording for each type of error code.
 
@@ -366,7 +366,7 @@ en:
 
 The most attractive feature of `ExceptionHandler` (for most) is its ability to manage [`layouts`](https://guides.rubyonrails.org/layouts_and_rendering.html#structuring-layouts) for HTTP status.
 
--
+--
 
 The reason for this is due to the way in which Rails works → the "layout" is a "wrapper" for the returned HTML (the "styling" of a page). If you have no layout, it will render the "view" HTML and nothing else.
 
@@ -515,7 +515,7 @@ You can **only** fire the `rollback` when you have `ExceptionHandler` installed.
   <p>You're welcome to contact me directly at <u><a href="mailto:rpeck@frontlineutilities.co.uk"></a><a href="mailto:rpeck@frontlineutilities.co.uk" ref="nofollow">rpeck@frontlineutilities.co.uk</a></u>.</p>
   <p>Alternatively, you may wish to post on our <u><a href="https://github.com/richpeck/exception_handler/issues">GitHub Issues</a></u>, or <u><a href="https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler" rel="nofollow">StackOverflow</a></u>.</p>
   <p>--</p>
-  <p><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677" rel="nofollow"><img src="readme/medium.png" alt="Medium" style="max-width:100%;"></a></p>
+  <p><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677" rel="nofollow"><img src="readme/medium.png" target="_blank" alt="Medium" style="max-width:100%;"></a></p>
 </div>
 
 <!-- Sep -->
