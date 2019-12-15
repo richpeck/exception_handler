@@ -68,7 +68,6 @@
 gem 'exception_handler', '~> 0.8.0.0'</code></pre>
   <p>Because <b>ExceptionHandler</b> is built around a Rails engine, there is <b>nothing</b> to be done to get it working in production. Installing the Gem <b><i>should</i></b> translate your production 4xx/5xx error pages into dynamic views.</p>
   <p>Environments <u>other</u> than production (development/staging) required the <a href="#dev"><code>dev</code></a> variable to be <code>true</code>.</p>
-  <p>Explained below ↴</p>
 </div>
 
 <!-- Sep -->
@@ -90,7 +89,7 @@ gem 'exception_handler', '~> 0.8.0.0'</code></pre>
 ---
 
 <!-- Config -->
-<div id="config">&nbsp;</div>
+<a name="config"></a>
 
 The **ONLY** thing you need to manage `ExceptionHandler` is its [`config`](https://github.com/richpeck/exception_handler/blob/master/lib/exception_handler/config.rb) settings.
 
