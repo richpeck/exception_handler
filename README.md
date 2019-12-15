@@ -3,7 +3,7 @@
 <!-- Intro -->
 <div id="intro">
   <h2 align="center"><b><u>Custom Error Pages (4xx/5xx) for Ruby on Rails</u></b></h2>
-  <h4 align="center"><b>Maintain Branding Across <u>All</u> Aspects Of Your Rails Applications - ExceptionHandler Populates Custom Error Pages With Your <u>OWN</u> Layouts, Views & Assets</b></h4>
+  <h4 align="center"><b>Maintain Branding Across <u>All</u> Aspects Of Your Rails Applications -<br/>ExceptionHandler Populates Custom Error Pages With Your <u>OWN</u> Layouts, Views & Assets</b></h4>
   <br /><p><img src="./readme/dev.png" /></p>
   <h5 align="center">Current <a href="https://github.com/richpeck/exception_handler/releases"><u>0.8.0.0</u></a> (August 2018)</h3>
 </div>
@@ -20,25 +20,29 @@
 <!-- Navigation -->
 <div id="navigation">
   <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
+  <p align="center">
+    <strong>
+      📝 <a href="#introduction">Introduction</a> -
+      ⚠️ <a href="#installation">Installation</a> -
+      🔧 <a href="#configuration">Configuration</a> -
+      ☎️ <a href="#support">Support</a> -
+      ⭐ <a href="#changelog">Changelog</a>
+    </strong>
+  </p>
+  <p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
 </div>
 
 <!-- Introduction -->
 <div id="introduction">
   <h4>📝 Introduction</h4>
+</div>
+
+---
+<div>
   <p>Rails ships with <u>static HTML error pages</u>:</p>
   <p><img src="readme/default.png" width="500"></p>
   <p>These have an <u>unprofessional</u> appeal. If you are running a Rails app as part of a mission critical offering, you need to ensure it is as congruent as possible. To do this, we created a "custom error pages" solution.</p>
   <p>In 2014, we extracted this into a gem called <U>ExceptionHandler</u>. This gem has become popular thanks to its ease-of-use and ability to integrate with Rails 5.0+. The following explains how it works.</p>
-</div>
-
-<!-- Separator -->
-<p align="center"><img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" /></p>
-
-<!-- How It Works -->
-<div id="how-it-works">
-  <h4>⚙️ How It Works</h4>
-  <p>If Rails raises an error, it is passed to the <code>ActionDispatch::ShowExceptions</code> middleware.</p>
-  <p>This middleware is responsible for catching Rack/Rails errors and transalting them into an HTTP response. HTTP responses require a status code, headers and message body, none of which are provided by Rails.</p>
 </div>
 
 <!-- Sep -->
@@ -49,7 +53,15 @@
 <!-- Installation -->
 <div id="installation">
   <h4>⚠️ Installation</h4>
-  <p><a href="https://rubygems.org/gems/exception_handler"><u>RubyGems</u></a>.</p>
+</div>
+
+---
+
+<div>
+  <p>
+    💎 <u><a href="https://rubygems.org/gems/exception_handler">RubyGems</a></u> |
+    💻 <u><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">Medium</a></u> (Tutorial)
+  </p>
   <pre><code># Gemfile
 gem 'exception_handler', '~> 0.8.0.0'</code></pre>
   <p>Because <u>ExceptionHandler</u> is built around a Rails engine, there is <u>nothing</u> to be done to get it working in production. Installing the Gem <u><i>should</i></u> translate your production 4xx/5xx error pages into dynamic views.</p>
@@ -64,6 +76,11 @@ gem 'exception_handler', '~> 0.8.0.0'</code></pre>
 <!-- configuration -->
 <div id="configuration">
   <h4>🔧 Configuration</h4>
+</div>
+
+---
+
+<div>
   <p>Due to the expansive nature of the gem, we've integrated a number of configuration options into it.</p>
   <p>These allow the majority of users to customize the sytem to their requirements - if you have any problems, or requests, you're welcome to <u><a href="https://github.com/richpeck/exception_handler/issues">post an issue</a></u> or <u><a href="https://www.github.com/richpeck">ask directly</a></u>.</p>
 </div>
@@ -484,6 +501,25 @@ To rollback, use the following:
 The drawback to this is that if you remove `ExceptionHandler` before you rollback the migration, it won't exist anymore.
 
 You can **only** fire the `rollback` when you have `ExceptionHandler` installed.
+
+<!-- Sep -->
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/800/1*CKyKxRXLovcrUOB-s8_jCw.png" width="100%" />
+</p>
+
+<!-- Support-->
+<div id="support">
+  <h4>☎️ Support</h4>
+</div>
+
+---
+
+<div>
+  <p>You're welcome to contact me directly at <u><a href="mailto:rpeck@frontlineutilities.co.uk"></a><a href="mailto:rpeck@frontlineutilities.co.uk" ref="nofollow">rpeck@frontlineutilities.co.uk</a></u>.</p>
+  <p>Alternatively, you may wish to post on our <u><a href="https://github.com/richpeck/exception_handler/issues">GitHub Issues</a></u>, or <u><a href="https://stackoverflow.com/questions/tagged/ruby-on-rails+exceptionhandler" rel="nofollow">StackOverflow</a></u>.</p>
+  <p>--</p>
+  <p><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677" rel="nofollow"><img src="readme/medium.png" alt="Medium" style="max-width:100%;"></a></p>
+</div>
 
 <!-- Sep -->
 <p align="center">
