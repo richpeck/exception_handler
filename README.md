@@ -41,10 +41,13 @@
 
 ---
 <div>
-  <p>Rails ships with <u>static HTML error pages</u>:</p>
-  <p><img src="readme/default.png" width="500"></p>
-  <p>These have an <u>unprofessional</u> appeal. If you are running a Rails app as part of a mission critical offering, you need to ensure it is as congruent as possible. To do this, we created a "custom error pages" solution.</p>
-  <p>In 2014, we extracted this into a gem called <U>ExceptionHandler</u>. This gem has become popular thanks to its ease-of-use and ability to integrate with Rails 5.0+. The following explains how it works.</p>
+  <p><b><code>ExceptionHandler</b></code> replaces Rails' default error pages with <strong>dynamic views</strong>.</p>
+  <p>It does this by injecting <a href="https://guides.rubyonrails.org/configuring.html#rails-general-configuration"><code>config.exceptions_app</code></a> with our controller - allowing us to populate erroneous responses with our own HTML. To understand how this works, you need to appreciate how Rails handles errors:</p>
+  <p align="center"><a href="https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/show_exceptions.rb#L44"><img src="readme/show_exceptions.png" width="550"></a></p>
+  <p>Rails uses <a href="https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/show_exceptions.rb"><code><strong>ActionDispatch::ShowExceptions</strong></code></a> (above) to generate error responses.</p>
+  <p>Because web browsers (Rails is a web framework) can only interpret <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Response_message">HTTP responses</a>, Ruby/Rails exceptions have to be translated into something a browser can read. This is done by calling the above middleware.</p>
+  <p>--</p>
+  <p>As highlighted, an HTTP response is built independent of the Rails stack. This includes assigning an HTTP status code and HTML response body. It's the response body which <code><strong>ExceptionHandler</strong></code> is designed to override.</p>
 </div>
 
 <!-- Sep -->
@@ -61,7 +64,7 @@
 
 <div>
   <p>
-    💎 <u><a href="https://rubygems.org/gems/exception_handler">RubyGems</a></u> |
+    💎 <u><a href="https://rubygems.org/gems/exception_handler">RubyGems</a></u> (Code) |
     💻 <u><a href="https://medium.com/ruby-on-rails-web-application-development/custom-400-500-error-pages-in-ruby-on-rails-exception-handler-3a04975e4677">Medium</a></u> (Tutorial)
   </p>
   <pre><code># Gemfile
