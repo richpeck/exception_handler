@@ -3,7 +3,7 @@
   <!-- Head -->
   <head>
     <!-- Info -->
-    <%= content_tag :title, "Error - #{@exception.status} (#{@exception.response.to_s.gsub("_", " ").titleize}) | #{Rails.application.class.parent_name.titleize}" %>
+    <%= content_tag :title, "Error - #{@exception.status} (#{@exception.response.to_s.gsub("_", " ").titleize})" %>
 
     <!-- Styling -->
     <%= stylesheet_link_tag :exception_handler %>
