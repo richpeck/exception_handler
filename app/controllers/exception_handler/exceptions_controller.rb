@@ -22,7 +22,11 @@ module ExceptionHandler
 
     # => Response format (required for non-standard formats (.css / .gz etc))
     # => request.format required until responders updates with wildcard / failsafe (:all)
-    before_action { |e| e.request.format = :html unless self.class.respond_to.include? e.request.format }
+    before_action do |e|
+      verify_requested_format!
+    rescue
+      e.request.format = :html
+    end
 
     # => Routes
     # => Removes need for "main_app" prefix in routes
