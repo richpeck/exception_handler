@@ -26,7 +26,7 @@ module ExceptionHandler
         def initialize attributes={}
             super
             ATTRS.each do |type|
-              self[type] = eval type.to_s
+              self[type] = send(type)
             end
         end
 
